@@ -2,13 +2,17 @@
     "id": "zygisksui",
     "enable": true,
     "verified": false,
-    "update_to": "https://github.com/RikkaApps/Sui.git",
+    "update_to": {
+        "type": "github_release",
+        "url": "RikkaApps/Sui"
+    },
     "source": "https://github.com/RikkaApps/Sui",
     "support": "https://github.com/RikkaApps/Sui/issues",
     "license": "GPL-3.0",
     "categories": [
         "System",
-        "Tools"
+        "Tools",
+        "Zygisk"
     ],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
     "antifeatures": [],
