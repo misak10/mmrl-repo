@@ -5,10 +5,10 @@
   "donate": "https://afdian.com/a/misak10",
   "submission": "https://github.com/misak10/mmrl-repo/issues/new",
   "cover": "https://misak10.github.io/mmrl-repo/assets/cover.webp",
-  "description": "一个提供各种实用 Magisk 模块的仓库。(自用)",
+  "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736175431.371207
+    "timestamp": 1736177533.014716
   },
   "modules": [
     {
@@ -16,7 +16,7 @@
       "name": "bindhosts",
       "version": "v1.8.5",
       "versionCode": 185,
-      "author": "backslashxx",
+      "author": "xx, KOWX712",
       "description": "Systemless hosts for Apatch, KernelSU and Magisk ",
       "added": 1733301165,
       "verified": true,
@@ -61,70 +61,35 @@
     },
     {
       "id": "box_for_magisk",
-      "name": "Box for Root",
+      "name": "Box for Magisk/KernelSU",
       "version": "v1.8",
-      "versionCode": 180,
-      "author": "taamarin",
-      "description": "透明代理模块，支持 Magisk/KernelSU/APatch。包含多种代理工具：clash、sing-box、v2ray、hysteria 和 xray。",
-      "added": 1736174897,
+      "versionCode": 20241222,
+      "author": "taamarin.t.me",
+      "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
+      "added": 1733301165,
       "verified": true,
-      "categories": [
-        "Network",
-        "APatch",
-        "KernelSU",
-        "Magisk"
-      ],
-      "support": "https://github.com/taamarin/box_for_magisk/issues",
-      "screenshots": [],
-      "license": "GPL-3.0",
-      "readme": "https://raw.githubusercontent.com/taamarin/box_for_magisk/master/README.md",
-      "timestamp": 1736174897.0,
-      "size": 0,
+      "timestamp": 1734865952.0,
+      "size": 60144,
       "features": {
-        "service": true,
-        "post_fs_data": true,
-        "action": true
+        "action": true,
+        "webroot": true
       },
       "track": {
         "type": "ONLINE_JSON",
-        "added": 1736174897,
+        "added": 1733301165,
         "source": "https://github.com/taamarin/box_for_magisk",
         "antifeatures": null
       },
-      "versions": []
-    },
-    {
-      "id": "zygisk_next",
-      "name": "Zygisk Next",
-      "version": "v1.2.6",
-      "versionCode": 126,
-      "author": "Dr-TSNG",
-      "description": "Zygisk 的独立实现，为 KernelSU 提供 Zygisk API 支持，也可作为 Magisk 内置 Zygisk 的替代品。",
-      "added": 1736174897,
-      "verified": true,
-      "categories": [
-        "System",
-        "APatch",
-        "KernelSU",
-        "Magisk"
-      ],
-      "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
-      "screenshots": [],
-      "license": "Proprietary",
-      "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/master/README.md",
-      "timestamp": 1736174897.0,
-      "size": 0,
-      "features": {
-        "service": true,
-        "post_fs_data": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": 1736174897,
-        "source": "https://github.com/Dr-TSNG/ZygiskNext",
-        "antifeatures": null
-      },
-      "versions": []
+      "versions": [
+        {
+          "timestamp": 1734865952.0,
+          "version": "v1.8",
+          "versionCode": 20241222,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.md",
+          "size": 60144
+        }
+      ]
     }
   ]
 }
