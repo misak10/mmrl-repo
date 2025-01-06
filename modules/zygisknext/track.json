@@ -2,18 +2,22 @@
   "id": "zygisknext",
   "enable": true,
   "verified": false,
-  "update_to": "https://github.com/Dr-TSNG/ZygiskNext.git",
+  "update_to": "https://api.nullptr.icu/android/zygisk-next/static/update.json",
   "source": "https://github.com/Dr-TSNG/ZygiskNext",
-  "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
-  "donate": "",
-  "screenshots": [],
-  "require": [],
-  "categories": [
-    "System"
+  "manager": {
+    "kernelsu": {
+      "min": 10940
+    },
+    "ksunext": {
+      "min": 10940
+    },
+    "magisk": {
+      "min": 26402
+    }
+  },
+  "antifeatures": [
+    "ClosedSource"
   ],
-  "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/master/README.md",
-  "antifeatures": [],
-  "last_update": null,
-  "added": null,
+  "last_update": 1735825712.0,
   "versions": 1
 }
