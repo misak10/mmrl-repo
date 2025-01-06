@@ -24,11 +24,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install mmrl-util
           
-      - name: Create required directories
+      - name: Create required directories and files
         run: |
           mkdir -p modules
           mkdir -p log
           mkdir -p assets
+          mkdir -p json
+          if [ ! -f json/modules.json ]; then
+            echo '{"name":"Misaki-Module Repo","base_url":"https://misak10.github.io/mmrl-repo/","modules":[]}' > json/modules.json
+          fi
           
       - name: Update repository
         run: |
