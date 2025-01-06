@@ -1,0 +1,118 @@
+name: sync-build-deploy
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+
+  workflow_dispatch:
+   inputs:
+      run_sync:
+        description: "Run Sync"
+        type: choice
+        required: true
+        default: 'No'
+        options:
+         - 'Yes'
+         - 'No'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  IS_SYNC: ${{ inputs.run_sync == 'Yes' || github.event_name == 'schedule' }}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mmrl-util
+
+      - name: Sync
+        if: ${{ env.IS_SYNC == 'true' }}
+        run: |
+          mmrl-util sync --diff versions_diff.md
+
+      - name: Write versions diff to summary
+        if: ${{ env.IS_SYNC == 'true' }}
+        run: |
+          if [ -f versions_diff.md ]; then
+            echo "## Versions Diff" >> $GITHUB_STEP_SUMMARY
+            echo "$(cat versions_diff.md)" >> $GITHUB_STEP_SUMMARY
+            rm versions_diff.md
+          fi
+          
+      - name: Write latest versions to summary
+        if: ${{ env.IS_SYNC != 'true' }}
+        run: |
+          mmrl-util index --list > latest_versions.md
+          echo "## Latest Versions" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat latest_versions.md)" >> $GITHUB_STEP_SUMMARY
+          rm latest_versions.md
+
+      - name: Index and Push
+        if: ${{ env.IS_SYNC == 'true' }}
+        run: |
+          mmrl-util index --push
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs
+          path: log/*.log
+  
+  build:
+    runs-on: ubuntu-latest
+    needs: sync
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
