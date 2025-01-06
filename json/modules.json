@@ -8,7 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736188803.28831
+    "timestamp": 1736189232.811563
   },
   "modules": [
     {
@@ -87,6 +87,88 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.md",
           "size": 60144
+        }
+      ]
+    },
+    {
+      "id": "busybox-ndk",
+      "name": "Busybox for Android NDK",
+      "version": "1.36.1",
+      "versionCode": 13614,
+      "author": "osm0sis @ xda-developers",
+      "description": "Static busybox binary for all Android architectures built with the NDK",
+      "added": 1445340430.7142262,
+      "categories": [
+        "System",
+        "Tools"
+      ],
+      "donate": "https://github.com/sponsors/osm0sis",
+      "support": "https://github.com/Magisk-Modules-Repo/busybox-ndk/issues",
+      "readme": "https://raw.githubusercontent.com/Magisk-Modules-Repo/busybox-ndk/master/README.md",
+      "verified": false,
+      "timestamp": 1699710957.0,
+      "size": 9933908,
+      "track": {
+        "type": "GIT",
+        "added": 1445340430.7142262,
+        "source": "https://github.com/Magisk-Modules-Repo/busybox-ndk",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1699710957.0,
+          "version": "1.36.1",
+          "versionCode": 13614,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/busybox-ndk/1.36.1_13614.zip",
+          "changelog": "",
+          "size": 9933908
+        }
+      ]
+    },
+    {
+      "id": "zygisknext",
+      "name": "Zygisk Next",
+      "version": "1.2.6 (485-ca2c5c0-release)",
+      "versionCode": 485,
+      "author": "5ec1cff, Nullptr",
+      "description": "Standalone implementation of Zygisk.",
+      "manager": {
+        "kernelsu": {
+          "min": 10940
+        },
+        "ksunext": {
+          "min": 10940
+        },
+        "magisk": {
+          "min": 26402
+        }
+      },
+      "verified": false,
+      "added": 0,
+      "timestamp": 1735825712.0,
+      "size": 3433554,
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "sepolicy": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/Dr-TSNG/ZygiskNext",
+        "antifeatures": [
+          "ClosedSource"
+        ]
+      },
+      "versions": [
+        {
+          "timestamp": 1735825712.0,
+          "version": "1.2.6 (485-ca2c5c0-release)",
+          "versionCode": 485,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.6_485-ca2c5c0-release.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.6_485-ca2c5c0-release.md",
+          "size": 3433554
         }
       ]
     }
