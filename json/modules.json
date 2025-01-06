@@ -1,14 +1,63 @@
 {
-    "name": "Misaki-Module Repo",
-    "website": "https://misak10.github.io/mmrl-repo/",
-    "support": "https://github.com/misak10/mmrl-repo/issues",
-    "submission": "https://github.com/misak10/mmrl-repo/issues/new",
-    "cover": "https://misak10.github.io/mmrl-repo/assets/cover.webp",
-    "description": "一个提供各种实用 Magisk 模块的仓库。(自用)",
-    "metadata": {
-        "version": 1,
-        "timestamp": 1704520800.0
-    },
-    "modules": [
-    ]
+  "name": "Misaki-Module Repo",
+  "website": null,
+  "support": null,
+  "donate": null,
+  "submission": null,
+  "cover": "https://misak10.github.io/mmrl-repo/assets/cover.webp",
+  "description": null,
+  "metadata": {
+    "version": 1,
+    "timestamp": 1736172596.81967
+  },
+  "modules": [
+    {
+      "id": "bindhosts",
+      "name": "bindhosts",
+      "version": "v1.8.5",
+      "versionCode": 185,
+      "author": "xx, KOWX712",
+      "description": "Systemless hosts for Apatch, KernelSU and Magisk ",
+      "added": 1733301165,
+      "verified": true,
+      "categories": [
+        "Adblocking and Hosts Files",
+        "APatch",
+        "KernelSU",
+        "Magisk"
+      ],
+      "support": "https://github.com/backslashxx/bindhosts/issues",
+      "screenshots": [
+        "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/Documentation/screenshots/mmrl_manager.png",
+        "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/Documentation/screenshots/mmrl_webui.png",
+        "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
+      ],
+      "license": "WTFPL",
+      "readme": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/README.md",
+      "timestamp": 1735904596.0,
+      "size": 31756,
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": 1733301165,
+        "source": "https://github.com/backslashxx/bindhosts",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1735904596.0,
+          "version": "v1.8.5",
+          "versionCode": 185,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.8.5_185.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.8.5_185.md",
+          "size": 31756
+        }
+      ]
+    }
+  ]
 }
