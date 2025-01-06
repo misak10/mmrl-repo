@@ -1,0 +1,12 @@
+{
+  "id": "box_for_magisk",
+  "name": "Box for Root",
+  "version": "v1.8",
+  "versionCode": 180,
+  "author": "taamarin",
+  "description": "透明代理模块，支持 Magisk/KernelSU/APatch。包含多种代理工具：clash、sing-box、v2ray、hysteria 和 xray。",
+  "track": {
+    "type": "github_release",
+    "url": "taamarin/box_for_magisk"
+  }
+} 
