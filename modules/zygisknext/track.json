@@ -1,17 +1,10 @@
 {
   "id": "zygisknext",
   "enable": true,
-  "verified": true,
+  "verified": false,
   "source": "https://github.com/Dr-TSNG/ZygiskNext",
   "update_to": "https://github.com/Dr-TSNG/ZygiskNext.git",
   "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
-  "screenshots": [],
-  "require": [],
-  "categories": [
-    "System",
-    "Tools"
-  ],
   "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/master/README.md",
-  "antifeatures": [],
   "versions": 1
-} 
+}
