@@ -36,7 +36,7 @@ jobs:
         run: |
           mmrl-util sync
           mmrl-util index
-          mmrl-util sitemap
+          mmrl-util sitemap -b https://misak10.github.io/mmrl-repo/
           
       - name: Commit changes
         run: |
