@@ -1,8 +1,8 @@
-added: 1733301165
-enable: true
 id: zygisknext
-last_update: 1729972058.0
-source: https://github.com/Dr-TSNG/ZygiskNext
-update_to: https://github.com/Dr-TSNG/ZygiskNext.git
+enable: true
 verified: true
-versions: 41
+update_to: https://github.com/Dr-TSNG/ZygiskNext.git
+source: https://github.com/Dr-TSNG/ZygiskNext
+added: 1733301165
+last_update: 1729972058.0
+versions: 1

@@ -1,113 +1,118 @@
-name: Update Repository
-
+name: sync-build-deploy
 on:
-  push:
-    branches: [ master ]
-    paths-ignore:
-      - '.github/workflows/**'
-      - 'README.md'
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 */6 * * *'
+
   workflow_dispatch:
+   inputs:
+      run_sync:
+        description: "Run Sync"
+        type: choice
+        required: true
+        default: 'No'
+        options:
+         - 'Yes'
+         - 'No'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  IS_SYNC: ${{ inputs.run_sync == 'Yes' || github.event_name == 'schedule' }}
 
 jobs:
-  build:
+  sync:
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
-    
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          python-version: '3.x'
-          
+          ref: ${{ github.ref }}
+
+      - name: Set up Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mmrl-util gitpython requests
-          
-      - name: Create required directories
+          pip install mmrl-util
+
+      - name: Sync
+        if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mkdir -p modules
-          mkdir -p json
-          mkdir -p assets
-          
-      - name: Initialize config if not exists
+          mmrl-util sync --diff versions_diff.md
+
+      - name: Write versions diff to summary
+        if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          if [ ! -f json/config.json ]; then
-            echo '{
-              "name": "Misaki-Module Repo",
-              "website": "https://misak10.github.io/mmrl-repo/",
-              "support": "https://github.com/misak10/mmrl-repo/issues",
-              "submission": "https://github.com/misak10/mmrl-repo/issues/new",
-              "cover": "https://misak10.github.io/mmrl-repo/assets/cover.webp",
-              "description": "一个提供各种实用 Magisk 模块的仓库。(自用)",
-              "metadata": {
-                "version": 1,
-                "timestamp": 1704520800.0
-              }
-            }' > json/config.json
+          if [ -f versions_diff.md ]; then
+            echo "## Versions Diff" >> $GITHUB_STEP_SUMMARY
+            echo "$(cat versions_diff.md)" >> $GITHUB_STEP_SUMMARY
+            rm versions_diff.md
           fi
           
-      - name: Check Git Updates
+      - name: Write latest versions to summary
+        if: ${{ env.IS_SYNC != 'true' }}
         run: |
-          python3 - <<EOF
-          import os
-          import yaml
-          import git
-          import json
-          from datetime import datetime
-          
-          def check_git_updates(track_file):
-              with open(track_file, 'r') as f:
-                  track = yaml.safe_load(f)
-              
-              if track.get('update_to', '').endswith('.git'):
-                  repo_url = track['update_to']
-                  module_name = os.path.basename(os.path.dirname(track_file))
-                  
-                  try:
-                      repo = git.Repo.clone_from(repo_url, f'temp_{module_name}')
-                      latest_tag = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)[-1]
-                      
-                      track['last_update'] = latest_tag.commit.committed_datetime.timestamp()
-                      track['versions'] = len(repo.tags)
-                      
-                      with open(track_file, 'w') as f:
-                          yaml.dump(track, f)
-                          
-                  except Exception as e:
-                      print(f"Error checking {module_name}: {str(e)}")
-                  finally:
-                      if os.path.exists(f'temp_{module_name}'):
-                          import shutil
-                          shutil.rmtree(f'temp_{module_name}')
-          
-          for module in os.listdir('modules'):
-              track_file = f'modules/{module}/track.yaml'
-              if os.path.exists(track_file):
-                  check_git_updates(track_file)
-          EOF
-          
-      - name: Update repository
+          mmrl-util index --list > latest_versions.md
+          echo "## Latest Versions" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat latest_versions.md)" >> $GITHUB_STEP_SUMMARY
+          rm latest_versions.md
+
+      - name: Index and Push
+        if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util sync
-          mmrl-util index
-          mmrl-util sitemap -b https://misak10.github.io/mmrl-repo/
-          
-      - name: Commit changes
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update repository"
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          mmrl-util index --push
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }} 
+          name: logs
+          path: log/*.log
+  
+  build:
+    runs-on: ubuntu-latest
+    needs: sync
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
