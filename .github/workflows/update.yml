@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mmrl-util
+          pip install mmrl-util gitpython requests
           
       - name: Create required directories
         run: |
@@ -46,6 +46,46 @@ jobs:
               }
             }' > json/config.json
           fi
+          
+      - name: Check Git Updates
+        run: |
+          python3 - <<EOF
+          import os
+          import yaml
+          import git
+          import json
+          from datetime import datetime
+          
+          def check_git_updates(track_file):
+              with open(track_file, 'r') as f:
+                  track = yaml.safe_load(f)
+              
+              if track.get('update_to', '').endswith('.git'):
+                  repo_url = track['update_to']
+                  module_name = os.path.basename(os.path.dirname(track_file))
+                  
+                  try:
+                      repo = git.Repo.clone_from(repo_url, f'temp_{module_name}')
+                      latest_tag = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)[-1]
+                      
+                      track['last_update'] = latest_tag.commit.committed_datetime.timestamp()
+                      track['versions'] = len(repo.tags)
+                      
+                      with open(track_file, 'w') as f:
+                          yaml.dump(track, f)
+                          
+                  except Exception as e:
+                      print(f"Error checking {module_name}: {str(e)}")
+                  finally:
+                      if os.path.exists(f'temp_{module_name}'):
+                          import shutil
+                          shutil.rmtree(f'temp_{module_name}')
+          
+          for module in os.listdir('modules'):
+              track_file = f'modules/{module}/track.yaml'
+              if os.path.exists(track_file):
+                  check_git_updates(track_file)
+          EOF
           
       - name: Update repository
         run: |
