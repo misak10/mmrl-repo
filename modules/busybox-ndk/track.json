@@ -1,0 +1,20 @@
+{
+  "id": "busybox-ndk",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://github.com/Magisk-Modules-Repo/busybox-ndk.git",
+  "source": "https://github.com/Magisk-Modules-Repo/busybox-ndk",
+  "support": "https://github.com/Magisk-Modules-Repo/busybox-ndk/issues",
+  "donate": "https://github.com/sponsors/osm0sis",
+  "screenshots": [],
+  "require": [],
+  "categories": [
+    "System",
+    "Tools"
+  ],
+  "readme": "https://raw.githubusercontent.com/Magisk-Modules-Repo/busybox-ndk/master/README.md",
+  "antifeatures": [],
+  "last_update": 1699710957.0,
+  "added": 1445340430.714226137,
+  "versions": 1
+}
