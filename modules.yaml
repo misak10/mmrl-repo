@@ -1,0 +1,18 @@
+modules:
+  - id: bindhosts
+    name: bindhosts
+    source: https://github.com/backslashxx/bindhosts
+    update_type: json
+    update_url: https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json
+
+  - id: box_for_magisk
+    name: Box for Magisk/KernelSU
+    source: https://github.com/taamarin/box_for_magisk
+    update_type: json
+    update_url: https://raw.githubusercontent.com/taamarin/box_for_magisk/master/update.json
+
+  - id: zygisknext
+    name: ZygiskNext
+    source: https://github.com/Dr-TSNG/ZygiskNext
+    update_type: git
+    update_url: https://github.com/Dr-TSNG/ZygiskNext.git 

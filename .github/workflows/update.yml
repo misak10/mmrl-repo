@@ -52,6 +52,40 @@ jobs:
           python -m pip install --upgrade pip
           pip install mmrl-util
 
+      - name: Generate track files
+        run: |
+          python3 - <<EOF
+          import os
+          import yaml
+          import time
+          
+          def create_track_yaml(module_data):
+              track_data = {
+                  'id': module_data['id'],
+                  'enable': True,
+                  'verified': True,
+                  'source': module_data['source'],
+                  'versions': 1
+              }
+              
+              if module_data['update_type'] == 'json':
+                  track_data['update_to'] = module_data['update_url']
+              elif module_data['update_type'] == 'git':
+                  track_data['update_to'] = module_data['update_url']
+              
+              module_dir = f"modules/{module_data['id']}"
+              os.makedirs(module_dir, exist_ok=True)
+              
+              with open(f"{module_dir}/track.yaml", 'w') as f:
+                  yaml.safe_dump(track_data, f, sort_keys=False)
+          
+          with open('modules.yaml', 'r') as f:
+              config = yaml.safe_load(f)
+          
+          for module in config['modules']:
+              create_track_yaml(module)
+          EOF
+          
       - name: Sync
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
