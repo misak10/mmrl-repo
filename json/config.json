@@ -1,0 +1,7 @@
+{
+  "name": "Misaki-Module Repo",
+  "base_url": "https://misak10.github.io/MMRL/",
+  "max_num": 10,
+  "enable_log": true,
+  "log_dir": "log"
+}
