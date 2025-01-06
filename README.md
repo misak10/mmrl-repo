@@ -1,11 +1,11 @@
 # Misaki-Module Repo
 
-这是一个基于MMRL (Magisk Module Repository Loader)的模块仓库。
+一个基于MMRL (Magisk Module Repository Loader)的模块仓库。
 
 ## 目录结构说明:
 
 1. **根目录**
-   * 包含主要文件夹(`assets`, `json`, `log`, 和 `modules`)作为仓库的入口点
+   * 包含主要文件夹(`assets`, `json`, `modules`)作为仓库的入口点
 
 2. **`assets/`**
    * 存放仓库相关的媒体资源
@@ -16,11 +16,7 @@
    * `config.json`: 仓库全局设置
    * `modules.json`: 模块列表和元数据
 
-4. **`log/`**
-   * 存放仓库操作和更新日志
-   * 格式: `sync_yyyy-MM-dd.log`
-
-5. **`modules/`**
+4. **`modules/`**
    * 存放各个Magisk模块
    * 每个模块都有独立的子文件夹
 

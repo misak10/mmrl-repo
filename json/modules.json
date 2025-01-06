@@ -1,1 +1,14 @@
- 
+{
+    "name": "Misaki-Module Repo",
+    "website": "https://misak10.github.io/mmrl-repo/",
+    "support": "https://github.com/misak10/mmrl-repo/issues",
+    "submission": "https://github.com/misak10/mmrl-repo/issues/new",
+    "cover": "https://misak10.github.io/mmrl-repo/assets/cover.webp",
+    "description": "一个提供各种实用 Magisk 模块的仓库。(自用)",
+    "metadata": {
+        "version": 1,
+        "timestamp": 1704520800.0
+    },
+    "modules": [
+    ]
+}
