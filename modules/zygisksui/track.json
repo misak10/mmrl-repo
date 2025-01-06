@@ -1,11 +1,17 @@
 {
     "id": "zygisksui",
-    "update_to": "git@github.com:RikkaApps/Sui.git",
+    "name": "Sui",
+    "author": "RikkaApps",
+    "description": "A root app that provides system UI for other root apps",
+    "update_to": {
+        "method": "git",
+        "source": "https://github.com/RikkaApps/Sui.git",
+        "branch": "master"
+    },
+    "versions": [],
+    "submitter": "",
     "license": "GPL-3.0",
-    "changelog": "",
     "homepage": "https://github.com/RikkaApps/Sui",
-    "source": "https://github.com/RikkaApps/Sui.git",
     "support": "https://github.com/RikkaApps/Sui/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md"
+    "donate": ""
 }
