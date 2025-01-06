@@ -1,14 +1,19 @@
 {
   "id": "zygisknext",
   "enable": true,
-  "verified": true,
+  "verified": false,
+  "update_to": "https://github.com/Dr-TSNG/ZygiskNext.git",
   "source": "https://github.com/Dr-TSNG/ZygiskNext",
-  "update_to": "https://api.github.com/repos/Dr-TSNG/ZygiskNext/releases",
   "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
   "donate": "",
+  "screenshots": [],
+  "require": [],
+  "categories": [
+    "System"
+  ],
   "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/master/README.md",
-  "versions": 1,
-  "categories": ["System"],
-  "name": "ZygiskNext",
-  "description": "Zygisk implementation on KernelSU"
+  "antifeatures": [],
+  "last_update": 1699710957.0,
+  "added": 1445340430.714226137,
+  "versions": 1
 }
