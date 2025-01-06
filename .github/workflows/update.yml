@@ -3,6 +3,9 @@ name: Update Repository
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - '.github/workflows/**'
+      - 'README.md'
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -10,6 +13,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     
     steps:
       - uses: actions/checkout@v4
