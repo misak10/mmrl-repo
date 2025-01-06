@@ -1,16 +1,11 @@
 {
     "id": "zygisksui",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://github.com/RikkaApps/Sui.git",
-    "source": "https://github.com/RikkaApps/Sui",
+    "update_to": "git@github.com:RikkaApps/Sui.git",
+    "license": "GPL-3.0",
+    "changelog": "",
+    "homepage": "https://github.com/RikkaApps/Sui",
+    "source": "https://github.com/RikkaApps/Sui.git",
     "support": "https://github.com/RikkaApps/Sui/issues",
-    "categories": [
-        "System",
-        "Tools"
-    ],
-    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
-    "versions": 1,
-    "added": 1445340430.714226137,
-    "last_update": 1699710957.0
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md"
 }
