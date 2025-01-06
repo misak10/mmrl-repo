@@ -8,7 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736182404.616596
+    "timestamp": 1736186193.307578
   },
   "modules": [
     {
@@ -65,8 +65,9 @@
       "versionCode": 20241222,
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
+      "added": 1733301165,
       "verified": true,
-      "added": 0,
+      "timestamp": 1734865952.0,
       "size": 60144,
       "features": {
         "action": true,
@@ -74,7 +75,7 @@
       },
       "track": {
         "type": "ONLINE_JSON",
-        "added": null,
+        "added": 1733301165,
         "source": "https://github.com/taamarin/box_for_magisk",
         "antifeatures": null
       },
