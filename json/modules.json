@@ -8,7 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736181460.511886
+    "timestamp": 1736182404.616596
   },
   "modules": [
     {
@@ -18,7 +18,6 @@
       "versionCode": 185,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for Apatch, KernelSU and Magisk ",
-      "added": 1733301165,
       "verified": true,
       "categories": [
         "Adblocking and Hosts Files",
@@ -34,7 +33,7 @@
       ],
       "license": "WTFPL",
       "readme": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/README.md",
-      "timestamp": 1735904596.0,
+      "added": 0,
       "size": 31756,
       "features": {
         "service": true,
@@ -44,7 +43,7 @@
       },
       "track": {
         "type": "ONLINE_JSON",
-        "added": 1733301165,
+        "added": null,
         "source": "https://github.com/backslashxx/bindhosts",
         "antifeatures": null
       },
@@ -66,9 +65,8 @@
       "versionCode": 20241222,
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
-      "added": 1733301165,
       "verified": true,
-      "timestamp": 1734865952.0,
+      "added": 0,
       "size": 60144,
       "features": {
         "action": true,
@@ -76,7 +74,7 @@
       },
       "track": {
         "type": "ONLINE_JSON",
-        "added": 1733301165,
+        "added": null,
         "source": "https://github.com/taamarin/box_for_magisk",
         "antifeatures": null
       },

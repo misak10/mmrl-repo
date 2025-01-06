@@ -1,8 +1,6 @@
 id: box_for_magisk
 enable: true
 verified: true
-update_to: https://raw.githubusercontent.com/taamarin/box_for_magisk/master/update.json
 source: https://github.com/taamarin/box_for_magisk
-added: 1733301165
-last_update: 1734865952.0
 versions: 1
+update_to: https://raw.githubusercontent.com/taamarin/box_for_magisk/master/update.json

@@ -1,6 +1,6 @@
 id: zygisknext
 enable: true
 verified: true
-update_to: https://github.com/Dr-TSNG/ZygiskNext.git
 source: https://github.com/Dr-TSNG/ZygiskNext
 versions: 1
+update_to: https://github.com/Dr-TSNG/ZygiskNext.git
