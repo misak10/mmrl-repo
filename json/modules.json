@@ -8,11 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-<<<<<<< HEAD
-    "timestamp": 1736178508.824776
-=======
-    "timestamp": 1736180883.950936
->>>>>>> 9ea31198dc66eeb81f44f4c6682317aabd16ea28
+    "timestamp": 1736181460.511886
   },
   "modules": [
     {
@@ -94,24 +90,6 @@
           "size": 60144
         }
       ]
-    },
-    {
-      "id": "zygisknext",
-      "name": "ZygiskNext",
-      "version": "v1.2.6",
-      "author": "Dr-TSNG",
-      "description": "ZygiskNext is a fork of Zygisk, with some improvements and new features.",
-      "added": 1733301165,
-      "verified": true,
-      "features": {
-        "action": true,
-        "webroot": true
-      },
-      "track": {
-        "type": "GIT",
-        "added": 1733301165,
-        "source": "https://github.com/Dr-TSNG/ZygiskNext.git",
-        "antifeatures": null
-      },
+    }
   ]
 }
