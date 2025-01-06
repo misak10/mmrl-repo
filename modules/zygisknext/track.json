@@ -3,7 +3,7 @@
   "enable": true,
   "verified": true,
   "source": "https://github.com/Dr-TSNG/ZygiskNext",
-  "update_to": "https://api.github.com/repos/Dr-TSNG/ZygiskNext/releases/latest",
+  "update_to": "https://api.github.com/repos/Dr-TSNG/ZygiskNext/releases",
   "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
   "donate": "",
   "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/master/README.md",
