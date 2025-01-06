@@ -20,6 +20,12 @@
    * 存放各个Magisk模块
    * 每个模块都有独立的子文件夹
 
+## 赞助支持
+
+如果您觉得这个项目有帮助，可以考虑赞助支持：
+
+[![爱发电](https://afdian.net/static/img/logo.png)](https://afdian.com/a/misak10)
+
 ## 更多信息
 
 访问 [magisk-modules-repo-util](https://github.com/Googlers-Repo/magisk-modules-repo-util) 了解更多详情。 
