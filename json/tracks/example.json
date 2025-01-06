@@ -1,1 +1,12 @@
- 
+{
+  "id": "riru-core",
+  "name": "Riru",
+  "version": "v26.1.7",
+  "versionCode": 537,
+  "author": "RikkaW",
+  "description": "Inject into zygote process",
+  "track": {
+    "type": "github_release",
+    "url": "RikkaApps/Riru"
+  }
+} 
