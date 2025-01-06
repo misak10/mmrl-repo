@@ -6,12 +6,8 @@
     "source": "https://github.com/RikkaApps/Sui",
     "support": "https://github.com/RikkaApps/Sui/issues",
     "categories": [
-      "System",
-      "Tools"
+        "System",
+        "Tools"
     ],
-    "screenshots": [],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
-    "require": [],
-    "antifeatures": [],
-    "versions": 1
-  }
+}
