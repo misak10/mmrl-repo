@@ -1,7 +1,7 @@
 id: zygisknext
 enable: true
 verified: true
-update_to: https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/master/update.json
+update_to: https://github.com/Dr-TSNG/ZygiskNext.git
 source: https://github.com/Dr-TSNG/ZygiskNext
 added: 1733301165
 last_update: 1735904596.0

@@ -90,6 +90,24 @@
           "size": 60144
         }
       ]
-    }
+    },
+    {
+      "id": "zygisknext",
+      "name": "ZygiskNext",
+      "version": "v1.2.6",
+      "author": "Dr-TSNG",
+      "description": "ZygiskNext is a fork of Zygisk, with some improvements and new features.",
+      "added": 1733301165,
+      "verified": true,
+      "features": {
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "GIT",
+        "added": 1733301165,
+        "source": "https://github.com/Dr-TSNG/ZygiskNext.git",
+        "antifeatures": null
+      },
   ]
 }
