@@ -79,10 +79,21 @@ class ModuleUpdateChecker:
     def _load_json(self, filepath: str, default: Any = None) -> Dict:
         """加载JSON文件"""
         try:
+            if not os.path.exists(filepath):
+                logger.warning(f"文件不存在: {filepath}, 创建新文件")
+                os.makedirs(os.path.dirname(filepath), exist_ok=True)
+                with open(filepath, 'w') as f:
+                    json.dump(default if default is not None else {}, f, indent=2)
+                return default if default is not None else {}
+            
             with open(filepath) as f:
-                return json.load(f)
-        except FileNotFoundError:
-            logger.warning(f"文件不存在: {filepath}, 使用默认值")
+                try:
+                    return json.load(f)
+                except json.JSONDecodeError as e:
+                    logger.error(f"JSON解析错误 {filepath}: {str(e)}, 使用默认值")
+                    return default if default is not None else {}
+        except Exception as e:
+            logger.error(f"加载文件出错 {filepath}: {str(e)}")
             return default if default is not None else {}
 
     def _load_modules_data(self) -> Dict[str, Dict]:
@@ -142,8 +153,10 @@ class ModuleUpdateChecker:
     def _save_last_versions(self):
         """保存最新版本信息"""
         try:
+            os.makedirs('json', exist_ok=True)
             with open('json/last_versions.json', 'w') as f:
                 json.dump(self.last_versions, f, indent=2, sort_keys=True)
+                logger.info("成功保存版本信息")
         except Exception as e:
             logger.error(f"保存 last_versions.json 时出错: {str(e)}")
 
