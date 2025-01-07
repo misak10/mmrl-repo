@@ -3,22 +3,5 @@
     "enable": true,
     "verified": false,
     "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/LSPosed.github.io/update.json",
-    "source": "https://github.com/LSPosed/LSPosed.github.io",
-    "options": {
-        "archive": {
-            "compression": "store",
-            "force_extract": true,
-            "ignore_compression": true,
-            "preprocess": true,
-            "temp_dir": true
-        },
-        "verify": {
-            "disable": true
-        }
-    },
-    "preprocessing": {
-        "enabled": true,
-        "skip_compression_check": true,
-        "force_store": true
-    }
+    "source": "https://github.com/LSPosed/LSPosed.github.io"
 }
