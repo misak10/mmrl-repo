@@ -8,7 +8,17 @@
         "archive": {
             "compression": "store",
             "force_extract": true,
-            "ignore_compression": true
+            "ignore_compression": true,
+            "preprocess": true,
+            "temp_dir": true
+        },
+        "verify": {
+            "disable": true
         }
+    },
+    "preprocessing": {
+        "enabled": true,
+        "skip_compression_check": true,
+        "force_store": true
     }
 }
