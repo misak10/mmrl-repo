@@ -2,7 +2,7 @@ name: Check for Magisk Module Updates
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Run every 30 minutes
+    - cron: '0 */3 * * *'  # Run every 3 hours
   workflow_dispatch:
 
 jobs:
