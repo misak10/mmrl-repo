@@ -4,6 +4,7 @@ import io
 import asyncio
 import os
 import logging
+import glob
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
@@ -71,8 +72,9 @@ class TelegramNotifier:
 class ModuleUpdateChecker:
     def __init__(self):
         self.notifier = TelegramNotifier()
-        self.main_data = self._load_json('json/modules.json')
+        self.modules_data = self._load_modules_data()
         self.last_versions = self._load_json('json/last_versions.json', default={})
+        self._sync_versions_file()
 
     def _load_json(self, filepath: str, default: Any = None) -> Dict:
         """加载JSON文件"""
@@ -80,77 +82,156 @@ class ModuleUpdateChecker:
             with open(filepath) as f:
                 return json.load(f)
         except FileNotFoundError:
+            logger.warning(f"文件不存在: {filepath}, 使用默认值")
             return default if default is not None else {}
+
+    def _load_modules_data(self) -> Dict[str, Dict]:
+        """从modules文件夹加载所有模块数据"""
+        modules_data = {}
+        module_paths = glob.glob('modules/*/track.json')
+        
+        for path in module_paths:
+            try:
+                with open(path) as f:
+                    module_data = json.load(f)
+                    module_id = os.path.basename(os.path.dirname(path))
+                    modules_data[module_id] = module_data
+                    logger.debug(f"已加载模块 {module_id} 的数据")
+            except Exception as e:
+                logger.error(f"加载模块数据失败 {path}: {str(e)}")
+                
+        return modules_data
+
+    def _sync_versions_file(self):
+        """同步 last_versions.json 文件内容"""
+        # 获取当前所有模块的版本信息
+        current_modules = {}
+        for module_id, module_data in self.modules_data.items():
+            try:
+                version_code = module_data.get("versionCode")
+                if version_code is not None:
+                    current_modules[module_id] = version_code
+            except Exception as e:
+                logger.error(f"处理模块 {module_id} 时出错: {str(e)}")
+        
+        # 删除多余的模块
+        removed_modules = []
+        for module_id in list(self.last_versions.keys()):
+            if module_id not in current_modules:
+                removed_modules.append(module_id)
+                del self.last_versions[module_id]
+        
+        if removed_modules:
+            logger.info(f"删除了不存在的模块: {', '.join(removed_modules)}")
+        
+        # 添加新模块
+        added_modules = []
+        for module_id, version_code in current_modules.items():
+            if module_id not in self.last_versions:
+                self.last_versions[module_id] = version_code
+                added_modules.append(module_id)
+        
+        if added_modules:
+            logger.info(f"添加了新模块: {', '.join(added_modules)}")
+        
+        # 如果有变化，保存文件
+        if added_modules or removed_modules:
+            self._save_last_versions()
+            logger.info("已更新 last_versions.json 文件")
 
     def _save_last_versions(self):
         """保存最新版本信息"""
-        with open('json/last_versions.json', 'w') as f:
-            json.dump(self.last_versions, f, indent=2)
-
-    def _format_message(self, module: Dict[str, Any]) -> str:
-        """格式化模块更新消息"""
-        note = module.get("note", {}).get("message", "")
-        desc = module["description"]
-        
-        message = f"""<b>{module['name']}</b>
-<i>版本:</i> {module['version']} ({module['versionCode']})
-
-📃 {desc}
-{f'<blockquote>{note}</blockquote>' if note else ''}
-
-<b>作者:</b> {module['author']}
-<b>关注:</b> @module_update"""
-        
-        return message
-
-    def _prepare_buttons(self, module: Dict[str, Any]) -> List[List[Dict[str, str]]]:
-        """准备按钮配置"""
-        latest = module['versions'][-1]
-        buttons = []
-        
-        # 下载按钮
-        if latest.get("zipUrl"):
-            buttons.append([{'text': '📦 下载', 'url': latest['zipUrl']}])
-            
-        # 支持链接
-        support_buttons = []
-        if module['track'].get('source'):
-            support_buttons.append({'text': '源码', 'url': module['track']['source']})
-        if module.get('support'):
-            support_buttons.append({'text': '支持', 'url': module['support']})
-        if support_buttons:
-            buttons.append(support_buttons)
-            
-        # 捐赠按钮
-        if module.get('donate'):
-            buttons.append([{'text': '捐赠', 'url': module['donate']}])
-            
-        return buttons
+        try:
+            with open('json/last_versions.json', 'w') as f:
+                json.dump(self.last_versions, f, indent=2, sort_keys=True)
+        except Exception as e:
+            logger.error(f"保存 last_versions.json 时出错: {str(e)}")
 
     async def check_updates(self):
         """检查模块更新"""
         try:
-            for module in self.main_data.get("modules", []):
-                module_id = module['id']
-                version_code = module['versionCode']
-                
-                if module_id not in self.last_versions or self.last_versions[module_id] != version_code:
-                    message = self._format_message(module)
-                    buttons = self._prepare_buttons(module)
-                    
-                    if module.get("cover"):
-                        result = await self.notifier.send_photo(module["cover"], message, buttons)
+            update_count = 0
+            for module_id, module_data in self.modules_data.items():
+                try:
+                    version_code = module_data.get("versionCode")
+                    if not version_code:
+                        logger.warning(f"模块 {module_id} 缺少版本号信息")
+                        continue
+
+                    # 检查版本更新
+                    if module_id not in self.last_versions:
+                        logger.info(f"发现新模块: {module_id}")
+                        update_needed = True
                     else:
-                        result = await self.notifier.send_message(message, buttons)
+                        current_version = self.last_versions[module_id]
+                        update_needed = current_version != version_code
+                        if update_needed:
+                            logger.info(f"模块 {module_id} 有更新: {current_version} -> {version_code}")
+                    
+                    if update_needed:
+                        message = self._format_message(module_data, module_id)
+                        buttons = self._prepare_buttons(module_data)
                         
-                    logger.info(f"模块 {module_id} 更新通知: {result}")
-                    self.last_versions[module_id] = version_code
+                        if module_data.get("cover"):
+                            result = await self.notifier.send_photo(
+                                module_data["cover"], message, buttons)
+                        else:
+                            result = await self.notifier.send_message(message, buttons)
+                            
+                        logger.info(f"模块 {module_id} 更新通知: {result}")
+                        self.last_versions[module_id] = version_code
+                        update_count += 1
+                
+                except Exception as e:
+                    logger.error(f"处理模块 {module_id} 更新时出错: {str(e)}")
+                    continue
             
-            self._save_last_versions()
+            if update_count > 0:
+                self._save_last_versions()
+                logger.info(f"完成更新检查，发送了 {update_count} 个更新通知")
+            else:
+                logger.info("完成更新检查，没有发现新的更新")
             
         except Exception as e:
             logger.error(f"检查更新时出错: {str(e)}")
             raise
+
+    def _format_message(self, module_data: Dict[str, Any], module_id: str) -> str:
+        """格式化模块更新消息"""
+        note = module_data.get("note", {}).get("message", "")
+        desc = module_data.get("description", "")
+        
+        message = f"""<b>{module_data.get('name', module_id)}</b>
+<i>版本:</i> {module_data.get('version')} ({module_data.get('versionCode')})
+
+📃 {desc}
+{f'<blockquote>{note}</blockquote>' if note else ''}
+
+<b>作者:</b> {module_data.get('author', '未知')}
+<b>关注:</b> @module_update"""
+        
+        return message
+
+    def _prepare_buttons(self, module_data: Dict[str, Any]) -> List[List[Dict[str, str]]]:
+        """准备按钮配置"""
+        buttons = []
+        versions = module_data.get('versions', [])
+        
+        if versions and versions[-1].get("zipUrl"):
+            buttons.append([{'text': '📦 下载', 'url': versions[-1]["zipUrl"]}])
+            
+        support_buttons = []
+        if module_data.get('track', {}).get('source'):
+            support_buttons.append({'text': '源码', 'url': module_data['track']['source']})
+        if module_data.get('support'):
+            support_buttons.append({'text': '支持', 'url': module_data['support']})
+        if support_buttons:
+            buttons.append(support_buttons)
+            
+        if module_data.get('donate'):
+            buttons.append([{'text': '捐赠', 'url': module_data['donate']}])
+            
+        return buttons
 
 def main():
     """主函数"""
