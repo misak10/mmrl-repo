@@ -100,41 +100,6 @@
       ]
     },
     {
-      "id": "busybox-ndk",
-      "name": "Busybox for Android NDK",
-      "version": "1.36.1",
-      "versionCode": 13614,
-      "author": "osm0sis @ xda-developers",
-      "description": "Static busybox binary for all Android architectures built with the NDK",
-      "added": 1445340430.7142262,
-      "categories": [
-        "System",
-        "Tools"
-      ],
-      "donate": "https://github.com/sponsors/osm0sis",
-      "support": "https://github.com/Magisk-Modules-Repo/busybox-ndk/issues",
-      "readme": "https://raw.githubusercontent.com/Magisk-Modules-Repo/busybox-ndk/master/README.md",
-      "verified": false,
-      "timestamp": 1699710957.0,
-      "size": 9933908,
-      "track": {
-        "type": "GIT",
-        "added": 1445340430.7142262,
-        "source": "https://github.com/Magisk-Modules-Repo/busybox-ndk",
-        "antifeatures": null
-      },
-      "versions": [
-        {
-          "timestamp": 1699710957.0,
-          "version": "1.36.1",
-          "versionCode": 13614,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/busybox-ndk/1.36.1_13614.zip",
-          "changelog": "",
-          "size": 9933908
-        }
-      ]
-    },
-    {
       "id": "zygisknext",
       "name": "Zygisk Next",
       "version": "1.2.6 (485-ca2c5c0-release)",
