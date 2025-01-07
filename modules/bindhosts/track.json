@@ -2,7 +2,8 @@
   "id": "bindhosts",
   "enable": true,
   "verified": true,
-  "source": "https://github.com/backslashxx/bindhosts",
   "update_to": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json",
-  "versions": 1
-} 
+  "source": "https://github.com/backslashxx/bindhosts",
+  "last_update": 1736229449.0,
+  "versions": 2
+}
