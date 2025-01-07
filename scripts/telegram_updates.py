@@ -82,19 +82,35 @@ class ModuleUpdateChecker:
             if not os.path.exists(filepath):
                 logger.warning(f"文件不存在: {filepath}, 创建新文件")
                 os.makedirs(os.path.dirname(filepath), exist_ok=True)
-                with open(filepath, 'w') as f:
-                    json.dump(default if default is not None else {}, f, indent=2)
+                self._save_json(filepath, default if default is not None else {})
                 return default if default is not None else {}
             
-            with open(filepath) as f:
+            with open(filepath, 'r') as f:
+                content = f.read().strip()
+                if not content:  # 如果文件为空
+                    logger.warning(f"文件为空: {filepath}, 使用默认值")
+                    self._save_json(filepath, default if default is not None else {})
+                    return default if default is not None else {}
+                
                 try:
-                    return json.load(f)
+                    return json.loads(content)
                 except json.JSONDecodeError as e:
                     logger.error(f"JSON解析错误 {filepath}: {str(e)}, 使用默认值")
+                    self._save_json(filepath, default if default is not None else {})
                     return default if default is not None else {}
         except Exception as e:
             logger.error(f"加载文件出错 {filepath}: {str(e)}")
             return default if default is not None else {}
+
+    def _save_json(self, filepath: str, data: Dict):
+        """保存JSON数据到文件"""
+        try:
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            with open(filepath, 'w') as f:
+                json.dump(data, f, indent=2, sort_keys=True)
+                logger.info(f"成功保存数据到: {filepath}")
+        except Exception as e:
+            logger.error(f"保存文件出错 {filepath}: {str(e)}")
 
     def _load_modules_data(self) -> Dict[str, Dict]:
         """从modules文件夹加载所有模块数据"""
@@ -152,13 +168,7 @@ class ModuleUpdateChecker:
 
     def _save_last_versions(self):
         """保存最新版本信息"""
-        try:
-            os.makedirs('json', exist_ok=True)
-            with open('json/last_versions.json', 'w') as f:
-                json.dump(self.last_versions, f, indent=2, sort_keys=True)
-                logger.info("成功保存版本信息")
-        except Exception as e:
-            logger.error(f"保存 last_versions.json 时出错: {str(e)}")
+        self._save_json('json/last_versions.json', self.last_versions)
 
     async def check_updates(self):
         """检查模块更新"""
