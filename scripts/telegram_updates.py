@@ -80,41 +80,25 @@ class ModuleUpdateChecker:
         """加载JSON文件"""
         if default is None:
             default = {}
-        
+
+        # 如果文件不存在，直接返回默认值
+        if not os.path.exists(filepath):
+            logger.warning(f"文件不存在: {filepath}")
+            return default
+
         try:
-            # 如果文件不存在，创建新文件
-            if not os.path.exists(filepath):
-                logger.warning(f"文件不存在: {filepath}, 创建新文件")
-                self._save_json(filepath, default)
-                return default
-            
-            # 读取文件内容
+            # 直接尝试读取和解析JSON
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            return data
+        except (json.JSONDecodeError, UnicodeDecodeError, IOError) as e:
+            logger.error(f"读取JSON文件失败 {filepath}: {str(e)}")
+            # 如果文件有问题，删除它并返回默认值
             try:
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    content = f.read().strip()
-                    
-                # 如果文件为空，使用默认值
-                if not content:
-                    logger.warning(f"文件为空: {filepath}, 使用默认值")
-                    self._save_json(filepath, default)
-                    return default
-                    
-                # 尝试解析 JSON
-                try:
-                    data = json.loads(content)
-                    return data
-                except json.JSONDecodeError as e:
-                    logger.error(f"JSON解析错误 {filepath}: {str(e)}, 使用默认值")
-                    self._save_json(filepath, default)
-                    return default
-                    
-            except Exception as e:
-                logger.error(f"读取文件出错 {filepath}: {str(e)}, 使用默认值")
-                self._save_json(filepath, default)
-                return default
-            
-        except Exception as e:
-            logger.error(f"处理文件时出错 {filepath}: {str(e)}, 使用默认值")
+                os.remove(filepath)
+                logger.info(f"已删除损坏的文件: {filepath}")
+            except OSError:
+                pass
             return default
 
     def _save_json(self, filepath: str, data: Dict):
@@ -123,14 +107,13 @@ class ModuleUpdateChecker:
             # 确保目录存在
             os.makedirs(os.path.dirname(filepath), exist_ok=True)
             
-            # 保存文件
+            # 直接保存JSON
             with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2, sort_keys=True, ensure_ascii=False)
-                f.write('\n')  # 添加最后的换行符
-                
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            
             logger.info(f"成功保存数据到: {filepath}")
         except Exception as e:
-            logger.error(f"保存文件出错 {filepath}: {str(e)}")
+            logger.error(f"保存JSON文件失败 {filepath}: {str(e)}")
 
     def _load_modules_data(self) -> Dict[str, Dict]:
         """从modules文件夹加载所有模块数据"""
@@ -161,34 +144,12 @@ class ModuleUpdateChecker:
             except Exception as e:
                 logger.error(f"处理模块 {module_id} 时出错: {str(e)}")
         
-        # 删除多余的模块
-        removed_modules = []
-        for module_id in list(self.last_versions.keys()):
-            if module_id not in current_modules:
-                removed_modules.append(module_id)
-                del self.last_versions[module_id]
+        # 使用新的字典替换旧的
+        self.last_versions = current_modules
         
-        if removed_modules:
-            logger.info(f"删除了不存在的模块: {', '.join(removed_modules)}")
-        
-        # 添加新模块
-        added_modules = []
-        for module_id, version_code in current_modules.items():
-            if module_id not in self.last_versions:
-                self.last_versions[module_id] = version_code
-                added_modules.append(module_id)
-        
-        if added_modules:
-            logger.info(f"添加了新模块: {', '.join(added_modules)}")
-        
-        # 如果有变化，保存文件
-        if added_modules or removed_modules:
-            self._save_last_versions()
-            logger.info("已更新 last_versions.json 文件")
-
-    def _save_last_versions(self):
-        """保存最新版本信息"""
+        # 保存更新后的版本信息
         self._save_json('json/last_versions.json', self.last_versions)
+        logger.info("已更新 last_versions.json 文件")
 
     async def check_updates(self):
         """检查模块更新"""
