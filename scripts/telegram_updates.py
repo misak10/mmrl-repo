@@ -105,30 +105,38 @@ def check_for_module_updates():
             latest = module.get("versions")[-1]
  
             if id not in last_versions or last_versions[id] != version_code:
-                message = f"""<b>{name}</b>
-<i>版本:</i> {version} ({version_code})
+                message = f"""🔰 <b>{name}</b>
 
-{f"""📃 {desc}
+📱 <b>版本信息</b>
+└─ <code>{version}</code> (Build {version_code})
 
-<blockquote>{module.get("note").get("message")}</blockquote>""" if module.get("note") and module.get("note").get("message") else f"📃 {desc}"}
+📝 <b>模块描述</b>
+└─ {desc}
 
-<b>作者:</b> {author}
-<b>关注:</b> @module_update
-"""
+{f'''💬 <b>更新说明</b>
+└─ <i>{module.get("note").get("message")}</i>
+
+''' if module.get("note") and module.get("note").get("message") else ""}👨‍💻 <b>开发者</b>
+└─ {author}
+
+📢 <b>频道关注</b>
+└─ @module_update
+
+#模块更新 #{id}"""
 
                 section_1 = []
                 support_urls = []
                 section_2 = []
 
                 if latest.get("zipUrl"):
-                    section_1.append({'text': '📦 下载', 'url': latest.get("zipUrl")})
+                    section_1.append({'text': '📦 下载安装包', 'url': latest.get("zipUrl")})
 
                 if source:
-                    support_urls.append({'text': '源码', 'url': source})
+                    support_urls.append({'text': '📂 源码仓库', 'url': source})
                 if support:
-                    support_urls.append({'text': '支持', 'url': support})
+                    support_urls.append({'text': '💭 交流反馈', 'url': support})
                 if donate:
-                    section_2.append({'text': '赞助', 'url': donate})
+                    section_2.append({'text': '🎁 支持开发者', 'url': donate})
 
                 buttons = [section_1,support_urls,section_2]
 
