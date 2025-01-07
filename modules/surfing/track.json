@@ -1,7 +1,9 @@
 {
-    "id": "surfing",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/Surfing.json",
-    "source": "https://github.com/MoGuangYu/Surfing"
+  "id": "surfing",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/Surfing.json",
+  "source": "https://github.com/MoGuangYu/Surfing",
+  "last_update": 1731944201.0,
+  "versions": 1
 }

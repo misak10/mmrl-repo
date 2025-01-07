@@ -1,7 +1,9 @@
 {
-    "id": "trickystore",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
-    "source": "https://github.com/5ec1cff/TrickyStore"
+  "id": "trickystore",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
+  "source": "https://github.com/5ec1cff/TrickyStore",
+  "last_update": 1730124120.0,
+  "versions": 1
 }
