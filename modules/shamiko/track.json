@@ -6,7 +6,9 @@
     "source": "https://github.com/LSPosed/LSPosed.github.io",
     "options": {
         "archive": {
-            "compression": "lzma"
+            "compression": "store",
+            "force_extract": true,
+            "ignore_compression": true
         }
     }
 }
