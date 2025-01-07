@@ -8,9 +8,105 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736235918.375235
+    "timestamp": 1736239148.854983
   },
   "modules": [
+    {
+      "id": "adguardhome",
+      "name": "AdGuardHome for Magisk",
+      "version": "20241214",
+      "versionCode": 29,
+      "author": "twoone3",
+      "description": "[state] Filter ads at the DNS level",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1734174046.0,
+      "size": 9649308,
+      "features": {
+        "service": true,
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1734174046.0,
+          "version": "20241214",
+          "versionCode": 29,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.md",
+          "size": 9649308
+        }
+      ]
+    },
+    {
+      "id": "adguardhome",
+      "name": "AdGuardHome for Magisk",
+      "version": "20241214",
+      "versionCode": 29,
+      "author": "twoone3",
+      "description": "[state] Filter ads at the DNS level",
+      "verified": false,
+      "added": 0,
+      "size": 9649308,
+      "features": {
+        "service": true,
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1734174046.0,
+          "version": "20241214",
+          "versionCode": 29,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.md",
+          "size": 9649308
+        }
+      ]
+    },
+    {
+      "id": "asoulopt",
+      "name": "A-SOUL Games Optimization",
+      "version": "Azusa",
+      "versionCode": 272,
+      "author": "nakixii",
+      "description": "Game threads tweaker for Android.",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1735942841.0,
+      "size": 13969,
+      "features": {
+        "service": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/nakixii/Magisk_AsoulOpt",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1735942841.0,
+          "version": "Azusa",
+          "versionCode": 272,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Azusa_272.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Azusa_272.md",
+          "size": 13969
+        }
+      ]
+    },
     {
       "id": "bindhosts",
       "name": "bindhosts",
@@ -106,20 +202,8 @@
       "versionCode": 485,
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
-      "manager": {
-        "kernelsu": {
-          "min": 10940
-        },
-        "ksunext": {
-          "min": 10940
-        },
-        "magisk": {
-          "min": 26402
-        }
-      },
       "verified": false,
       "added": 0,
-      "timestamp": 1735825712.0,
       "size": 3433554,
       "features": {
         "service": true,
@@ -131,9 +215,7 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/Dr-TSNG/ZygiskNext",
-        "antifeatures": [
-          "ClosedSource"
-        ]
+        "antifeatures": null
       },
       "versions": [
         {

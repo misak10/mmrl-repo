@@ -1,0 +1,14 @@
+{
+  "id": "adguardhome",
+  "timestamp": 1734174046.0,
+  "versions": [
+    {
+      "timestamp": 1734174046.0,
+      "version": "20241214",
+      "versionCode": 29,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.md",
+      "size": 9649308
+    }
+  ]
+}

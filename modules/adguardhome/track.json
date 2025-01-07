@@ -1,0 +1,9 @@
+{
+  "id": "adguardhome",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/version.json",
+  "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+  "last_update": 1734174046.0,
+  "versions": 1
+}
