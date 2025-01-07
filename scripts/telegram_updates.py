@@ -72,11 +72,25 @@ def check_for_module_updates():
     try:
         last_versions = {}
         
+        # 更安全的文件读取和处理
         try:
-            with open('json/last_versions.json', 'r') as f:
-                last_versions = json.load(f)
-        except FileNotFoundError:
-            pass
+            if os.path.exists('json/last_versions.json'):
+                with open('json/last_versions.json', 'r') as f:
+                    content = f.read().strip()
+                    if content:  # 确保文件不为空
+                        try:
+                            last_versions = json.loads(content)
+                        except json.JSONDecodeError:
+                            print("JSON文件格式错误，重置为空字典")
+                            last_versions = {}
+            else:
+                # 如果文件不存在，创建目录和空文件
+                os.makedirs('json', exist_ok=True)
+                with open('json/last_versions.json', 'w') as f:
+                    json.dump({}, f, indent=2)
+        except Exception as e:
+            print(f"处理版本文件时出错: {e}")
+            last_versions = {}
 
         for module in main_data.get("modules", []):
             id = module.get("id")
@@ -127,8 +141,13 @@ def check_for_module_updates():
 
                 print(result)
 
-        with open('json/last_versions.json', 'w') as f:
-            json.dump(last_versions, f)
+        # 更安全的文件保存
+        try:
+            os.makedirs('json', exist_ok=True)
+            with open('json/last_versions.json', 'w') as f:
+                json.dump(last_versions, f, indent=2)
+        except Exception as e:
+            print(f"保存版本文件时出错: {e}")
 
     except Exception as e:
         print(f"错误: {e}")
