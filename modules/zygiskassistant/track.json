@@ -1,7 +1,9 @@
 {
-    "id":"zygiskassistant",
-    "enable":true,
-    "verified":false,
-    "update_to":"https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/refs/heads/main/update_metadata/update.json",
-    "source":"https://github.com/snake-4/Zygisk-Assistant"
+  "id": "zygiskassistant",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/refs/heads/main/update_metadata/update.json",
+  "source": "https://github.com/snake-4/Zygisk-Assistant",
+  "last_update": 1723905223.0,
+  "versions": 1
 }
