@@ -2,22 +2,6 @@
   "id": "zygisknext",
   "enable": true,
   "verified": false,
-  "update_to": "https://api.nullptr.icu/android/zygisk-next/static/update.json",
-  "source": "https://github.com/Dr-TSNG/ZygiskNext",
-  "manager": {
-    "kernelsu": {
-      "min": 10940
-    },
-    "ksunext": {
-      "min": 10940
-    },
-    "magisk": {
-      "min": 26402
-    }
-  },
-  "antifeatures": [
-    "ClosedSource"
-  ],
-  "last_update": 1735825712.0,
-  "versions": 1
+  "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ZygiskNext/update.json",
+  "source": "https://github.com/Dr-TSNG/ZygiskNext"
 }
