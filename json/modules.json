@@ -8,7 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736235830.896604
+    "timestamp": 1736235918.375235
   },
   "modules": [
     {
@@ -190,6 +190,7 @@
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "verified": true,
       "added": 0,
+      "timestamp": 1695131134.0,
       "size": 1070639,
       "features": {
         "post_fs_data": true,
@@ -208,7 +209,7 @@
           "version": "v13.5.1",
           "versionCode": 319,
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_319.zip",
-          "changelog": "",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_319.md",
           "size": 1070639
         }
       ]
