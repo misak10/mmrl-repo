@@ -2,7 +2,7 @@
     "id": "zygisksui",
     "enable": true,
     "verified": false,
-    "update_to": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1.zip",
+    "update_to": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1-release.zip",
     "source": "https://github.com/RikkaApps/Sui",
     "support": "https://github.com/RikkaApps/Sui/issues",
     "categories": [
