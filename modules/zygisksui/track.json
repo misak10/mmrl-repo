@@ -3,15 +3,33 @@
     "enable": true,
     "verified": false,
     "update_to": "https://github.com/RikkaApps/Sui.git",
+    "changelog": "https://raw.githubusercontent.com/RikkaApps/Sui/master/CHANGELOG.md",
     "source": "https://github.com/RikkaApps/Sui",
+    "homepage": "https://github.com/RikkaApps/Sui",
     "support": "https://github.com/RikkaApps/Sui/issues",
+    "donate": "",
+    "license": "GPL-3.0",
+    "max_num": 1,
+    "maxApi": 0,
+    "minApi": 0,
+    "category": "System",
     "categories": [
-      "System",
-      "Tools"
+        "System",
+        "Tools",
+        "Zygisk"
     ],
+    "icon": "",
+    "cover": "",
     "screenshots": [],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
     "require": [],
+    "arch": [],
+    "devices": [],
     "antifeatures": [],
-    "versions": 1
-  }
+    "added": 1445340430.714226137,
+    "last_update": 1735825712.0,
+    "versions": 1,
+    "note": {
+        "message": "Please download from latest release with file name 'sui-zygisk-*.zip'"
+    }
+}
