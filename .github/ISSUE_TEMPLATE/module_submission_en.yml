@@ -1,0 +1,47 @@
+name: Module Submission
+description: Submit a new module to the repository
+title: "[Module Submission]: "
+labels: ["module-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting a module! Please fill in the following information to help us better process your submission.
+        
+  - type: input
+    id: module-name
+    attributes:
+      label: Module Name
+      description: Please enter the name of the module
+      placeholder: "e.g.: Zygisk Next"
+    validations:
+      required: true
+
+  - type: input
+    id: module-source
+    attributes:
+      label: Module Source
+      description: Please provide the GitHub/GitLab repository URL or other source address of the module
+      placeholder: "e.g.: https://github.com/Dr-TSNG/ZygiskNext"
+    validations:
+      required: true
+
+  - type: textarea
+    id: module-description
+    attributes:
+      label: Module Description
+      description: Please briefly describe the functionality of this module
+      placeholder: "Please describe the main features and purpose of the module..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Submission Confirmation
+      description: Please confirm the following before submission
+      options:
+        - label: I have confirmed that the module works properly
+          required: true
+        - label: I have confirmed that the module has not been submitted to the repository before
+          required: true 
