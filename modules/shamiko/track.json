@@ -2,6 +2,6 @@
     "id": "shamiko",
     "enable": true,
     "verified": false,
-    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/LSPosed.github.io/update.json",
-    "source": "https://github.com/LSPosed/LSPosed.github.io"
+    "update_to": "https://lsposed.github.io/releases/shamiko.json",
+    "source": "https://github.com/LSPosed/LSPosed.github.io/releases"
 }
