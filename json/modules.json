@@ -8,7 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736228405.730533
+    "timestamp": 1736228687.868733
   },
   "modules": [
     {
@@ -169,6 +169,46 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.6_485-ca2c5c0-release.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.6_485-ca2c5c0-release.md",
           "size": 3433554
+        }
+      ]
+    },
+    {
+      "id": "zygisksui",
+      "name": "Zygisk - Sui",
+      "version": "v13.5.1",
+      "versionCode": 319,
+      "author": "Rikka",
+      "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
+      "categories": [
+        "System",
+        "Tools",
+        "Zygisk"
+      ],
+      "support": "https://github.com/RikkaApps/Sui/issues",
+      "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1695131134.0,
+      "size": 1070639,
+      "features": {
+        "post_fs_data": true,
+        "sepolicy": true,
+        "apks": true
+      },
+      "track": {
+        "type": "ONLINE_ZIP",
+        "added": null,
+        "source": "https://github.com/RikkaApps/Sui",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1695131134.0,
+          "version": "v13.5.1",
+          "versionCode": 319,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_319.zip",
+          "changelog": "",
+          "size": 1070639
         }
       ]
     }

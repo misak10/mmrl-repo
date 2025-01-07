@@ -1,14 +1,16 @@
 {
-    "id": "zygisksui",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1-release.zip",
-    "source": "https://github.com/RikkaApps/Sui",
-    "support": "https://github.com/RikkaApps/Sui/issues",
-    "categories": [
-        "System",
-        "Tools",
-        "Zygisk"
-    ],
-    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md"
+  "id": "zygisksui",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1-release.zip",
+  "source": "https://github.com/RikkaApps/Sui",
+  "support": "https://github.com/RikkaApps/Sui/issues",
+  "categories": [
+    "System",
+    "Tools",
+    "Zygisk"
+  ],
+  "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
+  "last_update": 1695131134.0,
+  "versions": 1
 }
