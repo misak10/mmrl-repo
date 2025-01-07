@@ -78,37 +78,57 @@ class ModuleUpdateChecker:
 
     def _load_json(self, filepath: str, default: Any = None) -> Dict:
         """加载JSON文件"""
+        if default is None:
+            default = {}
+        
         try:
+            # 如果文件不存在，创建新文件
             if not os.path.exists(filepath):
                 logger.warning(f"文件不存在: {filepath}, 创建新文件")
-                os.makedirs(os.path.dirname(filepath), exist_ok=True)
-                self._save_json(filepath, default if default is not None else {})
-                return default if default is not None else {}
+                self._save_json(filepath, default)
+                return default
             
-            with open(filepath, 'r') as f:
-                content = f.read().strip()
-                if not content:  # 如果文件为空
+            # 读取文件内容
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    content = f.read().strip()
+                    
+                # 如果文件为空，使用默认值
+                if not content:
                     logger.warning(f"文件为空: {filepath}, 使用默认值")
-                    self._save_json(filepath, default if default is not None else {})
-                    return default if default is not None else {}
-                
+                    self._save_json(filepath, default)
+                    return default
+                    
+                # 尝试解析 JSON
                 try:
-                    return json.loads(content)
+                    data = json.loads(content)
+                    return data
                 except json.JSONDecodeError as e:
                     logger.error(f"JSON解析错误 {filepath}: {str(e)}, 使用默认值")
-                    self._save_json(filepath, default if default is not None else {})
-                    return default if default is not None else {}
+                    self._save_json(filepath, default)
+                    return default
+                    
+            except Exception as e:
+                logger.error(f"读取文件出错 {filepath}: {str(e)}, 使用默认值")
+                self._save_json(filepath, default)
+                return default
+            
         except Exception as e:
-            logger.error(f"加载文件出错 {filepath}: {str(e)}")
-            return default if default is not None else {}
+            logger.error(f"处理文件时出错 {filepath}: {str(e)}, 使用默认值")
+            return default
 
     def _save_json(self, filepath: str, data: Dict):
         """保存JSON数据到文件"""
         try:
+            # 确保目录存在
             os.makedirs(os.path.dirname(filepath), exist_ok=True)
-            with open(filepath, 'w') as f:
-                json.dump(data, f, indent=2, sort_keys=True)
-                logger.info(f"成功保存数据到: {filepath}")
+            
+            # 保存文件
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, sort_keys=True, ensure_ascii=False)
+                f.write('\n')  # 添加最后的换行符
+                
+            logger.info(f"成功保存数据到: {filepath}")
         except Exception as e:
             logger.error(f"保存文件出错 {filepath}: {str(e)}")
 
