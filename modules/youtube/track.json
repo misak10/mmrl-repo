@@ -1,0 +1,7 @@
+{
+  "id": "youtube",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://github.com/j-hc/revanced-magisk-module/raw/refs/heads/update/youtube-update.json",
+  "source": "https://github.com/j-hc/revanced-magisk-module"
+}
