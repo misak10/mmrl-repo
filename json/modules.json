@@ -45,38 +45,6 @@
       ]
     },
     {
-      "id": "adguardhome",
-      "name": "AdGuardHome for Magisk",
-      "version": "20241214",
-      "versionCode": 29,
-      "author": "twoone3",
-      "description": "[state] Filter ads at the DNS level",
-      "verified": false,
-      "added": 0,
-      "size": 9649308,
-      "features": {
-        "service": true,
-        "action": true,
-        "webroot": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
-        "antifeatures": null
-      },
-      "versions": [
-        {
-          "timestamp": 1734174046.0,
-          "version": "20241214",
-          "versionCode": 29,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.md",
-          "size": 9649308
-        }
-      ]
-    },
-    {
       "id": "asoulopt",
       "name": "A-SOUL Games Optimization",
       "version": "Azusa",
