@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki-Module Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1736256093.107092
+    "timestamp": 1736256443.20298
   },
   "modules": [
     {
@@ -229,6 +229,39 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.md",
           "size": 60144
+        }
+      ]
+    },
+    {
+      "id": "lingeringsound_ads",
+      "name": "\u53bb\u5e7f\u544a",
+      "version": "\u6a74\u70abv235",
+      "versionCode": 236,
+      "author": "@coolapk 10007",
+      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27335 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1736250468.0,
+      "size": 794100,
+      "features": {
+        "service": true,
+        "action": true,
+        "apks": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://lingeringsound.github.io/10007",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1736250468.0,
+          "version": "\u6a74\u70abv235",
+          "versionCode": 236,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v235_236.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v235_236.md",
+          "size": 794100
         }
       ]
     },

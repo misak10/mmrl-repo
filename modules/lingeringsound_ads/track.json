@@ -1,7 +1,9 @@
 {
-    "id":"lingeringsound_ads",
-    "enable":true,
-    "verified":false,
-    "update_to":"https://raw.githubusercontent.com/lingeringsound/10007/refs/heads/main/update.json",
-    "source":"https://lingeringsound.github.io/10007"
+  "id": "lingeringsound_ads",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/lingeringsound/10007/refs/heads/main/update.json",
+  "source": "https://lingeringsound.github.io/10007",
+  "last_update": 1736250468.0,
+  "versions": 1
 }
