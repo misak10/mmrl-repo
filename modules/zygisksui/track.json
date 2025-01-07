@@ -2,8 +2,8 @@
     "id": "zygisksui",
     "enable": true,
     "verified": false,
-    "update_to": "https://github.com/RikkaApps/Sui.git",
-    "changelog": "https://raw.githubusercontent.com/RikkaApps/Sui/master/CHANGELOG.md",
+    "update_to": "https://misak10.github.io/mmrl-repo/modules/zygisksui/update.json",
+    "changelog": "",
     "source": "https://github.com/RikkaApps/Sui",
     "homepage": "https://github.com/RikkaApps/Sui",
     "support": "https://github.com/RikkaApps/Sui/issues",
@@ -28,8 +28,5 @@
     "antifeatures": [],
     "added": 1445340430.714226137,
     "last_update": 1735825712.0,
-    "versions": 1,
-    "note": {
-        "message": "Please download from latest release with file name 'sui-zygisk-*.zip'"
-    }
+    "versions": 1
 }
