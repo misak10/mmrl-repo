@@ -6,7 +6,7 @@
     "source": "https://github.com/LSPosed/LSPosed.github.io",
     "options": {
         "archive": {
-            "compression": "deflate"
+            "compression": "lzma"
         }
     }
 }
