@@ -2,31 +2,13 @@
     "id": "zygisksui",
     "enable": true,
     "verified": false,
-    "update_to": "https://misak10.github.io/mmrl-repo/modules/zygisksui/update.json",
-    "changelog": "",
+    "update_to": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1.zip",
     "source": "https://github.com/RikkaApps/Sui",
-    "homepage": "https://github.com/RikkaApps/Sui",
     "support": "https://github.com/RikkaApps/Sui/issues",
-    "donate": "",
-    "license": "GPL-3.0",
-    "max_num": 1,
-    "maxApi": 0,
-    "minApi": 0,
-    "category": "System",
     "categories": [
         "System",
         "Tools",
         "Zygisk"
     ],
-    "icon": "",
-    "cover": "",
-    "screenshots": [],
-    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
-    "require": [],
-    "arch": [],
-    "devices": [],
-    "antifeatures": [],
-    "added": 1445340430.714226137,
-    "last_update": 1735825712.0,
-    "versions": 1
+    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md"
 }
