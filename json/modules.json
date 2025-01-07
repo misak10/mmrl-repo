@@ -8,7 +8,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736231532.337197
+    "timestamp": 1736235830.896604
   },
   "modules": [
     {
@@ -188,18 +188,8 @@
       "versionCode": 319,
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
-      "added": 1445340430.7142262,
-      "categories": [
-        "System",
-        "Tools",
-        "Zygisk"
-      ],
-      "homepage": "https://github.com/RikkaApps/Sui",
-      "support": "https://github.com/RikkaApps/Sui/issues",
-      "license": "GPL-3.0",
-      "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/master/README.md",
-      "verified": false,
-      "timestamp": 1735825712.0,
+      "verified": true,
+      "added": 0,
       "size": 1070639,
       "features": {
         "post_fs_data": true,
@@ -207,8 +197,8 @@
         "apks": true
       },
       "track": {
-        "type": "UNKNOWN",
-        "added": 1445340430.7142262,
+        "type": "ONLINE_JSON",
+        "added": null,
         "source": "https://github.com/RikkaApps/Sui",
         "antifeatures": null
       },
