@@ -3,11 +3,5 @@
     "enable": true,
     "verified": false,
     "update_to": "https://lsposed.github.io/releases/shamiko.json",
-    "source": "https://github.com/LSPosed/LSPosed.github.io/releases",
-    "require": [
-        "zygisk"
-    ],
-    "antifeatures": [
-        "ClosedSource"
-    ]
+    "source": "https://github.com/LSPosed/LSPosed.github.io"
 }

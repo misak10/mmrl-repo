@@ -1,0 +1,7 @@
+{
+    "id": "PlayIntegrityFix",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
+    "source": "https://github.com/chiteroman/PlayIntegrityFix"
+}

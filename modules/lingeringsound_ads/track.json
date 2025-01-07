@@ -1,0 +1,7 @@
+{
+    "id":"lingeringsound_ads",
+    "enable":true,
+    "verified":false,
+    "update_to":"https://raw.githubusercontent.com/lingeringsound/10007/refs/heads/main/update.jsonn",
+    "source":"https://lingeringsound.github.io/10007"
+}
