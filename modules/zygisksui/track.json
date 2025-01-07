@@ -1,7 +1,7 @@
 {
   "id": "zygisksui",
   "enable": true,
-  "verified": true,
+  "verified": false,
   "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/Sui/update.json",
   "source": "https://github.com/RikkaApps/Sui",
   "last_update": 1695131134.0,
