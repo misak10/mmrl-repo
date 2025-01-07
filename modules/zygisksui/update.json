@@ -1,14 +1,6 @@
 {
-    "id": "zygisksui",
-    "timestamp": 1735825712.0,
-    "versions": [
-        {
-            "timestamp": 1735825712.0,
-            "version": "v13.5.1",
-            "versionCode": 135001,
-            "zipUrl": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1-release.zip",
-            "changelog": "",
-            "size": 0
-        }
-    ]
+    "version": "v13.5.1",
+    "versionCode": 135001,
+    "zipUrl": "https://github.com/RikkaApps/Sui/releases/download/v13.5.1/sui-zygisk-v13.5.1-release.zip",
+    "changelog": ""
 }
