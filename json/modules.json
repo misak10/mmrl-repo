@@ -8,9 +8,43 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1736239148.854983
+    "timestamp": 1736240340.908042
   },
   "modules": [
+    {
+      "id": "VoyagerKernel",
+      "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
+      "version": "3.3.4-f780c832",
+      "versionCode": 334,
+      "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
+      "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1736240338.169501,
+      "size": 6188674,
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": null,
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1736240338.169501,
+          "version": "3.3.4-f780c832",
+          "versionCode": 334,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.3.4-f780c832_334.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.3.4-f780c832_334.md",
+          "size": 6188674
+        }
+      ]
+    },
     {
       "id": "adguardhome",
       "name": "AdGuardHome for Magisk",
@@ -203,7 +237,7 @@
       "versionCode": 319,
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
-      "verified": true,
+      "verified": false,
       "added": 0,
       "timestamp": 1695131134.0,
       "size": 1070639,
