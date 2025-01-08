@@ -1,4 +1,4 @@
-# Misaki-Module Repo
+# Misaki-Modules Repo
 
 <div align="center">
     <img src="assets/cover.webp" alt="Misaki-Module Repo" width="50%">
@@ -16,7 +16,7 @@
 
 ## 📱 简介
 
-Misaki-Module Repo 是一个专注于提供高质量 Magisk 模块的仓库。我们致力于为用户提供便捷的模块下载和管理体验。
+Misaki-Modules Repo 是一个专注于提供高质量 Magisk 模块的仓库。我们致力于为用户提供便捷的模块下载和管理体验。
 
 ## 🗂️ 仓库结构
 
