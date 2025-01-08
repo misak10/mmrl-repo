@@ -25,7 +25,7 @@
 如果您觉得这个项目对您有帮助，欢迎赞助支持：
 
 <a href="https://afdian.com/a/misak10">
-  <img src="src/afdian.png" alt="爱发电" width="20%">
+  <img src="src/afdian.png" alt="爱发电" width="10%">
 </a>
 
 ## 更多信息
