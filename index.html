@@ -7,36 +7,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            /* 亮色模式 - 明亮阳光色调 */
-            --primary: #ff9500;
-            --primary-hover: #ff8500;
-            --accent: #ff9500;
-            --accent-hover: #ff8500;
-            --background: #ffffff;
+            /* 亮色模式 - 简约高级灰 */
+            --primary: #333333;
+            --primary-hover: #1a1a1a;
+            --accent: #444444;
+            --accent-hover: #333333;
+            --background: #fafafa;
             --card-background: #ffffff;
             --card-border: rgba(0, 0, 0, 0.08);
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --text-main: #333333;
             --text-muted: #666666;
-            --gradient-start: #ff9500;
-            --gradient-end: #ff6b00;
+            --gradient-start: #444444;
+            --gradient-end: #333333;
             --container-margin: max(1rem, calc((100% - 1200px) / 2));
             --container-padding: 2rem;
+            --hover-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         [data-theme="dark"] {
-            /* 暗色模式 - 深邃暗黑 */
-            --primary: #ff9500;
-            --primary-hover: #ff8500;
-            --accent: #ff9500;
-            --accent-hover: #ff8500;
-            --background: #000000;
-            --card-background: #1a1a1a;
+            /* 暗色模式 - 深邃黑 */
+            --primary: #ffffff;
+            --primary-hover: #e0e0e0;
+            --accent: #ffffff;
+            --accent-hover: #e0e0e0;
+            --background: #111111;
+            --card-background: #1c1c1c;
             --card-border: rgba(255, 255, 255, 0.1);
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
             --text-main: #ffffff;
             --text-muted: #999999;
-            --gradient-start: #1a1a1a;
-            --gradient-end: #ff9500;
+            --gradient-start: #1c1c1c;
+            --gradient-end: #333333;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -118,8 +119,8 @@
             cursor: pointer;
             padding: 0.8rem;
             border-radius: 12px;
-            transition: all 0.3s ease;
-            background: var(--card-background);
+            transition: var(--hover-transition);
+            background: var(--background);
             border: 1px solid var(--card-border);
             color: var(--text-main);
             display: flex;
@@ -130,8 +131,8 @@
         }
         .theme-switch:hover {
             background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
+            color: var(--card-background);
+            border-color: var(--accent);
         }
         .stats {
             display: grid;
@@ -145,7 +146,7 @@
             padding: 2rem;
             border-radius: 16px;
             border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
+            transition: var(--hover-transition);
             position: relative;
             overflow: hidden;
         }
@@ -212,7 +213,8 @@
         }
         .module-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
         }
         .module-card:hover::before {
             opacity: 1;
@@ -264,7 +266,7 @@
             background: var(--background);
             color: var(--text-muted);
             border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
+            transition: var(--hover-transition);
         }
         [data-theme="dark"] .feature-tag {
             background: var(--card-background);
@@ -272,7 +274,7 @@
         }
         .feature-tag:hover {
             background: var(--accent);
-            color: white;
+            color: var(--card-background);
             border-color: var(--accent);
         }
         .action-buttons {
@@ -286,7 +288,7 @@
             font-weight: 500;
             border-radius: 12px;
             padding: 0.8rem;
-            transition: all 0.3s ease;
+            transition: var(--hover-transition);
             text-align: center;
             display: flex;
             align-items: center;
@@ -297,13 +299,23 @@
         }
         .action-buttons a[role="button"] {
             background: var(--accent);
-            color: white;
-            border: none;
+            color: var(--card-background);
+            border: 1px solid var(--accent);
+            transition: var(--hover-transition);
+        }
+        .action-buttons a[role="button"]:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .action-buttons a[role="button"].outline {
             background: transparent;
-            border: 1px solid var(--accent);
             color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+        .action-buttons a[role="button"].outline:hover {
+            background: var(--accent);
+            color: var(--card-background);
         }
         [data-theme="dark"] .action-buttons a[role="button"] {
             background: var(--accent);
@@ -331,26 +343,25 @@
             border-radius: 12px;
             font-size: 1rem;
             border: 1px solid var(--card-border);
-            background: var(--card-background);
+            background: var(--background);
             color: var(--text-main);
             width: 100%;
-            transition: all 0.3s ease;
+            transition: var(--hover-transition);
             -webkit-appearance: none;
             appearance: none;
         }
         .search-container input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
-            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
         select {
             padding: 0.8rem 1rem;
             border-radius: 12px;
             border: 1px solid var(--card-border);
-            background: var(--card-background);
+            background: var(--background);
             color: var(--text-main);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--hover-transition);
             min-width: 140px;
         }
         select:hover {
@@ -358,7 +369,7 @@
         }
         select:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
         footer {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
@@ -388,11 +399,12 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            transition: all 0.3s ease;
+            transition: var(--hover-transition);
         }
         .quick-links a:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .loading {
             position: fixed;
