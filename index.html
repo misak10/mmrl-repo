@@ -4,36 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misaki-Module Repo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            --primary: #2c3e50;
-            --primary-hover: #34495e;
-            --accent: #3498db;
-            --accent-hover: #2980b9;
-            --background: #f8fafc;
+            --primary: #1a1a1a;
+            --primary-hover: #000000;
+            --accent: #0066cc;
+            --accent-hover: #0052a3;
+            --background: #ffffff;
             --card-background: #ffffff;
-            --card-border: rgba(0,0,0,0.08);
+            --card-border: rgba(0,0,0,0.1);
             --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --text-main: #2c3e50;
-            --text-muted: #64748b;
-            --gradient-start: #2c3e50;
-            --gradient-end: #3498db;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --gradient-start: #1a1a1a;
+            --gradient-end: #0066cc;
         }
         [data-theme="dark"] {
-            --primary: #e2e8f0;
-            --primary-hover: #f1f5f9;
-            --accent: #60a5fa;
-            --accent-hover: #3b82f6;
-            --background: #0f172a;
-            --card-background: #1e293b;
+            --primary: #ffffff;
+            --primary-hover: #e6e6e6;
+            --accent: #3399ff;
+            --accent-hover: #66b3ff;
+            --background: #0a0a0a;
+            --card-background: #1a1a1a;
             --card-border: rgba(255,255,255,0.1);
             --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --gradient-start: #1e293b;
-            --gradient-end: #3b82f6;
+            --text-main: #ffffff;
+            --text-muted: #cccccc;
+            --gradient-start: #000000;
+            --gradient-end: #3399ff;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -68,10 +67,11 @@
             box-shadow: var(--card-shadow);
             margin-bottom: 2rem;
             transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
         }
         .hero img:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -110,12 +110,14 @@
             padding: 0.8rem;
             border-radius: 12px;
             transition: all 0.3s ease;
-            background: var(--background);
+            background: var(--card-background);
             border: 1px solid var(--card-border);
             color: var(--text-main);
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 40px;
+            height: 40px;
         }
         .theme-switch:hover {
             background: var(--accent);
@@ -173,16 +175,20 @@
             margin-top: 2rem;
         }
         .module-card {
+            background: var(--card-background);
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 1.5rem;
             transition: all 0.3s ease;
-            background: var(--card-background);
             height: 100%;
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
+        }
+        [data-theme="dark"] .module-card {
+            background: var(--card-background);
+            border-color: var(--card-border);
         }
         .module-card::before {
             content: '';
@@ -197,7 +203,7 @@
         }
         .module-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .module-card:hover::before {
             opacity: 1;
@@ -243,19 +249,17 @@
             margin-bottom: 1.5rem;
         }
         .feature-tag {
-            font-size: 0.8rem;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
             background: var(--background);
-            font-weight: 500;
             color: var(--text-muted);
-            transition: all 0.3s ease;
             border: 1px solid var(--card-border);
+        }
+        [data-theme="dark"] .feature-tag {
+            background: var(--card-background);
+            border-color: var(--card-border);
         }
         .feature-tag:hover {
             background: var(--accent);
             color: white;
-            transform: translateY(-2px);
             border-color: var(--accent);
         }
         .action-buttons {
@@ -281,10 +285,19 @@
         .action-buttons a[role="button"] {
             background: var(--accent);
             color: white;
+            border: none;
         }
         .action-buttons a[role="button"].outline {
             background: transparent;
             border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        [data-theme="dark"] .action-buttons a[role="button"] {
+            background: var(--accent);
+            color: white;
+        }
+        [data-theme="dark"] .action-buttons a[role="button"].outline {
+            border-color: var(--accent);
             color: var(--accent);
         }
         .search-container {
@@ -298,20 +311,24 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
+            pointer-events: none;
         }
         .search-container input {
             padding: 0.8rem 1rem 0.8rem 2.8rem;
             border-radius: 12px;
             font-size: 1rem;
             border: 1px solid var(--card-border);
-            background: var(--background);
+            background: var(--card-background);
             color: var(--text-main);
             width: 100%;
             transition: all 0.3s ease;
+            -webkit-appearance: none;
+            appearance: none;
         }
         .search-container input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+            outline: none;
         }
         select {
             padding: 0.8rem 1rem;
