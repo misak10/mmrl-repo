@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misaki-Module Repo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --primary-hover: #6d28d9;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .hero img {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            min-width: 150px;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .module-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            background: var(--card-background-color);
+        }
+        .module-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .module-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0;
+            color: var(--primary);
+        }
+        .module-version {
+            font-size: 0.9rem;
+            color: var(--muted-color);
+            background: var(--card-sectionning-background-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+        .module-author {
+            font-size: 0.95rem;
+            color: var(--muted-color);
+            margin-bottom: 0.8rem;
+        }
+        .module-description {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .module-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .feature-tag {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            background: var(--primary);
+            color: white;
+            opacity: 0.8;
+        }
+        .search-container {
+            margin: 2rem 0;
+            position: relative;
+        }
+        .search-container i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted-color);
+        }
+        .search-container input {
+            padding-left: 2.5rem;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .action-buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .quick-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <img src="assets/cover.webp" alt="Misaki-Module Repo">
+            <h1>Misaki-Module Repo</h1>
+            <p>基于 MMRL (Magisk Module Repository Loader) 的高质量模块仓库</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="totalModules">-</div>
+                <div>可用模块</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value"><i class="ri-github-fill"></i></div>
+                <div>开源项目</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value"><i class="ri-shield-check-fill"></i></div>
+                <div>安全可靠</div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <i class="ri-search-line"></i>
+            <input type="search" id="moduleSearch" placeholder="搜索模块名称、作者或描述...">
+        </div>
+
+        <div id="moduleList">
+            <!-- 模块列表将通过 JavaScript 动态加载 -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="quick-links">
+                <a href="https://github.com/misak10/mmrl-repo" target="_blank">
+                    <i class="ri-github-fill"></i> GitHub 仓库
+                </a>
+                <a href="https://github.com/misak10/mmrl-repo/issues/new" target="_blank">
+                    <i class="ri-add-circle-fill"></i> 提交模块
+                </a>
+                <a href="https://afdian.com/a/misak10" target="_blank">
+                    <i class="ri-heart-fill"></i> 赞助支持
+                </a>
+            </div>
+            <p>Made with <i class="ri-heart-fill" style="color: #ff4b4b;"></i> by Misaki</p>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchModules() {
+            try {
+                const response = await fetch('json/modules.json');
+                const data = await response.json();
+                return data.modules;
+            } catch (error) {
+                console.error('Error fetching modules:', error);
+                return [];
+            }
+        }
+
+        function getFeaturesList(features) {
+            const featureNames = {
+                service: '服务',
+                post_fs_data: '文件系统',
+                action: '操作',
+                webroot: 'Web界面',
+                sepolicy: 'SEPolicy',
+                apks: 'APK支持'
+            };
+            
+            return Object.entries(features || {})
+                .filter(([_, value]) => value === true)
+                .map(([key, _]) => featureNames[key] || key);
+        }
+
+        function renderModules(modules) {
+            const moduleList = document.getElementById('moduleList');
+            moduleList.innerHTML = modules.map(module => {
+                const features = getFeaturesList(module.features);
+                return `
+                    <article class="module-card">
+                        <div class="module-header">
+                            <h3 class="module-title">${module.name}</h3>
+                            <span class="module-version">v${module.version}</span>
+                        </div>
+                        <p class="module-author">
+                            <i class="ri-user-3-line"></i> ${module.author}
+                        </p>
+                        <p class="module-description">${module.description}</p>
+                        ${features.length > 0 ? `
+                            <div class="module-features">
+                                ${features.map(feature => `
+                                    <span class="feature-tag">${feature}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        <div class="action-buttons">
+                            <a href="${module.versions[0].zipUrl}" role="button">
+                                <i class="ri-download-2-line"></i> 下载
+                            </a>
+                            ${module.versions[0].changelog ? `
+                                <a href="${module.versions[0].changelog}" role="button" class="outline">
+                                    <i class="ri-file-list-3-line"></i> 更新日志
+                                </a>
+                            ` : ''}
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            document.getElementById('totalModules').textContent = modules.length;
+        }
+
+        function setupSearch() {
+            const searchInput = document.getElementById('moduleSearch');
+            let allModules = [];
+
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredModules = allModules.filter(module => 
+                    module.name.toLowerCase().includes(searchTerm) ||
+                    module.description.toLowerCase().includes(searchTerm) ||
+                    module.author.toLowerCase().includes(searchTerm)
+                );
+                renderModules(filteredModules);
+            });
+
+            fetchModules().then(modules => {
+                allModules = modules;
+                renderModules(modules);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', setupSearch);
+    </script>
+</body>
+</html> 
