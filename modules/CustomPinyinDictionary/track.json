@@ -1,0 +1,7 @@
+{
+  "id": "CustomPinyinDictionary",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/refs/heads/main/magisk/Gboard_update.json",
+  "source": "https://github.com/wuhgit/CustomPinyinDictionary"
+}
