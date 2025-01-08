@@ -1,0 +1,7 @@
+{
+  "id": "universal-gms-doze",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/refs/heads/master/module.json",
+  "source": "https://github.com/gloeyisk/universal-gms-doze"
+}
