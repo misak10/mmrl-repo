@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,53 +8,118 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            --primary: #7c3aed;
-            --primary-hover: #6d28d9;
+            --primary: #333;
+            --primary-hover: #000;
+            --card-border: rgba(0,0,0,0.1);
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        [data-theme="dark"] {
+            --primary: #fff;
+            --primary-hover: #e5e5e5;
+            --card-border: rgba(255,255,255,0.1);
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-            padding: 4rem 0;
+            background: var(--background-color);
+            padding: 6rem 0;
             text-align: center;
-            color: white;
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--card-border) 25%, transparent 25%) -40px 0,
+                        linear-gradient(-45deg, var(--card-border) 25%, transparent 25%) -40px 0;
+            background-size: 80px 80px;
+            opacity: 0.1;
         }
         .hero img {
             max-width: 800px;
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
             margin-bottom: 2rem;
+            transition: transform 0.3s ease;
         }
-        .stats {
+        .hero img:hover {
+            transform: scale(1.02);
+        }
+        .controls {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
             margin: 2rem 0;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .theme-switch {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .theme-switch:hover {
+            background: var(--card-border);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
         .stat-item {
             text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            min-width: 150px;
+            background: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
         }
         .stat-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         .module-card {
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
-            background: var(--card-background-color);
+            background: var(--background-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .module-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
         }
         .module-header {
             display: flex;
@@ -64,79 +129,117 @@
         }
         .module-title {
             font-size: 1.3rem;
-            font-weight: bold;
+            font-weight: 600;
             margin: 0;
             color: var(--primary);
         }
         .module-version {
             font-size: 0.9rem;
-            color: var(--muted-color);
-            background: var(--card-sectionning-background-color);
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.8rem;
             border-radius: 20px;
+            background: var(--card-border);
+            font-weight: 500;
         }
         .module-author {
             font-size: 0.95rem;
-            color: var(--muted-color);
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .module-description {
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
         }
         .module-features {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         .feature-tag {
             font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.8rem;
             border-radius: 20px;
-            background: var(--primary);
-            color: white;
-            opacity: 0.8;
+            background: var(--card-border);
+            font-weight: 500;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+        .action-buttons a {
+            flex: 1;
+            justify-content: center;
+            font-weight: 500;
+            border-radius: 8px;
+            padding: 0.8rem;
         }
         .search-container {
-            margin: 2rem 0;
             position: relative;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .search-container i {
             position: absolute;
             left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--muted-color);
         }
         .search-container input {
-            padding-left: 2.5rem;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .action-buttons a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
+            padding-left: 2.8rem;
+            border-radius: 8px;
+            font-size: 1rem;
         }
         footer {
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 5rem;
+            background: var(--background-color);
+            border-top: 1px solid var(--card-border);
         }
         .quick-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .quick-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        .quick-links a:hover {
+            background: var(--card-border);
+        }
+        select {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            background: var(--background-color);
+            color: var(--primary);
         }
         @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .control-group {
+                flex-wrap: wrap;
+            }
             .quick-links {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            .module-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -146,11 +249,36 @@
         <div class="container">
             <img src="assets/cover.webp" alt="Misaki-Module Repo">
             <h1>Misaki-Module Repo</h1>
-            <p>基于 MMRL (Magisk Module Repository Loader) 的高质量模块仓库</p>
+            <p>基于 MMRL 的高质量模块仓库</p>
         </div>
     </div>
 
     <main class="container">
+        <div class="controls">
+            <div class="control-group">
+                <select id="categoryFilter">
+                    <option value="">全部分类</option>
+                    <option value="system">系统工具</option>
+                    <option value="security">安全增强</option>
+                    <option value="customize">个性化</option>
+                </select>
+                <select id="sortOrder">
+                    <option value="name">按名称排序</option>
+                    <option value="date">按更新时间排序</option>
+                    <option value="author">按作者排序</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <div class="search-container">
+                    <i class="ri-search-line"></i>
+                    <input type="search" id="moduleSearch" placeholder="搜索模块名称、作者或描述...">
+                </div>
+                <div class="theme-switch" id="themeSwitch">
+                    <i class="ri-sun-line"></i>
+                </div>
+            </div>
+        </div>
+
         <div class="stats">
             <div class="stat-item">
                 <div class="stat-value" id="totalModules">-</div>
@@ -166,12 +294,7 @@
             </div>
         </div>
 
-        <div class="search-container">
-            <i class="ri-search-line"></i>
-            <input type="search" id="moduleSearch" placeholder="搜索模块名称、作者或描述...">
-        </div>
-
-        <div id="moduleList">
+        <div class="module-grid" id="moduleList">
             <!-- 模块列表将通过 JavaScript 动态加载 -->
         </div>
     </main>
@@ -194,6 +317,20 @@
     </footer>
 
     <script>
+        // 主题切换
+        const themeSwitch = document.getElementById('themeSwitch');
+        const icon = themeSwitch.querySelector('i');
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            icon.className = isDark ? 'ri-sun-line' : 'ri-moon-line';
+        }
+        
+        themeSwitch.addEventListener('click', toggleTheme);
+
+        // 模块数据处理
         async function fetchModules() {
             try {
                 const response = await fetch('json/modules.json');
@@ -220,10 +357,15 @@
                 .map(([key, _]) => featureNames[key] || key);
         }
 
+        function formatDate(timestamp) {
+            return new Date(timestamp * 1000).toLocaleDateString('zh-CN');
+        }
+
         function renderModules(modules) {
             const moduleList = document.getElementById('moduleList');
             moduleList.innerHTML = modules.map(module => {
                 const features = getFeaturesList(module.features);
+                const lastUpdate = formatDate(module.timestamp);
                 return `
                     <article class="module-card">
                         <div class="module-header">
@@ -232,6 +374,9 @@
                         </div>
                         <p class="module-author">
                             <i class="ri-user-3-line"></i> ${module.author}
+                            <span style="margin-left: auto; font-size: 0.8rem;">
+                                <i class="ri-time-line"></i> ${lastUpdate}
+                            </span>
                         </p>
                         <p class="module-description">${module.description}</p>
                         ${features.length > 0 ? `
@@ -258,27 +403,49 @@
             document.getElementById('totalModules').textContent = modules.length;
         }
 
-        function setupSearch() {
+        function setupFilters() {
             const searchInput = document.getElementById('moduleSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortOrder = document.getElementById('sortOrder');
             let allModules = [];
 
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const filteredModules = allModules.filter(module => 
-                    module.name.toLowerCase().includes(searchTerm) ||
+            function filterAndSortModules() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
+                const sort = sortOrder.value;
+
+                let filtered = allModules.filter(module => 
+                    (module.name.toLowerCase().includes(searchTerm) ||
                     module.description.toLowerCase().includes(searchTerm) ||
-                    module.author.toLowerCase().includes(searchTerm)
+                    module.author.toLowerCase().includes(searchTerm)) &&
+                    (!category || module.categories?.includes(category))
                 );
-                renderModules(filteredModules);
-            });
+
+                filtered.sort((a, b) => {
+                    switch(sort) {
+                        case 'date':
+                            return b.timestamp - a.timestamp;
+                        case 'author':
+                            return a.author.localeCompare(b.author);
+                        default:
+                            return a.name.localeCompare(b.name);
+                    }
+                });
+
+                renderModules(filtered);
+            }
+
+            searchInput.addEventListener('input', filterAndSortModules);
+            categoryFilter.addEventListener('change', filterAndSortModules);
+            sortOrder.addEventListener('change', filterAndSortModules);
 
             fetchModules().then(modules => {
                 allModules = modules;
-                renderModules(modules);
+                filterAndSortModules();
             });
         }
 
-        document.addEventListener('DOMContentLoaded', setupSearch);
+        document.addEventListener('DOMContentLoaded', setupFilters);
     </script>
 </body>
 </html> 
