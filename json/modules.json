@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1736352812.730696
+    "timestamp": 1736360095.979115
   },
   "modules": [
     {
@@ -43,6 +43,39 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.2_18200.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.2_18200.md",
           "size": 235036
+        }
+      ]
+    },
+    {
+      "id": "Uperf-Game-Turbo",
+      "name": "Uperf Game Turbo",
+      "version": "\ufe0f1.39 based on uperf 904",
+      "versionCode": 241112,
+      "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
+      "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1734703419.0,
+      "size": 1869219,
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "resetprop": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1734703419.0,
+          "version": "\ufe0f1.39 based on uperf 904",
+          "versionCode": 241112,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.39_based_on_uperf_904_241112.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.39_based_on_uperf_904_241112.md",
+          "size": 1869219
         }
       ]
     },
@@ -229,6 +262,38 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.md",
           "size": 60144
+        }
+      ]
+    },
+    {
+      "id": "fas-rs",
+      "name": "fas-rs",
+      "version": "v4.3.0",
+      "versionCode": 430,
+      "author": "shadow3",
+      "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1736346647.0,
+      "size": 1327831,
+      "features": {
+        "service": true,
+        "resetprop": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/shadow3aaa/fas-rs",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1736346647.0,
+          "version": "v4.3.0",
+          "versionCode": 430,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.3.0_430.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.3.0_430.md",
+          "size": 1327831
         }
       ]
     },

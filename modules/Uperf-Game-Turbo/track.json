@@ -3,5 +3,7 @@
   "enable": true,
   "verified": false,
   "update_to": "https://github.com/yinwanxi/Uperf-Game-Turbo/raw/refs/heads/master/version.json",
-  "source": "https://github.com/yinwanxi/Uperf-Game-Turbo"
+  "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
+  "last_update": 1734703419.0,
+  "versions": 1
 }
