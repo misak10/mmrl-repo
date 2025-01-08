@@ -2,6 +2,6 @@
   "id": "fas-rs",
   "enable": true,
   "verified": false,
-  "update_to": "https://github.com/shadow3aaa/fas-rs/blob/master/update/update.json",
+  "update_to": "https://github.com/shadow3aaa/fas-rs/raw/refs/heads/master/update/update.json",
   "source": "https://github.com/shadow3aaa/fas-rs"
 }
