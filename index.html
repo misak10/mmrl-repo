@@ -186,22 +186,21 @@
             gap: 2rem;
             margin: 2rem 0;
             position: relative;
-            z-index: 1;
         }
         .module-card {
             background: var(--card-background);
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
             position: relative;
-            overflow: hidden;
             box-shadow: var(--card-shadow);
-            margin-bottom: 1rem;
-            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-origin: center center;
+            will-change: transform, box-shadow;
+            isolation: isolate;
         }
         [data-theme="dark"] .module-card {
             background: var(--card-background);
@@ -210,27 +209,23 @@
         .module-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
+            inset: 0;
+            border-radius: 16px;
             background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: -1;
         }
         .module-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-            z-index: 2;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
         .module-card:hover::before {
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+            opacity: 0.05;
         }
         .module-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
         }
         .module-title {
             font-size: 1.3rem;
@@ -255,16 +250,12 @@
             color: var(--text-muted);
         }
         .module-description {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            flex-grow: 1;
-            color: var(--text-main);
+            position: relative;
+            z-index: 1;
         }
         .module-features {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
         .feature-tag {
             font-size: 0.8rem;
@@ -286,9 +277,10 @@
             border-color: var(--accent);
         }
         .action-buttons {
-            display: flex;
-            gap: 0.8rem;
+            position: relative;
+            z-index: 1;
             margin-top: auto;
+            padding-top: 1rem;
         }
         .action-buttons a {
             flex: 1;
@@ -472,6 +464,14 @@
             }
             .module-grid {
                 grid-template-columns: 1fr;
+            }
+            .module-grid {
+                gap: 1.5rem;
+                padding: 0;
+            }
+            
+            .module-card {
+                margin: 0;
             }
         }
         [data-theme="dark"] .quick-links a {
