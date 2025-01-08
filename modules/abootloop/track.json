@@ -1,0 +1,7 @@
+{
+  "id": "abootloop",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/abootloop/refs/heads/main/update.json",
+  "source": "https://github.com/Magisk-Modules-Alt-Repo/abootloop"
+}
