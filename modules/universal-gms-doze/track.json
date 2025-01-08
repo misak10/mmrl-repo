@@ -3,5 +3,7 @@
   "enable": true,
   "verified": false,
   "update_to": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/refs/heads/master/module.json",
-  "source": "https://github.com/gloeyisk/universal-gms-doze"
+  "source": "https://github.com/gloeyisk/universal-gms-doze",
+  "last_update": 1732811678.0,
+  "versions": 1
 }

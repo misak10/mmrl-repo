@@ -1,0 +1,14 @@
+{
+  "id": "CustomPinyinDictionary",
+  "timestamp": 1735696699.0,
+  "versions": [
+    {
+      "timestamp": 1735696699.0,
+      "version": "v20250101",
+      "versionCode": 20250101,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20250101.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20250101.md",
+      "size": 31355148
+    }
+  ]
+}
