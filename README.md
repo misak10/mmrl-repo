@@ -1,7 +1,7 @@
 # Misaki-Module Repo
 
 <div align="center">
-    <img src="assets/cover.webp" alt="Misaki-Module Repo" width="100%">
+    <img src="assets/cover.webp" alt="Misaki-Module Repo" width="50%">
 </div>
 
 <div align="center">
@@ -50,7 +50,7 @@ Misaki-Module Repo 是一个专注于提供高质量 Magisk 模块的仓库。�
 
 如果您觉得这个项目对您有帮助，欢迎通过以下方式支持我们：
 
-<div align="center">
+<div align="left">
     <a href="https://afdian.com/a/misak10">
         <img src="src/afdian.png" alt="爱发电" width="200px">
     </a>
