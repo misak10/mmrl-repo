@@ -7,37 +7,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            /* 亮色模式 - 简约高级灰 */
-            --primary: #333333;
-            --primary-hover: #1a1a1a;
-            --accent: #444444;
-            --accent-hover: #333333;
-            --background: #fafafa;
+            /* 亮色模式 - 清新浅蓝 */
+            --primary: #4B96DC;
+            --primary-hover: #3886CF;
+            --accent: #4B96DC;
+            --accent-hover: #3886CF;
+            --background: #ffffff;
             --card-background: #ffffff;
-            --card-border: rgba(0, 0, 0, 0.08);
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --text-main: #333333;
-            --text-muted: #666666;
-            --gradient-start: #444444;
-            --gradient-end: #333333;
+            --card-border: rgba(75, 150, 220, 0.1);
+            --card-shadow: 0 4px 6px -1px rgba(75, 150, 220, 0.05), 0 2px 4px -1px rgba(75, 150, 220, 0.03);
+            --text-main: #2C3E50;
+            --text-muted: #94A3B8;
+            --gradient-start: #4B96DC;
+            --gradient-end: #3886CF;
             --container-margin: max(1rem, calc((100% - 1200px) / 2));
             --container-padding: 2rem;
             --hover-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --button-text: #ffffff;
         }
         [data-theme="dark"] {
-            /* 暗色模式 - 深邃黑 */
+            /* 暗色模式 - 纯净黑 */
             --primary: #ffffff;
-            --primary-hover: #e0e0e0;
-            --accent: #ffffff;
-            --accent-hover: #e0e0e0;
-            --background: #111111;
-            --card-background: #1c1c1c;
+            --primary-hover: #e5e5e5;
+            --accent: #4B96DC;
+            --accent-hover: #3886CF;
+            --background: #000000;
+            --card-background: #1a1a1a;
             --card-border: rgba(255, 255, 255, 0.1);
             --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
             --text-main: #ffffff;
-            --text-muted: #999999;
-            --gradient-start: #1c1c1c;
-            --gradient-end: #333333;
+            --text-muted: #a3a3a3;
+            --gradient-start: #000000;
+            --gradient-end: #1a1a1a;
+            --button-text: #ffffff;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -131,8 +133,7 @@
         }
         .theme-switch:hover {
             background: var(--accent);
-            color: var(--card-background);
-            border-color: var(--accent);
+            color: var(--button-text);
         }
         .stats {
             display: grid;
@@ -217,7 +218,7 @@
             border-color: var(--accent);
         }
         .module-card:hover::before {
-            opacity: 1;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
         }
         .module-header {
             display: flex;
@@ -236,7 +237,7 @@
             padding: 0.4rem 1rem;
             border-radius: 20px;
             background: var(--accent);
-            color: white;
+            color: var(--button-text);
             font-weight: 500;
         }
         .module-author {
@@ -274,7 +275,7 @@
         }
         .feature-tag:hover {
             background: var(--accent);
-            color: var(--card-background);
+            color: var(--button-text);
             border-color: var(--accent);
         }
         .action-buttons {
@@ -299,9 +300,9 @@
         }
         .action-buttons a[role="button"] {
             background: var(--accent);
-            color: var(--card-background);
+            color: var(--button-text);
             border: 1px solid var(--accent);
-            transition: var(--hover-transition);
+            font-weight: 600;
         }
         .action-buttons a[role="button"]:hover {
             background: var(--accent-hover);
@@ -315,11 +316,11 @@
         }
         .action-buttons a[role="button"].outline:hover {
             background: var(--accent);
-            color: var(--card-background);
+            color: var(--button-text);
         }
         [data-theme="dark"] .action-buttons a[role="button"] {
             background: var(--accent);
-            color: white;
+            color: var(--button-text);
         }
         [data-theme="dark"] .action-buttons a[role="button"].outline {
             border-color: var(--accent);
@@ -352,7 +353,7 @@
         }
         .search-container input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(10, 77, 104, 0.1);
         }
         select {
             padding: 0.8rem 1rem;
@@ -369,11 +370,11 @@
         }
         select:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(10, 77, 104, 0.1);
         }
         footer {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
+            color: var(--text-main);
             padding: 4rem 0;
             margin-top: 5rem;
             position: relative;
@@ -394,7 +395,7 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 1rem 1.5rem;
             border-radius: 12px;
-            color: white;
+            color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -402,7 +403,8 @@
             transition: var(--hover-transition);
         }
         .quick-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--accent);
+            color: var(--button-text);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
@@ -436,6 +438,21 @@
             .module-grid {
                 grid-template-columns: 1fr;
             }
+        }
+        [data-theme="dark"] .quick-links a {
+            color: var(--text-main);
+        }
+        [data-theme="dark"] footer {
+            color: var(--text-main);
+        }
+        [data-theme="dark"] .module-version {
+            color: var(--button-text);
+        }
+        [data-theme="dark"] .action-buttons a[role="button"] {
+            color: var(--button-text);
+        }
+        [data-theme="dark"] .feature-tag:hover {
+            color: var(--button-text);
         }
     </style>
 </head>
