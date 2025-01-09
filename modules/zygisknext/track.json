@@ -1,7 +1,16 @@
 {
-  "id": "zygisknext",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ZygiskNext/update.json",
-  "source": "https://github.com/Dr-TSNG/ZygiskNext"
+    "id": "zygisknext",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ZygiskNext/update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/Dr-TSNG/ZygiskNext",
+    "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
+    "donate": "",
+    "categories": [
+        "Script",
+        "Zygisk"
+    ],
+    "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md"
 }

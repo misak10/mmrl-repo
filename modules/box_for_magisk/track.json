@@ -3,8 +3,13 @@
     "enable": true,
     "verified": true,
     "update_to": "https://raw.githubusercontent.com/taamarin/box_for_magisk/master/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
     "source": "https://github.com/taamarin/box_for_magisk",
-    "added": 1733301165,
-    "last_update": 1734865952.0,
-    "versions": 1
+    "support": "https://github.com/taamarin/box_for_magisk/issues",
+    "donate": "",
+    "categories": [
+        "Utility"
+    ],
+    "readme": "https://raw.githubusercontent.com/taamarin/box_for_magisk/main/README.md"
 }

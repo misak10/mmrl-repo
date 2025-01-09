@@ -1,9 +1,15 @@
 {
-  "id": "asoulopt",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/refs/heads/main/AsoulOpt.json",
-  "source": "https://github.com/nakixii/Magisk_AsoulOpt",
-  "last_update": 1735942841.0,
-  "versions": 1
+    "id": "asoulopt",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/refs/heads/main/AsoulOpt.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/nakixii/Magisk_AsoulOpt",
+    "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
+    "donate": "",
+    "categories": [
+        "Script"
+    ],
+    "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md"
 }

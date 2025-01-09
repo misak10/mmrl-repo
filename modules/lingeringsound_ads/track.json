@@ -1,9 +1,22 @@
 {
-  "id": "lingeringsound_ads",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/lingeringsound/10007/refs/heads/main/update.json",
-  "source": "https://lingeringsound.github.io/10007",
-  "last_update": 1736250468.0,
-  "versions": 1
+    "id": "lingeringsound_ads",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/lingeringsound/10007/refs/heads/main/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://lingeringsound.github.io/10007",
+    "support": "https://github.com/lingeringsound/10007/issues",
+    "donate": "",
+    "categories": [
+        "Utility",
+        "Script",
+        "Security",
+        "Network"
+    ],
+    "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
+    "antifeatures": [
+        "ads",
+        "tracking"
+    ]
 }

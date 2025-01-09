@@ -3,9 +3,11 @@
     "enable": true,
     "verified": false,
     "update_to": "https://lsposed.github.io/releases/shamiko.json",
-    "source": "https://github.com/LSPosed/LSPosed.github.io"
-<<<<<<< HEAD
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/LSPosed/LSPosed.github.io",
+    "support": "https://github.com/LSPosed/LSPosed.github.io/issues",
+    "donate": "",
+    "categories": [],
+    "readme": "https://raw.githubusercontent.com/LSPosed/LSPosed.github.io/main/README.md"
 }
-=======
-}
->>>>>>> 3f8a965261480164f03e757a5d371ef1e40bb55c
