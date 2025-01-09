@@ -87,10 +87,22 @@ def get_antifeatures_from_files(files):
     return antifeatures
 
 def get_github_repo_info(repo_url):
+    # 检查是否是GitHub URL
+    if not repo_url.startswith('https://github.com/'):
+        return {
+            'license': '',
+            'antifeatures': [],
+            'updated_at': ''
+        }
+    
     # 从URL中提取owner和repo名称
     match = re.match(r'https://github.com/([^/]+)/([^/]+)', repo_url)
     if not match:
-        return None
+        return {
+            'license': '',
+            'antifeatures': [],
+            'updated_at': ''
+        }
     
     owner, repo = match.groups()
     headers = {}
@@ -99,47 +111,58 @@ def get_github_repo_info(repo_url):
     
     # 获取仓库信息
     api_url = f'https://api.github.com/repos/{owner}/{repo}'
-    response = requests.get(api_url, headers=headers)
-    if response.status_code != 200:
-        return None
-    
-    repo_info = response.json()
-    
-    # 检查仓库状态
-    antifeatures = []
-    
-    # 检查源代码可用性
-    if repo_info.get('archived', False) or repo_info.get('disabled', False):
-        antifeatures.append('nosourcesince')
-    
-    # 检查是否是私有仓库或闭源
-    if repo_info.get('private', False) or not repo_info.get('license'):
-        antifeatures.append('upstreamnonfree')
-    
-    # 检查已知漏洞
     try:
-        vuln_url = f'https://api.github.com/repos/{owner}/{repo}/security/advisories'
-        response = requests.get(vuln_url, headers=headers)
-        if response.status_code == 200 and response.json():
-            antifeatures.append('knownvuln')
+        response = requests.get(api_url, headers=headers)
+        if response.status_code != 200:
+            return {
+                'license': '',
+                'antifeatures': [],
+                'updated_at': ''
+            }
+        
+        repo_info = response.json()
+        
+        # 检查仓库状态
+        antifeatures = []
+        
+        # 检查源代码可用性
+        if repo_info.get('archived', False) or repo_info.get('disabled', False):
+            antifeatures.append('nosourcesince')
+        
+        # 检查是否是私有仓库或闭源
+        if repo_info.get('private', False) or not repo_info.get('license'):
+            antifeatures.append('upstreamnonfree')
+        
+        # 检查已知漏洞
+        try:
+            vuln_url = f'https://api.github.com/repos/{owner}/{repo}/security/advisories'
+            response = requests.get(vuln_url, headers=headers)
+            if response.status_code == 200 and response.json():
+                antifeatures.append('knownvuln')
+        except:
+            pass
+        
+        # 检查上游依赖
+        dependencies_url = f'https://api.github.com/repos/{owner}/{repo}/contents'
+        try:
+            response = requests.get(dependencies_url, headers=headers)
+            if response.status_code == 200:
+                files = [f['name'].lower() for f in response.json()]
+                antifeatures.extend(get_antifeatures_from_files(files))
+        except:
+            pass
+        
+        return {
+            'license': repo_info.get('license', {}).get('spdx_id', ''),
+            'antifeatures': list(set(antifeatures)),  # 去重
+            'updated_at': repo_info.get('updated_at', '')
+        }
     except:
-        pass
-    
-    # 检查上游依赖
-    dependencies_url = f'https://api.github.com/repos/{owner}/{repo}/contents'
-    try:
-        response = requests.get(dependencies_url, headers=headers)
-        if response.status_code == 200:
-            files = [f['name'].lower() for f in response.json()]
-            antifeatures.extend(get_antifeatures_from_files(files))
-    except:
-        pass
-    
-    return {
-        'license': repo_info.get('license', {}).get('spdx_id', ''),
-        'antifeatures': list(set(antifeatures)),  # 去重
-        'updated_at': repo_info['updated_at']
-    }
+        return {
+            'license': '',
+            'antifeatures': [],
+            'updated_at': ''
+        }
 
 def get_module_categories(files):
     categories = []
