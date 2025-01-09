@@ -44,23 +44,33 @@ def get_antifeatures_from_files(files):
     antifeatures = []
     
     # 检查广告相关文件
-    if any('ad' in f or 'ads' in f or 'advertisement' in f for f in files):
+    ad_patterns = [r'\bad[s]?\b', r'\badvertisement[s]?\b', r'\badvert[s]?\b']
+    if any(any(re.search(pattern, f) for pattern in ad_patterns) for f in files):
         antifeatures.append('ads')
     
-    # 检查追踪相关文件
-    if any('track' in f or 'analytics' in f or 'statistics' in f for f in files):
+    # 检查追踪相关文件 
+    track_patterns = [r'\btrack(er|ing)?\b', r'\banalytics?\b', r'\bstatistics?\b', r'\btelemetry\b']
+    if any(any(re.search(pattern, f) for pattern in track_patterns) for f in files):
         antifeatures.append('tracking')
     
     # 检查非自由网络服务
-    if any('google' in f or 'facebook' in f or 'amazon' in f or 'proprietary' in f for f in files):
+    service_patterns = [
+        r'\bgoogle[-_]?(analytics|ads|play)\b',
+        r'\bfacebook[-_]?sdk\b',
+        r'\bamazon[-_]?aws\b',
+        r'\bproprietary[-_]?api\b'
+    ]
+    if any(any(re.search(pattern, f) for pattern in service_patterns) for f in files):
         antifeatures.append('nonfreenet')
     
     # 检查非自由操作系统依赖
-    if any('windows' in f or 'ios' in f for f in files):
+    os_patterns = [r'\bwindows[-_]?(dll|exe|sys)\b', r'\bios[-_]?(framework|lib)\b']
+    if any(any(re.search(pattern, f) for pattern in os_patterns) for f in files):
         antifeatures.append('nonfreeos')
     
     # 检查非自由媒体
-    if any(f.endswith(('.mp3', '.aac', '.wma')) for f in files):
+    nonfree_media = ['.mp3', '.aac', '.wma', '.m4p', '.m4v']
+    if any(f.lower().endswith(tuple(nonfree_media)) for f in files):
         antifeatures.append('nonfreemedia')
     
     return antifeatures
