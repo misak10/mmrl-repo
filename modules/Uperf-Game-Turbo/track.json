@@ -1,19 +1,19 @@
 {
-  "id": "Uperf-Game-Turbo",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://github.com/yinwanxi/Uperf-Game-Turbo/raw/refs/heads/master/version.json",
-  "license": "Apache-2.0",
-  "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
-  "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
-  "categories": [
-    "System",
-    "Utility",
-    "Theme",
-    "Script",
-    "Network"
-  ],
-  "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
-  "last_update": 1734703419.0,
-  "versions": 1
+    "id": "Uperf-Game-Turbo",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://github.com/yinwanxi/Uperf-Game-Turbo/raw/refs/heads/master/version.json",
+    "license": "Apache-2.0",
+    "homepage": "",
+    "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
+    "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
+    "donate": "",
+    "categories": [
+        "Utility",
+        "Network",
+        "System",
+        "Script",
+        "Theme"
+    ],
+    "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md"
 }

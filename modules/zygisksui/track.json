@@ -1,19 +1,19 @@
 {
-  "id": "zygisksui",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/Sui/update.json",
-  "license": "GPL-3.0",
-  "source": "https://github.com/RikkaApps/Sui",
-  "support": "https://github.com/RikkaApps/Sui/issues",
-  "categories": [
-    "Utility",
-    "Theme",
-    "Debug",
-    "Script",
-    "Network"
-  ],
-  "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md",
-  "last_update": 1695131134.0,
-  "versions": 1
+    "id": "zygisksui",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/Sui/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/RikkaApps/Sui",
+    "support": "https://github.com/RikkaApps/Sui/issues",
+    "donate": "",
+    "categories": [
+        "Utility",
+        "Network",
+        "Debug",
+        "Script",
+        "Theme"
+    ],
+    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md"
 }

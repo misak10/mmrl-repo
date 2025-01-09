@@ -1,15 +1,16 @@
 {
-  "id": "trickystore",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
-  "source": "https://github.com/5ec1cff/TrickyStore",
-  "support": "https://github.com/5ec1cff/TrickyStore/issues",
-  "categories": [
-    "Script",
-    "Network"
-  ],
-  "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
-  "last_update": 1730124120.0,
-  "versions": 1
+    "id": "trickystore",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/5ec1cff/TrickyStore",
+    "support": "https://github.com/5ec1cff/TrickyStore/issues",
+    "donate": "",
+    "categories": [
+        "Network",
+        "Script"
+    ],
+    "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md"
 }
