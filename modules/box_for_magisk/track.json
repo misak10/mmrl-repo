@@ -1,0 +1,16 @@
+{
+    "id": "box_for_magisk",
+    "enable": true,
+    "verified": true,
+    "update_to": "https://raw.githubusercontent.com/taamarin/box_for_magisk/master/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/taamarin/box_for_magisk",
+    "support": "https://github.com/taamarin/box_for_magisk/issues",
+    "donate": "",
+    "categories": [
+        "Script",
+        "Utility"
+    ],
+    "readme": "https://raw.githubusercontent.com/taamarin/box_for_magisk/main/README.md"
+}

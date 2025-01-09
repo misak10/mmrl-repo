@@ -1,0 +1,13 @@
+{
+    "id": "shamiko",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://lsposed.github.io/releases/shamiko.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/LSPosed/LSPosed.github.io",
+    "support": "https://github.com/LSPosed/LSPosed.github.io/issues",
+    "donate": "",
+    "categories": [],
+    "readme": "https://raw.githubusercontent.com/LSPosed/LSPosed.github.io/main/README.md"
+}

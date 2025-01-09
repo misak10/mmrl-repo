@@ -1,0 +1,19 @@
+{
+    "id": "zygisksui",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/Sui/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/RikkaApps/Sui",
+    "support": "https://github.com/RikkaApps/Sui/issues",
+    "donate": "",
+    "categories": [
+        "Utility",
+        "Theme",
+        "Debug",
+        "Script",
+        "Network"
+    ],
+    "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md"
+}
