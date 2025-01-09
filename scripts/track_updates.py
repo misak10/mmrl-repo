@@ -26,9 +26,16 @@ def download_and_extract_zip(url):
                 for chunk in response.iter_content(chunk_size=8192):
                     f.write(chunk)
             
-            # 解压文件
-            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                zip_ref.extractall(temp_dir)
+            try:
+                # 解压文件
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(temp_dir)
+            except zipfile.BadZipFile:
+                print(f"Error: Invalid zip file from {url}")
+                return None
+            except NotImplementedError as e:
+                print(f"Error downloading/extracting zip: {e}")
+                return None
             
             # 获取所有文件名
             files = []
@@ -247,6 +254,12 @@ def create_track_json(repo_info):
     # 合并所有来源的 antifeatures
     antifeatures = list(set(github_info['antifeatures'] + zip_antifeatures))
 
+    # 生成readme链接
+    if repo_info["url"].startswith('https://github.com/'):
+        readme_url = f"https://raw.githubusercontent.com/{repo_info['url'].split('github.com/')[1]}/main/README.md"
+    else:
+        readme_url = ""
+
     track = {
         "id": repo_info["module_id"],
         "enable": repo_info.get("enable", True),
@@ -258,7 +271,7 @@ def create_track_json(repo_info):
         "support": repo_info.get("support", ""),
         "donate": repo_info.get("donate", ""),
         "categories": categories,
-        "readme": f"https://raw.githubusercontent.com/{repo_info['url'].split('github.com/')[1]}/main/README.md"
+        "readme": readme_url
     }
     
     # 只有当有antifeatures时才添加到track.json
