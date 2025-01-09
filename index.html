@@ -858,23 +858,49 @@
         }
 
         function formatDate(timestamp) {
-            const date = new Date(timestamp * 1000);
-            const now = new Date();
-            const diff = now - date;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            
-            if (days === 0) {
-                return '今天';
-            } else if (days === 1) {
-                return '昨天';
-            } else if (days < 7) {
-                return `${days}天前`;
-            } else if (days < 30) {
-                return `${Math.floor(days / 7)}周前`;
-            } else if (days < 365) {
-                return `${Math.floor(days / 30)}月前`;
-            } else {
-                return `${Math.floor(days / 365)}年前`;
+            // 检查时间戳是否有效
+            if (!timestamp || isNaN(timestamp)) {
+                return '未知时间';
+            }
+
+            try {
+                const date = new Date(timestamp * 1000);
+                // 检查日期是否有效
+                if (isNaN(date.getTime())) {
+                    return '未知时间';
+                }
+
+                const now = new Date();
+                const diff = now - date;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                
+                if (days < 0) {
+                    return '未知时间';
+                } else if (days === 0) {
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    if (hours === 0) {
+                        const minutes = Math.floor(diff / (1000 * 60));
+                        if (minutes === 0) {
+                            return '刚刚';
+                        }
+                        return `${minutes}分钟前`;
+                    }
+                    return `${hours}小时前`;
+                } else if (days === 1) {
+                    return '昨天';
+                } else if (days < 7) {
+                    return `${days}天前`;
+                } else if (days < 30) {
+                    return `${Math.floor(days / 7)}周前`;
+                } else if (days < 365) {
+                    return `${Math.floor(days / 30)}个月前`;
+                } else {
+                    const years = Math.floor(days / 365);
+                    return `${years}年前`;
+                }
+            } catch (error) {
+                console.error('Error formatting date:', error);
+                return '未知时间';
             }
         }
 
