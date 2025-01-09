@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1736412569.686243
+    "timestamp": 1736417525.707762
   },
   "modules": [
     {
@@ -25,7 +25,6 @@
       "readme": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1735696699.0,
       "size": 31355148,
       "track": {
         "type": "ONLINE_JSON",
@@ -52,15 +51,14 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1735065893.0,
       "size": 235036,
       "features": {
         "service": true,
@@ -94,18 +92,17 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "System",
         "Utility",
-        "Theme",
+        "Network",
+        "System",
         "Script",
-        "Network"
+        "Theme"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
       "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1734703419.0,
       "size": 1869219,
       "features": {
         "service": true,
@@ -137,16 +134,15 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "System",
         "Utility",
-        "Security",
-        "Script",
+        "Network",
         "Performance",
-        "Network"
+        "System",
+        "Script",
+        "Security"
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1736412567.12998,
       "size": 6188674,
       "features": {
         "service": true,
@@ -172,6 +168,46 @@
       ]
     },
     {
+      "id": "Zygisk-Assistant",
+      "name": "Zygisk Assistant",
+      "version": "v2.1.3 (7b35d36-release)",
+      "versionCode": 213,
+      "author": "snake-4",
+      "description": "A Zygisk module to hide root.",
+      "categories": [
+        "Network",
+        "Script"
+      ],
+      "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
+      "license": "MIT",
+      "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1723905223.0,
+      "size": 396665,
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "zygisk": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/snake-4/Zygisk-Assistant",
+        "antifeatures": null
+      },
+      "versions": [
+        {
+          "timestamp": 1723905223.0,
+          "version": "v2.1.3 (7b35d36-release)",
+          "versionCode": 213,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/v2.1.3_7b35d36-release_213.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/v2.1.3_7b35d36-release_213.md",
+          "size": 396665
+        }
+      ]
+    },
+    {
       "id": "abootloop",
       "name": "Anti bootloop",
       "version": "v1.3.2",
@@ -180,9 +216,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Script",
         "Utility",
-        "Network"
+        "Network",
+        "Script"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -190,7 +226,6 @@
       "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/abootloop/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1730660996.0,
       "size": 5316,
       "features": {
         "service": true,
@@ -222,14 +257,13 @@
       "author": "twoone3",
       "description": "[state] Filter ads at the DNS level",
       "categories": [
-        "Script",
-        "Utility"
+        "Utility",
+        "Script"
       ],
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1734174046.0,
       "size": 9649308,
       "features": {
         "service": true,
@@ -267,7 +301,6 @@
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1735942841.0,
       "size": 13969,
       "features": {
         "service": true
@@ -312,7 +345,6 @@
         "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
-      "timestamp": 1736229449.0,
       "size": 36003,
       "features": {
         "service": true,
@@ -345,15 +377,14 @@
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
-        "Script",
-        "Utility"
+        "Utility",
+        "Script"
       ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/taamarin/box_for_magisk/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1734865952.0,
       "size": 60144,
       "features": {
         "action": true,
@@ -384,18 +415,17 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "System",
         "Utility",
-        "Theme",
+        "System",
+        "Gaming",
         "Script",
-        "Gaming"
+        "Theme"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1736346647.0,
       "size": 1327831,
       "features": {
         "service": true,
@@ -427,20 +457,19 @@
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27335 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
         "Utility",
-        "Theme",
-        "Security",
-        "Audio",
+        "Network",
+        "Performance",
         "Debug",
         "Script",
-        "Performance",
-        "Network"
+        "Theme",
+        "Security",
+        "Audio"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1736250468.0,
       "size": 794100,
       "features": {
         "service": true,
@@ -476,19 +505,18 @@
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
         "Utility",
-        "Theme",
-        "Security",
-        "Debug",
+        "Network",
         "Font",
+        "Debug",
         "Script",
-        "Network"
+        "Theme",
+        "Security"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1731944201.0,
       "size": 19096614,
       "features": {
         "webroot": true
@@ -518,14 +546,13 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1730124120.0,
       "size": 2277483,
       "features": {
         "service": true,
@@ -558,16 +585,15 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Script",
+        "Debug",
         "Network",
-        "Debug"
+        "Script"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
       "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1732811678.0,
       "size": 15178,
       "features": {
         "service": true,
@@ -599,15 +625,14 @@
       "description": "Standalone implementation of Zygisk.",
       "categories": [
         "Utility",
-        "Script",
         "Zygisk",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1735825712.0,
       "size": 3433554,
       "features": {
         "service": true,
@@ -641,17 +666,16 @@
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
         "Utility",
-        "Theme",
+        "Network",
         "Debug",
         "Script",
-        "Network"
+        "Theme"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1695131134.0,
       "size": 1070639,
       "features": {
         "post_fs_data": true,
