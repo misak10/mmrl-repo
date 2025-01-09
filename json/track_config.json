@@ -1,0 +1,23 @@
+{
+    "repositories": [
+        {
+            "url": "https://github.com/chiteroman/PlayIntegrityFix",
+            "module_id": "playintegrityfix",
+            "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/update.json",
+            "source": "https://github.com/chiteroman/PlayIntegrityFix",
+            "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
+            "donate": "https://www.paypal.com/paypalme/chiteroman",
+            "enable": true,
+            "verified": false,
+            "antifeatures": {
+                "ads": false,
+                "tracking": false,
+                "nonfreenet": false,
+                "nonfreeos": false,
+                "nonfreemedia": false,
+                "upstream_nonfree": false,
+                "proprietary": false
+            }
+        }
+    ]
+}
