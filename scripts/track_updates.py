@@ -1,6 +1,8 @@
 import json
 import os
-from datetime import datetime
+import tempfile
+import zipfile
+from datetime import datetime, timezone
 from pathlib import Path
 import requests
 import re
@@ -9,6 +11,59 @@ def load_config():
     config_path = Path(__file__).parent.parent / "json" / "track_config.json"
     with open(config_path, 'r') as f:
         return json.load(f)
+
+def download_and_extract_zip(url):
+    try:
+        response = requests.get(url, stream=True)
+        if response.status_code != 200:
+            return None
+        
+        # 创建临时目录
+        with tempfile.TemporaryDirectory() as temp_dir:
+            zip_path = Path(temp_dir) / "module.zip"
+            # 下载zip文件
+            with open(zip_path, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            
+            # 解压文件
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall(temp_dir)
+            
+            # 获取所有文件名
+            files = []
+            for root, _, filenames in os.walk(temp_dir):
+                for filename in filenames:
+                    files.append(filename.lower())
+            return files
+    except Exception as e:
+        print(f"Error downloading/extracting zip: {e}")
+        return None
+
+def get_antifeatures_from_files(files):
+    antifeatures = []
+    
+    # 检查广告相关文件
+    if any('ad' in f or 'ads' in f or 'advertisement' in f for f in files):
+        antifeatures.append('ads')
+    
+    # 检查追踪相关文件
+    if any('track' in f or 'analytics' in f or 'statistics' in f for f in files):
+        antifeatures.append('tracking')
+    
+    # 检查非自由网络服务
+    if any('google' in f or 'facebook' in f or 'amazon' in f or 'proprietary' in f for f in files):
+        antifeatures.append('nonfreenet')
+    
+    # 检查非自由操作系统依赖
+    if any('windows' in f or 'ios' in f for f in files):
+        antifeatures.append('nonfreeos')
+    
+    # 检查非自由媒体
+    if any(f.endswith(('.mp3', '.aac', '.wma')) for f in files):
+        antifeatures.append('nonfreemedia')
+    
+    return antifeatures
 
 def get_github_repo_info(repo_url):
     # 从URL中提取owner和repo名称
@@ -29,17 +84,46 @@ def get_github_repo_info(repo_url):
     
     repo_info = response.json()
     
-    # 获取仓库内容以检查模块类型
-    contents_url = f'https://api.github.com/repos/{owner}/{repo}/contents'
-    response = requests.get(contents_url, headers=headers)
-    if response.status_code != 200:
-        return None
+    # 检查仓库状态
+    antifeatures = []
     
-    contents = response.json()
+    # 检查是否已归档
+    if repo_info.get('archived', False):
+        antifeatures.append('archived')
     
-    # 确定模块分类
+    # 检查最后更新时间
+    last_updated = datetime.strptime(repo_info['updated_at'], '%Y-%m-%dT%H:%M:%SZ')
+    last_updated = last_updated.replace(tzinfo=timezone.utc)
+    now = datetime.now(timezone.utc)
+    if (now - last_updated).days > 30:
+        antifeatures.append('unmaintained')
+    
+    # 检查是否已废弃
+    if repo_info.get('deprecated', False):
+        antifeatures.append('deprecated')
+    
+    # 检查是否是私有仓库或闭源
+    if repo_info.get('private', False) or not repo_info.get('license'):
+        antifeatures.append('proprietary')
+    
+    # 检查上游依赖
+    dependencies_url = f'https://api.github.com/repos/{owner}/{repo}/contents'
+    try:
+        response = requests.get(dependencies_url, headers=headers)
+        if response.status_code == 200:
+            files = [f['name'].lower() for f in response.json()]
+            antifeatures.extend(get_antifeatures_from_files(files))
+    except:
+        pass
+    
+    return {
+        'license': repo_info.get('license', {}).get('spdx_id', ''),
+        'antifeatures': list(set(antifeatures)),  # 去重
+        'updated_at': repo_info['updated_at']
+    }
+
+def get_module_categories(files):
     categories = []
-    files = [f.get('name', '').lower() for f in contents]
     
     # Zygisk模块
     if any('zygisk' in f for f in files):
@@ -85,10 +169,7 @@ def get_github_repo_info(repo_url):
     if any('util' in f or 'tool' in f for f in files):
         categories.append('Utility')
     
-    return {
-        'license': repo_info.get('license', {}).get('spdx_id', ''),
-        'categories': list(set(categories))  # 去重
-    }
+    return list(set(categories))
 
 def create_track_json(repo_info):
     # 获取GitHub仓库信息
@@ -96,12 +177,33 @@ def create_track_json(repo_info):
     if not github_info:
         return None
 
-    # 处理 antifeatures
-    antifeatures = []
-    if repo_info.get("antifeatures"):
-        for feature, enabled in repo_info["antifeatures"].items():
-            if enabled:
-                antifeatures.append(feature)
+    # 获取update.json内容和模块文件内容
+    try:
+        response = requests.get(repo_info["update_to"])
+        if response.status_code == 200:
+            update_json = response.json()
+            if 'zipUrl' in update_json:
+                # 下载并解析模块文件
+                files = download_and_extract_zip(update_json['zipUrl'])
+                if files:
+                    categories = get_module_categories(files)
+                    # 从zip文件内容检测antifeatures
+                    zip_antifeatures = get_antifeatures_from_files(files)
+                else:
+                    categories = []
+                    zip_antifeatures = []
+            else:
+                categories = []
+                zip_antifeatures = []
+        else:
+            categories = []
+            zip_antifeatures = []
+    except Exception:
+        categories = []
+        zip_antifeatures = []
+
+    # 合并所有来源的 antifeatures
+    antifeatures = list(set(github_info['antifeatures'] + zip_antifeatures))
 
     track = {
         "id": repo_info["module_id"],
@@ -113,11 +215,11 @@ def create_track_json(repo_info):
         "source": repo_info["source"],
         "support": repo_info.get("support", ""),
         "donate": repo_info.get("donate", ""),
-        "categories": github_info["categories"],
+        "categories": categories,
         "readme": f"https://raw.githubusercontent.com/{repo_info['url'].split('github.com/')[1]}/main/README.md"
     }
     
-    # 只有当有启用的 antifeatures 时才添加到 track.json
+    # 只有当有antifeatures时才添加到track.json
     if antifeatures:
         track["antifeatures"] = antifeatures
         
