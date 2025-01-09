@@ -1,0 +1,14 @@
+{
+  "id": "box_for_magisk",
+  "timestamp": 1734865952.0,
+  "versions": [
+    {
+      "timestamp": 1734865952.0,
+      "version": "v1.8",
+      "versionCode": 20241222,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.md",
+      "size": 60144
+    }
+  ]
+}

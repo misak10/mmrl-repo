@@ -1,17 +1,17 @@
 {
-    "id": "universal-gms-doze",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/refs/heads/master/module.json",
-    "license": "GPL-2.0",
-    "homepage": "",
-    "source": "https://github.com/gloeyisk/universal-gms-doze",
-    "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
-    "donate": "",
-    "categories": [
-        "Script",
-        "Network",
-        "Debug"
-    ],
-    "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md"
+  "id": "universal-gms-doze",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/refs/heads/master/module.json",
+  "license": "GPL-2.0",
+  "source": "https://github.com/gloeyisk/universal-gms-doze",
+  "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
+  "categories": [
+    "Script",
+    "Network",
+    "Debug"
+  ],
+  "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md",
+  "last_update": 1732811678.0,
+  "versions": 1
 }
