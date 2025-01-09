@@ -3,10 +3,170 @@
         {
             "url": "https://github.com/chiteroman/PlayIntegrityFix",
             "module_id": "PlayIntegrityFix",
-            "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/update.json",
+            "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
             "source": "https://github.com/chiteroman/PlayIntegrityFix",
             "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
-            "donate": "https://www.paypal.com/paypalme/chiteroman",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Dr-TSNG/ZygiskNext",
+            "module_id": "zygisknext",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ZygiskNext/update.json",
+            "source": "https://github.com/Dr-TSNG/ZygiskNext",
+            "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/RikkaApps/Sui",
+            "module_id": "zygisksui",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/Sui/update.json",
+            "source": "https://github.com/RikkaApps/Sui",
+            "support": "https://github.com/RikkaApps/Sui/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/LSPosed/LSPosed.github.io",
+            "module_id": "shamiko",
+            "update_to": "https://lsposed.github.io/releases/shamiko.json",
+            "source": "https://github.com/LSPosed/LSPosed.github.io",
+            "support": "https://github.com/LSPosed/LSPosed.github.io/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+            "module_id": "adguardhome",
+            "update_to": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/version.json",
+            "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+            "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/nakixii/Magisk_AsoulOpt",
+            "module_id": "asoulopt",
+            "update_to": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/refs/heads/main/AsoulOpt.json",
+            "source": "https://github.com/nakixii/Magisk_AsoulOpt",
+            "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
+            "module_id": "abootloop",
+            "update_to": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/abootloop/refs/heads/main/update.json",
+            "source": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
+            "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/backslashxx/bindhosts",
+            "module_id": "bindhosts",
+            "update_to": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json",
+            "source": "https://github.com/backslashxx/bindhosts",
+            "support": "https://github.com/backslashxx/bindhosts/issues",
+            "donate": "",
+            "enable": true,
+            "verified": true
+        },
+        {
+            "url": "https://github.com/taamarin/box_for_magisk",
+            "module_id": "box_for_magisk",
+            "update_to": "https://raw.githubusercontent.com/taamarin/box_for_magisk/master/update.json",
+            "source": "https://github.com/taamarin/box_for_magisk",
+            "support": "https://github.com/taamarin/box_for_magisk/issues",
+            "donate": "",
+            "enable": true,
+            "verified": true
+        },
+        {
+            "url": "https://github.com/wuhgit/CustomPinyinDictionary",
+            "module_id": "CustomPinyinDictionary",
+            "update_to": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/refs/heads/main/magisk/Gboard_update.json",
+            "source": "https://github.com/wuhgit/CustomPinyinDictionary",
+            "support": "https://github.com/wuhgit/CustomPinyinDictionary/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/shadow3aaa/fas-rs",
+            "module_id": "fas-rs",
+            "update_to": "https://github.com/shadow3aaa/fas-rs/raw/refs/heads/master/update/update.json",
+            "source": "https://github.com/shadow3aaa/fas-rs",
+            "support": "https://github.com/shadow3aaa/fas-rs/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/lingeringsound/10007",
+            "module_id": "lingeringsound_ads",
+            "update_to": "https://raw.githubusercontent.com/lingeringsound/10007/refs/heads/main/update.json",
+            "source": "https://lingeringsound.github.io/10007",
+            "support": "https://github.com/lingeringsound/10007/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/MoGuangYu/Surfing",
+            "module_id": "surfing",
+            "update_to": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/Surfing.json",
+            "source": "https://github.com/MoGuangYu/Surfing",
+            "support": "https://github.com/MoGuangYu/Surfing/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/5ec1cff/TrickyStore",
+            "module_id": "trickystore",
+            "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
+            "source": "https://github.com/5ec1cff/TrickyStore",
+            "support": "https://github.com/5ec1cff/TrickyStore/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/gloeyisk/universal-gms-doze",
+            "module_id": "universal-gms-doze",
+            "update_to": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/refs/heads/master/module.json",
+            "source": "https://github.com/gloeyisk/universal-gms-doze",
+            "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/yinwanxi/Uperf-Game-Turbo",
+            "module_id": "Uperf-Game-Turbo",
+            "update_to": "https://github.com/yinwanxi/Uperf-Game-Turbo/raw/refs/heads/master/version.json",
+            "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
+            "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
+            "module_id": "VoyagerKernel",
+            "update_to": "https://onedrive.zjw.js.cn/TheVoyager/Beta/update.json",
+            "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
+            "support": "",
+            "donate": "",
             "enable": true,
             "verified": false
         }
