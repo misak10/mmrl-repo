@@ -175,49 +175,81 @@ def get_module_categories(files):
     categories = []
     
     # Zygisk模块
-    if any('zygisk' in f for f in files):
+    zygisk_patterns = [r'zygisk', r'zygote', r'riru']
+    if any(any(pattern in f.lower() for pattern in zygisk_patterns) for f in files):
         categories.append('Zygisk')
     
     # 脚本模块
-    if any(f in files for f in ['service.sh', 'post-fs-data.sh']):
+    script_files = ['service.sh', 'post-fs-data.sh', 'customize.sh', 'install.sh']
+    if any(f.lower() in [sf.lower() for sf in script_files] for f in files):
         categories.append('Script')
     
     # 系统模块
-    if any('system' in f or 'system.prop' in f for f in files):
+    system_patterns = [r'system', r'system\.prop', r'vendor', r'product', r'boot', r'recovery']
+    if any(any(pattern in f.lower() for pattern in system_patterns) for f in files):
         categories.append('System')
     
     # 主题模块
-    if any('theme' in f or 'overlay' in f for f in files):
+    theme_patterns = [r'theme', r'style', r'overlay', r'skin', r'color', r'appearance', r'icon', r'ui', r'interface']
+    if any(any(pattern in f.lower() for pattern in theme_patterns) for f in files):
         categories.append('Theme')
     
     # 字体模块
-    if any('font' in f or '.ttf' in f or '.otf' in f for f in files):
+    font_patterns = [r'font', r'typeface', r'\.ttf$', r'\.otf$', r'\.woff2?$', r'emoji']
+    if any(any(re.search(pattern, f.lower()) for pattern in font_patterns) for f in files):
         categories.append('Font')
     
     # 音频模块
-    if any('audio' in f or 'sound' in f or '.wav' in f or '.mp3' in f for f in files):
+    audio_patterns = [r'audio', r'sound', r'music', r'ringtone', r'\.wav$', r'\.mp3$', r'\.m4a$', r'\.ogg$', r'dolby', r'equalizer', r'speaker']
+    if any(any(re.search(pattern, f.lower()) for pattern in audio_patterns) for f in files):
         categories.append('Audio')
     
     # 框架模块
-    if any('framework' in f or 'xposed' in f for f in files):
+    framework_patterns = [r'framework', r'xposed', r'lsposed', r'edxposed', r'taichi', r'hook', r'inject']
+    if any(any(pattern in f.lower() for pattern in framework_patterns) for f in files):
         categories.append('Framework')
     
     # 安全模块
-    if any('security' in f or 'privacy' in f or 'protect' in f for f in files):
+    security_patterns = [r'security', r'privacy', r'protect', r'safe', r'crypto', r'permission', r'lock', r'hide', r'mask']
+    if any(any(pattern in f.lower() for pattern in security_patterns) for f in files):
         categories.append('Security')
     
     # 网络模块
-    if any('network' in f or 'wifi' in f or 'proxy' in f for f in files):
+    network_patterns = [r'network', r'wifi', r'proxy', r'vpn', r'dns', r'hosts', r'firewall', r'internet', r'data', r'5g', r'4g']
+    if any(any(pattern in f.lower() for pattern in network_patterns) for f in files):
         categories.append('Network')
     
     # 性能模块
-    if any('performance' in f or 'boost' in f or 'tweak' in f for f in files):
+    perf_patterns = [r'performance', r'boost', r'tweak', r'optimize', r'governor', r'kernel', r'cpu', r'gpu', r'ram', r'memory', r'battery']
+    if any(any(pattern in f.lower() for pattern in perf_patterns) for f in files):
         categories.append('Performance')
     
     # 实用工具
-    if any('util' in f or 'tool' in f for f in files):
+    util_patterns = [r'util', r'tool', r'helper', r'manager', r'settings?', r'config', r'backup', r'restore', r'clean']
+    if any(any(pattern in f.lower() for pattern in util_patterns) for f in files):
         categories.append('Utility')
+
+    # 游戏相关
+    game_patterns = [r'game', r'gaming', r'fps', r'pubg', r'codm', r'unity', r'unreal']
+    if any(any(pattern in f.lower() for pattern in game_patterns) for f in files):
+        categories.append('Gaming')
+
+    # 相机相关
+    camera_patterns = [r'camera', r'photo', r'video', r'gcam', r'lens']
+    if any(any(pattern in f.lower() for pattern in camera_patterns) for f in files):
+        categories.append('Camera')
+
+    # 调试工具
+    debug_patterns = [r'debug', r'log', r'trace', r'test', r'monitor', r'analyze']
+    if any(any(pattern in f.lower() for pattern in debug_patterns) for f in files):
+        categories.append('Debug')
+
+    # 多媒体
+    media_patterns = [r'media', r'player', r'codec', r'stream', r'record']
+    if any(any(pattern in f.lower() for pattern in media_patterns) for f in files):
+        categories.append('Multimedia')
     
+    # 去重并返回
     return list(set(categories))
 
 def create_track_json(repo_info):
