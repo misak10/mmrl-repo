@@ -169,6 +169,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/snake-4/Zygisk-Assistant",
+            "module_id": "Zygisk-Assistant",
+            "update_to": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/refs/heads/main/update_metadata/update.json",
+            "source": "https://github.com/snake-4/Zygisk-Assistant",
+            "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
