@@ -41,37 +41,48 @@ def download_and_extract_zip(url):
         return None
 
 def get_antifeatures_from_files(files):
+    """
+    根据MMRL定义的antifeatures进行检测
+    """
     antifeatures = []
     
     # 检查广告相关文件
-    ad_patterns = [r'\bad[s]?\b', r'\badvertisement[s]?\b', r'\badvert[s]?\b']
-    if any(any(re.search(pattern, f) for pattern in ad_patterns) for f in files):
+    ad_patterns = [r'\bad[s]?\b', r'\badvertis(ing|ement)\b', r'广告']
+    if any(any(re.search(pattern, f, re.I) for pattern in ad_patterns) for f in files):
         antifeatures.append('ads')
     
-    # 检查追踪相关文件 
+    # 检查追踪相关文件
     track_patterns = [r'\btrack(er|ing)?\b', r'\banalytics?\b', r'\bstatistics?\b', r'\btelemetry\b']
-    if any(any(re.search(pattern, f) for pattern in track_patterns) for f in files):
+    if any(any(re.search(pattern, f, re.I) for pattern in track_patterns) for f in files):
         antifeatures.append('tracking')
     
     # 检查非自由网络服务
-    service_patterns = [
-        r'\bgoogle[-_]?(analytics|ads|play)\b',
-        r'\bfacebook[-_]?sdk\b',
-        r'\bamazon[-_]?aws\b',
-        r'\bproprietary[-_]?api\b'
+    net_patterns = [
+        r'\b(google|facebook|amazon|azure|aws)[-_]?(api|sdk|service)\b',
+        r'\bcloud[-_]?(api|service)\b'
     ]
-    if any(any(re.search(pattern, f) for pattern in service_patterns) for f in files):
+    if any(any(re.search(pattern, f, re.I) for pattern in net_patterns) for f in files):
         antifeatures.append('nonfreenet')
     
-    # 检查非自由操作系统依赖
-    os_patterns = [r'\bwindows[-_]?(dll|exe|sys)\b', r'\bios[-_]?(framework|lib)\b']
-    if any(any(re.search(pattern, f) for pattern in os_patterns) for f in files):
-        antifeatures.append('nonfreeos')
+    # 检查非自由资产
+    asset_patterns = ['.mp3', '.aac', '.wma', '.m4p', '.m4v', 'proprietary', 'nonfree']
+    if any(f.lower().endswith(tuple(asset_patterns)) or any(p in f.lower() for p in asset_patterns) for f in files):
+        antifeatures.append('nonfreeassets')
     
-    # 检查非自由媒体
-    nonfree_media = ['.mp3', '.aac', '.wma', '.m4p', '.m4v']
-    if any(f.lower().endswith(tuple(nonfree_media)) for f in files):
-        antifeatures.append('nonfreemedia')
+    # 检查非自由依赖
+    dep_patterns = [r'nonfree[-_]?dep', r'proprietary[-_]?dep']
+    if any(any(re.search(pattern, f, re.I) for pattern in dep_patterns) for f in files):
+        antifeatures.append('nonfreedep')
+    
+    # 检查非自由附加组件
+    addon_patterns = [r'nonfree[-_]?addon', r'premium[-_]?feature']
+    if any(any(re.search(pattern, f, re.I) for pattern in addon_patterns) for f in files):
+        antifeatures.append('nonfreeadd')
+    
+    # 检查NSFW内容
+    nsfw_patterns = [r'\bnsfw\b', r'\badult\b', r'\bmature\b']
+    if any(any(re.search(pattern, f, re.I) for pattern in nsfw_patterns) for f in files):
+        antifeatures.append('nsfw')
     
     return antifeatures
 
@@ -97,24 +108,22 @@ def get_github_repo_info(repo_url):
     # 检查仓库状态
     antifeatures = []
     
-    # 检查是否已归档
-    if repo_info.get('archived', False):
-        antifeatures.append('archived')
-    
-    # 检查最后更新时间
-    last_updated = datetime.strptime(repo_info['updated_at'], '%Y-%m-%dT%H:%M:%SZ')
-    last_updated = last_updated.replace(tzinfo=timezone.utc)
-    now = datetime.now(timezone.utc)
-    if (now - last_updated).days > 30:
-        antifeatures.append('unmaintained')
-    
-    # 检查是否已废弃
-    if repo_info.get('deprecated', False):
-        antifeatures.append('deprecated')
+    # 检查源代码可用性
+    if repo_info.get('archived', False) or repo_info.get('disabled', False):
+        antifeatures.append('nosourcesince')
     
     # 检查是否是私有仓库或闭源
     if repo_info.get('private', False) or not repo_info.get('license'):
-        antifeatures.append('proprietary')
+        antifeatures.append('upstreamnonfree')
+    
+    # 检查已知漏洞
+    try:
+        vuln_url = f'https://api.github.com/repos/{owner}/{repo}/security/advisories'
+        response = requests.get(vuln_url, headers=headers)
+        if response.status_code == 200 and response.json():
+            antifeatures.append('knownvuln')
+    except:
+        pass
     
     # 检查上游依赖
     dependencies_url = f'https://api.github.com/repos/{owner}/{repo}/contents'
