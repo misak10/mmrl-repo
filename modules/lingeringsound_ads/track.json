@@ -10,12 +10,12 @@
     "donate": "",
     "categories": [
         "Debug",
-        "Network",
         "Security",
         "Script",
-        "Performance",
         "Utility",
         "Audio",
+        "Performance",
+        "Network",
         "Theme"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
