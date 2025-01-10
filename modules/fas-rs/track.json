@@ -10,10 +10,10 @@
     "donate": "",
     "categories": [
         "Theme",
-        "Utility",
-        "Script",
+        "System",
         "Gaming",
-        "System"
+        "Script",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md"
 }
