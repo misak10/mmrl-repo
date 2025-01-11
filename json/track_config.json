@@ -179,6 +179,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/sidex15/susfs4ksu-module",
+            "module_id": "susfs4ksu",
+            "update_to": "https://github.com/sidex15/susfs4ksu-module/raw/refs/heads/v1.5.2+/update.json",
+            "source": "https://github.com/sidex15/susfs4ksu-module",
+            "support": "https://github.com/sidex15/susfs4ksu-module/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
