@@ -9,12 +9,12 @@
     "support": "https://github.com/lingeringsound/10007/issues",
     "donate": "",
     "categories": [
-        "Security",
         "Script",
-        "Utility",
-        "Performance",
+        "Security",
         "Theme",
+        "Utility",
         "Debug",
+        "Performance",
         "Network",
         "Audio"
     ],
