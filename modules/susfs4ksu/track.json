@@ -1,21 +1,21 @@
 {
-  "id": "susfs4ksu",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://github.com/sidex15/susfs4ksu-module/raw/refs/heads/v1.5.2+/update.json",
-  "license": "AGPL-3.0",
-  "source": "https://github.com/sidex15/susfs4ksu-module",
-  "support": "https://github.com/sidex15/susfs4ksu-module/issues",
-  "categories": [
-    "Network",
-    "Performance",
-    "Font",
-    "Utility",
-    "System",
-    "Script",
-    "Debug"
-  ],
-  "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
-  "last_update": 1735545927.0,
-  "versions": 1
+    "id": "susfs4ksu",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://github.com/sidex15/susfs4ksu-module/raw/refs/heads/v1.5.2+/update.json",
+    "license": "AGPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/sidex15/susfs4ksu-module",
+    "support": "https://github.com/sidex15/susfs4ksu-module/issues",
+    "donate": "",
+    "categories": [
+        "System",
+        "Performance",
+        "Debug",
+        "Utility",
+        "Network",
+        "Script",
+        "Font"
+    ],
+    "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md"
 }
