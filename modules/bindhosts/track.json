@@ -9,9 +9,9 @@
     "support": "https://github.com/backslashxx/bindhosts/issues",
     "donate": "",
     "categories": [
-        "Theme",
         "Utility",
         "Script",
+        "Theme",
         "Network"
     ],
     "readme": "https://raw.githubusercontent.com/backslashxx/bindhosts/main/README.md"

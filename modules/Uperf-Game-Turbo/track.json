@@ -11,9 +11,9 @@
     "categories": [
         "Utility",
         "Theme",
-        "Script",
         "Network",
-        "System"
+        "System",
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md"
 }
