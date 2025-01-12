@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1736643436.886124
+    "timestamp": 1736650331.001234
   },
   "modules": [
     {
@@ -51,8 +51,8 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -93,10 +93,10 @@
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
         "Script",
-        "Theme",
-        "Utility",
         "Network",
-        "System"
+        "Theme",
+        "System",
+        "Utility"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -136,10 +136,10 @@
       "categories": [
         "Script",
         "Security",
-        "Utility",
         "Performance",
         "Network",
-        "System"
+        "System",
+        "Utility"
       ],
       "verified": false,
       "added": 0,
@@ -199,8 +199,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -239,9 +239,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Utility",
+        "Script",
         "Network",
-        "Script"
+        "Utility"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -280,8 +280,8 @@
       "author": "twoone3",
       "description": "[state] Filter ads at the DNS level",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
@@ -400,8 +400,8 @@
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
@@ -439,10 +439,10 @@
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
         "Script",
+        "Gaming",
         "Theme",
-        "Utility",
         "System",
-        "Gaming"
+        "Utility"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -481,12 +481,12 @@
       "categories": [
         "Script",
         "Security",
-        "Theme",
-        "Utility",
-        "Debug",
         "Performance",
+        "Theme",
+        "Audio",
+        "Debug",
         "Network",
-        "Audio"
+        "Utility"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -504,8 +504,8 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "ads",
-          "tracking"
+          "tracking",
+          "ads"
         ]
       },
       "versions": [
@@ -529,11 +529,11 @@
       "categories": [
         "Script",
         "Security",
-        "Theme",
-        "Utility",
-        "Debug",
         "Font",
-        "Network"
+        "Theme",
+        "Debug",
+        "Network",
+        "Utility"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -570,12 +570,12 @@
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "categories": [
         "Script",
-        "Utility",
-        "Debug",
         "Performance",
-        "Font",
         "Network",
-        "System"
+        "Font",
+        "Debug",
+        "System",
+        "Utility"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
       "license": "AGPL-3.0",
@@ -615,8 +615,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -654,8 +654,8 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Network",
         "Script",
+        "Network",
         "Debug"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
@@ -693,10 +693,10 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Utility",
-        "Zygisk",
         "Script",
-        "Network"
+        "Zygisk",
+        "Network",
+        "Utility"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -736,9 +736,9 @@
       "categories": [
         "Script",
         "Theme",
-        "Utility",
         "Debug",
-        "Network"
+        "Network",
+        "Utility"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
