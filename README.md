@@ -50,11 +50,7 @@ Misaki-Modules Repo 是一个专注于提供高质量 Magisk 模块的仓库。�
 
 如果您觉得这个项目对您有帮助，欢迎通过以下方式支持我们：
 
-<div align="left">
-    <a href="https://afdian.com/a/misak10">
-        <img src="src/afdian.png" alt="爱发电" width="200px">
-    </a>
-</div>
+[![爱发电](https://img.shields.io/badge/爱发电-支持我们-946ce6?style=for-the-badge)](https://afdian.com/a/misak10)
 
 ## 📚 更多资源
 
