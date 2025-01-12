@@ -11,10 +11,10 @@
     "categories": [
         "Performance",
         "Utility",
-        "Network",
         "Security",
         "System",
-        "Script"
+        "Script",
+        "Network"
     ],
     "readme": ""
 }
