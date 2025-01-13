@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1736748999.340692
+    "timestamp": 1736756156.429694
   },
   "modules": [
     {
@@ -92,11 +92,11 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
+        "System",
         "Utility",
         "Theme",
         "Network",
-        "Script",
-        "System"
+        "Script"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -134,16 +134,15 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
+        "System",
         "Utility",
-        "Network",
-        "Security",
-        "Script",
         "Performance",
-        "System"
+        "Security",
+        "Network",
+        "Script"
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1736748996.5151,
       "size": 6188403,
       "features": {
         "service": true,
@@ -248,9 +247,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Utility",
         "Network",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -289,8 +288,8 @@
       "author": "twoone3",
       "description": "[state] Filter ads at the DNS level",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
@@ -409,8 +408,8 @@
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
@@ -447,11 +446,11 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
+        "System",
         "Utility",
         "Theme",
         "Gaming",
-        "Script",
-        "System"
+        "Script"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -490,12 +489,12 @@
       "categories": [
         "Utility",
         "Theme",
-        "Network",
-        "Security",
-        "Script",
+        "Debug",
         "Performance",
-        "Audio",
-        "Debug"
+        "Security",
+        "Network",
+        "Script",
+        "Audio"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -513,8 +512,8 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "ads",
-          "tracking"
+          "tracking",
+          "ads"
         ]
       },
       "versions": [
@@ -537,12 +536,12 @@
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
         "Utility",
-        "Theme",
-        "Network",
-        "Security",
-        "Script",
         "Font",
-        "Debug"
+        "Theme",
+        "Debug",
+        "Security",
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -578,13 +577,13 @@
       "author": "sidex15 & simonpunk",
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "categories": [
-        "Utility",
-        "Network",
-        "Script",
-        "Performance",
-        "Font",
         "System",
-        "Debug"
+        "Utility",
+        "Font",
+        "Debug",
+        "Performance",
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
       "license": "AGPL-3.0",
@@ -702,10 +701,10 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Utility",
         "Network",
         "Script",
-        "Zygisk"
+        "Zygisk",
+        "Utility"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -745,9 +744,9 @@
       "categories": [
         "Utility",
         "Theme",
+        "Debug",
         "Network",
-        "Script",
-        "Debug"
+        "Script"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
