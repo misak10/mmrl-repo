@@ -11,12 +11,12 @@
     "categories": [
         "Security",
         "Network",
-        "Theme",
         "Script",
-        "Performance",
         "Utility",
         "Debug",
-        "Audio"
+        "Performance",
+        "Audio",
+        "Theme"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
     "antifeatures": [
