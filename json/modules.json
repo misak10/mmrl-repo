@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1736741648.646562
+    "timestamp": 1736748999.340692
   },
   "modules": [
     {
@@ -92,11 +92,11 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "Network",
-        "Theme",
         "Utility",
-        "System",
-        "Script"
+        "Theme",
+        "Network",
+        "Script",
+        "System"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -129,21 +129,22 @@
     {
       "id": "VoyagerKernel",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.3.4-f4c85b96",
-      "versionCode": 337,
+      "version": "3.3.4-334efeac",
+      "versionCode": 338,
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Network",
-        "Performance",
         "Utility",
+        "Network",
         "Security",
-        "System",
-        "Script"
+        "Script",
+        "Performance",
+        "System"
       ],
       "verified": false,
       "added": 0,
-      "size": 6188381,
+      "timestamp": 1736748996.5151,
+      "size": 6188403,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -188,6 +189,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.3.4-f4c85b96_337.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.3.4-f4c85b96_337.md",
           "size": 6188381
+        },
+        {
+          "timestamp": 1736748996.5151,
+          "version": "3.3.4-334efeac",
+          "versionCode": 338,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.3.4-334efeac_338.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.3.4-334efeac_338.md",
+          "size": 6188403
         }
       ]
     },
@@ -239,8 +248,8 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Network",
         "Utility",
+        "Network",
         "Script"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
@@ -438,11 +447,11 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "Gaming",
-        "Theme",
         "Utility",
-        "System",
-        "Script"
+        "Theme",
+        "Gaming",
+        "Script",
+        "System"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -479,14 +488,14 @@
       "author": "@coolapk 10007",
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27335 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
-        "Network",
-        "Theme",
-        "Audio",
-        "Performance",
         "Utility",
+        "Theme",
+        "Network",
         "Security",
-        "Debug",
-        "Script"
+        "Script",
+        "Performance",
+        "Audio",
+        "Debug"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -527,13 +536,13 @@
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
-        "Network",
-        "Theme",
         "Utility",
+        "Theme",
+        "Network",
         "Security",
-        "Debug",
+        "Script",
         "Font",
-        "Script"
+        "Debug"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -569,13 +578,13 @@
       "author": "sidex15 & simonpunk",
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "categories": [
-        "Network",
-        "Performance",
         "Utility",
-        "Debug",
+        "Network",
+        "Script",
+        "Performance",
         "Font",
         "System",
-        "Script"
+        "Debug"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
       "license": "AGPL-3.0",
@@ -655,8 +664,8 @@
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
         "Network",
-        "Debug",
-        "Script"
+        "Script",
+        "Debug"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -693,10 +702,10 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Zygisk",
         "Utility",
         "Network",
-        "Script"
+        "Script",
+        "Zygisk"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -734,11 +743,11 @@
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
-        "Network",
-        "Theme",
         "Utility",
-        "Debug",
-        "Script"
+        "Theme",
+        "Network",
+        "Script",
+        "Debug"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
