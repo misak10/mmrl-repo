@@ -1,18 +1,17 @@
 {
-    "id": "bindhosts",
-    "enable": true,
-    "verified": true,
-    "update_to": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json",
-    "license": "",
-    "homepage": "",
-    "source": "https://github.com/backslashxx/bindhosts",
-    "support": "https://github.com/backslashxx/bindhosts/issues",
-    "donate": "",
-    "categories": [
-        "Theme",
-        "Script",
-        "Network",
-        "Utility"
-    ],
-    "readme": "https://raw.githubusercontent.com/backslashxx/bindhosts/main/README.md"
+  "id": "bindhosts",
+  "enable": true,
+  "verified": true,
+  "update_to": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json",
+  "source": "https://github.com/backslashxx/bindhosts",
+  "support": "https://github.com/backslashxx/bindhosts/issues",
+  "categories": [
+    "Theme",
+    "Script",
+    "Network",
+    "Utility"
+  ],
+  "readme": "https://raw.githubusercontent.com/backslashxx/bindhosts/main/README.md",
+  "last_update": 1736951361.0,
+  "versions": 3
 }
