@@ -9,11 +9,11 @@
     "support": "",
     "donate": "",
     "categories": [
+        "Utility",
+        "System",
         "Script",
         "Performance",
         "Security",
-        "System",
-        "Utility",
         "Network"
     ],
     "readme": ""
