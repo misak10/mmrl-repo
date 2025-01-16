@@ -11,10 +11,10 @@
     "categories": [
         "Theme",
         "Font",
-        "Security",
-        "Debug",
         "Utility",
+        "Security",
         "Script",
+        "Debug",
         "Network"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md"
