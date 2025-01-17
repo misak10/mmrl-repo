@@ -10,12 +10,12 @@
     "donate": "",
     "categories": [
         "Theme",
-        "Network",
-        "Utility",
-        "Debug",
+        "Font",
         "Security",
         "Script",
-        "Font"
+        "Network",
+        "Utility",
+        "Debug"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md"
 }
