@@ -12,8 +12,8 @@
         "System",
         "Font",
         "Debug",
-        "Network",
         "Utility",
+        "Network",
         "Script",
         "Performance"
     ],
