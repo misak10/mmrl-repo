@@ -9,13 +9,13 @@
     "support": "https://github.com/lingeringsound/10007/issues",
     "donate": "",
     "categories": [
-        "Performance",
-        "Network",
-        "Script",
-        "Utility",
         "Audio",
         "Debug",
+        "Network",
         "Theme",
+        "Performance",
+        "Utility",
+        "Script",
         "Security"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
