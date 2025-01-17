@@ -12,8 +12,8 @@
         "Theme",
         "System",
         "Utility",
-        "Gaming",
-        "Script"
+        "Script",
+        "Gaming"
     ],
     "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md"
 }
