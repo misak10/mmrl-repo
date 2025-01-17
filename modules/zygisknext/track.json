@@ -11,8 +11,8 @@
     "categories": [
         "Network",
         "Script",
-        "Utility",
-        "Zygisk"
+        "Zygisk",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md"
 }
