@@ -10,11 +10,11 @@
     "donate": "",
     "categories": [
         "Network",
-        "Security",
         "Utility",
-        "System",
         "Script",
-        "Performance"
+        "System",
+        "Performance",
+        "Security"
     ],
     "readme": ""
 }
