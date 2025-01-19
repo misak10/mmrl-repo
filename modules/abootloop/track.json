@@ -10,8 +10,8 @@
     "donate": "",
     "categories": [
         "Utility",
-        "Network",
-        "Script"
+        "Script",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/abootloop/main/README.md"
 }
