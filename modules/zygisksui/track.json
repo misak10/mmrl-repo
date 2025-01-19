@@ -9,10 +9,10 @@
     "support": "https://github.com/RikkaApps/Sui/issues",
     "donate": "",
     "categories": [
-        "Script",
-        "Debug",
-        "Network",
         "Utility",
+        "Script",
+        "Network",
+        "Debug",
         "Theme"
     ],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md"
