@@ -9,9 +9,9 @@
     "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
     "donate": "",
     "categories": [
-        "Network",
-        "Script",
         "Zygisk",
+        "Script",
+        "Network",
         "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md"
