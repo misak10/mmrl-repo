@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1737346412.474681
+    "timestamp": 1737353749.492131
   },
   "modules": [
     {
@@ -51,10 +51,10 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
+        "Font",
         "Theme",
-        "Script",
         "Network",
-        "Font"
+        "Script"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -155,9 +155,9 @@
       "categories": [
         "Performance",
         "Script",
+        "Security",
         "Network",
         "System",
-        "Security",
         "Utility"
       ],
       "verified": false,
@@ -234,8 +234,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -274,9 +274,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Script",
+        "Utility",
         "Network",
-        "Utility"
+        "Script"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -315,8 +315,8 @@
       "author": "twoone3",
       "description": "[state] Filter ads at the DNS level",
       "categories": [
-        "Script",
-        "Utility"
+        "Utility",
+        "Script"
       ],
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
@@ -451,8 +451,8 @@
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
-        "Script",
-        "Utility"
+        "Utility",
+        "Script"
       ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
@@ -532,13 +532,13 @@
       "categories": [
         "Performance",
         "Script",
-        "Debug",
         "Theme",
+        "Security",
+        "Audio",
         "Network",
         "System",
-        "Security",
         "Utility",
-        "Audio"
+        "Debug"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -589,11 +589,11 @@
       "categories": [
         "Script",
         "Font",
-        "Debug",
         "Theme",
-        "Network",
         "Security",
-        "Utility"
+        "Network",
+        "Utility",
+        "Debug"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -632,10 +632,10 @@
         "Performance",
         "Script",
         "Font",
-        "Debug",
         "Network",
         "System",
-        "Utility"
+        "Utility",
+        "Debug"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
       "license": "AGPL-3.0",
@@ -675,8 +675,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -714,8 +714,8 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Script",
         "Network",
+        "Script",
         "Debug"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
@@ -753,10 +753,10 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Script",
+        "Utility",
         "Network",
-        "Zygisk",
-        "Utility"
+        "Script",
+        "Zygisk"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -795,10 +795,10 @@
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
         "Script",
-        "Debug",
         "Theme",
         "Network",
-        "Utility"
+        "Utility",
+        "Debug"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
