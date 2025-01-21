@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1737490307.013265
+    "timestamp": 1737497406.978314
   },
   "modules": [
     {
@@ -51,10 +51,10 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Network",
         "Script",
         "Font",
-        "Theme"
+        "Theme",
+        "Network"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -113,9 +113,9 @@
       "categories": [
         "Script",
         "Network",
+        "Utility",
         "Theme",
-        "System",
-        "Utility"
+        "System"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -163,10 +163,10 @@
       "categories": [
         "Script",
         "Network",
+        "Security",
         "Performance",
-        "System",
         "Utility",
-        "Security"
+        "System"
       ],
       "verified": false,
       "added": 0,
@@ -242,8 +242,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -282,8 +282,8 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Network",
         "Script",
+        "Network",
         "Utility"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
@@ -498,10 +498,10 @@
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
         "Script",
-        "Theme",
-        "System",
+        "Gaming",
         "Utility",
-        "Gaming"
+        "Theme",
+        "System"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -539,14 +539,14 @@
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27746 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
         "Script",
-        "Audio",
         "Network",
+        "Security",
         "Performance",
         "Debug",
+        "Utility",
         "Theme",
         "System",
-        "Utility",
-        "Security"
+        "Audio"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -564,8 +564,8 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "ads",
-          "tracking"
+          "tracking",
+          "ads"
         ]
       },
       "versions": [
@@ -596,12 +596,12 @@
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
         "Script",
-        "Network",
-        "Debug",
-        "Theme",
         "Font",
+        "Network",
         "Security",
-        "Utility"
+        "Debug",
+        "Utility",
+        "Theme"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -638,12 +638,12 @@
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "categories": [
         "Script",
+        "Font",
         "Network",
         "Performance",
         "Debug",
-        "System",
-        "Font",
-        "Utility"
+        "Utility",
+        "System"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
       "license": "AGPL-3.0",
@@ -683,8 +683,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -722,8 +722,8 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Network",
         "Script",
+        "Network",
         "Debug"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
@@ -761,10 +761,10 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Network",
         "Script",
+        "Zygisk",
         "Utility",
-        "Zygisk"
+        "Network"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -805,8 +805,8 @@
         "Script",
         "Network",
         "Debug",
-        "Theme",
-        "Utility"
+        "Utility",
+        "Theme"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
