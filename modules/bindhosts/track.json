@@ -2,17 +2,17 @@
     "id": "bindhosts",
     "enable": true,
     "verified": true,
-    "update_to": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json",
-    "license": "",
+    "update_to": "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/update.json",
+    "license": "WTFPL",
     "homepage": "",
-    "source": "https://github.com/backslashxx/bindhosts",
-    "support": "https://github.com/backslashxx/bindhosts/issues",
+    "source": "https://github.com/bindhosts/bindhosts",
+    "support": "https://github.com/bindhosts/bindhosts/issues",
     "donate": "",
     "categories": [
-        "Utility",
-        "Script",
+        "Theme",
         "Network",
-        "Theme"
+        "Script",
+        "Utility"
     ],
-    "readme": "https://raw.githubusercontent.com/backslashxx/bindhosts/main/README.md"
+    "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md"
 }
