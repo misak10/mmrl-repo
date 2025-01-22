@@ -71,11 +71,11 @@
             "verified": false
         },
         {
-            "url": "https://github.com/backslashxx/bindhosts",
+            "url": "https://github.com/bindhosts/bindhosts",
             "module_id": "bindhosts",
-            "update_to": "https://raw.githubusercontent.com/backslashxx/bindhosts/refs/heads/master/update.json",
-            "source": "https://github.com/backslashxx/bindhosts",
-            "support": "https://github.com/backslashxx/bindhosts/issues",
+            "update_to": "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/update.json",
+            "source": "https://github.com/bindhosts/bindhosts",
+            "support": "https://github.com/bindhosts/bindhosts/issues",
             "donate": "",
             "enable": true,
             "verified": true
