@@ -9,10 +9,10 @@
     "support": "https://github.com/MoGuangYu/Surfing/issues",
     "donate": "",
     "categories": [
-        "Debug",
         "Font",
-        "Theme",
         "Utility",
+        "Debug",
+        "Theme",
         "Security",
         "Network",
         "Script"
