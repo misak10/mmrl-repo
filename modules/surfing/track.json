@@ -9,11 +9,11 @@
     "support": "https://github.com/MoGuangYu/Surfing/issues",
     "donate": "",
     "categories": [
+        "Font",
+        "Security",
+        "Script",
         "Theme",
         "Network",
-        "Font",
-        "Script",
-        "Security",
         "Utility",
         "Debug"
     ],
