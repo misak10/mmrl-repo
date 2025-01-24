@@ -12,9 +12,9 @@
         "Utility",
         "Script",
         "Performance",
-        "Network",
         "Security",
-        "System"
+        "System",
+        "Network"
     ],
     "readme": ""
 }
