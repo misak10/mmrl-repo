@@ -8,31 +8,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary: #6366f1;
-            --accent: #818cf8;
-            --background: #ffffff;
-            --foreground: #1f2937;
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #38bdf8;
+            --accent: #7dd3fc;
+            --background: #f8fafc;
+            --foreground: #0f172a;
             --card: #ffffff;
-            --card-foreground: #1f2937;
-            --border: #e5e7eb;
-            --ring: #e5e7eb;
-            --radius: 1rem;
+            --card-foreground: #1e293b;
+            --border: #e2e8f0;
+            --ring: #94a3b8;
+            --radius: 0.75rem;
             --header-height: 4rem;
         }
 
         [data-bs-theme="dark"] {
-            --primary: #818cf8;
-            --primary-dark: #6366f1;
-            --secondary: #4f46e5;
-            --accent: #4338ca;
+            --primary: #38bdf8;
+            --primary-dark: #0ea5e9;
+            --secondary: #0284c7;
+            --accent: #0369a1;
             --background: #0f172a;
-            --foreground: #e5e7eb;
+            --foreground: #f1f5f9;
             --card: #1e293b;
-            --card-foreground: #e5e7eb;
-            --border: #2e3b4e;
-            --ring: #2e3b4e;
+            --card-foreground: #f1f5f9;
+            --border: #334155;
+            --ring: #475569;
         }
 
         body {
@@ -45,23 +45,28 @@
         }
 
         .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--header-height);
-            background-color: var(--background);
+            background-color: var(--card);
             border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
             z-index: 100;
             backdrop-filter: blur(12px);
         }
 
         .header-content {
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 0 1.5rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .logo {
@@ -69,10 +74,23 @@
             width: auto;
         }
 
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--foreground);
+            text-decoration: none;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .theme-switch {
             width: 2.5rem;
             height: 2.5rem;
-            border-radius: 0.75rem;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
             background: transparent;
             color: var(--foreground);
@@ -89,72 +107,36 @@
             border-color: var(--primary);
         }
 
-        .hero {
-            margin-top: var(--header-height);
-            padding: 6rem 0;
-            background: linear-gradient(to bottom right, var(--primary), var(--secondary));
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="white" opacity="0.1"/></svg>') 0 0/50px 50px;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #fff, rgba(255,255,255,0.8));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .search-bar {
-            margin: -2rem auto 2rem;
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
-            padding: 0 1rem;
-        }
-
         .search-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .search-box {
             background: var(--card);
             border-radius: var(--radius);
             padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
         }
 
-        .filters {
+        .search-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
-            margin-top: 1rem;
+        }
+
+        .search-input {
+            grid-column: 1 / -1;
         }
 
         .form-control, .form-select {
             background: var(--background);
             border: 1px solid var(--border);
             color: var(--foreground);
-            border-radius: 0.75rem;
+            border-radius: var(--radius);
             padding: 0.75rem 1rem;
+            transition: all 0.2s ease;
         }
 
         .form-control:focus, .form-select:focus {
@@ -162,13 +144,16 @@
             box-shadow: 0 0 0 2px var(--primary-dark);
         }
 
+        .modules-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
-            padding: 1.5rem;
-            margin: 0 auto;
-            max-width: 1400px;
         }
 
         .module-card {
@@ -176,28 +161,27 @@
             border-radius: var(--radius);
             border: 1px solid var(--border);
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
 
         .module-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
 
         .module-header {
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-bottom: 1px solid var(--border);
         }
 
         .module-title {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             margin: 0;
-            color: var(--foreground);
+            color: var(--card-foreground);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -207,8 +191,8 @@
             background: var(--primary);
             color: white;
             padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
             font-weight: 500;
         }
 
@@ -217,54 +201,62 @@
             display: flex;
             gap: 1rem;
             font-size: 0.875rem;
-            color: var(--foreground);
+            color: var(--card-foreground);
             opacity: 0.8;
         }
 
         .module-content {
-            padding: 1.5rem;
+            padding: 1.25rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            gap: 1rem;
         }
 
         .module-description {
             margin: 0;
             line-height: 1.6;
-            color: var(--foreground);
+            color: var(--card-foreground);
             opacity: 0.9;
+            font-size: 0.875rem;
         }
 
         .module-features {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 1rem 0;
         }
 
         .feature-tag {
-            background: rgba(79, 70, 229, 0.1);
+            background: rgba(14, 165, 233, 0.1);
             color: var(--primary);
             padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .feature-tag:hover {
+            background: var(--primary);
+            color: white;
         }
 
         .module-actions {
-            margin-top: auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
+            margin-top: auto;
             padding-top: 1rem;
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: var(--radius);
             font-weight: 500;
+            font-size: 0.875rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -293,68 +285,49 @@
             color: white;
         }
 
-        .btn i {
-            font-size: 1.25rem;
-        }
-
         .footer {
             margin-top: auto;
             background: var(--card);
             border-top: 1px solid var(--border);
-            padding: 3rem 0;
+            padding: 2rem 0;
         }
 
         .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .footer-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .footer-link {
-            color: var(--foreground);
+            color: var(--card-foreground);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.75rem;
+            font-size: 0.875rem;
             transition: all 0.2s ease;
         }
 
         .footer-link:hover {
-            background: var(--primary);
-            color: white;
+            color: var(--primary);
         }
 
         .footer-text {
-            color: var(--foreground);
+            color: var(--card-foreground);
             opacity: 0.8;
-            font-size: 0.875rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 4rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .modules-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-
-            .footer-links {
-                flex-direction: column;
-            }
+            font-size: 0.75rem;
+            text-align: center;
         }
 
         .loading {
@@ -362,7 +335,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             z-index: 1000;
             transform: scaleX(0);
@@ -390,6 +363,26 @@
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1rem;
+            }
+
+            .search-container,
+            .modules-container {
+                padding: 0 1rem;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -397,29 +390,29 @@
     
     <header class="header">
         <div class="header-content">
-            <img src="src/logo.png" alt="Misaki-Module Repo" class="logo">
-            <button class="theme-switch" id="themeSwitch">
-                <i class="ri-sun-line"></i>
-            </button>
+            <div class="logo-container">
+                <img src="src/logo.png" alt="Misaki-Module Repo" class="logo">
+                <a href="/" class="logo-text">Misaki-Module Repo</a>
+            </div>
+            <div class="header-actions">
+                <button class="theme-switch" id="themeSwitch">
+                    <i class="ri-sun-line"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Misaki-Module Repo</h1>
-            <p>基于 MMRL 的高质量模块仓库，为您的设备提供优质的模块支持</p>
-        </div>
-    </section>
-
-    <div class="search-bar">
-        <div class="search-container">
-            <div class="input-group">
-                <span class="input-group-text">
-                    <i class="ri-search-line"></i>
-                </span>
-                <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
-            </div>
-            <div class="filters">
+    <div class="search-container">
+        <div class="search-box">
+            <div class="search-grid">
+                <div class="search-input">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="ri-search-line"></i>
+                        </span>
+                        <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
+                    </div>
+                </div>
                 <select id="categoryFilter" class="form-select">
                     <option value="">全部分类</option>
                     <option value="system">系统工具</option>
@@ -445,29 +438,29 @@
         </div>
     </div>
 
-    <main class="modules-grid" id="moduleList">
-        <!-- 模块列表将通过 JavaScript 动态加载 -->
-    </main>
+    <div class="modules-container">
+        <div class="modules-grid" id="moduleList">
+            <!-- 模块列表将通过 JavaScript 动态加载 -->
+        </div>
+    </div>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="https://github.com/misak10/mmrl-repo" class="footer-link">
-                        <i class="ri-github-fill"></i>
-                        GitHub 仓库
-                    </a>
-                    <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link">
-                        <i class="ri-add-circle-fill"></i>
-                        提交模块
-                    </a>
-                    <a href="https://afdian.com/a/misak10" class="footer-link">
-                        <i class="ri-heart-fill"></i>
-                        赞助支持
-                    </a>
-                </div>
-                <p class="footer-text">Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/misak10/mmrl-repo" class="footer-link">
+                    <i class="ri-github-fill"></i>
+                    GitHub 仓库
+                </a>
+                <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link">
+                    <i class="ri-add-circle-fill"></i>
+                    提交模块
+                </a>
+                <a href="https://afdian.com/a/misak10" class="footer-link">
+                    <i class="ri-heart-fill"></i>
+                    赞助支持
+                </a>
             </div>
+            <p class="footer-text">Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
         </div>
     </footer>
 
