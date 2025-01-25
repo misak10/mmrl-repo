@@ -1,0 +1,21 @@
+{
+    "id": "susfs4ksu",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://github.com/sidex15/susfs4ksu-module/raw/refs/heads/v1.5.2+/update.json",
+    "license": "AGPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/sidex15/susfs4ksu-module",
+    "support": "https://github.com/sidex15/susfs4ksu-module/issues",
+    "donate": "",
+    "categories": [
+        "Script",
+        "Utility",
+        "Debug",
+        "Performance",
+        "System",
+        "Font",
+        "Network"
+    ],
+    "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md"
+}
