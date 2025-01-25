@@ -8,47 +8,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --secondary: #60a5fa;
-            --background: #ffffff;
-            --foreground: #0f172a;
-            --muted: #64748b;
-            --card: rgba(255, 255, 255, 0.8);
-            --card-hover: rgba(255, 255, 255, 0.9);
-            --card-foreground: #1e293b;
-            --border: rgba(226, 232, 240, 0.3);
-            --input-background: rgba(255, 255, 255, 0.1);
-            --input-foreground: #0f172a;
-            --input-placeholder: #64748b;
-            --input-border: rgba(226, 232, 240, 0.2);
-            --radius: 16px;
-            --blur: blur(16px);
+            --primary: #18181b;
+            --primary-dark: #27272a;
+            --secondary: #52525b;
+            --background: #fafafa;
+            --foreground: #18181b;
+            --muted: #71717a;
+            --card: rgba(255, 255, 255, 0.7);
+            --card-hover: rgba(255, 255, 255, 0.8);
+            --card-foreground: #18181b;
+            --border: rgba(228, 228, 231, 0.4);
+            --input-background: rgba(255, 255, 255, 0.5);
+            --input-foreground: #18181b;
+            --input-placeholder: #a1a1aa;
+            --input-border: rgba(228, 228, 231, 0.5);
+            --radius: 12px;
+            --blur: blur(12px);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --accent: #18181b;
+            --accent-foreground: #fafafa;
         }
 
         [data-bs-theme="dark"] {
-            --primary: #60a5fa;
-            --primary-dark: #3b82f6;
-            --secondary: #2563eb;
-            --background: #0f172a;
-            --foreground: #f8fafc;
-            --muted: #94a3b8;
-            --card: rgba(30, 41, 59, 0.8);
-            --card-hover: rgba(30, 41, 59, 0.9);
-            --card-foreground: #f8fafc;
-            --border: rgba(51, 65, 85, 0.3);
-            --input-background: rgba(30, 41, 59, 0.3);
-            --input-foreground: #f8fafc;
-            --input-placeholder: #94a3b8;
-            --input-border: rgba(51, 65, 85, 0.3);
+            --primary: #fafafa;
+            --primary-dark: #e4e4e7;
+            --secondary: #a1a1aa;
+            --background: #18181b;
+            --foreground: #fafafa;
+            --muted: #a1a1aa;
+            --card: rgba(39, 39, 42, 0.7);
+            --card-hover: rgba(39, 39, 42, 0.8);
+            --card-foreground: #fafafa;
+            --border: rgba(63, 63, 70, 0.4);
+            --input-background: rgba(39, 39, 42, 0.5);
+            --input-foreground: #fafafa;
+            --input-placeholder: #71717a;
+            --input-border: rgba(63, 63, 70, 0.5);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --accent: #fafafa;
+            --accent-foreground: #18181b;
         }
 
         body {
             background-color: var(--background);
             background-image: 
-                radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(96, 165, 250, 0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(37, 99, 235, 0.15) 0px, transparent 50%);
+                radial-gradient(at 40% 20%, rgba(63, 63, 70, 0.08) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(82, 82, 91, 0.08) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(39, 39, 42, 0.08) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--foreground);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -66,6 +72,7 @@
             top: 0;
             z-index: 100;
             padding: 1rem 0;
+            box-shadow: var(--shadow);
         }
 
         .container {
@@ -129,10 +136,10 @@
             border-radius: var(--radius);
             padding: 1.5rem;
             border: 1px solid var(--border);
+            box-shadow: var(--shadow);
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         @media (min-width: 768px) {
@@ -147,8 +154,9 @@
             color: var(--input-foreground);
             border-radius: var(--radius);
             padding: 0.75rem 1rem;
-            transition: all 0.3s ease;
-            font-size: 0.875rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .form-control::placeholder {
@@ -156,10 +164,8 @@
         }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-            background: var(--input-background);
-            color: var(--input-foreground);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--border);
         }
 
         .form-select {
@@ -191,18 +197,18 @@
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         .module-card:hover {
             background: var(--card-hover);
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 12px 20px -8px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
 
         .module-header {
@@ -224,8 +230,8 @@
         }
 
         .module-version {
-            background: var(--primary);
-            color: white;
+            background: var(--accent);
+            color: var(--accent-foreground);
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.75rem;
@@ -262,8 +268,8 @@
         }
 
         .feature-tag {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary);
+            background: var(--input-background);
+            color: var(--input-foreground);
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.75rem;
@@ -271,13 +277,15 @@
             align-items: center;
             gap: 0.25rem;
             transition: all 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid var(--border);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .feature-tag:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
+            background: var(--accent);
+            color: var(--accent-foreground);
+            border-color: var(--accent);
         }
 
         .module-actions {
@@ -301,29 +309,27 @@
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: white;
+            background: var(--accent);
+            color: var(--accent-foreground);
             border: none;
-            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+            box-shadow: var(--shadow);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
 
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
+            border: 1px solid var(--accent);
+            color: var(--accent);
         }
 
         .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+            background: var(--accent);
+            color: var(--accent-foreground);
         }
 
         .btn-outline:disabled {
@@ -339,6 +345,7 @@
             -webkit-backdrop-filter: var(--blur);
             border-top: 1px solid var(--border);
             padding: 2rem 0;
+            box-shadow: var(--shadow);
         }
 
         .footer-content {
@@ -392,17 +399,57 @@
             background: linear-gradient(
                 90deg,
                 var(--border) 25%,
-                rgba(255, 255, 255, 0.1) 50%,
+                var(--card-hover) 50%,
                 var(--border) 75%
             );
             background-size: 200% 100%;
-            animation: skeleton 1.5s infinite;
+            animation: skeleton 2s infinite;
             border-radius: var(--radius);
         }
 
         @keyframes skeleton {
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
+        }
+
+        /* 新增功能样式 */
+        .module-stats {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: var(--input-background);
+            border-radius: var(--radius);
+            margin-top: 1rem;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .module-badge {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--accent);
+            color: var(--accent-foreground);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius);
+            font-size: 0.75rem;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover .module-badge {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -623,8 +670,10 @@
                 moduleList.innerHTML = updatedModules.map(module => {
                     const features = getFeaturesList(module.features);
                     const lastUpdate = formatDate(module.timestamp);
+                    const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60; // 7天内的模块标记为新
                     return `
                         <div class="module-card">
+                            ${isNew ? '<span class="module-badge">New</span>' : ''}
                             <div class="module-header">
                                 <div class="module-title">
                                     <span>${module.name}</span>
@@ -647,6 +696,20 @@
                                         `).join('')}
                                     </div>
                                 ` : ''}
+                                <div class="module-stats">
+                                    <div class="stat-item">
+                                        <i class="ri-download-line"></i>
+                                        ${module.downloads || 0} 下载
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="ri-star-line"></i>
+                                        ${module.stars || 0} 收藏
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="ri-git-branch-line"></i>
+                                        v${module.version}
+                                    </div>
+                                </div>
                                 <div class="module-actions">
                                     <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
                                         <i class="ri-download-2-line"></i>
