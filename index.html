@@ -642,12 +642,30 @@
 
         async function fetchModuleTimestamp(moduleName) {
             try {
-                const response = await fetch(`modules/${moduleName}/update.json`);
-                if (!response.ok) throw new Error('Failed to fetch timestamp');
+                // 对模块名进行 URL 编码，但保留斜杠
+                const encodedName = moduleName.split('/').map(part => 
+                    encodeURIComponent(part)
+                ).join('/');
+                
+                const response = await fetch(`modules/${encodedName}/update.json`);
+                if (!response.ok) {
+                    console.log(`Failed to fetch timestamp for ${moduleName}, trying fallback...`);
+                    // 尝试从模块的 versions 数组中获取时间戳
+                    const moduleData = modules.find(m => m.name === moduleName);
+                    if (moduleData && moduleData.versions && moduleData.versions[0]) {
+                        return moduleData.versions[0].timestamp || null;
+                    }
+                    throw new Error('Failed to fetch timestamp');
+                }
                 const data = await response.json();
                 return data.timestamp || null;
             } catch (error) {
                 console.error(`Error fetching timestamp for ${moduleName}:`, error);
+                // 如果获取失败，返回模块版本中的时间戳
+                const moduleData = modules.find(m => m.name === moduleName);
+                if (moduleData && moduleData.versions && moduleData.versions[0]) {
+                    return moduleData.versions[0].timestamp || null;
+                }
                 return null;
             }
         }
@@ -658,11 +676,9 @@
             try {
                 // 处理时间戳
                 let ts = timestamp;
-                // 如果是字符串，转换为数字
                 if (typeof timestamp === 'string') {
                     ts = parseFloat(timestamp.replace(/[^\d.]/g, ''));
                 }
-                // 如果是数字，确保是有效的时间戳
                 if (typeof timestamp === 'number') {
                     ts = timestamp;
                 }
@@ -705,8 +721,12 @@
             try {
                 // 获取所有模块的时间戳
                 const modulePromises = modules.map(async module => {
-                    const timestamp = await fetchModuleTimestamp(module.name);
-                    console.log(`Module ${module.name} timestamp:`, timestamp); // 调试日志
+                    let timestamp = await fetchModuleTimestamp(module.name);
+                    // 如果获取失败，尝试使用模块版本中的时间戳
+                    if (!timestamp && module.versions && module.versions[0]) {
+                        timestamp = module.versions[0].timestamp;
+                    }
+                    console.log(`Module ${module.name} timestamp:`, timestamp);
                     return {
                         ...module,
                         timestamp: timestamp
