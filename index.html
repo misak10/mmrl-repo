@@ -229,7 +229,7 @@
             font-weight: 600;
             color: var(--foreground);
             line-height: 1.4;
-            padding-right: 4.5rem;
+            padding-right: 5.5rem;
             word-break: break-word;
         }
 
@@ -248,6 +248,15 @@
             right: 1.5rem;
             transition: all 0.3s ease;
             white-space: nowrap;
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+
+        .module-version:hover {
+            max-width: none;
+            z-index: 1;
         }
 
         .module-new-badge {
@@ -258,7 +267,7 @@
             color: var(--accent);
             font-weight: 500;
             position: absolute;
-            top: 4rem;
+            top: 4.25rem;
             right: 1.5rem;
             background: var(--card);
             padding: 0.25rem 0.75rem;
@@ -691,13 +700,6 @@
                     return `
                         <div class="module-card">
                             <div class="module-header">
-                                <span class="module-version">${version}</span>
-                                ${isNew ? `
-                                    <span class="module-new-badge">
-                                        <i class="ri-flashlight-line"></i>
-                                        New
-                                    </span>
-                                ` : ''}
                                 <div class="module-title">
                                     <span class="module-name">${module.name}</span>
                                     <div class="module-meta">
@@ -705,6 +707,13 @@
                                         <span><i class="ri-time-line"></i> ${lastUpdate}</span>
                                     </div>
                                 </div>
+                                <span class="module-version" title="${version}">${version}</span>
+                                ${isNew ? `
+                                    <span class="module-new-badge">
+                                        <i class="ri-flashlight-line"></i>
+                                        New
+                                    </span>
+                                ` : ''}
                             </div>
                             <div class="module-content">
                                 <p class="module-description">${module.description}</p>
