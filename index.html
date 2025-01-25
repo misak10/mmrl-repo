@@ -197,7 +197,6 @@
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
             box-shadow: var(--shadow);
             overflow: visible;
             display: flex;
@@ -207,12 +206,16 @@
             opacity: 0;
             transform: translateY(20px);
             will-change: transform, opacity;
+            transition: transform 0.2s ease, 
+                      border-color 0.2s ease,
+                      box-shadow 0.2s ease;
         }
 
         .module-card.show {
             opacity: 1;
             transform: translateY(0);
-            transition-delay: calc(var(--order) * 0.05s);
+            transition: opacity 0.3s ease,
+                      transform 0.3s ease;
         }
 
         .module-card:hover {
@@ -221,13 +224,13 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
         }
 
-        @media (prefers-reduced-motion: no-preference) {
-            .module-card {
-                transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
-                            opacity 0.3s cubic-bezier(0.2, 0, 0, 1),
-                            box-shadow 0.2s ease,
-                            border-color 0.2s ease,
-                            background-color 0.2s ease;
+        @media (prefers-reduced-motion: reduce) {
+            .module-card,
+            .module-version,
+            .feature-tag,
+            .btn-primary,
+            .module-changelog {
+                transition: none;
             }
         }
 
@@ -281,7 +284,9 @@
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            transition: transform 0.15s ease,
+                      border-color 0.15s ease,
+                      color 0.15s ease;
             white-space: nowrap;
             max-width: 120px;
             overflow: hidden;
@@ -330,7 +335,9 @@
         }
 
         .module-changelog {
-            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            transition: transform 0.15s ease,
+                      opacity 0.15s ease,
+                      color 0.15s ease;
             opacity: 0.8;
         }
 
@@ -393,7 +400,10 @@
             display: inline-flex;
             align-items: center;
             gap: 0.25rem;
-            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            transition: transform 0.15s ease,
+                      background-color 0.15s ease,
+                      color 0.15s ease,
+                      border-color 0.15s ease;
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
@@ -409,14 +419,15 @@
         .feature-tag.show {
             opacity: 1;
             transform: translateX(0);
-            transition-delay: calc(var(--order) * 0.05s);
+            transition: opacity 0.3s ease,
+                      transform 0.3s ease;
         }
 
         .feature-tag:hover {
+            transform: translateX(2px);
             background: var(--accent);
             color: var(--accent-foreground);
             border-color: var(--accent);
-            transform: translateX(2px);
         }
 
         .module-actions {
@@ -446,7 +457,10 @@
             background: var(--card);
             color: var(--foreground);
             border: 1px solid var(--border);
-            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            transition: transform 0.15s ease,
+                      border-color 0.15s ease,
+                      color 0.15s ease,
+                      box-shadow 0.15s ease;
             position: relative;
             overflow: hidden;
         }
