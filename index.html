@@ -352,11 +352,21 @@
             border: 2px solid var(--bs-primary);
             color: var(--bs-primary);
             font-weight: 600;
+            min-width: 160px;
+            margin: 0 0.5rem;
         }
 
         footer .btn-outline-primary:hover {
             background: var(--bs-primary);
             color: #fff;
+        }
+
+        footer .footer-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 768px) {
@@ -532,18 +542,16 @@
 
     <footer class="py-5 mt-5">
         <div class="container">
-            <div class="row justify-content-center mb-4">
-                <div class="col-auto">
-                    <a href="https://github.com/misak10/mmrl-repo" class="btn btn-outline-primary mx-2">
-                        <i class="ri-github-fill"></i> GitHub 仓库
-                    </a>
-                    <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="btn btn-outline-primary mx-2">
-                        <i class="ri-add-circle-fill"></i> 提交模块
-                    </a>
-                    <a href="https://afdian.com/a/misak10" class="btn btn-outline-primary mx-2">
-                        <i class="ri-heart-fill"></i> 赞助支持
-                    </a>
-                </div>
+            <div class="footer-buttons mb-4">
+                <a href="https://github.com/misak10/mmrl-repo" class="btn btn-outline-primary">
+                    <i class="ri-github-fill"></i> GitHub 仓库
+                </a>
+                <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="btn btn-outline-primary">
+                    <i class="ri-add-circle-fill"></i> 提交模块
+                </a>
+                <a href="https://afdian.com/a/misak10" class="btn btn-outline-primary">
+                    <i class="ri-heart-fill"></i> 赞助支持
+                </a>
             </div>
             <p class="text-center mb-0">Made with <i class="ri-heart-fill text-danger"></i> by Misaki</p>
         </div>
@@ -612,44 +620,19 @@
         }
 
         function formatDate(timestamp) {
-            if (!timestamp || isNaN(timestamp)) {
-                return '未知时间';
-            }
-
+            if (!timestamp) return '未知时间';
+            
             try {
                 const date = new Date(timestamp * 1000);
-                if (isNaN(date.getTime())) {
-                    return '未知时间';
-                }
-
                 const now = new Date();
-                const diff = now - date;
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                
-                if (days < 0) {
-                    return '未知时间';
-                } else if (days === 0) {
-                    const hours = Math.floor(diff / (1000 * 60 * 60));
-                    if (hours === 0) {
-                        const minutes = Math.floor(diff / (1000 * 60));
-                        if (minutes === 0) {
-                            return '刚刚';
-                        }
-                        return `${minutes}分钟前`;
-                    }
-                    return `${hours}小时前`;
-                } else if (days === 1) {
-                    return '昨天';
-                } else if (days < 7) {
-                    return `${days}天前`;
-                } else if (days < 30) {
-                    return `${Math.floor(days / 7)}周前`;
-                } else if (days < 365) {
-                    return `${Math.floor(days / 30)}个月前`;
-                } else {
-                    const years = Math.floor(days / 365);
-                    return `${years}年前`;
-                }
+                const diff = Math.floor((now - date) / 1000);
+
+                if (diff < 60) return '刚刚';
+                if (diff < 3600) return Math.floor(diff / 60) + '分钟前';
+                if (diff < 86400) return Math.floor(diff / 3600) + '小时前';
+                if (diff < 2592000) return Math.floor(diff / 86400) + '天前';
+                if (diff < 31536000) return Math.floor(diff / 2592000) + '个月前';
+                return Math.floor(diff / 31536000) + '年前';
             } catch (error) {
                 console.error('Error formatting date:', error);
                 return '未知时间';
