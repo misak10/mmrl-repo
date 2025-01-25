@@ -16,6 +16,7 @@ async def send_telegram_message(message, buttons):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         'chat_id': TELEGRAM_CHAT_ID,
+        'message_thread_id': 127,
         'text': message,
         'parse_mode': 'HTML',
         'reply_markup': json.dumps({
@@ -46,6 +47,7 @@ async def send_telegram_photo(photo_url, caption, buttons):
     
     payload = {
         'chat_id': TELEGRAM_CHAT_ID,
+        'message_thread_id': 127,
         'caption': caption,
         'parse_mode': 'HTML',
         'reply_markup': json.dumps({
