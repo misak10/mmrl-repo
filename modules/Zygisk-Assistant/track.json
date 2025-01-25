@@ -1,16 +1,16 @@
 {
-    "id": "Zygisk-Assistant",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/refs/heads/main/update_metadata/update.json",
-    "license": "MIT",
-    "homepage": "",
-    "source": "https://github.com/snake-4/Zygisk-Assistant",
-    "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
-    "donate": "",
-    "categories": [
-        "Script",
-        "Network"
-    ],
-    "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md"
+  "id": "Zygisk-Assistant",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/refs/heads/main/update_metadata/update.json",
+  "license": "MIT",
+  "source": "https://github.com/snake-4/Zygisk-Assistant",
+  "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
+  "categories": [
+    "Script",
+    "Network"
+  ],
+  "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md",
+  "last_update": 1723905223.0,
+  "versions": 1
 }

@@ -1,0 +1,14 @@
+{
+  "id": "bindhosts",
+  "timestamp": 1737724663.0,
+  "versions": [
+    {
+      "timestamp": 1737724663.0,
+      "version": "v1.9.1",
+      "versionCode": 191,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.md",
+      "size": 47433
+    }
+  ]
+}

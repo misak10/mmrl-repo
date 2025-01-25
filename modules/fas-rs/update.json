@@ -1,0 +1,14 @@
+{
+  "id": "fas-rs",
+  "timestamp": 1737731988.0,
+  "versions": [
+    {
+      "timestamp": 1737731988.0,
+      "version": "v4.4.0",
+      "versionCode": 440,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.4.0_440.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.4.0_440.md",
+      "size": 1295125
+    }
+  ]
+}

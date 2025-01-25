@@ -1,0 +1,14 @@
+{
+  "id": "zygisknext",
+  "timestamp": 1737269205.0,
+  "versions": [
+    {
+      "timestamp": 1737269205.0,
+      "version": "1.2.7 (497-b7796a7-release)",
+      "versionCode": 497,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.7_497-b7796a7-release.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.7_497-b7796a7-release.md",
+      "size": 3455869
+    }
+  ]
+}
