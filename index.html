@@ -656,11 +656,17 @@
             if (!timestamp) return '未知时间';
             
             try {
-                // 确保时间戳是数字
-                const ts = parseFloat(timestamp);
+                // 处理时间戳
+                let ts = timestamp;
+                if (typeof timestamp === 'string') {
+                    ts = parseFloat(timestamp);
+                }
                 if (isNaN(ts)) return '未知时间';
                 
-                const date = new Date(ts * 1000); // 将秒转换为毫秒
+                // 确保时间戳是整数（去掉小数部分）
+                ts = Math.floor(ts);
+                
+                const date = new Date(ts * 1000);
                 if (isNaN(date.getTime())) return '未知时间';
 
                 const year = date.getFullYear();
@@ -669,9 +675,24 @@
                 const hours = date.getHours().toString().padStart(2, '0');
                 const minutes = date.getMinutes().toString().padStart(2, '0');
                 
-                return `${year}-${month}-${day} ${hours}:${minutes}`;
+                const now = new Date();
+                const diff = Math.floor((ts - now.getTime() / 1000));
+                
+                // 如果是未来时间，直接显示完整日期
+                if (diff > 0) {
+                    return `${year}-${month}-${day} ${hours}:${minutes}`;
+                }
+                
+                // 过去的时间显示相对时间
+                const absDiff = Math.abs(diff);
+                if (absDiff < 60) return '刚刚';
+                if (absDiff < 3600) return `${Math.floor(absDiff / 60)}分钟前`;
+                if (absDiff < 86400) return `${Math.floor(absDiff / 3600)}小时前`;
+                if (absDiff < 2592000) return `${Math.floor(absDiff / 86400)}天前`;
+                if (absDiff < 31536000) return `${Math.floor(absDiff / 2592000)}个月前`;
+                return `${Math.floor(absDiff / 31536000)}年前`;
             } catch (error) {
-                console.error('Error formatting date:', error);
+                console.error('Error formatting date:', error, timestamp);
                 return '未知时间';
             }
         }
