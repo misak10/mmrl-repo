@@ -640,7 +640,7 @@
                 .map(([key, _]) => featureNames[key] || key);
         }
 
-        async function fetchModuleTimestamp(moduleName) {
+        async function fetchModuleTimestamp(moduleName, moduleData) {
             try {
                 // 对模块名进行 URL 编码，但保留斜杠
                 const encodedName = moduleName.split('/').map(part => 
@@ -650,8 +650,7 @@
                 const response = await fetch(`modules/${encodedName}/update.json`);
                 if (!response.ok) {
                     console.log(`Failed to fetch timestamp for ${moduleName}, trying fallback...`);
-                    // 尝试从模块的 versions 数组中获取时间戳
-                    const moduleData = modules.find(m => m.name === moduleName);
+                    // 使用传入的 moduleData 获取时间戳
                     if (moduleData && moduleData.versions && moduleData.versions[0]) {
                         return moduleData.versions[0].timestamp || null;
                     }
@@ -661,8 +660,7 @@
                 return data.timestamp || null;
             } catch (error) {
                 console.error(`Error fetching timestamp for ${moduleName}:`, error);
-                // 如果获取失败，返回模块版本中的时间戳
-                const moduleData = modules.find(m => m.name === moduleName);
+                // 使用传入的 moduleData 获取时间戳
                 if (moduleData && moduleData.versions && moduleData.versions[0]) {
                     return moduleData.versions[0].timestamp || null;
                 }
@@ -721,11 +719,7 @@
             try {
                 // 获取所有模块的时间戳
                 const modulePromises = modules.map(async module => {
-                    let timestamp = await fetchModuleTimestamp(module.name);
-                    // 如果获取失败，尝试使用模块版本中的时间戳
-                    if (!timestamp && module.versions && module.versions[0]) {
-                        timestamp = module.versions[0].timestamp;
-                    }
+                    let timestamp = await fetchModuleTimestamp(module.name, module);
                     console.log(`Module ${module.name} timestamp:`, timestamp);
                     return {
                         ...module,
