@@ -642,28 +642,17 @@
 
         async function fetchModuleTimestamp(moduleName, moduleData) {
             try {
-                // 对模块名进行 URL 编码，但保留斜杠
-                const encodedName = moduleName.split('/').map(part => 
-                    encodeURIComponent(part)
-                ).join('/');
-                
-                const response = await fetch(`modules/${encodedName}/update.json`);
-                if (!response.ok) {
-                    console.log(`Failed to fetch timestamp for ${moduleName}, trying fallback...`);
-                    // 使用传入的 moduleData 获取时间戳
-                    if (moduleData && moduleData.versions && moduleData.versions[0]) {
-                        return moduleData.versions[0].timestamp || null;
-                    }
-                    throw new Error('Failed to fetch timestamp');
+                // 获取最新的时间戳
+                if (moduleData && moduleData.versions && moduleData.versions.length > 0) {
+                    // 从所有版本中找出最新的时间戳
+                    const latestTimestamp = moduleData.versions.reduce((latest, version) => {
+                        const timestamp = version.timestamp || 0;
+                        return timestamp > latest ? timestamp : latest;
+                    }, 0);
+                    return latestTimestamp || null;
                 }
-                const data = await response.json();
-                return data.timestamp || null;
+                return null;
             } catch (error) {
-                console.error(`Error fetching timestamp for ${moduleName}:`, error);
-                // 使用传入的 moduleData 获取时间戳
-                if (moduleData && moduleData.versions && moduleData.versions[0]) {
-                    return moduleData.versions[0].timestamp || null;
-                }
                 return null;
             }
         }
@@ -693,7 +682,6 @@
 
                 return `${year}-${month}-${day} ${hours}:${minutes}`;
             } catch (error) {
-                console.error('Error formatting date:', error, timestamp);
                 return '未知时间';
             }
         }
