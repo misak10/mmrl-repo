@@ -202,6 +202,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            min-height: 280px;
         }
 
         .module-card:hover {
@@ -212,25 +213,36 @@
         }
 
         .module-header {
-            padding: 1.5rem;
+            padding: 1.5rem 1.5rem 1rem;
             border-bottom: 1px solid var(--border);
             position: relative;
+            min-height: 6rem;
         }
 
         .module-title {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            padding-right: 0.5rem;
         }
 
         .module-name {
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--foreground);
             line-height: 1.4;
-            padding-right: 5.5rem;
+            padding-right: 6rem;
             word-break: break-word;
+            margin-bottom: 0.25rem;
+        }
+
+        .module-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+            opacity: 0.8;
+            padding-right: 4rem;
         }
 
         .module-version {
@@ -248,15 +260,17 @@
             right: 1.5rem;
             transition: all 0.3s ease;
             white-space: nowrap;
-            max-width: 150px;
+            max-width: 120px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: inline-block;
+            z-index: 2;
         }
 
         .module-version:hover {
             max-width: none;
-            z-index: 1;
+            z-index: 3;
+            box-shadow: var(--shadow);
         }
 
         .module-new-badge {
@@ -267,8 +281,8 @@
             color: var(--accent);
             font-weight: 500;
             position: absolute;
-            top: 4.25rem;
-            right: 1.5rem;
+            top: 1.5rem;
+            left: 1.5rem;
             background: var(--card);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
@@ -276,33 +290,11 @@
             -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--border);
             white-space: nowrap;
-        }
-
-        .module-changelog {
-            font-size: 0.75rem;
-            color: var(--muted);
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .module-changelog:hover {
-            color: var(--accent);
-        }
-
-        .module-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.875rem;
-            color: var(--muted);
-            opacity: 0.8;
+            z-index: 2;
         }
 
         .module-content {
-            padding: 1.5rem;
+            padding: 1rem 1.5rem 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -314,86 +306,66 @@
             line-height: 1.6;
             color: var(--foreground);
             opacity: 0.9;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .module-features {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
         }
 
         .feature-tag {
             background: var(--input-background);
             color: var(--input-foreground);
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            border-radius: var(--radius);
             font-size: 0.75rem;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.25rem;
             transition: all 0.3s ease;
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-        }
-
-        .feature-tag:hover {
-            background: var(--accent);
-            color: var(--accent-foreground);
-            border-color: var(--accent);
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .module-actions {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            margin-top: auto;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
             padding-top: 1rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1rem;
-            border-radius: var(--radius);
-            font-weight: 500;
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            text-decoration: none;
         }
 
         .btn-primary {
             background: var(--card);
             color: var(--foreground);
             border: 1px solid var(--border);
+            padding: 0.625rem 1rem;
+            height: 2.5rem;
         }
 
-        .btn-primary:hover {
-            background: var(--card-hover);
-            transform: translateY(-2px);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--accent-foreground);
-        }
-
-        .btn-outline:disabled {
-            border-color: var(--muted);
+        .module-changelog {
+            font-size: 0.75rem;
             color: var(--muted);
-            cursor: not-allowed;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.25rem;
         }
 
         .footer {
