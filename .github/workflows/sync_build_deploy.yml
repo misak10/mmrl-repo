@@ -65,29 +65,42 @@ jobs:
               
               # 从 update.json 读取版本历史
               if [ -f "${module_dir}update.json" ]; then
-                # 提取所有版本的时间戳和版本号，按时间戳排序（最新的在前）
-                versions=($(jq -r '.versions[] | [.timestamp, .version] | @tsv' "${module_dir}update.json" | sort -rn | cut -f2))
-                total_versions=${#versions[@]}
+                # 创建临时文件存储版本信息
+                temp_file=$(mktemp)
                 
-                if [ $total_versions -gt 2 ]; then
+                # 提取版本信息到临时文件并按时间戳排序
+                jq -r '.versions[] | "\(.timestamp) \(.version)"' "${module_dir}update.json" | sort -rn > "$temp_file"
+                
+                # 获取版本总数
+                total_versions=$(wc -l < "$temp_file")
+                
+                if [ "$total_versions" -gt 2 ]; then
                   echo "Found $total_versions versions for $module_name"
-                  echo "Keeping versions: ${versions[0]}, ${versions[1]}"
                   
-                  # 删除旧版本（从第三个版本开始）
-                  for ((i=2; i<total_versions; i++)); do
-                    version="${versions[$i]}"
-                    echo "Removing old version: $version"
-                    
-                    # 删除版本目录
-                    rm -rf "${module_dir}${version}"
-                    # 删除对应的 zip 文件
-                    rm -f "${module_dir}${module_name}-${version}.zip"
-                    # 删除对应的 md 文件
-                    rm -f "${module_dir}${module_name}-${version}.md"
-                  done
+                  # 获取要保留的版本
+                  keep_v1=$(sed -n '1p' "$temp_file" | cut -d' ' -f2)
+                  keep_v2=$(sed -n '2p' "$temp_file" | cut -d' ' -f2)
+                  echo "Keeping versions: $keep_v1, $keep_v2"
+                  
+                  # 获取要删除的版本
+                  while read -r timestamp version; do
+                    if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ]; then
+                      echo "Removing old version: $version"
+                      
+                      # 删除版本目录
+                      rm -rf "${module_dir}${version}"
+                      # 删除对应的 zip 文件
+                      rm -f "${module_dir}${module_name}-${version}.zip"
+                      # 删除对应的 md 文件
+                      rm -f "${module_dir}${module_name}-${version}.md"
+                    fi
+                  done < "$temp_file"
                 else
                   echo "No old versions to clean for $module_name (found $total_versions versions)"
                 fi
+                
+                # 清理临时文件
+                rm -f "$temp_file"
               else
                 echo "Warning: update.json not found for $module_name"
               fi
