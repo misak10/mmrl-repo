@@ -214,13 +214,15 @@
         .module-header {
             padding: 1.5rem;
             border-bottom: 1px solid var(--border);
+            position: relative;
         }
 
         .module-title {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             margin-bottom: 0.75rem;
+            padding-right: 5rem;
         }
 
         .module-name {
@@ -230,12 +232,37 @@
         }
 
         .module-version {
-            background: var(--accent);
-            color: var(--accent-foreground);
+            background: var(--card);
+            color: var(--foreground);
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            border-radius: var(--radius);
             font-size: 0.75rem;
             font-weight: 500;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid var(--border);
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .module-new-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 500;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--card);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid var(--border);
         }
 
         .module-meta {
@@ -290,7 +317,7 @@
 
         .module-actions {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 0.75rem;
             margin-top: auto;
             padding-top: 1rem;
@@ -306,19 +333,20 @@
             justify-content: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: var(--accent-foreground);
-            border: none;
-            box-shadow: var(--shadow);
+            background: var(--card);
+            color: var(--foreground);
+            border: 1px solid var(--border);
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
+            background: var(--card-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent);
         }
 
         .btn-outline {
@@ -412,44 +440,11 @@
             100% { background-position: -200% 0; }
         }
 
-        /* 新增功能样式 */
-        .module-stats {
-            display: flex;
-            gap: 1rem;
-            padding: 0.75rem;
-            background: var(--input-background);
-            border-radius: var(--radius);
-            margin-top: 1rem;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--muted);
-        }
-
+        /* 移除不需要的样式 */
+        .module-stats,
+        .stat-item,
         .module-badge {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            background: var(--accent);
-            color: var(--accent-foreground);
-            padding: 0.25rem 0.5rem;
-            border-radius: var(--radius);
-            font-size: 0.75rem;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateY(-4px);
-            transition: all 0.3s ease;
-        }
-
-        .module-card:hover .module-badge {
-            opacity: 1;
-            transform: translateY(0);
+            display: none;
         }
     </style>
 </head>
@@ -670,14 +665,19 @@
                 moduleList.innerHTML = updatedModules.map(module => {
                     const features = getFeaturesList(module.features);
                     const lastUpdate = formatDate(module.timestamp);
-                    const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60; // 7天内的模块标记为新
+                    const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60;
                     return `
                         <div class="module-card">
-                            ${isNew ? '<span class="module-badge">New</span>' : ''}
                             <div class="module-header">
+                                ${isNew ? `
+                                    <span class="module-new-badge">
+                                        <i class="ri-flashlight-line"></i>
+                                        New
+                                    </span>
+                                ` : ''}
+                                <span class="module-version">v${module.version}</span>
                                 <div class="module-title">
                                     <span>${module.name}</span>
-                                    <span class="module-version">${module.version}</span>
                                 </div>
                                 <div class="module-meta">
                                     <span><i class="ri-user-3-line"></i> ${module.author}</span>
@@ -696,36 +696,11 @@
                                         `).join('')}
                                     </div>
                                 ` : ''}
-                                <div class="module-stats">
-                                    <div class="stat-item">
-                                        <i class="ri-download-line"></i>
-                                        ${module.downloads || 0} 下载
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="ri-star-line"></i>
-                                        ${module.stars || 0} 收藏
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="ri-git-branch-line"></i>
-                                        v${module.version}
-                                    </div>
-                                </div>
                                 <div class="module-actions">
                                     <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
                                         <i class="ri-download-2-line"></i>
                                         下载
                                     </a>
-                                    ${module.versions[0].changelog ? `
-                                        <a href="${module.versions[0].changelog}" class="btn btn-outline">
-                                            <i class="ri-file-list-3-line"></i>
-                                            更新日志
-                                        </a>
-                                    ` : `
-                                        <button class="btn btn-outline" disabled>
-                                            <i class="ri-file-list-3-line"></i>
-                                            暂无日志
-                                        </button>
-                                    `}
                                 </div>
                             </div>
                         </div>
