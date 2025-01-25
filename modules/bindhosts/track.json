@@ -10,9 +10,9 @@
     "donate": "",
     "categories": [
         "Theme",
+        "Utility",
         "Network",
-        "Script",
-        "Utility"
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md"
 }
