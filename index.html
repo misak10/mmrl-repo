@@ -645,38 +645,35 @@
             
             try {
                 // 确保时间戳是数字
-                const ts = parseInt(timestamp);
+                const ts = parseFloat(timestamp);
                 if (isNaN(ts)) return '未知时间';
                 
-                const date = new Date(ts * 1000);
+                const date = new Date(ts * 1000); // 将秒转换为毫秒
                 if (isNaN(date.getTime())) return '未知时间';
 
                 const now = new Date();
-                const diff = Math.floor((now - date) / 1000);
+                const diff = Math.floor((date - now) / 1000); // 注意这里改变了计算顺序
                 
-                // 处理未来时间
-                if (diff < 0) return '未知时间';
-
-                // 处理各种时间范围
-                if (diff < 60) return '刚刚';
-                if (diff < 3600) return `${Math.floor(diff / 60)}分钟前`;
-                if (diff < 86400) return `${Math.floor(diff / 3600)}小时前`;
-                
-                // 超过一天，显示具体日期
-                const year = date.getFullYear();
-                const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                const day = date.getDate().toString().padStart(2, '0');
-                const hours = date.getHours().toString().padStart(2, '0');
-                const minutes = date.getMinutes().toString().padStart(2, '0');
-                
-                const currentYear = now.getFullYear();
-                
-                // 如果是今年，不显示年份
-                if (year === currentYear) {
-                    return `${month}-${day} ${hours}:${minutes}`;
+                // 处理过去时间
+                if (diff > 0) {
+                    // 超过当前时间，显示具体日期
+                    const year = date.getFullYear();
+                    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                    const day = date.getDate().toString().padStart(2, '0');
+                    const hours = date.getHours().toString().padStart(2, '0');
+                    const minutes = date.getMinutes().toString().padStart(2, '0');
+                    
+                    return `${year}-${month}-${day} ${hours}:${minutes}`;
                 }
-                
-                return `${year}-${month}-${day} ${hours}:${minutes}`;
+
+                // 处理各种时间范围（过去的时间）
+                const absDiff = Math.abs(diff);
+                if (absDiff < 60) return '刚刚';
+                if (absDiff < 3600) return `${Math.floor(absDiff / 60)}分钟前`;
+                if (absDiff < 86400) return `${Math.floor(absDiff / 3600)}小时前`;
+                if (absDiff < 2592000) return `${Math.floor(absDiff / 86400)}天前`;
+                if (absDiff < 31536000) return `${Math.floor(absDiff / 2592000)}个月前`;
+                return `${Math.floor(absDiff / 31536000)}年前`;
             } catch (error) {
                 console.error('Error formatting date:', error);
                 return '未知时间';
