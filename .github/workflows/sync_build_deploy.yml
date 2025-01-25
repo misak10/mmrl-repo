@@ -56,6 +56,13 @@ jobs:
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
           mmrl-util sync --diff versions_diff.md
+          # 获取所有模块并只保留最新的两个版本
+          for module in $(mmrl-util track list); do
+            versions=$(mmrl-util track versions $module | sort -V | tail -n +3)
+            for version in $versions; do
+              mmrl-util track remove $module $version
+            done
+          done
 
       - name: Write versions diff to summary
         if: ${{ env.IS_SYNC == 'true' }}
