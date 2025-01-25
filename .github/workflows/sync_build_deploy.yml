@@ -89,17 +89,19 @@ jobs:
                     if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ]; then
                       echo "Removing old version: $version"
                       
-                      # 删除版本目录
+                      # 删除版本目录和相关文件
                       rm -rf "${module_dir}${version}"
-                      # 删除对应的 zip 文件
                       rm -f "${module_dir}${module_name}-${version}.zip"
-                      # 删除对应的 md 文件
                       rm -f "${module_dir}${module_name}-${version}.md"
                       
-                      # 将删除操作添加到 git
-                      git add -u "${module_dir}"
+                      # 从 update.json 中移除旧版本
+                      jq --arg ver "$version" '.versions |= map(select(.version != $ver))' "${module_dir}update.json" > "${module_dir}update.json.tmp"
+                      mv "${module_dir}update.json.tmp" "${module_dir}update.json"
                     fi
                   done < "$temp_file"
+                  
+                  # 添加所有更改到 git
+                  git add "${module_dir}"
                 else
                   echo "No old versions to clean for $module_name (found $total_versions versions)"
                 fi
@@ -123,7 +125,8 @@ jobs:
             🕒 Time: $current_time
             
             - Remove old module versions
-            - Keep latest two versions for each module"
+            - Keep latest two versions for each module
+            - Update update.json files"
             
             # 推送更改
             git push
