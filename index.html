@@ -242,6 +242,7 @@
             text-overflow: ellipsis;
             position: relative;
             cursor: help;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .module-name:hover {
@@ -259,6 +260,7 @@
             box-shadow: var(--shadow);
             transform-origin: top left;
             animation: showName 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: -0.75rem;
         }
 
         @keyframes showName {
@@ -293,6 +295,7 @@
             display: inline-block;
             z-index: 2;
             cursor: help;
+            user-select: none;
         }
 
         .module-version:hover {
@@ -335,6 +338,7 @@
             box-shadow: var(--shadow);
             transform-origin: left center;
             animation: newBadge 1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+            user-select: none;
         }
 
         @keyframes newBadge {
@@ -374,6 +378,7 @@
             padding-right: 4rem;
             margin-top: 0.25rem;
             transition: opacity 0.3s ease;
+            user-select: none;
         }
 
         .module-card:hover .module-meta {
@@ -393,12 +398,26 @@
             line-height: 1.6;
             color: var(--foreground);
             opacity: 0.9;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .module-description:hover {
+            -webkit-line-clamp: unset;
+            cursor: help;
         }
 
         .module-features {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
+            min-height: 2.5rem;
         }
 
         .feature-tag {
@@ -419,6 +438,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             transform-origin: left center;
+            user-select: none;
         }
 
         .feature-tag:hover {
@@ -445,6 +465,7 @@
             padding: 0.625rem 1rem;
             height: 2.5rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
         }
 
         .btn-primary:hover {
@@ -459,6 +480,7 @@
             background: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
+            user-select: none;
         }
 
         .btn-outline:hover {
@@ -844,28 +866,53 @@
                 const sort = sortOrder.value;
                 const feature = featureFilter.value;
 
-                let filtered = allModules.filter(module => 
-                    (module.name.toLowerCase().includes(searchTerm) ||
-                    module.description.toLowerCase().includes(searchTerm) ||
-                    module.author.toLowerCase().includes(searchTerm)) &&
-                    (!category || module.categories?.includes(category)) &&
-                    (!feature || (module.features && module.features[feature]))
-                );
+                let filtered = allModules.filter(module => {
+                    const nameMatch = module.name.toLowerCase().includes(searchTerm);
+                    const descMatch = module.description.toLowerCase().includes(searchTerm);
+                    const authorMatch = module.author.toLowerCase().includes(searchTerm);
+                    const categoryMatch = !category || (module.categories && module.categories.includes(category));
+                    const featureMatch = !feature || (module.features && module.features[feature] === true);
+                    
+                    return (nameMatch || descMatch || authorMatch) && categoryMatch && featureMatch;
+                });
 
                 filtered.sort((a, b) => {
                     switch(sort) {
                         case 'date':
-                            return b.timestamp - a.timestamp;
+                            const aTime = a.timestamp || 0;
+                            const bTime = b.timestamp || 0;
+                            return bTime - aTime;
                         case 'author':
-                            return a.author.localeCompare(b.author);
+                            return (a.author || '').localeCompare(b.author || '');
                         case 'downloads':
-                            return (b.downloads || 0) - (a.downloads || 0);
+                            const aDownloads = a.downloads || 0;
+                            const bDownloads = b.downloads || 0;
+                            return bDownloads - aDownloads;
                         default:
-                            return a.name.localeCompare(b.name);
+                            return (a.name || '').localeCompare(b.name || '');
                     }
                 });
 
-                await renderModules(filtered);
+                if (filtered.length === 0) {
+                    moduleList.innerHTML = `
+                        <div class="no-results" style="
+                            grid-column: 1 / -1;
+                            text-align: center;
+                            padding: 3rem;
+                            color: var(--muted);
+                            background: var(--card);
+                            border-radius: var(--radius);
+                            border: 1px solid var(--border);
+                            backdrop-filter: var(--blur);
+                            -webkit-backdrop-filter: var(--blur);
+                        ">
+                            <i class="ri-error-warning-line" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p style="margin: 0;">未找到匹配的模块</p>
+                        </div>
+                    `;
+                } else {
+                    await renderModules(filtered);
+                }
                 hideLoading();
             }
 
