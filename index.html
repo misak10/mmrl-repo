@@ -197,18 +197,19 @@
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: var(--shadow);
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             flex-direction: column;
+            min-height: 280px;
+            position: relative;
         }
 
         .module-card:hover {
-            background: var(--card-hover);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
             border-color: var(--accent);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .module-header {
@@ -240,21 +241,12 @@
             text-overflow: ellipsis;
             position: relative;
             cursor: help;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .module-name:hover {
             -webkit-line-clamp: unset;
-            background: var(--card);
-            position: absolute;
-            z-index: 3;
-            left: 1.5rem;
-            right: 6rem;
-            padding: 0.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            box-shadow: var(--shadow);
+            color: var(--accent);
         }
 
         .module-version {
@@ -270,7 +262,7 @@
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
             max-width: 120px;
             overflow: hidden;
@@ -282,8 +274,9 @@
 
         .module-version:hover {
             max-width: none;
-            z-index: 3;
-            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         .module-new-badge {
@@ -294,8 +287,8 @@
             color: var(--accent);
             font-weight: 500;
             position: absolute;
-            top: 4.25rem;
-            right: 1.5rem;
+            top: -0.75rem;
+            left: 1.5rem;
             background: var(--card);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
@@ -303,6 +296,18 @@
             -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--border);
             white-space: nowrap;
+            z-index: 2;
+            box-shadow: var(--shadow);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
         }
 
         .module-changelog {
@@ -344,6 +349,18 @@
             line-height: 1.6;
             color: var(--foreground);
             opacity: 0.9;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .module-description:hover {
+            -webkit-line-clamp: unset;
+            cursor: help;
+            color: var(--accent);
         }
 
         .module-features {
@@ -356,21 +373,27 @@
             background: var(--input-background);
             color: var(--input-foreground);
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            border-radius: var(--radius);
             font-size: 0.75rem;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.25rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transform-origin: left center;
         }
 
         .feature-tag:hover {
             background: var(--accent);
             color: var(--accent-foreground);
             border-color: var(--accent);
+            transform: translateX(4px);
         }
 
         .module-actions {
