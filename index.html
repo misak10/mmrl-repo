@@ -214,15 +214,13 @@
         .module-header {
             padding: 1.5rem;
             border-bottom: 1px solid var(--border);
-            position: relative;
         }
 
         .module-title {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 0.75rem;
-            padding-right: 5rem;
         }
 
         .module-name {
@@ -255,14 +253,29 @@
             color: var(--accent);
             font-weight: 500;
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 3.5rem;
+            right: 1rem;
             background: var(--card);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--border);
+        }
+
+        .module-changelog {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .module-changelog:hover {
+            color: var(--accent);
         }
 
         .module-meta {
@@ -316,9 +329,9 @@
         }
 
         .module-actions {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
             margin-top: auto;
             padding-top: 1rem;
         }
@@ -335,6 +348,7 @@
             transition: all 0.3s ease;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -347,6 +361,7 @@
             background: var(--card-hover);
             transform: translateY(-2px);
             border-color: var(--accent);
+            color: var(--accent);
         }
 
         .btn-outline {
@@ -666,16 +681,17 @@
                     const features = getFeaturesList(module.features);
                     const lastUpdate = formatDate(module.timestamp);
                     const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60;
+                    const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
                     return `
                         <div class="module-card">
                             <div class="module-header">
+                                <span class="module-version">${version}</span>
                                 ${isNew ? `
                                     <span class="module-new-badge">
                                         <i class="ri-flashlight-line"></i>
                                         New
                                     </span>
                                 ` : ''}
-                                <span class="module-version">v${module.version}</span>
                                 <div class="module-title">
                                     <span>${module.name}</span>
                                 </div>
@@ -701,6 +717,12 @@
                                         <i class="ri-download-2-line"></i>
                                         下载
                                     </a>
+                                    ${module.versions[0].changelog ? `
+                                        <a href="${module.versions[0].changelog}" class="module-changelog">
+                                            <i class="ri-file-list-3-line"></i>
+                                            查看更新日志
+                                        </a>
+                                    ` : ''}
                                 </div>
                             </div>
                         </div>
