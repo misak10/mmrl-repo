@@ -8,40 +8,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            --primary: #0ea5e9;
-            --primary-dark: #0284c7;
-            --secondary: #38bdf8;
-            --accent: #7dd3fc;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #818cf8;
             --background: #f8fafc;
-            --foreground: #0f172a;
-            --card: rgba(255, 255, 255, 0.8);
+            --foreground: #1e293b;
+            --card: rgba(255, 255, 255, 0.7);
+            --card-hover: rgba(255, 255, 255, 0.8);
             --card-foreground: #1e293b;
-            --border: rgba(226, 232, 240, 0.3);
-            --ring: #94a3b8;
-            --radius: 0.75rem;
-            --header-height: 4rem;
-            --blur: blur(12px);
+            --border: rgba(226, 232, 240, 0.2);
+            --radius: 16px;
+            --blur: blur(16px);
         }
 
         [data-bs-theme="dark"] {
-            --primary: #38bdf8;
-            --primary-dark: #0ea5e9;
-            --secondary: #0284c7;
-            --accent: #0369a1;
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --secondary: #4f46e5;
             --background: #0f172a;
             --foreground: #f1f5f9;
-            --card: rgba(30, 41, 59, 0.8);
+            --card: rgba(30, 41, 59, 0.7);
+            --card-hover: rgba(30, 41, 59, 0.8);
             --card-foreground: #f1f5f9;
-            --border: rgba(51, 65, 85, 0.3);
-            --ring: #475569;
+            --border: rgba(51, 65, 85, 0.2);
         }
 
         body {
             background-color: var(--background);
             background-image: 
-                radial-gradient(at 40% 20%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(125, 211, 252, 0.1) 0px, transparent 50%);
+                radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(129, 140, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(79, 70, 229, 0.15) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--foreground);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -51,23 +48,26 @@
         }
 
         .header {
-            background-color: var(--card);
+            background: var(--card);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
             border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
         }
 
         .logo-container {
@@ -88,132 +88,104 @@
             text-decoration: none;
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
         .theme-switch {
             width: 2.5rem;
             height: 2.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
+            border: none;
+            border-radius: 50%;
             background: transparent;
             color: var(--foreground);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s ease;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            transition: all 0.3s ease;
         }
 
         .theme-switch:hover {
             background: var(--primary);
             color: white;
-            border-color: var(--primary);
             transform: rotate(180deg);
         }
 
-        .search-container {
-            max-width: 1400px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
+        .search-section {
+            padding: 2rem 0;
         }
 
-        .search-box {
+        .search-container {
             background: var(--card);
-            border-radius: var(--radius);
-            padding: 1.5rem;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            border-radius: var(--radius);
+            padding: 1.5rem;
             border: 1px solid var(--border);
-        }
-
-        .search-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1rem;
         }
 
-        .search-input {
-            grid-column: 1 / -1;
+        @media (min-width: 768px) {
+            .search-container {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
         }
 
         .form-control, .form-select {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid var(--border);
             color: var(--foreground);
             border-radius: var(--radius);
             padding: 0.75rem 1rem;
-            transition: all 0.2s ease;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            transition: all 0.3s ease;
         }
 
         .form-control:focus, .form-select:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 1px var(--primary);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .input-group-text {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            color: var(--foreground);
-            border-radius: var(--radius);
-            padding: 0.75rem 1rem;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-        }
-
-        .modules-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem 3rem;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
+            padding: 1rem 0 3rem;
         }
 
         .module-card {
             background: var(--card);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            transition: all 0.2s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .module-card:hover {
-            transform: translateY(-2px);
+            background: var(--card-hover);
+            transform: translateY(-4px);
             border-color: var(--primary);
-            box-shadow: 0 0 0 1px var(--primary);
         }
 
         .module-header {
-            padding: 1.25rem;
+            padding: 1.5rem;
             border-bottom: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.05);
         }
 
         .module-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin: 0;
-            color: var(--card-foreground);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--foreground);
         }
 
         .module-version {
@@ -223,21 +195,18 @@
             border-radius: 9999px;
             font-size: 0.75rem;
             font-weight: 500;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
         }
 
         .module-meta {
-            margin-top: 0.75rem;
             display: flex;
             gap: 1rem;
             font-size: 0.875rem;
-            color: var(--card-foreground);
+            color: var(--foreground);
             opacity: 0.8;
         }
 
         .module-content {
-            padding: 1.25rem;
+            padding: 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -245,11 +214,10 @@
         }
 
         .module-description {
-            margin: 0;
-            line-height: 1.6;
-            color: var(--card-foreground);
-            opacity: 0.9;
             font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--foreground);
+            opacity: 0.9;
         }
 
         .module-features {
@@ -259,7 +227,7 @@
         }
 
         .feature-tag {
-            background: rgba(14, 165, 233, 0.1);
+            background: rgba(99, 102, 241, 0.1);
             color: var(--primary);
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
@@ -267,16 +235,12 @@
             display: flex;
             align-items: center;
             gap: 0.25rem;
-            transition: all 0.2s ease;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            border: 1px solid rgba(14, 165, 233, 0.2);
+            transition: all 0.3s ease;
         }
 
         .feature-tag:hover {
             background: var(--primary);
             color: white;
-            border-color: var(--primary);
         }
 
         .module-actions {
@@ -288,7 +252,7 @@
         }
 
         .btn {
-            padding: 0.625rem 1.25rem;
+            padding: 0.75rem 1rem;
             border-radius: var(--radius);
             font-weight: 500;
             font-size: 0.875rem;
@@ -296,9 +260,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            transition: all 0.2s ease;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            transition: all 0.3s ease;
         }
 
         .btn-primary {
@@ -309,7 +271,7 @@
 
         .btn-primary:hover {
             background: var(--primary-dark);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -321,54 +283,46 @@
         .btn-outline:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         .footer {
             margin-top: auto;
             background: var(--card);
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
         }
 
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
+            text-align: center;
         }
 
         .footer-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .footer-link {
-            color: var(--card-foreground);
+            color: var(--foreground);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
+            opacity: 0.8;
+            transition: all 0.3s ease;
         }
 
         .footer-link:hover {
             color: var(--primary);
-        }
-
-        .footer-text {
-            color: var(--card-foreground);
-            opacity: 0.8;
-            font-size: 0.75rem;
-            text-align: center;
+            opacity: 1;
         }
 
         .loading {
@@ -382,7 +336,6 @@
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
-            opacity: 0.8;
         }
 
         .loading.active {
@@ -393,7 +346,7 @@
             background: linear-gradient(
                 90deg,
                 var(--border) 25%,
-                var(--ring) 50%,
+                rgba(255, 255, 255, 0.1) 50%,
                 var(--border) 75%
             );
             background-size: 200% 100%;
@@ -405,35 +358,18 @@
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
-
-        @media (max-width: 768px) {
-            .header-content,
-            .search-container,
-            .modules-container {
-                padding: 0 1rem;
-            }
-
-            .modules-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="loading"></div>
     
     <header class="header">
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="src/logo.png" alt="Misaki-Module Repo" class="logo">
-                <a href="/" class="logo-text">Misaki-Module Repo</a>
-            </div>
-            <div class="header-actions">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="src/logo.png" alt="Misaki-Module Repo" class="logo">
+                    <a href="/" class="logo-text">Misaki-Module Repo</a>
+                </div>
                 <button class="theme-switch" id="themeSwitch">
                     <i class="ri-sun-line"></i>
                 </button>
@@ -441,17 +377,10 @@
         </div>
     </header>
 
-    <div class="search-container">
-        <div class="search-box">
-            <div class="search-grid">
-                <div class="search-input">
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="ri-search-line"></i>
-                        </span>
-                        <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
-                    </div>
-                </div>
+    <main class="container">
+        <section class="search-section">
+            <div class="search-container">
+                <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
                 <select id="categoryFilter" class="form-select">
                     <option value="">全部分类</option>
                     <option value="system">系统工具</option>
@@ -474,32 +403,32 @@
                     <option value="apks">APK支持</option>
                 </select>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="modules-container">
         <div class="modules-grid" id="moduleList">
             <!-- 模块列表将通过 JavaScript 动态加载 -->
         </div>
-    </div>
+    </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="https://github.com/misak10/mmrl-repo" class="footer-link">
-                    <i class="ri-github-fill"></i>
-                    GitHub 仓库
-                </a>
-                <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link">
-                    <i class="ri-add-circle-fill"></i>
-                    提交模块
-                </a>
-                <a href="https://afdian.com/a/misak10" class="footer-link">
-                    <i class="ri-heart-fill"></i>
-                    赞助支持
-                </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/misak10/mmrl-repo" class="footer-link">
+                        <i class="ri-github-fill"></i>
+                        GitHub 仓库
+                    </a>
+                    <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link">
+                        <i class="ri-add-circle-fill"></i>
+                        提交模块
+                    </a>
+                    <a href="https://afdian.com/a/misak10" class="footer-link">
+                        <i class="ri-heart-fill"></i>
+                        赞助支持
+                    </a>
+                </div>
+                <p class="footer-text">Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
             </div>
-            <p class="footer-text">Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
         </div>
     </footer>
 
