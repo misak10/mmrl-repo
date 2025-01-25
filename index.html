@@ -214,19 +214,23 @@
         .module-header {
             padding: 1.5rem;
             border-bottom: 1px solid var(--border);
+            position: relative;
         }
 
         .module-title {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-right: 0.5rem;
         }
 
         .module-name {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--foreground);
+            line-height: 1.4;
+            padding-right: 4.5rem;
+            word-break: break-word;
         }
 
         .module-version {
@@ -240,9 +244,10 @@
             -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--border);
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 1.5rem;
+            right: 1.5rem;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .module-new-badge {
@@ -253,14 +258,15 @@
             color: var(--accent);
             font-weight: 500;
             position: absolute;
-            top: 3.5rem;
-            right: 1rem;
+            top: 4rem;
+            right: 1.5rem;
             background: var(--card);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--border);
+            white-space: nowrap;
         }
 
         .module-changelog {
@@ -693,11 +699,11 @@
                                     </span>
                                 ` : ''}
                                 <div class="module-title">
-                                    <span>${module.name}</span>
-                                </div>
-                                <div class="module-meta">
-                                    <span><i class="ri-user-3-line"></i> ${module.author}</span>
-                                    <span><i class="ri-time-line"></i> ${lastUpdate}</span>
+                                    <span class="module-name">${module.name}</span>
+                                    <div class="module-meta">
+                                        <span><i class="ri-user-3-line"></i> ${module.author}</span>
+                                        <span><i class="ri-time-line"></i> ${lastUpdate}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="module-content">
