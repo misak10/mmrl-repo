@@ -116,13 +116,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .theme-switch:hover {
-            background: var(--primary);
-            color: white;
-            transform: rotate(180deg);
+            transform: rotate(180deg) scale(1.2);
+            background: var(--accent);
+            color: var(--accent-foreground);
         }
 
         .search-section {
@@ -197,19 +197,30 @@
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: var(--shadow);
             overflow: visible;
             display: flex;
             flex-direction: column;
             min-height: 280px;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: cardAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation-delay: calc(var(--animation-order) * 0.1s);
+        }
+
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .module-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px) scale(1.02);
             border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
         }
 
         .module-header {
@@ -262,7 +273,7 @@
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             white-space: nowrap;
             max-width: 120px;
             overflow: hidden;
@@ -274,9 +285,10 @@
 
         .module-version:hover {
             max-width: none;
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             border-color: var(--accent);
             color: var(--accent);
+            box-shadow: var(--shadow);
         }
 
         .module-new-badge {
@@ -298,15 +310,15 @@
             white-space: nowrap;
             z-index: 2;
             box-shadow: var(--shadow);
-            animation: float 2s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% {
-                transform: translateY(0);
+                transform: translateY(0) rotate(0deg);
             }
             50% {
-                transform: translateY(-4px);
+                transform: translateY(-6px) rotate(1deg);
             }
         }
 
@@ -318,10 +330,13 @@
             align-items: center;
             gap: 0.25rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0.8;
         }
 
         .module-changelog:hover {
+            opacity: 1;
+            transform: translateX(6px);
             color: var(--accent);
         }
 
@@ -378,7 +393,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.25rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
@@ -387,13 +402,25 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             transform-origin: left center;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: tagAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation-delay: calc(var(--tag-order) * 0.1s + 0.3s);
+        }
+
+        @keyframes tagAppear {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .feature-tag:hover {
             background: var(--accent);
             color: var(--accent-foreground);
             border-color: var(--accent);
-            transform: translateX(4px);
+            transform: translateX(4px) scale(1.05);
+            box-shadow: var(--shadow);
         }
 
         .module-actions {
@@ -423,13 +450,20 @@
             background: var(--card);
             color: var(--foreground);
             border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary:hover {
-            background: var(--card-hover);
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.02);
             border-color: var(--accent);
             color: var(--accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .btn-outline {
@@ -481,12 +515,12 @@
             align-items: center;
             gap: 0.5rem;
             opacity: 0.8;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .footer-link:hover {
-            color: var(--primary);
-            opacity: 1;
+            transform: translateY(-2px);
+            color: var(--accent);
         }
 
         .loading {
@@ -745,13 +779,13 @@
 
                 const updatedModules = await Promise.all(modulePromises);
                 
-                moduleList.innerHTML = updatedModules.map(module => {
+                moduleList.innerHTML = updatedModules.map((module, index) => {
                     const features = getFeaturesList(module.features);
                     const lastUpdate = formatDate(module.timestamp);
                     const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60;
                     const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
                     return `
-                        <div class="module-card">
+                        <div class="module-card" style="--animation-order: ${index}">
                             <div class="module-header">
                                 <div class="module-title">
                                     <span class="module-name">${module.name}</span>
@@ -772,8 +806,8 @@
                                 <p class="module-description">${module.description}</p>
                                 ${features.length > 0 ? `
                                     <div class="module-features">
-                                        ${features.map(feature => `
-                                            <span class="feature-tag">
+                                        ${features.map((feature, featureIndex) => `
+                                            <span class="feature-tag" style="--tag-order: ${featureIndex}">
                                                 <i class="ri-checkbox-circle-line"></i>
                                                 ${feature}
                                             </span>
