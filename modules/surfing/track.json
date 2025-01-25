@@ -10,10 +10,10 @@
     "donate": "",
     "categories": [
         "Network",
-        "Theme",
-        "Font",
-        "Utility",
         "Security",
+        "Utility",
+        "Font",
+        "Theme",
         "Script",
         "Debug"
     ],
