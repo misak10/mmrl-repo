@@ -56,28 +56,41 @@ jobs:
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
           mmrl-util sync --diff versions_diff.md
+          
+          # 清理旧版本，只保留最新的两个版本
           for module_dir in modules/*/; do
             if [ -d "$module_dir" ]; then
               module_name=$(basename "$module_dir")
               echo "Processing module: $module_name"
               
-              cd "$module_dir"
-              versions=($(find . -maxdepth 1 -type f -name "update.json" -exec dirname {} \; | sort -rV))
-              
-              if [ ${#versions[@]} -gt 2 ]; then
-                echo "Found ${#versions[@]} versions"
-                for ((i=2; i<${#versions[@]}; i++)); do
-                  version_dir="${versions[$i]}"
-                  version_num=$(basename "$version_dir")
-                  if [ "$version_dir" != "." ] && [ -n "$version_num" ]; then
-                    echo "Removing old version: $version_num"
-                    rm -rf "$version_dir"
-                    rm -f "../$module_name-$version_num.zip" 2>/dev/null
-                    rm -f "../$module_name-$version_num.md" 2>/dev/null
-                  fi
-                done
+              # 从 update.json 读取版本历史
+              if [ -f "${module_dir}update.json" ]; then
+                # 提取所有版本的时间戳和版本号，按时间戳排序（最新的在前）
+                versions=($(jq -r '.versions[] | [.timestamp, .version] | @tsv' "${module_dir}update.json" | sort -rn | cut -f2))
+                total_versions=${#versions[@]}
+                
+                if [ $total_versions -gt 2 ]; then
+                  echo "Found $total_versions versions for $module_name"
+                  echo "Keeping versions: ${versions[0]}, ${versions[1]}"
+                  
+                  # 删除旧版本（从第三个版本开始）
+                  for ((i=2; i<total_versions; i++)); do
+                    version="${versions[$i]}"
+                    echo "Removing old version: $version"
+                    
+                    # 删除版本目录
+                    rm -rf "${module_dir}${version}"
+                    # 删除对应的 zip 文件
+                    rm -f "${module_dir}${module_name}-${version}.zip"
+                    # 删除对应的 md 文件
+                    rm -f "${module_dir}${module_name}-${version}.md"
+                  done
+                else
+                  echo "No old versions to clean for $module_name (found $total_versions versions)"
+                fi
+              else
+                echo "Warning: update.json not found for $module_name"
               fi
-              cd - > /dev/null
             fi
           done
 
