@@ -205,22 +205,29 @@
             min-height: 280px;
             position: relative;
             opacity: 0;
-            transform: translateY(20px);
-            animation: cardAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            animation-delay: calc(var(--animation-order) * 0.1s);
+            transform: translateY(30px);
+            will-change: transform, opacity;
         }
 
-        @keyframes cardAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .module-card.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .module-card:hover {
             transform: translateY(-6px) scale(1.02);
             border-color: var(--accent);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .module-card {
+                transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                            opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                            box-shadow 0.3s ease,
+                            border-color 0.3s ease,
+                            background-color 0.3s ease;
+            }
         }
 
         .module-header {
@@ -747,7 +754,7 @@
             
             // 显示加载骨架屏
             moduleList.innerHTML = Array(6).fill(0).map(() => `
-                <div class="module-card">
+                <div class="module-card show">
                     <div class="module-header">
                         <div class="skeleton" style="height: 1.5rem; width: 60%;"></div>
                         <div class="module-meta">
@@ -761,7 +768,6 @@
                             <div class="skeleton" style="height: 1.5rem; width: 40%;"></div>
                         </div>
                         <div class="module-actions">
-                            <div class="skeleton" style="height: 2.5rem; width: 100%;"></div>
                             <div class="skeleton" style="height: 2.5rem; width: 100%;"></div>
                         </div>
                     </div>
@@ -785,7 +791,7 @@
                     const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60;
                     const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
                     return `
-                        <div class="module-card" style="--animation-order: ${index}">
+                        <div class="module-card" style="transition-delay: ${index * 0.1}s">
                             <div class="module-header">
                                 <div class="module-title">
                                     <span class="module-name">${module.name}</span>
@@ -807,7 +813,7 @@
                                 ${features.length > 0 ? `
                                     <div class="module-features">
                                         ${features.map((feature, featureIndex) => `
-                                            <span class="feature-tag" style="--tag-order: ${featureIndex}">
+                                            <span class="feature-tag" style="transition-delay: ${featureIndex * 0.1}s">
                                                 <i class="ri-checkbox-circle-line"></i>
                                                 ${feature}
                                             </span>
@@ -830,6 +836,27 @@
                         </div>
                     `;
                 }).join('');
+
+                // 添加滚动动画
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.module-card').forEach(card => {
+                    observer.observe(card);
+                });
+
             } catch (error) {
                 console.error('Error rendering modules:', error);
             }
