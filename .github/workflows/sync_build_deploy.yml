@@ -89,10 +89,10 @@ jobs:
                     if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ]; then
                       echo "Removing old version: $version"
                       
-                      # 删除版本目录和相关文件
+                      # 删除版本目录和相关文件（都在同一目录下）
                       rm -rf "${module_dir}${version}"
-                      rm -f "${module_dir}${module_name}-${version}.zip"
-                      rm -f "${module_dir}${module_name}-${version}.md"
+                      rm -f "${module_dir}${version}.zip"
+                      rm -f "${module_dir}${version}.md"
                       
                       # 从 update.json 中移除旧版本
                       jq --arg ver "$version" '.versions |= map(select(.version != $ver))' "${module_dir}update.json" > "${module_dir}update.json.tmp"
