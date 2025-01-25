@@ -56,7 +56,9 @@ jobs:
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
           mmrl-util sync --diff versions_diff.md
-          
+
+      - name: Clean old versions
+        run: |
           # 清理旧版本，只保留最新的两个版本
           for module_dir in modules/*/; do
             if [ -d "$module_dir" ]; then
