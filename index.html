@@ -197,18 +197,20 @@
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: var(--shadow);
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             flex-direction: column;
+            min-height: 280px;
+            position: relative;
         }
 
         .module-card:hover {
             background: var(--card-hover);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
             border-color: var(--accent);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
 
         .module-header {
@@ -246,15 +248,28 @@
             -webkit-line-clamp: unset;
             background: var(--card);
             position: absolute;
-            z-index: 3;
+            z-index: 10;
             left: 1.5rem;
             right: 6rem;
-            padding: 0.5rem;
+            padding: 0.75rem;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             box-shadow: var(--shadow);
+            transform-origin: top left;
+            animation: showName 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes showName {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .module-version {
@@ -270,7 +285,7 @@
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
             max-width: 120px;
             overflow: hidden;
@@ -282,8 +297,21 @@
 
         .module-version:hover {
             max-width: none;
-            z-index: 3;
+            z-index: 10;
             box-shadow: var(--shadow);
+            transform: translateY(-2px);
+            animation: showVersion 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes showVersion {
+            from {
+                opacity: 0.8;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
         }
 
         .module-new-badge {
@@ -294,8 +322,8 @@
             color: var(--accent);
             font-weight: 500;
             position: absolute;
-            top: 4.25rem;
-            right: 1.5rem;
+            top: -0.75rem;
+            left: 1.5rem;
             background: var(--card);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
@@ -303,32 +331,53 @@
             -webkit-backdrop-filter: var(--blur);
             border: 1px solid var(--border);
             white-space: nowrap;
+            z-index: 2;
+            box-shadow: var(--shadow);
+            transform-origin: left center;
+            animation: newBadge 1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+        }
+
+        @keyframes newBadge {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-2px);
+            }
         }
 
         .module-changelog {
             font-size: 0.75rem;
             color: var(--muted);
-            margin-top: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.25rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.25rem;
+            opacity: 0.8;
         }
 
         .module-changelog:hover {
             color: var(--accent);
+            opacity: 1;
+            transform: translateX(4px);
         }
 
         .module-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
             font-size: 0.75rem;
             color: var(--muted);
             opacity: 0.8;
             padding-right: 4rem;
             margin-top: 0.25rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .module-card:hover .module-meta {
+            opacity: 1;
         }
 
         .module-content {
@@ -356,50 +405,46 @@
             background: var(--input-background);
             color: var(--input-foreground);
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            border-radius: var(--radius);
             font-size: 0.75rem;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.25rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transform-origin: left center;
         }
 
         .feature-tag:hover {
             background: var(--accent);
             color: var(--accent-foreground);
             border-color: var(--accent);
+            transform: scale(1.05);
+            z-index: 2;
         }
 
         .module-actions {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            margin-top: auto;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
             padding-top: 1rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1rem;
-            border-radius: var(--radius);
-            font-weight: 500;
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            text-decoration: none;
         }
 
         .btn-primary {
             background: var(--card);
             color: var(--foreground);
             border: 1px solid var(--border);
+            padding: 0.625rem 1rem;
+            height: 2.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-primary:hover {
@@ -407,6 +452,7 @@
             transform: translateY(-2px);
             border-color: var(--accent);
             color: var(--accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .btn-outline {
