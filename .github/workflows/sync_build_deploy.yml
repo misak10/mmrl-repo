@@ -91,8 +91,18 @@ jobs:
                       
                       # 删除版本目录和相关文件（都在同一目录下）
                       rm -rf "${module_dir}${version}"
-                      rm -f "${module_dir}${version}.zip"
-                      rm -f "${module_dir}${version}.md"
+                      
+                      # 处理带v前缀和不带v前缀的情况
+                      if [[ "$version" == v* ]]; then
+                        # 如果版本号带v前缀，尝试删除带v和不带v的文件
+                        pure_version="${version#v}"
+                        rm -f "${module_dir}${version}.zip" "${module_dir}v${pure_version}.zip" "${module_dir}${pure_version}.zip"
+                        rm -f "${module_dir}${version}.md" "${module_dir}v${pure_version}.md" "${module_dir}${pure_version}.md"
+                      else
+                        # 如果版本号不带v前缀，尝试删除带v和不带v的文件
+                        rm -f "${module_dir}${version}.zip" "${module_dir}v${version}.zip"
+                        rm -f "${module_dir}${version}.md" "${module_dir}v${version}.md"
+                      fi
                       
                       # 从 update.json 中移除旧版本
                       jq --arg ver "$version" '.versions |= map(select(.version != $ver))' "${module_dir}update.json" > "${module_dir}update.json.tmp"
