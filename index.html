@@ -14,12 +14,13 @@
             --accent: #7dd3fc;
             --background: #f8fafc;
             --foreground: #0f172a;
-            --card: #ffffff;
+            --card: rgba(255, 255, 255, 0.8);
             --card-foreground: #1e293b;
-            --border: #e2e8f0;
+            --border: rgba(226, 232, 240, 0.3);
             --ring: #94a3b8;
             --radius: 0.75rem;
             --header-height: 4rem;
+            --blur: blur(12px);
         }
 
         [data-bs-theme="dark"] {
@@ -29,14 +30,19 @@
             --accent: #0369a1;
             --background: #0f172a;
             --foreground: #f1f5f9;
-            --card: #1e293b;
+            --card: rgba(30, 41, 59, 0.8);
             --card-foreground: #f1f5f9;
-            --border: #334155;
+            --border: rgba(51, 65, 85, 0.3);
             --ring: #475569;
         }
 
         body {
             background-color: var(--background);
+            background-image: 
+                radial-gradient(at 40% 20%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(125, 211, 252, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
             color: var(--foreground);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             min-height: 100vh;
@@ -51,7 +57,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(12px);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .header-content {
@@ -99,12 +106,15 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .theme-switch:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+            transform: rotate(180deg);
         }
 
         .search-container {
@@ -117,7 +127,9 @@
             background: var(--card);
             border-radius: var(--radius);
             padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid var(--border);
         }
 
         .search-grid {
@@ -131,17 +143,30 @@
         }
 
         .form-control, .form-select {
-            background: var(--background);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             color: var(--foreground);
             border-radius: var(--radius);
             padding: 0.75rem 1rem;
             transition: all 0.2s ease;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .form-control:focus, .form-select:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px var(--primary-dark);
+            box-shadow: 0 0 0 1px var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .input-group-text {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--foreground);
+            border-radius: var(--radius);
+            padding: 0.75rem 1rem;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .modules-container {
@@ -165,16 +190,20 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .module-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 1px var(--primary);
         }
 
         .module-header {
             padding: 1.25rem;
             border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .module-title {
@@ -194,6 +223,8 @@
             border-radius: 9999px;
             font-size: 0.75rem;
             font-weight: 500;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .module-meta {
@@ -237,11 +268,15 @@
             align-items: center;
             gap: 0.25rem;
             transition: all 0.2s ease;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid rgba(14, 165, 233, 0.2);
         }
 
         .feature-tag:hover {
             background: var(--primary);
             color: white;
+            border-color: var(--primary);
         }
 
         .module-actions {
@@ -262,6 +297,8 @@
             justify-content: center;
             gap: 0.5rem;
             transition: all 0.2s ease;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .btn-primary {
@@ -272,6 +309,7 @@
 
         .btn-primary:hover {
             background: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
         .btn-outline {
@@ -283,6 +321,7 @@
         .btn-outline:hover {
             background: var(--primary);
             color: white;
+            transform: translateY(-1px);
         }
 
         .footer {
@@ -290,6 +329,8 @@
             background: var(--card);
             border-top: 1px solid var(--border);
             padding: 2rem 0;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
         }
 
         .footer-content {
@@ -341,6 +382,7 @@
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
+            opacity: 0.8;
         }
 
         .loading.active {
@@ -365,10 +407,7 @@
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                padding: 0 1rem;
-            }
-
+            .header-content,
             .search-container,
             .modules-container {
                 padding: 0 1rem;
