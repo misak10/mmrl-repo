@@ -645,7 +645,7 @@
                 const response = await fetch(`modules/${moduleName}/update.json`);
                 if (!response.ok) throw new Error('Failed to fetch timestamp');
                 const data = await response.json();
-                return data.timestamp;
+                return data.timestamp || null;
             } catch (error) {
                 console.error(`Error fetching timestamp for ${moduleName}:`, error);
                 return null;
@@ -658,13 +658,15 @@
             try {
                 // 处理时间戳
                 let ts = timestamp;
+                // 如果是字符串，转换为数字
                 if (typeof timestamp === 'string') {
-                    ts = parseFloat(timestamp);
+                    ts = parseFloat(timestamp.replace(/[^\d.]/g, ''));
+                }
+                // 如果是数字，确保是有效的时间戳
+                if (typeof timestamp === 'number') {
+                    ts = timestamp;
                 }
                 if (isNaN(ts)) return '未知时间';
-                
-                // 确保时间戳是整数（去掉小数部分）
-                ts = Math.floor(ts);
                 
                 const date = new Date(ts * 1000);
                 if (isNaN(date.getTime())) return '未知时间';
@@ -674,23 +676,8 @@
                 const day = date.getDate().toString().padStart(2, '0');
                 const hours = date.getHours().toString().padStart(2, '0');
                 const minutes = date.getMinutes().toString().padStart(2, '0');
-                
-                const now = new Date();
-                const diff = Math.floor((ts - now.getTime() / 1000));
-                
-                // 如果是未来时间，直接显示完整日期
-                if (diff > 0) {
-                    return `${year}-${month}-${day} ${hours}:${minutes}`;
-                }
-                
-                // 过去的时间显示相对时间
-                const absDiff = Math.abs(diff);
-                if (absDiff < 60) return '刚刚';
-                if (absDiff < 3600) return `${Math.floor(absDiff / 60)}分钟前`;
-                if (absDiff < 86400) return `${Math.floor(absDiff / 3600)}小时前`;
-                if (absDiff < 2592000) return `${Math.floor(absDiff / 86400)}天前`;
-                if (absDiff < 31536000) return `${Math.floor(absDiff / 2592000)}个月前`;
-                return `${Math.floor(absDiff / 31536000)}年前`;
+
+                return `${year}-${month}-${day} ${hours}:${minutes}`;
             } catch (error) {
                 console.error('Error formatting date:', error, timestamp);
                 return '未知时间';
@@ -703,7 +690,7 @@
             // 显示加载骨架屏
             moduleList.innerHTML = Array(6).fill(0).map(() => `
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
+                    <div class="card">
                         <div class="card-body">
                             <div class="skeleton" style="width: 70%;"></div>
                             <div class="skeleton" style="width: 40%;"></div>
@@ -715,73 +702,78 @@
                 </div>
             `).join('');
             
-            // 获取所有模块的时间戳
-            const modulePromises = modules.map(async module => {
-                const timestamp = await fetchModuleTimestamp(module.name);
-                return {
-                    ...module,
-                    timestamp: timestamp || module.timestamp
-                };
-            });
+            try {
+                // 获取所有模块的时间戳
+                const modulePromises = modules.map(async module => {
+                    const timestamp = await fetchModuleTimestamp(module.name);
+                    console.log(`Module ${module.name} timestamp:`, timestamp); // 调试日志
+                    return {
+                        ...module,
+                        timestamp: timestamp
+                    };
+                });
 
-            // 等待所有时间戳获取完成
-            const updatedModules = await Promise.all(modulePromises);
-            
-            moduleList.innerHTML = updatedModules.map(module => {
-                const features = getFeaturesList(module.features);
-                const lastUpdate = formatDate(module.timestamp);
-                return `
-                    <div class="col-md-6 col-lg-4 fade-in">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="module-header">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h5 class="module-title">${module.name}</h5>
-                                        <span class="badge bg-primary">${module.version}</span>
+                // 等待所有时间戳获取完成
+                const updatedModules = await Promise.all(modulePromises);
+                
+                moduleList.innerHTML = updatedModules.map(module => {
+                    const features = getFeaturesList(module.features);
+                    const lastUpdate = formatDate(module.timestamp);
+                    return `
+                        <div class="col-md-6 col-lg-4 fade-in">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="module-header">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="module-title">${module.name}</h5>
+                                            <span class="badge bg-primary">${module.version}</span>
+                                        </div>
+                                        <div class="module-meta">
+                                            <span><i class="ri-user-3-line"></i> ${module.author}</span>
+                                            <span><i class="ri-time-line"></i> ${lastUpdate}</span>
+                                        </div>
                                     </div>
-                                    <div class="module-meta">
-                                        <span><i class="ri-user-3-line"></i> ${module.author}</span>
-                                        <span><i class="ri-time-line"></i> ${lastUpdate}</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="module-description">${module.description}</p>
-                                
-                                ${features.length > 0 ? `
-                                    <div class="module-features">
-                                        ${features.map(feature => `
-                                            <span class="feature-tag">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                                ${feature}
-                                            </span>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
-                                
-                                <div class="module-actions">
-                                    <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
-                                        <i class="ri-download-2-line"></i>
-                                        下载
-                                    </a>
-                                    ${module.versions[0].changelog ? `
-                                        <a href="${module.versions[0].changelog}" class="btn btn-outline">
-                                            <i class="ri-file-list-3-line"></i>
-                                            更新日志
+                                    
+                                    <p class="module-description">${module.description}</p>
+                                    
+                                    ${features.length > 0 ? `
+                                        <div class="module-features">
+                                            ${features.map(feature => `
+                                                <span class="feature-tag">
+                                                    <i class="ri-checkbox-circle-line"></i>
+                                                    ${feature}
+                                                </span>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                    
+                                    <div class="module-actions">
+                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
+                                            <i class="ri-download-2-line"></i>
+                                            下载
                                         </a>
-                                    ` : `
-                                        <button class="btn btn-outline" disabled>
-                                            <i class="ri-file-list-3-line"></i>
-                                            暂无日志
-                                        </button>
-                                    `}
+                                        ${module.versions[0].changelog ? `
+                                            <a href="${module.versions[0].changelog}" class="btn btn-outline">
+                                                <i class="ri-file-list-3-line"></i>
+                                                更新日志
+                                            </a>
+                                        ` : `
+                                            <button class="btn btn-outline" disabled>
+                                                <i class="ri-file-list-3-line"></i>
+                                                暂无日志
+                                            </button>
+                                        `}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                `;
-            }).join('');
+                    `;
+                }).join('');
 
-            document.getElementById('totalModules').textContent = updatedModules.length;
+                document.getElementById('totalModules').textContent = updatedModules.length;
+            } catch (error) {
+                console.error('Error rendering modules:', error);
+            }
         }
 
         function setupFilters() {
