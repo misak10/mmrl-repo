@@ -197,7 +197,7 @@
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
             box-shadow: var(--shadow);
             overflow: visible;
             display: flex;
@@ -205,28 +205,29 @@
             min-height: 280px;
             position: relative;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             will-change: transform, opacity;
         }
 
         .module-card.show {
             opacity: 1;
             transform: translateY(0);
+            transition-delay: calc(var(--order) * 0.05s);
         }
 
         .module-card:hover {
-            transform: translateY(-6px) scale(1.02);
+            transform: translateY(-4px);
             border-color: var(--accent);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
         }
 
         @media (prefers-reduced-motion: no-preference) {
             .module-card {
-                transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            box-shadow 0.3s ease,
-                            border-color 0.3s ease,
-                            background-color 0.3s ease;
+                transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
+                            opacity 0.3s cubic-bezier(0.2, 0, 0, 1),
+                            box-shadow 0.2s ease,
+                            border-color 0.2s ease,
+                            background-color 0.2s ease;
             }
         }
 
@@ -280,7 +281,7 @@
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
             white-space: nowrap;
             max-width: 120px;
             overflow: hidden;
@@ -292,10 +293,9 @@
 
         .module-version:hover {
             max-width: none;
-            transform: translateY(-2px) scale(1.05);
+            transform: translateY(-2px);
             border-color: var(--accent);
             color: var(--accent);
-            box-shadow: var(--shadow);
         }
 
         .module-new-badge {
@@ -317,33 +317,26 @@
             white-space: nowrap;
             z-index: 2;
             box-shadow: var(--shadow);
-            animation: float 3s ease-in-out infinite;
+            animation: float 2s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(0);
             }
             50% {
-                transform: translateY(-6px) rotate(1deg);
+                transform: translateY(-4px);
             }
         }
 
         .module-changelog {
-            font-size: 0.75rem;
-            color: var(--muted);
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
             opacity: 0.8;
         }
 
         .module-changelog:hover {
             opacity: 1;
-            transform: translateX(6px);
+            transform: translateX(4px);
             color: var(--accent);
         }
 
@@ -400,7 +393,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.25rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
             border: 1px solid var(--border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
@@ -411,23 +404,19 @@
             transform-origin: left center;
             opacity: 0;
             transform: translateX(-10px);
-            animation: tagAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            animation-delay: calc(var(--tag-order) * 0.1s + 0.3s);
         }
 
-        @keyframes tagAppear {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .feature-tag.show {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: calc(var(--order) * 0.05s);
         }
 
         .feature-tag:hover {
             background: var(--accent);
             color: var(--accent-foreground);
             border-color: var(--accent);
-            transform: translateX(4px) scale(1.05);
-            box-shadow: var(--shadow);
+            transform: translateX(2px);
         }
 
         .module-actions {
@@ -457,20 +446,20 @@
             background: var(--card);
             color: var(--foreground);
             border: 1px solid var(--border);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
             position: relative;
             overflow: hidden;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px);
             border-color: var(--accent);
             color: var(--accent);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
 
         .btn-primary:active {
-            transform: translateY(0) scale(0.98);
+            transform: translateY(0);
         }
 
         .btn-outline {
@@ -791,7 +780,7 @@
                     const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60;
                     const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
                     return `
-                        <div class="module-card" style="transition-delay: ${index * 0.1}s">
+                        <div class="module-card" style="--order: ${index}">
                             <div class="module-header">
                                 <div class="module-title">
                                     <span class="module-name">${module.name}</span>
@@ -813,7 +802,7 @@
                                 ${features.length > 0 ? `
                                     <div class="module-features">
                                         ${features.map((feature, featureIndex) => `
-                                            <span class="feature-tag" style="transition-delay: ${featureIndex * 0.1}s">
+                                            <span class="feature-tag" style="--order: ${featureIndex}">
                                                 <i class="ri-checkbox-circle-line"></i>
                                                 ${feature}
                                             </span>
@@ -840,7 +829,7 @@
                 // 添加滚动动画
                 const observerOptions = {
                     root: null,
-                    rootMargin: '0px',
+                    rootMargin: '20px',
                     threshold: 0.1
                 };
 
@@ -848,6 +837,9 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('show');
+                            entry.target.querySelectorAll('.feature-tag').forEach(tag => {
+                                tag.classList.add('show');
+                            });
                             observer.unobserve(entry.target);
                         }
                     });
