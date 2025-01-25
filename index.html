@@ -8,38 +8,95 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            --bs-primary-rgb: 88, 166, 255;
-            --bs-primary: #58a6ff;
-            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --border-radius: 16px;
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #6366f1;
+            --accent: #818cf8;
+            --background: #ffffff;
+            --foreground: #1f2937;
+            --card: #ffffff;
+            --card-foreground: #1f2937;
+            --border: #e5e7eb;
+            --ring: #e5e7eb;
+            --radius: 1rem;
+            --header-height: 4rem;
         }
-        
+
         [data-bs-theme="dark"] {
-            --bs-body-bg: #0d1117;
-            --bs-body-bg-rgb: 13, 17, 23;
-            --bs-body-color: #c9d1d9;
-            --bs-body-color-rgb: 201, 209, 217;
-            --bs-primary: #58a6ff;
-            --bs-primary-rgb: 88, 166, 255;
-            --bs-card-bg: #161b22;
-            --bs-card-border-color: rgba(255, 255, 255, 0.1);
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --secondary: #4f46e5;
+            --accent: #4338ca;
+            --background: #0f172a;
+            --foreground: #e5e7eb;
+            --card: #1e293b;
+            --card-foreground: #e5e7eb;
+            --border: #2e3b4e;
+            --ring: #2e3b4e;
         }
 
         body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background-color: var(--background);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+
+        .header-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+
+        .logo {
+            height: 2.5rem;
+            width: auto;
+        }
+
+        .theme-switch {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--foreground);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-switch:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--bs-primary) 0%, rgba(var(--bs-primary-rgb), 0.8) 100%);
-            padding: 8rem 0;
-            margin-bottom: 3rem;
+            margin-top: var(--header-height);
+            padding: 6rem 0;
+            background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
             position: relative;
             overflow: hidden;
-            color: #fff;
         }
 
         .hero::before {
@@ -49,203 +106,255 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 70%),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="white" opacity="0.1"/></svg>') 0 0/50px 50px;
             pointer-events: none;
+            opacity: 0.5;
         }
 
-        .hero img {
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, rgba(255,255,255,0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            margin: -2rem auto 2rem;
             max-width: 800px;
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-            margin-bottom: 3rem;
-            transition: var(--transition-base);
-            transform: translateY(0);
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+            position: relative;
+            z-index: 2;
+            padding: 0 1rem;
         }
 
-        .hero img:hover {
-            transform: translateY(-15px);
-            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
+        .search-container {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .card {
-            transition: var(--transition-base);
-            border: none;
-            border-radius: var(--border-radius);
-            background: var(--bs-card-bg);
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .form-control, .form-select {
+            background: var(--background);
+            border: 1px solid var(--border);
+            color: var(--foreground);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-dark);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .module-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
             overflow: hidden;
+            transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(var(--bs-primary-rgb), 0.2);
-        }
-
-        .card-body {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
         }
 
         .module-header {
-            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .module-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin: 0;
-            color: var(--bs-body-color);
+            color: var(--foreground);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .module-version {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
 
         .module-meta {
+            margin-top: 0.75rem;
             display: flex;
-            align-items: center;
             gap: 1rem;
-            margin: 0.5rem 0;
-            color: var(--bs-body-color);
+            font-size: 0.875rem;
+            color: var(--foreground);
             opacity: 0.8;
-            font-size: 0.9rem;
         }
 
-        .module-meta i {
-            font-size: 1rem;
+        .module-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .module-description {
-            margin: 1rem 0;
-            color: var(--bs-body-color);
-            opacity: 0.9;
+            margin: 0;
             line-height: 1.6;
-            flex-grow: 1;
+            color: var(--foreground);
+            opacity: 0.9;
         }
 
         .module-features {
-            margin: 1rem 0;
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature-tag {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
         .module-actions {
+            margin-top: auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: auto;
+            gap: 0.75rem;
+            padding-top: 1rem;
         }
 
         .btn {
-            padding: 0.8rem 1.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
             font-weight: 500;
-            transition: var(--transition-base);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            width: 100%;
-        }
-
-        .btn i {
-            font-size: 1.2rem;
+            transition: all 0.2s ease;
         }
 
         .btn-primary {
-            background: var(--bs-primary);
+            background: var(--primary);
+            color: white;
             border: none;
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--bs-primary);
-            color: var(--bs-primary);
+            border: 1px solid var(--primary);
+            color: var(--primary);
         }
 
         .btn-outline:hover {
-            background: var(--bs-primary);
-            color: #fff;
+            background: var(--primary);
+            color: white;
         }
 
-        .feature-tag {
-            font-size: 0.8rem;
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            background: rgba(var(--bs-primary-rgb), 0.1);
-            color: var(--bs-primary);
-            border: 1px solid rgba(var(--bs-primary-rgb), 0.2);
-            transition: var(--transition-base);
-            display: inline-flex;
+        .btn i {
+            font-size: 1.25rem;
+        }
+
+        .footer {
+            margin-top: auto;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.3rem;
-            font-weight: 500;
+            gap: 2rem;
         }
 
-        .feature-tag:hover {
-            background: var(--bs-primary);
-            color: #fff;
-            border-color: var(--bs-primary);
-            transform: translateY(-3px);
+        .footer-links {
+            display: flex;
+            gap: 1rem;
         }
 
-        .theme-switch {
-            cursor: pointer;
-            padding: 0.8rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition-base);
-            background: rgba(var(--bs-primary-rgb), 0.1);
-            border: none;
-            color: var(--bs-primary);
-            width: 48px;
-            height: 48px;
+        .footer-link {
+            color: var(--foreground);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
         }
 
-        .theme-switch:hover {
-            background: var(--bs-primary);
-            color: #fff;
-            transform: rotate(180deg);
+        .footer-link:hover {
+            background: var(--primary);
+            color: white;
         }
 
-        .stat-card {
-            text-align: center;
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition-base);
-            background: rgba(var(--bs-primary-rgb), 0.05);
-            border: 1px solid rgba(var(--bs-primary-rgb), 0.1);
+        .footer-text {
+            color: var(--foreground);
+            opacity: 0.8;
+            font-size: 0.875rem;
         }
 
-        .stat-card:hover {
-            transform: translateY(-8px);
-            background: rgba(var(--bs-primary-rgb), 0.1);
-            border-color: rgba(var(--bs-primary-rgb), 0.2);
-        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0;
+            }
 
-        .stat-value {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--bs-primary);
-            text-shadow: 0 2px 4px rgba(var(--bs-primary-rgb), 0.2);
-            margin-bottom: 0.5rem;
-        }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
 
-        .stat-value i {
-            font-size: 2.5rem;
+            .modules-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
         }
 
         .loading {
@@ -254,327 +363,111 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, 
-                var(--bs-primary) 0%, 
-                rgba(var(--bs-primary-rgb), 0.8) 50%,
-                var(--bs-primary) 100%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1000;
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
-            z-index: 1000;
         }
 
         .loading.active {
             transform: scaleX(1);
         }
 
-        @keyframes loading {
-            0% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .form-select, .form-control {
-            border: 1px solid rgba(var(--bs-primary-rgb), 0.2);
-            background-color: rgba(var(--bs-primary-rgb), 0.05);
-            transition: var(--transition-base);
-            border-radius: var(--border-radius);
-            padding: 0.8rem 1rem;
-            font-size: 1rem;
-            height: auto;
-        }
-
-        .form-select:hover, .form-control:hover {
-            border-color: rgba(var(--bs-primary-rgb), 0.4);
-            background-color: rgba(var(--bs-primary-rgb), 0.08);
-        }
-
-        .form-select:focus, .form-control:focus {
-            border-color: var(--bs-primary);
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-        }
-
-        .input-group {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .input-group-text {
-            background-color: rgba(var(--bs-primary-rgb), 0.1);
-            border-color: rgba(var(--bs-primary-rgb), 0.2);
-            color: var(--bs-primary);
-            padding: 0.8rem 1rem;
-            font-size: 1.1rem;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--bs-body-color);
-            margin-bottom: 1rem;
-        }
-
-        .badge.bg-primary {
-            font-weight: 500;
-            padding: 0.6em 1em;
-            font-size: 0.85rem;
-            border-radius: 20px;
-        }
-
-        .card-subtitle {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            margin-bottom: 1rem;
-        }
-
-        .card-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin: 1.5rem 0;
-            color: var(--bs-body-color);
-            opacity: 0.9;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 4rem 0;
-            background: rgba(var(--bs-primary-rgb), 0.05);
-            border-top: 1px solid rgba(var(--bs-primary-rgb), 0.1);
-        }
-
-        footer .footer-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: nowrap;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        footer .btn-outline-primary {
-            background: transparent;
-            border: 2px solid var(--bs-primary);
-            color: var(--bs-primary);
-            font-weight: 600;
-            flex: 1;
-            min-width: 120px;
-            margin: 0;
-        }
-
-        footer .btn-outline-primary:hover {
-            background: var(--bs-primary);
-            color: #fff;
-        }
-
-        footer .footer-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 5rem 0;
-            }
-
-            .stat-card {
-                padding: 2rem;
-            }
-
-            .card-body {
-                padding: 1.5rem;
-            }
-
-            .btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.95rem;
-            }
-
-            .stat-value {
-                font-size: 2.5rem;
-            }
-
-            footer .footer-buttons {
-                flex-direction: row;
-                padding: 0 1rem;
-            }
-
-            footer .btn-outline-primary {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-        }
-
         .skeleton {
-            animation: skeleton-loading 1.5s ease-in-out infinite;
-            border-radius: var(--border-radius);
-            height: 1.2rem;
-            margin: 0.8rem 0;
-            background: rgba(var(--bs-primary-rgb), 0.1);
+            background: linear-gradient(
+                90deg,
+                var(--border) 25%,
+                var(--ring) 50%,
+                var(--border) 75%
+            );
+            background-size: 200% 100%;
+            animation: skeleton 1.5s infinite;
+            border-radius: var(--radius);
         }
 
-        @keyframes skeleton-loading {
-            0% {
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.5;
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        .display-4 {
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
-
-        .lead {
-            font-size: 1.5rem;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-
-        .form-label {
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-        }
-
-        .stat-card .text-body-secondary {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-            font-weight: 500;
+        @keyframes skeleton {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
 <body>
     <div class="loading"></div>
-    <div class="hero text-center">
+    
+    <header class="header">
+        <div class="header-content">
+            <img src="src/logo.png" alt="Misaki-Module Repo" class="logo">
+            <button class="theme-switch" id="themeSwitch">
+                <i class="ri-sun-line"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
         <div class="container">
-            <img src="src/logo.png" alt="Misaki-Module Repo" class="img-fluid">
-            <h1 class="display-4 fw-bold mb-3">Misaki-Module Repo</h1>
-            <p class="lead mb-0">基于 MMRL 的高质量模块仓库</p>
+            <h1>Misaki-Module Repo</h1>
+            <p>基于 MMRL 的高质量模块仓库，为您的设备提供优质的模块支持</p>
+        </div>
+    </section>
+
+    <div class="search-bar">
+        <div class="search-container">
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="ri-search-line"></i>
+                </span>
+                <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
+            </div>
+            <div class="filters">
+                <select id="categoryFilter" class="form-select">
+                    <option value="">全部分类</option>
+                    <option value="system">系统工具</option>
+                    <option value="security">安全增强</option>
+                    <option value="customize">个性化</option>
+                    <option value="performance">性能优化</option>
+                    <option value="framework">框架支持</option>
+                </select>
+                <select id="sortOrder" class="form-select">
+                    <option value="date">按更新时间</option>
+                    <option value="name">按名称</option>
+                    <option value="author">按作者</option>
+                    <option value="downloads">按下载量</option>
+                </select>
+                <select id="featureFilter" class="form-select">
+                    <option value="">全部功能</option>
+                    <option value="service">服务支持</option>
+                    <option value="webroot">Web界面</option>
+                    <option value="sepolicy">SEPolicy</option>
+                    <option value="apks">APK支持</option>
+                </select>
+            </div>
         </div>
     </div>
 
-    <main class="container py-4">
-        <div class="card mb-4 shadow-sm">
-            <div class="card-body">
-                <div class="row g-3">
-                    <div class="col-md-3">
-                        <label class="form-label">分类</label>
-                        <select id="categoryFilter" class="form-select">
-                            <option value="">全部分类</option>
-                            <option value="system">系统工具</option>
-                            <option value="security">安全增强</option>
-                            <option value="customize">个性化</option>
-                            <option value="performance">性能优化</option>
-                            <option value="framework">框架支持</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">排序</label>
-                        <select id="sortOrder" class="form-select">
-                            <option value="name">按名称排序</option>
-                            <option value="date">按更新时间排序</option>
-                            <option value="author">按作者排序</option>
-                            <option value="downloads">按下载量排序</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">功能</label>
-                        <select id="featureFilter" class="form-select">
-                            <option value="">全部功能</option>
-                            <option value="service">服务支持</option>
-                            <option value="webroot">Web界面</option>
-                            <option value="sepolicy">SEPolicy</option>
-                            <option value="apks">APK支持</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">搜索</label>
-                        <div class="d-flex gap-2">
-                            <div class="flex-grow-1">
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="ri-search-line"></i></span>
-                                    <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
-                                </div>
-                            </div>
-                            <div class="theme-switch" id="themeSwitch" title="切换主题">
-                                <i class="ri-sun-line"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4 mb-4">
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-value" id="totalModules">-</div>
-                    <div>可用模块</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-value"><i class="ri-github-fill"></i></div>
-                    <div>开源项目</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-value"><i class="ri-shield-check-fill"></i></div>
-                    <div>安全可靠</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4" id="moduleList">
-            <!-- 模块列表将通过 JavaScript 动态加载 -->
-        </div>
+    <main class="modules-grid" id="moduleList">
+        <!-- 模块列表将通过 JavaScript 动态加载 -->
     </main>
 
-    <footer class="py-5 mt-5">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-buttons mb-4">
-                <a href="https://github.com/misak10/mmrl-repo" class="btn btn-outline-primary">
-                    <i class="ri-github-fill"></i> GitHub 仓库
-                </a>
-                <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="btn btn-outline-primary">
-                    <i class="ri-add-circle-fill"></i> 提交模块
-                </a>
-                <a href="https://afdian.com/a/misak10" class="btn btn-outline-primary">
-                    <i class="ri-heart-fill"></i> 赞助支持
-                </a>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/misak10/mmrl-repo" class="footer-link">
+                        <i class="ri-github-fill"></i>
+                        GitHub 仓库
+                    </a>
+                    <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link">
+                        <i class="ri-add-circle-fill"></i>
+                        提交模块
+                    </a>
+                    <a href="https://afdian.com/a/misak10" class="footer-link">
+                        <i class="ri-heart-fill"></i>
+                        赞助支持
+                    </a>
+                </div>
+                <p class="footer-text">Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
             </div>
-            <p class="text-center mb-0">Made with <i class="ri-heart-fill text-danger"></i> by Misaki</p>
         </div>
     </footer>
 
@@ -642,9 +535,7 @@
 
         async function fetchModuleTimestamp(moduleName, moduleData) {
             try {
-                // 获取最新的时间戳
                 if (moduleData && moduleData.versions && moduleData.versions.length > 0) {
-                    // 从所有版本中找出最新的时间戳
                     const latestTimestamp = moduleData.versions.reduce((latest, version) => {
                         const timestamp = version.timestamp || 0;
                         return timestamp > latest ? timestamp : latest;
@@ -661,7 +552,6 @@
             if (!timestamp) return '未知时间';
             
             try {
-                // 处理时间戳
                 let ts = timestamp;
                 if (typeof timestamp === 'string') {
                     ts = parseFloat(timestamp.replace(/[^\d.]/g, ''));
@@ -691,88 +581,86 @@
             
             // 显示加载骨架屏
             moduleList.innerHTML = Array(6).fill(0).map(() => `
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="skeleton" style="width: 70%;"></div>
-                            <div class="skeleton" style="width: 40%;"></div>
-                            <div class="skeleton" style="width: 100%;"></div>
-                            <div class="skeleton" style="width: 90%;"></div>
-                            <div class="skeleton" style="width: 60%;"></div>
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="skeleton" style="height: 1.5rem; width: 60%;"></div>
+                        <div class="module-meta">
+                            <div class="skeleton" style="height: 1rem; width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="skeleton" style="height: 4rem; width: 100%;"></div>
+                        <div class="module-features">
+                            <div class="skeleton" style="height: 1.5rem; width: 30%;"></div>
+                            <div class="skeleton" style="height: 1.5rem; width: 40%;"></div>
+                        </div>
+                        <div class="module-actions">
+                            <div class="skeleton" style="height: 2.5rem; width: 100%;"></div>
+                            <div class="skeleton" style="height: 2.5rem; width: 100%;"></div>
                         </div>
                     </div>
                 </div>
             `).join('');
             
             try {
-                // 获取所有模块的时间戳
                 const modulePromises = modules.map(async module => {
                     let timestamp = await fetchModuleTimestamp(module.name, module);
-                    console.log(`Module ${module.name} timestamp:`, timestamp);
                     return {
                         ...module,
                         timestamp: timestamp
                     };
                 });
 
-                // 等待所有时间戳获取完成
                 const updatedModules = await Promise.all(modulePromises);
                 
                 moduleList.innerHTML = updatedModules.map(module => {
                     const features = getFeaturesList(module.features);
                     const lastUpdate = formatDate(module.timestamp);
                     return `
-                        <div class="col-md-6 col-lg-4 fade-in">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="module-header">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="module-title">${module.name}</h5>
-                                            <span class="badge bg-primary">${module.version}</span>
-                                        </div>
-                                        <div class="module-meta">
-                                            <span><i class="ri-user-3-line"></i> ${module.author}</span>
-                                            <span><i class="ri-time-line"></i> ${lastUpdate}</span>
-                                        </div>
+                        <div class="module-card">
+                            <div class="module-header">
+                                <div class="module-title">
+                                    <span>${module.name}</span>
+                                    <span class="module-version">${module.version}</span>
+                                </div>
+                                <div class="module-meta">
+                                    <span><i class="ri-user-3-line"></i> ${module.author}</span>
+                                    <span><i class="ri-time-line"></i> ${lastUpdate}</span>
+                                </div>
+                            </div>
+                            <div class="module-content">
+                                <p class="module-description">${module.description}</p>
+                                ${features.length > 0 ? `
+                                    <div class="module-features">
+                                        ${features.map(feature => `
+                                            <span class="feature-tag">
+                                                <i class="ri-checkbox-circle-line"></i>
+                                                ${feature}
+                                            </span>
+                                        `).join('')}
                                     </div>
-                                    
-                                    <p class="module-description">${module.description}</p>
-                                    
-                                    ${features.length > 0 ? `
-                                        <div class="module-features">
-                                            ${features.map(feature => `
-                                                <span class="feature-tag">
-                                                    <i class="ri-checkbox-circle-line"></i>
-                                                    ${feature}
-                                                </span>
-                                            `).join('')}
-                                        </div>
-                                    ` : ''}
-                                    
-                                    <div class="module-actions">
-                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
-                                            <i class="ri-download-2-line"></i>
-                                            下载
+                                ` : ''}
+                                <div class="module-actions">
+                                    <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
+                                        <i class="ri-download-2-line"></i>
+                                        下载
+                                    </a>
+                                    ${module.versions[0].changelog ? `
+                                        <a href="${module.versions[0].changelog}" class="btn btn-outline">
+                                            <i class="ri-file-list-3-line"></i>
+                                            更新日志
                                         </a>
-                                        ${module.versions[0].changelog ? `
-                                            <a href="${module.versions[0].changelog}" class="btn btn-outline">
-                                                <i class="ri-file-list-3-line"></i>
-                                                更新日志
-                                            </a>
-                                        ` : `
-                                            <button class="btn btn-outline" disabled>
-                                                <i class="ri-file-list-3-line"></i>
-                                                暂无日志
-                                            </button>
-                                        `}
-                                    </div>
+                                    ` : `
+                                        <button class="btn btn-outline" disabled>
+                                            <i class="ri-file-list-3-line"></i>
+                                            暂无日志
+                                        </button>
+                                    `}
                                 </div>
                             </div>
                         </div>
                     `;
                 }).join('');
-
-                document.getElementById('totalModules').textContent = updatedModules.length;
             } catch (error) {
                 console.error('Error rendering modules:', error);
             }
