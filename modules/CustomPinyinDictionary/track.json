@@ -1,14 +1,15 @@
 {
-  "id": "CustomPinyinDictionary",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/refs/heads/main/magisk/Gboard_update.json",
-  "source": "https://github.com/wuhgit/CustomPinyinDictionary",
-  "support": "https://github.com/wuhgit/CustomPinyinDictionary/issues",
-  "categories": [
-    "Script"
-  ],
-  "readme": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/main/README.md",
-  "last_update": 1735696699.0,
-  "versions": 1
+    "id": "CustomPinyinDictionary",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/refs/heads/main/magisk/Gboard_update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/wuhgit/CustomPinyinDictionary",
+    "support": "https://github.com/wuhgit/CustomPinyinDictionary/issues",
+    "donate": "",
+    "categories": [
+        "Script"
+    ],
+    "readme": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/main/README.md"
 }
