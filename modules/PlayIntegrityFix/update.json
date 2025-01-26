@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.4_18400.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.4_18400.md",
       "size": 164117
+    },
+    {
+      "timestamp": 1737843196.0,
+      "version": "v18.5",
+      "versionCode": 18500,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.5_18500.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.5_18500.md",
+      "size": 176823
     }
   ]
 }
