@@ -9,8 +9,8 @@
     "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
     "donate": "",
     "categories": [
-        "Script",
         "Utility",
+        "Script",
         "Network"
     ],
     "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/abootloop/main/README.md"
