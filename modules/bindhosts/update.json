@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.md",
       "size": 47433
+    },
+    {
+      "timestamp": 1738252038.0,
+      "version": "v1.9.2",
+      "versionCode": 192,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.2_192.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.2_192.md",
+      "size": 47527
     }
   ]
 }

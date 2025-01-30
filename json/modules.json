@@ -8,7 +8,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1738246220.821413
+    "timestamp": 1738253572.816133
   },
   "modules": [
     {
@@ -52,8 +52,8 @@
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
         "Theme",
-        "Network",
         "Script",
+        "Network",
         "Font"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
@@ -103,9 +103,9 @@
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
         "Theme",
-        "System",
         "Utility",
         "Network",
+        "System",
         "Script"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
@@ -144,11 +144,11 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "System",
-        "Utility",
         "Security",
         "Performance",
+        "Utility",
         "Network",
+        "System",
         "Script"
       ],
       "verified": false,
@@ -193,8 +193,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -233,9 +233,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Network",
         "Utility",
-        "Script"
+        "Script",
+        "Network"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -342,8 +342,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v1.9.1",
-      "versionCode": 191,
+      "version": "v1.9.2",
+      "versionCode": 192,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "categories": [
@@ -362,7 +362,8 @@
         "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
-      "size": 47433,
+      "timestamp": 1738252038.0,
+      "size": 47527,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -383,6 +384,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.md",
           "size": 47433
+        },
+        {
+          "timestamp": 1738252038.0,
+          "version": "v1.9.2",
+          "versionCode": 192,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.2_192.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.2_192.md",
+          "size": 47527
         }
       ]
     },
@@ -432,10 +441,10 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "Gaming",
         "Utility",
-        "Script",
-        "System"
+        "System",
+        "Gaming",
+        "Script"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -482,13 +491,13 @@
       "categories": [
         "Theme",
         "Debug",
-        "System",
-        "Utility",
+        "Audio",
         "Security",
         "Performance",
+        "Utility",
         "Network",
-        "Script",
-        "Audio"
+        "System",
+        "Script"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -506,8 +515,8 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "tracking",
-          "ads"
+          "ads",
+          "tracking"
         ]
       },
       "versions": [
@@ -539,11 +548,11 @@
       "categories": [
         "Theme",
         "Debug",
-        "Utility",
         "Security",
+        "Utility",
+        "Font",
         "Network",
-        "Script",
-        "Font"
+        "Script"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -588,12 +597,12 @@
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "categories": [
         "Debug",
-        "System",
-        "Utility",
         "Performance",
+        "Utility",
+        "Font",
         "Network",
-        "Script",
-        "Font"
+        "System",
+        "Script"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
       "license": "AGPL-3.0",
@@ -633,8 +642,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -673,8 +682,8 @@
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
         "Debug",
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -711,9 +720,9 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Network",
         "Utility",
         "Script",
+        "Network",
         "Zygisk"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
