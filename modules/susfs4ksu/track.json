@@ -11,11 +11,11 @@
     "categories": [
         "Font",
         "Network",
-        "Debug",
         "Script",
         "Utility",
+        "Performance",
         "System",
-        "Performance"
+        "Debug"
     ],
     "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md"
 }
