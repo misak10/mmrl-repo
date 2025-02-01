@@ -9,12 +9,12 @@
     "support": "",
     "donate": "",
     "categories": [
-        "System",
         "Utility",
-        "Performance",
-        "Network",
         "Script",
-        "Security"
+        "Performance",
+        "Security",
+        "Network",
+        "System"
     ],
     "readme": ""
 }
