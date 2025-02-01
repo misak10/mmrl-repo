@@ -9,13 +9,13 @@
     "support": "https://github.com/sidex15/susfs4ksu-module/issues",
     "donate": "",
     "categories": [
-        "Utility",
-        "Script",
-        "Performance",
-        "Debug",
-        "Network",
         "Font",
-        "System"
+        "Debug",
+        "Performance",
+        "Script",
+        "Utility",
+        "System",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md"
 }
