@@ -9,10 +9,10 @@
     "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
     "donate": "",
     "categories": [
-        "Script",
         "Font",
         "Network",
-        "Theme"
+        "Theme",
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md"
 }
