@@ -9,10 +9,10 @@
     "support": "",
     "donate": "",
     "categories": [
-        "System",
         "Network",
         "Utility",
         "Script",
+        "System",
         "Security",
         "Performance"
     ],
