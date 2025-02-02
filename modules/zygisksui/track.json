@@ -10,10 +10,10 @@
     "donate": "",
     "categories": [
         "Network",
-        "Utility",
-        "Debug",
+        "Theme",
         "Script",
-        "Theme"
+        "Utility",
+        "Debug"
     ],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md"
 }
