@@ -11,17 +11,17 @@
     "categories": [
         "Script",
         "Audio",
-        "Network",
-        "Performance",
+        "System",
         "Theme",
-        "Utility",
-        "Debug",
         "Security",
-        "System"
+        "Performance",
+        "Debug",
+        "Utility",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
     "antifeatures": [
-        "tracking",
-        "ads"
+        "ads",
+        "tracking"
     ]
 }
