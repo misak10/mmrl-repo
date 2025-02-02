@@ -9,19 +9,19 @@
     "support": "https://github.com/lingeringsound/10007/issues",
     "donate": "",
     "categories": [
-        "Utility",
-        "Network",
-        "Performance",
         "Theme",
-        "Debug",
-        "Script",
-        "Security",
         "Audio",
+        "Script",
+        "Performance",
+        "Network",
+        "Security",
+        "Utility",
+        "Debug",
         "System"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
     "antifeatures": [
-        "tracking",
-        "ads"
+        "ads",
+        "tracking"
     ]
 }
