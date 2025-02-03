@@ -8,7 +8,7 @@ on:
       run_sync:
         description: "Run Sync"
         type: choice
-        required: true
+        required: 
         default: 'No'
         options:
          - 'Yes'
@@ -23,7 +23,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: 
 
 env:
   IS_SYNC: ${{ inputs.run_sync == 'Yes' || github.event_name == 'schedule' }}
