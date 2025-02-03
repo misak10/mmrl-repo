@@ -10,10 +10,10 @@
     "donate": "",
     "categories": [
         "Script",
-        "Network",
         "System",
-        "Utility",
-        "Theme"
+        "Theme",
+        "Network",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md"
 }
