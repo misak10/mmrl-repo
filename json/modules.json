@@ -1,4 +1,5 @@
 {
+  "id": "mishubepo",
   "name": "Misaki-Modules Repo",
   "website": "https://misak10.github.io/mmrl-repo/",
   "support": "https://github.com/misak10/mmrl-repo/issues",
@@ -8,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1738253572.816133
+    "timestamp": 1738645290.477992
   },
   "modules": [
     {
@@ -52,9 +53,9 @@
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
         "Theme",
-        "Script",
         "Network",
-        "Font"
+        "Font",
+        "Script"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -102,9 +103,9 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "Theme",
         "Utility",
         "Network",
+        "Theme",
         "System",
         "Script"
       ],
@@ -139,21 +140,22 @@
     {
       "id": "VoyagerKernel",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.4.1-23c205f4",
-      "versionCode": 341,
+      "version": "3.4.1-8b8ae2ab",
+      "versionCode": 342,
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Security",
-        "Performance",
         "Utility",
         "Network",
+        "Security",
         "System",
+        "Performance",
         "Script"
       ],
       "verified": false,
       "added": 0,
-      "size": 6189129,
+      "timestamp": 1738645287.230758,
+      "size": 6189819,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -168,20 +170,20 @@
       },
       "versions": [
         {
-          "timestamp": 1737824734.519809,
-          "version": "3.4.0-7f466adc",
-          "versionCode": 340,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.0-7f466adc_340.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.0-7f466adc_340.md",
-          "size": 6188864
-        },
-        {
           "timestamp": 1738073443.40614,
           "version": "3.4.1-23c205f4",
           "versionCode": 341,
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-23c205f4_341.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-23c205f4_341.md",
           "size": 6189129
+        },
+        {
+          "timestamp": 1738645287.230758,
+          "version": "3.4.1-8b8ae2ab",
+          "versionCode": 342,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-8b8ae2ab_342.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-8b8ae2ab_342.md",
+          "size": 6189819
         }
       ]
     },
@@ -193,8 +195,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -234,8 +236,8 @@
       "category": "Bootloop protection",
       "categories": [
         "Utility",
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -342,8 +344,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v1.9.2",
-      "versionCode": 192,
+      "version": "v1.9.3",
+      "versionCode": 193,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "categories": [
@@ -362,8 +364,8 @@
         "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
-      "timestamp": 1738252038.0,
-      "size": 47527,
+      "timestamp": 1738330542.0,
+      "size": 47487,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -378,20 +380,20 @@
       },
       "versions": [
         {
-          "timestamp": 1737724663.0,
-          "version": "v1.9.1",
-          "versionCode": 191,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.1_191.md",
-          "size": 47433
-        },
-        {
           "timestamp": 1738252038.0,
           "version": "v1.9.2",
           "versionCode": 192,
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.2_192.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.2_192.md",
           "size": 47527
+        },
+        {
+          "timestamp": 1738330542.0,
+          "version": "v1.9.3",
+          "versionCode": 193,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.3_193.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.3_193.md",
+          "size": 47487
         }
       ]
     },
@@ -484,19 +486,19 @@
     {
       "id": "lingeringsound_ads",
       "name": "\u53bb\u5e7f\u544a",
-      "version": "\u6a74\u70abv239",
-      "versionCode": 240,
+      "version": "\u6a74\u70abv240",
+      "versionCode": 241,
       "author": "@coolapk 10007",
-      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27783 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
+      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27850 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
-        "Theme",
-        "Debug",
-        "Audio",
-        "Security",
-        "Performance",
         "Utility",
         "Network",
+        "Audio",
+        "Theme",
+        "Security",
+        "Debug",
         "System",
+        "Performance",
         "Script"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
@@ -504,7 +506,8 @@
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 889126,
+      "timestamp": 1738308531.0,
+      "size": 893339,
       "features": {
         "service": true,
         "action": true,
@@ -521,20 +524,20 @@
       },
       "versions": [
         {
-          "timestamp": 1737812345.0,
-          "version": "\u6a74\u70abv238",
-          "versionCode": 239,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v238_239.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v238_239.md",
-          "size": 1144658
-        },
-        {
           "timestamp": 1737868436.0,
           "version": "\u6a74\u70abv239",
           "versionCode": 240,
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v239_240.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v239_240.md",
           "size": 889126
+        },
+        {
+          "timestamp": 1738308531.0,
+          "version": "\u6a74\u70abv240",
+          "versionCode": 241,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v240_241.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v240_241.md",
+          "size": 893339
         }
       ]
     },
@@ -546,12 +549,12 @@
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
-        "Theme",
-        "Debug",
-        "Security",
         "Utility",
-        "Font",
         "Network",
+        "Theme",
+        "Security",
+        "Debug",
+        "Font",
         "Script"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
@@ -596,12 +599,12 @@
       "author": "sidex15 & simonpunk",
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "categories": [
-        "Debug",
-        "Performance",
         "Utility",
-        "Font",
         "Network",
+        "Debug",
+        "Font",
         "System",
+        "Performance",
         "Script"
       ],
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
@@ -642,8 +645,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -681,9 +684,9 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
+        "Network",
         "Debug",
-        "Script",
-        "Network"
+        "Script"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -721,9 +724,9 @@
       "description": "Standalone implementation of Zygisk.",
       "categories": [
         "Utility",
-        "Script",
         "Network",
-        "Zygisk"
+        "Zygisk",
+        "Script"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -761,10 +764,10 @@
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
-        "Theme",
-        "Debug",
         "Utility",
         "Network",
+        "Theme",
+        "Debug",
         "Script"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
