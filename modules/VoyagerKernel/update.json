@@ -3,20 +3,20 @@
   "timestamp": 1737824734.519809,
   "versions": [
     {
-      "timestamp": 1737824734.519809,
-      "version": "3.4.0-7f466adc",
-      "versionCode": 340,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.0-7f466adc_340.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.0-7f466adc_340.md",
-      "size": 6188864
-    },
-    {
       "timestamp": 1738073443.40614,
       "version": "3.4.1-23c205f4",
       "versionCode": 341,
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-23c205f4_341.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-23c205f4_341.md",
       "size": 6189129
+    },
+    {
+      "timestamp": 1738645287.230758,
+      "version": "3.4.1-8b8ae2ab",
+      "versionCode": 342,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-8b8ae2ab_342.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.4.1-8b8ae2ab_342.md",
+      "size": 6189819
     }
   ]
 }
