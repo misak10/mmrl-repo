@@ -486,13 +486,14 @@
 
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            border: 1px solid var(--input-border);
+            color: var(--fg);
         }
 
         .btn-outline:hover {
             background: var(--accent);
-            color: var(--accent-foreground);
+            color: var(--bg);
+            border-color: var(--accent);
         }
 
         .btn-outline:disabled {
@@ -613,10 +614,9 @@
                     <option value="framework">框架支持</option>
                 </select>
                 <select id="sortOrder" class="form-select">
-                    <option value="date">按更新时间</option>
+                    <option value="update">按更新时间</option>
                     <option value="name">按名称</option>
                     <option value="author">按作者</option>
-                    <option value="downloads">按下载量</option>
                 </select>
                 <select id="featureFilter" class="form-select">
                     <option value="">全部功能</option>
@@ -832,10 +832,21 @@
                                     </div>
                                 ` : ''}
                                 <div class="module-actions">
-                                    <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
-                                        <i class="ri-download-2-line"></i>
-                                        下载
-                                    </a>
+                                    <div class="btn-group" style="display: flex; gap: 0.5rem;">
+                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary flex-grow-1">
+                                            <i class="ri-download-2-line"></i>
+                                            下载
+                                        </a>
+                                        <a href="${module.sourceUrl || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                           target="_blank" 
+                                           class="btn btn-outline" 
+                                           title="${module.sourceUrl ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
+                                           data-bs-toggle="tooltip"
+                                           data-bs-placement="top"
+                                           style="flex: 0 0 auto;">
+                                            <i class="${module.sourceUrl ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                        </a>
+                                    </div>
                                     ${module.versions[0].changelog ? `
                                         <a href="${module.versions[0].changelog}" class="module-changelog">
                                             <i class="ri-file-list-3-line"></i>
@@ -906,14 +917,20 @@
 
                 filtered.sort((a, b) => {
                     switch(sort) {
-                        case 'date':
-                            return b.timestamp - a.timestamp;
+                        case 'update':
+                            // 获取最新版本的时间戳
+                            const aTimestamp = a.versions && a.versions[0] ? a.versions[0].timestamp || 0 : 0;
+                            const bTimestamp = b.versions && b.versions[0] ? b.versions[0].timestamp || 0 : 0;
+                            return bTimestamp - aTimestamp;
                         case 'author':
                             return a.author.localeCompare(b.author);
-                        case 'downloads':
-                            return (b.downloads || 0) - (a.downloads || 0);
-                        default:
+                        case 'name':
                             return a.name.localeCompare(b.name);
+                        default:
+                            // 默认按更新时间排序
+                            const defaultATimestamp = a.versions && a.versions[0] ? a.versions[0].timestamp || 0 : 0;
+                            const defaultBTimestamp = b.versions && b.versions[0] ? b.versions[0].timestamp || 0 : 0;
+                            return defaultBTimestamp - defaultATimestamp;
                     }
                 });
 
@@ -944,7 +961,15 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', setupFilters);
+        // 初始化工具提示
+        document.addEventListener('DOMContentLoaded', function() {
+            setupFilters();
+            // 初始化所有工具提示
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
     </script>
 </body>
 </html> 
