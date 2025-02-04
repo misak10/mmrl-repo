@@ -8,77 +8,80 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
+            /* 主题色 */
             --primary: #18181b;
-            --primary-dark: #27272a;
             --secondary: #52525b;
-            --background: #fafafa;
-            --foreground: #18181b;
+            --accent: #18181b;
+            
+            /* 背景和前景 */
+            --bg: #fafafa;
+            --fg: #18181b;
             --muted: #71717a;
-            --card: rgba(255, 255, 255, 0.7);
+            
+            /* 卡片和输入框 */
+            --card-bg: rgba(255, 255, 255, 0.7);
             --card-hover: rgba(255, 255, 255, 0.8);
-            --card-foreground: #18181b;
-            --border: rgba(228, 228, 231, 0.4);
-            --input-background: rgba(255, 255, 255, 0.5);
-            --input-foreground: #18181b;
-            --input-placeholder: #a1a1aa;
+            --input-bg: rgba(255, 255, 255, 0.5);
             --input-border: rgba(228, 228, 231, 0.5);
-            --radius: 12px;
+            
+            /* 通用样式 */
+            --radius: 0.75rem;
             --blur: blur(12px);
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --accent: #18181b;
-            --accent-foreground: #fafafa;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-bs-theme="dark"] {
+            /* 主题色 */
             --primary: #fafafa;
-            --primary-dark: #e4e4e7;
             --secondary: #a1a1aa;
-            --background: #18181b;
-            --foreground: #fafafa;
-            --muted: #a1a1aa;
-            --card: rgba(39, 39, 42, 0.7);
-            --card-hover: rgba(39, 39, 42, 0.8);
-            --card-foreground: #fafafa;
-            --border: rgba(63, 63, 70, 0.4);
-            --input-background: rgba(39, 39, 42, 0.5);
-            --input-foreground: #fafafa;
-            --input-placeholder: #71717a;
-            --input-border: rgba(63, 63, 70, 0.5);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             --accent: #fafafa;
-            --accent-foreground: #18181b;
+            
+            /* 背景和前景 */
+            --bg: #18181b;
+            --fg: #fafafa;
+            --muted: #a1a1aa;
+            
+            /* 卡片和输入框 */
+            --card-bg: rgba(39, 39, 42, 0.7);
+            --card-hover: rgba(39, 39, 42, 0.8);
+            --input-bg: rgba(39, 39, 42, 0.5);
+            --input-border: rgba(63, 63, 70, 0.5);
+            
+            /* 阴影调整 */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         body {
-            background-color: var(--background);
+            background-color: var(--bg);
             background-image: 
-                radial-gradient(at 40% 20%, rgba(63, 63, 70, 0.08) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(82, 82, 91, 0.08) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(39, 39, 42, 0.08) 0px, transparent 50%);
+                radial-gradient(at 40% 20%, rgba(63, 63, 70, 0.05) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(82, 82, 91, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(39, 39, 42, 0.05) 0px, transparent 50%);
             background-attachment: fixed;
-            color: var(--foreground);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--fg);
+            font-family: system-ui, -apple-system, sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
         .header {
-            background: var(--card);
+            background: var(--card-bg);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--input-border);
             position: sticky;
             top: 0;
             z-index: 100;
             padding: 1rem 0;
             box-shadow: var(--shadow);
+            will-change: transform;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+            width: min(1200px, 100% - 3rem);
+            margin-inline: auto;
         }
 
         .header-content {
@@ -101,7 +104,7 @@
         .logo-text {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--foreground);
+            color: var(--fg);
             text-decoration: none;
         }
 
@@ -111,7 +114,7 @@
             border: none;
             border-radius: 50%;
             background: transparent;
-            color: var(--foreground);
+            color: var(--fg);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -130,12 +133,12 @@
         }
 
         .search-container {
-            background: var(--card);
+            background: var(--card-bg);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
             padding: 1.5rem;
-            border: 1px solid var(--border);
+            border: 1px solid var(--input-border);
             box-shadow: var(--shadow);
             display: grid;
             grid-template-columns: 1fr;
@@ -144,103 +147,104 @@
 
         @media (min-width: 768px) {
             .search-container {
-                grid-template-columns: 2fr 1fr 1fr 1fr;
+                grid-template-columns: minmax(200px, 2fr) repeat(3, minmax(150px, 1fr));
             }
         }
 
         .form-control, .form-select {
-            background: var(--input-background);
+            background: var(--input-bg);
             border: 1px solid var(--input-border);
-            color: var(--input-foreground);
+            color: var(--fg);
             border-radius: var(--radius);
             padding: 0.75rem 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: border-color var(--transition),
+                      box-shadow var(--transition);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-
-        .form-control::placeholder {
-            color: var(--input-placeholder);
+            width: 100%;
         }
 
         .form-control:focus, .form-select:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 2px var(--border);
+            box-shadow: 0 0 0 2px var(--input-border);
+            outline: none;
         }
 
-        .form-select {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 16px 12px;
-            padding-right: 2.5rem;
+        /* 重置select的默认样式 */
+        select.form-select {
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            background-color: var(--input-bg) !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 0.75rem center !important;
+            background-size: 1rem !important;
+            padding-right: 2.5rem !important;
         }
 
-        [data-bs-theme="dark"] .form-select {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        [data-bs-theme="dark"] select.form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+        }
+
+        select.form-select::-ms-expand {
+            display: none;
         }
 
         .form-select option {
-            background-color: var(--background);
-            color: var(--foreground);
+            background-color: var(--bg);
+            color: var(--fg);
+            padding: 0.5rem;
         }
 
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 1.5rem;
             padding: 1rem 0 3rem;
         }
 
         .module-card {
-            background: var(--card);
+            background: var(--card-bg);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             border-radius: var(--radius);
-            border: 1px solid var(--border);
+            border: 1px solid var(--input-border);
             box-shadow: var(--shadow);
-            overflow: visible;
             display: flex;
             flex-direction: column;
             min-height: 280px;
             position: relative;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(1.25rem);
             will-change: transform, opacity;
-            transition: transform 0.2s ease, 
-                      border-color 0.2s ease,
-                      box-shadow 0.2s ease;
+            transition: transform var(--transition),
+                      border-color var(--transition),
+                      box-shadow var(--transition);
         }
 
         .module-card.show {
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.3s ease,
-                      transform 0.3s ease;
         }
 
         .module-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-0.25rem);
             border-color: var(--accent);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .module-card,
-            .module-version,
-            .feature-tag,
-            .btn-primary,
-            .module-changelog {
-                transition: none;
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
             }
         }
 
         .module-header {
             padding: 1.5rem 1.5rem 1rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--input-border);
             position: relative;
             min-height: 6rem;
         }
@@ -255,7 +259,7 @@
         .module-name {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--foreground);
+            color: var(--fg);
             line-height: 1.4;
             padding-right: 6rem;
             word-break: break-word;
@@ -276,15 +280,15 @@
         }
 
         .module-version {
-            background: var(--card);
-            color: var(--foreground);
+            background: var(--card-bg);
+            color: var(--fg);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
             font-size: 0.75rem;
             font-weight: 500;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            border: 1px solid var(--border);
+            border: 1px solid var(--input-border);
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
@@ -317,12 +321,12 @@
             position: absolute;
             top: -0.75rem;
             left: 1.5rem;
-            background: var(--card);
+            background: var(--card-bg);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            border: 1px solid var(--border);
+            border: 1px solid var(--input-border);
             white-space: nowrap;
             z-index: 2;
             box-shadow: var(--shadow);
@@ -373,7 +377,7 @@
         .module-description {
             font-size: 0.875rem;
             line-height: 1.6;
-            color: var(--foreground);
+            color: var(--fg);
             opacity: 0.9;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -396,8 +400,8 @@
         }
 
         .feature-tag {
-            background: var(--input-background);
-            color: var(--input-foreground);
+            background: var(--input-bg);
+            color: var(--fg);
             padding: 0.25rem 0.75rem;
             border-radius: var(--radius);
             font-size: 0.75rem;
@@ -408,7 +412,7 @@
                       background-color 0.15s ease,
                       color 0.15s ease,
                       border-color 0.15s ease;
-            border: 1px solid var(--border);
+            border: 1px solid var(--input-border);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             max-width: 100%;
@@ -458,9 +462,9 @@
         }
 
         .btn-primary {
-            background: var(--card);
-            color: var(--foreground);
-            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--fg);
+            border: 1px solid var(--input-border);
             transition: transform 0.15s ease,
                       border-color 0.15s ease,
                       color 0.15s ease,
@@ -499,10 +503,10 @@
 
         .footer {
             margin-top: auto;
-            background: var(--card);
+            background: var(--card-bg);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--input-border);
             padding: 2rem 0;
             box-shadow: var(--shadow);
         }
@@ -557,9 +561,9 @@
         .skeleton {
             background: linear-gradient(
                 90deg,
-                var(--border) 25%,
+                var(--input-border) 25%,
                 var(--card-hover) 50%,
-                var(--border) 75%
+                var(--input-border) 75%
             );
             background-size: 200% 100%;
             animation: skeleton 2s infinite;
