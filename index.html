@@ -157,6 +157,9 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
 
         .form-control::placeholder {
@@ -173,6 +176,7 @@
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
             background-size: 16px 12px;
+            padding-right: 2.5rem;
         }
 
         [data-bs-theme="dark"] .form-select {
