@@ -837,14 +837,14 @@
                                             <i class="ri-download-2-line"></i>
                                             下载
                                         </a>
-                                        <a href="${module.sourceUrl || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                        <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
                                            target="_blank" 
                                            class="btn btn-outline" 
-                                           title="${module.sourceUrl ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
+                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
                                            data-bs-toggle="tooltip"
                                            data-bs-placement="top"
                                            style="flex: 0 0 auto;">
-                                            <i class="${module.sourceUrl ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                            <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
                                         </a>
                                     </div>
                                     ${module.versions[0].changelog ? `
