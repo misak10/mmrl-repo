@@ -89,31 +89,28 @@ jobs:
                     if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ]; then
                       echo "Removing old version: $version"
                       
-                      # 删除版本目录
-                      rm -rf "${module_dir}${version}"
+                      # 删除版本目录（如果存在）
+                      if [ -d "${module_dir}${version}" ]; then
+                        rm -rf "${module_dir}${version}"
+                        git add -u "${module_dir}${version}" || true
+                      fi
                       
                       # 删除 zip 和 md 文件（尝试所有可能的格式）
                       if [[ "$version" == v* ]]; then
                         # 如果版本号带v前缀
                         pure_version="${version#v}"
-                        rm -f "${module_dir}${pure_version}.zip" "${module_dir}${pure_version}.md"
+                        [ -f "${module_dir}${pure_version}.zip" ] && rm -f "${module_dir}${pure_version}.zip" && git add -u "${module_dir}${pure_version}.zip" || true
+                        [ -f "${module_dir}${pure_version}.md" ] && rm -f "${module_dir}${pure_version}.md" && git add -u "${module_dir}${pure_version}.md" || true
                       else
                         # 如果版本号不带v前缀
-                        rm -f "${module_dir}${version}.zip" "${module_dir}${version}.md"
+                        [ -f "${module_dir}${version}.zip" ] && rm -f "${module_dir}${version}.zip" && git add -u "${module_dir}${version}.zip" || true
+                        [ -f "${module_dir}${version}.md" ] && rm -f "${module_dir}${version}.md" && git add -u "${module_dir}${version}.md" || true
                       fi
                       
                       # 从 update.json 中移除旧版本
                       jq --arg ver "$version" '.versions |= map(select(.version != $ver))' "${module_dir}update.json" > "${module_dir}update.json.tmp"
                       mv "${module_dir}update.json.tmp" "${module_dir}update.json"
-                      
-                      # 立即添加这个文件的更改到 git
                       git add "${module_dir}update.json"
-                      git add "${module_dir}${version}"
-                      git add "${module_dir}${version}.zip" "${module_dir}${version}.md"
-                      if [[ "$version" == v* ]]; then
-                        pure_version="${version#v}"
-                        git add "${module_dir}${pure_version}.zip" "${module_dir}${pure_version}.md"
-                      fi
                     fi
                   done < "$temp_file"
                 else
