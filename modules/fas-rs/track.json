@@ -9,10 +9,10 @@
     "support": "https://github.com/shadow3aaa/fas-rs/issues",
     "donate": "",
     "categories": [
-        "Utility",
-        "System",
         "Script",
-        "Gaming"
+        "Utility",
+        "Gaming",
+        "System"
     ],
     "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md"
 }
