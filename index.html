@@ -47,18 +47,15 @@
             --bs-secondary: #71717a;
             --bs-border-color: rgba(255, 255, 255, 0.1);
             
-            /* 背景和前景 */
             --bg: #18181b;
             --fg: #fafafa;
             --muted: #a1a1aa;
             
-            /* 卡片和输入框 */
             --card-bg: rgba(39, 39, 42, 0.7);
             --card-hover: rgba(39, 39, 42, 0.8);
             --input-bg: rgba(39, 39, 42, 0.5);
             --input-border: rgba(63, 63, 70, 0.5);
             
-            /* 阴影调整 */
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
@@ -140,6 +137,16 @@
             color: #18181b;
             border-color: #fafafa;
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+        }
+
+        [data-bs-theme="dark"] .version-item {
+            background: rgba(39, 39, 42, 0.95);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .version-item:hover {
+            background: rgba(63, 63, 70, 0.95);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         body {
@@ -335,9 +342,6 @@
             align-items: center;
             gap: 0.25rem;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .module-card.show .module-new-badge {
@@ -418,15 +422,6 @@
             line-height: 1.7;
             color: var(--bs-gray-700);
             margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-            transition-delay: 0.1s;
-        }
-
-        .module-card.show .module-description {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .module-features {
@@ -437,15 +432,6 @@
             padding: 1.25rem;
             background: rgba(249, 250, 251, 0.8);
             border-radius: 0.75rem;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-            transition-delay: 0.2s;
-        }
-
-        .module-card.show .module-features {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .feature-tag {
@@ -459,14 +445,6 @@
             font-size: 0.75rem;
             border: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.2s ease;
-            transform: translateY(10px);
-            opacity: 0;
-        }
-
-        .module-card.show .feature-tag {
-            transform: translateY(0);
-            opacity: 1;
-            transition-delay: calc(0.3s + var(--order) * 0.05s);
         }
 
         .feature-tag:hover {
@@ -479,15 +457,9 @@
             padding: 1.25rem 1.5rem;
             background: rgba(249, 250, 251, 0.8);
             border-top: 1px solid rgba(0, 0, 0, 0.06);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-            transition-delay: 0.3s;
-        }
-
-        .module-card.show .module-actions {
-            opacity: 1;
-            transform: translateY(0);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
         }
 
         .btn-primary {
@@ -665,6 +637,46 @@
         .feature-tag {
             will-change: transform;
             contain: content;
+        }
+
+        .version-list {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .version-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            background: var(--bs-body-bg);
+            border: 1px solid var(--bs-border-color);
+            text-decoration: none;
+            color: var(--bs-body-color);
+            transition: all 0.2s ease;
+        }
+
+        .version-item:hover {
+            background: var(--bs-gray-100);
+            border-color: var(--bs-gray-300);
+        }
+
+        .version-name {
+            font-weight: 500;
+        }
+
+        .version-date {
+            color: var(--bs-gray-600);
+            font-size: 0.875rem;
+        }
+
+        .version-size {
+            margin-left: auto;
+            color: var(--bs-gray-600);
+            font-size: 0.875rem;
         }
     </style>
 </head>
