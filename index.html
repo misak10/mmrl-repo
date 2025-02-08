@@ -246,7 +246,7 @@
             border-bottom: 1px solid var(--input-border);
             position: sticky;
             top: 0;
-            z-index: 2000;
+            z-index: 3000;
             padding: 1rem 0;
             box-shadow: var(--shadow);
         }
@@ -303,7 +303,7 @@
         .search-section {
             padding: 2rem 0;
             position: relative;
-            z-index: 1500;
+            z-index: 2500;
         }
 
         .search-container {
@@ -319,7 +319,7 @@
             gap: 1rem;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
-            z-index: 1000;
+            z-index: 2500;
         }
 
         .search-container:hover {
@@ -331,6 +331,56 @@
         @media (min-width: 768px) {
             .search-container {
                 grid-template-columns: minmax(200px, 2fr) repeat(3, minmax(150px, 1fr));
+            }
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 2rem;
+            padding: 1.5rem 0 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .input-group .dropdown-menu {
+                position: fixed;
+                left: 1rem !important;
+                right: 1rem !important;
+                top: auto !important;
+                width: auto;
+                max-height: 60vh;
+                overflow-y: auto;
+                margin-top: 0.5rem;
+                z-index: 2600;
+                background: var(--card-bg);
+                backdrop-filter: var(--blur);
+                -webkit-backdrop-filter: var(--blur);
+                border: 1px solid var(--input-border);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            }
+
+            .btn-outline-secondary[aria-expanded="true"] {
+                z-index: 2601;
+                position: relative;
+            }
+
+            .input-group {
+                position: static;
+            }
+
+            .dropdown-menu.show::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                z-index: -1;
             }
         }
 
@@ -353,15 +403,6 @@
             outline: none;
         }
 
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-            gap: 2rem;
-            padding: 1.5rem 0 3rem;
-            position: relative;
-            z-index: 1;
-        }
-
         .module-card {
             position: relative;
             border: 1px solid rgba(0, 0, 0, 0.08);
@@ -382,10 +423,6 @@
             z-index: 1;
             contain: content;
             will-change: transform, opacity;
-        }
-
-        .module-card.show {
-            animation: none;
         }
 
         .module-card:hover {
@@ -810,6 +847,27 @@
             .module-actions {
                 padding: 1rem;
             }
+
+            .input-group .dropdown-menu {
+                position: fixed;
+                left: 1rem !important;
+                right: 1rem !important;
+                top: auto !important;
+                width: auto;
+                max-height: 60vh;
+                overflow-y: auto;
+                margin-top: 0.5rem;
+                z-index: 2600;
+            }
+
+            .btn-outline-secondary[aria-expanded="true"] {
+                z-index: 2601;
+                position: relative;
+            }
+
+            .input-group {
+                position: static;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1001,17 +1059,6 @@
             background-color: var(--bs-body-bg);
             color: var(--fg);
             padding: 0.75rem 1rem;
-        }
-
-        .search-container {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            will-change: transform, box-shadow;
-        }
-
-        .search-container:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--card-hover-shadow);
-            border-color: var(--primary);
         }
 
         .input-group {
