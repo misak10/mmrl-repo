@@ -57,6 +57,11 @@ Misaki-Modules Repo 是一个专注于提供高质量 Magisk 模块的仓库。�
 - [MMRL 官方文档](https://github.com/Googlers-Repo/mmrl-util)
 - [问题反馈](https://github.com/misak10/mmrl-repo/issues)
 
+## 🙏 特别感谢
+
+- [Googlers-Repo](https://github.com/Googlers-Repo) - 为 MMRL 提供了优秀的基础设施和工具支持
+- [MMRL-Util](https://github.com/MMRLApp/MMRL-Util) - 提供了强大的模块仓库管理工具
+
 ---
 
 <div align="center">
