@@ -221,7 +221,8 @@
             transition: transform var(--transition),
                       border-color var(--transition),
                       box-shadow var(--transition);
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 0.5rem;
         }
 
         .module-card.show {
@@ -322,7 +323,7 @@
             color: #ef4444;
             font-weight: 600;
             position: absolute;
-            top: -1rem;
+            top: -1.25rem;
             left: 1.5rem;
             background: var(--card-bg);
             padding: 0.25rem 0.75rem;
@@ -410,6 +411,8 @@
             border-radius: 0 0 var(--radius) var(--radius);
             animation: slideDown 0.2s ease-out;
             will-change: transform, opacity;
+            max-height: 300px;
+            overflow-y: auto;
         }
 
         @keyframes slideDown {
@@ -423,7 +426,7 @@
             display: grid;
             grid-template-columns: auto 1fr auto;
             gap: 1rem;
-            padding: 0.5rem 0.75rem;
+            padding: 0.75rem 1rem;
             text-decoration: none;
             color: var(--fg);
             border-radius: var(--radius);
@@ -597,37 +600,53 @@
             grid-template-columns: 1fr auto auto;
             gap: 0.75rem;
             background: var(--input-bg);
-            padding: 1rem;
+            padding: 0.875rem;
             border-radius: var(--radius);
             border: 1px solid var(--input-border);
+            align-items: center;
         }
 
         .action-group .btn-primary {
             background: var(--card-bg);
             font-weight: 600;
-            padding: 0.875rem 1.5rem;
+            height: 2.75rem;
+            padding: 0 1.25rem;
             border-radius: var(--radius);
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--input-border);
             color: var(--fg);
             text-decoration: none;
             min-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         .action-group .btn-primary:hover {
-            transform: translateY(-2px);
+            background: var(--accent);
+            color: var(--bg);
             border-color: var(--accent);
-            color: var(--accent);
+            transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        .action-group .btn-primary i {
+            font-size: 1.25rem;
+        }
+
+        .action-group .btn-primary small {
+            font-size: 0.75rem;
+            opacity: 0.75;
+            margin-left: auto;
+            color: var(--muted);
+        }
+
         .action-button {
-            width: 3rem;
-            height: 3rem;
+            width: 2.75rem;
+            height: 2.75rem;
             border-radius: var(--radius);
             border: 1px solid var(--input-border);
             background: var(--card-bg);
@@ -649,7 +668,7 @@
         }
 
         .action-button i {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -659,14 +678,35 @@
 
         @media (max-width: 480px) {
             .action-group {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
+                grid-template-columns: 1fr auto auto;
+                gap: 0.5rem;
                 padding: 0.75rem;
             }
             
+            .action-group .btn-primary {
+                min-width: 0;
+                padding: 0 0.75rem;
+            }
+            
+            .action-group .btn-primary span {
+                display: none;
+            }
+            
+            .action-group .btn-primary i {
+                margin-right: 0;
+            }
+            
+            .action-group .btn-primary small {
+                margin-left: 0;
+            }
+            
             .action-button {
-                width: 100%;
-                height: 3rem;
+                width: 2.75rem;
+                height: 2.75rem;
+            }
+            
+            .action-button i {
+                font-size: 1.25rem;
             }
         }
 
@@ -1109,14 +1149,14 @@
                                             </a>
                                         ` : ''}
                                     </div>
-                                    ${module.versions.length > 1 ? `
+                                    ${module.versions && module.versions.length > 1 ? `
                                         <div class="module-versions">
                                             <details>
                                                 <summary>
                                                     历史版本 (${module.versions.length - 1})
                                                 </summary>
                                                 <div class="version-list">
-                                                    ${module.versions.slice(1).reverse().map(ver => `
+                                                    ${module.versions.slice(1).map(ver => `
                                                         <a href="${ver.zipUrl}" class="version-item">
                                                             <span class="version-name">${ver.version.startsWith('v') ? ver.version : `v${ver.version}`}</span>
                                                             <span class="version-date">${formatDate(ver.timestamp)}</span>
