@@ -277,6 +277,8 @@
         .module-name:hover {
             -webkit-line-clamp: unset;
             color: var(--accent);
+            background: var(--card-bg);
+            z-index: 10;
         }
 
         .module-version {
@@ -316,8 +318,8 @@
             align-items: center;
             gap: 0.25rem;
             font-size: 0.75rem;
-            color: var(--accent);
-            font-weight: 500;
+            color: #ef4444;
+            font-weight: 600;
             position: absolute;
             top: -0.75rem;
             left: 1.5rem;
@@ -326,19 +328,24 @@
             border-radius: var(--radius);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            border: 1px solid var(--input-border);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             white-space: nowrap;
             z-index: 2;
-            box-shadow: var(--shadow);
-            animation: float 2s ease-in-out infinite;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+            animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes float {
+        .module-new-badge i {
+            color: #ef4444;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
             0%, 100% {
-                transform: translateY(0);
+                opacity: 1;
             }
             50% {
-                transform: translateY(-4px);
+                opacity: 0.5;
             }
         }
 
@@ -527,6 +534,8 @@
             -webkit-line-clamp: unset;
             cursor: help;
             color: var(--accent);
+            background: var(--card-bg);
+            z-index: 10;
         }
 
         .module-features {
@@ -570,7 +579,7 @@
         .feature-tag:hover {
             transform: translateX(2px);
             background: var(--accent);
-            color: var(--accent-foreground);
+            color: var(--bg) !important;
             border-color: var(--accent);
         }
 
@@ -590,11 +599,21 @@
             background: var(--input-bg);
             padding: 0.5rem;
             border-radius: var(--radius);
+            border: 1px solid var(--input-border);
         }
 
         .action-group .btn-primary {
             background: var(--card-bg);
             flex: 1;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .action-group .btn-primary:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .action-button {
@@ -607,14 +626,34 @@
             border: 1px solid var(--input-border);
             background: var(--card-bg);
             color: var(--fg);
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            overflow: hidden;
         }
 
         .action-button:hover {
             border-color: var(--accent);
             color: var(--accent);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-button:hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .action-button i {
+            font-size: 1.1rem;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .action-button:hover i {
+            transform: scale(1.1);
         }
 
         .btn {
