@@ -372,43 +372,33 @@
             overflow: hidden;
         }
 
-        .module-versions summary {
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--fg);
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-
-        .module-versions summary:hover {
+        .module-versions details[open] summary {
             background: var(--card-hover);
-            color: var(--accent);
+            margin-bottom: 0.5rem;
         }
 
-        .module-versions summary::before {
-            content: '';
-            width: 16px;
-            height: 16px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 4l4 4-4 4'/%3E%3C/svg%3E");
-            background-size: contain;
-            transform: rotate(0deg);
-            transition: transform 0.3s ease;
+        .module-versions details[open] .version-list {
+            animation: slideDown 0.3s ease-out;
         }
 
-        .module-versions details[open] summary::before {
-            transform: rotate(90deg);
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .version-list {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
-            padding: 0.5rem;
+            gap: 0.5rem;
+            padding: 0.75rem;
             background: var(--card-bg);
+            border-radius: 0 0 var(--radius) var(--radius);
         }
 
         .version-item {
@@ -580,6 +570,33 @@
             margin-top: auto;
             padding-top: 1rem;
             border-top: 1px solid var(--input-border);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--input-border);
+            background: var(--card-bg);
+            color: var(--fg);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
 
         .btn {
@@ -985,42 +1002,47 @@
                                     </div>
                                 ` : ''}
                                 <div class="module-actions">
-                                    <div class="btn-group" style="display: flex; gap: 0.5rem;">
+                                    <div class="btn-group">
                                         <a href="${module.versions[0].zipUrl}" class="btn btn-primary flex-grow-1">
                                             <i class="ri-download-2-line"></i>
                                             下载
                                             ${module.versions[0].size ? `<small>(${formatSize(module.versions[0].size)})</small>` : ''}
                                         </a>
-                                        <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
-                                           target="_blank" 
-                                           class="btn btn-outline" 
-                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
-                                           data-bs-toggle="tooltip"
-                                           data-bs-placement="top"
-                                           style="flex: 0 0 auto;">
-                                            <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
-                                        </a>
-                                        ${module.track?.discussion ? `
-                                        <a href="${module.track.discussion}" 
-                                           target="_blank" 
-                                           class="btn btn-outline" 
-                                           title="参与讨论"
-                                           data-bs-toggle="tooltip"
-                                           data-bs-placement="top">
-                                            <i class="ri-discuss-line"></i>
-                                        </a>
-                                        ` : ''}
+                                        <div class="action-buttons">
+                                            <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                               target="_blank" 
+                                               class="action-button" 
+                                               title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top">
+                                                <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                            </a>
+                                            ${module.versions[0].changelog ? `
+                                                <a href="${module.versions[0].changelog}" 
+                                                   target="_blank" 
+                                                   class="action-button"
+                                                   title="查看更新日志"
+                                                   data-bs-toggle="tooltip"
+                                                   data-bs-placement="top">
+                                                    <i class="ri-file-list-3-line"></i>
+                                                </a>
+                                            ` : ''}
+                                            ${module.track?.discussion ? `
+                                                <a href="${module.track.discussion}" 
+                                                   target="_blank" 
+                                                   class="action-button"
+                                                   title="参与讨论"
+                                                   data-bs-toggle="tooltip"
+                                                   data-bs-placement="top">
+                                                    <i class="ri-discuss-line"></i>
+                                                </a>
+                                            ` : ''}
+                                        </div>
                                     </div>
-                                    ${module.versions[0].changelog ? `
-                                        <a href="${module.versions[0].changelog}" class="module-changelog" target="_blank">
-                                            <i class="ri-file-list-3-line"></i>
-                                            查看更新日志
-                                        </a>
-                                    ` : ''}
                                     ${module.versions.length > 1 ? `
                                         <div class="module-versions">
                                             <details>
-                                                <summary>历史版本 (${module.versions.length})</summary>
+                                                <summary>历史版本 (${module.versions.length - 1})</summary>
                                                 <div class="version-list">
                                                     ${module.versions.slice(1).map(ver => `
                                                         <a href="${ver.zipUrl}" class="version-item">
@@ -1098,19 +1120,19 @@
                 filtered.sort((a, b) => {
                     switch(sort) {
                         case 'update':
-                            // 获取最新版本的时间戳
-                            const aTimestamp = a.timestamp || 0;
-                            const bTimestamp = b.timestamp || 0;
-                            return bTimestamp - aTimestamp;
+                            // 使用最新版本的时间戳
+                            const aDate = a.versions && a.versions[0] ? new Date(a.versions[0].timestamp * 1000).getTime() : 0;
+                            const bDate = b.versions && b.versions[0] ? new Date(b.versions[0].timestamp * 1000).getTime() : 0;
+                            return bDate - aDate;
                         case 'author':
                             return a.author.localeCompare(b.author);
                         case 'name':
                             return a.name.localeCompare(b.name);
                         default:
                             // 默认按更新时间排序
-                            const defaultATimestamp = a.timestamp || 0;
-                            const defaultBTimestamp = b.timestamp || 0;
-                            return defaultBTimestamp - defaultATimestamp;
+                            const defaultADate = a.versions && a.versions[0] ? new Date(a.versions[0].timestamp * 1000).getTime() : 0;
+                            const defaultBDate = b.versions && b.versions[0] ? new Date(b.versions[0].timestamp * 1000).getTime() : 0;
+                            return defaultBDate - defaultADate;
                     }
                 });
 
