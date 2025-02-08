@@ -8,23 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
-            /* 主题色 */
             --primary: #18181b;
             --secondary: #52525b;
             --accent: #18181b;
-            
-            /* 背景和前景 */
             --bg: #fafafa;
             --fg: #18181b;
             --muted: #71717a;
-            
-            /* 卡片和输入框 */
             --card-bg: rgba(255, 255, 255, 0.7);
             --card-hover: rgba(255, 255, 255, 0.8);
             --input-bg: rgba(255, 255, 255, 0.5);
             --input-border: rgba(228, 228, 231, 0.5);
-            
-            /* 通用样式 */
             --radius: 0.75rem;
             --blur: blur(12px);
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -137,83 +130,6 @@
             color: #18181b;
             border-color: #fafafa;
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
-        }
-
-        [data-bs-theme="dark"] .accordion-button {
-            background: rgba(39, 39, 42, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #e4e4e7;
-        }
-
-        [data-bs-theme="dark"] .accordion-button:hover,
-        [data-bs-theme="dark"] .accordion-button:not(.collapsed) {
-            background: rgba(63, 63, 70, 0.95);
-            color: #ffffff;
-        }
-
-        [data-bs-theme="dark"] .list-group {
-            background: rgba(39, 39, 42, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        [data-bs-theme="dark"] .list-group-item {
-            background: transparent;
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #e4e4e7;
-        }
-
-        [data-bs-theme="dark"] .list-group-item:hover {
-            background: rgba(63, 63, 70, 0.95);
-            color: #ffffff;
-        }
-
-        [data-bs-theme="dark"] .list-group-item .badge {
-            background: rgba(82, 82, 91, 0.95);
-            color: #ffffff;
-        }
-
-        [data-bs-theme="dark"] .module-version {
-            background: rgba(63, 63, 70, 0.95);
-            color: #e4e4e7;
-        }
-
-        [data-bs-theme="dark"] .module-version:hover {
-            background: rgba(82, 82, 91, 0.95);
-            color: #ffffff;
-        }
-
-        [data-bs-theme="dark"] .search-container {
-            background: rgba(39, 39, 42, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        [data-bs-theme="dark"] .form-control,
-        [data-bs-theme="dark"] .form-select {
-            background: rgba(24, 24, 27, 0.6);
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #fafafa;
-        }
-
-        [data-bs-theme="dark"] .form-control:focus,
-        [data-bs-theme="dark"] .form-select:focus {
-            border-color: #fafafa;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-        }
-
-        [data-bs-theme="dark"] .form-select option {
-            background: #27272a;
-            color: #fafafa;
-        }
-
-        [data-bs-theme="dark"] .header {
-            background: rgba(39, 39, 42, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        [data-bs-theme="dark"] .footer {
-            background: rgba(39, 39, 42, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #a1a1aa;
         }
 
         body {
@@ -375,8 +291,6 @@
             background: var(--bs-body-bg);
             overflow: hidden;
             transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -494,15 +408,6 @@
             line-height: 1.7;
             color: var(--bs-gray-700);
             margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-            transition-delay: 0.1s;
-        }
-
-        .module-card.show .module-description {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .module-features {
@@ -513,15 +418,6 @@
             padding: 1.25rem;
             background: rgba(249, 250, 251, 0.8);
             border-radius: 0.75rem;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-            transition-delay: 0.2s;
-        }
-
-        .module-card.show .module-features {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .feature-tag {
@@ -535,14 +431,6 @@
             font-size: 0.75rem;
             border: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.2s ease;
-            transform: translateY(10px);
-            opacity: 0;
-        }
-
-        .module-card.show .feature-tag {
-            transform: translateY(0);
-            opacity: 1;
-            transition-delay: calc(0.3s + var(--order) * 0.05s);
         }
 
         .module-actions {
@@ -552,15 +440,6 @@
             display: flex;
             gap: 1rem;
             align-items: center;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-            transition-delay: 0.3s;
-        }
-
-        .module-card.show .module-actions {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .action-group {
@@ -581,7 +460,6 @@
             border: none;
             border-radius: 2rem;
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform: translateY(0);
             color: white;
             text-decoration: none;
         }
@@ -604,7 +482,6 @@
             background: white;
             color: var(--bs-gray-700);
             transition: all 0.3s ease;
-            transform: translateY(0);
         }
 
         .btn-icon:hover {
