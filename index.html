@@ -368,23 +368,24 @@
             border-radius: 1rem;
             background: var(--bs-body-bg);
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                      box-shadow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                      border-color 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: var(--shadow);
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 1;
+            transform: translateY(0);
             display: flex;
             flex-direction: column;
             height: 100%;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             z-index: 1;
+            contain: content;
+            will-change: transform, opacity;
         }
 
         .module-card.show {
-            opacity: 1;
-            transform: translateY(0);
-            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: calc(var(--order) * 0.1s);
+            animation: none;
         }
 
         .module-card:hover {
@@ -807,19 +808,6 @@
 
             .module-actions {
                 padding: 1rem;
-        }
-
-        .module-meta {
-            flex-wrap: wrap;
-                gap: 0.5rem;
-        }
-
-        .module-meta span {
-                font-size: 0.75rem;
-            }
-
-            .footer-content {
-                gap: 2rem;
             }
         }
 
@@ -1414,131 +1402,142 @@
                     module.versions.sort((a, b) => b.versionCode - a.versionCode);
                 }
             });
+
+            // 创建文档片段来存储所有卡片
+            const fragment = document.createDocumentFragment();
             
-            moduleList.innerHTML = modules.map((module, index) => {
+            modules.forEach((module, index) => {
                 const features = getFeaturesList(module.features);
                 const lastUpdate = formatDate(module.versions[0].timestamp);
                 const isNew = (Date.now() / 1000 - module.versions[0].timestamp) < 7 * 24 * 60 * 60;
                 const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
                 
-                return `
-                    <div class="module-card" style="--order: ${index}">
-                        <div class="module-header">
-                                <span class="module-name" data-full-name="${module.name}">
-                                    ${module.name}
-                                </span>
-                                ${isNew ? `
-                                    <span class="module-new-badge">
-                                        <i class="ri-flashlight-line"></i>
-                                        New
-                                    </span>
-                            ` : isOutdated(module.versions[0].timestamp) ? `
-                                <span class="module-outdated-badge">
-                                    <i class="ri-time-line"></i>
-                                    长期未更新
-                                </span>
-                                ` : ''}
-                                <div class="module-meta">
-                                <span>
-                                    <i class="ri-user-3-line"></i> ${module.author}
-                                </span>
-                                <span>
-                                    <i class="ri-time-line"></i> ${lastUpdate}
-                                </span>
-                                <span class="module-version">
-                                    <i class="ri-code-s-slash-line"></i>
-                                    ${version}
-                                </span>
-                                </div>
-                            </div>
+                const card = document.createElement('div');
+                card.className = 'module-card';
+                card.style.setProperty('--order', index);
+                
+                // 使用innerHTML设置卡片内容
+                card.innerHTML = `
+                    <div class="module-header">
+                        <span class="module-name" data-full-name="${module.name}">
+                            ${module.name}
+                        </span>
+                        ${isNew ? `
+                            <span class="module-new-badge">
+                                <i class="ri-flashlight-line"></i>
+                                New
+                            </span>
+                        ` : isOutdated(module.versions[0].timestamp) ? `
+                            <span class="module-outdated-badge">
+                                <i class="ri-time-line"></i>
+                                长期未更新
+                            </span>
+                        ` : ''}
+                        <div class="module-meta">
+                            <span>
+                                <i class="ri-user-3-line"></i> ${module.author}
+                            </span>
+                            <span>
+                                <i class="ri-time-line"></i> ${lastUpdate}
+                            </span>
+                            <span class="module-version">
+                                <i class="ri-code-s-slash-line"></i>
+                                ${version}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="module-description">
+                            ${module.description}
+                        </div>
                         
-                        <div class="module-content">
-                            <div class="module-description">
-                                ${module.description}
+                        ${features.length > 0 ? `
+                            <div class="module-features">
+                                ${features.map(feature => `
+                                    <span class="feature-tag">
+                                        <i class="ri-checkbox-circle-line"></i>
+                                        ${feature}
+                                    </span>
+                                `).join('')}
                             </div>
-                            
-                            ${features.length > 0 ? `
-                                <div class="module-features">
-                                    ${features.map(feature => `
-                                        <span class="feature-tag">
-                                            <i class="ri-checkbox-circle-line"></i>
-                                            ${feature}
-                                        </span>
-                                    `).join('')}
-                                </div>
+                        ` : ''}
+                    </div>
+
+                    <div class="module-actions">
+                        <div class="action-group">
+                            <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
+                                <i class="ri-download-2-line"></i>
+                                下载
+                                ${module.versions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.versions[0].size)}</small>` : ''}
+                            </a>
+                            <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                               target="_blank" 
+                               class="btn btn-icon" 
+                               title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
+                                <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                            </a>
+                            ${module.versions[0].changelog ? `
+                                <a href="${module.versions[0].changelog}" 
+                                   target="_blank" 
+                                   class="btn btn-icon"
+                                   title="查看更新日志">
+                                    <i class="ri-file-list-3-line"></i>
+                                </a>
                             ` : ''}
                         </div>
-
-                            <div class="module-actions">
-                                <div class="action-group">
-                                <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
-                                        <i class="ri-download-2-line"></i>
-                                    下载
-                                    ${module.versions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.versions[0].size)}</small>` : ''}
-                                    </a>
-                                    <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
-                                       target="_blank" 
-                                   class="btn btn-icon" 
-                                       title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
-                                        <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
-                                    </a>
-                                    ${module.versions[0].changelog ? `
-                                        <a href="${module.versions[0].changelog}" 
-                                           target="_blank" 
-                                       class="btn btn-icon"
-                                           title="查看更新日志">
-                                            <i class="ri-file-list-3-line"></i>
-                                        </a>
-                                    ` : ''}
-                                </div>
-                                ${module.versions.length > 1 ? `
-                                <div class="accordion mt-3">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#version-${index}">
-                                                历史版本 (${module.versions.length - 1})
-                                            </button>
-                                        </h2>
-                                        <div id="version-${index}" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <div class="list-group">
+                        ${module.versions.length > 1 ? `
+                            <div class="accordion mt-3">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#version-${index}">
+                                            历史版本 (${module.versions.length - 1})
+                                        </button>
+                                    </h2>
+                                    <div id="version-${index}" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="list-group">
                                                 ${module.versions
-                                                        .slice(1)
-                                                        .sort((a, b) => b.versionCode - a.versionCode)
+                                                    .slice(1)
+                                                    .sort((a, b) => b.versionCode - a.versionCode)
                                                     .map(ver => {
                                                         const version = ver.version.startsWith('v') ? ver.version : `v${ver.version}`;
                                                         return `
-                                                                <a href="${ver.zipUrl}" class="list-group-item list-group-item-action">
-                                                                    <div class="d-flex w-100 justify-content-between align-items-center">
-                                                                        <div>
-                                                                            <div class="fw-medium">${version}</div>
-                                                                            <small class="text-muted">${formatDate(ver.timestamp)}</small>
-                                                                        </div>
-                                                                        ${ver.size ? `<span class="badge">${formatSize(ver.size)}</span>` : ''}
+                                                            <a href="${ver.zipUrl}" class="list-group-item list-group-item-action">
+                                                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                                                    <div>
+                                                                        <div class="fw-medium">${version}</div>
+                                                                        <small class="text-muted">${formatDate(ver.timestamp)}</small>
                                                                     </div>
+                                                                    ${ver.size ? `<span class="badge">${formatSize(ver.size)}</span>` : ''}
+                                                                </div>
                                                             </a>
                                                         `;
                                                     }).join('')}
                                             </div>
-                                    </div>
-                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            ` : ''}
-                        </div>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
-            }).join('');
+                
+                fragment.appendChild(card);
+            });
 
-            // 添加动画效果
-            const cards = document.querySelectorAll('.module-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('show');
-                    card.querySelectorAll('.feature-tag').forEach(tag => {
-                        tag.classList.add('show');
+            // 清空列表并一次性添加所有卡片
+            moduleList.innerHTML = '';
+            moduleList.appendChild(fragment);
+
+            // 使用 requestAnimationFrame 来添加动画类
+            requestAnimationFrame(() => {
+                const cards = moduleList.querySelectorAll('.module-card');
+                cards.forEach((card, index) => {
+                    requestAnimationFrame(() => {
+                        card.classList.add('show');
                     });
-                }, index * 100);
+                });
             });
         }
 
