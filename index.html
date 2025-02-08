@@ -483,28 +483,29 @@
 
         .module-name::after {
             content: attr(data-full-name);
-            position: absolute;
-            left: 1.75rem;
-            right: 1.75rem;
-            top: 100%;
-            background: var(--bs-body-bg);
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--card-bg);
             padding: 1rem 1.25rem;
             border-radius: 0.75rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            z-index: 1056;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1060;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--input-border);
             font-size: 0.875rem;
-            transform: translateY(0.5rem) scale(0.98);
-            transform-origin: top center;
+            pointer-events: none;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            will-change: transform, opacity;
         }
 
         .module-name:hover::after {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0.75rem) scale(1);
         }
 
         .module-meta {
@@ -843,11 +844,11 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translate3d(0, 20px, 0);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translate3d(0, 0, 0);
             }
         }
 
@@ -1230,6 +1231,73 @@
             will-change: transform, opacity;
             transform: translateZ(0);
             backface-visibility: hidden;
+        }
+
+        /* 优化性能相关的样式 */
+        .module-card {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            contain: content;
+        }
+
+        .module-card * {
+            backface-visibility: hidden;
+        }
+
+        .module-features {
+            will-change: transform, opacity;
+            transform: translateZ(0);
+        }
+
+        .feature-tag {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+
+        .btn-primary,
+        .btn-icon {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+
+        /* 优化动画性能 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* 优化滚动性能 */
+        .modules-grid {
+            transform: translateZ(0);
+            will-change: transform;
+            contain: content;
+        }
+
+        /* 优化搜索容器性能 */
+        .search-container {
+            will-change: transform;
+            transform: translateZ(0);
+            contain: layout style;
+        }
+
+        /* 优化下拉菜单性能 */
+        .dropdown-menu {
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            contain: content;
+        }
+
+        .dropdown-item {
+            will-change: transform, background;
+            transform: translateZ(0);
         }
     </style>
 </head>
