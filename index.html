@@ -221,7 +221,7 @@
             transition: transform var(--transition),
                       border-color var(--transition),
                       box-shadow var(--transition);
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .module-card.show {
@@ -322,7 +322,7 @@
             color: #ef4444;
             font-weight: 600;
             position: absolute;
-            top: -0.875rem;
+            top: -1rem;
             left: 1.5rem;
             background: var(--card-bg);
             padding: 0.25rem 0.75rem;
@@ -333,7 +333,6 @@
             white-space: nowrap;
             z-index: 2;
             box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
-            animation: float 3s ease-in-out infinite;
         }
 
         .module-new-badge i {
@@ -595,10 +594,10 @@
 
         .action-group {
             display: grid;
-            grid-template-columns: 1fr auto auto auto;
+            grid-template-columns: 1fr auto auto;
             gap: 0.75rem;
             background: var(--input-bg);
-            padding: 0.75rem;
+            padding: 1rem;
             border-radius: var(--radius);
             border: 1px solid var(--input-border);
         }
@@ -606,7 +605,7 @@
         .action-group .btn-primary {
             background: var(--card-bg);
             font-weight: 600;
-            padding: 0.75rem 1.25rem;
+            padding: 0.875rem 1.5rem;
             border-radius: var(--radius);
             display: flex;
             align-items: center;
@@ -615,6 +614,8 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--input-border);
             color: var(--fg);
+            text-decoration: none;
+            min-width: 140px;
         }
 
         .action-group .btn-primary:hover {
@@ -625,8 +626,8 @@
         }
 
         .action-button {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: var(--radius);
             border: 1px solid var(--input-border);
             background: var(--card-bg);
@@ -636,30 +637,7 @@
             justify-content: center;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-        }
-
-        .action-button::after {
-            content: attr(title);
-            position: absolute;
-            bottom: -2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(0.5rem);
-            background: var(--card-bg);
-            padding: 0.25rem 0.5rem;
-            border-radius: var(--radius);
-            font-size: 0.75rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.2s ease;
-            border: 1px solid var(--input-border);
-            pointer-events: none;
-        }
-
-        .action-button:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
+            text-decoration: none;
         }
 
         .action-button:hover {
@@ -667,10 +645,11 @@
             color: var(--bg);
             border-color: var(--accent);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .action-button i {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -681,16 +660,13 @@
         @media (max-width: 480px) {
             .action-group {
                 grid-template-columns: 1fr;
-                gap: 0.5rem;
+                gap: 0.75rem;
+                padding: 0.75rem;
             }
             
             .action-button {
                 width: 100%;
-                height: 2.75rem;
-            }
-            
-            .action-button::after {
-                display: none;
+                height: 3rem;
             }
         }
 
@@ -1113,7 +1089,7 @@
                                 ` : ''}
                                 <div class="module-actions">
                                     <div class="action-group">
-                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
+                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary" title="下载最新版本">
                                             <i class="ri-download-2-line"></i>
                                             下载
                                             ${module.versions[0].size ? `<small>(${formatSize(module.versions[0].size)})</small>` : ''}
@@ -1121,29 +1097,15 @@
                                         <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
                                            target="_blank" 
                                            class="action-button" 
-                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
-                                           data-bs-toggle="tooltip"
-                                           data-bs-placement="top">
+                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
                                             <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
                                         </a>
                                         ${module.versions[0].changelog ? `
                                             <a href="${module.versions[0].changelog}" 
                                                target="_blank" 
                                                class="action-button"
-                                               title="查看更新日志"
-                                               data-bs-toggle="tooltip"
-                                               data-bs-placement="top">
+                                               title="查看更新日志">
                                                 <i class="ri-file-list-3-line"></i>
-                                            </a>
-                                        ` : ''}
-                                        ${module.track?.discussion ? `
-                                            <a href="${module.track.discussion}" 
-                                               target="_blank" 
-                                               class="action-button"
-                                               title="参与讨论"
-                                               data-bs-toggle="tooltip"
-                                               data-bs-placement="top">
-                                                <i class="ri-discuss-line"></i>
                                             </a>
                                         ` : ''}
                                     </div>
@@ -1154,7 +1116,7 @@
                                                     历史版本 (${module.versions.length - 1})
                                                 </summary>
                                                 <div class="version-list">
-                                                    ${module.versions.slice(1).map(ver => `
+                                                    ${module.versions.slice(1).reverse().map(ver => `
                                                         <a href="${ver.zipUrl}" class="version-item">
                                                             <span class="version-name">${ver.version.startsWith('v') ? ver.version : `v${ver.version}`}</span>
                                                             <span class="version-date">${formatDate(ver.timestamp)}</span>
