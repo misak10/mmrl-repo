@@ -612,6 +612,9 @@
                     <option value="customize">个性化</option>
                     <option value="performance">性能优化</option>
                     <option value="framework">框架支持</option>
+                    <option value="root">Root 管理</option>
+                    <option value="storage">存储优化</option>
+                    <option value="network">网络工具</option>
                 </select>
                 <select id="sortOrder" class="form-select">
                     <option value="update">按更新时间</option>
@@ -624,6 +627,9 @@
                     <option value="webroot">Web界面</option>
                     <option value="sepolicy">SEPolicy</option>
                     <option value="apks">APK支持</option>
+                    <option value="kernelsu">KernelSU</option>
+                    <option value="apatch">APatch</option>
+                    <option value="zygisk">Zygisk</option>
                 </select>
             </div>
         </section>
@@ -649,8 +655,19 @@
                         <i class="ri-heart-fill"></i>
                         赞助支持
                     </a>
+                    <a href="https://github.com/misak10/mmrl-repo/commits/main" class="footer-link">
+                        <i class="ri-git-commit-line"></i>
+                        更新日志
+                    </a>
+                    <a href="https://mmrl.dev/guide/create-your-own-repository" class="footer-link">
+                        <i class="ri-book-2-line"></i>
+                        使用指南
+                    </a>
                 </div>
-                <p class="footer-text">Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
+                <div class="footer-credits">
+                    <p>Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
+                    <p>Powered by <a href="https://github.com/Googlers-Repo">MMRL</a></p>
+                </div>
             </div>
         </div>
     </footer>
@@ -836,6 +853,7 @@
                                         <a href="${module.versions[0].zipUrl}" class="btn btn-primary flex-grow-1">
                                             <i class="ri-download-2-line"></i>
                                             下载
+                                            ${module.versions[0].size ? `<small>(${formatSize(module.versions[0].size)})</small>` : ''}
                                         </a>
                                         <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
                                            target="_blank" 
@@ -846,12 +864,38 @@
                                            style="flex: 0 0 auto;">
                                             <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
                                         </a>
+                                        ${module.track?.discussion ? `
+                                        <a href="${module.track.discussion}" 
+                                           target="_blank" 
+                                           class="btn btn-outline" 
+                                           title="参与讨论"
+                                           data-bs-toggle="tooltip"
+                                           data-bs-placement="top">
+                                            <i class="ri-discuss-line"></i>
+                                        </a>
+                                        ` : ''}
                                     </div>
                                     ${module.versions[0].changelog ? `
-                                        <a href="${module.versions[0].changelog}" class="module-changelog">
+                                        <a href="${module.versions[0].changelog}" class="module-changelog" target="_blank">
                                             <i class="ri-file-list-3-line"></i>
                                             查看更新日志
                                         </a>
+                                    ` : ''}
+                                    ${module.versions.length > 1 ? `
+                                        <div class="module-versions">
+                                            <details>
+                                                <summary>历史版本 (${module.versions.length})</summary>
+                                                <div class="version-list">
+                                                    ${module.versions.slice(1).map(ver => `
+                                                        <a href="${ver.zipUrl}" class="version-item">
+                                                            <span class="version-name">${ver.version}</span>
+                                                            <span class="version-date">${formatDate(ver.timestamp)}</span>
+                                                            ${ver.size ? `<span class="version-size">${formatSize(ver.size)}</span>` : ''}
+                                                        </a>
+                                                    `).join('')}
+                                                </div>
+                                            </details>
+                                        </div>
                                     ` : ''}
                                 </div>
                             </div>
@@ -970,6 +1014,19 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
         });
+
+        // 添加文件大小格式化函数
+        function formatSize(bytes) {
+            if (!bytes) return '';
+            const units = ['B', 'KB', 'MB', 'GB'];
+            let size = bytes;
+            let unitIndex = 0;
+            while (size >= 1024 && unitIndex < units.length - 1) {
+                size /= 1024;
+                unitIndex++;
+            }
+            return `${size.toFixed(1)} ${units[unitIndex]}`;
+        }
     </script>
 </body>
 </html> 
