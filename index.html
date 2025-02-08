@@ -361,9 +361,7 @@
         }
 
         .module-versions {
-            border-top: 1px solid var(--input-border);
             margin-top: 0.5rem;
-            padding-top: 0.5rem;
         }
 
         .module-versions details {
@@ -372,51 +370,64 @@
             overflow: hidden;
         }
 
-        .module-versions details[open] summary {
-            background: var(--card-hover);
-            margin-bottom: 0.5rem;
+        .module-versions summary {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--fg);
+            transition: all 0.2s ease;
         }
 
-        .module-versions details[open] .version-list {
-            animation: slideDown 0.3s ease-out;
+        .module-versions summary::before {
+            content: '';
+            width: 1rem;
+            height: 1rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+            background-size: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .module-versions details[open] summary::before {
+            transform: rotate(180deg);
+        }
+
+        .version-list {
+            padding: 0.75rem;
+            display: grid;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border-radius: 0 0 var(--radius) var(--radius);
+            animation: slideDown 0.2s ease-out;
+            will-change: transform, opacity;
         }
 
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-10px);
+                transform: translateY(-0.5rem);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .version-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding: 0.75rem;
-            background: var(--card-bg);
-            border-radius: 0 0 var(--radius) var(--radius);
         }
 
         .version-item {
             display: grid;
-            grid-template-columns: 1fr auto auto;
+            grid-template-columns: auto 1fr auto;
             gap: 1rem;
-            padding: 0.75rem;
+            padding: 0.5rem 0.75rem;
             text-decoration: none;
             color: var(--fg);
             border-radius: var(--radius);
-            transition: all 0.3s ease;
-            align-items: center;
             background: var(--input-bg);
+            transition: all 0.2s ease;
+            will-change: transform;
         }
 
         .version-item:hover {
             background: var(--card-hover);
-            transform: translateX(4px);
+            transform: translateX(0.25rem);
         }
 
         .version-name {
@@ -572,31 +583,38 @@
             border-top: 1px solid var(--input-border);
         }
 
-        .action-buttons {
+        .action-group {
             display: flex;
+            align-items: center;
             gap: 0.5rem;
-            flex-wrap: wrap;
+            background: var(--input-bg);
+            padding: 0.5rem;
+            border-radius: var(--radius);
+        }
+
+        .action-group .btn-primary {
+            background: var(--card-bg);
+            flex: 1;
         }
 
         .action-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2.25rem;
+            height: 2.25rem;
             border-radius: var(--radius);
             border: 1px solid var(--input-border);
             background: var(--card-bg);
             color: var(--fg);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
         }
 
         .action-button:hover {
-            transform: translateY(-2px);
             border-color: var(--accent);
             color: var(--accent);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
         }
 
         .btn {
@@ -734,6 +752,21 @@
         .stat-item,
         .module-badge {
             display: none;
+        }
+
+        /* 性能优化 */
+        .module-card {
+            will-change: transform, opacity;
+            contain: content;
+        }
+
+        .module-card * {
+            backface-visibility: hidden;
+        }
+
+        .feature-tag {
+            will-change: transform;
+            contain: content;
         }
     </style>
 </head>
@@ -1002,47 +1035,47 @@
                                     </div>
                                 ` : ''}
                                 <div class="module-actions">
-                                    <div class="btn-group">
-                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary flex-grow-1">
+                                    <div class="action-group">
+                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
                                             <i class="ri-download-2-line"></i>
                                             下载
                                             ${module.versions[0].size ? `<small>(${formatSize(module.versions[0].size)})</small>` : ''}
                                         </a>
-                                        <div class="action-buttons">
-                                            <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                        <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                           target="_blank" 
+                                           class="action-button" 
+                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
+                                           data-bs-toggle="tooltip"
+                                           data-bs-placement="top">
+                                            <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                        </a>
+                                        ${module.versions[0].changelog ? `
+                                            <a href="${module.versions[0].changelog}" 
                                                target="_blank" 
-                                               class="action-button" 
-                                               title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}"
+                                               class="action-button"
+                                               title="查看更新日志"
                                                data-bs-toggle="tooltip"
                                                data-bs-placement="top">
-                                                <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                                <i class="ri-file-list-3-line"></i>
                                             </a>
-                                            ${module.versions[0].changelog ? `
-                                                <a href="${module.versions[0].changelog}" 
-                                                   target="_blank" 
-                                                   class="action-button"
-                                                   title="查看更新日志"
-                                                   data-bs-toggle="tooltip"
-                                                   data-bs-placement="top">
-                                                    <i class="ri-file-list-3-line"></i>
-                                                </a>
-                                            ` : ''}
-                                            ${module.track?.discussion ? `
-                                                <a href="${module.track.discussion}" 
-                                                   target="_blank" 
-                                                   class="action-button"
-                                                   title="参与讨论"
-                                                   data-bs-toggle="tooltip"
-                                                   data-bs-placement="top">
-                                                    <i class="ri-discuss-line"></i>
-                                                </a>
-                                            ` : ''}
-                                        </div>
+                                        ` : ''}
+                                        ${module.track?.discussion ? `
+                                            <a href="${module.track.discussion}" 
+                                               target="_blank" 
+                                               class="action-button"
+                                               title="参与讨论"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top">
+                                                <i class="ri-discuss-line"></i>
+                                            </a>
+                                        ` : ''}
                                     </div>
                                     ${module.versions.length > 1 ? `
                                         <div class="module-versions">
                                             <details>
-                                                <summary>历史版本 (${module.versions.length - 1})</summary>
+                                                <summary>
+                                                    历史版本 (${module.versions.length - 1})
+                                                </summary>
                                                 <div class="version-list">
                                                     ${module.versions.slice(1).map(ver => `
                                                         <a href="${ver.zipUrl}" class="version-item">
@@ -1118,21 +1151,20 @@
                 );
 
                 filtered.sort((a, b) => {
+                    const getLatestTimestamp = (module) => {
+                        if (!module.versions || !module.versions.length) return 0;
+                        return Math.max(...module.versions.map(v => parseFloat(v.timestamp) || 0));
+                    };
+
                     switch(sort) {
                         case 'update':
-                            // 使用最新版本的时间戳
-                            const aDate = a.versions && a.versions[0] ? new Date(a.versions[0].timestamp * 1000).getTime() : 0;
-                            const bDate = b.versions && b.versions[0] ? new Date(b.versions[0].timestamp * 1000).getTime() : 0;
-                            return bDate - aDate;
+                            return getLatestTimestamp(b) - getLatestTimestamp(a);
                         case 'author':
                             return a.author.localeCompare(b.author);
                         case 'name':
                             return a.name.localeCompare(b.name);
                         default:
-                            // 默认按更新时间排序
-                            const defaultADate = a.versions && a.versions[0] ? new Date(a.versions[0].timestamp * 1000).getTime() : 0;
-                            const defaultBDate = b.versions && b.versions[0] ? new Date(b.versions[0].timestamp * 1000).getTime() : 0;
-                            return defaultBDate - defaultADate;
+                            return getLatestTimestamp(b) - getLatestTimestamp(a);
                     }
                 });
 
