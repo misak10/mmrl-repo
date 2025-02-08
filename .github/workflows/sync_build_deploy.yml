@@ -39,7 +39,7 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
       - name: Set up Python
@@ -173,16 +173,17 @@ jobs:
           - Sync repository data
           - Update module index
           - Generate static pages"
+          git push
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: log/*.log
   
   build:
     runs-on: ubuntu-latest
     needs: sync
-    permissions:
-      pages: write
-      id-token: write
-      actions: read
-    outputs:
-      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -190,7 +191,7 @@ jobs:
           ref: ${{ github.ref }}
         
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
         
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
@@ -200,8 +201,6 @@ jobs:
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./_site
 
   deploy:
     environment:
@@ -209,11 +208,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    permissions:
-      pages: write
-      id-token: write
-      actions: read
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
