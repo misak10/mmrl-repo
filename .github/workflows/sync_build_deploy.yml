@@ -180,6 +180,9 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      actions: read
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -196,11 +199,9 @@ jobs:
           destination: ./_site
           
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: ./_site
-          retention-days: 1
 
   deploy:
     environment:
@@ -211,15 +212,8 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      actions: read
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: ./_site
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
-        with:
-          artifact_name: github-pages
