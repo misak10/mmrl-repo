@@ -8,16 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
         :root {
+            /* 主题色 */
             --primary: #18181b;
             --secondary: #52525b;
             --accent: #18181b;
+            
+            /* 背景和前景 */
             --bg: #fafafa;
             --fg: #18181b;
             --muted: #71717a;
+            
+            /* 卡片和输入框 */
             --card-bg: rgba(255, 255, 255, 0.7);
             --card-hover: rgba(255, 255, 255, 0.8);
             --input-bg: rgba(255, 255, 255, 0.5);
             --input-border: rgba(228, 228, 231, 0.5);
+            
+            /* 通用样式 */
             --radius: 0.75rem;
             --blur: blur(12px);
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -39,14 +46,100 @@
             --bs-primary: #fafafa;
             --bs-secondary: #71717a;
             --bs-border-color: rgba(255, 255, 255, 0.1);
+            
+            /* 背景和前景 */
             --bg: #18181b;
             --fg: #fafafa;
             --muted: #a1a1aa;
+            
+            /* 卡片和输入框 */
             --card-bg: rgba(39, 39, 42, 0.7);
             --card-hover: rgba(39, 39, 42, 0.8);
             --input-bg: rgba(39, 39, 42, 0.5);
             --input-border: rgba(63, 63, 70, 0.5);
+            
+            /* 阴影调整 */
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-bs-theme="dark"] .module-card {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(39, 39, 42, 0.95);
+        }
+
+        [data-bs-theme="dark"] .module-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: rgba(39, 39, 42, 1);
+        }
+
+        [data-bs-theme="dark"] .module-header {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+            background: transparent;
+        }
+
+        [data-bs-theme="dark"] .module-name {
+            color: #fafafa;
+        }
+
+        [data-bs-theme="dark"] .module-name:hover {
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .module-meta span {
+            color: #a1a1aa;
+        }
+
+        [data-bs-theme="dark"] .module-meta span:hover {
+            color: #fafafa;
+        }
+
+        [data-bs-theme="dark"] .module-description {
+            color: #e4e4e7;
+        }
+
+        [data-bs-theme="dark"] .module-features {
+            background: rgba(24, 24, 27, 0.6);
+        }
+
+        [data-bs-theme="dark"] .feature-tag {
+            background: rgba(39, 39, 42, 0.95);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #e4e4e7;
+        }
+
+        [data-bs-theme="dark"] .feature-tag:hover {
+            background: rgba(63, 63, 70, 0.95);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .module-actions {
+            background: rgba(24, 24, 27, 0.6);
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .btn-primary {
+            background: #fafafa;
+            color: #18181b;
+        }
+
+        [data-bs-theme="dark"] .btn-primary:hover {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+        }
+
+        [data-bs-theme="dark"] .btn-icon {
+            background: rgba(39, 39, 42, 0.95);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #e4e4e7;
+        }
+
+        [data-bs-theme="dark"] .btn-icon:hover {
+            background: #fafafa;
+            color: #18181b;
+            border-color: #fafafa;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
         }
 
         body {
@@ -73,11 +166,56 @@
             z-index: 100;
             padding: 1rem 0;
             box-shadow: var(--shadow);
+            will-change: transform;
         }
 
         .container {
             width: min(1200px, 100% - 3rem);
             margin-inline: auto;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 2.5rem;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .theme-switch {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            color: var(--fg);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .theme-switch:hover {
+            transform: rotate(180deg) scale(1.2);
+            background: var(--accent);
+            color: var(--accent-foreground);
         }
 
         .search-section {
@@ -114,6 +252,39 @@
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             width: 100%;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--input-border);
+            outline: none;
+        }
+
+        /* 重置select的默认样式 */
+        select.form-select {
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            background-color: var(--input-bg) !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 0.75rem center !important;
+            background-size: 1rem !important;
+            padding-right: 2.5rem !important;
+        }
+
+        [data-bs-theme="dark"] select.form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+        }
+
+        select.form-select::-ms-expand {
+            display: none;
+        }
+
+        .form-select option {
+            background-color: var(--bg);
+            color: var(--fg);
+            padding: 0.5rem;
         }
 
         .modules-grid {
@@ -191,6 +362,10 @@
             padding-right: 4rem;
         }
 
+        .module-name:hover {
+            color: var(--bs-primary);
+        }
+
         .module-meta {
             display: flex;
             flex-wrap: wrap;
@@ -205,6 +380,28 @@
             font-size: 0.875rem;
             color: var(--bs-gray-600);
             transition: color 0.2s ease;
+        }
+
+        .module-meta span:hover {
+            color: var(--bs-gray-900);
+        }
+
+        .module-version {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--bs-gray-100);
+            color: var(--bs-gray-700);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .module-version:hover {
+            background: var(--bs-gray-200);
+            color: var(--bs-gray-900);
         }
 
         .module-content {
@@ -226,6 +423,11 @@
             transition-delay: 0.1s;
         }
 
+        .module-card.show .module-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .module-features {
             display: flex;
             flex-wrap: wrap;
@@ -238,6 +440,11 @@
             transform: translateY(10px);
             transition: all 0.4s ease;
             transition-delay: 0.2s;
+        }
+
+        .module-card.show .module-features {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .feature-tag {
@@ -255,6 +462,18 @@
             opacity: 0;
         }
 
+        .module-card.show .feature-tag {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: calc(0.3s + var(--order) * 0.05s);
+        }
+
+        .feature-tag:hover {
+            background: rgba(249, 250, 251, 0.95);
+            border-color: rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+
         .module-actions {
             padding: 1.25rem 1.5rem;
             background: rgba(249, 250, 251, 0.8);
@@ -263,6 +482,11 @@
             transform: translateY(10px);
             transition: all 0.4s ease;
             transition-delay: 0.3s;
+        }
+
+        .module-card.show .module-actions {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .action-group {
@@ -287,6 +511,12 @@
             text-decoration: none;
         }
 
+        .btn-primary:hover {
+            background: black;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
         .btn-icon {
             width: 2.5rem;
             height: 2.5rem;
@@ -302,24 +532,89 @@
             transform: translateY(0);
         }
 
-        [data-bs-theme="dark"] .module-card {
-            border-color: rgba(255, 255, 255, 0.1);
-            background: rgba(39, 39, 42, 0.95);
+        .btn-icon:hover {
+            background: var(--bs-gray-900);
+            color: white;
+            border-color: var(--bs-gray-900);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        [data-bs-theme="dark"] .module-features {
-            background: rgba(24, 24, 27, 0.6);
+        .btn {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            text-decoration: none;
         }
 
-        [data-bs-theme="dark"] .feature-tag {
-            background: rgba(39, 39, 42, 0.95);
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #e4e4e7;
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
-        [data-bs-theme="dark"] .module-actions {
-            background: rgba(24, 24, 27, 0.6);
-            border-top-color: rgba(255, 255, 255, 0.1);
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--input-border);
+            color: var(--fg);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .btn-outline:disabled {
+            border-color: var(--muted);
+            color: var(--muted);
+            cursor: not-allowed;
+        }
+
+        .footer {
+            margin-top: auto;
+            background: var(--card-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border-top: 1px solid var(--input-border);
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-link {
+            color: var(--muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.8;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .footer-link:hover {
+            transform: translateY(-2px);
+            color: var(--accent);
         }
 
         .loading {
@@ -327,24 +622,55 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--accent), var(--accent));
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1000;
             transform: scaleX(0);
             transform-origin: left;
-            z-index: 1000;
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .loading.active {
-            opacity: 1;
-            animation: loading 1s infinite ease-in-out;
+            transform: scaleX(1);
         }
 
-        @keyframes loading {
-            0% { transform: scaleX(0); }
-            50% { transform: scaleX(0.5); }
-            100% { transform: scaleX(1); }
+        .skeleton {
+            background: linear-gradient(
+                90deg,
+                var(--input-border) 25%,
+                var(--card-hover) 50%,
+                var(--input-border) 75%
+            );
+            background-size: 200% 100%;
+            animation: skeleton 2s infinite;
+            border-radius: var(--radius);
+        }
+
+        @keyframes skeleton {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* 移除不需要的样式 */
+        .module-stats,
+        .stat-item,
+        .module-badge {
+            display: none;
+        }
+
+        /* 性能优化 */
+        .module-card {
+            will-change: transform, opacity;
+            contain: content;
+        }
+
+        .module-card * {
+            backface-visibility: hidden;
+        }
+
+        .feature-tag {
+            will-change: transform;
+            contain: content;
         }
     </style>
 </head>
@@ -374,6 +700,11 @@
                     <option value="system">系统工具</option>
                     <option value="security">安全增强</option>
                     <option value="customize">个性化</option>
+                    <option value="performance">性能优化</option>
+                    <option value="framework">框架支持</option>
+                    <option value="root">Root 管理</option>
+                    <option value="storage">存储优化</option>
+                    <option value="network">网络工具</option>
                 </select>
                 <select id="sortOrder" class="form-select">
                     <option value="update">按更新时间</option>
@@ -385,6 +716,10 @@
                     <option value="service">服务支持</option>
                     <option value="webroot">Web界面</option>
                     <option value="sepolicy">SEPolicy</option>
+                    <option value="apks">APK支持</option>
+                    <option value="kernelsu">KernelSU</option>
+                    <option value="apatch">APatch</option>
+                    <option value="zygisk">Zygisk</option>
                 </select>
             </div>
         </section>
@@ -410,6 +745,18 @@
                         <i class="ri-heart-fill"></i>
                         赞助支持
                     </a>
+                    <a href="https://github.com/misak10/mmrl-repo/commits/main" class="footer-link">
+                        <i class="ri-git-commit-line"></i>
+                        更新日志
+                    </a>
+                    <a href="https://mmrl.dev/guide/create-your-own-repository" class="footer-link">
+                        <i class="ri-book-2-line"></i>
+                        使用指南
+                    </a>
+                </div>
+                <div class="footer-credits">
+                    <p>Made with <i class="ri-heart-fill" style="color: #ef4444;"></i> by Misaki</p>
+                    <p>Powered by <a href="https://github.com/Googlers-Repo">MMRL</a></p>
                 </div>
             </div>
         </div>
@@ -429,6 +776,13 @@
             localStorage.setItem('theme', isDark ? 'light' : 'dark');
         }
 
+        // 加载保存的主题
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            icon.className = savedTheme === 'dark' ? 'ri-moon-line' : 'ri-sun-line';
+        }
+        
         themeSwitch.addEventListener('click', toggleTheme);
 
         // 加载动画
@@ -444,14 +798,11 @@
         async function fetchModules() {
             showLoading();
             try {
-                const response = await fetch('https://raw.githubusercontent.com/misak10/mmrl-repo/main/json/modules.json');
-                if (!response.ok) {
-                    throw new Error('无法加载模块数据');
-                }
+                const response = await fetch('json/modules.json');
                 const data = await response.json();
                 return data.modules;
             } catch (error) {
-                console.error('无法加载模块数据:', error);
+                console.error('Error fetching modules:', error);
                 return [];
             } finally {
                 hideLoading();
@@ -473,17 +824,278 @@
                 .map(([key, _]) => featureNames[key] || key);
         }
 
-        function formatDate(timestamp) {
-            if (!timestamp) return '未知时间';
-            const date = new Date(timestamp * 1000);
-            const year = date.getFullYear();
-            const month = (date.getMonth() + 1).toString().padStart(2, '0');
-            const day = date.getDate().toString().padStart(2, '0');
-            const hours = date.getHours().toString().padStart(2, '0');
-            const minutes = date.getMinutes().toString().padStart(2, '0');
-            return `${year}-${month}-${day} ${hours}:${minutes}`;
+        async function fetchModuleTimestamp(moduleName, moduleData) {
+            try {
+                if (moduleData && moduleData.versions && moduleData.versions.length > 0) {
+                    const latestTimestamp = moduleData.versions.reduce((latest, version) => {
+                        const timestamp = version.timestamp || 0;
+                        return timestamp > latest ? timestamp : latest;
+                    }, 0);
+                    return latestTimestamp || null;
+                }
+                return null;
+            } catch (error) {
+                return null;
+            }
         }
 
+        function formatDate(timestamp) {
+            if (!timestamp) return '未知时间';
+            
+            try {
+                let ts = timestamp;
+                if (typeof timestamp === 'string') {
+                    ts = parseFloat(timestamp.replace(/[^\d.]/g, ''));
+                }
+                if (typeof timestamp === 'number') {
+                    ts = timestamp;
+                }
+                if (isNaN(ts)) return '未知时间';
+                
+                const date = new Date(ts * 1000);
+                if (isNaN(date.getTime())) return '未知时间';
+
+                const year = date.getFullYear();
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const day = date.getDate().toString().padStart(2, '0');
+                const hours = date.getHours().toString().padStart(2, '0');
+                const minutes = date.getMinutes().toString().padStart(2, '0');
+
+                return `${year}-${month}-${day} ${hours}:${minutes}`;
+            } catch (error) {
+                return '未知时间';
+            }
+        }
+
+        async function renderModules(modules) {
+            const moduleList = document.getElementById('moduleList');
+            
+            // 显示加载骨架屏
+            moduleList.innerHTML = Array(6).fill(0).map(() => `
+                <div class="module-card show">
+                    <div class="module-header">
+                        <div class="skeleton" style="height: 1.5rem; width: 60%;"></div>
+                        <div class="module-meta">
+                            <div class="skeleton" style="height: 1rem; width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="skeleton" style="height: 4rem; width: 100%;"></div>
+                        <div class="module-features">
+                            <div class="skeleton" style="height: 1.5rem; width: 30%;"></div>
+                            <div class="skeleton" style="height: 1.5rem; width: 40%;"></div>
+                        </div>
+                        <div class="module-actions">
+                            <div class="skeleton" style="height: 2.5rem; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            try {
+                const modulePromises = modules.map(async module => {
+                    let timestamp = await fetchModuleTimestamp(module.name, module);
+                    return {
+                        ...module,
+                        timestamp: timestamp
+                    };
+                });
+
+                const updatedModules = await Promise.all(modulePromises);
+                
+                moduleList.innerHTML = updatedModules.map((module, index) => {
+                    const features = getFeaturesList(module.features);
+                    const lastUpdate = formatDate(module.timestamp);
+                    const isNew = (Date.now() / 1000 - module.timestamp) < 7 * 24 * 60 * 60;
+                    const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
+                    return `
+                        <div class="module-card" style="--order: ${index}">
+                            <div class="module-header">
+                                <div class="module-title">
+                                    <span class="module-name">${module.name}</span>
+                                    <div class="module-meta">
+                                        <span><i class="ri-user-3-line"></i> ${module.author}</span>
+                                        <span><i class="ri-time-line"></i> ${lastUpdate}</span>
+                                    </div>
+                                </div>
+                                <span class="module-version" title="${version}">${version}</span>
+                                ${isNew ? `
+                                    <span class="module-new-badge">
+                                        <i class="ri-flashlight-line"></i>
+                                        New
+                                    </span>
+                                ` : ''}
+                            </div>
+                            <div class="module-content">
+                                <p class="module-description">${module.description}</p>
+                                ${features.length > 0 ? `
+                                    <div class="module-features">
+                                        ${features.map((feature, featureIndex) => `
+                                            <span class="feature-tag" style="--order: ${featureIndex}">
+                                                <i class="ri-checkbox-circle-line"></i>
+                                                ${feature}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+                                <div class="module-actions">
+                                    <div class="action-group">
+                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary" title="下载最新版本">
+                                            <i class="ri-download-2-line"></i>
+                                            下载
+                                            ${module.versions[0].size ? `<small>(${formatSize(module.versions[0].size)})</small>` : ''}
+                                        </a>
+                                        <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                           target="_blank" 
+                                           class="action-button" 
+                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
+                                            <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                        </a>
+                                        ${module.versions[0].changelog ? `
+                                            <a href="${module.versions[0].changelog}" 
+                                               target="_blank" 
+                                               class="action-button"
+                                               title="查看更新日志">
+                                                <i class="ri-file-list-3-line"></i>
+                                            </a>
+                                        ` : ''}
+                                    </div>
+                                    ${module.versions && module.versions.length > 1 ? `
+                                        <div class="module-versions">
+                                            <details>
+                                                <summary>
+                                                    历史版本 (${module.versions.length - 1})
+                                                </summary>
+                                                <div class="version-list">
+                                                    ${module.versions.slice(1).map(ver => `
+                                                        <a href="${ver.zipUrl}" class="version-item">
+                                                            <span class="version-name">${ver.version.startsWith('v') ? ver.version : `v${ver.version}`}</span>
+                                                            <span class="version-date">${formatDate(ver.timestamp)}</span>
+                                                            ${ver.size ? `<span class="version-size">${formatSize(ver.size)}</span>` : ''}
+                                                        </a>
+                                                    `).join('')}
+                                                </div>
+                                            </details>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // 添加滚动动画
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '20px',
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                            entry.target.querySelectorAll('.feature-tag').forEach(tag => {
+                                tag.classList.add('show');
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.module-card').forEach(card => {
+                    observer.observe(card);
+                });
+
+            } catch (error) {
+                console.error('Error rendering modules:', error);
+            }
+        }
+
+        function setupFilters() {
+            const searchInput = document.getElementById('moduleSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortOrder = document.getElementById('sortOrder');
+            const featureFilter = document.getElementById('featureFilter');
+            let allModules = [];
+
+            let debounceTimeout;
+            function debounce(func, wait) {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(func, wait);
+            }
+
+            async function filterAndSortModules() {
+                showLoading();
+                const searchTerm = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
+                const sort = sortOrder.value;
+                const feature = featureFilter.value;
+
+                let filtered = allModules.filter(module => 
+                    (module.name.toLowerCase().includes(searchTerm) ||
+                    module.description.toLowerCase().includes(searchTerm) ||
+                    module.author.toLowerCase().includes(searchTerm)) &&
+                    (!category || module.categories?.includes(category)) &&
+                    (!feature || (module.features && module.features[feature]))
+                );
+
+                filtered.sort((a, b) => {
+                    const getLatestTimestamp = (module) => {
+                        if (!module.versions || !module.versions.length) return 0;
+                        return Math.max(...module.versions.map(v => parseFloat(v.timestamp) || 0));
+                    };
+
+                    switch(sort) {
+                        case 'update':
+                            return getLatestTimestamp(b) - getLatestTimestamp(a);
+                        case 'author':
+                            return a.author.localeCompare(b.author);
+                        case 'name':
+                            return a.name.localeCompare(b.name);
+                        default:
+                            return getLatestTimestamp(b) - getLatestTimestamp(a);
+                    }
+                });
+
+                await renderModules(filtered);
+                hideLoading();
+            }
+
+            searchInput.addEventListener('input', () => debounce(() => filterAndSortModules(), 300));
+            categoryFilter.addEventListener('change', () => filterAndSortModules());
+            sortOrder.addEventListener('change', () => filterAndSortModules());
+            featureFilter.addEventListener('change', () => filterAndSortModules());
+
+            // 保存筛选条件
+            ['categoryFilter', 'sortOrder', 'featureFilter'].forEach(id => {
+                const element = document.getElementById(id);
+                const savedValue = localStorage.getItem(id);
+                if (savedValue) {
+                    element.value = savedValue;
+                }
+                element.addEventListener('change', () => {
+                    localStorage.setItem(id, element.value);
+                });
+            });
+
+            fetchModules().then(modules => {
+                allModules = modules;
+                filterAndSortModules();
+            });
+        }
+
+        // 初始化工具提示
+        document.addEventListener('DOMContentLoaded', function() {
+            setupFilters();
+            // 初始化所有工具提示
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+
+        // 添加文件大小格式化函数
         function formatSize(bytes) {
             if (!bytes) return '';
             const units = ['B', 'KB', 'MB', 'GB'];
@@ -495,167 +1107,6 @@
             }
             return `${size.toFixed(1)} ${units[unitIndex]}`;
         }
-
-        async function renderModules(modules) {
-            const moduleList = document.getElementById('moduleList');
-            
-            moduleList.innerHTML = modules.map((module, index) => {
-                const features = getFeaturesList(module.features);
-                const lastUpdate = formatDate(module.versions[0].timestamp);
-                const isNew = (Date.now() / 1000 - module.versions[0].timestamp) < 7 * 24 * 60 * 60;
-                
-                return `
-                    <div class="module-card" style="--order: ${index}">
-                        <div class="module-header">
-                            <span class="module-name">
-                                ${module.name}
-                            </span>
-                            ${isNew ? `
-                                <span class="module-new-badge">
-                                    <i class="ri-flashlight-line"></i>
-                                    New
-                                </span>
-                            ` : ''}
-                            <div class="module-meta">
-                                <span>
-                                    <i class="ri-user-3-line"></i> ${module.author}
-                                </span>
-                                <span>
-                                    <i class="ri-time-line"></i> ${lastUpdate}
-                                </span>
-                                <span class="module-version">
-                                    <i class="ri-code-s-slash-line"></i>
-                                    ${module.version}
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <div class="module-content">
-                            <div class="module-description">
-                                ${module.description}
-                            </div>
-                            
-                            ${features.length > 0 ? `
-                                <div class="module-features">
-                                    ${features.map(feature => `
-                                        <span class="feature-tag">
-                                            <i class="ri-checkbox-circle-line"></i>
-                                            ${feature}
-                                        </span>
-                                    `).join('')}
-                                </div>
-                            ` : ''}
-                        </div>
-
-                        <div class="module-actions">
-                            <div class="action-group">
-                                <a href="${module.versions[0].zipUrl}" class="btn-primary">
-                                    <i class="ri-download-2-line"></i>
-                                    下载
-                                    ${module.versions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.versions[0].size)}</small>` : ''}
-                                </a>
-                                <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
-                                   target="_blank" 
-                                   class="btn-icon" 
-                                   title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
-                                    <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
-                                </a>
-                                ${module.versions[0].changelog ? `
-                                    <a href="${module.versions[0].changelog}" 
-                                       target="_blank" 
-                                       class="btn-icon"
-                                       title="查看更新日志">
-                                        <i class="ri-file-list-3-line"></i>
-                                    </a>
-                                ` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            // 添加动画效果
-            const cards = document.querySelectorAll('.module-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('show');
-                }, index * 100);
-            });
-        }
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', async function() {
-            // 设置主题
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-bs-theme', savedTheme);
-                icon.className = savedTheme === 'dark' ? 'ri-moon-line' : 'ri-sun-line';
-            }
-
-            try {
-                const modules = await fetchModules();
-                if (modules && modules.length > 0) {
-                    await renderModules(modules);
-                } else {
-                    document.getElementById('moduleList').innerHTML = `
-                        <div class="alert alert-warning" role="alert">
-                            <i class="ri-error-warning-line"></i>
-                            暂无模块数据
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                console.error('加载模块失败:', error);
-                document.getElementById('moduleList').innerHTML = `
-                    <div class="alert alert-danger" role="alert">
-                        <i class="ri-error-warning-line"></i>
-                        加载模块数据失败：${error.message}
-                    </div>
-                `;
-            }
-
-            // 搜索和筛选功能
-            const searchInput = document.getElementById('moduleSearch');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const sortOrder = document.getElementById('sortOrder');
-            const featureFilter = document.getElementById('featureFilter');
-
-            async function filterAndSortModules() {
-                const modules = await fetchModules();
-                const searchTerm = searchInput.value.toLowerCase();
-                const category = categoryFilter.value;
-                const sort = sortOrder.value;
-                const feature = featureFilter.value;
-
-                let filtered = modules.filter(module => 
-                    (module.name.toLowerCase().includes(searchTerm) ||
-                    module.description.toLowerCase().includes(searchTerm) ||
-                    module.author.toLowerCase().includes(searchTerm)) &&
-                    (!category || module.categories?.includes(category)) &&
-                    (!feature || (module.features && module.features[feature]))
-                );
-
-                filtered.sort((a, b) => {
-                    switch(sort) {
-                        case 'update':
-                            return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
-                        case 'name':
-                            return a.name.localeCompare(b.name);
-                        case 'author':
-                            return a.author.localeCompare(b.author);
-                        default:
-                            return 0;
-                    }
-                });
-
-                await renderModules(filtered);
-            }
-
-            searchInput.addEventListener('input', filterAndSortModules);
-            categoryFilter.addEventListener('change', filterAndSortModules);
-            sortOrder.addEventListener('change', filterAndSortModules);
-            featureFilter.addEventListener('change', filterAndSortModules);
-        });
     </script>
 </body>
 </html> 
