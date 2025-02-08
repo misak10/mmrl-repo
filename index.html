@@ -306,6 +306,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            padding: 0;
         }
 
         .module-card.show {
@@ -487,13 +488,6 @@
         .module-card.show .module-actions {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .action-group {
-            display: grid;
-            grid-template-columns: 1fr auto auto;
-            gap: 0.75rem;
-            align-items: center;
         }
 
         .btn-primary {
@@ -913,72 +907,81 @@
                             <div class="module-header">
                                 <div class="module-title">
                                     <span class="module-name">${module.name}</span>
-                                    <div class="module-meta">
-                                        <span><i class="ri-user-3-line"></i> ${module.author}</span>
-                                        <span><i class="ri-time-line"></i> ${lastUpdate}</span>
-                                    </div>
+                                    ${isNew ? `
+                                        <span class="module-new-badge">
+                                            <i class="ri-flashlight-line"></i>
+                                            New
+                                        </span>
+                                    ` : ''}
                                 </div>
-                                <span class="module-version" title="${version}">${version}</span>
-                                ${isNew ? `
-                                    <span class="module-new-badge">
-                                        <i class="ri-flashlight-line"></i>
-                                        New
+                                <div class="module-meta">
+                                    <span>
+                                        <i class="ri-user-3-line"></i> ${module.author}
                                     </span>
-                                ` : ''}
+                                    <span>
+                                        <i class="ri-time-line"></i> ${lastUpdate}
+                                    </span>
+                                    <span class="module-version">
+                                        <i class="ri-code-s-slash-line"></i>
+                                        ${version}
+                                    </span>
+                                </div>
                             </div>
+                            
                             <div class="module-content">
-                                <p class="module-description">${module.description}</p>
+                                <div class="module-description">
+                                    ${module.description}
+                                </div>
+                                
                                 ${features.length > 0 ? `
                                     <div class="module-features">
-                                        ${features.map((feature, featureIndex) => `
-                                            <span class="feature-tag" style="--order: ${featureIndex}">
+                                        ${features.map(feature => `
+                                            <span class="feature-tag">
                                                 <i class="ri-checkbox-circle-line"></i>
                                                 ${feature}
                                             </span>
                                         `).join('')}
                                     </div>
                                 ` : ''}
-                                <div class="module-actions">
-                                    <div class="action-group">
-                                        <a href="${module.versions[0].zipUrl}" class="btn btn-primary" title="下载最新版本">
-                                            <i class="ri-download-2-line"></i>
-                                            下载
-                                            ${module.versions[0].size ? `<small>(${formatSize(module.versions[0].size)})</small>` : ''}
-                                        </a>
-                                        <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                            </div>
+
+                            <div class="module-actions">
+                                <div class="action-group">
+                                    <a href="${module.versions[0].zipUrl}" class="btn-primary">
+                                        <i class="ri-download-2-line"></i>
+                                        下载
+                                    </a>
+                                    <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                       target="_blank" 
+                                       class="btn-icon" 
+                                       title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
+                                        <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                    </a>
+                                    ${module.versions[0].changelog ? `
+                                        <a href="${module.versions[0].changelog}" 
                                            target="_blank" 
-                                           class="action-button" 
-                                           title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
-                                            <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                           class="btn-icon"
+                                           title="查看更新日志">
+                                            <i class="ri-file-list-3-line"></i>
                                         </a>
-                                        ${module.versions[0].changelog ? `
-                                            <a href="${module.versions[0].changelog}" 
-                                               target="_blank" 
-                                               class="action-button"
-                                               title="查看更新日志">
-                                                <i class="ri-file-list-3-line"></i>
-                                            </a>
-                                        ` : ''}
-                                    </div>
-                                    ${module.versions && module.versions.length > 1 ? `
-                                        <div class="module-versions">
-                                            <details>
-                                                <summary>
-                                                    历史版本 (${module.versions.length - 1})
-                                                </summary>
-                                                <div class="version-list">
-                                                    ${module.versions.slice(1).map(ver => `
-                                                        <a href="${ver.zipUrl}" class="version-item">
-                                                            <span class="version-name">${ver.version.startsWith('v') ? ver.version : `v${ver.version}`}</span>
-                                                            <span class="version-date">${formatDate(ver.timestamp)}</span>
-                                                            ${ver.size ? `<span class="version-size">${formatSize(ver.size)}</span>` : ''}
-                                                        </a>
-                                                    `).join('')}
-                                                </div>
-                                            </details>
-                                        </div>
                                     ` : ''}
                                 </div>
+                                ${module.versions && module.versions.length > 1 ? `
+                                    <details>
+                                        <summary>
+                                            历史版本 (${module.versions.length - 1})
+                                        </summary>
+                                        <div class="version-list">
+                                            ${module.versions.slice(1).map(ver => `
+                                                <a href="${ver.zipUrl}" class="version-item">
+                                                    <span class="version-name">${ver.version.startsWith('v') ? ver.version : `v${ver.version}`}</span>
+                                                    <span class="version-date">${formatDate(ver.timestamp)}</span>
+                                                    ${ver.size ? `<span class="version-size">${formatSize(ver.size)}</span>` : ''}
+                                                </a>
+                                            `).join('')}
+                                        </div>
+                                    </details>
+                                ` : ''}
                             </div>
                         </div>
                     `;
