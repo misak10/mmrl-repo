@@ -246,7 +246,7 @@
             border-bottom: 1px solid var(--input-border);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 2000;
             padding: 1rem 0;
             box-shadow: var(--shadow);
         }
@@ -303,7 +303,7 @@
         .search-section {
             padding: 2rem 0;
             position: relative;
-            z-index: 1000;
+            z-index: 1500;
         }
 
         .search-container {
@@ -1024,7 +1024,7 @@
         }
 
         .input-group-text {
-            padding: 0.625rem 1rem;
+            padding: 0.75rem 1rem;
             background: var(--input-bg);
             border: 1px solid var(--input-border);
             border-right: none;
@@ -1040,10 +1040,11 @@
         .input-group:focus-within .input-group-text {
             border-color: var(--primary);
             color: var(--primary);
+            box-shadow: -1px 0 0 1px var(--primary);
         }
 
         .input-group:focus-within .input-group-text i {
-            transform: scale(1.1) rotate(-4deg);
+            transform: scale(1.1) rotate(-10deg);
         }
 
         .btn-outline-secondary {
@@ -1056,42 +1057,15 @@
             overflow: hidden;
         }
 
-        .btn-outline-secondary::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, 
-                transparent 0%, 
-                rgba(24, 24, 27, 0.06) 50%, 
-                transparent 100%
-            );
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn-outline-secondary:hover::after {
-            opacity: 1;
-        }
-
-        .btn-outline-secondary i {
-            font-size: 1.25rem;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            z-index: 1;
-        }
-
         .btn-outline-secondary[aria-expanded="true"] {
             background: var(--card-hover);
             border-color: var(--primary);
             color: var(--primary);
+            z-index: 1601;
         }
 
         .btn-outline-secondary[aria-expanded="true"] i {
             transform: rotate(-180deg);
-        }
-
-        .input-group .form-select {
-            display: none;
         }
 
         .input-group .dropdown-menu {
@@ -1103,7 +1077,7 @@
             border: 1px solid var(--input-border);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             width: 100%;
-            z-index: 1100;
+            z-index: 1600;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
@@ -1135,39 +1109,6 @@
             transform: translateX(4px);
         }
 
-        .input-group .dropdown-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, 
-                transparent 0%, 
-                rgba(24, 24, 27, 0.06) 50%, 
-                transparent 100%
-            );
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        .input-group .dropdown-item:hover::before {
-            transform: translateX(100%);
-        }
-
-        .dropdown-menu.show::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(4px);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .dropdown-menu.show::before {
-            opacity: 1;
-        }
-
         [data-bs-theme="dark"] .dropdown-menu {
             background: var(--card-bg);
             border-color: var(--input-border);
@@ -1183,47 +1124,7 @@
             background: rgba(0, 0, 0, 0.4);
         }
 
-        .input-group:focus-within .btn-outline-secondary {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 1px var(--primary);
-        }
-
-        /* 优化搜索框 */
-        .input-group-text {
-            padding: 0.75rem 1rem;
-            background: var(--input-bg);
-            border: 1px solid var(--input-border);
-            border-right: none;
-            color: var(--muted);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .input-group-text i {
-            font-size: 1.125rem;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .input-group:focus-within .input-group-text {
-            border-color: var(--primary);
-            color: var(--primary);
-            box-shadow: -1px 0 0 1px var(--primary);
-        }
-
-        .input-group:focus-within .input-group-text i {
-            transform: scale(1.1) rotate(-10deg);
-        }
-
-        .form-control {
-            padding: 0.75rem 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 1px 0 0 1px var(--primary);
-        }
-
-        /* 优化动画性能 */
+        /* 性能优化 */
         .input-group,
         .dropdown-menu,
         .btn-outline-secondary,
@@ -1231,73 +1132,6 @@
             will-change: transform, opacity;
             transform: translateZ(0);
             backface-visibility: hidden;
-        }
-
-        /* 优化性能相关的样式 */
-        .module-card {
-            will-change: transform;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-            contain: content;
-        }
-
-        .module-card * {
-            backface-visibility: hidden;
-        }
-
-        .module-features {
-            will-change: transform, opacity;
-            transform: translateZ(0);
-        }
-
-        .feature-tag {
-            will-change: transform;
-            transform: translateZ(0);
-        }
-
-        .btn-primary,
-        .btn-icon {
-            will-change: transform;
-            transform: translateZ(0);
-        }
-
-        /* 优化动画性能 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 20px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
-        }
-
-        /* 优化滚动性能 */
-        .modules-grid {
-            transform: translateZ(0);
-            will-change: transform;
-            contain: content;
-        }
-
-        /* 优化搜索容器性能 */
-        .search-container {
-            will-change: transform;
-            transform: translateZ(0);
-            contain: layout style;
-        }
-
-        /* 优化下拉菜单性能 */
-        .dropdown-menu {
-            will-change: transform, opacity;
-            transform: translateZ(0);
-            contain: content;
-        }
-
-        .dropdown-item {
-            will-change: transform, background;
-            transform: translateZ(0);
         }
     </style>
 </head>
