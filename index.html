@@ -14,9 +14,9 @@
             --bg: #fafafa;
             --fg: #18181b;
             --muted: #71717a;
-            --card-bg: rgba(255, 255, 255, 0.7);
-            --card-hover: rgba(255, 255, 255, 0.8);
-            --input-bg: rgba(255, 255, 255, 0.5);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-hover: rgba(255, 255, 255, 0.95);
+            --input-bg: rgba(255, 255, 255, 0.75);
             --input-border: rgba(228, 228, 231, 0.5);
             --radius: 0.75rem;
             --blur: blur(12px);
@@ -54,8 +54,8 @@
             --bs-secondary: #71717a;
             --bs-border-color: rgba(255, 255, 255, 0.1);
             --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            --card-hover-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-            --card-hover-transform: translateY(-3px);
+            --card-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            --card-hover-transform: translateY(-8px);
             --link-hover-bg: rgba(255, 255, 255, 0.08);
             --scroll-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
             --scroll-thumb: rgba(255, 255, 255, 0.2);
@@ -302,26 +302,30 @@
 
         .search-section {
             padding: 2rem 0;
+            position: relative;
+            z-index: 1000;
         }
 
         .search-container {
             background: var(--card-bg);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            border-radius: var(--radius);
-            padding: 1.5rem;
             border: 1px solid var(--input-border);
             box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            padding: 1.5rem;
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 1000;
         }
 
         .search-container:hover {
+            transform: translateY(-4px);
             box-shadow: var(--card-hover-shadow);
-            border-color: var(--input-border);
-            transform: translateY(-2px);
+            border-color: var(--primary);
         }
 
         @media (min-width: 768px) {
@@ -354,6 +358,8 @@
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 2rem;
             padding: 1.5rem 0 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .module-card {
@@ -362,7 +368,8 @@
             border-radius: 1rem;
             background: var(--bs-body-bg);
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow);
             opacity: 0;
             transform: translateY(20px);
             display: flex;
@@ -370,9 +377,7 @@
             height: 100%;
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform, opacity, box-shadow;
+            z-index: 1;
         }
 
         .module-card.show {
@@ -383,9 +388,9 @@
         }
 
         .module-card:hover {
-            border-color: rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) scale(1.02);
             box-shadow: var(--card-hover-shadow);
-            transform: var(--card-hover-transform);
+            border-color: var(--primary);
         }
 
         .module-new-badge {
@@ -465,13 +470,14 @@
             margin-bottom: 0.75rem;
             cursor: help;
             display: block;
-            transition: color 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             padding-right: 4rem;
             letter-spacing: -0.01em;
         }
 
         .module-name:hover {
-            color: var(--bs-primary);
+            color: var(--primary);
+            transform: translateX(4px);
         }
 
         .module-name::after {
@@ -535,12 +541,14 @@
             border-radius: 2rem;
             font-size: 0.75rem;
             font-weight: 500;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .module-version:hover {
-            background: var(--bs-gray-200);
-            color: var(--bs-gray-900);
+            transform: translateY(-2px) scale(1.1);
+            background: var(--primary);
+            color: var(--bg);
+            border-color: var(--primary);
         }
 
         .module-content {
@@ -553,12 +561,12 @@
 
         .module-description {
             font-size: 0.875rem;
-            line-height: 1.7;
-            color: var(--bs-gray-700);
+            line-height: 1.8;
+            color: var(--muted);
             margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(10px);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             transition-delay: 0.1s;
             animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
             animation-delay: calc(var(--order) * 0.1s + 0.2s);
@@ -567,6 +575,7 @@
         .module-card.show .module-description {
             opacity: 1;
             transform: translateY(0);
+            color: var(--fg);
         }
 
         .module-features {
@@ -603,8 +612,8 @@
             color: var(--bs-gray-700);
             border-radius: 2rem;
             font-size: 0.75rem;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--input-border);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             transform: translateY(10px);
             opacity: 0;
             animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -617,10 +626,10 @@
         }
 
         .feature-tag:hover {
+            transform: translateY(-4px) rotate(-4deg) scale(1.1);
             background: var(--primary);
             color: var(--bg);
             border-color: var(--primary);
-            transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
 
@@ -656,10 +665,10 @@
             gap: 0.5rem;
             padding: 0.625rem 1.25rem;
             font-weight: 500;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             border: none;
             border-radius: 2rem;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             transform: translateY(0);
             color: var(--bg);
             text-decoration: none;
@@ -667,7 +676,7 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px) scale(1.05);
             box-shadow: var(--card-hover-shadow);
         }
 
@@ -788,7 +797,7 @@
             }
 
             .module-card {
-                border-radius: 0.875rem;
+                border-radius: 1rem;
             }
 
             .module-header,
@@ -798,14 +807,14 @@
 
             .module-actions {
                 padding: 1rem;
-            }
+        }
 
-            .module-meta {
-                flex-wrap: wrap;
+        .module-meta {
+            flex-wrap: wrap;
                 gap: 0.5rem;
-            }
+        }
 
-            .module-meta span {
+        .module-meta span {
                 font-size: 0.75rem;
             }
 
@@ -859,29 +868,31 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--accent), var(--accent));
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--primary) 50%, 
+                transparent 100%
+            );
             transform: scaleX(0);
             transform-origin: left;
             z-index: 1000;
             opacity: 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
+            animation: loadingShimmer 1.5s infinite ease-in-out;
         }
 
         .loading.active {
             opacity: 1;
-            animation: loading 1s infinite ease-in-out;
+            animation: loadingShimmer 1.5s infinite ease-in-out;
         }
 
-        @keyframes loading {
+        @keyframes loadingShimmer {
             0% {
-                transform: scaleX(0);
-            }
-            50% {
-                transform: scaleX(0.5);
+                transform: translateX(-100%) scaleX(0.5);
             }
             100% {
-                transform: scaleX(1);
+                transform: translateX(100%) scaleX(0.5);
             }
         }
 
@@ -917,6 +928,7 @@
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             border-top: 1px solid var(--input-border);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 10;
@@ -925,12 +937,12 @@
         .footer-link {
             padding: 0.5rem 1rem;
             border-radius: 2rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .footer-link:hover {
-            background: var(--input-bg);
-            transform: translateY(-2px);
+            transform: translateY(-6px) scale(1.1);
+            color: var(--primary);
         }
 
         .footer-link i {
@@ -938,7 +950,7 @@
         }
 
         .footer-link:hover i {
-            transform: scale(1.2) rotate(-4deg);
+            transform: scale(1.4) rotate(-12deg);
         }
 
         .footer-credits {
@@ -1003,13 +1015,14 @@
         }
 
         .search-container {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             will-change: transform, box-shadow;
         }
 
         .search-container:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
             box-shadow: var(--card-hover-shadow);
+            border-color: var(--primary);
         }
 
         .input-group {
@@ -1046,23 +1059,42 @@
 
         .btn-outline-secondary {
             position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-color: var(--input-border);
-            background: var(--input-bg);
-            color: var(--fg);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-color: rgba(24, 24, 27, 0.1);
+            background: rgba(255, 255, 255, 0.75);
+            color: var(--primary);
             font-weight: 500;
+            overflow: hidden;
         }
 
-        .btn-outline-secondary:hover {
-            background: var(--card-hover);
-            border-color: var(--input-border);
-            color: var(--primary);
-            transform: translateY(-1px);
+        .btn-outline-secondary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, 
+                transparent 0%, 
+                rgba(24, 24, 27, 0.06) 50%, 
+                transparent 100%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-outline-secondary:hover::after {
+            opacity: 1;
         }
 
         .btn-outline-secondary i {
             font-size: 1.25rem;
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-outline-secondary[aria-expanded="true"] {
+            background: var(--card-hover);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .btn-outline-secondary[aria-expanded="true"] i {
@@ -1074,46 +1106,83 @@
         }
 
         .input-group .dropdown-menu {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid var(--input-border);
-            background: var(--card-bg);
+            position: absolute;
+            margin-top: 4px;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            margin-top: 0.5rem;
+            border: 1px solid var(--input-border);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 0.5rem;
+        }
+
+        .input-group .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         .input-group .dropdown-item {
-            padding: 0.625rem 1rem;
-            border-radius: calc(var(--radius) - 0.25rem);
-            color: var(--fg);
-            transition: all 0.2s ease;
+            padding: 0.75rem 1rem;
+            margin: 0.125rem 0;
+            border-radius: var(--radius);
+            color: var(--primary);
+            background: transparent;
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 0.875rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .input-group .dropdown-item:hover {
-            background: var(--input-bg);
+            background: rgba(24, 24, 27, 0.06);
             color: var(--primary);
+            transform: translateX(4px);
         }
 
-        [data-bs-theme="dark"] .btn-outline-secondary {
-            border-color: var(--input-border);
-            color: var(--fg);
+        .input-group .dropdown-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, 
+                transparent 0%, 
+                rgba(24, 24, 27, 0.06) 50%, 
+                transparent 100%
+            );
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
 
-        [data-bs-theme="dark"] .btn-outline-secondary:hover {
-            background: var(--card-hover);
-            color: var(--primary);
+        .input-group .dropdown-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .dropdown-menu.show::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .dropdown-menu.show::before {
+            opacity: 1;
         }
 
         [data-bs-theme="dark"] .dropdown-menu {
             background: var(--card-bg);
             border-color: var(--input-border);
-        }
-
-        [data-bs-theme="dark"] .dropdown-item {
-            color: var(--fg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         [data-bs-theme="dark"] .dropdown-item:hover {
@@ -1121,217 +1190,58 @@
             color: var(--primary);
         }
 
-        /* 自定义滚动条样式 */
-        ::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
+        [data-bs-theme="dark"] .dropdown-menu.show::before {
+            background: rgba(0, 0, 0, 0.4);
         }
 
-        ::-webkit-scrollbar-track {
-            background: var(--scroll-track);
-            border-radius: 6px;
+        .input-group:focus-within .btn-outline-secondary {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 1px var(--primary);
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--scroll-thumb);
-            border-radius: 6px;
-            border: 3px solid transparent;
-            background-clip: padding-box;
-            transition: all 0.3s ease;
+        /* 优化搜索框 */
+        .input-group-text {
+            padding: 0.75rem 1rem;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-right: none;
+            color: var(--muted);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--muted);
-            border: 2px solid transparent;
+        .input-group-text i {
+            font-size: 1.125rem;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* 平滑滚动 */
-        html {
-            scroll-behavior: smooth;
+        .input-group:focus-within .input-group-text {
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: -1px 0 0 1px var(--primary);
         }
 
-        /* 加载动画优化 */
-        .loading {
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                var(--accent) 50%, 
-                transparent 100%
-            );
-            animation: shimmer 1.5s infinite;
+        .input-group:focus-within .input-group-text i {
+            transform: scale(1.1) rotate(-10deg);
         }
 
-        @keyframes shimmer {
-            0% {
-                transform: translateX(-100%) scaleX(0.5);
-            }
-            100% {
-                transform: translateX(100%) scaleX(0.5);
-            }
+        .form-control {
+            padding: 0.75rem 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* 卡片动画优化 */
-        .module-card {
-            transform-origin: center;
-            perspective: 1000px;
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 1px 0 0 1px var(--primary);
         }
 
-        .module-card:hover {
-            transform: var(--card-hover-transform) scale(1.02);
-        }
-
-        .module-card:active {
-            transform: translateY(-1px) scale(0.98);
-        }
-
-        /* 按钮动画优化 */
-        .btn-primary,
-        .btn-icon {
-            transform-style: preserve-3d;
+        /* 优化动画性能 */
+        .input-group,
+        .dropdown-menu,
+        .btn-outline-secondary,
+        .dropdown-item {
+            will-change: transform, opacity;
+            transform: translateZ(0);
             backface-visibility: hidden;
-        }
-
-        .btn-primary:active,
-        .btn-icon:active {
-            transform: translateY(2px) scale(0.95);
-        }
-
-        /* 搜索框优化 */
-        .search-container {
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-
-        .input-group:focus-within {
-            transform: translateY(-2px) scale(1.01);
-        }
-
-        /* 标签动画优化 */
-        .feature-tag {
-            transform-style: preserve-3d;
-            perspective: 800px;
-        }
-
-        .feature-tag:hover {
-            transform: translateY(-4px) scale(1.05) rotate(-2deg);
-        }
-
-        /* 页脚链接优化 */
-        .footer-link {
-            transform-style: preserve-3d;
-            perspective: 800px;
-        }
-
-        .footer-link:hover {
-            transform: translateY(-4px) scale(1.05);
-        }
-
-        .footer-link:hover i {
-            transform: scale(1.2) rotate(-8deg);
-        }
-
-        /* 下拉菜单优化 */
-        .form-select {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .form-select:hover {
-            transform: translateY(-2px) scale(1.02);
-        }
-
-        /* 加载状态优化 */
-        .loading-skeleton {
-            background: linear-gradient(
-                90deg,
-                var(--input-bg) 0%,
-                var(--card-hover) 50%,
-                var(--input-bg) 100%
-            );
-            background-size: 200% 100%;
-            animation: loading-wave 2s infinite linear;
-        }
-
-        @keyframes loading-wave {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
-        }
-
-        /* 模块卡片内容优化 */
-        .module-description {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .module-description::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2rem;
-            background: linear-gradient(
-                to bottom,
-                transparent,
-                var(--bs-body-bg)
-            );
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .module-card:hover .module-description::after {
-            opacity: 1;
-        }
-
-        /* 响应式优化 */
-        @media (max-width: 768px) {
-            .module-card {
-                transform: none !important;
-            }
-            
-            .search-container {
-                transform: none !important;
-            }
-            
-            .feature-tag:hover {
-                transform: translateY(-2px);
-            }
-        }
-
-        /* 暗色主题优化 */
-        [data-bs-theme="dark"] .module-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(
-                circle at var(--x, 50%) var(--y, 50%),
-                rgba(255, 255, 255, 0.06) 0%,
-                transparent 60%
-            );
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        [data-bs-theme="dark"] .module-card:hover::before {
-            opacity: 1;
-        }
-
-        /* 动画性能优化 */
-        * {
-            will-change: auto;
-        }
-
-        .module-card,
-        .search-container,
-        .btn-primary,
-        .btn-icon,
-        .feature-tag,
-        .footer-link {
-            will-change: transform;
         }
     </style>
 </head>
@@ -1359,7 +1269,7 @@
                     <span class="input-group-text">
                         <i class="ri-search-line"></i>
                     </span>
-                    <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
+                <input type="search" id="moduleSearch" class="form-control" placeholder="搜索模块...">
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1373,11 +1283,11 @@
                         <li><a class="dropdown-item" href="#" data-value="customize">个性化</a></li>
                     </ul>
                     <select id="categoryFilter" class="form-select d-none">
-                        <option value="">全部分类</option>
-                        <option value="system">系统工具</option>
-                        <option value="security">安全增强</option>
-                        <option value="customize">个性化</option>
-                    </select>
+                    <option value="">全部分类</option>
+                    <option value="system">系统工具</option>
+                    <option value="security">安全增强</option>
+                    <option value="customize">个性化</option>
+                </select>
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1390,10 +1300,10 @@
                         <li><a class="dropdown-item" href="#" data-value="author">按作者</a></li>
                     </ul>
                     <select id="sortOrder" class="form-select d-none">
-                        <option value="update">按更新时间</option>
-                        <option value="name">按名称</option>
-                        <option value="author">按作者</option>
-                    </select>
+                    <option value="update">按更新时间</option>
+                    <option value="name">按名称</option>
+                    <option value="author">按作者</option>
+                </select>
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1407,11 +1317,11 @@
                         <li><a class="dropdown-item" href="#" data-value="sepolicy">SEPolicy</a></li>
                     </ul>
                     <select id="featureFilter" class="form-select d-none">
-                        <option value="">全部功能</option>
-                        <option value="service">服务支持</option>
-                        <option value="webroot">Web界面</option>
-                        <option value="sepolicy">SEPolicy</option>
-                    </select>
+                    <option value="">全部功能</option>
+                    <option value="service">服务支持</option>
+                    <option value="webroot">Web界面</option>
+                    <option value="sepolicy">SEPolicy</option>
+                </select>
                 </div>
             </div>
         </section>
@@ -1514,21 +1424,21 @@
                 return `
                     <div class="module-card" style="--order: ${index}">
                         <div class="module-header">
-                            <span class="module-name" data-full-name="${module.name}">
-                                ${module.name}
-                            </span>
-                            ${isNew ? `
-                                <span class="module-new-badge">
-                                    <i class="ri-flashlight-line"></i>
-                                    New
+                                <span class="module-name" data-full-name="${module.name}">
+                                    ${module.name}
                                 </span>
+                                ${isNew ? `
+                                    <span class="module-new-badge">
+                                        <i class="ri-flashlight-line"></i>
+                                        New
+                                    </span>
                             ` : isOutdated(module.versions[0].timestamp) ? `
                                 <span class="module-outdated-badge">
                                     <i class="ri-time-line"></i>
                                     长期未更新
                                 </span>
-                            ` : ''}
-                            <div class="module-meta">
+                                ` : ''}
+                                <div class="module-meta">
                                 <span>
                                     <i class="ri-user-3-line"></i> ${module.author}
                                 </span>
@@ -1539,8 +1449,8 @@
                                     <i class="ri-code-s-slash-line"></i>
                                     ${version}
                                 </span>
+                                </div>
                             </div>
-                        </div>
                         
                         <div class="module-content">
                             <div class="module-description">
@@ -1559,29 +1469,29 @@
                             ` : ''}
                         </div>
 
-                        <div class="module-actions">
-                            <div class="action-group">
+                            <div class="module-actions">
+                                <div class="action-group">
                                 <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
-                                    <i class="ri-download-2-line"></i>
+                                        <i class="ri-download-2-line"></i>
                                     下载
                                     ${module.versions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.versions[0].size)}</small>` : ''}
-                                </a>
-                                <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
-                                   target="_blank" 
-                                   class="btn btn-icon" 
-                                   title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
-                                    <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
-                                </a>
-                                ${module.versions[0].changelog ? `
-                                    <a href="${module.versions[0].changelog}" 
-                                       target="_blank" 
-                                       class="btn btn-icon"
-                                       title="查看更新日志">
-                                        <i class="ri-file-list-3-line"></i>
                                     </a>
-                                ` : ''}
-                            </div>
-                            ${module.versions.length > 1 ? `
+                                    <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                                       target="_blank" 
+                                   class="btn btn-icon" 
+                                       title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
+                                        <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
+                                    </a>
+                                    ${module.versions[0].changelog ? `
+                                        <a href="${module.versions[0].changelog}" 
+                                           target="_blank" 
+                                       class="btn btn-icon"
+                                           title="查看更新日志">
+                                            <i class="ri-file-list-3-line"></i>
+                                        </a>
+                                    ` : ''}
+                                </div>
+                                ${module.versions.length > 1 ? `
                                 <div class="accordion mt-3">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
@@ -1592,12 +1502,12 @@
                                         <div id="version-${index}" class="accordion-collapse collapse">
                                             <div class="accordion-body">
                                                 <div class="list-group">
-                                                    ${module.versions
+                                                ${module.versions
                                                         .slice(1)
                                                         .sort((a, b) => b.versionCode - a.versionCode)
-                                                        .map(ver => {
-                                                            const version = ver.version.startsWith('v') ? ver.version : `v${ver.version}`;
-                                                            return `
+                                                    .map(ver => {
+                                                        const version = ver.version.startsWith('v') ? ver.version : `v${ver.version}`;
+                                                        return `
                                                                 <a href="${ver.zipUrl}" class="list-group-item list-group-item-action">
                                                                     <div class="d-flex w-100 justify-content-between align-items-center">
                                                                         <div>
@@ -1606,12 +1516,12 @@
                                                                         </div>
                                                                         ${ver.size ? `<span class="badge">${formatSize(ver.size)}</span>` : ''}
                                                                     </div>
-                                                                </a>
-                                                            `;
-                                                        }).join('')}
-                                                </div>
+                                                            </a>
+                                                        `;
+                                                    }).join('')}
                                             </div>
-                                        </div>
+                                    </div>
+                            </div>
                                     </div>
                                 </div>
                             ` : ''}
