@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Azusa_272.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Azusa_272.md",
       "size": 13969
+    },
+    {
+      "timestamp": 1739148198.0,
+      "version": "Kanade",
+      "versionCode": 273,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanade_273.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanade_273.md",
+      "size": 14217
     }
   ]
 }
