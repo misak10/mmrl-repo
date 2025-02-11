@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1739288398.205221
+    "timestamp": 1739289064.912869
   },
   "modules": [
     {
@@ -639,52 +639,6 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.2.2_1592.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.2.2_1592.md",
           "size": 28167963
-        }
-      ]
-    },
-    {
-      "id": "susfs4ksu",
-      "name": "SUSFS-FOR-KERNELSU",
-      "version": "v1.5.2-R12",
-      "versionCode": 105002012,
-      "author": "sidex15 & simonpunk",
-      "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
-      "categories": [
-        "System",
-        "Performance",
-        "Font",
-        "Utility",
-        "Network",
-        "Debug",
-        "Script"
-      ],
-      "support": "https://github.com/sidex15/susfs4ksu-module/issues",
-      "license": "AGPL-3.0",
-      "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
-      "verified": false,
-      "added": 0,
-      "size": 1519553,
-      "features": {
-        "service": true,
-        "post_fs_data": true,
-        "webroot": true,
-        "post_mount": true,
-        "boot_completed": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/sidex15/susfs4ksu-module",
-        "antifeatures": null
-      },
-      "versions": [
-        {
-          "timestamp": 1735545927.0,
-          "version": "v1.5.2-R12",
-          "versionCode": 105002012,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R12_105002012.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R12_105002012.md",
-          "size": 1519553
         }
       ]
     },
