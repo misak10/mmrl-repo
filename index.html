@@ -570,25 +570,39 @@
                 padding: 1.5rem;
             }
 
-            .input-group .dropdown-menu {
-                position: fixed !important;
-                left: 1rem !important;
-                right: 1rem !important;
-                bottom: 1rem !important;
-                top: auto !important;
-                max-height: 60vh;
-                overflow-y: auto;
+            .input-group {
+                position: static;
             }
 
-            .dropdown-menu.show::before {
-                content: '';
+            /* 在移动端完全隐藏原有的下拉菜单 */
+            .dropdown-menu {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
+
+            .btn-outline-secondary {
+                height: 3.5rem !important;
+                font-size: 1rem !important;
+                border-radius: 1rem !important;
+                background: var(--input-bg);
+                border-color: var(--input-border);
+            }
+
+            .input-group:first-child .form-control {
+                height: 3.5rem !important;
+                font-size: 1rem !important;
+                border-radius: 1rem !important;
+            }
+
+            /* 防止滚动穿透 */
+            body.modal-open {
+                overflow: hidden;
                 position: fixed;
+                width: 100%;
+                height: 100%;
                 inset: 0;
-                background: rgba(0, 0, 0, 0.2);
-                backdrop-filter: blur(4px);
-                -webkit-backdrop-filter: blur(4px);
-                z-index: -1;
-                animation: fadeIn 0.2s ease-out;
             }
         }
 
@@ -683,11 +697,6 @@
             .btn-primary {
                 font-size: 0.875rem;
                 padding: 0.5rem 1rem;
-            }
-
-            .footer-link {
-                padding: 0.375rem 0.75rem;
-                font-size: 0.875rem;
             }
         }
 
@@ -1662,6 +1671,202 @@
         [data-bs-theme="light"] .module-name {
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
         }
+
+        /* 移动端Modal样式 */
+        @media (max-width: 768px) {
+            body.modal-open {
+                overflow: hidden;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                inset: 0;
+            }
+
+            /* 当Modal打开时禁用所有输入框的交互 */
+            body.modal-open input,
+            body.modal-open button:not(.mobile-modal-option):not(.mobile-modal-close),
+            body.modal-open select,
+            body.modal-open textarea {
+                pointer-events: none;
+            }
+
+            /* 移除所有输入框的焦点状态 */
+            body.modal-open *:focus {
+                outline: none !important;
+                box-shadow: none !important;
+                border-color: var(--input-border) !important;
+            }
+
+            /* 禁用所有输入框的焦点样式 */
+            .form-control:focus,
+            .btn:focus,
+            .btn-outline-secondary:focus,
+            input:focus,
+            button:focus,
+            select:focus,
+            textarea:focus {
+                outline: none !important;
+                box-shadow: none !important;
+                border-color: var(--input-border) !important;
+            }
+
+            /* 移除Bootstrap的焦点样式 */
+            .form-control:focus-visible,
+            .btn:focus-visible {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+
+            .mobile-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                z-index: 3000;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+
+            .mobile-modal.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-modal-content {
+                position: fixed;
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                background: var(--card-bg);
+                border-radius: 1.25rem 1.25rem 1rem 1rem;
+                padding: 1.5rem 1.5rem 1rem 1.5rem;
+                transform: translateY(100%);
+                transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
+                display: flex;
+                flex-direction: column;
+                max-height: calc(100vh - 2rem);
+            }
+
+            .mobile-modal.show .mobile-modal-content {
+                transform: translateY(0);
+            }
+
+            .mobile-modal.closing {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .mobile-modal.closing .mobile-modal-content {
+                transform: translateY(100%);
+                transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+            }
+
+            .mobile-modal-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+                border-bottom: 1px solid var(--input-border);
+                flex-shrink: 0;
+            }
+
+            .mobile-modal-title {
+                font-size: 1.125rem;
+                font-weight: 600;
+                color: var(--fg);
+            }
+
+            .mobile-modal-close {
+                width: 2.5rem;
+                height: 2.5rem;
+                border: none;
+                background: var(--input-bg);
+                color: var(--muted);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+                border: 1px solid var(--input-border);
+                -webkit-tap-highlight-color: transparent;
+                outline: none;
+            }
+
+            .mobile-modal-close:active {
+                background: var(--primary);
+                color: var(--bg);
+                transform: scale(0.95);
+            }
+
+            .mobile-modal-options {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                overflow-y: auto;
+                padding: 0.5rem 0;
+                margin: 0 -0.5rem;
+                padding: 0 0.5rem;
+                max-height: calc(3 * (3.5rem + 0.75rem));  /* 限制显示3个选项的高度 */
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .mobile-modal-option {
+                height: 3.5rem;
+                padding: 0 1rem;
+                border-radius: 0.875rem;
+                background: var(--input-bg);
+                border: 1px solid var(--input-border);
+                color: var(--fg);
+                text-align: left;
+                font-size: 1rem;
+                transition: all 0.15s ease-out;
+                position: relative;
+                overflow: hidden;
+                transform: translateZ(0);
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+                -webkit-tap-highlight-color: transparent;
+                outline: none;
+                user-select: none;
+                touch-action: manipulation;
+            }
+
+            .mobile-modal-option:active {
+                transform: scale(0.98);
+                background: var(--primary);
+                color: var(--bg);
+                border-color: var(--primary);
+            }
+
+            .mobile-modal-option.selected {
+                background: var(--primary);
+                color: var(--bg);
+                border-color: var(--primary);
+            }
+
+            /* 优化滚动条样式 */
+            .mobile-modal-options::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            .mobile-modal-options::-webkit-scrollbar-track {
+                background: var(--scroll-track);
+                border-radius: 2px;
+            }
+
+            .mobile-modal-options::-webkit-scrollbar-thumb {
+                background: var(--scroll-thumb);
+                border-radius: 2px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2088,7 +2293,8 @@
             searchInput.addEventListener('input', debounce(filterModules, 300));
 
             // 下拉菜单点击事件
-            document.querySelectorAll('.dropdown-item').forEach(item => {
+            document.querySelectorAll('.dropdown-item').forEach((item, index) => {
+                item.style.setProperty('--index', index);
                 item.addEventListener('click', function(e) {
                     e.preventDefault();
                     const value = this.dataset.value;
@@ -2101,7 +2307,59 @@
                     
                     // 触发过滤
                     filterModules();
+
+                    // 移动端处理
+                    if (window.innerWidth <= 768) {
+                        const dropdown = this.closest('.dropdown-menu');
+                        if (dropdown) {
+                            dropdown.addEventListener('transitionend', function handler(e) {
+                                if (e.propertyName === 'transform') {
+                                    document.body.classList.remove('modal-open');
+                                    const scrollY = parseInt(document.body.style.top || '0');
+                                    document.body.style.top = '';
+                                    window.scrollTo(0, -scrollY);
+                                    dropdown.removeEventListener('transitionend', handler);
+                                }
+                            });
+                            dropdown.classList.remove('show');
+                        }
+                    }
                 });
+            });
+
+            // 移动端下拉菜单打开时处理
+            document.querySelectorAll('.btn[data-bs-toggle="dropdown"]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        requestAnimationFrame(() => {
+                            document.body.classList.toggle('modal-open');
+                            const scrollY = window.scrollY;
+                            document.body.style.top = `-${scrollY}px`;
+                        });
+                    }
+                });
+            });
+
+            // 点击遮罩层关闭下拉菜单
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    const dropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    dropdowns.forEach(menu => {
+                        const rect = menu.getBoundingClientRect();
+                        if (e.clientY < rect.top) {
+                            menu.addEventListener('transitionend', function handler(e) {
+                                if (e.propertyName === 'transform') {
+                                    document.body.classList.remove('modal-open');
+                                    const scrollY = parseInt(document.body.style.top || '0');
+                                    document.body.style.top = '';
+                                    window.scrollTo(0, -scrollY);
+                                    menu.removeEventListener('transitionend', handler);
+                                }
+                            });
+                            menu.classList.remove('show');
+                        }
+                    });
+                }
             });
 
             // Select 变化事件
@@ -2550,6 +2808,219 @@
             }
         `;
         document.head.appendChild(style);
+
+        // 移动端下拉菜单处理
+        document.querySelectorAll('.btn[data-bs-toggle="dropdown"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    // 阻止默认的下拉菜单行为
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // 移除bootstrap的dropdown事件
+                    this.removeAttribute('data-bs-toggle');
+                    
+                    // 获取选项数据
+                    const dropdown = this.nextElementSibling;
+                    const options = Array.from(dropdown.querySelectorAll('.dropdown-item'));
+                    const modalTitle = this.textContent.trim();
+                    
+                    // 创建并显示Modal
+                    showMobileModal(modalTitle, options, (selectedOption) => {
+                        // 更新按钮文本
+                        this.childNodes[0].textContent = selectedOption.textContent;
+                        
+                        // 更新select值
+                        const select = this.parentElement.querySelector('select');
+                        if (select) {
+                            select.value = selectedOption.dataset.value;
+                            select.dispatchEvent(new Event('change'));
+                        }
+                    });
+                }
+            });
+        });
+
+        // 创建并显示移动端Modal
+        function showMobileModal(title, options, onSelect) {
+            // 移除可能存在的其他Modal
+            document.querySelectorAll('.mobile-modal').forEach(modal => modal.remove());
+            
+            // 创建Modal元素
+            const modal = document.createElement('div');
+            modal.className = 'mobile-modal';
+            modal.innerHTML = `
+                <div class="mobile-modal-content">
+                    <div class="mobile-modal-header">
+                        <div class="mobile-modal-title">${title}</div>
+                        <button class="mobile-modal-close" type="button" tabindex="-1">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+                    <div class="mobile-modal-options">
+                        ${options.map((option, index) => `
+                            <button class="mobile-modal-option" type="button" tabindex="-1"
+                                    data-value="${option.dataset.value}">
+                                ${option.textContent}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            // 添加到body
+            document.body.appendChild(modal);
+            
+            // 添加滚动锁定
+            document.body.classList.add('modal-open');
+            const scrollY = window.scrollY;
+            document.body.style.top = `-${scrollY}px`;
+            
+            // 显示动画
+            requestAnimationFrame(() => {
+                modal.classList.add('show');
+            });
+
+            // 移除所有焦点的函数
+            const removeAllFocus = () => {
+                // 移除所有可聚焦元素的焦点
+                document.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').forEach(el => {
+                    el.blur();
+                    el.style.outline = 'none';
+                    el.style.boxShadow = 'none';
+                    el.style.borderColor = 'var(--input-border)';
+                });
+
+                // 特别处理搜索框
+                const searchInput = document.getElementById('moduleSearch');
+                if (searchInput) {
+                    searchInput.blur();
+                    searchInput.style.outline = 'none';
+                    searchInput.style.boxShadow = 'none';
+                    searchInput.style.borderColor = 'var(--input-border)';
+                }
+
+                // 特别处理下拉按钮
+                document.querySelectorAll('.btn-outline-secondary').forEach(btn => {
+                    btn.blur();
+                    btn.style.outline = 'none';
+                    btn.style.boxShadow = 'none';
+                    btn.style.borderColor = 'var(--input-border)';
+                });
+
+                // 移除任何可能的hover状态
+                document.querySelectorAll(':hover').forEach(el => {
+                    el.blur();
+                });
+            };
+
+            // 绑定关闭事件
+            const close = () => {
+                modal.classList.add('closing');
+                modal.classList.remove('show');
+                
+                // 立即移除所有焦点
+                removeAllFocus();
+                
+                // 重置下拉菜单状态
+                const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+                dropdownMenus.forEach(menu => {
+                    menu.classList.remove('show');
+                    const button = menu.previousElementSibling;
+                    if (button) {
+                        button.setAttribute('aria-expanded', 'false');
+                        button.classList.remove('show');
+                    }
+                });
+                
+                // 监听过渡结束
+                const handleTransitionEnd = (e) => {
+                    if (e.propertyName === 'opacity') {
+                        modal.remove();
+                        // 恢复滚动
+                        document.body.classList.remove('modal-open');
+                        const scrollY = parseInt(document.body.style.top || '0');
+                        document.body.style.top = '';
+                        window.scrollTo(0, -scrollY);
+                        modal.removeEventListener('transitionend', handleTransitionEnd);
+                        
+                        // 再次确保移除所有焦点和重置下拉菜单状态
+                        setTimeout(() => {
+                            removeAllFocus();
+                            // 重新初始化下拉菜单的Bootstrap行为
+                            const buttons = document.querySelectorAll('.btn-outline-secondary');
+                            buttons.forEach(btn => {
+                                if (window.innerWidth > 768) {
+                                    btn.setAttribute('data-bs-toggle', 'dropdown');
+                                }
+                            });
+                        }, 100);
+                    }
+                };
+                
+                modal.addEventListener('transitionend', handleTransitionEnd);
+            };
+
+            // 点击遮罩层关闭
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    close();
+                }
+            });
+
+            // 点击关闭按钮
+            modal.querySelector('.mobile-modal-close').addEventListener('click', close);
+
+            // 选项点击事件
+            modal.querySelectorAll('.mobile-modal-option').forEach(option => {
+                let isProcessing = false;
+                
+                const handleClick = () => {
+                    if (isProcessing) return;
+                    isProcessing = true;
+                    
+                    // 移除其他选项的选中状态
+                    modal.querySelectorAll('.mobile-modal-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // 添加选中状态
+                    option.classList.add('selected');
+                    
+                    // 延迟关闭以显示选中效果
+                    setTimeout(() => {
+                        onSelect({
+                            textContent: option.textContent,
+                            dataset: { value: option.dataset.value }
+                        });
+                        close();
+                        
+                        // 重置处理状态
+                        setTimeout(() => {
+                            isProcessing = false;
+                        }, 300);
+                    }, 100);
+                };
+                
+                option.addEventListener('click', handleClick);
+                option.addEventListener('touchstart', () => {}, {passive: true});
+            });
+        }
+
+        // 在窗口大小改变时重新初始化下拉菜单行为
+        window.addEventListener('resize', () => {
+            const buttons = document.querySelectorAll('.btn[data-bs-toggle="dropdown"]');
+            buttons.forEach(btn => {
+                if (window.innerWidth <= 768) {
+                    btn.removeAttribute('data-bs-toggle');
+                    btn.blur(); // 确保按钮失去焦点
+                    btn.style.outline = 'none';
+                    btn.style.boxShadow = 'none';
+                } else {
+                    btn.setAttribute('data-bs-toggle', 'dropdown');
+                }
+            });
+        });
     </script>
 </body>
 </html> 
