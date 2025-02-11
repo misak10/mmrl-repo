@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misaki-Module Repo (Test)</title>
+    <title>Misaki-Module Repo</title>
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/apple-touch-icon.png">
+    <link rel="mask-icon" href="src/favicon.svg" color="#6D1D1D">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" as="script">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- 添加PWA支持的meta标签 -->
+    <meta name="theme-color" content="#6D1D1D">
+    <meta name="description" content="Misaki-Module Repository - 高质量的Magisk模块仓库">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css">
     <style>
@@ -18,13 +38,13 @@
             --card-hover: rgba(255, 255, 255, 0.95);
             --input-bg: rgba(255, 255, 255, 0.75);
             --input-border: rgba(228, 228, 231, 0.5);
-            --radius: 0.75rem;
+            --radius: 0.875rem;
             --blur: blur(12px);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --scroll-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            --scroll-thumb: rgba(24, 24, 27, 0.2);
-            --scroll-track: rgba(24, 24, 27, 0.05);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --scroll-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --scroll-thumb: rgba(24, 24, 27, 0.15);
+            --scroll-track: rgba(24, 24, 27, 0.03);
         }
 
         [data-bs-theme="dark"] {
@@ -38,7 +58,7 @@
             --card-hover: rgba(39, 39, 42, 0.8);
             --input-bg: rgba(39, 39, 42, 0.5);
             --input-border: rgba(63, 63, 70, 0.5);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             --bs-body-bg: #27272a;
             --bs-body-color: #fafafa;
             --bs-gray-100: #3f3f46;
@@ -57,9 +77,9 @@
             --card-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
             --card-hover-transform: translateY(-8px);
             --link-hover-bg: rgba(255, 255, 255, 0.08);
-            --scroll-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            --scroll-thumb: rgba(255, 255, 255, 0.2);
-            --scroll-track: rgba(255, 255, 255, 0.05);
+            --scroll-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --scroll-thumb: rgba(255, 255, 255, 0.15);
+            --scroll-track: rgba(255, 255, 255, 0.03);
         }
 
         [data-bs-theme="dark"] .module-card {
@@ -222,21 +242,23 @@
 
         [data-bs-theme="dark"] .footer {
             background: var(--card-bg);
-            border-color: var(--input-border);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
         }
 
         body {
             background-color: var(--bg);
             background-image: 
-                radial-gradient(at 40% 20%, rgba(63, 63, 70, 0.05) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(82, 82, 91, 0.05) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(39, 39, 42, 0.05) 0px, transparent 50%);
+                radial-gradient(at 40% 20%, rgba(63, 63, 70, 0.03) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(82, 82, 91, 0.03) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(39, 39, 42, 0.03) 0px, transparent 50%);
             background-attachment: fixed;
             color: var(--fg);
             font-family: system-ui, -apple-system, sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .header {
@@ -247,19 +269,17 @@
             position: sticky;
             top: 0;
             z-index: 3000;
-            padding: 1rem 0;
+            padding: 0.35rem 0;
             box-shadow: var(--shadow);
-        }
-
-        .container {
-            width: min(1200px, 100% - 3rem);
-            margin-inline: auto;
+            overflow: visible;
         }
 
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
+            padding: 0.35rem 0;
         }
 
         .logo-container {
@@ -271,6 +291,9 @@
         .logo {
             height: 2.5rem;
             width: auto;
+            object-fit: contain;
+            opacity: 1;
+            transition: opacity 0.3s ease;
         }
 
         .logo-text {
@@ -292,58 +315,308 @@
             align-items: center;
             justify-content: center;
             transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 3001;
+            padding: 0;
+            margin: 0.5rem;
+        }
+
+        .theme-switch::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .theme-switch:hover::before {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .theme-switch i {
+            font-size: 1.25rem;
+            transition: inherit;
+            position: relative;
+            z-index: 1;
         }
 
         .theme-switch:hover {
-            transform: rotate(180deg) scale(1.2);
-            background: var(--accent);
             color: var(--bg);
         }
 
         .search-section {
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             position: relative;
             z-index: 2500;
         }
 
         .search-container {
+            display: grid;
+            grid-template-columns: minmax(200px, 2fr) repeat(3, minmax(150px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
             background: var(--card-bg);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            border-radius: 1.25rem;
             border: 1px solid var(--input-border);
             box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+
+        .input-group {
             position: relative;
-            z-index: 2500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .search-container:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--card-hover-shadow);
+        .input-group:first-child {
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 0.875rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .input-group:first-child:hover {
             border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
         }
 
-        @media (min-width: 768px) {
+        .input-group:first-child:focus-within {
+            background: var(--card-bg);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+            transform: translateY(-1px);
+        }
+
+        .input-group:first-child .form-control {
+            height: 3rem;
+            padding: 0 1.25rem 0 3.25rem;
+            background: transparent;
+            border: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--fg);
+            width: 100%;
+        }
+
+        .input-group:first-child .form-control:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .input-group:first-child .input-group-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            padding: 0 0 0 1.25rem;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .input-group:first-child .input-group-text i {
+            font-size: 1.125rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .input-group:first-child:focus-within .input-group-text i {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .input-group:not(:first-child) .btn-outline-secondary {
+            height: 3rem;
+            padding: 0 1.25rem;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 0.875rem !important;
+            color: var(--fg);
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            transition: all 0.2s ease-out;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            will-change: transform, border-color, box-shadow;
+            transform: translateZ(0);
+        }
+
+        .input-group:not(:first-child) .btn-outline-secondary:hover,
+        .input-group:not(:first-child) .btn-outline-secondary[aria-expanded="true"] {
+            background: var(--card-bg);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .input-group:not(:first-child) .btn-outline-secondary i {
+            font-size: 1.125rem;
+            transition: transform 0.2s ease-out;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .input-group:not(:first-child) .btn-outline-secondary[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+
+        .input-group:not(:first-child) .dropdown-menu {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background: var(--card-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 0.875rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            transform-origin: top;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.98);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 100%;
+        }
+
+        .input-group:not(:first-child) .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .input-group .dropdown-item {
+            padding: 0.75rem 1rem;
+            margin: 0.125rem 0;
+            border-radius: 0.75rem;
+            color: var(--fg);
+            background: transparent;
+            transition: all 0.2s ease-out;
+            font-size: 0.875rem;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .input-group .dropdown-item:hover {
+            background: var(--input-bg);
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        /* 明亮模式下拉菜单样式 */
+        [data-bs-theme="light"] .dropdown-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        [data-bs-theme="light"] .dropdown-item {
+            color: var(--fg);
+        }
+
+        [data-bs-theme="light"] .dropdown-item:hover {
+            background: rgba(0, 0, 0, 0.04);
+            color: var(--primary);
+        }
+
+        /* 暗黑模式下拉菜单样式 */
+        [data-bs-theme="dark"] .dropdown-menu {
+            background: rgba(39, 39, 42, 0.95);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-group .dropdown-item {
+            padding: 0.75rem 1rem;
+            margin: 0.125rem 0;
+            border-radius: 0.75rem;
+            color: var(--fg);
+            background: transparent;
+            transition: all 0.2s ease-out;
+            font-size: 0.875rem;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* 移动端样式优化 */
+        @media (max-width: 768px) {
             .search-container {
-                grid-template-columns: minmax(200px, 2fr) repeat(3, minmax(150px, 1fr));
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+                padding: 1.5rem;
             }
+
+            .input-group .dropdown-menu {
+                position: fixed !important;
+                left: 1rem !important;
+                right: 1rem !important;
+                bottom: 1rem !important;
+                top: auto !important;
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+
+            .dropdown-menu.show::before {
+                content: '';
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                z-index: -1;
+                animation: fadeIn 0.2s ease-out;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-            gap: 2rem;
-            padding: 1.5rem 0 3rem;
+            gap: 2.5rem;
+            padding: 2rem 0 4rem;
             position: relative;
             z-index: 1;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         @media (max-width: 768px) {
+            .container {
+                width: calc(100% - 2rem);
+                max-width: 100%;
+                overflow: hidden;
+            }
+
+            .modules-grid {
+                gap: 2rem;
+                padding: 1.5rem 0 3rem;
+            }
+
+            .module-card {
+                border-radius: 1rem;
+                max-width: 100%;
+            }
+
             .input-group .dropdown-menu {
                 position: fixed;
                 left: 1rem !important;
@@ -354,11 +627,6 @@
                 overflow-y: auto;
                 margin-top: 0.5rem;
                 z-index: 2600;
-                background: var(--card-bg);
-                backdrop-filter: var(--blur);
-                -webkit-backdrop-filter: var(--blur);
-                border: 1px solid var(--input-border);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             }
 
             .btn-outline-secondary[aria-expanded="true"] {
@@ -381,468 +649,8 @@
                 backdrop-filter: blur(4px);
                 -webkit-backdrop-filter: blur(4px);
                 z-index: -1;
-            }
-        }
-
-        .form-control, .form-select {
-            background: var(--input-bg);
-            border: 1px solid var(--input-border);
-            color: var(--fg);
-            border-radius: var(--radius);
-            padding: 0.75rem 1rem;
-            transition: border-color var(--transition),
-                      box-shadow var(--transition);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            width: 100%;
-        }
-
-        .form-control:focus, .form-select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px var(--input-border);
-            outline: none;
-        }
-
-        .module-card {
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: 1rem;
-            background: var(--bs-body-bg);
-            overflow: hidden;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                      box-shadow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                      border-color 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: var(--shadow);
-            opacity: 1;
-            transform: translateY(0);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            z-index: 1;
-            contain: content;
-            will-change: transform, opacity;
-        }
-
-        .module-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--card-hover-shadow);
-            border-color: var(--primary);
-        }
-
-        .module-new-badge {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.375rem 0.875rem;
-            border-radius: 2rem;
-            z-index: 5;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .module-card.show .module-new-badge {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .module-new-badge i {
-            font-size: 0.875rem;
-            animation: pulse 2s ease-in-out infinite;
-            color: white;
-        }
-
-        .module-outdated-badge {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.375rem 0.875rem;
-            border-radius: 2rem;
-            z-index: 5;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            box-shadow: 0 4px 12px rgba(100, 116, 139, 0.15);
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .module-card.show .module-outdated-badge {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .module-outdated-badge i {
-            font-size: 0.875rem;
-            color: white;
-        }
-
-        .module-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            background: var(--bs-body-bg);
-            position: relative;
-        }
-
-        .module-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--bs-gray-900);
-            margin-bottom: 0.75rem;
-            cursor: help;
-            display: block;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            padding-right: 4rem;
-            letter-spacing: -0.01em;
-        }
-
-        .module-name:hover {
-            color: var(--primary);
-            transform: translateX(4px);
-        }
-
-        .module-name::after {
-            content: attr(data-full-name);
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--card-bg);
-            padding: 1rem 1.25rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            z-index: 1060;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--input-border);
-            font-size: 0.875rem;
-            pointer-events: none;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            will-change: transform, opacity;
-        }
-
-        .module-name:hover::after {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .module-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 0;
-        }
-
-        .module-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            font-size: 0.875rem;
-            color: var(--bs-gray-600);
-            transition: color 0.2s ease;
-            padding: 0.25rem 0.75rem;
-            border-radius: 2rem;
-            background: var(--input-bg);
-        }
-
-        .module-meta span:hover {
-            color: var(--bs-gray-900);
-        }
-
-        .module-version {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.25rem 0.75rem;
-            background: var(--input-bg) !important;
-            color: var(--bs-gray-700);
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .module-version:hover {
-            transform: translateY(-2px) scale(1.1);
-            background: var(--primary);
-            color: var(--bg);
-            border-color: var(--primary);
-        }
-
-        .module-content {
-            padding: 1.5rem;
-            background: var(--bs-body-bg);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .module-description {
-            font-size: 0.875rem;
-            line-height: 1.8;
-            color: var(--muted);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            transition-delay: 0.1s;
-            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: calc(var(--order) * 0.1s + 0.2s);
-        }
-
-        .module-card.show .module-description {
-            opacity: 1;
-            transform: translateY(0);
-            color: var(--fg);
-        }
-
-        .module-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: auto;
-            padding: 1.25rem;
-            background: var(--card-bg);
-            border-radius: 0.75rem;
-        }
-
-        .module-card.show .module-features {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.375rem 0.875rem;
-            background: var(--input-bg);
-            color: var(--bs-gray-700);
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            border: 1px solid var(--input-border);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform: translateY(10px);
-            opacity: 0;
-            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: calc(var(--order) * 0.1s + 0.3s);
-        }
-
-        .module-card.show .feature-tag {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .feature-tag:hover {
-            transform: translateY(-4px) rotate(-4deg) scale(1.1);
-            background: var(--primary);
-            color: var(--bg);
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        .module-actions {
-            padding: 1.25rem 1.5rem;
-            background: var(--card-bg);
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .module-card.show .module-actions {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .action-group {
-            display: grid;
-            grid-template-columns: 1fr auto auto;
-            gap: 0.75rem;
-            align-items: center;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border: none;
-            border-radius: 2rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform: translateY(0);
-            color: var(--bg);
-            text-decoration: none;
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: var(--card-hover-shadow);
-        }
-
-        .btn-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            padding: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid var(--input-border);
-            background: var(--input-bg);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            color: var(--bs-gray-700);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        }
-
-        .btn-icon:hover {
-            background: var(--primary);
-            color: var(--bg);
-            border-color: var(--primary);
-            transform: translateY(-2px) rotate(8deg);
-        }
-
-        .accordion {
-            margin-top: 1rem;
-        }
-
-        .accordion-item {
-            border: none;
-            background: transparent;
-        }
-
-        .accordion-button {
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            color: var(--bs-gray-700);
-            background: var(--input-bg);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            border: 1px solid var(--input-border);
-            border-radius: 2rem !important;
-            transition: all 0.3s ease;
-        }
-
-        .accordion-button:hover {
-            color: var(--bs-gray-900);
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--bs-gray-900);
-            background: white;
-            box-shadow: none;
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .accordion-button::after {
-            width: 1rem;
-            height: 1rem;
-            background-size: 1rem;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .accordion-body {
-            padding: 1.25rem 0 0;
-        }
-
-        .list-group {
-            border-radius: 0.75rem;
-            background: var(--card-bg);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            overflow: hidden;
-        }
-
-        .list-group-item {
-            padding: 1rem 1.25rem;
-            border-color: var(--input-border);
-            background: transparent;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--bs-gray-700);
-        }
-
-        .list-group-item:hover {
-            background: var(--input-bg);
-            transform: translateX(4px);
-        }
-
-        .list-group-item .badge {
-            background: var(--bs-gray-100);
-            color: var(--bs-gray-600);
-            font-weight: normal;
-            padding: 0.375rem 0.75rem;
-            border-radius: 2rem;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(0.95); }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: calc(100% - 2rem);
-            }
-
-            .modules-grid {
-                gap: 1.25rem;
-            }
-
-            .module-card {
-                border-radius: 1rem;
-            }
-
-            .module-header,
-            .module-content {
-                padding: 1.25rem;
-            }
-
-            .module-actions {
-                padding: 1rem;
-            }
-
-            .input-group .dropdown-menu {
-                position: fixed;
-                left: 1rem !important;
-                right: 1rem !important;
-                top: auto !important;
-                width: auto;
-                max-height: 60vh;
-                overflow-y: auto;
-                margin-top: 0.5rem;
-                z-index: 2600;
-            }
-
-            .btn-outline-secondary[aria-expanded="true"] {
-                z-index: 2601;
-                position: relative;
-            }
-
-            .input-group {
-                position: static;
+                opacity: 0;
+                transition: opacity 0.2s ease-out;
             }
         }
 
@@ -951,42 +759,87 @@
             backdrop-filter: var(--blur);
             -webkit-backdrop-filter: var(--blur);
             border-top: 1px solid var(--input-border);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease-out;
             position: relative;
             z-index: 10;
+            padding: 1.25rem 0;
+            margin-top: 1.5rem;
+            overflow: visible;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding-top: 0.35rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-link {
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.875rem;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            transition: all 0.2s ease-out;
+            color: var(--fg);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 120px;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, border-color, box-shadow;
+            transform: translateZ(0);
         }
 
         .footer-link:hover {
-            transform: translateY(-6px) scale(1.1);
+            transform: translateY(-3px);
+            background: var(--card-hover);
+            border-color: var(--primary);
             color: var(--primary);
-        }
-
-        .footer-link i {
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .footer-link:hover i {
-            transform: scale(1.4) rotate(-12deg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .footer-credits {
+            text-align: right;
             transition: all 0.3s ease;
+            font-size: 0.9375rem;
+            letter-spacing: 0.01em;
+            color: var(--muted);
+        }
+
+        .footer-credits .credit-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: flex-end;
         }
 
         .footer-credits a {
             position: relative;
             transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
         }
 
         .footer-credits a:hover {
-            color: var(--primary);
+            background: var(--input-bg);
+            transform: translateY(-2px);
         }
 
         .footer-credits .text-danger {
@@ -999,168 +852,44 @@
             50% { transform: scale(1.2); }
         }
 
-        [data-bs-theme="dark"] .input-group-text,
-        [data-bs-theme="dark"] .btn-outline-secondary {
-            background: var(--input-bg);
-            border-color: var(--input-border);
-            color: var(--fg);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 2.5rem 0;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 2rem;
+                padding-top: 0.25rem;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+            
+            .footer-credits {
+                text-align: center;
+            }
+            
+            .footer-credits .credit-line {
+                justify-content: center;
+            }
         }
 
-        [data-bs-theme="dark"] .btn-outline-secondary:hover {
-            background: var(--card-hover);
-            color: var(--primary);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        [data-bs-theme="dark"] .form-select {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        [data-bs-theme="dark"] .form-select:hover {
-            background-color: var(--card-hover);
-            border-color: var(--input-border);
-            transform: translateY(-1px);
-        }
-
-        [data-bs-theme="dark"] .form-select:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-            transform: translateY(-1px);
-        }
-
-        [data-bs-theme="dark"] .form-select option {
-            background-color: var(--bs-body-bg);
-            color: var(--fg);
-            padding: 0.75rem 1rem;
-        }
-
-        .input-group {
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .input-group:focus-within {
-            transform: translateY(-1px);
-        }
-
-        /* 为每个 input-group 设置不同的 z-index */
-        .input-group:nth-child(1) {
-            z-index: 1004;
-        }
-
-        .input-group:nth-child(2) {
-            z-index: 1003;
-        }
-
-        .input-group:nth-child(3) {
-            z-index: 1002;
-        }
-
-        .input-group:nth-child(4) {
-            z-index: 1001;
-        }
-
-        .input-group-text {
-            padding: 0.75rem 1rem;
-            background: var(--input-bg);
-            border: 1px solid var(--input-border);
-            border-right: none;
-            color: var(--muted);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .input-group-text i {
-            font-size: 1.125rem;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .input-group:focus-within .input-group-text {
-            border-color: var(--primary);
-            color: var(--primary);
-            box-shadow: -1px 0 0 1px var(--primary);
-        }
-
-        .input-group:focus-within .input-group-text i {
-            transform: scale(1.1) rotate(-10deg);
-        }
-
-        .btn-outline-secondary {
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border-color: rgba(24, 24, 27, 0.1);
-            background: rgba(255, 255, 255, 0.75);
-            color: var(--primary);
-            font-weight: 500;
-            overflow: hidden;
-        }
-
-        .btn-outline-secondary[aria-expanded="true"] {
-            background: var(--card-hover);
-            border-color: var(--primary);
-            color: var(--primary);
-            z-index: 1601;
-        }
-
-        .btn-outline-secondary[aria-expanded="true"] i {
-            transform: rotate(-180deg);
-        }
-
-        .input-group .dropdown-menu {
-            position: absolute;
-            margin-top: 4px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            border: 1px solid var(--input-border);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            width: 100%;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            padding: 0.5rem;
-        }
-
-        .input-group .dropdown-menu.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .input-group .dropdown-item {
-            padding: 0.75rem 1rem;
-            margin: 0.125rem 0;
-            border-radius: var(--radius);
-            color: var(--primary);
-            background: transparent;
-            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-            font-size: 0.875rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .input-group .dropdown-item:hover {
-            background: rgba(24, 24, 27, 0.06);
-            color: var(--primary);
-            transform: translateX(4px);
-        }
-
-        [data-bs-theme="dark"] .dropdown-menu {
-            background: var(--card-bg);
-            border-color: var(--input-border);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        [data-bs-theme="dark"] .dropdown-item:hover {
-            background: var(--input-bg);
-            color: var(--primary);
-        }
-
-        [data-bs-theme="dark"] .dropdown-menu.show::before {
-            background: rgba(0, 0, 0, 0.4);
+        @media (max-width: 480px) {
+            .footer {
+                padding: 1.25rem 0;
+            }
+            
+            .footer-container {
+                gap: 1.25rem;
+            }
+            
+            .footer-link {
+                min-width: auto;
+                flex: 1;
+            }
         }
 
         /* 性能优化 */
@@ -1171,6 +900,275 @@
             will-change: transform, opacity;
             transform: translateZ(0);
             backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .footer-link i {
+            font-size: 1.125rem;
+            transition: transform 0.2s ease-out;
+        }
+
+        .footer-link:hover i {
+            transform: scale(1.1);
+        }
+
+        [data-bs-theme="dark"] .footer {
+            background: var(--card-bg);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="dark"] .footer-link {
+            background: var(--input-bg);
+            border-color: var(--input-border);
+        }
+
+        [data-bs-theme="dark"] .footer-link:hover {
+            background: var(--card-hover);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                text-align: center;
+            }
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--scroll-track);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--scroll-thumb);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--muted);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        /* 添加滚动进度条样式 */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 3001;
+            transition: width 0.1s ease;
+        }
+
+        /* 优化卡片动画 */
+        .module-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .module-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 添加骨架屏动画 */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg,
+                var(--input-bg) 25%,
+                var(--card-bg) 50%,
+                var(--input-bg) 75%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* 优化搜索框交互 */
+        .input-group:first-child .form-control:focus + .input-group-text i {
+            transform: scale(1.1) rotate(-90deg);
+        }
+
+        .input-group .btn-outline-secondary:active {
+            transform: scale(0.98);
+        }
+
+        /* 优化下拉菜单动画 */
+        .dropdown-menu {
+            transform: translateZ(0);
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transition: transform 0.12s ease-out, opacity 0.12s ease-out;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .input-group:not(:first-child) .btn-outline-secondary {
+            transition: all 0.12s ease-out;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .input-group:not(:first-child) .btn-outline-secondary[aria-expanded="true"] i {
+            transform: rotate(180deg);
+            transition: transform 0.12s ease-out;
+        }
+
+        /* 优化点击响应 */
+        .btn-outline-secondary:active {
+            transform: translateY(0) !important;
+        }
+
+        /* 移除复杂动画 */
+        @keyframes dropdownFade {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 优化下拉菜单项目 */
+        .dropdown-item {
+            transform: translateZ(0);
+            will-change: transform;
+            transition: transform 0.12s ease-out, background-color 0.12s ease-out;
+        }
+
+        /* 优化按钮悬停效果 */
+        .btn-primary,
+        .btn-icon,
+        .footer-link {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary:hover,
+        .btn-icon:hover,
+        .footer-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:active,
+        .btn-icon:active,
+        .footer-link:active {
+            transform: translateY(0);
+        }
+
+        /* 优化加载动画 */
+        .loading {
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--primary) 50%,
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: loadingShimmer 1.5s infinite cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes loadingShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* 优化主题切换动画 */
+        .theme-switch {
+            overflow: hidden;
+        }
+
+        .theme-switch i {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .theme-switch:hover i {
+            transform: rotate(180deg) scale(1.2);
+        }
+
+        /* 优化响应式布局 */
+        @media (max-width: 768px) {
+            .search-container {
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+
+            .modules-grid {
+                gap: 1.5rem;
+            }
+
+            .module-card {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* 优化深色模式过渡 */
+        [data-bs-theme] {
+            transition: background-color 0.3s ease,
+                        color 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        /* 优化滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--scroll-track);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--scroll-thumb);
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--muted);
+        }
+
+        /* 优化图片加载 */
+        .logo {
+            height: 2.5rem;
+            width: auto;
+            object-fit: contain;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo.error {
+            opacity: 0.7;
+        }
+
+        /* 优化下拉菜单性能 */
+        .dropdown-menu {
+            transform: translateZ(0);
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        .btn-outline-secondary {
+            transform: translateZ(0);
+            will-change: transform;
         }
     </style>
 </head>
@@ -1260,29 +1258,29 @@
         </div>
     </main>
 
-    <footer class="footer py-4 mt-auto">
+    <footer class="footer">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
-                        <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <a href="https://github.com/misak10/mmrl-repo" class="footer-link text-decoration-none d-inline-flex align-items-center gap-2 fw-medium">
-                                <i class="ri-github-fill"></i>
-                                GitHub 仓库
-                            </a>
-                            <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link text-decoration-none d-inline-flex align-items-center gap-2 fw-medium">
-                                <i class="ri-add-circle-fill"></i>
-                                提交模块
-                            </a>
-                            <a href="https://afdian.com/a/misak10" class="footer-link text-decoration-none d-inline-flex align-items-center gap-2 fw-medium">
-                                <i class="ri-heart-fill"></i>
-                                赞助支持
-                            </a>
-                        </div>
-                        <div class="footer-credits text-center text-md-end">
-                            <div class="text-secondary mb-2">Made with <i class="ri-heart-fill text-danger"></i> by Misaki</div>
-                            <div class="text-secondary">Powered by <a href="https://github.com/Googlers-Repo" class="text-decoration-none text-primary fw-medium">MMRL</a></div>
-                        </div>
+            <div class="footer-container">
+                <div class="footer-links">
+                    <a href="https://github.com/misak10/mmrl-repo" class="footer-link">
+                        <i class="ri-github-fill"></i>
+                        GitHub 仓库
+                    </a>
+                    <a href="https://github.com/misak10/mmrl-repo/issues/new/choose" class="footer-link">
+                        <i class="ri-add-circle-fill"></i>
+                        提交模块
+                    </a>
+                    <a href="https://afdian.com/a/misak10" class="footer-link">
+                        <i class="ri-heart-fill"></i>
+                        赞助支持
+                    </a>
+                </div>
+                <div class="footer-credits">
+                    <div class="credit-line mb-1">
+                        Made with <i class="ri-heart-fill text-danger"></i> by Misaki
+                    </div>
+                    <div class="credit-line">
+                        Powered by <a href="https://github.com/Googlers-Repo">MMRL</a>
                     </div>
                 </div>
             </div>
@@ -1314,15 +1312,64 @@
             loading.classList.remove('active');
         }
 
-        // 模块数据处理
+        // 防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // 使用 IntersectionObserver 优化模块卡片加载
+        const observeModules = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+            
+            document.querySelectorAll('.module-card').forEach(card => {
+                observer.observe(card);
+            });
+        };
+
+        // 优化模块数据缓存
+        const moduleCache = {
+            data: null,
+            timestamp: 0,
+            maxAge: 5 * 60 * 1000, // 5分钟缓存
+            
+            async get() {
+                const now = Date.now();
+                if (this.data && (now - this.timestamp) < this.maxAge) {
+                    return this.data;
+                }
+                
+                const response = await fetch('json/modules.json');
+                if (!response.ok) throw new Error('无法加载模块数据');
+                
+                this.data = await response.json();
+                this.timestamp = now;
+                return this.data;
+            }
+        };
+
+        // 优化后的fetchModules函数
         async function fetchModules() {
             showLoading();
             try {
-                const response = await fetch('json/modules.json');
-                if (!response.ok) {
-                    throw new Error('无法加载模块数据');
-                }
-                const data = await response.json();
+                const data = await moduleCache.get();
                 window.currentModules = data.modules;
                 return data.modules;
             } catch (error) {
@@ -1333,42 +1380,40 @@
             }
         }
 
-        // 渲染模块
+        // 优化渲染性能
         async function renderModules(modules) {
             const moduleList = document.getElementById('moduleList');
             
-            // 为每个模块的版本按versionCode排序
-            modules.forEach(module => {
-                if (module.versions && Array.isArray(module.versions)) {
-                    module.versions.sort((a, b) => b.versionCode - a.versionCode);
-                }
-            });
-
-            // 创建文档片段来存储所有卡片
+            // 使用DocumentFragment优化DOM操作
             const fragment = document.createDocumentFragment();
             
-            modules.forEach((module, index) => {
-                const features = getFeaturesList(module.features);
-                const lastUpdate = formatDate(module.versions[0].timestamp);
-                const isNew = (Date.now() / 1000 - module.versions[0].timestamp) < 7 * 24 * 60 * 60;
-                const version = module.version.startsWith('v') ? module.version : `v${module.version}`;
-                
+            // 对模块数据进行预处理
+            const processedModules = modules.map(module => ({
+                ...module,
+                sortedVersions: module.versions?.sort((a, b) => b.versionCode - a.versionCode) || [],
+                features: getFeaturesList(module.features),
+                lastUpdate: formatDate(module.versions?.[0]?.timestamp),
+                isNew: (Date.now() / 1000 - module.versions?.[0]?.timestamp) < 7 * 24 * 60 * 60,
+                version: module.version.startsWith('v') ? module.version : `v${module.version}`
+            }));
+
+            // 使用模板字符串一次性创建DOM
+            processedModules.forEach((module, index) => {
                 const card = document.createElement('div');
                 card.className = 'module-card';
                 card.style.setProperty('--order', index);
                 
-                // 使用innerHTML设置卡片内容
                 card.innerHTML = `
                     <div class="module-header">
                         <span class="module-name" data-full-name="${module.name}">
                             ${module.name}
                         </span>
-                        ${isNew ? `
+                        ${module.isNew ? `
                             <span class="module-new-badge">
                                 <i class="ri-flashlight-line"></i>
                                 New
                             </span>
-                        ` : isOutdated(module.versions[0].timestamp) ? `
+                        ` : module.isOutdated ? `
                             <span class="module-outdated-badge">
                                 <i class="ri-time-line"></i>
                                 长期未更新
@@ -1379,11 +1424,11 @@
                                 <i class="ri-user-3-line"></i> ${module.author}
                             </span>
                             <span>
-                                <i class="ri-time-line"></i> ${lastUpdate}
+                                <i class="ri-time-line"></i> ${module.lastUpdate}
                             </span>
                             <span class="module-version">
                                 <i class="ri-code-s-slash-line"></i>
-                                ${version}
+                                ${module.version}
                             </span>
                         </div>
                     </div>
@@ -1393,9 +1438,9 @@
                             ${module.description}
                         </div>
                         
-                        ${features.length > 0 ? `
+                        ${module.features.length > 0 ? `
                             <div class="module-features">
-                                ${features.map(feature => `
+                                ${module.features.map(feature => `
                                     <span class="feature-tag">
                                         <i class="ri-checkbox-circle-line"></i>
                                         ${feature}
@@ -1407,10 +1452,10 @@
 
                     <div class="module-actions">
                         <div class="action-group">
-                            <a href="${module.versions[0].zipUrl}" class="btn btn-primary">
+                            <a href="${module.sortedVersions[0].zipUrl}" class="btn btn-primary">
                                 <i class="ri-download-2-line"></i>
                                 下载
-                                ${module.versions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.versions[0].size)}</small>` : ''}
+                                ${module.sortedVersions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.sortedVersions[0].size)}</small>` : ''}
                             </a>
                             <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
                                target="_blank" 
@@ -1418,8 +1463,8 @@
                                title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
                                 <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
                             </a>
-                            ${module.versions[0].changelog ? `
-                                <a href="${module.versions[0].changelog}" 
+                            ${module.sortedVersions[0].changelog ? `
+                                <a href="${module.sortedVersions[0].changelog}" 
                                    target="_blank" 
                                    class="btn btn-icon"
                                    title="查看更新日志">
@@ -1427,20 +1472,19 @@
                                 </a>
                             ` : ''}
                         </div>
-                        ${module.versions.length > 1 ? `
+                        ${module.sortedVersions.length > 1 ? `
                             <div class="accordion mt-3">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#version-${index}">
-                                            历史版本 (${module.versions.length - 1})
+                                            历史版本 (${module.sortedVersions.length - 1})
                                         </button>
                                     </h2>
                                     <div id="version-${index}" class="accordion-collapse collapse">
                                         <div class="accordion-body">
                                             <div class="list-group">
-                                                ${module.versions
+                                                ${module.sortedVersions
                                                     .slice(1)
-                                                    .sort((a, b) => b.versionCode - a.versionCode)
                                                     .map(ver => {
                                                         const version = ver.version.startsWith('v') ? ver.version : `v${ver.version}`;
                                                         return `
@@ -1470,16 +1514,9 @@
             // 清空列表并一次性添加所有卡片
             moduleList.innerHTML = '';
             moduleList.appendChild(fragment);
-
-            // 使用 requestAnimationFrame 来添加动画类
-            requestAnimationFrame(() => {
-                const cards = moduleList.querySelectorAll('.module-card');
-                cards.forEach((card, index) => {
-                    requestAnimationFrame(() => {
-                        card.classList.add('show');
-                    });
-                });
-            });
+            
+            // 使用 IntersectionObserver 优化滚动加载
+            observeModules();
         }
 
         // 其余函数保持不变
@@ -1521,98 +1558,38 @@
             return `${size.toFixed(1)} ${units[unitIndex]}`;
         }
 
+        // 优化搜索和筛选
+        const debouncedFilter = debounce(() => {
+            requestAnimationFrame(filterModules);
+        }, 300);
+
         // 初始化
         document.addEventListener('DOMContentLoaded', async function() {
-            // 设置主题
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-bs-theme', savedTheme);
-                icon.className = savedTheme === 'dark' ? 'ri-moon-line' : 'ri-sun-line';
-            }
-
-            // 初始加载默认数据
-            try {
-                const modules = await fetchModules();
-                if (modules && modules.length > 0) {
-                    await renderModules(modules);
-                } else {
-                    document.getElementById('moduleList').innerHTML = `
-                        <div class="alert alert-warning" role="alert">
-                            <i class="ri-error-warning-line"></i>
-                            暂无模块数据
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                console.error('加载模块失败:', error);
-                document.getElementById('moduleList').innerHTML = `
-                    <div class="alert alert-danger" role="alert">
-                        <i class="ri-error-warning-line"></i>
-                        加载模块数据失败：${error.message}
-                    </div>
-                `;
-            }
-
-            // 搜索和筛选功能
-            const searchInput = document.getElementById('moduleSearch');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const sortOrder = document.getElementById('sortOrder');
-            const featureFilter = document.getElementById('featureFilter');
-
-            function filterModules() {
-                if (!window.currentModules || !Array.isArray(window.currentModules)) {
-                    return;
-                }
-
-                const searchTerm = searchInput.value.toLowerCase();
-                const category = categoryFilter.value;
-                const sort = sortOrder.value;
-                const feature = featureFilter.value;
-
-                let filtered = window.currentModules.filter(module => 
-                    (module.name.toLowerCase().includes(searchTerm) ||
-                    module.description.toLowerCase().includes(searchTerm) ||
-                    module.author.toLowerCase().includes(searchTerm)) &&
-                    (!category || module.categories?.includes(category)) &&
-                    (!feature || (module.features && module.features[feature]))
-                );
-
-                filtered.sort((a, b) => {
-                    switch(sort) {
-                        case 'update':
-                            return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
-                        case 'name':
-                            return a.name.localeCompare(b.name);
-                        case 'author':
-                            return a.author.localeCompare(b.author);
-                        default:
-                            return 0;
+            // 使用 requestIdleCallback 延迟非关键初始化
+            requestIdleCallback(async () => {
+                try {
+                    const modules = await fetchModules();
+                    if (modules?.length > 0) {
+                        await renderModules(modules);
+                    } else {
+                        showEmptyState();
                     }
-                });
+                } catch (error) {
+                    showErrorState(error);
+                }
+            });
 
-                renderModules(filtered);
-            }
+            // 事件监听使用事件委托优化
+            document.querySelector('.search-container').addEventListener('input', (e) => {
+                if (e.target.matches('#moduleSearch')) {
+                    debouncedFilter();
+                }
+            });
 
-            searchInput.addEventListener('input', filterModules);
-            categoryFilter.addEventListener('change', filterModules);
-            sortOrder.addEventListener('change', filterModules);
-            featureFilter.addEventListener('change', filterModules);
-
-            // 为所有下拉菜单项添加点击事件
-            document.querySelectorAll('.dropdown-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const value = this.dataset.value;
-                    const dropdownButton = this.closest('.input-group').querySelector('.btn');
-                    const select = this.closest('.input-group').querySelector('select');
-                    
-                    // 更新按钮文本
-                    dropdownButton.childNodes[0].textContent = this.textContent;
-                    
-                    // 更新 select 的值并触发 change 事件
-                    select.value = value;
-                    select.dispatchEvent(new Event('change'));
-                });
+            document.querySelector('.search-container').addEventListener('change', (e) => {
+                if (e.target.matches('select')) {
+                    debouncedFilter();
+                }
             });
         });
 
@@ -1622,6 +1599,263 @@
             const now = Math.floor(Date.now() / 1000);
             return (now - timestamp) > sixMonthsInSeconds;
         }
+
+        // 添加错误和空状态显示函数
+        function showEmptyState() {
+            const moduleList = document.getElementById('moduleList');
+            moduleList.innerHTML = `
+                <div class="alert alert-info fade show" role="alert">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="ri-inbox-line fs-4"></i>
+                        <div>
+                            <h4 class="alert-heading mb-1">暂无模块数据</h4>
+                            <p class="mb-0">目前还没有任何模块，请稍后再来查看。</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showErrorState(error) {
+            const moduleList = document.getElementById('moduleList');
+            moduleList.innerHTML = `
+                <div class="alert alert-danger fade show" role="alert">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="ri-error-warning-line fs-4"></i>
+                        <div>
+                            <h4 class="alert-heading mb-1">加载失败</h4>
+                            <p class="mb-0">加载模块数据时出现错误：${error.message}</p>
+                            <button class="btn btn-outline-danger btn-sm mt-2" onclick="retryLoading()">
+                                <i class="ri-refresh-line me-1"></i>重试
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 添加重试加载功能
+        async function retryLoading() {
+            try {
+                const modules = await fetchModules();
+                if (modules?.length > 0) {
+                    await renderModules(modules);
+                } else {
+                    showEmptyState();
+                }
+            } catch (error) {
+                showErrorState(error);
+            }
+        }
+
+        // 添加加载动画优化
+        function showLoading() {
+            const loading = document.querySelector('.loading');
+            loading.classList.add('active');
+            
+            // 添加加载提示
+            const moduleList = document.getElementById('moduleList');
+            moduleList.innerHTML = `
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p class="text-muted mb-0">正在加载模块数据...</p>
+                </div>
+            `;
+        }
+
+        // 优化主题切换
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            document.querySelector('#themeSwitch i').className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-bs-theme') === 'dark';
+            const newTheme = isDark ? 'light' : 'dark';
+            
+            html.setAttribute('data-bs-theme', newTheme);
+            document.querySelector('#themeSwitch i').className = isDark ? 'ri-moon-line' : 'ri-sun-line';
+            localStorage.setItem('theme', newTheme);
+            
+            // 添加主题切换动画
+            document.body.style.transition = 'background-color 0.3s ease';
+            requestAnimationFrame(() => {
+                document.body.style.transition = '';
+            });
+        }
+
+        // 优化搜索体验
+        function initializeSearch() {
+            const searchInput = document.getElementById('moduleSearch');
+            const clearButton = document.createElement('button');
+            clearButton.className = 'btn btn-link position-absolute end-0 top-50 translate-middle-y text-muted d-none';
+            clearButton.innerHTML = '<i class="ri-close-circle-line"></i>';
+            clearButton.style.zIndex = '5';
+            
+            searchInput.parentElement.style.position = 'relative';
+            searchInput.parentElement.appendChild(clearButton);
+            
+            searchInput.addEventListener('input', () => {
+                clearButton.classList.toggle('d-none', !searchInput.value);
+            });
+            
+            clearButton.addEventListener('click', () => {
+                searchInput.value = '';
+                searchInput.dispatchEvent(new Event('input'));
+                clearButton.classList.add('d-none');
+                searchInput.focus();
+            });
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initializeSearch();
+            
+            // 使用 requestIdleCallback 延迟加载非关键功能
+            requestIdleCallback(() => {
+                // 添加页面滚动进度指示器
+                const progressBar = document.createElement('div');
+                progressBar.className = 'scroll-progress';
+                document.body.appendChild(progressBar);
+                
+                window.addEventListener('scroll', () => {
+                    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    progressBar.style.width = `${scrolled}%`;
+                }, { passive: true });
+            });
+        });
+
+        // 优化图片加载
+        function initImageLoading() {
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.onerror = function() {
+                    this.classList.add('error');
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'36\' height=\'36\'%3E%3Cpath fill=\'%23ef4444\' d=\'M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-3a5 5 0 1 1 0-10 5 5 0 0 1 0 10z\'/%3E%3C/svg%3E';
+                };
+            }
+        }
+
+        // 优化分类和排序性能
+        function initFilterPerformance() {
+            const dropdownButtons = document.querySelectorAll('.btn-outline-secondary[data-bs-toggle="dropdown"]');
+            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+            
+            // 预先缓存下拉菜单选项
+            const dropdownCache = new Map();
+            
+            dropdownMenus.forEach(menu => {
+                const items = Array.from(menu.querySelectorAll('.dropdown-item'));
+                dropdownCache.set(menu, items);
+            });
+
+            // 优化下拉菜单点击事件
+            dropdownMenus.forEach(menu => {
+                menu.addEventListener('click', (e) => {
+                    if (e.target.matches('.dropdown-item')) {
+                        e.preventDefault();
+                        const button = menu.previousElementSibling;
+                        const select = menu.nextElementSibling;
+                        
+                        // 使用 requestAnimationFrame 优化视觉更新
+                        requestAnimationFrame(() => {
+                            button.childNodes[0].textContent = e.target.textContent;
+                            select.value = e.target.dataset.value;
+                            select.dispatchEvent(new Event('change'));
+                        });
+                    }
+                });
+            });
+
+            // 优化筛选逻辑
+            function filterModules() {
+                if (!window.currentModules || !Array.isArray(window.currentModules)) {
+                    return;
+                }
+
+                const searchInput = document.getElementById('moduleSearch');
+                const categoryFilter = document.getElementById('categoryFilter');
+                const sortOrder = document.getElementById('sortOrder');
+                const featureFilter = document.getElementById('featureFilter');
+
+                const searchTerm = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
+                const sort = sortOrder.value;
+                const feature = featureFilter.value;
+
+                // 使用 Web Worker 进行过滤和排序
+                if (window.Worker) {
+                    const filterWorker = new Worker('js/filter-worker.js');
+                    
+                    filterWorker.postMessage({
+                        modules: window.currentModules,
+                        searchTerm,
+                        category,
+                        sort,
+                        feature
+                    });
+
+                    filterWorker.onmessage = function(e) {
+                        renderModules(e.data);
+                    };
+                } else {
+                    // 降级处理
+                    let filtered = window.currentModules.filter(module => 
+                        (module.name.toLowerCase().includes(searchTerm) ||
+                        module.description.toLowerCase().includes(searchTerm) ||
+                        module.author.toLowerCase().includes(searchTerm)) &&
+                        (!category || module.categories?.includes(category)) &&
+                        (!feature || (module.features && module.features[feature]))
+                    );
+
+                    filtered.sort((a, b) => {
+                        switch(sort) {
+                            case 'update':
+                                return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
+                            case 'name':
+                                return a.name.localeCompare(b.name);
+                            case 'author':
+                                return a.author.localeCompare(b.author);
+                            default:
+                                return 0;
+                        }
+                    });
+
+                    renderModules(filtered);
+                }
+            }
+
+            window.filterModules = filterModules;
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initializeSearch();
+            initImageLoading();
+            initFilterPerformance();
+            
+            // 使用 requestIdleCallback 延迟加载非关键功能
+            requestIdleCallback(() => {
+                // 添加页面滚动进度指示器
+                const progressBar = document.createElement('div');
+                progressBar.className = 'scroll-progress';
+                document.body.appendChild(progressBar);
+                
+                window.addEventListener('scroll', () => {
+                    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    progressBar.style.width = `${scrolled}%`;
+                }, { passive: true });
+            });
+        });
     </script>
 </body>
 </html> 
