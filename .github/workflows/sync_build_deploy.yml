@@ -61,9 +61,9 @@ jobs:
         run: |
           if [ -f "sync_errors.txt" ]; then
             while IFS= read -r line; do
-              if [[ $line =~ \[(.*?)\].*MagiskModuleError ]]; then
-                # 提取模块ID
-                module_id="${BASH_REMATCH[1]}"
+              if [[ $line =~ \[([^]]+)\].*MagiskModuleError ]]; then
+                # 提取模块ID，移除时间戳
+                module_id=$(echo "${BASH_REMATCH[1]}" | grep -oE '[^0-9/: ]+$')
                 if [ ! -z "$module_id" ]; then
                   echo "Found error for module ID: $module_id"
                   python scripts/fix_module_update.py "modules/$module_id"
