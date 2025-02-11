@@ -374,6 +374,39 @@
             -webkit-backdrop-filter: var(--blur);
         }
 
+        /* 添加平板尺寸的媒体查询 */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .search-container {
+                grid-template-columns: minmax(200px, 2fr) repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .input-group:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .input-group:nth-child(2) {
+                grid-column: 1 / 2;
+            }
+
+            .input-group:nth-child(3) {
+                grid-column: 2 / 3;
+            }
+
+            .input-group:nth-child(4) {
+                grid-column: 3 / 4;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .search-container {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+                padding: 1.5rem;
+            }
+        }
+
         .input-group {
             position: relative;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1888,7 +1921,7 @@
 
     <main class="container">
         <section class="search-section">
-            <div class="search-container">
+            <div class="search-container container-fluid">
                 <div class="input-group">
                     <span class="input-group-text">
                         <i class="ri-search-line"></i>
