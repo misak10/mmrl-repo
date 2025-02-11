@@ -1638,16 +1638,24 @@
                     </button>
                     <ul class="dropdown-menu w-100">
                         <li><a class="dropdown-item" href="#" data-value="">全部分类</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="system">系统工具</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="security">安全增强</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="customize">个性化</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="System">系统工具</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Security">安全增强</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Network">网络工具</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Utility">实用工具</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Script">脚本工具</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Performance">性能优化</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Theme">主题美化</a></li>
                     </ul>
                     <select id="categoryFilter" class="form-select d-none">
-                    <option value="">全部分类</option>
-                    <option value="system">系统工具</option>
-                    <option value="security">安全增强</option>
-                    <option value="customize">个性化</option>
-                </select>
+                        <option value="">全部分类</option>
+                        <option value="System">系统工具</option>
+                        <option value="Security">安全增强</option>
+                        <option value="Network">网络工具</option>
+                        <option value="Utility">实用工具</option>
+                        <option value="Script">脚本工具</option>
+                        <option value="Performance">性能优化</option>
+                        <option value="Theme">主题美化</option>
+                    </select>
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -2234,27 +2242,34 @@
                     return;
                 }
 
-                const searchTerm = document.getElementById('moduleSearch').value.toLowerCase();
-                const category = document.getElementById('categoryFilter').value;
-                const sort = document.getElementById('sortOrder').value;
-                const feature = document.getElementById('featureFilter').value;
+                const searchTerm = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
+                const sort = sortOrder.value;
+                const feature = featureFilter.value;
 
                 let filtered = window.currentModules.filter(module => {
-                    const matchesSearch = module.name.toLowerCase().includes(searchTerm) ||
+                    // 搜索条件匹配
+                    const searchMatch = !searchTerm || 
+                        module.name.toLowerCase().includes(searchTerm) ||
                         module.description.toLowerCase().includes(searchTerm) ||
                         module.author.toLowerCase().includes(searchTerm);
-                        
-                    const matchesCategory = !category || (module.categories && module.categories.includes(category));
-                    const matchesFeature = !feature || (module.features && module.features[feature]);
-                    
-                    return matchesSearch && matchesCategory && matchesFeature;
+
+                    // 分类匹配 - 检查categories数组
+                    const categoryMatch = !category || 
+                        (module.categories && module.categories.includes(category));
+
+                    // 功能特性匹配
+                    const featureMatch = !feature || 
+                        (module.features && module.features[feature]);
+
+                    return searchMatch && categoryMatch && featureMatch;
                 });
 
-                // 排序处理
+                // 排序逻辑
                 filtered.sort((a, b) => {
                     switch(sort) {
                         case 'update':
-                            return (b.versions?.[0]?.timestamp || 0) - (a.versions?.[0]?.timestamp || 0);
+                            return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
                         case 'name':
                             return a.name.localeCompare(b.name, 'zh-CN');
                         case 'author':
