@@ -1,2 +1,0 @@
-[2025/02/11 15:51:03] Pull ERROR: _from_zip_common: [susfs4ksu] -> MagiskModuleError(susfs4ksu.zip is not a magisk module)
-[2025/02/11 15:51:03] Pull ERROR: _from_zip_common: [shamiko] -> MagiskModuleError(('That compression method is not supported',))
