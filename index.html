@@ -1681,15 +1681,25 @@
                     <ul class="dropdown-menu w-100">
                         <li><a class="dropdown-item" href="#" data-value="">全部功能</a></li>
                         <li><a class="dropdown-item" href="#" data-value="service">服务支持</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="post_fs_data">文件系统</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="action">操作支持</a></li>
                         <li><a class="dropdown-item" href="#" data-value="webroot">Web界面</a></li>
                         <li><a class="dropdown-item" href="#" data-value="sepolicy">SEPolicy</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="apks">APK支持</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="zygisk">Zygisk</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="resetprop">Resetprop</a></li>
                     </ul>
                     <select id="featureFilter" class="form-select d-none">
-                    <option value="">全部功能</option>
-                    <option value="service">服务支持</option>
-                    <option value="webroot">Web界面</option>
-                    <option value="sepolicy">SEPolicy</option>
-                </select>
+                        <option value="">全部功能</option>
+                        <option value="service">服务支持</option>
+                        <option value="post_fs_data">文件系统</option>
+                        <option value="action">操作支持</option>
+                        <option value="webroot">Web界面</option>
+                        <option value="sepolicy">SEPolicy</option>
+                        <option value="apks">APK支持</option>
+                        <option value="zygisk">Zygisk</option>
+                        <option value="resetprop">Resetprop</option>
+                    </select>
                 </div>
             </div>
         </section>
@@ -1882,7 +1892,7 @@
                         ${module.features.length > 0 ? `
                             <div class="module-features">
                                 ${module.features.map(feature => `
-                                    <span class="feature-tag">
+                                    <span class="feature-tag" onclick="handleFeatureTagClick('${feature.toLowerCase().replace(/\s+/g, '_')}')">
                                         <i class="ri-checkbox-circle-line"></i>
                                         ${feature}
                                     </span>
@@ -2242,6 +2252,11 @@
                     return;
                 }
 
+                const searchInput = document.getElementById('moduleSearch');
+                const categoryFilter = document.getElementById('categoryFilter');
+                const sortOrder = document.getElementById('sortOrder');
+                const featureFilter = document.getElementById('featureFilter');
+
                 const searchTerm = searchInput.value.toLowerCase();
                 const category = categoryFilter.value;
                 const sort = sortOrder.value;
@@ -2256,11 +2271,13 @@
 
                     // 分类匹配 - 检查categories数组
                     const categoryMatch = !category || 
-                        (module.categories && module.categories.includes(category));
+                        (module.categories && module.categories.some(cat => 
+                            cat.toLowerCase() === category.toLowerCase()
+                        ));
 
                     // 功能特性匹配
                     const featureMatch = !feature || 
-                        (module.features && module.features[feature]);
+                        (module.features && module.features[feature] === true);
 
                     return searchMatch && categoryMatch && featureMatch;
                 });
@@ -2388,6 +2405,26 @@
             // 初始化主题
             initTheme();
         });
+
+        // 添加功能标签点击筛选
+        function handleFeatureTagClick(feature) {
+            const featureFilter = document.getElementById('featureFilter');
+            const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
+            
+            // 更新下拉按钮文本和选择值
+            const featureOption = Array.from(featureFilter.options).find(option => option.value === feature);
+            if (featureOption) {
+                dropdownButton.childNodes[0].textContent = featureOption.textContent;
+                featureFilter.value = feature;
+                filterModules();
+                
+                // 滚动到顶部
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
     </script>
 </body>
 </html> 
