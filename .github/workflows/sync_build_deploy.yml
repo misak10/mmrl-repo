@@ -50,12 +50,27 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mmrl-util
+          pip install mmrl-util requests
 
       - name: Sync
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util sync --diff versions_diff.md
+          mmrl-util sync --diff versions_diff.md 2> sync_errors.txt || true
+
+      - name: Fix Module Errors
+        run: |
+          if [ -f "sync_errors.txt" ]; then
+            while IFS= read -r line; do
+              if [[ $line =~ MagiskModuleError.*not\ a\ magisk\ module ]]; then
+                # 提取模块名称
+                module_name=$(echo "$line" | grep -oP '(?<=MagiskModuleError\().*?(?=\.zip)')
+                if [ ! -z "$module_name" ]; then
+                  echo "Found error for module: $module_name"
+                  python scripts/fix_module_update.py "modules/$module_name"
+                fi
+              fi
+            done < "sync_errors.txt"
+          fi
 
       - name: Clean old versions
         run: |
