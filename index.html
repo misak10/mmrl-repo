@@ -1185,6 +1185,7 @@
 
         .module-outdated-badge i {
             font-size: 0.875rem;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
             color: white;
         }
 
@@ -1845,7 +1846,7 @@
                                 <i class="ri-flashlight-line"></i>
                                 New
                             </span>
-                        ` : module.isOutdated ? `
+                        ` : (Date.now() / 1000 - module.sortedVersions[0].timestamp) > 180 * 24 * 60 * 60 ? `
                             <span class="module-outdated-badge">
                                 <i class="ri-time-line"></i>
                                 长期未更新
@@ -1997,31 +1998,49 @@
 
         // 初始化
         document.addEventListener('DOMContentLoaded', async function() {
-            // 使用 requestIdleCallback 延迟非关键初始化
-            requestIdleCallback(async () => {
-                try {
-                    const modules = await fetchModules();
-                    if (modules?.length > 0) {
-                        await renderModules(modules);
-                    } else {
-                        showEmptyState();
-                    }
-                } catch (error) {
-                    showErrorState(error);
+            // 设置主题
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+                icon.className = savedTheme === 'dark' ? 'ri-moon-line' : 'ri-sun-line';
+            }
+
+            // 初始加载模块数据
+            try {
+                const modules = await fetchModules();
+                if (modules && modules.length > 0) {
+                    await renderModules(modules);
+                } else {
+                    showEmptyState();
                 }
+            } catch (error) {
+                showErrorState(error);
+            }
+
+            // 搜索输入事件
+            const searchInput = document.getElementById('moduleSearch');
+            searchInput.addEventListener('input', debounce(filterModules, 300));
+
+            // 下拉菜单点击事件
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const value = this.dataset.value;
+                    const dropdownButton = this.closest('.input-group').querySelector('.btn');
+                    const select = this.closest('.input-group').querySelector('select');
+                    
+                    // 更新按钮文本和select值
+                    dropdownButton.childNodes[0].textContent = this.textContent;
+                    select.value = value;
+                    
+                    // 触发过滤
+                    filterModules();
+                });
             });
 
-            // 事件监听使用事件委托优化
-            document.querySelector('.search-container').addEventListener('input', (e) => {
-                if (e.target.matches('#moduleSearch')) {
-                    debouncedFilter();
-                }
-            });
-
-            document.querySelector('.search-container').addEventListener('change', (e) => {
-                if (e.target.matches('select')) {
-                    debouncedFilter();
-                }
+            // Select 变化事件
+            document.querySelectorAll('select').forEach(select => {
+                select.addEventListener('change', filterModules);
             });
         });
 
@@ -2215,56 +2234,37 @@
                     return;
                 }
 
-                const searchInput = document.getElementById('moduleSearch');
-                const categoryFilter = document.getElementById('categoryFilter');
-                const sortOrder = document.getElementById('sortOrder');
-                const featureFilter = document.getElementById('featureFilter');
+                const searchTerm = document.getElementById('moduleSearch').value.toLowerCase();
+                const category = document.getElementById('categoryFilter').value;
+                const sort = document.getElementById('sortOrder').value;
+                const feature = document.getElementById('featureFilter').value;
 
-                const searchTerm = searchInput.value.toLowerCase();
-                const category = categoryFilter.value;
-                const sort = sortOrder.value;
-                const feature = featureFilter.value;
-
-                // 使用 Web Worker 进行过滤和排序
-                if (window.Worker) {
-                    const filterWorker = new Worker('js/filter-worker.js');
-                    
-                    filterWorker.postMessage({
-                        modules: window.currentModules,
-                        searchTerm,
-                        category,
-                        sort,
-                        feature
-                    });
-
-                    filterWorker.onmessage = function(e) {
-                        renderModules(e.data);
-                    };
-                } else {
-                    // 降级处理
-                    let filtered = window.currentModules.filter(module => 
-                        (module.name.toLowerCase().includes(searchTerm) ||
+                let filtered = window.currentModules.filter(module => {
+                    const matchesSearch = module.name.toLowerCase().includes(searchTerm) ||
                         module.description.toLowerCase().includes(searchTerm) ||
-                        module.author.toLowerCase().includes(searchTerm)) &&
-                        (!category || module.categories?.includes(category)) &&
-                        (!feature || (module.features && module.features[feature]))
-                    );
+                        module.author.toLowerCase().includes(searchTerm);
+                        
+                    const matchesCategory = !category || (module.categories && module.categories.includes(category));
+                    const matchesFeature = !feature || (module.features && module.features[feature]);
+                    
+                    return matchesSearch && matchesCategory && matchesFeature;
+                });
 
-                    filtered.sort((a, b) => {
-                        switch(sort) {
-                            case 'update':
-                                return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
-                            case 'name':
-                                return a.name.localeCompare(b.name);
-                            case 'author':
-                                return a.author.localeCompare(b.author);
-                            default:
-                                return 0;
-                        }
-                    });
+                // 排序处理
+                filtered.sort((a, b) => {
+                    switch(sort) {
+                        case 'update':
+                            return (b.versions?.[0]?.timestamp || 0) - (a.versions?.[0]?.timestamp || 0);
+                        case 'name':
+                            return a.name.localeCompare(b.name, 'zh-CN');
+                        case 'author':
+                            return a.author.localeCompare(b.author, 'zh-CN');
+                        default:
+                            return 0;
+                    }
+                });
 
-                    renderModules(filtered);
-                }
+                renderModules(filtered);
             }
 
             window.filterModules = filterModules;
