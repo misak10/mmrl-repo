@@ -362,7 +362,7 @@
 
         .search-container {
             display: grid;
-            grid-template-columns: minmax(200px, 2fr) repeat(3, minmax(120px, 1fr));
+            grid-template-columns: minmax(200px, 2fr) repeat(3, minmax(150px, 1fr));
             gap: 1.5rem;
             padding: 2rem;
             background: var(--card-bg);
@@ -1421,17 +1421,16 @@
 
         .action-group {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) auto auto;
+            grid-template-columns: 1fr auto auto;
             gap: 0.75rem;
             align-items: center;
-            width: 100%;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0 1.25rem;
+            padding: 0.625rem 1.25rem;
             font-weight: 500;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             border: none;
@@ -1441,39 +1440,11 @@
             color: var(--bg);
             text-decoration: none;
             box-shadow: var(--shadow);
-            height: 2.5rem;
-            justify-content: center;
-            min-width: 0;
-            width: 100%;
-            font-size: 0.875rem;
         }
 
         .btn-primary:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: var(--card-hover-shadow);
-        }
-
-        .btn-primary small {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            font-size: 0.875rem;
-            opacity: 0.85;
-            font-weight: normal;
-            border-left: 1px solid rgba(0, 0, 0, 0.1);
-            padding-left: 0.75rem;
-            margin-left: 0.75rem;
-            background: rgba(0, 0, 0, 0.1);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 2.5rem;
-        }
-
-        [data-bs-theme="dark"] .btn-primary small {
-            border-left-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .btn-icon {
@@ -1926,8 +1897,8 @@
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>分类</span>
-                        <i class="ri-arrow-down-s-line"></i>
+                        分类
+                        <i class="ri-arrow-down-s-line ms-2"></i>
                     </button>
                     <ul class="dropdown-menu w-100">
                         <li><a class="dropdown-item" href="#" data-value="">全部分类</a></li>
@@ -1939,22 +1910,37 @@
                         <li><a class="dropdown-item" href="#" data-value="Performance">性能优化</a></li>
                         <li><a class="dropdown-item" href="#" data-value="Theme">主题美化</a></li>
                     </ul>
+                    <select id="categoryFilter" class="form-select d-none">
+                        <option value="">全部分类</option>
+                        <option value="System">系统工具</option>
+                        <option value="Security">安全增强</option>
+                        <option value="Network">网络工具</option>
+                        <option value="Utility">实用工具</option>
+                        <option value="Script">脚本工具</option>
+                        <option value="Performance">性能优化</option>
+                        <option value="Theme">主题美化</option>
+                    </select>
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>排序</span>
-                        <i class="ri-arrow-down-s-line"></i>
+                        排序
+                        <i class="ri-arrow-down-s-line ms-2"></i>
                     </button>
                     <ul class="dropdown-menu w-100">
                         <li><a class="dropdown-item" href="#" data-value="update">按更新时间</a></li>
                         <li><a class="dropdown-item" href="#" data-value="name">按名称</a></li>
                         <li><a class="dropdown-item" href="#" data-value="author">按作者</a></li>
                     </ul>
+                    <select id="sortOrder" class="form-select d-none">
+                    <option value="update">按更新时间</option>
+                    <option value="name">按名称</option>
+                    <option value="author">按作者</option>
+                </select>
                 </div>
                 <div class="input-group">
                     <button class="btn btn-outline-secondary d-flex align-items-center justify-content-between w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>功能</span>
-                        <i class="ri-arrow-down-s-line"></i>
+                        功能
+                        <i class="ri-arrow-down-s-line ms-2"></i>
                     </button>
                     <ul class="dropdown-menu w-100">
                         <li><a class="dropdown-item" href="#" data-value="">全部功能</a></li>
@@ -1962,6 +1948,12 @@
                         <li><a class="dropdown-item" href="#" data-value="webroot">Web界面</a></li>
                         <li><a class="dropdown-item" href="#" data-value="apks">APK支持</a></li>
                     </ul>
+                    <select id="featureFilter" class="form-select d-none">
+                        <option value="">全部功能</option>
+                        <option value="action">操作支持</option>
+                        <option value="webroot">Web界面</option>
+                        <option value="apks">APK支持</option>
+                    </select>
                 </div>
             </div>
         </section>
@@ -1993,7 +1985,7 @@
                         Made with <i class="ri-heart-fill text-danger"></i> by Misaki
                     </div>
                     <div class="credit-line">
-                        Powered by <a href="https://github.com/Googlers-Repo">MMRL</a>
+                        Powered by <a href="https://github.com/MMRLApp/MMRL/releases/latest">MMRL</a>
                     </div>
                 </div>
             </div>
