@@ -59,7 +59,7 @@ jobs:
 
       - name: Clean old versions
         run: |
-          # 清理旧版本，只保留最新的两个版本
+          # 清理旧版本，只保留最新的三个版本
           for module_dir in modules/*/; do
             if [ -d "$module_dir" ]; then
               module_name=$(basename "$module_dir")
@@ -76,17 +76,18 @@ jobs:
                 # 获取版本总数
                 total_versions=$(wc -l < "$temp_file")
                 
-                if [ "$total_versions" -gt 2 ]; then
+                if [ "$total_versions" -gt 3 ]; then
                   echo "Found $total_versions versions for $module_name"
                   
                   # 获取要保留的版本
                   keep_v1=$(sed -n '1p' "$temp_file" | cut -d' ' -f2)
                   keep_v2=$(sed -n '2p' "$temp_file" | cut -d' ' -f2)
-                  echo "Keeping versions: $keep_v1, $keep_v2"
+                  keep_v3=$(sed -n '3p' "$temp_file" | cut -d' ' -f2)
+                  echo "Keeping versions: $keep_v1, $keep_v2, $keep_v3"
                   
                   # 获取要删除的版本
                   while read -r timestamp version; do
-                    if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ]; then
+                    if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ] && [ "$version" != "$keep_v3" ]; then
                       echo "Removing old version: $version"
                       
                       # 删除版本目录（如果存在）
@@ -136,7 +137,7 @@ jobs:
             🕒 Time: $current_time
             
             - Remove old module versions
-            - Keep latest two versions for each module
+            - Keep latest three versions for each module
             - Update update.json files"
             
             # 推送更改
