@@ -1603,6 +1603,38 @@
             transform: translateZ(0);
             backface-visibility: hidden;
         }
+
+        .dropdown-menu {
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+        }
+
+        .dropdown-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar-track {
+            background: var(--scroll-track);
+            border-radius: 3px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background-color: var(--scroll-thumb);
+            border-radius: 3px;
+        }
+
+        .dropdown-menu .dropdown-item {
+            padding: 0.625rem 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.85;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            opacity: 1;
+            transform: translateX(4px);
+        }
     </style>
 </head>
 <body>
@@ -2412,10 +2444,13 @@
             const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
             
             // 更新下拉按钮文本和选择值
-            const featureOption = Array.from(featureFilter.options).find(option => option.value === feature);
+            const featureOption = Array.from(featureFilter.options).find(option => 
+                option.value.toLowerCase() === feature.toLowerCase()
+            );
+            
             if (featureOption) {
                 dropdownButton.childNodes[0].textContent = featureOption.textContent;
-                featureFilter.value = feature;
+                featureFilter.value = featureOption.value;
                 filterModules();
                 
                 // 滚动到顶部
@@ -2425,6 +2460,46 @@
                 });
             }
         }
+
+        // 修改主题切换逻辑
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-bs-theme') === 'dark';
+            const newTheme = isDark ? 'light' : 'dark';
+            
+            // 添加过渡动画类
+            document.body.classList.add('theme-transition');
+            
+            // 设置新主题
+            html.setAttribute('data-bs-theme', newTheme);
+            icon.className = isDark ? 'ri-moon-line' : 'ri-sun-line';
+            localStorage.setItem('theme', newTheme);
+            
+            // 移除过渡动画类
+            setTimeout(() => {
+                document.body.classList.remove('theme-transition');
+            }, 300);
+
+            // 重新应用动画
+            const cards = document.querySelectorAll('.module-card');
+            cards.forEach(card => {
+                card.classList.remove('show');
+                void card.offsetWidth; // 触发重排
+                card.classList.add('show');
+            });
+        }
+
+        // 添加主题切换过渡样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .theme-transition * {
+                transition: background-color 0.3s ease, 
+                            border-color 0.3s ease, 
+                            color 0.3s ease, 
+                            box-shadow 0.3s ease !important;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html> 
