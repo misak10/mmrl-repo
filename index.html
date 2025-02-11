@@ -1914,7 +1914,7 @@
                         ${module.features.length > 0 ? `
                             <div class="module-features">
                                 ${module.features.map(feature => `
-                                    <span class="feature-tag" onclick="handleFeatureTagClick('${feature.toLowerCase().replace(/\s+/g, '_')}')">
+                                    <span class="feature-tag">
                                         <i class="ri-checkbox-circle-line"></i>
                                         ${feature}
                                     </span>
@@ -1992,7 +1992,6 @@
             observeModules();
         }
 
-        // 其余函数保持不变
         function getFeaturesList(features) {
             const featureNames = {
                 service: '服务',
@@ -2513,7 +2512,7 @@
                         cat.toLowerCase() === category.toLowerCase()
                     ));
 
-                // 功能特性匹配 - 只检查主要功能
+                // 功能特性匹配
                 const featureMatch = !feature || 
                     (module.features && module.features[feature] === true);
 
