@@ -1635,6 +1635,33 @@
             opacity: 1;
             transform: translateX(4px);
         }
+
+        .theme-transitioning * {
+            transition: var(--theme-transition) !important;
+        }
+
+        [data-bs-theme="dark"] .module-card,
+        [data-bs-theme="light"] .module-card {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        background-color 0.3s ease,
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease !important;
+        }
+
+        [data-bs-theme="dark"] .feature-tag,
+        [data-bs-theme="light"] .feature-tag {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
+
+        [data-bs-theme="dark"] .btn-primary,
+        [data-bs-theme="light"] .btn-primary {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
+
+        [data-bs-theme="dark"] .module-name,
+        [data-bs-theme="light"] .module-name {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
     </style>
 </head>
 <body>
@@ -2334,15 +2361,9 @@
             
             // 使用 requestAnimationFrame 延迟主题切换
             requestAnimationFrame(() => {
-                // 批量更新主题
                 html.setAttribute('data-bs-theme', newTheme);
                 icon.className = isDark ? 'ri-moon-line' : 'ri-sun-line';
                 localStorage.setItem('theme', newTheme);
-
-                // 使用 Web Worker 处理复杂计算
-                if (window.Worker && virtualList) {
-                    virtualList.updateTheme();
-                }
 
                 // 300ms 后移除过渡类
                 setTimeout(() => {
@@ -2357,25 +2378,10 @@
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const theme = savedTheme || (prefersDark ? 'dark' : 'light');
             
-            // 在文档加载完成前设置主题，避免闪烁
             document.documentElement.setAttribute('data-bs-theme', theme);
-            
-            // 使用 requestIdleCallback 延迟非关键操作
-            if (window.requestIdleCallback) {
-                requestIdleCallback(() => {
-                    const icon = document.querySelector('#themeSwitch i');
-                    if (icon) {
-                        icon.className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
-                    }
-                });
-            } else {
-                // 降级处理
-                setTimeout(() => {
-                    const icon = document.querySelector('#themeSwitch i');
-                    if (icon) {
-                        icon.className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
-                    }
-                }, 0);
+            const icon = document.querySelector('#themeSwitch i');
+            if (icon) {
+                icon.className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
             }
 
             // 监听系统主题变化
@@ -2384,9 +2390,6 @@
                 if (!localStorage.getItem('theme')) {
                     const newTheme = e.matches ? 'dark' : 'light';
                     document.documentElement.setAttribute('data-bs-theme', newTheme);
-                    if (virtualList) {
-                        virtualList.updateTheme();
-                    }
                 }
             });
         }
