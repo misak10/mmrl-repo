@@ -1712,25 +1712,15 @@
                     </button>
                     <ul class="dropdown-menu w-100">
                         <li><a class="dropdown-item" href="#" data-value="">全部功能</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="service">服务支持</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="post_fs_data">文件系统</a></li>
                         <li><a class="dropdown-item" href="#" data-value="action">操作支持</a></li>
                         <li><a class="dropdown-item" href="#" data-value="webroot">Web界面</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="sepolicy">SEPolicy</a></li>
                         <li><a class="dropdown-item" href="#" data-value="apks">APK支持</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="zygisk">Zygisk</a></li>
-                        <li><a class="dropdown-item" href="#" data-value="resetprop">Resetprop</a></li>
                     </ul>
                     <select id="featureFilter" class="form-select d-none">
                         <option value="">全部功能</option>
-                        <option value="service">服务支持</option>
-                        <option value="post_fs_data">文件系统</option>
                         <option value="action">操作支持</option>
                         <option value="webroot">Web界面</option>
-                        <option value="sepolicy">SEPolicy</option>
                         <option value="apks">APK支持</option>
-                        <option value="zygisk">Zygisk</option>
-                        <option value="resetprop">Resetprop</option>
                     </select>
                 </div>
             </div>
@@ -2438,55 +2428,113 @@
             initTheme();
         });
 
-        // 添加功能标签点击筛选
+        // 修改功能标签点击筛选逻辑
         function handleFeatureTagClick(feature) {
-            const featureFilter = document.getElementById('featureFilter');
-            const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
+            const featureMap = {
+                '服务': 'service',
+                '文件系统': 'post_fs_data',
+                '操作': 'action',
+                'Web界面': 'webroot',
+                'SEPolicy': 'sepolicy',
+                'APK支持': 'apks',
+                'Zygisk': 'zygisk',
+                'Resetprop': 'resetprop'
+            };
+
+            // 获取功能的实际值
+            const featureValue = featureMap[feature] || feature.toLowerCase();
             
-            // 更新下拉按钮文本和选择值
-            const featureOption = Array.from(featureFilter.options).find(option => 
-                option.value.toLowerCase() === feature.toLowerCase()
-            );
+            // 检查是否是主要功能之一
+            const mainFeatures = ['action', 'webroot', 'apks'];
             
-            if (featureOption) {
-                dropdownButton.childNodes[0].textContent = featureOption.textContent;
-                featureFilter.value = featureOption.value;
-                filterModules();
+            // 如果是主要功能，更新下拉菜单
+            if (mainFeatures.includes(featureValue)) {
+                const featureFilter = document.getElementById('featureFilter');
+                const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
+                const featureOption = Array.from(featureFilter.options).find(option => 
+                    option.value === featureValue
+                );
                 
-                // 滚动到顶部
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                if (featureOption) {
+                    dropdownButton.childNodes[0].textContent = featureOption.textContent;
+                    featureFilter.value = featureValue;
+                }
             }
+
+            // 直接根据功能值筛选
+            filterModulesByFeature(featureValue);
+            
+            // 平滑滚动到顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
-        // 修改主题切换逻辑
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-bs-theme') === 'dark';
-            const newTheme = isDark ? 'light' : 'dark';
-            
-            // 添加过渡动画类
-            document.body.classList.add('theme-transition');
-            
-            // 设置新主题
-            html.setAttribute('data-bs-theme', newTheme);
-            icon.className = isDark ? 'ri-moon-line' : 'ri-sun-line';
-            localStorage.setItem('theme', newTheme);
-            
-            // 移除过渡动画类
-            setTimeout(() => {
-                document.body.classList.remove('theme-transition');
-            }, 300);
+        // 添加新的功能筛选函数
+        function filterModulesByFeature(feature) {
+            if (!window.currentModules || !Array.isArray(window.currentModules)) {
+                return;
+            }
 
-            // 重新应用动画
-            const cards = document.querySelectorAll('.module-card');
-            cards.forEach(card => {
-                card.classList.remove('show');
-                void card.offsetWidth; // 触发重排
-                card.classList.add('show');
+            let filtered = window.currentModules.filter(module => 
+                module.features && module.features[feature] === true
+            );
+
+            renderModules(filtered);
+        }
+
+        // 修改主筛选函数
+        function filterModules() {
+            if (!window.currentModules || !Array.isArray(window.currentModules)) {
+                return;
+            }
+
+            const searchInput = document.getElementById('moduleSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortOrder = document.getElementById('sortOrder');
+            const featureFilter = document.getElementById('featureFilter');
+
+            const searchTerm = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const sort = sortOrder.value;
+            const feature = featureFilter.value;
+
+            let filtered = window.currentModules.filter(module => {
+                // 搜索条件匹配
+                const searchMatch = !searchTerm || 
+                    module.name.toLowerCase().includes(searchTerm) ||
+                    module.description.toLowerCase().includes(searchTerm) ||
+                    module.author.toLowerCase().includes(searchTerm);
+
+                // 分类匹配
+                const categoryMatch = !category || 
+                    (module.categories && module.categories.some(cat => 
+                        cat.toLowerCase() === category.toLowerCase()
+                    ));
+
+                // 功能特性匹配 - 只检查主要功能
+                const featureMatch = !feature || 
+                    (module.features && module.features[feature] === true);
+
+                return searchMatch && categoryMatch && featureMatch;
             });
+
+            // 排序逻辑
+            filtered.sort((a, b) => {
+                switch(sort) {
+                    case 'update':
+                        return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
+                    case 'name':
+                        return a.name.localeCompare(b.name, 'zh-CN');
+                    case 'author':
+                        return a.author.localeCompare(b.author, 'zh-CN');
+                    default:
+                        return 0;
+                }
+            });
+
+            renderModules(filtered);
         }
 
         // 添加主题切换过渡样式
