@@ -497,10 +497,6 @@
             transform: translateY(-10px) scale(0.98);
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             min-width: 100%;
-            max-height: 120px; /* 限制高度以显示3个选项 */
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: var(--scroll-thumb) var(--scroll-track);
         }
 
         .input-group:not(:first-child) .dropdown-menu.show {
@@ -510,10 +506,7 @@
         }
 
         .input-group .dropdown-item {
-            padding: 0.625rem 1rem;
-            height: 40px;
-            display: flex;
-            align-items: center;
+            padding: 0.75rem 1rem;
             margin: 0.125rem 0;
             border-radius: 0.75rem;
             color: var(--fg);
@@ -556,10 +549,7 @@
         }
 
         .input-group .dropdown-item {
-            padding: 0.625rem 1rem;
-            height: 40px;
-            display: flex;
-            align-items: center;
+            padding: 0.75rem 1rem;
             margin: 0.125rem 0;
             border-radius: 0.75rem;
             color: var(--fg);
@@ -1614,33 +1604,36 @@
             backface-visibility: hidden;
         }
 
-        .input-group .dropdown-menu::-webkit-scrollbar {
+        .dropdown-menu {
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+        }
+
+        .dropdown-menu::-webkit-scrollbar {
             width: 6px;
         }
 
-        .input-group .dropdown-menu::-webkit-scrollbar-track {
+        .dropdown-menu::-webkit-scrollbar-track {
             background: var(--scroll-track);
             border-radius: 3px;
         }
 
-        .input-group .dropdown-menu::-webkit-scrollbar-thumb {
-            background: var(--scroll-thumb);
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background-color: var(--scroll-thumb);
             border-radius: 3px;
         }
 
-        .input-group .dropdown-item {
+        .dropdown-menu .dropdown-item {
             padding: 0.625rem 1rem;
-            height: 40px;
-            display: flex;
-            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.85;
         }
 
-        [data-bs-theme="dark"] .dropdown-menu::-webkit-scrollbar-track {
-            background: var(--scroll-track);
-        }
-
-        [data-bs-theme="dark"] .dropdown-menu::-webkit-scrollbar-thumb {
-            background: var(--scroll-thumb);
+        .dropdown-menu .dropdown-item:hover {
+            opacity: 1;
+            transform: translateX(4px);
         }
     </style>
 </head>
@@ -1921,7 +1914,7 @@
                         ${module.features.length > 0 ? `
                             <div class="module-features">
                                 ${module.features.map(feature => `
-                                    <span class="feature-tag">
+                                    <span class="feature-tag" onclick="handleFeatureTagClick('${feature.toLowerCase().replace(/\s+/g, '_')}')">
                                         <i class="ri-checkbox-circle-line"></i>
                                         ${feature}
                                     </span>
@@ -1999,10 +1992,14 @@
             observeModules();
         }
 
+        // 其余函数保持不变
         function getFeaturesList(features) {
             const featureNames = {
+                service: '服务',
+                post_fs_data: '文件系统',
                 action: '操作',
                 webroot: 'Web界面',
+                sepolicy: 'SEPolicy',
                 apks: 'APK支持'
             };
             
@@ -2277,6 +2274,11 @@
                     return;
                 }
 
+                const searchInput = document.getElementById('moduleSearch');
+                const categoryFilter = document.getElementById('categoryFilter');
+                const sortOrder = document.getElementById('sortOrder');
+                const featureFilter = document.getElementById('featureFilter');
+
                 const searchTerm = searchInput.value.toLowerCase();
                 const category = categoryFilter.value;
                 const sort = sortOrder.value;
@@ -2291,11 +2293,13 @@
 
                     // 分类匹配 - 检查categories数组
                     const categoryMatch = !category || 
-                        (module.categories && module.categories.includes(category));
+                        (module.categories && module.categories.some(cat => 
+                            cat.toLowerCase() === category.toLowerCase()
+                        ));
 
                     // 功能特性匹配
                     const featureMatch = !feature || 
-                        (module.features && module.features[feature]);
+                        (module.features && module.features[feature] === true);
 
                     return searchMatch && categoryMatch && featureMatch;
                 });
@@ -2423,6 +2427,127 @@
             // 初始化主题
             initTheme();
         });
+
+        // 修改功能标签点击筛选逻辑
+        function handleFeatureTagClick(feature) {
+            const featureMap = {
+                '服务': 'service',
+                '文件系统': 'post_fs_data',
+                '操作': 'action',
+                'Web界面': 'webroot',
+                'SEPolicy': 'sepolicy',
+                'APK支持': 'apks',
+                'Zygisk': 'zygisk',
+                'Resetprop': 'resetprop'
+            };
+
+            // 获取功能的实际值
+            const featureValue = featureMap[feature] || feature.toLowerCase();
+            
+            // 检查是否是主要功能之一
+            const mainFeatures = ['action', 'webroot', 'apks'];
+            
+            // 如果是主要功能，更新下拉菜单
+            if (mainFeatures.includes(featureValue)) {
+                const featureFilter = document.getElementById('featureFilter');
+                const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
+                const featureOption = Array.from(featureFilter.options).find(option => 
+                    option.value === featureValue
+                );
+                
+                if (featureOption) {
+                    dropdownButton.childNodes[0].textContent = featureOption.textContent;
+                    featureFilter.value = featureValue;
+                }
+            }
+
+            // 直接根据功能值筛选
+            filterModulesByFeature(featureValue);
+            
+            // 平滑滚动到顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // 添加新的功能筛选函数
+        function filterModulesByFeature(feature) {
+            if (!window.currentModules || !Array.isArray(window.currentModules)) {
+                return;
+            }
+
+            let filtered = window.currentModules.filter(module => 
+                module.features && module.features[feature] === true
+            );
+
+            renderModules(filtered);
+        }
+
+        // 修改主筛选函数
+        function filterModules() {
+            if (!window.currentModules || !Array.isArray(window.currentModules)) {
+                return;
+            }
+
+            const searchInput = document.getElementById('moduleSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortOrder = document.getElementById('sortOrder');
+            const featureFilter = document.getElementById('featureFilter');
+
+            const searchTerm = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const sort = sortOrder.value;
+            const feature = featureFilter.value;
+
+            let filtered = window.currentModules.filter(module => {
+                // 搜索条件匹配
+                const searchMatch = !searchTerm || 
+                    module.name.toLowerCase().includes(searchTerm) ||
+                    module.description.toLowerCase().includes(searchTerm) ||
+                    module.author.toLowerCase().includes(searchTerm);
+
+                // 分类匹配
+                const categoryMatch = !category || 
+                    (module.categories && module.categories.some(cat => 
+                        cat.toLowerCase() === category.toLowerCase()
+                    ));
+
+                // 功能特性匹配 - 只检查主要功能
+                const featureMatch = !feature || 
+                    (module.features && module.features[feature] === true);
+
+                return searchMatch && categoryMatch && featureMatch;
+            });
+
+            // 排序逻辑
+            filtered.sort((a, b) => {
+                switch(sort) {
+                    case 'update':
+                        return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
+                    case 'name':
+                        return a.name.localeCompare(b.name, 'zh-CN');
+                    case 'author':
+                        return a.author.localeCompare(b.author, 'zh-CN');
+                    default:
+                        return 0;
+                }
+            });
+
+            renderModules(filtered);
+        }
+
+        // 添加主题切换过渡样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .theme-transition * {
+                transition: background-color 0.3s ease, 
+                            border-color 0.3s ease, 
+                            color 0.3s ease, 
+                            box-shadow 0.3s ease !important;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html> 
