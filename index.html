@@ -2000,7 +2000,9 @@
                 action: '操作',
                 webroot: 'Web界面',
                 sepolicy: 'SEPolicy',
-                apks: 'APK支持'
+                apks: 'APK支持',
+                zygisk: 'Zygisk',
+                resetprop: 'Resetprop'
             };
             
             return Object.entries(features || {})
@@ -2430,39 +2432,19 @@
 
         // 修改功能标签点击筛选逻辑
         function handleFeatureTagClick(feature) {
-            const featureMap = {
-                '服务': 'service',
-                '文件系统': 'post_fs_data',
-                '操作': 'action',
-                'Web界面': 'webroot',
-                'SEPolicy': 'sepolicy',
-                'APK支持': 'apks',
-                'Zygisk': 'zygisk',
-                'Resetprop': 'resetprop'
-            };
-
-            // 获取功能的实际值
-            const featureValue = featureMap[feature] || feature.toLowerCase();
+            // 直接使用功能值进行筛选
+            const featureFilter = document.getElementById('featureFilter');
+            const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
             
-            // 检查是否是主要功能之一
-            const mainFeatures = ['action', 'webroot', 'apks'];
-            
-            // 如果是主要功能，更新下拉菜单
-            if (mainFeatures.includes(featureValue)) {
-                const featureFilter = document.getElementById('featureFilter');
-                const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
-                const featureOption = Array.from(featureFilter.options).find(option => 
-                    option.value === featureValue
-                );
-                
-                if (featureOption) {
-                    dropdownButton.childNodes[0].textContent = featureOption.textContent;
-                    featureFilter.value = featureValue;
-                }
+            // 更新下拉菜单选择
+            featureFilter.value = feature;
+            const selectedOption = Array.from(featureFilter.options).find(option => option.value === feature);
+            if (selectedOption) {
+                dropdownButton.childNodes[0].textContent = selectedOption.textContent;
             }
 
-            // 直接根据功能值筛选
-            filterModulesByFeature(featureValue);
+            // 触发筛选
+            filterModules();
             
             // 平滑滚动到顶部
             window.scrollTo({
@@ -2471,17 +2453,21 @@
             });
         }
 
-        // 添加新的功能筛选函数
-        function filterModulesByFeature(feature) {
-            if (!window.currentModules || !Array.isArray(window.currentModules)) {
-                return;
-            }
-
-            let filtered = window.currentModules.filter(module => 
-                module.features && module.features[feature] === true
-            );
-
-            renderModules(filtered);
+        // 修改功能列表获取函数
+        function getFeaturesList(features) {
+            if (!features) return [];
+            
+            const featureList = [];
+            if (features.service) featureList.push('服务');
+            if (features.post_fs_data) featureList.push('文件系统');
+            if (features.action) featureList.push('操作支持');
+            if (features.webroot) featureList.push('Web界面');
+            if (features.sepolicy) featureList.push('SEPolicy');
+            if (features.apks) featureList.push('APK支持');
+            if (features.zygisk) featureList.push('Zygisk');
+            if (features.resetprop) featureList.push('Resetprop');
+            
+            return featureList;
         }
 
         // 修改主筛选函数
@@ -2513,7 +2499,7 @@
                         cat.toLowerCase() === category.toLowerCase()
                     ));
 
-                // 功能特性匹配 - 只检查主要功能
+                // 功能特性匹配
                 const featureMatch = !feature || 
                     (module.features && module.features[feature] === true);
 
