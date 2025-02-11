@@ -189,6 +189,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/ZG089/Re-Malwack",
+            "module_id": "re-malwack",
+            "update_to": "https://raw.githubusercontent.com/ZG089/Re-Malwack/refs/heads/main/update.json",
+            "source": "https://github.com/ZG089/Re-Malwack",
+            "support": "https://github.com/ZG089/Re-Malwack/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
