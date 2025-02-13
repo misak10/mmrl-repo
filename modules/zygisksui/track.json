@@ -12,8 +12,8 @@
         "Utility",
         "Debug",
         "Script",
-        "Network",
-        "Theme"
+        "Theme",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md"
 }
