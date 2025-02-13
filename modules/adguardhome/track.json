@@ -8,6 +8,9 @@
     "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
     "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
     "donate": "",
-    "categories": [],
+    "categories": [
+        "Utility",
+        "Script"
+    ],
     "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md"
 }
