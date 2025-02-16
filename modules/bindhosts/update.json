@@ -3,14 +3,6 @@
   "timestamp": 1737724663.0,
   "versions": [
     {
-      "timestamp": 1738935116.0,
-      "version": "v1.9.4",
-      "versionCode": 194,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.4_194.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.4_194.md",
-      "size": 47588
-    },
-    {
       "timestamp": 1738982697.0,
       "version": "v1.9.5",
       "versionCode": 195,
@@ -25,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.6_196.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.6_196.md",
       "size": 51570
+    },
+    {
+      "timestamp": 1739706919.0,
+      "version": "v1.9.7",
+      "versionCode": 197,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.7_197.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.7_197.md",
+      "size": 51599
     }
   ]
 }
