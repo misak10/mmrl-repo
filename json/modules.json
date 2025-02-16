@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1739722504.886865
+    "timestamp": 1739736850.762277
   },
   "modules": [
     {
@@ -31,7 +31,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/wuhgit/CustomPinyinDictionary",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/track.json"
       },
       "versions": [
         {
@@ -52,10 +53,10 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Network",
-        "Theme",
         "Script",
-        "Font"
+        "Theme",
+        "Font",
+        "Network"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -74,7 +75,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/chiteroman/PlayIntegrityFix",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/track.json"
       },
       "versions": [
         {
@@ -128,7 +130,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/ZG089/Re-Malwack",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/re-malwack/track.json"
       },
       "versions": [
         {
@@ -149,11 +152,11 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "Network",
-        "System",
-        "Script",
         "Utility",
-        "Theme"
+        "Script",
+        "Network",
+        "Theme",
+        "System"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -170,7 +173,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/track.json"
       },
       "versions": [
         {
@@ -191,11 +195,11 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Network",
-        "Security",
         "Performance",
+        "Utility",
         "Script",
-        "Utility"
+        "Network",
+        "Security"
       ],
       "verified": false,
       "added": 0,
@@ -210,7 +214,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/track.json"
       },
       "versions": [
         {
@@ -247,8 +252,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -265,7 +270,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/snake-4/Zygisk-Assistant",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/track.json"
       },
       "versions": [
         {
@@ -287,9 +293,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Network",
         "Script",
-        "Utility"
+        "Utility",
+        "Network"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -307,7 +313,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/abootloop/track.json"
       },
       "versions": [
         {
@@ -345,7 +352,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/adguardhome/track.json"
       },
       "versions": [
         {
@@ -380,7 +388,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/nakixii/Magisk_AsoulOpt",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/asoulopt/track.json"
       },
       "versions": [
         {
@@ -435,7 +444,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/bindhosts/bindhosts",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/bindhosts/track.json"
       },
       "versions": [
         {
@@ -489,7 +499,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/taamarin/box_for_magisk",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/track.json"
       },
       "versions": [
         {
@@ -510,10 +521,10 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "Gaming",
-        "System",
         "Script",
-        "Utility"
+        "Utility",
+        "System",
+        "Gaming"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -529,7 +540,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/shadow3aaa/fas-rs",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/fas-rs/track.json"
       },
       "versions": [
         {
@@ -558,15 +570,15 @@
       "author": "@coolapk 10007",
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27850 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
-        "Network",
-        "System",
-        "Security",
         "Performance",
         "Audio",
         "Debug",
-        "Script",
         "Utility",
-        "Theme"
+        "Script",
+        "Network",
+        "Security",
+        "Theme",
+        "System"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -584,9 +596,10 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "ads",
-          "tracking"
-        ]
+          "tracking",
+          "ads"
+        ],
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/track.json"
       },
       "versions": [
         {
@@ -615,11 +628,11 @@
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
+        "Debug",
+        "Utility",
+        "Script",
         "Network",
         "Security",
-        "Debug",
-        "Script",
-        "Utility",
         "Theme",
         "Font"
       ],
@@ -636,7 +649,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/MoGuangYu/Surfing",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/surfing/track.json"
       },
       "versions": [
         {
@@ -673,8 +687,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -691,7 +705,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/5ec1cff/TrickyStore",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/trickystore/track.json"
       },
       "versions": [
         {
@@ -720,9 +735,9 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Network",
+        "Script",
         "Debug",
-        "Script"
+        "Network"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -738,7 +753,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/gloeyisk/universal-gms-doze",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/universal-gms-doze/track.json"
       },
       "versions": [
         {
@@ -759,10 +775,10 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Network",
         "Script",
         "Zygisk",
-        "Utility"
+        "Utility",
+        "Network"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -779,7 +795,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/Dr-TSNG/ZygiskNext",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/zygisknext/track.json"
       },
       "versions": [
         {
@@ -800,10 +817,10 @@
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
-        "Network",
         "Debug",
-        "Script",
         "Utility",
+        "Script",
+        "Network",
         "Theme"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
@@ -821,7 +838,8 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/RikkaApps/Sui",
-        "antifeatures": null
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/zygisksui/track.json"
       },
       "versions": [
         {
