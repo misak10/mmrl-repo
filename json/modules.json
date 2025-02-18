@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1739866728.735541
+    "timestamp": 1739881669.54326
   },
   "modules": [
     {
@@ -53,10 +53,10 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Theme",
-        "Script",
+        "Font",
         "Network",
-        "Font"
+        "Script",
+        "Theme"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -152,11 +152,11 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff0c\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fWelcome to use Uperf Game Turbo. If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "Utility",
-        "Theme",
-        "Script",
         "System",
-        "Network"
+        "Network",
+        "Utility",
+        "Script",
+        "Theme"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -195,10 +195,10 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Performance",
-        "Utility",
-        "Script",
         "Network",
+        "Utility",
+        "Performance",
+        "Script",
         "Security"
       ],
       "verified": false,
@@ -252,8 +252,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -293,9 +293,9 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
+        "Network",
         "Utility",
-        "Script",
-        "Network"
+        "Script"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
@@ -521,10 +521,10 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "Utility",
+        "System",
         "Gaming",
-        "Script",
-        "System"
+        "Utility",
+        "Script"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -578,14 +578,14 @@
       "author": "@coolapk 10007",
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27850 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
-        "Performance",
-        "Debug",
-        "Utility",
-        "Theme",
-        "Script",
         "System",
+        "Debug",
         "Network",
+        "Utility",
+        "Performance",
         "Audio",
+        "Script",
+        "Theme",
         "Security"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
@@ -686,8 +686,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -734,9 +734,9 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
+        "Network",
         "Debug",
-        "Script",
-        "Network"
+        "Script"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -774,9 +774,9 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
+        "Network",
         "Utility",
         "Zygisk",
-        "Network",
         "Script"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
@@ -817,10 +817,10 @@
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
         "Debug",
+        "Network",
         "Utility",
-        "Theme",
         "Script",
-        "Network"
+        "Theme"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
