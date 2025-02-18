@@ -11,9 +11,9 @@
     "categories": [
         "Network",
         "Utility",
-        "Performance",
         "Script",
-        "Security"
+        "Security",
+        "Performance"
     ],
     "readme": ""
 }

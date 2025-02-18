@@ -8,6 +8,14 @@
     "source": "https://github.com/MoGuangYu/Surfing",
     "support": "https://github.com/MoGuangYu/Surfing/issues",
     "donate": "",
-    "categories": [],
+    "categories": [
+        "Network",
+        "Font",
+        "Utility",
+        "Debug",
+        "Script",
+        "Security",
+        "Theme"
+    ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md"
 }
