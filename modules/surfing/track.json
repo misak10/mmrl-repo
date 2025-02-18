@@ -1,21 +1,21 @@
 {
-    "id": "surfing",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/Surfing.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/MoGuangYu/Surfing",
-    "support": "https://github.com/MoGuangYu/Surfing/issues",
-    "donate": "",
-    "categories": [
-        "Network",
-        "Theme",
-        "Utility",
-        "Font",
-        "Security",
-        "Debug",
-        "Script"
-    ],
-    "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md"
+  "id": "surfing",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/Surfing.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/MoGuangYu/Surfing",
+  "support": "https://github.com/MoGuangYu/Surfing/issues",
+  "categories": [
+    "Network",
+    "Theme",
+    "Utility",
+    "Font",
+    "Security",
+    "Debug",
+    "Script"
+  ],
+  "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
+  "last_update": 1739838743.0,
+  "versions": 4
 }
