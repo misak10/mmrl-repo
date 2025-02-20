@@ -5,13 +5,22 @@ import asyncio
 import os
 import sys
 from typing import Dict, List, Optional
+from pathlib import Path
 
 # 从环境变量获取配置
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 TELEGRAM_TOPIC_ID = os.getenv('TELEGRAM_TOPIC_ID')
 
-# 验证必要的环境变量
+# 获取脚本所在目录
+SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
+REPO_ROOT = SCRIPT_DIR.parent
+
+def get_json_path(filename: str) -> Path:
+    """获取JSON文件的完整路径"""
+    json_dir = REPO_ROOT / 'json'
+    return json_dir / filename
+
 def validate_env():
     missing_vars = []
     if not TELEGRAM_BOT_TOKEN:
@@ -33,11 +42,27 @@ def validate_env():
 def load_json_file(file_path: str, default: Dict = None) -> Dict:
     """安全地加载 JSON 文件"""
     try:
-        if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as f:
+        # 转换为Path对象并解析完整路径
+        full_path = get_json_path(os.path.basename(file_path))
+        print(f"正在加载文件: {full_path}")
+        
+        if full_path.exists():
+            with open(full_path, 'r', encoding='utf-8') as f:
                 content = f.read().strip()
                 if content:
-                    return json.load(f)
+                    try:
+                        return json.loads(content)
+                    except json.JSONDecodeError as e:
+                        print(f"JSON解析错误 ({full_path}): {e}")
+                        print(f"文件内容: {content[:100]}...")
+                else:
+                    print(f"警告: 文件为空 ({full_path})")
+        else:
+            print(f"警告: 文件不存在 ({full_path})")
+            # 如果文件不存在，创建包含默认内容的文件
+            if default is not None:
+                save_json_file(file_path, default)
+                return default
     except Exception as e:
         print(f"加载文件 {file_path} 时出错: {e}")
     return default if default is not None else {}
@@ -45,9 +70,16 @@ def load_json_file(file_path: str, default: Dict = None) -> Dict:
 def save_json_file(file_path: str, data: Dict) -> None:
     """安全地保存 JSON 文件"""
     try:
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        with open(file_path, 'w', encoding='utf-8') as f:
+        # 转换为Path对象并解析完整路径
+        full_path = get_json_path(os.path.basename(file_path))
+        print(f"正在保存文件: {full_path}")
+        
+        # 确保目录存在
+        full_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        with open(full_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"文件保存成功: {full_path}")
     except Exception as e:
         print(f"保存文件 {file_path} 时出错: {e}")
 
@@ -141,8 +173,8 @@ def check_for_module_updates() -> bool:
         validate_env()
 
         has_updates = False
-        main_data = load_json_file('json/modules.json', {"modules": []})
-        last_versions = load_json_file('json/last_versions.json', {})
+        main_data = load_json_file('modules.json', {"modules": []})
+        last_versions = load_json_file('last_versions.json', {})
 
         for module in main_data.get("modules", []):
             id = module.get("id")
@@ -235,7 +267,7 @@ def check_for_module_updates() -> bool:
                     print(f"发送通知失败 (模块 {id}): {e}")
                     continue
 
-        save_json_file('json/last_versions.json', last_versions)
+        save_json_file('last_versions.json', last_versions)
         return has_updates
 
     except Exception as e:
