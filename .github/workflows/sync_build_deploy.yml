@@ -31,11 +31,14 @@ env:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    outputs:
+      has_updates: ${{ steps.check_version_updates.outputs.has_updates }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
+          fetch-depth: 0
 
       - name: Set up Git
         run: |
@@ -52,10 +55,54 @@ jobs:
           python -m pip install --upgrade pip
           pip install mmrl-util
 
-      - name: Sync
+      - name: Sync and Check Updates
         if: ${{ env.IS_SYNC == 'true' }}
+        id: check_updates
         run: |
           mmrl-util sync --diff versions_diff.md
+
+      - name: Check Version Updates
+        id: check_version_updates
+        run: |
+          # 如果last_versions.json不存在，创建一个空文件
+          if [ ! -f "json/last_versions.json" ]; then
+            echo "{}" > json/last_versions.json
+          fi
+          
+          # 使用Python脚本检查版本更新
+          python - <<EOF
+          import json
+          import os
+          
+          def load_json(file_path, default=None):
+              try:
+                  if os.path.exists(file_path):
+                      with open(file_path, 'r', encoding='utf-8') as f:
+                          return json.load(f)
+              except Exception as e:
+                  print(f"Error loading {file_path}: {e}")
+              return default if default is not None else {}
+          
+          # 加载文件
+          modules = load_json('json/modules.json', {'modules': []})
+          last_versions = load_json('json/last_versions.json', {})
+          
+          # 检查更新
+          has_updates = False
+          for module in modules.get('modules', []):
+              module_id = module.get('id')
+              version_code = module.get('versionCode')
+              
+              if module_id and version_code:
+                  if module_id not in last_versions or last_versions[module_id] != version_code:
+                      has_updates = True
+                      break
+          
+          # 输出结果
+          print(f"has_updates={'true' if has_updates else 'false'}")
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"has_updates={'true' if has_updates else 'false'}\n")
+          EOF
 
       - name: Clean old versions
         run: |
@@ -181,7 +228,7 @@ jobs:
         with:
           name: logs
           path: log/*.log
-  
+
   build:
     runs-on: ubuntu-latest
     needs: sync
@@ -203,12 +250,18 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
+  notify:
+    needs: [sync, build]
+    if: ${{ needs.sync.outputs.has_updates == 'true' }}
+    uses: ./.github/workflows/telegram_updates.yml
+    secrets: inherit
+
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, notify]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
