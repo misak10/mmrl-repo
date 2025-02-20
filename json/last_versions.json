@@ -1,1 +1,20 @@
-{}
+{
+  "CustomPinyinDictionary": 20250101,
+  "PlayIntegrityFix": 18500,
+  "Re-Malwack": 530,
+  "Uperf-Game-Turbo": 250117,
+  "VoyagerKernel": 351,
+  "Zygisk-Assistant": 213,
+  "abootloop": 6,
+  "adguardhome": 29,
+  "asoulopt": 273,
+  "bindhosts": 197,
+  "box_for_magisk": 20241222,
+  "fas-rs": 460,
+  "lingeringsound_ads": 241,
+  "surfing": 1601,
+  "trickystore": 158,
+  "universal-gms-doze": 192,
+  "zygisknext": 497,
+  "zygisksui": 319
+}
