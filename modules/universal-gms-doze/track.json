@@ -10,8 +10,8 @@
     "donate": "",
     "categories": [
         "Script",
-        "Network",
-        "Debug"
+        "Debug",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md"
 }
