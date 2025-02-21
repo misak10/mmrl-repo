@@ -39,13 +39,14 @@ jobs:
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Git
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          # 设置git pull策略
           git config pull.rebase true
+          git remote update origin --prune
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -57,6 +58,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install mmrl-util
 
+      - name: Sync Repository
+        run: |
+          # 确保我们在正确的分支上并且是最新的
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+
       - name: Sync and Check Updates
         if: ${{ env.IS_SYNC == 'true' }}
         id: check_updates
@@ -66,12 +74,10 @@ jobs:
       - name: Check Version Updates
         id: check_version_updates
         run: |
-          # 如果last_versions.json不存在，创建一个空文件
           if [ ! -f "json/last_versions.json" ]; then
             echo "{}" > json/last_versions.json
           fi
           
-          # 使用Python脚本检查版本更新
           python - <<EOF
           import json
           import os
@@ -85,11 +91,9 @@ jobs:
                   print(f"Error loading {file_path}: {e}")
               return default if default is not None else {}
           
-          # 加载文件
           modules = load_json('json/modules.json', {'modules': []})
           last_versions = load_json('json/last_versions.json', {})
           
-          # 检查更新
           has_updates = False
           for module in modules.get('modules', []):
               module_id = module.get('id')
@@ -100,7 +104,6 @@ jobs:
                       has_updates = True
                       break
           
-          # 输出结果
           print(f"has_updates={'true' if has_updates else 'false'}")
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write(f"has_updates={'true' if has_updates else 'false'}\n")
@@ -108,56 +111,44 @@ jobs:
 
       - name: Clean old versions
         run: |
-          # 清理旧版本，只保留最新的三个版本
           for module_dir in modules/*/; do
             if [ -d "$module_dir" ]; then
               module_name=$(basename "$module_dir")
               echo "Processing module: $module_name"
               
-              # 从 update.json 读取版本历史
               if [ -f "${module_dir}update.json" ]; then
-                # 创建临时文件存储版本信息
                 temp_file=$(mktemp)
                 
-                # 提取版本信息到临时文件并按时间戳排序
                 jq -r '.versions | sort_by(.timestamp) | reverse | .[] | "\(.timestamp) \(.version)"' "${module_dir}update.json" > "$temp_file"
                 
-                # 获取版本总数
                 total_versions=$(wc -l < "$temp_file")
                 
                 if [ "$total_versions" -gt 3 ]; then
                   echo "Found $total_versions versions for $module_name"
                   
-                  # 获取要保留的版本
                   keep_v1=$(sed -n '1p' "$temp_file" | cut -d' ' -f2)
                   keep_v2=$(sed -n '2p' "$temp_file" | cut -d' ' -f2)
                   keep_v3=$(sed -n '3p' "$temp_file" | cut -d' ' -f2)
                   echo "Keeping versions: $keep_v1, $keep_v2, $keep_v3"
                   
-                  # 获取要删除的版本
                   while read -r timestamp version; do
                     if [ "$version" != "$keep_v1" ] && [ "$version" != "$keep_v2" ] && [ "$version" != "$keep_v3" ]; then
                       echo "Removing old version: $version"
                       
-                      # 删除版本目录（如果存在）
                       if [ -d "${module_dir}${version}" ]; then
                         rm -rf "${module_dir}${version}"
                         git add -u "${module_dir}${version}" || true
                       fi
                       
-                      # 删除 zip 和 md 文件（尝试所有可能的格式）
                       if [[ "$version" == v* ]]; then
-                        # 如果版本号带v前缀
                         pure_version="${version#v}"
                         [ -f "${module_dir}${pure_version}.zip" ] && rm -f "${module_dir}${pure_version}.zip" && git add -u "${module_dir}${pure_version}.zip" || true
                         [ -f "${module_dir}${pure_version}.md" ] && rm -f "${module_dir}${pure_version}.md" && git add -u "${module_dir}${pure_version}.md" || true
                       else
-                        # 如果版本号不带v前缀
                         [ -f "${module_dir}${version}.zip" ] && rm -f "${module_dir}${version}.zip" && git add -u "${module_dir}${version}.zip" || true
                         [ -f "${module_dir}${version}.md" ] && rm -f "${module_dir}${version}.md" && git add -u "${module_dir}${version}.md" || true
                       fi
                       
-                      # 从 update.json 中移除旧版本
                       jq --arg ver "$version" '.versions |= map(select(.version != $ver))' "${module_dir}update.json" > "${module_dir}update.json.tmp"
                       mv "${module_dir}update.json.tmp" "${module_dir}update.json"
                       git add "${module_dir}update.json"
@@ -167,7 +158,6 @@ jobs:
                   echo "No old versions to clean for $module_name (found $total_versions versions)"
                 fi
                 
-                # 清理临时文件
                 rm -f "$temp_file"
               else
                 echo "Warning: update.json not found for $module_name"
@@ -175,7 +165,6 @@ jobs:
             fi
           done
           
-          # 提交更改
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
@@ -189,7 +178,6 @@ jobs:
             - Keep latest three versions for each module
             - Update update.json files"
             
-            # 推送更改前先同步
             git pull origin main || {
               echo "Failed to pull changes"
               exit 1
@@ -225,11 +213,15 @@ jobs:
           mmrl-util index --push
           
           if ! git diff --quiet || ! git diff --staged --quiet; then
-            # 先同步远程更改
-            git pull origin main || {
-              echo "Failed to pull changes"
-              exit 1
-            }
+            git fetch origin main
+            
+            git stash
+            
+            git reset --hard origin/main
+            
+            git stash pop
+            
+            git add -A
             
             git commit -m "chore(sync): Update repository data
 
@@ -240,10 +232,23 @@ jobs:
             - Update module index
             - Generate static pages"
             
-            # 添加重试逻辑
-            git push origin main || {
-              echo "Failed to push changes, retrying after pull"
-              git pull origin main --rebase
+            git push --force-with-lease origin main || {
+              git fetch origin main
+              git reset --hard origin/main
+              git clean -fd
+              
+              mmrl-util index --push
+              
+              git add -A
+              git commit -m "chore(sync): Update repository data
+
+              🤖 Auto-generated by GitHub Actions
+              🕒 Time: $current_time
+              
+              - Sync repository data
+              - Update module index
+              - Generate static pages"
+              
               git push origin main
             }
           fi
