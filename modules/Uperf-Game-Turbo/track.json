@@ -9,11 +9,11 @@
     "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
     "donate": "",
     "categories": [
-        "Script",
-        "Utility",
-        "Network",
         "Theme",
-        "System"
+        "Network",
+        "Script",
+        "System",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md"
 }
