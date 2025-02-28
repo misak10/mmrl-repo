@@ -9,7 +9,7 @@ on:
         description: "Run Sync"
         type: choice
         required: true
-        default: 'Yes'
+        default: 'No'
         options:
          - 'Yes'
          - 'No'
@@ -105,18 +105,11 @@ jobs:
           last_versions = load_json('json/last_versions.json', {})
           
           has_updates = False
-          for module in modules.get('modules', []):
-              module_id = module.get('id')
-              version_code = module.get('versionCode')
-              
-              if module_id and version_code:
-                  if module_id not in last_versions or last_versions[module_id] != version_code:
-                      has_updates = True
-                      last_versions[module_id] = version_code
           
-          with open('json/last_versions.json', 'w', encoding='utf-8') as f:
-              json.dump(last_versions, f, indent=2, ensure_ascii=False)
-              f.write('\n')
+          with open('log/sync.log', 'r') as f:
+              log_content = f.read()
+              if 'New version found' in log_content:
+                  has_updates = True
           
           print(f"has_updates={'true' if has_updates else 'false'}")
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
@@ -270,14 +263,6 @@ jobs:
           name: logs
           path: log/*.log
 
-      - name: Notify Updates
-        if: ${{ steps.check_version_updates.outputs.has_updates == 'true' }}
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const script = require('./.github/workflows/telegram_updates.js')
-            await script({github, context, core})
-
   build:
     runs-on: ubuntu-latest
     needs: sync
@@ -309,3 +294,24 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    needs: [sync, deploy]
+    if: needs.sync.outputs.has_updates == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Download logs
+        uses: actions/download-artifact@v4
+        with:
+          name: logs
+          path: log
+
+      - name: Notify Updates
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./.github/workflows/telegram_updates.js')
+            await script({github, context, core})
