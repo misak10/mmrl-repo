@@ -270,6 +270,11 @@ jobs:
           name: logs
           path: log/*.log
 
+      - name: Notify Updates
+        if: ${{ steps.check_version_updates.outputs.has_updates == 'true' }}
+        uses: ./.github/workflows/telegram_updates.yml
+        secrets: inherit
+
   build:
     runs-on: ubuntu-latest
     needs: sync
@@ -301,9 +306,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  notify:
-    needs: [sync, build, deploy]
-    if: ${{ needs.sync.outputs.has_updates == 'true' }}
-    uses: ./.github/workflows/telegram_updates.yml
-    secrets: inherit
