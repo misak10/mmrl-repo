@@ -101,20 +101,35 @@ jobs:
           echo "has_updates=false" >> $GITHUB_OUTPUT
           
           if mmrl-util sync --diff versions_diff.md 2>&1 | tee log/sync.log; then
-            if grep -q "load: \[.*\] -> found" log/sync.log; then
-              echo "Modules found in sync log"
+            if grep -q "Downloading\|New version\|Updating\|Updated\|Changes detected" log/sync.log; then
+              echo "Updates found in sync log"
               echo "has_updates=true" >> $GITHUB_OUTPUT
               echo "Updates detected in sync process"
             fi
             
-            if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
+            if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ] && ! grep -q "No changes detected" versions_diff.md; then
               echo "Version diff file contains changes"
               echo "has_updates=true" >> $GITHUB_OUTPUT
             fi
             
-            if ! git diff --quiet || ! git diff --staged --quiet; then
-              echo "Git changes detected"
+            if ! git diff --quiet; then
+              echo "Git changes detected in working directory"
               echo "has_updates=true" >> $GITHUB_OUTPUT
+            fi
+            
+            if ! git diff --staged --quiet; then
+              echo "Git changes detected in staging area"
+              echo "has_updates=true" >> $GITHUB_OUTPUT
+            fi
+            
+            echo "=== Sync Log Excerpts ==="
+            grep -i "version\|update\|change\|download" log/sync.log || true
+            echo "======================="
+            
+            if [ -f "versions_diff.md" ]; then
+              echo "=== Version Diff Content ==="
+              cat versions_diff.md
+              echo "======================="
             fi
           else
             echo "Sync process failed"
