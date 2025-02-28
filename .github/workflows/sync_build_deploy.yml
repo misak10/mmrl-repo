@@ -84,10 +84,6 @@ jobs:
       - name: Check Version Updates
         id: check_version_updates
         run: |
-          if [ ! -f "json/last_versions.json" ]; then
-            echo "{}" > json/last_versions.json
-          fi
-          
           echo "has_updates=false" >> $GITHUB_OUTPUT
 
       - name: Sync Repository
@@ -100,19 +96,33 @@ jobs:
         if: ${{ env.IS_SYNC == 'true' }}
         id: check_updates
         run: |
-          if mmrl-util sync --diff versions_diff.md 2>&1 | tee sync_output.txt; then
-            if grep -q "New version found\|Updated\|Changes detected" sync_output.txt; then
+          mkdir -p log
+          
+          if mmrl-util sync --diff versions_diff.md 2>&1 | tee log/sync.log; then
+            updates_found=false
+            
+            if grep -q "New version found\|Updated\|Changes detected" log/sync.log; then
+              updates_found=true
+            fi
+            
+            if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
+              updates_found=true
+            fi
+            
+            if ! git diff --quiet || ! git diff --staged --quiet; then
+              updates_found=true
+            fi
+            
+            if [ "$updates_found" = true ]; then
               echo "has_updates=true" >> $GITHUB_OUTPUT
               echo "Updates detected in sync process"
+            else
+              echo "No updates found"
+              echo "has_updates=false" >> $GITHUB_OUTPUT
             fi
           else
             echo "Sync process failed"
             exit 1
-          fi
-          
-          if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
-            echo "has_updates=true" >> $GITHUB_OUTPUT
-            echo "Version diff file contains changes"
           fi
 
       - name: Git Safe Push
@@ -132,23 +142,8 @@ jobs:
             - Sync repository data
             - Update module index"
 
-            max_retries=3
-            retry_count=0
-            
-            while [ $retry_count -lt $max_retries ]; do
-              if git pull --rebase origin main && git push origin main; then
-                echo "Successfully pushed changes"
-                break
-              else
-                retry_count=$((retry_count + 1))
-                if [ $retry_count -eq $max_retries ]; then
-                  echo "Failed to push after $max_retries attempts"
-                  exit 1
-                fi
-                echo "Push failed, retrying... (attempt $retry_count of $max_retries)"
-                sleep 5
-              fi
-            done
+            source <(declare -f git_safe_push)
+            git_safe_push
           fi
 
       - name: Clean old versions
