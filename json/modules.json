@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1740704861.450437
+    "timestamp": 1740716265.233993
   },
   "modules": [
     {
@@ -53,10 +53,10 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Theme",
         "Script",
-        "Network",
-        "Font"
+        "Theme",
+        "Font",
+        "Network"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -161,11 +161,11 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "Script",
-        "Network",
-        "Theme",
         "System",
-        "Utility"
+        "Utility",
+        "Network",
+        "Script",
+        "Theme"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -212,12 +212,12 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
+        "System",
+        "Utility",
+        "Network",
         "Performance",
         "Script",
-        "Network",
-        "Security",
-        "System",
-        "Utility"
+        "Security"
       ],
       "verified": false,
       "added": 0,
@@ -541,9 +541,9 @@
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
         "Script",
+        "System",
         "Utility",
-        "Gaming",
-        "System"
+        "Gaming"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -599,13 +599,13 @@
       "categories": [
         "Audio",
         "Debug",
+        "System",
+        "Utility",
+        "Network",
         "Performance",
         "Script",
-        "Network",
-        "Security",
         "Theme",
-        "System",
-        "Utility"
+        "Security"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -623,8 +623,8 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "tracking",
-          "ads"
+          "ads",
+          "tracking"
         ],
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/track.json"
       },
@@ -655,13 +655,13 @@
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
-        "Font",
         "Debug",
-        "Script",
+        "Utility",
         "Network",
-        "Security",
+        "Script",
         "Theme",
-        "Utility"
+        "Font",
+        "Security"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -762,8 +762,8 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Debug",
         "Script",
+        "Debug",
         "Network"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
@@ -802,8 +802,8 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Zygisk",
         "Script",
+        "Zygisk",
         "Utility",
         "Network"
       ],
@@ -845,10 +845,10 @@
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
         "Debug",
-        "Script",
+        "Utility",
         "Network",
-        "Theme",
-        "Utility"
+        "Script",
+        "Theme"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
