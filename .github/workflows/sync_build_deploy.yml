@@ -32,7 +32,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     outputs:
-      has_updates: ${{ steps.check_version_updates.outputs.has_updates }}
+      has_updates: ${{ steps.check_updates.outputs.has_updates }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -84,7 +84,7 @@ jobs:
       - name: Check Version Updates
         id: check_version_updates
         run: |
-          echo "has_updates=false" >> $GITHUB_OUTPUT
+          echo "Preparing for sync..."
 
       - name: Sync Repository
         run: |
@@ -98,27 +98,23 @@ jobs:
         run: |
           mkdir -p log
           
+          echo "has_updates=false" >> $GITHUB_OUTPUT
+          
           if mmrl-util sync --diff versions_diff.md 2>&1 | tee log/sync.log; then
-            updates_found=false
-            
-            if grep -q "New version found\|Updated\|Changes detected" log/sync.log; then
-              updates_found=true
+            if grep -q "load: \[.*\] -> found" log/sync.log; then
+              echo "Modules found in sync log"
+              echo "has_updates=true" >> $GITHUB_OUTPUT
+              echo "Updates detected in sync process"
             fi
             
             if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
-              updates_found=true
+              echo "Version diff file contains changes"
+              echo "has_updates=true" >> $GITHUB_OUTPUT
             fi
             
             if ! git diff --quiet || ! git diff --staged --quiet; then
-              updates_found=true
-            fi
-            
-            if [ "$updates_found" = true ]; then
+              echo "Git changes detected"
               echo "has_updates=true" >> $GITHUB_OUTPUT
-              echo "Updates detected in sync process"
-            else
-              echo "No updates found"
-              echo "has_updates=false" >> $GITHUB_OUTPUT
             fi
           else
             echo "Sync process failed"
