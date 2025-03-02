@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1740932669.584924
+    "timestamp": 1740946868.440006
   },
   "modules": [
     {
@@ -55,8 +55,8 @@
       "categories": [
         "Network",
         "Font",
-        "Theme",
-        "Script"
+        "Script",
+        "Theme"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -164,8 +164,8 @@
         "Utility",
         "Network",
         "System",
-        "Script",
-        "Theme"
+        "Theme",
+        "Script"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
@@ -213,9 +213,9 @@
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
         "Utility",
-        "Security",
         "Network",
         "System",
+        "Security",
         "Performance",
         "Script"
       ],
@@ -312,8 +312,8 @@
       "description": "Bootloop protection",
       "category": "Bootloop protection",
       "categories": [
-        "Network",
         "Utility",
+        "Network",
         "Script"
       ],
       "homepage": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
@@ -540,10 +540,10 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "Gaming",
-        "System",
         "Utility",
-        "Script"
+        "System",
+        "Script",
+        "Gaming"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -598,14 +598,14 @@
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27850 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
         "Utility",
-        "Security",
+        "Audio",
         "Network",
         "Debug",
         "System",
-        "Script",
-        "Audio",
+        "Theme",
+        "Security",
         "Performance",
-        "Theme"
+        "Script"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
@@ -657,11 +657,11 @@
       "categories": [
         "Utility",
         "Font",
-        "Security",
         "Network",
         "Debug",
-        "Script",
-        "Theme"
+        "Theme",
+        "Security",
+        "Script"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -802,9 +802,9 @@
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Zygisk",
-        "Network",
         "Utility",
+        "Network",
+        "Zygisk",
         "Script"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
@@ -847,8 +847,8 @@
         "Utility",
         "Network",
         "Debug",
-        "Script",
-        "Theme"
+        "Theme",
+        "Script"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
