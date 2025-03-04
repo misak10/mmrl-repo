@@ -10,9 +10,9 @@
     "donate": "",
     "categories": [
         "Performance",
+        "Script",
         "Theme",
-        "Debug",
-        "Script"
+        "Debug"
     ],
     "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/README.md"
 }
