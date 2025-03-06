@@ -9,13 +9,13 @@
     "support": "https://github.com/MoGuangYu/Surfing/issues",
     "donate": "",
     "categories": [
+        "Utility",
         "Security",
-        "Network",
-        "Theme",
         "Script",
-        "Font",
+        "Network",
         "Debug",
-        "Utility"
+        "Theme",
+        "Font"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md"
 }

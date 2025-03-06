@@ -10,8 +10,8 @@
     "donate": "",
     "categories": [
         "Network",
-        "Utility",
         "Script",
+        "Utility",
         "Zygisk"
     ],
     "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md"
