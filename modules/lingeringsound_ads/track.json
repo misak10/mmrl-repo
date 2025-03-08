@@ -9,15 +9,15 @@
     "support": "https://github.com/lingeringsound/10007/issues",
     "donate": "",
     "categories": [
-        "Debug",
-        "Network",
-        "Utility",
-        "Script",
         "System",
+        "Performance",
+        "Network",
+        "Debug",
+        "Utility",
         "Theme",
+        "Script",
         "Audio",
-        "Security",
-        "Performance"
+        "Security"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
     "antifeatures": [
