@@ -10,14 +10,14 @@
     "donate": "",
     "categories": [
         "Script",
-        "Utility",
-        "Security",
-        "Network",
-        "Debug",
-        "Performance",
         "Theme",
+        "System",
+        "Debug",
+        "Network",
+        "Security",
+        "Performance",
         "Audio",
-        "System"
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
     "antifeatures": [
