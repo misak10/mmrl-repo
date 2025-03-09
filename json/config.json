@@ -1,4 +1,5 @@
 {
+  "id": "misaki",
   "name": "Misaki-Modules Repo",
   "website": "https://misak10.github.io/mmrl-repo/",
   "support": "https://github.com/misak10/mmrl-repo/issues",
@@ -6,7 +7,7 @@
   "submission": "https://github.com/misak10/mmrl-repo/issues/new",
   "base_url": "https://misak10.github.io/mmrl-repo/",
   "description": "✨ Misaki - Repo ✨",
-  "max_num": 10,
+  "max_num": 6,
   "enable_log": true,
   "log_dir": "log"
 }
