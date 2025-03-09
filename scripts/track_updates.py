@@ -53,9 +53,15 @@ def get_antifeatures_from_files(files):
     """
     antifeatures = []
     
-    # 检查广告相关文件
+    # 检查广告相关文件 - 修复误将"去广告"识别为广告的问题
     ad_patterns = [r'\bad[s]?\b', r'\badvertis(ing|ement)\b', r'广告']
-    if any(any(re.search(pattern, f, re.I) for pattern in ad_patterns) for f in files):
+    ad_exclusion_patterns = [r'去广告', r'block[-_]?ads?', r'ad[-_]?block', r'no[-_]?ads?', r'remove[-_]?ads?']
+    
+    # 先检查是否是去广告类模块
+    is_ad_blocker = any(any(re.search(pattern, f, re.I) for pattern in ad_exclusion_patterns) for f in files)
+    
+    # 如果不是去广告类模块，再检查是否包含广告
+    if not is_ad_blocker and any(any(re.search(pattern, f, re.I) for pattern in ad_patterns) for f in files):
         antifeatures.append('ads')
     
     # 检查追踪相关文件
@@ -90,6 +96,16 @@ def get_antifeatures_from_files(files):
     nsfw_patterns = [r'\bnsfw\b', r'\badult\b', r'\bmature\b']
     if any(any(re.search(pattern, f, re.I) for pattern in nsfw_patterns) for f in files):
         antifeatures.append('nsfw')
+    
+    # 检查用户数据收集
+    data_collection_patterns = [r'collect[-_]?data', r'user[-_]?data', r'data[-_]?collection', r'收集数据']
+    if any(any(re.search(pattern, f, re.I) for pattern in data_collection_patterns) for f in files):
+        antifeatures.append('tracking')
+    
+    # 检查已知漏洞
+    vuln_patterns = [r'cve-\d+', r'vulnerability', r'exploit', r'security[-_]?issue', r'漏洞']
+    if any(any(re.search(pattern, f, re.I) for pattern in vuln_patterns) for f in files):
+        antifeatures.append('knownvuln')
     
     return antifeatures
 
@@ -249,6 +265,21 @@ def get_module_categories(files):
     if any(any(pattern in f.lower() for pattern in media_patterns) for f in files):
         categories.append('Multimedia')
     
+    # 广告拦截类
+    adblock_patterns = [r'去广告', r'ad[-_]?block', r'block[-_]?ads?', r'no[-_]?ads?', r'remove[-_]?ads?']
+    if any(any(re.search(pattern, f, re.I) for pattern in adblock_patterns) for f in files):
+        categories.append('AdBlock')
+    
+    # 国际化/本地化
+    i18n_patterns = [r'i18n', r'l10n', r'locali[sz]e', r'translate', r'language', r'国际化', r'本地化']
+    if any(any(re.search(pattern, f, re.I) for pattern in i18n_patterns) for f in files):
+        categories.append('Localization')
+    
+    # 输入法相关
+    input_patterns = [r'input[-_]?method', r'keyboard', r'ime', r'输入法']
+    if any(any(re.search(pattern, f, re.I) for pattern in input_patterns) for f in files):
+        categories.append('Input')
+    
     # 去重并返回
     return list(set(categories))
 
@@ -270,6 +301,10 @@ def create_track_json(repo_info):
                     categories = get_module_categories(files)
                     # 从zip文件内容检测antifeatures
                     zip_antifeatures = get_antifeatures_from_files(files)
+                    
+                    # 检查模块版本和兼容性
+                    module_version = update_json.get('version', '')
+                    min_magisk_version = update_json.get('minMagisk', '')
                 else:
                     categories = []
                     zip_antifeatures = []
@@ -305,6 +340,13 @@ def create_track_json(repo_info):
         "categories": categories,
         "readme": readme_url
     }
+    
+    # 添加版本信息（如果有）
+    if 'module_version' in locals() and module_version:
+        track["version"] = module_version
+    
+    if 'min_magisk_version' in locals() and min_magisk_version:
+        track["min_magisk"] = min_magisk_version
     
     # 只有当有antifeatures时才添加到track.json
     if antifeatures:
