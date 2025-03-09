@@ -25,6 +25,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.6.0_460.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.6.0_460.md",
       "size": 1294764
+    },
+    {
+      "timestamp": 1740757137.0,
+      "version": "v4.7.0",
+      "versionCode": 470,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.7.0_470.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.7.0_470.md",
+      "size": 1316326
     }
   ]
 }

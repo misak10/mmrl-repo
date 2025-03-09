@@ -1,20 +1,110 @@
 {
-  "CustomPinyinDictionary": 20250101,
-  "PlayIntegrityFix": 18600,
-  "Re-Malwack": 530,
-  "Uperf-Game-Turbo": 250117,
-  "VoyagerKernel": 353,
-  "Zygisk-Assistant": 213,
-  "abootloop": 6,
-  "adguardhome": 29,
-  "asoulopt": 273,
-  "bindhosts": 197,
-  "box_for_magisk": 20241222,
-  "fas-rs": 460,
-  "lingeringsound_ads": 241,
-  "surfing": 1601,
-  "trickystore": 158,
-  "universal-gms-doze": 192,
-  "zygisknext": 497,
-  "zygisksui": 319
+  "CustomPinyinDictionary": {
+    "version": "v20250101",
+    "versionCode": 20250101,
+    "author": "wuhgit@github",
+    "name": "CustomPinyinDictionary for Gboard"
+  },
+  "PlayIntegrityFix": {
+    "version": "v18.6",
+    "versionCode": 18600,
+    "author": "chiteroman",
+    "name": "Play Integrity Fix"
+  },
+  "Re-Malwack": {
+    "version": "v5.3.0",
+    "versionCode": 530,
+    "author": "ZG089 | Github & Telegram : @ZG089",
+    "name": "Re-Malwack | Protection-maxxing \u007f\u007f"
+  },
+  "Uperf-Game-Turbo": {
+    "version": "\ufe0f1.41 based on uperf 904",
+    "versionCode": 250117,
+    "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
+    "name": "Uperf Game Turbo"
+  },
+  "VoyagerKernel": {
+    "version": "3.5.3-84027835",
+    "versionCode": 353,
+    "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
+    "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta"
+  },
+  "Zygisk-Assistant": {
+    "version": "v2.1.3 (7b35d36-release)",
+    "versionCode": 213,
+    "author": "snake-4",
+    "name": "Zygisk Assistant"
+  },
+  "abootloop": {
+    "version": "v1.3.2",
+    "versionCode": 6,
+    "author": "nedorazrab0",
+    "name": "Anti bootloop"
+  },
+  "adguardhome": {
+    "version": "20241214",
+    "versionCode": 29,
+    "author": "twoone3",
+    "name": "AdGuardHome for Magisk"
+  },
+  "asoulopt": {
+    "version": "Kanade",
+    "versionCode": 273,
+    "author": "nakixii",
+    "name": "A-SOUL Games Optimization"
+  },
+  "bindhosts": {
+    "version": "v1.9.7",
+    "versionCode": 197,
+    "author": "xx, KOWX712",
+    "name": "bindhosts"
+  },
+  "box_for_magisk": {
+    "version": "v1.8",
+    "versionCode": 20241222,
+    "author": "taamarin.t.me",
+    "name": "Box for Magisk/KernelSU"
+  },
+  "fas-rs": {
+    "version": "v4.6.0",
+    "versionCode": 460,
+    "author": "shadow3",
+    "name": "fas-rs"
+  },
+  "lingeringsound_ads": {
+    "version": "\u6a74\u70abv240",
+    "versionCode": 241,
+    "author": "@coolapk 10007",
+    "name": "\u53bb\u5e7f\u544a"
+  },
+  "surfing": {
+    "version": "v7.3.6",
+    "versionCode": 1601,
+    "author": "M",
+    "name": "Surfing"
+  },
+  "trickystore": {
+    "version": "v1.2.1 (158-51390a7-release)",
+    "versionCode": 158,
+    "author": "5ec1cff",
+    "name": "Tricky Store"
+  },
+  "universal-gms-doze": {
+    "version": "1.9.2",
+    "versionCode": 192,
+    "author": "gloeyisk",
+    "name": "Universal GMS Doze"
+  },
+  "zygisknext": {
+    "version": "1.2.7 (497-b7796a7-release)",
+    "versionCode": 497,
+    "author": "5ec1cff, Nullptr",
+    "name": "Zygisk Next"
+  },
+  "zygisksui": {
+    "version": "v13.5.1",
+    "versionCode": 319,
+    "author": "Rikka",
+    "name": "Zygisk - Sui"
+  }
 }
