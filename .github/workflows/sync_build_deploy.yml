@@ -31,11 +31,8 @@ env:
 jobs:
   sync:
     runs-on: ubuntu-latest
-<<<<<<< HEAD
     outputs:
       has_updates: ${{ steps.check_updates.outputs.has_updates }}
-=======
->>>>>>> 1193b8b98cb2dd577f8845d5846d2dcf5c83024e
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -57,28 +54,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install mmrl-util
 
-<<<<<<< HEAD
       - name: Sync and Check Updates
         id: check_updates
-=======
-      - name: Sync
->>>>>>> 1193b8b98cb2dd577f8845d5846d2dcf5c83024e
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util sync --force --diff versions_diff.md
+          mmrl-util sync --diff versions_diff.md
           
-<<<<<<< HEAD
           # 检查是否有更新
           if [ -f "log/sync.log" ] && grep -q -E "New version found|Updated module" "log/sync.log"; then
             echo "has_updates=true" >> $GITHUB_OUTPUT
           else
             echo "has_updates=false" >> $GITHUB_OUTPUT
-=======
-          mmrl-util check --clean
-          
-          if [ -f "log/sync.log" ]; then
-            cat "log/sync.log"
->>>>>>> 1193b8b98cb2dd577f8845d5846d2dcf5c83024e
           fi
 
       - name: Write versions diff to summary
@@ -101,18 +87,7 @@ jobs:
       - name: Index and Push
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-<<<<<<< HEAD
           mmrl-util index --push
-=======
-          mmrl-util check --clean
-          mmrl-util index --force --push
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore: Update modules data [skip ci]"
-            git push
-          fi
->>>>>>> 1193b8b98cb2dd577f8845d5846d2dcf5c83024e
 
       - name: Upload logs
         uses: actions/upload-artifact@v4
@@ -151,7 +126,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-<<<<<<< HEAD
 
   notify:
     needs: [sync, deploy]
@@ -160,5 +134,3 @@ jobs:
     secrets:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-=======
->>>>>>> 1193b8b98cb2dd577f8845d5846d2dcf5c83024e
