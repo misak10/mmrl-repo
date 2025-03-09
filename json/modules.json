@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1741508505.088063
+    "timestamp": 1741511385.474634
   },
   "modules": [
     {
@@ -48,8 +48,8 @@
     {
       "id": "PlayIntegrityFix",
       "name": "Play Integrity Fix",
-      "version": "v18.6",
-      "versionCode": 18600,
+      "version": "v18.7",
+      "versionCode": 18700,
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
@@ -63,7 +63,8 @@
       "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 177516,
+      "timestamp": 1741118786.0,
+      "size": 180065,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -103,6 +104,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.6_18600.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.6_18600.md",
           "size": 177516
+        },
+        {
+          "timestamp": 1741118786.0,
+          "version": "v18.7",
+          "versionCode": 18700,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.7_18700.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.7_18700.md",
+          "size": 180065
         }
       ]
     },
@@ -207,8 +216,8 @@
     {
       "id": "VoyagerKernel",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.5.3-84027835",
-      "versionCode": 353,
+      "version": "3.5.4-4e818a59",
+      "versionCode": 358,
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
@@ -221,7 +230,8 @@
       ],
       "verified": false,
       "added": 0,
-      "size": 4646539,
+      "timestamp": 1741511382.640786,
+      "size": 5762718,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -260,14 +270,22 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.3-84027835_353.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.3-84027835_353.md",
           "size": 4646539
+        },
+        {
+          "timestamp": 1741511382.640786,
+          "version": "3.5.4-4e818a59",
+          "versionCode": 358,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.4-4e818a59_358.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.4-4e818a59_358.md",
+          "size": 5762718
         }
       ]
     },
     {
       "id": "Zygisk-Assistant",
       "name": "Zygisk Assistant",
-      "version": "v2.1.3 (7b35d36-release)",
-      "versionCode": 213,
+      "version": "v2.1.4 (1013f8a-release)",
+      "versionCode": 214,
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
@@ -279,7 +297,8 @@
       "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 396665,
+      "timestamp": 1740269915.0,
+      "size": 392961,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -300,6 +319,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/v2.1.3_7b35d36-release_213.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/v2.1.3_7b35d36-release_213.md",
           "size": 396665
+        },
+        {
+          "timestamp": 1740269915.0,
+          "version": "v2.1.4 (1013f8a-release)",
+          "versionCode": 214,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/v2.1.4_1013f8a-release_214.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/Zygisk-Assistant/v2.1.4_1013f8a-release_214.md",
+          "size": 392961
         }
       ]
     },
@@ -432,8 +459,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v1.9.7",
-      "versionCode": 197,
+      "version": "v1.9.8",
+      "versionCode": 198,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "categories": [
@@ -452,7 +479,8 @@
         "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
-      "size": 51599,
+      "timestamp": 1740718680.0,
+      "size": 52466,
       "features": {
         "service": true,
         "post_fs_data": true,
@@ -490,6 +518,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.7_197.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.7_197.md",
           "size": 51599
+        },
+        {
+          "timestamp": 1740718680.0,
+          "version": "v1.9.8",
+          "versionCode": 198,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.8_198.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.8_198.md",
+          "size": 52466
         }
       ]
     },
@@ -535,8 +571,8 @@
     {
       "id": "fas-rs",
       "name": "fas-rs",
-      "version": "v4.6.0",
-      "versionCode": 460,
+      "version": "v4.7.0",
+      "versionCode": 470,
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
@@ -550,7 +586,8 @@
       "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 1294764,
+      "timestamp": 1740757137.0,
+      "size": 1316326,
       "features": {
         "service": true,
         "resetprop": true
@@ -586,16 +623,24 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.6.0_460.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.6.0_460.md",
           "size": 1294764
+        },
+        {
+          "timestamp": 1740757137.0,
+          "version": "v4.7.0",
+          "versionCode": 470,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.7.0_470.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.7.0_470.md",
+          "size": 1316326
         }
       ]
     },
     {
       "id": "lingeringsound_ads",
       "name": "\u53bb\u5e7f\u544a",
-      "version": "\u6a74\u70abv240",
-      "versionCode": 241,
+      "version": "\u6a74\u70abv258",
+      "versionCode": 259,
       "author": "@coolapk 10007",
-      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 27850 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
+      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 26334 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
         "Performance",
         "Utility",
@@ -612,7 +657,8 @@
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 893339,
+      "timestamp": 1741277022.0,
+      "size": 481077,
       "features": {
         "service": true,
         "action": true,
@@ -644,14 +690,22 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v240_241.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v240_241.md",
           "size": 893339
+        },
+        {
+          "timestamp": 1741277022.0,
+          "version": "\u6a74\u70abv258",
+          "versionCode": 259,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v258_259.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v258_259.md",
+          "size": 481077
         }
       ]
     },
     {
       "id": "surfing",
       "name": "Surfing",
-      "version": "v7.3.6",
-      "versionCode": 1601,
+      "version": "v7.3.7",
+      "versionCode": 1602,
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
@@ -668,9 +722,11 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 28172808,
+      "timestamp": 1741384836.0,
+      "size": 31859556,
       "features": {
-        "webroot": true
+        "webroot": true,
+        "apks": true
       },
       "track": {
         "type": "ONLINE_JSON",
@@ -703,6 +759,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.6_1601.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.6_1601.md",
           "size": 28172808
+        },
+        {
+          "timestamp": 1741384836.0,
+          "version": "v7.3.7",
+          "versionCode": 1602,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.7_1602.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.7_1602.md",
+          "size": 31859556
         }
       ]
     },
