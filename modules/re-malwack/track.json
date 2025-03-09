@@ -9,10 +9,11 @@
     "support": "https://github.com/ZG089/Re-Malwack/issues",
     "donate": "",
     "categories": [
-        "Performance",
+        "Debug",
         "Theme",
         "Script",
-        "Debug"
+        "Performance"
     ],
-    "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/README.md"
+    "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/README.md",
+    "version": "v5.3.0"
 }

@@ -12,5 +12,6 @@
         "Network",
         "Script"
     ],
-    "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md"
+    "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
+    "version": "v1.2.1"
 }

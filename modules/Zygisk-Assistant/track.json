@@ -12,5 +12,6 @@
         "Network",
         "Script"
     ],
-    "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md"
+    "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md",
+    "version": "v2.1.4"
 }

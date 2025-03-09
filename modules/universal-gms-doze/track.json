@@ -13,5 +13,6 @@
         "Script",
         "Debug"
     ],
-    "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md"
+    "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md",
+    "version": "1.9.2"
 }
