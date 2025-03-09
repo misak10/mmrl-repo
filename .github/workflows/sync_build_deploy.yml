@@ -55,7 +55,13 @@ jobs:
       - name: Sync
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util sync --diff versions_diff.md
+          mmrl-util sync --force --diff versions_diff.md
+          
+          mmrl-util check --clean
+          
+          if [ -f "log/sync.log" ]; then
+            cat "log/sync.log"
+          fi
 
       - name: Write versions diff to summary
         if: ${{ env.IS_SYNC == 'true' }}
@@ -77,7 +83,14 @@ jobs:
       - name: Index and Push
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util index --push
+          mmrl-util check --clean
+          mmrl-util index --force --push
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: Update modules data [skip ci]"
+            git push
+          fi
 
       - name: Upload logs
         uses: actions/upload-artifact@v4
