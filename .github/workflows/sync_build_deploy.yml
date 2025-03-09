@@ -126,15 +126,41 @@ jobs:
           
           try:
               result = subprocess.run(
-                  ["mmrl-util", "check-updates", "--json"],
+                  ["mmrl-util", "index", "--json"],
                   capture_output=True,
                   text=True,
                   check=True
               )
-              current_versions = json.loads(result.stdout)
-          except Exception as e:
-              print(f"Error checking updates: {e}")
+              current_data = json.loads(result.stdout)
+              
               current_versions = {}
+              for module in current_data.get("modules", []):
+                  module_id = module.get("id")
+                  if module_id:
+                      current_versions[module_id] = {
+                          "version": module.get("version", ""),
+                          "versionCode": module.get("versionCode", 0),
+                          "author": module.get("author", ""),
+                          "name": module.get("name", "")
+                      }
+          except Exception as e:
+              print(f"Error getting current versions: {e}")
+              current_versions = {}
+          
+          if not current_versions and os.path.exists("json/modules.json"):
+              try:
+                  modules_data = load_json("json/modules.json", {})
+                  for module in modules_data.get("modules", []):
+                      module_id = module.get("id")
+                      if module_id:
+                          current_versions[module_id] = {
+                              "version": module.get("version", ""),
+                              "versionCode": module.get("versionCode", 0),
+                              "author": module.get("author", ""),
+                              "name": module.get("name", "")
+                          }
+              except Exception as e:
+                  print(f"Error reading modules.json: {e}")
           
           last_versions = load_json("json/last_versions.json", {})
           
