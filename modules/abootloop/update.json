@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/abootloop/v1.3.2_6.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/abootloop/v1.3.2_6.md",
       "size": 5316
+    },
+    {
+      "timestamp": 1741546110.0,
+      "version": "v1.3.2",
+      "versionCode": 7,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/abootloop/v1.3.2_7.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/abootloop/v1.3.2_7.md",
+      "size": 5010
     }
   ]
 }
