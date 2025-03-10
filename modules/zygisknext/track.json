@@ -9,10 +9,10 @@
     "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
     "donate": "",
     "categories": [
-        "Utility",
+        "Network",
         "Zygisk",
-        "Script",
-        "Network"
+        "Utility",
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
     "version": "v1.2.7"
