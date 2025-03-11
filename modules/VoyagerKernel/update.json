@@ -33,6 +33,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.4-4e818a59_358.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.4-4e818a59_358.md",
       "size": 5762718
+    },
+    {
+      "timestamp": 1741724381.564673,
+      "version": "3.6.0-5a70e7f8",
+      "versionCode": 360,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.6.0-5a70e7f8_360.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.6.0-5a70e7f8_360.md",
+      "size": 5762718
     }
   ]
 }
