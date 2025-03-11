@@ -10,11 +10,11 @@
     "donate": "",
     "categories": [
         "Network",
+        "Script",
         "System",
-        "Performance",
         "Utility",
-        "Security",
-        "Script"
+        "Performance",
+        "Security"
     ],
     "readme": "",
     "version": "3.5.4-4e818a59"
