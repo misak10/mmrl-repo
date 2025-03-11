@@ -1,17 +1,21 @@
 {
-  "id": "VoyagerKernel",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://onedrive.zjw.js.cn/TheVoyager/Beta/update.json",
-  "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
-  "categories": [
-    "System",
-    "Network",
-    "Performance",
-    "Utility",
-    "Security",
-    "Script"
-  ],
-  "last_update": 1741724381.564673,
-  "versions": 5
+    "id": "VoyagerKernel",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://onedrive.zjw.js.cn/TheVoyager/Beta/update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
+    "support": "",
+    "donate": "",
+    "categories": [
+        "Security",
+        "System",
+        "Script",
+        "Performance",
+        "Utility",
+        "Network"
+    ],
+    "readme": "",
+    "version": "3.6.0-5a70e7f8"
 }
