@@ -9,10 +9,10 @@
     "support": "https://github.com/bindhosts/bindhosts/issues",
     "donate": "",
     "categories": [
+        "Theme",
+        "Localization",
         "Utility",
         "Network",
-        "Localization",
-        "Theme",
         "Script"
     ],
     "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md",
