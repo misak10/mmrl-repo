@@ -10,13 +10,13 @@
     "donate": "",
     "categories": [
         "Security",
-        "Theme",
+        "Network",
         "Script",
         "Debug",
         "Input",
-        "Utility",
-        "Network",
-        "Font"
+        "Font",
+        "Theme",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
     "version": "v7.3.7"
