@@ -8,6 +8,14 @@
     "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
     "support": "",
     "donate": "",
-    "categories": [],
-    "readme": ""
+    "categories": [
+        "Security",
+        "Script",
+        "Performance",
+        "System",
+        "Network",
+        "Utility"
+    ],
+    "readme": "",
+    "version": "3.6.0-5a70e7f8"
 }
