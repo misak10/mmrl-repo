@@ -11,12 +11,12 @@
     "categories": [
         "Theme",
         "Script",
-        "Debug",
-        "Security",
-        "Font",
+        "Input",
         "Network",
-        "Utility",
-        "Input"
+        "Security",
+        "Debug",
+        "Font",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
     "version": "v7.3.7"
