@@ -11,9 +11,9 @@
     "categories": [
         "Theme",
         "Script",
-        "Utility",
         "Localization",
-        "Network"
+        "Network",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md",
     "version": "v1.9.9"
