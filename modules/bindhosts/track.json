@@ -1,20 +1,19 @@
 {
-    "id": "bindhosts",
-    "enable": true,
-    "verified": true,
-    "update_to": "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/update.json",
-    "license": "WTFPL",
-    "homepage": "",
-    "source": "https://github.com/bindhosts/bindhosts",
-    "support": "https://github.com/bindhosts/bindhosts/issues",
-    "donate": "",
-    "categories": [
-        "Script",
-        "Utility",
-        "Theme",
-        "Network",
-        "Localization"
-    ],
-    "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md",
-    "version": "v1.9.8"
+  "id": "bindhosts",
+  "enable": true,
+  "verified": true,
+  "update_to": "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/update.json",
+  "license": "WTFPL",
+  "source": "https://github.com/bindhosts/bindhosts",
+  "support": "https://github.com/bindhosts/bindhosts/issues",
+  "categories": [
+    "Script",
+    "Utility",
+    "Theme",
+    "Network",
+    "Localization"
+  ],
+  "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md",
+  "last_update": 1741954274.0,
+  "versions": 5
 }
