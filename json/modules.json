@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1741983546.211802
+    "timestamp": 1742001662.035871
   },
   "modules": [
     {
@@ -54,9 +54,9 @@
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
         "Network",
+        "Font",
         "Theme",
-        "Script",
-        "Font"
+        "Script"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -171,8 +171,8 @@
       "categories": [
         "Theme",
         "Script",
-        "System",
         "Network",
+        "System",
         "Utility"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
@@ -220,11 +220,11 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Performance",
         "Script",
+        "Network",
         "Security",
         "System",
-        "Network",
+        "Performance",
         "Utility"
       ],
       "verified": false,
@@ -295,8 +295,8 @@
       "author": "snake-4",
       "description": "A Zygisk module to hide root.",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
       "license": "MIT",
@@ -343,8 +343,8 @@
       "author": "nedorazrab0",
       "description": "Bootloop protection",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/Magisk-Modules-Alt-Repo/abootloop/issues",
       "license": "MIT",
@@ -399,8 +399,8 @@
       "author": "twoone3",
       "description": "[state] Filter ads at the DNS level",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
@@ -562,8 +562,8 @@
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
@@ -601,10 +601,10 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "System",
         "Gaming",
-        "Utility",
-        "Script"
+        "System",
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -666,14 +666,14 @@
       "author": "@coolapk 10007",
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 26334 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
-        "Theme",
-        "Performance",
-        "Script",
-        "Debug",
-        "Security",
         "Audio",
-        "System",
+        "Theme",
+        "Script",
         "Network",
+        "Security",
+        "Debug",
+        "System",
+        "Performance",
         "Utility"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
@@ -692,8 +692,8 @@
         "added": null,
         "source": "https://lingeringsound.github.io/10007",
         "antifeatures": [
-          "ads",
-          "tracking"
+          "tracking",
+          "ads"
         ],
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/track.json"
       },
@@ -734,12 +734,12 @@
       "categories": [
         "Theme",
         "Script",
-        "Debug",
-        "Security",
-        "Font",
+        "Input",
         "Network",
-        "Utility",
-        "Input"
+        "Security",
+        "Debug",
+        "Font",
+        "Utility"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
@@ -801,8 +801,8 @@
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
-        "Script",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
@@ -849,9 +849,9 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Script",
         "Debug",
-        "Network"
+        "Network",
+        "Script"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -890,9 +890,9 @@
       "description": "Standalone implementation of Zygisk.",
       "categories": [
         "Network",
-        "Utility",
+        "Zygisk",
         "Script",
-        "Zygisk"
+        "Utility"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
@@ -933,8 +933,8 @@
       "categories": [
         "Theme",
         "Script",
-        "Debug",
         "Network",
+        "Debug",
         "Utility"
       ],
       "support": "https://github.com/RikkaApps/Sui/issues",
