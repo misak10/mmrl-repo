@@ -9,8 +9,8 @@
     "support": "https://github.com/5ec1cff/TrickyStore/issues",
     "donate": "",
     "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
     "version": "v1.2.1"
