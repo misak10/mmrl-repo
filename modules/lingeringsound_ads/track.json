@@ -10,19 +10,19 @@
     "donate": "",
     "categories": [
         "Network",
-        "Utility",
+        "System",
         "Security",
-        "Theme",
         "Performance",
-        "Audio",
         "Script",
-        "Debug",
-        "System"
+        "Theme",
+        "Utility",
+        "Audio",
+        "Debug"
     ],
     "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
     "version": "\u6a74\u70abv258",
     "antifeatures": [
-        "tracking",
-        "ads"
+        "ads",
+        "tracking"
     ]
 }
