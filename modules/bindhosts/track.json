@@ -9,9 +9,9 @@
     "support": "https://github.com/bindhosts/bindhosts/issues",
     "donate": "",
     "categories": [
-        "Localization",
         "Script",
         "Network",
+        "Localization",
         "Utility",
         "Theme"
     ],
