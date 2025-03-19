@@ -9,9 +9,9 @@
     "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
     "donate": "",
     "categories": [
+        "Script",
         "Debug",
-        "Network",
-        "Script"
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/main/README.md",
     "version": "1.9.2"
