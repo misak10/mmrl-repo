@@ -7,12 +7,10 @@ import sys
 from typing import Dict, List, Optional
 from pathlib import Path
 
-# 从环境变量获取配置
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 TELEGRAM_TOPIC_ID = os.getenv('TELEGRAM_TOPIC_ID')
 
-# 获取脚本所在目录
 SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 REPO_ROOT = SCRIPT_DIR.parent
 
@@ -32,7 +30,6 @@ def validate_env():
         print(f"错误: 缺少必要的环境变量: {', '.join(missing_vars)}")
         sys.exit(1)
     
-    # 确保CHAT_ID是数字格式
     try:
         int(TELEGRAM_CHAT_ID)
     except ValueError:
@@ -42,7 +39,6 @@ def validate_env():
 def load_json_file(file_path: str, default: Dict = None) -> Dict:
     """安全地加载 JSON 文件"""
     try:
-        # 转换为Path对象并解析完整路径
         full_path = get_json_path(os.path.basename(file_path))
         print(f"正在加载文件: {full_path}")
         
@@ -59,7 +55,6 @@ def load_json_file(file_path: str, default: Dict = None) -> Dict:
                     print(f"警告: 文件为空 ({full_path})")
         else:
             print(f"警告: 文件不存在 ({full_path})")
-            # 如果文件不存在，创建包含默认内容的文件
             if default is not None:
                 save_json_file(file_path, default)
                 return default
@@ -70,11 +65,9 @@ def load_json_file(file_path: str, default: Dict = None) -> Dict:
 def save_json_file(file_path: str, data: Dict) -> None:
     """安全地保存 JSON 文件"""
     try:
-        # 转换为Path对象并解析完整路径
         full_path = get_json_path(os.path.basename(file_path))
         print(f"正在保存文件: {full_path}")
         
-        # 确保目录存在
         full_path.parent.mkdir(parents=True, exist_ok=True)
         
         with open(full_path, 'w', encoding='utf-8') as f:
@@ -94,7 +87,6 @@ async def send_telegram_message(message, buttons):
         })
     }
 
-    # 如果设置了话题ID，添加到payload中
     if TELEGRAM_TOPIC_ID:
         try:
             topic_id = int(TELEGRAM_TOPIC_ID)
@@ -124,7 +116,6 @@ async def send_telegram_photo(photo_url, caption, buttons):
         response.raise_for_status()
     except Exception as e:
         print(f"获取图片失败: {e}")
-        # 如果获取图片失败，改用发送消息
         return await send_telegram_message(caption, buttons)
 
     image_file = io.BytesIO(response.content)
@@ -138,7 +129,6 @@ async def send_telegram_photo(photo_url, caption, buttons):
         })
     }
 
-    # 如果设置了话题ID，添加到payload中
     if TELEGRAM_TOPIC_ID:
         try:
             topic_id = int(TELEGRAM_TOPIC_ID)
@@ -158,7 +148,6 @@ async def send_telegram_photo(photo_url, caption, buttons):
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
         print(f"Response: {response.text}")
-        # 如果发送图片失败，尝试发送纯文本消息
         return await send_telegram_message(caption, buttons)
     except Exception as err:
         print(f"An error occurred: {err}")
@@ -169,19 +158,32 @@ async def send_telegram_photo(photo_url, caption, buttons):
 def check_for_module_updates() -> bool:
     """检查模块更新并发送通知，返回是否有更新"""
     try:
-        # 验证环境变量
         validate_env()
 
         has_updates = False
         main_data = load_json_file('modules.json', {"modules": []})
         last_versions = load_json_file('last_versions.json', {})
+        
+        updated_modules = set()
+        for log_file in Path(REPO_ROOT / 'log').glob('sync_*.log'):
+            try:
+                with open(log_file, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        if 'update: [' in line and '] -> update to' in line:
+                            module_id = line.split('[')[1].split(']')[0]
+                            updated_modules.add(module_id)
+                            print(f"从日志中发现模块更新: {module_id}")
+            except Exception as e:
+                print(f"读取日志文件 {log_file} 时出错: {e}")
+        
+        print(f"从日志中找到 {len(updated_modules)} 个更新的模块: {', '.join(updated_modules)}")
 
         for module in main_data.get("modules", []):
             id = module.get("id")
-            version_code = module.get("versionCode")
             
-            if id not in last_versions or last_versions[id] != version_code:
+            if id in updated_modules:
                 has_updates = True
+                version_code = module.get("versionCode")
                 name = module.get("name")
                 version = module.get("version")
                 desc = module.get("description")
@@ -191,44 +193,56 @@ def check_for_module_updates() -> bool:
                 source = module.get("track", {}).get("source")
                 latest = module.get("versions", [{}])[-1]
 
-                # 构建更新说明部分
+                changelog_content = "暂无更新日志"
+                try:
+                    changelog_file = REPO_ROOT / "modules" / id / f"{latest['version']}_{latest['versionCode']}.md"
+                    if changelog_file.exists():
+                        with open(changelog_file, 'r', encoding='utf-8') as f:
+                            changelog_content = f.read().strip()
+                            if len(changelog_content) > 300:
+                                changelog_content = changelog_content[:297] + "..."
+                except Exception as e:
+                    print(f"读取更新日志失败 ({id}): {e}")
+
                 update_note = ""
                 if module.get("note") and module.get("note").get("message"):
                     note_message = module.get("note").get("message")
-                    # 如果更新说明太长，进行截断
                     if len(note_message) > 300:
                         note_message = note_message[:297] + "..."
-                    update_note = f'''💬 <b>更新说明</b>
-└─ <i>{note_message}</i>
+                    update_note = f'''📢 <b>更新说明</b>
+└ <i>{note_message}</i>
 
 '''
 
-                message = f"""<b>🔰 模块更新通知</b>
+                message = f"""<b>🎉 模块更新通知</b>
 
-📦 <b>{name}</b>
-├ <code>{version}</code> (Build {version_code})
-└ <i>{desc}</i>
+<b>📦 模块信息</b>
+├ 名称：<code>{name}</code>
+├ 版本：<code>{version}</code>
+└ 构建：<code>{version_code}</code>
 
-{update_note}👨‍💻 <b>开发者信息</b>
+{update_note}<b>📝 更新日志</b>
+└ <i>{changelog_content}</i>
+
+<b>👨‍💻 开发者信息</b>
 └ {author}
 
-🌐 <b>相关链接</b>
+<b>🔗 相关链接</b>
 └ <a href="https://misak10.github.io/mmrl-repo/">模块仓库</a>
 
-#模块更新 #{id}"""
+<b>🏷️ 标签</b>
+└ #模块更新 #{id}"""
 
                 section_1 = []
                 support_urls = []
                 section_2 = []
 
-                # 下载按钮
                 if latest.get("zipUrl"):
                     section_1.append({
                         'text': '📥 下载安装包',
                         'url': latest.get("zipUrl")
                     })
 
-                # 相关链接按钮
                 if source:
                     support_urls.append({
                         'text': '📂 源码仓库',
@@ -240,16 +254,14 @@ def check_for_module_updates() -> bool:
                         'url': support
                     })
 
-                # 打赏按钮
                 if donate:
                     section_2.append({
                         'text': '🎁 支持开发者',
                         'url': donate
                     })
 
-                # 添加仓库按钮
                 section_2.append({
-                    'text': '📱 访问仓库',
+                    'text': '🌐 访问仓库',
                     'url': 'https://misak10.github.io/mmrl-repo/'
                 })
 
