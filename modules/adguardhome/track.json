@@ -9,9 +9,9 @@
     "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
     "donate": "",
     "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
     ],
     "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
-    "version": "20241214"
+    "version": "20250320"
 }
