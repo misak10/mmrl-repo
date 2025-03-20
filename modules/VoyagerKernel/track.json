@@ -9,12 +9,12 @@
     "support": "",
     "donate": "",
     "categories": [
+        "System",
         "Script",
-        "Security",
-        "Utility",
         "Performance",
         "Network",
-        "System"
+        "Security",
+        "Utility"
     ],
     "readme": "",
     "version": "3.6.1-2c3031ec"
