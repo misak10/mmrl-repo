@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       has_updates: ${{ steps.check_updates.outputs.has_updates }}
+      updated_modules: ${{ steps.extract_updates.outputs.modules }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -54,13 +55,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install mmrl-util
 
+      - name: Create log directory
+        run: |
+          mkdir -p log
+          mkdir -p json
+
       - name: Sync and Check Updates
         id: check_updates
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
           mmrl-util sync --diff versions_diff.md
           
-          # 检查是否有更新
           if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
             echo "has_updates=true" >> $GITHUB_OUTPUT
             echo "检测到更新，更新内容："
@@ -86,6 +91,22 @@ jobs:
           echo "## Latest Versions" >> $GITHUB_STEP_SUMMARY
           echo "$(cat latest_versions.md)" >> $GITHUB_STEP_SUMMARY
           rm latest_versions.md
+
+      - name: Extract updated modules from logs
+        id: extract_updates
+        if: ${{ env.IS_SYNC == 'true' }}
+        run: |
+          # 创建保存日志的目录
+          mkdir -p log
+          
+          # 保存同步日志到文件
+          mmrl-util sync --log > log/sync_$(date +"%Y-%m-%d").log
+          
+          # 提取更新的模块列表
+          UPDATED_MODULES=$(grep -o "update: \[[^ ]*\]" log/sync_*.log 2>/dev/null | cut -d'[' -f2 | cut -d']' -f1 | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo "[]")
+          echo "modules=$UPDATED_MODULES" >> $GITHUB_OUTPUT
+          
+          echo "提取的更新模块: $UPDATED_MODULES"
 
       - name: Index and Push
         if: ${{ env.IS_SYNC == 'true' }}
@@ -135,8 +156,40 @@ jobs:
   notify:
     needs: [sync, deploy]
     if: needs.sync.outputs.has_updates == 'true'
-    uses: ./.github/workflows/telegram_updates.yml
-    secrets:
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Download logs
+        uses: actions/download-artifact@v4
+        with:
+          name: logs
+          path: .
+          
+      - name: List downloaded files
+        run: |
+          echo "下载的文件列表:"
+          find . -type f | sort
+          
+      - name: Set updated modules environment variable
+        run: |
+          echo "UPDATED_MODULES='${{ needs.sync.outputs.updated_modules }}'" >> $GITHUB_ENV
+          
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          
+      - name: Run Telegram notification script
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+        run: |
+          python scripts/telegram_updates.py
