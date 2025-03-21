@@ -10,6 +10,7 @@ from pathlib import Path
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 TELEGRAM_TOPIC_ID = os.getenv('TELEGRAM_TOPIC_ID')
+UPDATED_MODULES_ENV = os.getenv('UPDATED_MODULES')
 
 SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 REPO_ROOT = SCRIPT_DIR.parent
@@ -170,85 +171,110 @@ def check_for_module_updates() -> bool:
         # 增强版日志查找逻辑
         updated_modules = set()
         
-        # 1. 尝试从多个可能的位置查找日志文件
-        possible_log_dirs = [
-            REPO_ROOT / 'log',
-            REPO_ROOT,
-            Path('log'),
-            Path('.'),
-            Path('/github/workspace/log')
-        ]
-        
-        print("开始查找日志文件...")
-        for log_dir in possible_log_dirs:
-            if not log_dir.exists():
-                print(f"目录不存在: {log_dir}")
-                continue
-                
-            print(f"在目录中查找日志: {log_dir}")
+        # 0. 首先尝试从环境变量中获取更新的模块列表
+        if UPDATED_MODULES_ENV:
             try:
-                all_files = list(log_dir.glob('*'))
-                print(f"该目录中的所有文件: {[str(f) for f in all_files]}")
-                
-                log_files = list(log_dir.glob('*sync*.log'))
-                print(f"找到的日志文件: {[str(f) for f in log_files]}")
-                
-                for log_file in log_files:
-                    print(f"正在读取日志文件: {log_file}")
-                    try:
-                        with open(log_file, 'r', encoding='utf-8') as f:
-                            content = f.read()
-                            print(f"日志文件内容片段: {content[:200]}...")
-                            
-                            for line in content.splitlines():
-                                if 'update: [' in line and '] -> update to' in line:
-                                    module_id = line.split('[')[1].split(']')[0]
-                                    updated_modules.add(module_id)
-                                    print(f"从日志中发现模块更新: {module_id}")
-                    except Exception as e:
-                        print(f"读取日志文件 {log_file} 时出错: {e}")
+                # 去除可能的单引号
+                cleaned_json = UPDATED_MODULES_ENV.strip("'")
+                print(f"从环境变量中读取更新模块: {cleaned_json}")
+                env_modules = json.loads(cleaned_json)
+                if env_modules and isinstance(env_modules, list):
+                    for module_id in env_modules:
+                        updated_modules.add(module_id)
+                        print(f"从环境变量中发现模块更新: {module_id}")
             except Exception as e:
-                print(f"处理目录 {log_dir} 时出错: {e}")
+                print(f"解析环境变量UPDATED_MODULES时出错: {e}")
+                print(f"环境变量内容: {UPDATED_MODULES_ENV}")
         
-        # 2. 如果没有找到更新，尝试从modules.json和last_versions.json比较版本
+        # 如果环境变量中没有找到更新的模块，则继续使用其他方式检测
         if not updated_modules:
-            print("从日志中未找到更新，尝试比较版本文件...")
-            for module in main_data.get("modules", []):
-                id = module.get("id")
-                version_code = module.get("versionCode", 0)
-                
-                if id in last_versions:
-                    last_record = last_versions.get(id, {})
-                    last_version_code = last_record.get("versionCode", 0)
+            # 1. 尝试从多个可能的位置查找日志文件
+            possible_log_dirs = [
+                REPO_ROOT / 'log',
+                REPO_ROOT,
+                Path('log'),
+                Path('.'),
+                Path('/github/workspace/log')
+            ]
+            
+            print("开始查找日志文件...")
+            for log_dir in possible_log_dirs:
+                if not log_dir.exists():
+                    print(f"目录不存在: {log_dir}")
+                    continue
                     
-                    if isinstance(last_version_code, int) and isinstance(version_code, int):
-                        if version_code > last_version_code:
-                            updated_modules.add(id)
-                            print(f"通过版本比较发现更新: {id} ({last_version_code} -> {version_code})")
+                print(f"在目录中查找日志: {log_dir}")
+                try:
+                    all_files = list(log_dir.glob('*'))
+                    print(f"该目录中的所有文件: {[str(f) for f in all_files]}")
+                    
+                    log_files = list(log_dir.glob('*sync*.log'))
+                    print(f"找到的日志文件: {[str(f) for f in log_files]}")
+                    
+                    for log_file in log_files:
+                        print(f"正在读取日志文件: {log_file}")
+                        try:
+                            with open(log_file, 'r', encoding='utf-8') as f:
+                                content = f.read()
+                                print(f"日志文件内容片段: {content[:200]}...")
+                                
+                                for line in content.splitlines():
+                                    if 'update: [' in line and '] -> update to' in line:
+                                        module_id = line.split('[')[1].split(']')[0]
+                                        updated_modules.add(module_id)
+                                        print(f"从日志中发现模块更新: {module_id}")
+                        except Exception as e:
+                            print(f"读取日志文件 {log_file} 时出错: {e}")
+                except Exception as e:
+                    print(f"处理目录 {log_dir} 时出错: {e}")
+            
+            # 2. 如果没有找到更新，尝试从modules.json和last_versions.json比较版本
+            if not updated_modules:
+                print("从日志中未找到更新，尝试比较版本文件...")
+                for module in main_data.get("modules", []):
+                    id = module.get("id")
+                    version_code = module.get("versionCode", 0)
+                    
+                    if id in last_versions:
+                        last_record = last_versions.get(id, {})
+                        
+                        # 处理不同的last_versions格式
+                        if isinstance(last_record, dict):
+                            last_version_code = last_record.get("versionCode", 0)
+                        else:  # 旧格式，直接存储版本代码
+                            last_version_code = last_record
+                        
+                        if isinstance(last_version_code, int) and isinstance(version_code, int):
+                            if version_code > last_version_code:
+                                updated_modules.add(id)
+                                print(f"通过版本比较发现更新: {id} ({last_version_code} -> {version_code})")
+            
+            # 3. 直接检查lingeringsound_ads模块(临时措施)
+            if "lingeringsound_ads" not in updated_modules:
+                for module in main_data.get("modules", []):
+                    if module.get("id") == "lingeringsound_ads":
+                        current_version = module.get("version", "")
+                        current_code = module.get("versionCode", 0)
+                        last_record = last_versions.get("lingeringsound_ads", {})
+                        
+                        if isinstance(last_record, dict):
+                            last_version = last_record.get("version", "")
+                            last_code = last_record.get("versionCode", 0)
+                        elif isinstance(last_record, int):  # 旧格式
+                            last_version = ""
+                            last_code = last_record
+                        else:
+                            last_version = ""
+                            last_code = 0
+                        
+                        print(f"lingeringsound_ads 当前版本: {current_version} ({current_code})")
+                        print(f"lingeringsound_ads 上次记录版本: {last_version} ({last_code})")
+                        
+                        if current_version != last_version or current_code != last_code:
+                            updated_modules.add("lingeringsound_ads")
+                            print(f"检测到 lingeringsound_ads 有更新: {last_version} -> {current_version}")
         
-        # 3. 直接检查lingeringsound_ads模块(临时措施)
-        if "lingeringsound_ads" not in updated_modules:
-            for module in main_data.get("modules", []):
-                if module.get("id") == "lingeringsound_ads":
-                    current_version = module.get("version", "")
-                    current_code = module.get("versionCode", 0)
-                    last_record = last_versions.get("lingeringsound_ads", {})
-                    
-                    if isinstance(last_record, dict):
-                        last_version = last_record.get("version", "")
-                        last_code = last_record.get("versionCode", 0)
-                    else:
-                        last_version = ""
-                        last_code = 0
-                    
-                    print(f"lingeringsound_ads 当前版本: {current_version} ({current_code})")
-                    print(f"lingeringsound_ads 上次记录版本: {last_version} ({last_code})")
-                    
-                    if current_version != last_version or current_code != last_code:
-                        updated_modules.add("lingeringsound_ads")
-                        print(f"检测到 lingeringsound_ads 有更新: {last_version} -> {current_version}")
-        
-        print(f"从日志中找到 {len(updated_modules)} 个更新的模块: {', '.join(updated_modules)}")
+        print(f"找到 {len(updated_modules)} 个更新的模块: {', '.join(updated_modules)}")
 
         for module in main_data.get("modules", []):
             id = module.get("id")
