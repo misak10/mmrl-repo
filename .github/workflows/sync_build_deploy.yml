@@ -64,7 +64,7 @@ jobs:
         id: check_updates
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util sync --diff versions_diff.md
+          mmrl-util sync --diff versions_diff.md 2>&1 | tee log/sync_$(date +"%Y-%m-%d").log
           
           if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
             echo "has_updates=true" >> $GITHUB_OUTPUT
@@ -96,17 +96,14 @@ jobs:
         id: extract_updates
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          # 创建保存日志的目录
-          mkdir -p log
-          
-          # 保存同步日志到文件
-          mmrl-util sync --log > log/sync_$(date +"%Y-%m-%d").log
-          
-          # 提取更新的模块列表
-          UPDATED_MODULES=$(grep -o "update: \[[^ ]*\]" log/sync_*.log 2>/dev/null | cut -d'[' -f2 | cut -d']' -f1 | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo "[]")
-          echo "modules=$UPDATED_MODULES" >> $GITHUB_OUTPUT
-          
-          echo "提取的更新模块: $UPDATED_MODULES"
+          if [ -f "log/sync_$(date +"%Y-%m-%d").log" ]; then
+            UPDATED_MODULES=$(grep -o "update: \[[^ ]*\]" log/sync_$(date +"%Y-%m-%d").log 2>/dev/null | cut -d'[' -f2 | cut -d']' -f1 | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo "[]")
+            echo "modules=$UPDATED_MODULES" >> $GITHUB_OUTPUT
+            echo "提取的更新模块: $UPDATED_MODULES"
+          else
+            echo "警告：找不到同步日志文件"
+            echo "modules=[]" >> $GITHUB_OUTPUT
+          fi
 
       - name: Index and Push
         if: ${{ env.IS_SYNC == 'true' }}
