@@ -9,14 +9,14 @@
     "support": "https://github.com/MoGuangYu/Surfing/issues",
     "donate": "",
     "categories": [
+        "Input",
+        "Utility",
+        "Script",
+        "Font",
         "Theme",
         "Network",
-        "Input",
-        "Script",
-        "Security",
-        "Font",
         "Debug",
-        "Utility"
+        "Security"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
     "version": "v7.3.9"
