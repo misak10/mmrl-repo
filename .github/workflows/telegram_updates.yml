@@ -7,6 +7,10 @@ on:
         required: false
         type: string
         description: "Custom message to send"
+      updated_modules:
+        required: false
+        type: string
+        description: "JSON array of updated module IDs"
     secrets:
       TELEGRAM_BOT_TOKEN:
         required: true
@@ -26,7 +30,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: logs
-          path: log
+          path: .
+          
+      - name: List downloaded files
+        run: |
+          echo "下载的文件列表:"
+          find . -type f | sort
+          
+      - name: Set updated modules environment variable
+        if: inputs.updated_modules
+        run: |
+          echo "UPDATED_MODULES='${{ inputs.updated_modules }}'" >> $GITHUB_ENV
           
       - name: Set up Python
         uses: actions/setup-python@v4
