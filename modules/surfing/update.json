@@ -3,14 +3,6 @@
   "timestamp": 1731944201.0,
   "versions": [
     {
-      "timestamp": 1739850665.0,
-      "version": "v7.3.5",
-      "versionCode": 1600,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.5_1600.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.5_1600.md",
-      "size": 28171237
-    },
-    {
       "timestamp": 1739887580.0,
       "version": "v7.3.6",
       "versionCode": 1601,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.9_1610.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.9_1610.md",
       "size": 33440521
+    },
+    {
+      "timestamp": 1742531561.0,
+      "version": "v7.3.9",
+      "versionCode": 1611,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.9_1611.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.3.9_1611.md",
+      "size": 33447530
     }
   ]
 }
