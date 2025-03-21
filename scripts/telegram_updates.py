@@ -92,18 +92,21 @@ async def send_telegram_message(message, buttons):
             topic_id = int(TELEGRAM_TOPIC_ID)
             if topic_id > 0:
                 payload['message_thread_id'] = topic_id
+                print(f"将消息发送到话题 ID: {topic_id}")
         except ValueError:
             print("警告: TELEGRAM_TOPIC_ID 格式无效，将发送到主群组")
     
     try:
+        print(f"正在发送消息到 Telegram: chat_id={TELEGRAM_CHAT_ID}")
         response = requests.post(url, data=payload)
         response.raise_for_status()
-        print(f"Message sent: {message}")
+        print(f"消息发送成功: {message[:100]}...")
+        print(f"Telegram API 响应: {response.status_code}")
     except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP error occurred: {http_err}")
-        print(f"Response: {response.json()}")
+        print(f"HTTP 错误: {http_err}")
+        print(f"响应: {response.json()}")
     except Exception as err:
-        print(f"An error occurred: {err}")
+        print(f"发生错误: {err}")
         
     return "Done"
 
@@ -164,17 +167,86 @@ def check_for_module_updates() -> bool:
         main_data = load_json_file('modules.json', {"modules": []})
         last_versions = load_json_file('last_versions.json', {})
         
+        # 增强版日志查找逻辑
         updated_modules = set()
-        for log_file in Path(REPO_ROOT / 'log').glob('sync_*.log'):
+        
+        # 1. 尝试从多个可能的位置查找日志文件
+        possible_log_dirs = [
+            REPO_ROOT / 'log',
+            REPO_ROOT,
+            Path('log'),
+            Path('.'),
+            Path('/github/workspace/log')
+        ]
+        
+        print("开始查找日志文件...")
+        for log_dir in possible_log_dirs:
+            if not log_dir.exists():
+                print(f"目录不存在: {log_dir}")
+                continue
+                
+            print(f"在目录中查找日志: {log_dir}")
             try:
-                with open(log_file, 'r', encoding='utf-8') as f:
-                    for line in f:
-                        if 'update: [' in line and '] -> update to' in line:
-                            module_id = line.split('[')[1].split(']')[0]
-                            updated_modules.add(module_id)
-                            print(f"从日志中发现模块更新: {module_id}")
+                all_files = list(log_dir.glob('*'))
+                print(f"该目录中的所有文件: {[str(f) for f in all_files]}")
+                
+                log_files = list(log_dir.glob('*sync*.log'))
+                print(f"找到的日志文件: {[str(f) for f in log_files]}")
+                
+                for log_file in log_files:
+                    print(f"正在读取日志文件: {log_file}")
+                    try:
+                        with open(log_file, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            print(f"日志文件内容片段: {content[:200]}...")
+                            
+                            for line in content.splitlines():
+                                if 'update: [' in line and '] -> update to' in line:
+                                    module_id = line.split('[')[1].split(']')[0]
+                                    updated_modules.add(module_id)
+                                    print(f"从日志中发现模块更新: {module_id}")
+                    except Exception as e:
+                        print(f"读取日志文件 {log_file} 时出错: {e}")
             except Exception as e:
-                print(f"读取日志文件 {log_file} 时出错: {e}")
+                print(f"处理目录 {log_dir} 时出错: {e}")
+        
+        # 2. 如果没有找到更新，尝试从modules.json和last_versions.json比较版本
+        if not updated_modules:
+            print("从日志中未找到更新，尝试比较版本文件...")
+            for module in main_data.get("modules", []):
+                id = module.get("id")
+                version_code = module.get("versionCode", 0)
+                
+                if id in last_versions:
+                    last_record = last_versions.get(id, {})
+                    last_version_code = last_record.get("versionCode", 0)
+                    
+                    if isinstance(last_version_code, int) and isinstance(version_code, int):
+                        if version_code > last_version_code:
+                            updated_modules.add(id)
+                            print(f"通过版本比较发现更新: {id} ({last_version_code} -> {version_code})")
+        
+        # 3. 直接检查lingeringsound_ads模块(临时措施)
+        if "lingeringsound_ads" not in updated_modules:
+            for module in main_data.get("modules", []):
+                if module.get("id") == "lingeringsound_ads":
+                    current_version = module.get("version", "")
+                    current_code = module.get("versionCode", 0)
+                    last_record = last_versions.get("lingeringsound_ads", {})
+                    
+                    if isinstance(last_record, dict):
+                        last_version = last_record.get("version", "")
+                        last_code = last_record.get("versionCode", 0)
+                    else:
+                        last_version = ""
+                        last_code = 0
+                    
+                    print(f"lingeringsound_ads 当前版本: {current_version} ({current_code})")
+                    print(f"lingeringsound_ads 上次记录版本: {last_version} ({last_code})")
+                    
+                    if current_version != last_version or current_code != last_code:
+                        updated_modules.add("lingeringsound_ads")
+                        print(f"检测到 lingeringsound_ads 有更新: {last_version} -> {current_version}")
         
         print(f"从日志中找到 {len(updated_modules)} 个更新的模块: {', '.join(updated_modules)}")
 
@@ -268,13 +340,24 @@ def check_for_module_updates() -> bool:
                 buttons = [section_1, support_urls, section_2]
 
                 try:
+                    print(f"开始发送模块 {id} 的更新通知...")
                     if not module.get("cover"):
                         result = asyncio.run(send_telegram_message(message, buttons))
                     else:
                         result = asyncio.run(send_telegram_photo(module.get("cover"), message, buttons))
                         
-                    last_versions[id] = version_code
-                    print(result)
+                    # 保存已通知的版本
+                    if isinstance(last_versions.get(id), dict):
+                        last_versions[id]["version"] = version
+                        last_versions[id]["versionCode"] = version_code
+                    else:
+                        last_versions[id] = {
+                            "version": version,
+                            "versionCode": version_code,
+                            "author": author,
+                            "name": name
+                        }
+                    print(f"通知结果: {result}")
                 except Exception as e:
                     print(f"发送通知失败 (模块 {id}): {e}")
                     continue
@@ -284,6 +367,8 @@ def check_for_module_updates() -> bool:
 
     except Exception as e:
         print(f"检查更新时发生错误: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 if __name__ == "__main__":
