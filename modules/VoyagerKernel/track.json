@@ -11,10 +11,10 @@
     "categories": [
         "System",
         "Utility",
-        "Script",
-        "Network",
         "Performance",
-        "Security"
+        "Script",
+        "Security",
+        "Network"
     ],
     "readme": "",
     "version": "3.6.1-2c3031ec"
