@@ -1,21 +1,22 @@
 {
-  "id": "fas-rs",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://github.com/shadow3aaa/fas-rs/raw/refs/heads/master/update/update.json",
-  "license": "GPL-3.0",
-  "source": "https://github.com/shadow3aaa/fas-rs",
-  "support": "https://github.com/shadow3aaa/fas-rs/issues",
-  "categories": [
-    "System",
-    "Script",
-    "Gaming",
-    "Framework",
-    "Theme",
-    "Performance",
-    "Utility"
-  ],
-  "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
-  "last_update": 1742703753.0,
-  "versions": 5
+    "id": "fas-rs",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://github.com/shadow3aaa/fas-rs/raw/refs/heads/master/update/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/shadow3aaa/fas-rs",
+    "support": "https://github.com/shadow3aaa/fas-rs/issues",
+    "donate": "",
+    "categories": [
+        "Utility",
+        "Performance",
+        "Theme",
+        "Script",
+        "Gaming",
+        "System",
+        "Framework"
+    ],
+    "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
+    "version": "v4.8.0"
 }
