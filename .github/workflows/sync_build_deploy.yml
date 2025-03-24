@@ -97,12 +97,21 @@ jobs:
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
           if [ -f "log/sync_$(date +"%Y-%m-%d").log" ]; then
-            UPDATED_MODULES=$(grep -o "update: \[[^ ]*\]" log/sync_$(date +"%Y-%m-%d").log 2>/dev/null | cut -d'[' -f2 | cut -d']' -f1 | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo "[]")
+            UPDATED_MODULES=$(grep -o "update: \[[^]]*\] -> update to" log/sync_$(date +"%Y-%m-%d").log 2>/dev/null | sed 's/update: \[\([^]]*\)\] -> update to/\1/' | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo "[]")
             echo "modules=$UPDATED_MODULES" >> $GITHUB_OUTPUT
             echo "提取的更新模块: $UPDATED_MODULES"
           else
-            echo "警告：找不到同步日志文件"
-            echo "modules=[]" >> $GITHUB_OUTPUT
+            echo "尝试查找任何同步日志文件..."
+            LATEST_LOG=$(find log -name "sync_*.log" -type f -printf "%T@ %p\n" 2>/dev/null | sort -nr | head -n1 | cut -d' ' -f2)
+            if [ -n "$LATEST_LOG" ]; then
+              echo "找到最新日志文件: $LATEST_LOG"
+              UPDATED_MODULES=$(grep -o "update: \[[^]]*\] -> update to" "$LATEST_LOG" 2>/dev/null | sed 's/update: \[\([^]]*\)\] -> update to/\1/' | sort | uniq | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo "[]")
+              echo "modules=$UPDATED_MODULES" >> $GITHUB_OUTPUT
+              echo "提取的更新模块: $UPDATED_MODULES"
+            else
+              echo "警告：找不到任何同步日志文件"
+              echo "modules=[]" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Index and Push
