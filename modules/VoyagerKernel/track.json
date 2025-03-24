@@ -10,9 +10,9 @@
     "donate": "",
     "categories": [
         "Performance",
-        "Network",
-        "Utility",
         "System",
+        "Utility",
+        "Network",
         "Script",
         "Security"
     ],
