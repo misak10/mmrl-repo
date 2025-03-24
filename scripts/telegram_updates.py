@@ -6,6 +6,7 @@ import os
 import sys
 from typing import Dict, List, Optional
 from pathlib import Path
+import re
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
@@ -168,20 +169,42 @@ def check_for_module_updates() -> bool:
         main_data = load_json_file('modules.json', {"modules": []})
         last_versions = load_json_file('last_versions.json', {})
         
+        print("="*50)
+        print("开始检查模块更新")
+        print(f"当前工作目录: {os.getcwd()}")
+        print(f"REPO_ROOT: {REPO_ROOT}")
+        print(f"环境变量 UPDATED_MODULES_ENV: {UPDATED_MODULES_ENV}")
+        print("="*50)
+        
         # 增强版日志查找逻辑
         updated_modules = set()
         
         # 0. 首先尝试从环境变量中获取更新的模块列表
         if UPDATED_MODULES_ENV:
             try:
-                # 去除可能的单引号
-                cleaned_json = UPDATED_MODULES_ENV.strip("'")
+                # 去除可能的单引号或双引号
+                cleaned_json = UPDATED_MODULES_ENV.strip("'").strip('"')
                 print(f"从环境变量中读取更新模块: {cleaned_json}")
-                env_modules = json.loads(cleaned_json)
-                if env_modules and isinstance(env_modules, list):
-                    for module_id in env_modules:
-                        updated_modules.add(module_id)
-                        print(f"从环境变量中发现模块更新: {module_id}")
+                
+                # 处理空数组的情况
+                if cleaned_json == "[]" or not cleaned_json:
+                    print("环境变量中没有更新模块")
+                else:
+                    try:
+                        env_modules = json.loads(cleaned_json)
+                        if env_modules and isinstance(env_modules, list):
+                            for module_id in env_modules:
+                                updated_modules.add(module_id)
+                                print(f"从环境变量中发现模块更新: {module_id}")
+                    except json.JSONDecodeError:
+                        # 尝试解析非标准JSON格式
+                        if '[' in cleaned_json and ']' in cleaned_json:
+                            items = cleaned_json.strip('[]').split(',')
+                            for item in items:
+                                module_id = item.strip().strip('"').strip("'")
+                                if module_id:
+                                    updated_modules.add(module_id)
+                                    print(f"从非标准JSON格式中发现模块更新: {module_id}")
             except Exception as e:
                 print(f"解析环境变量UPDATED_MODULES时出错: {e}")
                 print(f"环境变量内容: {UPDATED_MODULES_ENV}")
@@ -218,11 +241,24 @@ def check_for_module_updates() -> bool:
                                 content = f.read()
                                 print(f"日志文件内容片段: {content[:200]}...")
                                 
-                                for line in content.splitlines():
-                                    if 'update: [' in line and '] -> update to' in line:
-                                        module_id = line.split('[')[1].split(']')[0]
-                                        updated_modules.add(module_id)
-                                        print(f"从日志中发现模块更新: {module_id}")
+                                # 使用更精确的正则表达式匹配更新记录
+                                update_pattern = r"update: \[([^\]]+)\] -> update to"
+                                matches = re.findall(update_pattern, content)
+                                
+                                for module_id in matches:
+                                    updated_modules.add(module_id)
+                                    print(f"从日志中发现模块更新: {module_id}")
+                                    
+                                # 如果没有使用正则表达式找到匹配，退回到行匹配
+                                if not matches:
+                                    for line in content.splitlines():
+                                        if 'update: [' in line and '] -> update to' in line:
+                                            try:
+                                                module_id = line.split('[')[1].split(']')[0]
+                                                updated_modules.add(module_id)
+                                                print(f"从日志行中发现模块更新: {module_id}")
+                                            except:
+                                                print(f"无法从行中解析模块ID: {line}")
                         except Exception as e:
                             print(f"读取日志文件 {log_file} 时出错: {e}")
                 except Exception as e:
@@ -249,31 +285,6 @@ def check_for_module_updates() -> bool:
                                 updated_modules.add(id)
                                 print(f"通过版本比较发现更新: {id} ({last_version_code} -> {version_code})")
             
-            # 3. 直接检查lingeringsound_ads模块(临时措施)
-            if "lingeringsound_ads" not in updated_modules:
-                for module in main_data.get("modules", []):
-                    if module.get("id") == "lingeringsound_ads":
-                        current_version = module.get("version", "")
-                        current_code = module.get("versionCode", 0)
-                        last_record = last_versions.get("lingeringsound_ads", {})
-                        
-                        if isinstance(last_record, dict):
-                            last_version = last_record.get("version", "")
-                            last_code = last_record.get("versionCode", 0)
-                        elif isinstance(last_record, int):  # 旧格式
-                            last_version = ""
-                            last_code = last_record
-                        else:
-                            last_version = ""
-                            last_code = 0
-                        
-                        print(f"lingeringsound_ads 当前版本: {current_version} ({current_code})")
-                        print(f"lingeringsound_ads 上次记录版本: {last_version} ({last_code})")
-                        
-                        if current_version != last_version or current_code != last_code:
-                            updated_modules.add("lingeringsound_ads")
-                            print(f"检测到 lingeringsound_ads 有更新: {last_version} -> {current_version}")
-        
         print(f"找到 {len(updated_modules)} 个更新的模块: {', '.join(updated_modules)}")
 
         for module in main_data.get("modules", []):
@@ -293,12 +304,35 @@ def check_for_module_updates() -> bool:
 
                 changelog_content = "暂无更新日志"
                 try:
-                    changelog_file = REPO_ROOT / "modules" / id / f"{latest['version']}_{latest['versionCode']}.md"
-                    if changelog_file.exists():
-                        with open(changelog_file, 'r', encoding='utf-8') as f:
-                            changelog_content = f.read().strip()
-                            if len(changelog_content) > 300:
-                                changelog_content = changelog_content[:297] + "..."
+                    # 尝试多种可能的更新日志文件命名格式
+                    possible_changelog_files = [
+                        REPO_ROOT / "modules" / id / f"{latest.get('version')}_{latest.get('versionCode')}.md",
+                        REPO_ROOT / "modules" / id / f"{version}_{version_code}.md",
+                        REPO_ROOT / "modules" / id / "changelog.md",
+                        REPO_ROOT / "modules" / id / "CHANGELOG.md"
+                    ]
+                    
+                    print(f"正在查找模块 {id} 的更新日志文件...")
+                    for changelog_file in possible_changelog_files:
+                        print(f"尝试: {changelog_file}")
+                        if changelog_file.exists():
+                            print(f"找到更新日志文件: {changelog_file}")
+                            with open(changelog_file, 'r', encoding='utf-8') as f:
+                                changelog_content = f.read().strip()
+                                if len(changelog_content) > 300:
+                                    changelog_content = changelog_content[:297] + "..."
+                            break
+                    else:
+                        print(f"未找到更新日志文件，尝试查找上一级目录...")
+                        # 尝试查找模块目录下的任何md文件作为更新日志
+                        md_files = list((REPO_ROOT / "modules" / id).glob("*.md"))
+                        if md_files:
+                            newest_file = max(md_files, key=lambda x: x.stat().st_mtime)
+                            print(f"找到最新的MD文件: {newest_file}")
+                            with open(newest_file, 'r', encoding='utf-8') as f:
+                                changelog_content = f.read().strip()
+                                if len(changelog_content) > 300:
+                                    changelog_content = changelog_content[:297] + "..."
                 except Exception as e:
                     print(f"读取更新日志失败 ({id}): {e}")
 
