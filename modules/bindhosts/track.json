@@ -9,11 +9,11 @@
     "support": "https://github.com/bindhosts/bindhosts/issues",
     "donate": "",
     "categories": [
-        "Script",
-        "Utility",
+        "Theme",
         "Network",
-        "Localization",
-        "Theme"
+        "Utility",
+        "Script",
+        "Localization"
     ],
     "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/main/README.md",
     "version": "v2.0.0"
