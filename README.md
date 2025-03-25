@@ -41,13 +41,13 @@ Misaki-Modules Repo 是一个专注于提供高质量 Magisk 模块的仓库。�
 
 ## 🚀 快速开始
 
-1. 使用支持 [MMRL](https://github.com/DerGoogler/MMRL) 的 Magisk 管理器
+1. 使用支持 [MMRL](https://github.com/MMRLApp/MMRL) 的 Magisk 管理器
 2. 添加仓库地址：`https://misak10.github.io/mmrl-repo/`
 3. 刷新并浏览可用模块
 4. 选择并安装所需模块
 
 ### 📱 支持的管理器
-- [MMRL](https://github.com/DerGoogler/MMRL)
+- [MMRL](https://github.com/MMRLApp/MMRL)
 
 ## 🤝 贡献指南
 
@@ -66,13 +66,13 @@ Misaki-Modules Repo 是一个专注于提供高质量 Magisk 模块的仓库。�
 
 ## 📚 更多资源
 
-- [MMRL 官方文档](https://github.com/Googlers-Repo/mmrl-util)
+- [MMRL 官方文档](https://github.com/MMRLApp/MMRL-Util)
 - [问题反馈](https://github.com/misak10/mmrl-repo/issues)
 - [模块更新通知与闲聊群组](https://t.me/module_update)
 
 ## 🙏 特别感谢
 
-- [Googlers-Repo](https://github.com/Googlers-Repo) - 为 MMRL 提供了优秀的基础设施和工具支持
+- [MMRLApps](https://github.com/MMRLApps) - 为 MMRL 提供了优秀的基础设施和工具支持
 - [MMRL-Util](https://github.com/MMRLApp/MMRL-Util) - 提供了强大的模块仓库管理工具
 - [DerGoogler](https://github.com/DerGoogler) - MMRL 的主要开发者
 - [Cursor](https://cursor.sh) - 提供了强大的AI辅助开发体验
@@ -82,5 +82,5 @@ Misaki-Modules Repo 是一个专注于提供高质量 Magisk 模块的仓库。�
 <div align="center">
     <sub>Made with ❤️ by Misaki</sub>
     <br>
-    <sub>Powered by <a href="https://github.com/Googlers-Repo">MMRL</a></sub>
+    <sub>Powered by <a href="https://github.com/MMRLApps/MMRL">MMRL</a></sub>
 </div> 
