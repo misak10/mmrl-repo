@@ -12,6 +12,7 @@ TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 TELEGRAM_TOPIC_ID = os.getenv('TELEGRAM_TOPIC_ID')
 UPDATED_MODULES_ENV = os.getenv('UPDATED_MODULES')
+PREVIOUS_MODULES_DIR = os.getenv('PREVIOUS_MODULES_DIR')
 
 SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 REPO_ROOT = SCRIPT_DIR.parent
@@ -249,6 +250,8 @@ def check_for_module_updates() -> bool:
         print(f"当前工作目录: {os.getcwd()}")
         print(f"REPO_ROOT: {REPO_ROOT}")
         print(f"环境变量 UPDATED_MODULES_ENV: {UPDATED_MODULES_ENV}")
+        if PREVIOUS_MODULES_DIR:
+            print(f"PREVIOUS_MODULES_DIR: {PREVIOUS_MODULES_DIR}")
         print("="*50)
         
         # 增强版日志查找逻辑
@@ -379,41 +382,61 @@ def check_for_module_updates() -> bool:
 
                 changelog_content = "暂无更新日志"
                 try:
-                    # 优先获取最新版本的更新日志文件
-                    module_dir = REPO_ROOT / "modules" / id
-                    print(f"正在查找模块 {id} 的更新日志文件...")
-                    
-                    # 优先尝试找最新版本的文件
-                    latest_version_file = module_dir / f"{latest.get('version')}_{latest.get('versionCode')}.md"
-                    if latest_version_file.exists():
-                        print(f"找到最新版本更新日志文件: {latest_version_file}")
-                        with open(latest_version_file, 'r', encoding='utf-8') as f:
-                            changelog_content = f.read().strip()
-                    else:
-                        # 查找模块目录下的所有md文件
-                        md_files = list(module_dir.glob("*.md"))
-                        if md_files:
-                            # 尝试根据版本号和构建号找到匹配的文件
-                            version_files = [f for f in md_files if f.name.startswith(f"{version}_") or f.name.startswith(f"{version}{version_code}")]
-                            if version_files:
-                                changelog_file = version_files[0]
-                                print(f"找到版本匹配的更新日志文件: {changelog_file}")
-                                with open(changelog_file, 'r', encoding='utf-8') as f:
-                                    changelog_content = f.read().strip()
-                            else:
-                                # 没有找到匹配的版本文件，查找最新修改的md文件
+                    # 首先检查是否有预处理好的上一版本的更新日志
+                    if PREVIOUS_MODULES_DIR:
+                        previous_module_dir = Path(PREVIOUS_MODULES_DIR) / id
+                        print(f"检查预处理目录: {previous_module_dir}")
+                        
+                        if previous_module_dir.exists() and previous_module_dir.is_dir():
+                            md_files = list(previous_module_dir.glob("*.md"))
+                            if md_files:
+                                # 找到最新的md文件
                                 newest_file = max(md_files, key=lambda x: x.stat().st_mtime)
-                                print(f"找到最新修改的MD文件: {newest_file}")
+                                print(f"在预处理目录中找到更新日志文件: {newest_file}")
                                 with open(newest_file, 'r', encoding='utf-8') as f:
                                     changelog_content = f.read().strip()
+                                
+                                # 如果找到了预处理的更新日志，就不再继续查找
+                                if changelog_content and changelog_content != "暂无更新日志":
+                                    print(f"使用预处理的更新日志，内容长度: {len(changelog_content)}")
+                    
+                    # 如果没有找到预处理的更新日志，则继续常规查找
+                    if changelog_content == "暂无更新日志":
+                        # 优先获取最新版本的更新日志文件
+                        module_dir = REPO_ROOT / "modules" / id
+                        print(f"正在查找模块 {id} 的更新日志文件...")
+                        
+                        # 优先尝试找最新版本的文件
+                        latest_version_file = module_dir / f"{latest.get('version')}_{latest.get('versionCode')}.md"
+                        if latest_version_file.exists():
+                            print(f"找到最新版本更新日志文件: {latest_version_file}")
+                            with open(latest_version_file, 'r', encoding='utf-8') as f:
+                                changelog_content = f.read().strip()
                         else:
-                            # 尝试标准的changelog文件
-                            for changelog_file in [module_dir / "changelog.md", module_dir / "CHANGELOG.md"]:
-                                if changelog_file.exists():
-                                    print(f"找到标准更新日志文件: {changelog_file}")
+                            # 查找模块目录下的所有md文件
+                            md_files = list(module_dir.glob("*.md"))
+                            if md_files:
+                                # 尝试根据版本号和构建号找到匹配的文件
+                                version_files = [f for f in md_files if f.name.startswith(f"{version}_") or f.name.startswith(f"{version}{version_code}")]
+                                if version_files:
+                                    changelog_file = version_files[0]
+                                    print(f"找到版本匹配的更新日志文件: {changelog_file}")
                                     with open(changelog_file, 'r', encoding='utf-8') as f:
                                         changelog_content = f.read().strip()
-                                    break
+                                else:
+                                    # 没有找到匹配的版本文件，查找最新修改的md文件
+                                    newest_file = max(md_files, key=lambda x: x.stat().st_mtime)
+                                    print(f"找到最新修改的MD文件: {newest_file}")
+                                    with open(newest_file, 'r', encoding='utf-8') as f:
+                                        changelog_content = f.read().strip()
+                            else:
+                                # 尝试标准的changelog文件
+                                for changelog_file in [module_dir / "changelog.md", module_dir / "CHANGELOG.md"]:
+                                    if changelog_file.exists():
+                                        print(f"找到标准更新日志文件: {changelog_file}")
+                                        with open(changelog_file, 'r', encoding='utf-8') as f:
+                                            changelog_content = f.read().strip()
+                                        break
                     
                     # 将Markdown转换为HTML格式
                     if changelog_content != "暂无更新日志":
@@ -424,6 +447,8 @@ def check_for_module_updates() -> bool:
                             
                 except Exception as e:
                     print(f"读取更新日志失败 ({id}): {e}")
+                    import traceback
+                    traceback.print_exc()
 
                 update_note = ""
                 if module.get("note") and module.get("note").get("message"):
