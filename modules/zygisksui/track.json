@@ -12,8 +12,8 @@
         "Theme",
         "Utility",
         "Debug",
-        "Script",
-        "Network"
+        "Network",
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md",
     "version": "v13.5.1"

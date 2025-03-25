@@ -10,9 +10,9 @@
     "donate": "",
     "categories": [
         "Theme",
-        "Font",
         "Script",
-        "Network"
+        "Network",
+        "Font"
     ],
     "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
     "version": "v18.8"
