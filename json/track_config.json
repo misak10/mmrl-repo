@@ -199,6 +199,36 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/HChenX/MemoryOpt",
+            "module_id": "MemoryOpt",
+            "update_to": "https://raw.githubusercontent.com/HChenX/MemoryOpt/refs/heads/main/HChen.json",
+            "source": "https://github.com/HChenX/MemoryOpt",
+            "support": "https://github.com/HChenX/MemoryOpt/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/gloeyisk/systemless-hosts",
+            "module_id": "systemless-hosts",
+            "update_to": "https://raw.githubusercontent.com/gloeyisk/systemless-hosts/refs/heads/master/module.json",
+            "source": "https://github.com/gloeyisk/systemless-hosts",
+            "support": "https://github.com/gloeyisk/systemless-hosts/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/j-hc/zygisk-detach",
+            "module_id": "zygisk-detach",
+            "update_to": "https://raw.githubusercontent.com/j-hc/zygisk-detach/refs/heads/master/update.json",
+            "source": "https://github.com/j-hc/zygisk-detach",
+            "support": "https://github.com/j-hc/zygisk-detach/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
