@@ -160,6 +160,81 @@ async def send_telegram_photo(photo_url, caption, buttons):
         
     return "Done"
 
+def convert_markdown_to_html(markdown_text: str) -> str:
+    """
+    将Markdown格式转换为Telegram支持的HTML格式
+    支持：粗体，斜体，代码块，链接，列表等
+    """
+    if not markdown_text or markdown_text == "暂无更新日志":
+        return "<i>暂无更新日志</i>"
+        
+    # 处理代码块 (必须先处理，避免内部格式被处理)
+    code_blocks = []
+    def replace_code_block(match):
+        code = match.group(1).strip()
+        code_blocks.append(code)
+        return f"CODE_BLOCK_{len(code_blocks)-1}_PLACEHOLDER"
+    
+    # 替换多行代码块
+    markdown_text = re.sub(r'```(?:\w+)?\n(.*?)\n```', replace_code_block, markdown_text, flags=re.DOTALL)
+    
+    # 替换标题为加粗 (# 标题)
+    markdown_text = re.sub(r'^#{1,6}\s+(.*?)$', r'<b>\1</b>', markdown_text, flags=re.MULTILINE)
+    
+    # 替换粗体 **文本** 或 __文本__
+    markdown_text = re.sub(r'\*\*(.*?)\*\*|__(.*?)__', r'<b>\1\2</b>', markdown_text)
+    
+    # 替换斜体 *文本* 或 _文本_
+    markdown_text = re.sub(r'(?<!\*)\*(?!\*)(.*?)(?<!\*)\*(?!\*)|(?<!_)_(?!_)(.*?)(?<!_)_(?!_)', r'<i>\1\2</i>', markdown_text)
+    
+    # 替换行内代码 `代码`
+    markdown_text = re.sub(r'`(.*?)`', r'<code>\1</code>', markdown_text)
+    
+    # 替换链接 [文本](URL)
+    markdown_text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', markdown_text)
+    
+    # 替换有序列表项 1. 文本
+    markdown_text = re.sub(r'^\d+\.\s+(.*?)$', r'• \1', markdown_text, flags=re.MULTILINE)
+    
+    # 替换无序列表项 - 文本 或 * 文本
+    markdown_text = re.sub(r'^[\-\*]\s+(.*?)$', r'• \1', markdown_text, flags=re.MULTILINE)
+    
+    # 恢复代码块
+    for i, code in enumerate(code_blocks):
+        markdown_text = markdown_text.replace(f"CODE_BLOCK_{i}_PLACEHOLDER", f"<pre>{code}</pre>")
+    
+    # 替换段落分隔（保持适当的空行）
+    markdown_text = re.sub(r'\n{3,}', '\n\n', markdown_text)
+    
+    # 为每个换行处添加一些格式，使在Telegram中显示更美观
+    lines = markdown_text.split('\n')
+    formatted_lines = []
+    
+    for i, line in enumerate(lines):
+        # 如果是空行，直接添加
+        if not line.strip():
+            formatted_lines.append(line)
+            continue
+            
+        # 如果是列表项，给它添加适当的缩进
+        if line.strip().startswith('• '):
+            formatted_lines.append(line)
+        # 如果是标题（已转为加粗），添加前后空行
+        elif line.strip().startswith('<b>') and line.strip().endswith('</b>'):
+            if i > 0 and formatted_lines[-1].strip():
+                formatted_lines.append('')
+            formatted_lines.append(line)
+            formatted_lines.append('')
+        else:
+            formatted_lines.append(line)
+    
+    result = '\n'.join(formatted_lines)
+    
+    # 添加格式化标记以确保在Telegram中换行正常
+    result = result.replace('\n\n', '\n\n')
+    
+    return result
+
 def check_for_module_updates() -> bool:
     """检查模块更新并发送通知，返回是否有更新"""
     try:
@@ -304,35 +379,49 @@ def check_for_module_updates() -> bool:
 
                 changelog_content = "暂无更新日志"
                 try:
-                    # 尝试多种可能的更新日志文件命名格式
-                    possible_changelog_files = [
-                        REPO_ROOT / "modules" / id / f"{latest.get('version')}_{latest.get('versionCode')}.md",
-                        REPO_ROOT / "modules" / id / f"{version}_{version_code}.md",
-                        REPO_ROOT / "modules" / id / "changelog.md",
-                        REPO_ROOT / "modules" / id / "CHANGELOG.md"
-                    ]
-                    
+                    # 优先获取最新版本的更新日志文件
+                    module_dir = REPO_ROOT / "modules" / id
                     print(f"正在查找模块 {id} 的更新日志文件...")
-                    for changelog_file in possible_changelog_files:
-                        print(f"尝试: {changelog_file}")
-                        if changelog_file.exists():
-                            print(f"找到更新日志文件: {changelog_file}")
-                            with open(changelog_file, 'r', encoding='utf-8') as f:
-                                changelog_content = f.read().strip()
-                                if len(changelog_content) > 300:
-                                    changelog_content = changelog_content[:297] + "..."
-                            break
+                    
+                    # 优先尝试找最新版本的文件
+                    latest_version_file = module_dir / f"{latest.get('version')}_{latest.get('versionCode')}.md"
+                    if latest_version_file.exists():
+                        print(f"找到最新版本更新日志文件: {latest_version_file}")
+                        with open(latest_version_file, 'r', encoding='utf-8') as f:
+                            changelog_content = f.read().strip()
                     else:
-                        print(f"未找到更新日志文件，尝试查找上一级目录...")
-                        # 尝试查找模块目录下的任何md文件作为更新日志
-                        md_files = list((REPO_ROOT / "modules" / id).glob("*.md"))
+                        # 查找模块目录下的所有md文件
+                        md_files = list(module_dir.glob("*.md"))
                         if md_files:
-                            newest_file = max(md_files, key=lambda x: x.stat().st_mtime)
-                            print(f"找到最新的MD文件: {newest_file}")
-                            with open(newest_file, 'r', encoding='utf-8') as f:
-                                changelog_content = f.read().strip()
-                                if len(changelog_content) > 300:
-                                    changelog_content = changelog_content[:297] + "..."
+                            # 尝试根据版本号和构建号找到匹配的文件
+                            version_files = [f for f in md_files if f.name.startswith(f"{version}_") or f.name.startswith(f"{version}{version_code}")]
+                            if version_files:
+                                changelog_file = version_files[0]
+                                print(f"找到版本匹配的更新日志文件: {changelog_file}")
+                                with open(changelog_file, 'r', encoding='utf-8') as f:
+                                    changelog_content = f.read().strip()
+                            else:
+                                # 没有找到匹配的版本文件，查找最新修改的md文件
+                                newest_file = max(md_files, key=lambda x: x.stat().st_mtime)
+                                print(f"找到最新修改的MD文件: {newest_file}")
+                                with open(newest_file, 'r', encoding='utf-8') as f:
+                                    changelog_content = f.read().strip()
+                        else:
+                            # 尝试标准的changelog文件
+                            for changelog_file in [module_dir / "changelog.md", module_dir / "CHANGELOG.md"]:
+                                if changelog_file.exists():
+                                    print(f"找到标准更新日志文件: {changelog_file}")
+                                    with open(changelog_file, 'r', encoding='utf-8') as f:
+                                        changelog_content = f.read().strip()
+                                    break
+                    
+                    # 将Markdown转换为HTML格式
+                    if changelog_content != "暂无更新日志":
+                        changelog_content = convert_markdown_to_html(changelog_content)
+                        # 如果内容过长，进行裁剪
+                        if len(changelog_content) > 1500:
+                            changelog_content = changelog_content[:1497] + "..."
+                            
                 except Exception as e:
                     print(f"读取更新日志失败 ({id}): {e}")
 
@@ -354,7 +443,7 @@ def check_for_module_updates() -> bool:
 └ 构建：<code>{version_code}</code>
 
 {update_note}<b>📝 更新日志</b>
-└ <i>{changelog_content}</i>
+{changelog_content}
 
 <b>👨‍💻 开发者信息</b>
 └ {author}
