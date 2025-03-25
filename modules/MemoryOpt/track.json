@@ -1,18 +1,17 @@
 {
-    "id": "MemoryOpt",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/HChenX/MemoryOpt/refs/heads/main/HChen.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/HChenX/MemoryOpt",
-    "support": "https://github.com/HChenX/MemoryOpt/issues",
-    "donate": "",
-    "categories": [
-        "Script",
-        "Performance",
-        "System"
-    ],
-    "readme": "https://raw.githubusercontent.com/HChenX/MemoryOpt/main/README.md",
-    "version": "2025.02.28"
+  "id": "MemoryOpt",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/HChenX/MemoryOpt/refs/heads/main/HChen.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/HChenX/MemoryOpt",
+  "support": "https://github.com/HChenX/MemoryOpt/issues",
+  "categories": [
+    "Script",
+    "Performance",
+    "System"
+  ],
+  "readme": "https://raw.githubusercontent.com/HChenX/MemoryOpt/main/README.md",
+  "last_update": 1740749200.0,
+  "versions": 1
 }

@@ -1,0 +1,14 @@
+{
+  "id": "systemless-hosts",
+  "timestamp": 1725569243.0,
+  "versions": [
+    {
+      "timestamp": 1725569243.0,
+      "version": "17.2",
+      "versionCode": 172,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/systemless-hosts/17.2_172.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/systemless-hosts/17.2_172.md",
+      "size": 1730042
+    }
+  ]
+}
