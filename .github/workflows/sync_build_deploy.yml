@@ -166,6 +166,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
         
       - name: Download logs
         uses: actions/download-artifact@v4
@@ -177,10 +180,85 @@ jobs:
         run: |
           echo "下载的文件列表:"
           find . -type f | sort
+      
+      - name: Check previous commit version content
+        run: |
+          echo "获取最近的提交信息..."
+          git log -n 5 --oneline
+          
+          mkdir -p temp_previous_modules
+          
+          MODULES=$(echo '${{ needs.sync.outputs.updated_modules }}' | jq -r '.[]?' 2>/dev/null || echo "")
+          
+          if [ -n "$MODULES" ]; then
+            echo "发现更新的模块: $MODULES"
+            
+            for MODULE_ID in $MODULES; do
+              echo "处理模块 $MODULE_ID 的历史更新日志..."
+              
+              MODULE_DIR="modules/$MODULE_ID"
+              
+              if [ -d "$MODULE_DIR" ]; then
+                CURRENT_VERSION=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .version' modules.json)
+                CURRENT_VERSION_CODE=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .versionCode' modules.json)
+                
+                echo "当前版本: $CURRENT_VERSION ($CURRENT_VERSION_CODE)"
+                
+                if [ -f "$MODULE_DIR/${CURRENT_VERSION}_${CURRENT_VERSION_CODE}.md" ]; then
+                  echo "已经存在最新版本的更新日志: $MODULE_DIR/${CURRENT_VERSION}_${CURRENT_VERSION_CODE}.md"
+                  mkdir -p "temp_previous_modules/$MODULE_ID"
+                  cp "$MODULE_DIR/${CURRENT_VERSION}_${CURRENT_VERSION_CODE}.md" "temp_previous_modules/$MODULE_ID/"
+                else
+                  echo "未找到最新版本的更新日志，尝试获取历史记录..."
+                  
+                  LATEST_COMMIT=$(git rev-parse HEAD)
+                  
+                  PREVIOUS_COMMIT=$(git rev-parse HEAD~1)
+                  
+                  if git diff --name-only $PREVIOUS_COMMIT $LATEST_COMMIT | grep -q "^$MODULE_DIR"; then
+                    echo "模块 $MODULE_ID 在最近提交中有变化"
+                    
+                    mkdir -p "temp_previous_modules/$MODULE_ID"
+                    git show "$PREVIOUS_COMMIT:$MODULE_DIR" 2>/dev/null | grep -E '\.md$' | while read -r MD_FILE; do
+                      echo "提取文件: $MD_FILE"
+                      git show "$PREVIOUS_COMMIT:$MODULE_DIR/$MD_FILE" > "temp_previous_modules/$MODULE_ID/$MD_FILE" 2>/dev/null || echo "无法提取文件 $MD_FILE"
+                    done
+                    
+                    if [ ! "$(ls -A "temp_previous_modules/$MODULE_ID")" ]; then
+                      echo "# 版本 $CURRENT_VERSION ($CURRENT_VERSION_CODE) 更新" > "temp_previous_modules/$MODULE_ID/update.md"
+                      echo "此版本已更新，但没有详细的更新日志。" >> "temp_previous_modules/$MODULE_ID/update.md"
+                    fi
+                  else
+                    echo "模块 $MODULE_ID 在最近提交中没有变化，尝试查找最新的更新日志..."
+                    if [ -d "$MODULE_DIR" ]; then
+                      mkdir -p "temp_previous_modules/$MODULE_ID"
+                      LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -printf "%T@ %p\n" | sort -nr | head -1 | cut -d' ' -f2-)
+                      if [ -n "$LATEST_MD" ]; then
+                        echo "找到最新的MD文件: $LATEST_MD"
+                        cp "$LATEST_MD" "temp_previous_modules/$MODULE_ID/"
+                      else
+                        echo "未找到任何MD文件，创建默认更新日志"
+                        echo "# 版本 $CURRENT_VERSION ($CURRENT_VERSION_CODE) 更新" > "temp_previous_modules/$MODULE_ID/update.md"
+                        echo "此版本已更新，但没有详细的更新日志。" >> "temp_previous_modules/$MODULE_ID/update.md"
+                      fi
+                    fi
+                  fi
+                fi
+              else
+                echo "警告: 模块目录不存在 $MODULE_DIR"
+              fi
+            done
+          else
+            echo "警告: 未能解析到更新的模块列表"
+          fi
+          
+          echo "临时目录中的文件:"
+          find temp_previous_modules -type f | sort
           
       - name: Set updated modules environment variable
         run: |
           echo "UPDATED_MODULES='${{ needs.sync.outputs.updated_modules }}'" >> $GITHUB_ENV
+          echo "TEMP_MODULES_DIR=temp_previous_modules" >> $GITHUB_ENV
           
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -197,5 +275,6 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+          PREVIOUS_MODULES_DIR: "temp_previous_modules"
         run: |
           python scripts/telegram_updates.py
