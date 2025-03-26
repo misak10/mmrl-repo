@@ -193,14 +193,37 @@ jobs:
           if [ -n "$MODULES" ]; then
             echo "发现更新的模块: $MODULES"
             
+            # 确保modules.json文件存在
+            if [ ! -f "modules.json" ]; then
+              echo "警告: modules.json文件不存在，尝试下载..."
+              curl -s -o modules.json https://raw.githubusercontent.com/${{ github.repository }}/main/modules.json || echo "无法下载modules.json文件"
+            fi
+            
+            # 检查modules.json文件是否存在且有效
+            if [ -f "modules.json" ] && [ -s "modules.json" ]; then
+              echo "成功找到modules.json文件"
+            else
+              echo "警告: modules.json文件不存在或为空，创建临时文件"
+              echo '{"modules":[]}' > modules.json
+            fi
+            
             for MODULE_ID in $MODULES; do
               echo "处理模块 $MODULE_ID 的历史更新日志..."
               
               MODULE_DIR="modules/$MODULE_ID"
               
               if [ -d "$MODULE_DIR" ]; then
-                CURRENT_VERSION=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .version' modules.json)
-                CURRENT_VERSION_CODE=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .versionCode' modules.json)
+                # 使用-e参数检查文件是否存在
+                CURRENT_VERSION=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .version' modules.json 2>/dev/null || echo "unknown")
+                CURRENT_VERSION_CODE=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .versionCode' modules.json 2>/dev/null || echo "0")
+                
+                if [ "$CURRENT_VERSION" = "null" ] || [ "$CURRENT_VERSION" = "" ]; then
+                  CURRENT_VERSION="unknown"
+                fi
+                
+                if [ "$CURRENT_VERSION_CODE" = "null" ] || [ "$CURRENT_VERSION_CODE" = "" ]; then
+                  CURRENT_VERSION_CODE="0"
+                fi
                 
                 echo "当前版本: $CURRENT_VERSION ($CURRENT_VERSION_CODE)"
                 
@@ -257,7 +280,10 @@ jobs:
           
       - name: Set updated modules environment variable
         run: |
-          echo "UPDATED_MODULES='${{ needs.sync.outputs.updated_modules }}'" >> $GITHUB_ENV
+          echo "设置更新模块环境变量: '${{ needs.sync.outputs.updated_modules }}'"
+          # 确保值被正确引用，避免shell解析问题
+          MODULES_JSON='${{ needs.sync.outputs.updated_modules }}'
+          echo "UPDATED_MODULES='$MODULES_JSON'" >> $GITHUB_ENV
           echo "TEMP_MODULES_DIR=temp_previous_modules" >> $GITHUB_ENV
           
       - name: Set up Python
@@ -270,6 +296,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
           
+      - name: Copy modules.json if exists
+        run: |
+          if [ -f "modules.json" ]; then
+            echo "复制现有的modules.json到json目录"
+            mkdir -p json
+            cp modules.json json/
+          else
+            echo "尝试从仓库下载modules.json"
+            mkdir -p json
+            curl -s -o json/modules.json https://raw.githubusercontent.com/${{ github.repository }}/main/modules.json || echo "无法下载modules.json文件"
+          fi
+          
       - name: Run Telegram notification script
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -277,4 +315,11 @@ jobs:
           TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
           PREVIOUS_MODULES_DIR: "temp_previous_modules"
         run: |
+          echo "运行Telegram通知脚本..."
+          echo "当前工作目录: $(pwd)"
+          echo "可用的环境变量:"
+          echo "UPDATED_MODULES=${UPDATED_MODULES}"
+          echo "PREVIOUS_MODULES_DIR=${PREVIOUS_MODULES_DIR}"
+          ls -la
+          ls -la temp_previous_modules || echo "temp_previous_modules目录不存在"
           python scripts/telegram_updates.py
