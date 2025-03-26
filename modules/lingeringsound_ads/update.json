@@ -3,14 +3,6 @@
   "timestamp": 1737812345.0,
   "versions": [
     {
-      "timestamp": 1737868436.0,
-      "version": "\u6a74\u70abv239",
-      "versionCode": 240,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v239_240.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v239_240.md",
-      "size": 889126
-    },
-    {
       "timestamp": 1738308531.0,
       "version": "\u6a74\u70abv240",
       "versionCode": 241,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v260_262.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v260_262.md",
       "size": 443588
+    },
+    {
+      "timestamp": 1742974721.0,
+      "version": "\u6a74\u70abv261",
+      "versionCode": 263,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v261_263.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v261_263.md",
+      "size": 442568
     }
   ]
 }
