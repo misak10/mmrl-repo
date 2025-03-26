@@ -58,6 +58,27 @@ def load_json_file(file_path: str, default: Dict = None) -> Dict:
                     print(f"警告: 文件为空 ({full_path})")
         else:
             print(f"警告: 文件不存在 ({full_path})")
+            
+            # 尝试从备用位置加载文件
+            backup_locations = [
+                REPO_ROOT / os.path.basename(file_path),
+                Path(os.path.basename(file_path)),
+                Path('.') / os.path.basename(file_path),
+                Path('/github/workspace') / os.path.basename(file_path)
+            ]
+            
+            for backup_path in backup_locations:
+                if backup_path.exists():
+                    print(f"从备用位置加载文件: {backup_path}")
+                    try:
+                        with open(backup_path, 'r', encoding='utf-8') as f:
+                            content = f.read().strip()
+                            if content:
+                                return json.loads(content)
+                    except Exception as e:
+                        print(f"从备用位置加载文件失败 ({backup_path}): {e}")
+            
+            # 如果没有找到备用文件，则使用默认值
             if default is not None:
                 save_json_file(file_path, default)
                 return default
@@ -254,6 +275,9 @@ def check_for_module_updates() -> bool:
             print(f"PREVIOUS_MODULES_DIR: {PREVIOUS_MODULES_DIR}")
         print("="*50)
         
+        # 打印已加载的模块信息，用于调试
+        print(f"已加载模块数量: {len(main_data.get('modules', []))}")
+        
         # 增强版日志查找逻辑
         updated_modules = set()
         
@@ -449,6 +473,7 @@ def check_for_module_updates() -> bool:
                     print(f"读取更新日志失败 ({id}): {e}")
                     import traceback
                     traceback.print_exc()
+                    changelog_content = f"<i>无法读取更新日志: {str(e)[:50]}...</i>"
 
                 update_note = ""
                 if module.get("note") and module.get("note").get("message"):
@@ -459,6 +484,13 @@ def check_for_module_updates() -> bool:
 └ <i>{note_message}</i>
 
 '''
+
+                # 确保所有变量都有合法值，防止出现None
+                name = name or id
+                version = version or "未知"
+                version_code = version_code or "0"
+                author = author or "未知"
+                desc = desc or "无描述"
 
                 message = f"""<b>🎉 模块更新通知</b>
 
@@ -483,6 +515,9 @@ def check_for_module_updates() -> bool:
                 support_urls = []
                 section_2 = []
 
+                # 确保latest是一个有效的字典，防止出现None
+                latest = latest or {}
+                
                 if latest.get("zipUrl"):
                     section_1.append({
                         'text': '📥 下载安装包',
@@ -511,7 +546,10 @@ def check_for_module_updates() -> bool:
                     'url': 'https://misak10.github.io/mmrl-repo/'
                 })
 
-                buttons = [section_1, support_urls, section_2]
+                # 确保buttons中的每个section都不为空
+                buttons = [section for section in [section_1, support_urls, section_2] if section]
+                if not buttons:
+                    buttons = [[{'text': '🌐 访问仓库', 'url': 'https://misak10.github.io/mmrl-repo/'}]]
 
                 try:
                     print(f"开始发送模块 {id} 的更新通知...")
