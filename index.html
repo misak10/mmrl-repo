@@ -1651,6 +1651,7 @@
             overflow-y: auto;
             scrollbar-width: thin;
             scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+            border-radius: 0.875rem;
         }
 
         .dropdown-menu::-webkit-scrollbar {
@@ -1671,11 +1672,65 @@
             padding: 0.625rem 1rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0.85;
+            border-radius: 0.5rem; /* 为每个下拉菜单项添加圆角 */
         }
 
         .dropdown-menu .dropdown-item:hover {
             opacity: 1;
             transform: translateX(4px);
+        }
+
+        /* 确保下拉菜单的右侧边缘是圆角的 */
+        .dropdown-menu {
+            overflow: hidden; /* 确保内部元素不会突出容器 */
+            border-radius: 0.875rem !important; /* 强制应用圆角 */
+        }
+
+        /* 顶栏Telegram按钮样式 */
+        .tg-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--input-border);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            margin-right: 0.75rem;
+            text-decoration: none; /* 去掉下划线 */
+        }
+
+        .tg-button:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* 确保悬停时也没有下划线 */
+        }
+
+        [data-bs-theme="dark"] .tg-button {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        /* 修复 Bootstrap 下拉菜单弹出问题，防止出现直角 */
+        .input-group .dropdown-menu {
+            border-radius: 0.875rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .tg-button {
+                width: 32px;
+                height: 32px;
+                margin-right: 0.5rem;
+            }
         }
 
         .theme-transitioning * {
@@ -1900,7 +1955,1633 @@
                 border-radius: 2px;
             }
         }
+
+        /* Markdown 内容样式 */
+        .markdown-content {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3,
+        .markdown-content h4,
+        .markdown-content h5,
+        .markdown-content h6 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--input-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.3rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2rem;
+        }
+
+        .markdown-content p,
+        .markdown-content ul,
+        .markdown-content ol {
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            padding-left: 1.5rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content pre,
+        .markdown-content code {
+            background-color: var(--input-bg);
+            border-radius: 0.5rem;
+            padding: 0.2rem 0.4rem;
+            font-family: monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
+        .markdown-content pre {
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid var(--input-border);
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-right: 0;
+            color: var(--muted);
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .markdown-content hr {
+            border: none;
+            border-top: 1px solid var(--input-border);
+            margin: 1.5rem 0;
+        }
+
+        .markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .markdown-content th,
+        .markdown-content td {
+            border: 1px solid var(--input-border);
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .markdown-content th {
+            background-color: var(--input-bg);
+        }
+
+        /* 模态框样式优化 */
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--input-border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            pointer-events: auto !important;
+        }
+
+        .modal-header {
+            border-bottom-color: var(--input-border);
+            padding: 1rem 1.5rem;
+        }
+
+        .modal-footer {
+            border-top-color: var(--input-border);
+            padding: 1rem 1.5rem;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        /* 增加模态框层级，确保显示在最上方 */
+        .modal {
+            z-index: 1080 !important;
+        }
+        
+        .modal-backdrop {
+            z-index: 1070 !important;
+            background-color: rgba(0, 0, 0, 0.5) !important;
+        }
+        
+        .modal-backdrop.show {
+            opacity: 1 !important;
+        }
+        
+        /* 防止点击模态框后背景元素消失 */
+        body.modal-open .modules-grid,
+        body.modal-open .search-section,
+        body.modal-open .header,
+        body.modal-open .footer {
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: auto !important;
+        }
+        
+        /* 修复由于bootstrap在IE下的历史兼容性问题导致的模块消失 */
+        .modal-open .container {
+            pointer-events: none;
+        }
+        
+        .modal-open .modal {
+            pointer-events: auto;
+        }
+
+        @media (max-width: 768px) {
+            .modal-dialog {
+                margin: 0.5rem;
+                max-width: calc(100% - 1rem);
+            }
+
+            .modal-body {
+                padding: 1rem;
+                max-height: 60vh;
+            }
+            
+            .modal-header,
+            .modal-footer {
+                padding: 0.75rem 1rem;
+            }
+            
+            .markdown-content {
+                font-size: 0.9rem;
+            }
+            
+            .markdown-content h1 {
+                font-size: 1.3rem;
+            }
+            
+            .markdown-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .markdown-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .markdown-content pre {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+                font-size: 0.85em;
+            }
+        }
+
+        [data-bs-theme="dark"] .modal-content {
+            background: rgba(39, 39, 42, 0.95);
+        }
+
+        [data-bs-theme="dark"] .markdown-content pre,
+        [data-bs-theme="dark"] .markdown-content code {
+            background-color: rgba(24, 24, 27, 0.5);
+        }
+
+        [data-bs-theme="dark"] .markdown-content th {
+            background-color: rgba(39, 39, 42, 0.7);
+        }
+
+        /* 版本历史更新日志按钮 */
+        .version-changelog-btn {
+            margin-left: 0.5rem;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            color: var(--muted);
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .version-changelog-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* 修复 Bootstrap 下拉菜单弹出问题，防止出现直角 */
+        .input-group .dropdown-menu,
+        .dropdown .dropdown-menu,
+        .btn-group .dropdown-menu {
+            border-radius: 0.875rem !important;
+        }
+
+        /* 强制Bootstrap保持圆角 */
+        .dropdown-menu.show {
+            border-radius: 0.875rem !important;
+        }
+
+        /* 解决Firefox下圆角可能不生效的问题 */
+        @-moz-document url-prefix() {
+            .dropdown-menu {
+                border-radius: 0.875rem !important;
+                overflow: hidden !important;
+            }
+            
+            .dropdown-menu .dropdown-item {
+                border-radius: 0.5rem !important;
+            }
+        }
+
+        /* 针对Webkit浏览器（Chrome、Safari等）优化圆角显示 */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            .dropdown-menu {
+                border-radius: 0.875rem !important;
+                overflow: hidden !important;
+            }
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            /* 修复模态框导致的滚动问题 */
+            body.modal-open {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                touch-action: none;
+            }
+            
+            /* 确保模态框内容可滚动 */
+            .modal-body {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* 提高模态框层级，确保在所有元素之上 */
+            .modal {
+                z-index: 2000 !important;
+            }
+            
+            .modal-backdrop {
+                z-index: 1900 !important;
+            }
+            
+            /* 确保点击模态框外的内容不会关闭模态框 */
+            .modal-open .container,
+            .modal-open .modules-grid,
+            .modal-open .search-section {
+                pointer-events: none !important;
+            }
+            
+            /* 但允许模态框本身接收事件 */
+            .modal-open .modal {
+                pointer-events: auto !important;
+            }
+            
+            /* 防止背景内容闪烁或消失 */
+            body.modal-open .modules-grid,
+            body.modal-open .search-section,
+            body.modal-open .header,
+            body.modal-open .footer {
+                visibility: visible !important;
+                opacity: 1 !important; /* 保持完全不透明，不再降低透明度 */
+                z-index: auto !important;
+            }
+            
+            /* 确保模态框按钮可以点击 */
+            .modal .modal-header .btn-close,
+            .modal .modal-footer .btn {
+                pointer-events: auto !important;
+                z-index: 2100 !important;
+            }
+        }
+
+        /* 修复特定情况下的视觉问题 */
+        .modal-open {
+            padding-right: 0 !important; /* 防止Bootstrap添加的右侧padding导致页面跳动 */
+            overflow: hidden !important;
+        }
+
+        .modal {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        /* 确保加载旋转器正确显示 */
+        .modal .spinner-border {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* 修复模态框按钮不可点击的问题 */
+        .modal-content {
+            pointer-events: auto !important;
+        }
+
+        .modal-header .btn-close {
+            z-index: 10;
+            position: relative;
+            opacity: 1;
+            cursor: pointer !important;
+            pointer-events: auto !important;
+        }
+
+        .modal-header .btn-close:hover {
+            opacity: 0.75;
+        }
+
+        .modal-footer .btn {
+            position: relative;
+            z-index: 10;
+            cursor: pointer !important;
+            pointer-events: auto !important;
+        }
+
+        /* 确保模态框在移动端可见 */
+        .modal.fade .modal-dialog {
+            transform: none !important;
+        }
+
+        .modal.show .modal-dialog {
+            transform: none !important;
+        }
+
+        /* 修复模态框背景层遮挡问题 */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .modal-backdrop.show {
+            opacity: 1 !important;
+        }
+
+        /* 确保指针事件只在模态框内生效 */
+        .modal {
+            pointer-events: none;
+        }
+
+        .modal-dialog {
+            pointer-events: auto;
+        }
+
+        /* 移动设备上的模态框优化 */
+        @media (max-width: 768px) {
+            /* 确保模态框总是可见并可交互 */
+            .modal-backdrop {
+                opacity: 0.7 !important;
+                background-color: rgba(0, 0, 0, 0.4) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+            }
+            
+            .modal-open {
+                overflow: hidden !important;
+                height: 100% !important;
+                position: fixed !important;
+                width: 100% !important;
+            }
+            
+            /* 确保模态框中的内容在移动设备上有更好的布局 */
+            .modal-content {
+                max-height: 80vh !important;
+                margin: 0 auto !important;
+                border-radius: 10px !important;
+                overflow: hidden !important;
+                background-color: var(--card-bg) !important;
+                border: 1px solid var(--input-border) !important;
+            }
+            
+            .modal-dialog {
+                margin: 10vh auto !important; /* 将模态框上移 */
+                max-width: 90% !important;
+            }
+            
+            .modal-body {
+                max-height: calc(80vh - 120px) !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            /* 确保关闭按钮足够大，易于点击 */
+            .modal-header .btn-close {
+                padding: 12px !important;
+                margin: -12px -12px -12px auto !important;
+                font-size: 1.5rem !important;
+            }
+            
+            /* 防止模态框关闭时底层元素跳动 */
+            body.modal-open {
+                width: 100% !important;
+                position: fixed !important;
+                overflow: hidden !important;
+            }
+            
+            /* 毛玻璃背景效果和背景可见性 */
+            body.modal-open .modules-grid,
+            body.modal-open .search-section,
+            body.modal-open .header,
+            body.modal-open .footer {
+                visibility: visible !important;
+                opacity: 1 !important;
+                z-index: auto !important;
+                filter: blur(0) !important; /* 确保背景不被模糊 */
+            }
+            
+            /* 确保背景内容保持可见 */
+            .modal-open .container,
+            .modal-open .modules-grid,
+            .modal-open .search-section {
+                pointer-events: none !important;
+                filter: none !important;
+                opacity: 1 !important;
+            }
+            
+            /* 防止iOS Safari上出现橡皮筋滚动效果 */
+            .modal {
+                -webkit-overflow-scrolling: auto !important;
+            }
+        }
+        
+        /* 确保模态框内容可以正常滚动 */
+        #changelogContent {
+            overflow-y: auto;
+            max-height: 60vh;
+            padding-right: 5px;
+        }
+        
+        /* 格式化Markdown内容的样式 */
+        #changelogContent h1, 
+        #changelogContent h2 {
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+            margin-top: 1em;
+        }
+        
+        #changelogContent ul {
+            padding-left: 1.5em;
+        }
+        
+        #changelogContent pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 12px;
+            overflow-x: auto;
+        }
+        
+        /* 适配深色主题 */
+        .dark-mode #changelogContent pre {
+            background-color: #1e1e1e;
+        }
+        
+        .dark-mode #changelogContent h1, 
+        .dark-mode #changelogContent h2 {
+            border-bottom-color: #333;
+        }
+        
+        /* 确保滚动条样式一致 */
+        #changelogContent::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        #changelogContent::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        #changelogContent::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        
+        #changelogContent::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .dark-mode #changelogContent::-webkit-scrollbar-track {
+            background: #333;
+        }
+        
+        .dark-mode #changelogContent::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        
+        .dark-mode #changelogContent::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+        /* 额外的移动端模态框背景样式 */
+        @media (max-width: 768px) {
+            .modal-backdrop {
+                opacity: 0.5 !important;
+                background-color: rgba(0, 0, 0, 0.3) !important;
+                backdrop-filter: blur(10px) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+                z-index: 1040 !important;
+            }
+            
+            .modal {
+                z-index: 1050 !important;
+            }
+            
+            /* 确保内容在模态框打开时仍然可见 */
+            .container-fluid, .header, .footer, .modules-grid {
+                transition: filter 0.3s ease;
+            }
+            
+            /* 模态框打开时的背景样式 */
+            body.modal-open .container-fluid,
+            body.modal-open .header,
+            body.modal-open .footer,
+            body.modal-open .modules-grid {
+                /* 确保背景内容可见但不可交互 */
+                filter: none !important;
+                -webkit-filter: none !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            /* 适配暗色主题 */
+            [data-bs-theme="dark"] .modal-backdrop {
+                background-color: rgba(0, 0, 0, 0.5) !important;
+            }
+            
+            /* 确保模态框内部元素可点击 */
+            .modal-dialog, 
+            .modal-content, 
+            .modal-header, 
+            .modal-body, 
+            .modal-footer,
+            .modal-header .btn-close,
+            .modal-footer .btn {
+                z-index: auto !important;
+                pointer-events: auto !important;
+            }
+        }
+
+        /* 专门针对移动端模态框的毛玻璃效果样式 */
+        @media (max-width: 768px) {
+            /* 强制覆盖Bootstrap的样式 */
+            .modal-backdrop {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background-color: rgba(0, 0, 0, 0.3) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                z-index: 1050 !important;
+                opacity: 1 !important;
+            }
+            
+            /* 确保模态框背景下方的内容保持可见 */
+            body.modal-open {
+                position: fixed !important;
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
+                background-color: transparent !important;
+            }
+            
+            /* 调整模态框位置 */
+            .modal-dialog {
+                position: relative !important;
+                margin: 5vh auto !important; /* 上边距缩小为5vh，更加居中 */
+                max-width: 90% !important;
+                width: auto !important;
+                pointer-events: auto !important;
+                z-index: 1060 !important;
+            }
+            
+            /* 确保下方内容可见 */
+            .search-section, .modules-grid, .header, .footer, .container-fluid {
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: none !important;
+                z-index: auto !important;
+            }
+            
+            /* 确保模态框内容有合适的最大高度 */
+            .modal-content {
+                max-height: 85vh !important;
+                margin: 0 auto !important;
+                border-radius: 15px !important;
+                overflow: hidden !important;
+            }
+            
+            /* 覆盖Bootstrap的过渡效果，确保模态框立即显示 */
+            .modal.fade .modal-dialog {
+                transform: none !important;
+                transition: none !important;
+            }
+            
+            .modal.show .modal-dialog {
+                transform: none !important;
+            }
+            
+            /* 确保所有需要互动的元素可点击 */
+            .modal-header .btn-close,
+            .modal-footer .btn,
+            .modal-body,
+            .modal-content {
+                z-index: 1070 !important;
+                position: relative !important;
+                pointer-events: auto !important;
+                cursor: auto !important;
+            }
+        }
+
+        /* 自定义模态框样式 */
+        .custom-backdrop {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.4) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            z-index: 1050 !important;
+            opacity: 1 !important;
+            pointer-events: none !important; /* 确保下方元素可点击 */
+        }
+        
+        /* 修复移动端点击问题 */
+        body:not(.modal-open) * {
+            pointer-events: auto !important;
+        }
+        
+        /* 仅当模态框打开时应用点击限制 */
+        body.modal-open .modules-grid,
+        body.modal-open .search-section,
+        body.modal-open .header,
+        body.modal-open .footer,
+        body.modal-open .container-fluid {
+            pointer-events: none;
+        }
+        
+        /* 确保模态框本身可点击 */
+        body.modal-open .modal,
+        body.modal-open .modal-dialog,
+        body.modal-open .modal-content,
+        body.modal-open .modal-header,
+        body.modal-open .modal-body,
+        body.modal-open .modal-footer,
+        body.modal-open .modal-header .btn-close,
+        body.modal-open .modal-footer .btn {
+            pointer-events: auto !important;
+            z-index: auto !important;
+        }
+        
+        /* 移动设备专用样式 */
+        body.is-mobile .modal-dialog {
+            margin: 15vh auto 5vh !important;
+            max-width: 92% !important;
+            z-index: 1060 !important;
+            position: relative !important;
+        }
+        
+        body.is-mobile .modal-content {
+            max-height: 70vh !important;
+            border-radius: 16px !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+            overflow: hidden !important;
+            pointer-events: auto !important;
+        }
+        
+        body.is-mobile .modal-body {
+            max-height: calc(70vh - 120px) !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            padding: 1rem !important;
+        }
+        
+        /* 确保模态框打开时不会有"跳动"感 */
+        body.is-mobile {
+            position: fixed !important;
+            width: 100% !important;
+            height: 100% !important;
+            overflow: hidden !important;
+        }
+        
+        /* 确保在iOS Safari上正常工作 */
+        @supports (-webkit-touch-callout: none) {
+            body.is-mobile .custom-backdrop {
+                background-color: rgba(0, 0, 0, 0.6) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+            }
+            
+            body.is-mobile .modal-dialog {
+                margin-top: 20vh !important; /* iOS上位置更高一些 */
+            }
+        }
+        
+        /* 暗色模式适配 */
+        [data-bs-theme="dark"] .custom-backdrop {
+            background-color: rgba(0, 0, 0, 0.6) !important;
+        }
+        
+        [data-bs-theme="dark"] body.is-mobile .modal-content {
+            background-color: rgba(30, 30, 30, 0.95) !important;
+        }
+        
+        /* 移动端优化：确保没有模态框时所有元素正常可点击 */
+        .module-card, .card, a, button, input, select, .dropdown-menu {
+            pointer-events: auto !important;
+        }
+        
+        /* 只在模态框打开时禁用背景元素点击 */
+        body.modal-open:not(.restore-events) .module-card, 
+        body.modal-open:not(.restore-events) .modules-grid,
+        body.modal-open:not(.restore-events) .card:not(.modal-content) {
+            pointer-events: none !important;
+        }
+        
+        /* 添加恢复点击的类 */
+        body.restore-events * {
+            pointer-events: auto !important;
+        }
+        
+        /* 移动端模块列表额外优化 */
+        @media (max-width: 768px) {
+            .modules-grid {
+                gap: 12px !important;
+                padding: 10px !important;
+            }
+            
+            .module-card {
+                margin-bottom: 0 !important;
+            }
+            
+            /* 增强点击区域 */
+            .module-card, .module-card * {
+                cursor: pointer !important;
+            }
+            
+            /* 增加触摸反馈 */
+            .module-card:active {
+                transform: scale(0.98) !important;
+                transition: transform 0.1s !important;
+            }
+            
+            /* 增强可滚动性 */
+            .modal-body {
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            /* 确保按钮足够大，容易点击 */
+            .btn {
+                min-height: 38px !important;
+                padding: 8px 16px !important;
+            }
+        }
+
+        /* 移动端模态框优化 */
+        @media (max-width: 768px) {
+            /* 毛玻璃效果 */
+            .modal-backdrop {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+            
+            /* 居中显示模态框 */
+            .modal-dialog {
+                margin: 15vh auto !important;
+                max-width: 90% !important;
+            }
+            
+            /* 优化模态框内容 */
+            .modal-content {
+                max-height: 70vh !important;
+                border-radius: 16px !important;
+                overflow: hidden !important;
+            }
+            
+            /* 确保内容可滚动 */
+            .modal-body {
+                max-height: calc(70vh - 120px) !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            /* 添加模块卡片触摸反馈 */
+            .module-card {
+                transition: transform 0.15s ease !important;
+            }
+            
+            .module-card:active {
+                transform: scale(0.98) !important;
+            }
+        }
+        
+        /* Markdown样式 */
+        .markdown-body {
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        
+        .markdown-body h1, 
+        .markdown-body h2 {
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+            margin-top: 1em;
+        }
+        
+        .markdown-body ul {
+            padding-left: 1.5em;
+        }
+        
+        .markdown-body pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 12px;
+            overflow-x: auto;
+        }
+        
+        /* 适配深色主题 */
+        [data-bs-theme="dark"] .markdown-body pre {
+            background-color: #1e1e1e;
+        }
+        
+        [data-bs-theme="dark"] .markdown-body h1, 
+        [data-bs-theme="dark"] .markdown-body h2 {
+            border-bottom-color: #333;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 主题切换逻辑保持不变
+        const themeSwitch = document.getElementById('themeSwitch');
+        const icon = themeSwitch.querySelector('i');
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-bs-theme') === 'dark';
+            html.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
+            icon.className = isDark ? 'ri-moon-line' : 'ri-sun-line';
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        }
+
+        themeSwitch.addEventListener('click', toggleTheme);
+
+        // 加载动画
+        const loading = document.querySelector('.loading');
+        function showLoading() {
+            loading.classList.add('active');
+        }
+        function hideLoading() {
+            loading.classList.remove('active');
+        }
+
+        // 防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // 使用 IntersectionObserver 优化模块卡片加载
+        const observeModules = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+            
+            document.querySelectorAll('.module-card').forEach(card => {
+                observer.observe(card);
+            });
+        };
+
+        // 优化模块数据缓存
+        const moduleCache = {
+            data: null,
+            timestamp: 0,
+            maxAge: 5 * 60 * 1000, // 5分钟缓存
+            
+            async get() {
+                console.log('moduleCache.get() 被调用');
+                const now = Date.now();
+                if (this.data && (now - this.timestamp) < this.maxAge) {
+                    console.log('返回缓存的模块数据');
+                    return this.data;
+                }
+                
+                console.log('正在获取模块数据...');
+                try {
+                    // 获取当前页面的基础路径
+                    const basePath = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+                    const jsonUrl = 'json/modules.json';
+                    const fullUrl = new URL(jsonUrl, basePath).href;
+                    
+                    console.log('获取模块数据的URL:', fullUrl);
+                    
+                    // 首先尝试使用相对路径
+                    let response;
+                    try {
+                        response = await fetch(jsonUrl);
+                        console.log('使用相对路径的响应:', response);
+                    } catch (fetchError) {
+                        console.error('使用相对路径获取失败，尝试使用完整URL:', fetchError);
+                        response = await fetch(fullUrl);
+                        console.log('使用完整URL的响应:', response);
+                    }
+                    
+                    if (!response.ok) {
+                        throw new Error(`无法加载模块数据: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    console.log('获取到的模块数据:', data);
+                    this.data = data;
+                    this.timestamp = now;
+                    return this.data;
+                } catch (error) {
+                    console.error('moduleCache.get()中的错误:', error);
+                    
+                    // 尝试获取目录列表以诊断问题
+                    try {
+                        console.log('正在检查json目录是否存在...');
+                        const dirResponse = await fetch('json/');
+                        console.log('json目录检查响应:', dirResponse);
+                    } catch (dirError) {
+                        console.error('检查json目录时出错:', dirError);
+                    }
+                    
+                    throw error;
+                }
+            }
+        };
+
+        // 优化后的fetchModules函数
+        async function fetchModules() {
+            console.log('fetchModules() 被调用');
+            showLoading();
+            try {
+                const data = await moduleCache.get();
+                console.log('moduleCache.get() 返回数据:', data);
+                if (!data || !data.modules) {
+                    console.error('模块数据格式不正确:', data);
+                    throw new Error('模块数据格式不正确');
+                }
+                window.currentModules = data.modules;
+                console.log('设置window.currentModules完成, 数量:', data.modules.length);
+                return data.modules;
+            } catch (error) {
+                console.error('fetchModules中的错误:', error);
+                return [];
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // 优化渲染性能
+        async function renderModules(modules) {
+            console.log('renderModules() 被调用, 模块数量:', modules.length);
+            const moduleList = document.getElementById('moduleList');
+            
+            if (!moduleList) {
+                console.error('找不到moduleList元素!');
+                return;
+            }
+            console.log('找到moduleList元素:', moduleList);
+            
+            // 使用DocumentFragment优化DOM操作
+            const fragment = document.createDocumentFragment();
+            
+            // 对模块数据进行预处理
+            const processedModules = modules.map(module => {
+                console.log('处理模块:', module.name);
+                return {
+                    ...module,
+                    sortedVersions: module.versions?.sort((a, b) => b.versionCode - a.versionCode) || [],
+                    features: getFeaturesList(module.features),
+                    lastUpdate: formatDate(module.versions?.[0]?.timestamp),
+                    isNew: (Date.now() / 1000 - module.versions?.[0]?.timestamp) < 7 * 24 * 60 * 60,
+                    version: module.version?.startsWith('v') ? module.version : `v${module.version}`
+                };
+            });
+            
+            console.log('预处理后的模块:', processedModules.length);
+
+            // 使用模板字符串一次性创建DOM
+            processedModules.forEach((module, index) => {
+                const card = document.createElement('div');
+                card.className = 'module-card';
+                card.style.setProperty('--order', index);
+                
+                card.innerHTML = `
+                    <div class="module-header">
+                        <span class="module-name" data-full-name="${module.name}">
+                            ${module.name}
+                        </span>
+                        ${module.isNew ? `
+                            <span class="module-new-badge">
+                                <i class="ri-flashlight-line"></i>
+                                New
+                            </span>
+                        ` : ''}
+                        <div class="module-meta">
+                            <span>
+                                <i class="ri-user-3-line"></i> ${module.author || '未知作者'}
+                            </span>
+                            <span>
+                                <i class="ri-time-line"></i> ${module.lastUpdate || '未知时间'}
+                            </span>
+                            <span class="module-version">
+                                <i class="ri-code-s-slash-line"></i>
+                                ${module.version || '未知版本'}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="module-content">
+                        <div class="module-description">
+                            ${module.description || '没有描述'}
+                        </div>
+                        
+                        ${module.features && module.features.length > 0 ? `
+                            <div class="module-features">
+                                ${module.features.map(feature => `
+                                    <span class="feature-tag">
+                                        <i class="ri-checkbox-circle-line"></i>
+                                        ${feature}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <div class="module-actions">
+                        <div class="action-group">
+                            ${module.sortedVersions && module.sortedVersions.length > 0 ? `
+                                <a href="${module.sortedVersions[0].zipUrl}" class="btn btn-primary">
+                                    <i class="ri-download-2-line"></i>
+                                    下载
+                                    ${module.sortedVersions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.sortedVersions[0].size)}</small>` : ''}
+                                </a>
+                            ` : `
+                                <button class="btn btn-primary disabled">
+                                    <i class="ri-download-2-line"></i>
+                                    无可用下载
+                                </button>
+                            `}
+                            <a href="${module.track?.source || module.support || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
+                               target="_blank" 
+                               class="btn btn-icon" 
+                               title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
+                                <i class="ri-github-line"></i>
+                            </a>
+                            ${module.sortedVersions && module.sortedVersions[0] && module.sortedVersions[0].changelog ? `
+                                <button class="btn btn-icon" onclick="showChangelogModal('${module.sortedVersions[0].changelog}', '${module.version}')" title="查看更新日志">
+                                    <i class="ri-file-list-3-line"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                        ${module.sortedVersions && module.sortedVersions.length > 1 ? `
+                            <div class="accordion mt-3">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#version-${index}">
+                                            历史版本 (${module.sortedVersions.length - 1})
+                                        </button>
+                                    </h2>
+                                    <div id="version-${index}" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="list-group">
+                                                ${module.sortedVersions
+                                                    .slice(1)
+                                                    .map(ver => {
+                                                        const version = ver.version?.startsWith('v') ? ver.version : `v${ver.version}`;
+                                                        return `
+                                                            <a href="${ver.zipUrl}" class="list-group-item list-group-item-action">
+                                                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                                                    <div>
+                                                                        <div class="fw-medium">${version || '未知版本'}</div>
+                                                                        <small class="text-muted">${formatDate(ver.timestamp)}</small>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center">
+                                                                        ${ver.changelog ? 
+                                                                            `<button class="version-changelog-btn" 
+                                                                                onclick="showChangelogModal('${ver.changelog}', '${version}')" 
+                                                                                title="查看更新日志">
+                                                                                <i class="ri-file-list-3-line"></i>
+                                                                            </button>` : ''}
+                                                                        ${ver.size ? `<span class="badge ms-2">${formatSize(ver.size)}</span>` : ''}
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        `;
+                                                    }).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+                
+                fragment.appendChild(card);
+            });
+
+            // 清空列表并一次性添加所有卡片
+            moduleList.innerHTML = '';
+            moduleList.appendChild(fragment);
+            
+            // 使用 IntersectionObserver 优化滚动加载
+            observeModules();
+        }
+
+        function getFeaturesList(features) {
+            const featureNames = {
+                service: '服务',
+                post_fs_data: '文件系统',
+                action: '操作',
+                webroot: 'Web界面',
+                sepolicy: 'SEPolicy',
+                apks: 'APK支持'
+            };
+            
+            return Object.entries(features || {})
+                .filter(([_, value]) => value === true)
+                .map(([key, _]) => featureNames[key] || key);
+        }
+
+        function formatDate(timestamp) {
+            if (!timestamp) return '未知时间';
+            const date = new Date(timestamp * 1000);
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${year}-${month}-${day} ${hours}:${minutes}`;
+        }
+
+        function formatSize(bytes) {
+            if (!bytes) return '';
+            const units = ['B', 'KB', 'MB', 'GB'];
+            let size = bytes;
+            let unitIndex = 0;
+            while (size >= 1024 && unitIndex < units.length - 1) {
+                size /= 1024;
+                unitIndex++;
+            }
+            return `${size.toFixed(1)} ${units[unitIndex]}`;
+        }
+
+        // 显示更新日志模态框
+        async function showChangelogModal(changelogUrl, version) {
+            // 阻止事件冒泡
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            // 安全检查
+            if (!changelogUrl || typeof changelogUrl !== 'string') {
+                console.error('无效的更新日志URL');
+                return;
+            }
+            
+            // 清理版本字符串，避免XSS
+            version = (version || '').replace(/[<>&"']/g, '');
+            
+            const modalTitle = document.getElementById('changelogModalLabel');
+            const changelogContent = document.getElementById('changelogContent');
+            
+            // 设置标题
+            modalTitle.textContent = `${version} 更新日志`;
+            
+            // 显示加载状态
+            changelogContent.innerHTML = `
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <div class="mt-3">正在加载更新日志...</div>
+                </div>
+            `;
+            
+            // 获取模态框元素并显示
+            const changelogModal = document.getElementById('changelogModal');
+            const modalInstance = new bootstrap.Modal(changelogModal);
+            modalInstance.show();
+            
+            try {
+                // 获取更新日志内容
+                const response = await fetch(changelogUrl);
+                
+                if (!response.ok) {
+                    throw new Error('无法加载更新日志');
+                }
+                
+                const content = await response.text();
+                
+                // 格式化markdown内容
+                const formattedContent = formatMarkdown(content);
+                
+                // 更新模态框内容
+                changelogContent.innerHTML = formattedContent;
+                
+            } catch (error) {
+                console.error('加载更新日志失败:', error);
+                changelogContent.innerHTML = `
+                    <div class="alert alert-danger">
+                        <i class="ri-error-warning-line me-2"></i>
+                        加载更新日志失败: ${error.message}
+                    </div>
+                    <div class="mt-3">
+                        <a href="${changelogUrl}" target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="ri-external-link-line me-1"></i>
+                            在新标签页中打开
+                        </a>
+                    </div>
+                `;
+            }
+        }
+        
+        // 简单的Markdown格式化函数
+        function formatMarkdown(markdown) {
+            if (!markdown || markdown.trim() === '') {
+                return '<div class="alert alert-info">没有更新日志内容</div>';
+            }
+            
+            // 安全处理输入
+            markdown = markdown.replace(/[<>&"']/g, function(match) {
+                return {
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '&': '&amp;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                }[match];
+            });
+            
+            // 基本的Markdown格式化
+            let formatted = markdown
+                // 标题
+                .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
+                .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+                .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+                
+                // 强调
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/__(.*?)__/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/_(.*?)_/g, '<em>$1</em>')
+                
+                // 列表
+                .replace(/^- (.*?)$/gm, '<li>$1</li>')
+                .replace(/^[*+] (.*?)$/gm, '<li>$1</li>')
+                .replace(/^(\d+)\. (.*?)$/gm, '<li>$2</li>')
+                .replace(/(<li>.*?<\/li>(\n|$))+/g, '<ul>$&</ul>')
+                
+                // 链接
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+                
+                // 代码
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                
+                // 分割线
+                .replace(/^\s*---+\s*$/gm, '<hr>')
+                
+                // 段落
+                .replace(/\n\n/g, '</p><p>');
+            
+            // 最后包装在段落中
+            if (!formatted.startsWith('<h') && !formatted.startsWith('<ul') && !formatted.startsWith('<p>')) {
+                formatted = '<p>' + formatted + '</p>';
+            }
+            
+            return `<div class="markdown-content">${formatted}</div>`;
+        }
+
+        // 优化搜索和筛选
+        const debouncedFilter = debounce(() => {
+            requestAnimationFrame(filterModules);
+        }, 300);
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('DOMContentLoaded 事件触发');
+            
+            // 设置主题
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+                icon.className = savedTheme === 'dark' ? 'ri-moon-line' : 'ri-sun-line';
+            }
+            
+            // 移动端专用优化
+            if (window.innerWidth <= 768) {
+                // 增强模块卡片的触摸反馈
+                const style = document.createElement('style');
+                style.textContent = `
+                    .module-card {
+                        transition: transform 0.15s ease !important;
+                    }
+                    .module-card:active {
+                        transform: scale(0.98) !important;
+                    }
+                    .module-card a, .module-card button {
+                        position: relative !important;
+                        z-index: 10 !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // 检查必要的DOM元素
+            const moduleList = document.getElementById('moduleList');
+            if (!moduleList) {
+                console.error('找不到moduleList元素');
+                return;
+            }
+            
+            // 加载模块数据
+            try {
+                console.log('开始加载模块数据...');
+                const modules = await fetchModules();
+                console.log('模块加载完成, 数量:', modules ? modules.length : 0);
+                
+                if (modules && modules.length > 0) {
+                    console.log('开始渲染模块...');
+                    // 检查模块数据格式
+                    const sampleModule = modules[0];
+                    console.log('示例模块数据:', sampleModule);
+                    
+                    renderModules(modules);
+                    
+                    // 设置筛选和排序
+                    setupFilters();
+                } else {
+                    console.warn('没有找到模块');
+                    handleError(new Error('没有找到模块数据'), moduleList, 'warning');
+                }
+            } catch (error) {
+                handleError(error, moduleList);
+            }
+        });
+
+        // 初始化页面状态
+        window.addEventListener('load', function() {
+            // 确保移除任何可能存在的模态框相关类
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+            
+            // 移动端优化
+            if (window.innerWidth <= 768) {
+                // 增强页面滚动体验
+                document.documentElement.style.scrollBehavior = 'smooth';
+                
+                // 优化模块卡片点击
+                document.querySelectorAll('.module-card').forEach(card => {
+                    card.style.cursor = 'pointer';
+                });
+            }
+        });
+        
+        // 设置筛选和排序功能
+        function setupFilters() {
+            const moduleSearch = document.getElementById('moduleSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortOrder = document.getElementById('sortOrder');
+            const featureFilter = document.getElementById('featureFilter');
+            
+            // 更新分类筛选器
+            updateCategoryFilter();
+            
+            // 初始化时立即筛选一次
+            filterModules();
+            
+            // 为各种筛选器添加事件监听
+            moduleSearch.addEventListener('input', debouncedFilter);
+            categoryFilter.addEventListener('change', debouncedFilter);
+            sortOrder.addEventListener('change', debouncedFilter);
+            featureFilter.addEventListener('change', debouncedFilter);
+            
+            // 处理下拉菜单点击
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const value = this.getAttribute('data-value');
+                    const dropdown = this.closest('.input-group').querySelector('select');
+                    if (dropdown) {
+                        dropdown.value = value;
+                        dropdown.dispatchEvent(new Event('change'));
+                    }
+                });
+            });
+        }
+        
+        // 从模块数据中提取分类并更新筛选器
+        function updateCategoryFilter() {
+            const modules = window.currentModules || [];
+            if (!modules.length) return;
+            
+            console.log('更新分类筛选器');
+            
+            // 获取所有唯一的分类
+            const categories = new Set();
+            modules.forEach(module => {
+                if (module.categories && Array.isArray(module.categories)) {
+                    module.categories.forEach(category => categories.add(category));
+                }
+            });
+            
+            // 对分类进行排序
+            const sortedCategories = Array.from(categories).sort();
+            console.log('发现的分类:', sortedCategories);
+            
+            // 更新下拉菜单
+            const categoryDropdown = document.querySelector('.dropdown-menu[aria-labelledby="categoryFilter"]');
+            const categorySelect = document.getElementById('categoryFilter');
+            
+            if (categoryDropdown) {
+                // 清空现有选项，但保留"全部分类"选项
+                categoryDropdown.innerHTML = `<li><a class="dropdown-item" href="#" data-value="">全部分类</a></li>`;
+                
+                // 添加新的分类选项
+                sortedCategories.forEach(category => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<a class="dropdown-item" href="#" data-value="${category}">${category}</a>`;
+                    categoryDropdown.appendChild(listItem);
+                });
+            }
+            
+            if (categorySelect) {
+                // 保存当前选定的值
+                const currentValue = categorySelect.value;
+                
+                // 清空现有选项，但保留"全部分类"选项
+                categorySelect.innerHTML = `<option value="">全部分类</option>`;
+                
+                // 添加新的分类选项
+                sortedCategories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category;
+                    option.textContent = category;
+                    categorySelect.appendChild(option);
+                });
+                
+                // 恢复选择
+                if (sortedCategories.includes(currentValue)) {
+                    categorySelect.value = currentValue;
+                }
+            }
+        }
+        
+        // 筛选和排序模块
+        function filterModules() {
+            const modules = window.currentModules || [];
+            console.log('filterModules被调用, 模块数量:', modules.length);
+            if (!modules.length) return;
+            
+            const searchTerm = document.getElementById('moduleSearch').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const sortBy = document.getElementById('sortOrder').value;
+            const feature = document.getElementById('featureFilter').value;
+            
+            console.log('筛选条件:', {searchTerm, category, sortBy, feature});
+            
+            // 应用筛选
+            let filteredModules = modules.filter(module => {
+                // 筛选搜索词
+                const nameMatch = (module.name || '').toLowerCase().includes(searchTerm);
+                const descMatch = (module.description || '').toLowerCase().includes(searchTerm);
+                const authorMatch = (module.author || '').toLowerCase().includes(searchTerm);
+                
+                // 筛选分类
+                const categoryMatch = !category || (module.categories && module.categories.includes(category));
+                
+                // 筛选功能
+                const featureMatch = !feature || (module.features && module.features[feature] === true);
+                
+                return (nameMatch || descMatch || authorMatch) && categoryMatch && featureMatch;
+            });
+            
+            console.log('筛选后的模块数量:', filteredModules.length);
+            
+            // 应用排序
+            filteredModules.sort((a, b) => {
+                if (sortBy === 'update') {
+                    const aTime = a.versions?.[0]?.timestamp || 0;
+                    const bTime = b.versions?.[0]?.timestamp || 0;
+                    return bTime - aTime;
+                } else if (sortBy === 'name') {
+                    return (a.name || '').localeCompare(b.name || '');
+                } else if (sortBy === 'author') {
+                    return (a.author || '').localeCompare(b.author || '');
+                }
+                return 0;
+            });
+            
+            // 重新渲染结果
+            renderModules(filteredModules);
+            
+            // 更新筛选结果计数
+            updateFilterCounter(filteredModules.length, modules.length);
+        }
+        
+        // 更新筛选结果计数
+        function updateFilterCounter(filteredCount, totalCount) {
+            const moduleList = document.getElementById('moduleList');
+            
+            // 如果没有模块，显示提示信息
+            if (filteredCount === 0) {
+                moduleList.innerHTML = `
+                    <div class="alert alert-info text-center py-5">
+                        <i class="ri-filter-off-line me-2"></i> 
+                        没有找到匹配的模块。请尝试不同的搜索条件。
+                    </div>
+                `;
+            }
+        }
+        
+        // 检测移动设备
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.body.classList.add('is-mobile');
+        }
+
+        // 处理错误并显示用户友好的信息
+        function handleError(error, container, type = 'error') {
+            console.error('处理错误:', error);
+            
+            const isNetworkError = error.message.includes('Failed to fetch') || 
+                                   error.message.includes('NetworkError') ||
+                                   error.message.includes('Network request failed');
+            
+            const is404Error = error.message.includes('404') || 
+                               error.message.includes('Not Found');
+            
+            let errorMessage = error.message;
+            let solution = '';
+            
+            if (isNetworkError) {
+                errorMessage = '网络连接错误';
+                solution = '请检查您的网络连接，并确保能够访问互联网。';
+            } else if (is404Error) {
+                errorMessage = '找不到模块数据文件';
+                solution = '请确保json/modules.json文件存在并可访问。';
+            }
+            
+            const alertType = type === 'error' ? 'danger' : 'warning';
+            const icon = type === 'error' ? 'ri-error-warning-line' : 'ri-information-line';
+            
+            container.innerHTML = `
+                <div class="alert alert-${alertType} text-center py-5">
+                    <i class="${icon} me-2"></i> 
+                    <div class="fw-bold mb-2">${errorMessage}</div>
+                    ${solution ? `<div class="mb-2">${solution}</div>` : ''}
+                    <div class="mt-3 small text-muted">
+                        技术细节: ${error.message}
+                        <button class="btn btn-sm btn-outline-secondary mt-2" onclick="location.reload()">
+                            <i class="ri-refresh-line me-1"></i> 刷新页面
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
 </head>
 <body>
     <div class="loading"></div>
@@ -1912,9 +3593,14 @@
                     <img src="src/logo-red.png" alt="Misaki-Module Repo" class="logo">
                     <a href="https://github.com/misak10/mmrl-repo" class="logo-text">Misaki-Module Repo</a>
                 </div>
-                <button class="theme-switch" id="themeSwitch">
-                    <i class="ri-sun-line"></i>
-                </button>
+                <div class="header-links">
+                    <a href="https://t.me/module_update" class="tg-button" target="_blank" title="加入Telegram频道">
+                        <i class="ri-send-plane-fill"></i>
+                    </a>
+                    <button class="theme-switch" id="themeSwitch">
+                        <i class="ri-sun-line"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -1996,6 +3682,26 @@
         </div>
     </main>
 
+    <!-- 更新日志模态框 -->
+    <div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changelogModalLabel">更新日志</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="changelogContent" class="markdown-body">
+                        <!-- 更新日志内容将在这里动态加载 -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
@@ -2024,1036 +3730,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // 主题切换逻辑保持不变
-        const themeSwitch = document.getElementById('themeSwitch');
-        const icon = themeSwitch.querySelector('i');
-        
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-bs-theme') === 'dark';
-            html.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
-            icon.className = isDark ? 'ri-moon-line' : 'ri-sun-line';
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        }
-
-        themeSwitch.addEventListener('click', toggleTheme);
-
-        // 加载动画
-        const loading = document.querySelector('.loading');
-        function showLoading() {
-            loading.classList.add('active');
-        }
-        function hideLoading() {
-            loading.classList.remove('active');
-        }
-
-        // 防抖函数
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-        
-        // 使用 IntersectionObserver 优化模块卡片加载
-        const observeModules = () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-            
-            document.querySelectorAll('.module-card').forEach(card => {
-                observer.observe(card);
-            });
-        };
-
-        // 优化模块数据缓存
-        const moduleCache = {
-            data: null,
-            timestamp: 0,
-            maxAge: 5 * 60 * 1000, // 5分钟缓存
-            
-            async get() {
-                const now = Date.now();
-                if (this.data && (now - this.timestamp) < this.maxAge) {
-                    return this.data;
-                }
-                
-                const response = await fetch('json/modules.json');
-                if (!response.ok) throw new Error('无法加载模块数据');
-                
-                this.data = await response.json();
-                this.timestamp = now;
-                return this.data;
-            }
-        };
-
-        // 优化后的fetchModules函数
-        async function fetchModules() {
-            showLoading();
-            try {
-                const data = await moduleCache.get();
-                window.currentModules = data.modules;
-                return data.modules;
-            } catch (error) {
-                console.error('无法加载模块数据:', error);
-                return [];
-            } finally {
-                hideLoading();
-            }
-        }
-
-        // 优化渲染性能
-        async function renderModules(modules) {
-            const moduleList = document.getElementById('moduleList');
-            
-            // 使用DocumentFragment优化DOM操作
-            const fragment = document.createDocumentFragment();
-            
-            // 对模块数据进行预处理
-            const processedModules = modules.map(module => ({
-                ...module,
-                sortedVersions: module.versions?.sort((a, b) => b.versionCode - a.versionCode) || [],
-                features: getFeaturesList(module.features),
-                lastUpdate: formatDate(module.versions?.[0]?.timestamp),
-                isNew: (Date.now() / 1000 - module.versions?.[0]?.timestamp) < 7 * 24 * 60 * 60,
-                version: module.version.startsWith('v') ? module.version : `v${module.version}`
-            }));
-
-            // 使用模板字符串一次性创建DOM
-            processedModules.forEach((module, index) => {
-                const card = document.createElement('div');
-                card.className = 'module-card';
-                card.style.setProperty('--order', index);
-                
-                card.innerHTML = `
-                    <div class="module-header">
-                        <span class="module-name" data-full-name="${module.name}">
-                            ${module.name}
-                        </span>
-                        ${module.isNew ? `
-                            <span class="module-new-badge">
-                                <i class="ri-flashlight-line"></i>
-                                New
-                            </span>
-                        ` : (Date.now() / 1000 - module.sortedVersions[0].timestamp) > 180 * 24 * 60 * 60 ? `
-                            <span class="module-outdated-badge">
-                                <i class="ri-time-line"></i>
-                                长期未更新
-                            </span>
-                        ` : ''}
-                        <div class="module-meta">
-                            <span>
-                                <i class="ri-user-3-line"></i> ${module.author}
-                            </span>
-                            <span>
-                                <i class="ri-time-line"></i> ${module.lastUpdate}
-                            </span>
-                            <span class="module-version">
-                                <i class="ri-code-s-slash-line"></i>
-                                ${module.version}
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="module-content">
-                        <div class="module-description">
-                            ${module.description}
-                        </div>
-                        
-                        ${module.features.length > 0 ? `
-                            <div class="module-features">
-                                ${module.features.map(feature => `
-                                    <span class="feature-tag">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        ${feature}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-
-                    <div class="module-actions">
-                        <div class="action-group">
-                            <a href="${module.sortedVersions[0].zipUrl}" class="btn btn-primary">
-                                <i class="ri-download-2-line"></i>
-                                下载
-                                ${module.sortedVersions[0].size ? `<small class="ms-2 opacity-75">${formatSize(module.sortedVersions[0].size)}</small>` : ''}
-                            </a>
-                            <a href="${module.track?.source || `https://github.com/search?q=${encodeURIComponent(module.name)}+in:name&type=repositories`}" 
-                               target="_blank" 
-                               class="btn btn-icon" 
-                               title="${module.track?.source ? '查看源码' : '在 GitHub 上搜索相关仓库'}">
-                                <i class="${module.track?.source ? 'ri-code-line' : 'ri-search-line'}"></i>
-                            </a>
-                            ${module.sortedVersions[0].changelog ? `
-                                <a href="${module.sortedVersions[0].changelog}" 
-                                   target="_blank" 
-                                   class="btn btn-icon"
-                                   title="查看更新日志">
-                                    <i class="ri-file-list-3-line"></i>
-                                </a>
-                            ` : ''}
-                        </div>
-                        ${module.sortedVersions.length > 1 ? `
-                            <div class="accordion mt-3">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#version-${index}">
-                                            历史版本 (${module.sortedVersions.length - 1})
-                                        </button>
-                                    </h2>
-                                    <div id="version-${index}" class="accordion-collapse collapse">
-                                        <div class="accordion-body">
-                                            <div class="list-group">
-                                                ${module.sortedVersions
-                                                    .slice(1)
-                                                    .map(ver => {
-                                                        const version = ver.version.startsWith('v') ? ver.version : `v${ver.version}`;
-                                                        return `
-                                                            <a href="${ver.zipUrl}" class="list-group-item list-group-item-action">
-                                                                <div class="d-flex w-100 justify-content-between align-items-center">
-                                                                    <div>
-                                                                        <div class="fw-medium">${version}</div>
-                                                                        <small class="text-muted">${formatDate(ver.timestamp)}</small>
-                                                                    </div>
-                                                                    ${ver.size ? `<span class="badge">${formatSize(ver.size)}</span>` : ''}
-                                                                </div>
-                                                            </a>
-                                                        `;
-                                                    }).join('')}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-                
-                fragment.appendChild(card);
-            });
-
-            // 清空列表并一次性添加所有卡片
-            moduleList.innerHTML = '';
-            moduleList.appendChild(fragment);
-            
-            // 使用 IntersectionObserver 优化滚动加载
-            observeModules();
-        }
-
-        function getFeaturesList(features) {
-            const featureNames = {
-                service: '服务',
-                post_fs_data: '文件系统',
-                action: '操作',
-                webroot: 'Web界面',
-                sepolicy: 'SEPolicy',
-                apks: 'APK支持'
-            };
-            
-            return Object.entries(features || {})
-                .filter(([_, value]) => value === true)
-                .map(([key, _]) => featureNames[key] || key);
-        }
-
-        function formatDate(timestamp) {
-            if (!timestamp) return '未知时间';
-            const date = new Date(timestamp * 1000);
-            const year = date.getFullYear();
-            const month = (date.getMonth() + 1).toString().padStart(2, '0');
-            const day = date.getDate().toString().padStart(2, '0');
-            const hours = date.getHours().toString().padStart(2, '0');
-            const minutes = date.getMinutes().toString().padStart(2, '0');
-            return `${year}-${month}-${day} ${hours}:${minutes}`;
-        }
-
-        function formatSize(bytes) {
-            if (!bytes) return '';
-            const units = ['B', 'KB', 'MB', 'GB'];
-            let size = bytes;
-            let unitIndex = 0;
-            while (size >= 1024 && unitIndex < units.length - 1) {
-                size /= 1024;
-                unitIndex++;
-            }
-            return `${size.toFixed(1)} ${units[unitIndex]}`;
-        }
-
-        // 优化搜索和筛选
-        const debouncedFilter = debounce(() => {
-            requestAnimationFrame(filterModules);
-        }, 300);
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', async function() {
-            // 设置主题
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-bs-theme', savedTheme);
-                icon.className = savedTheme === 'dark' ? 'ri-moon-line' : 'ri-sun-line';
-            }
-
-            // 初始加载模块数据
-            try {
-                const modules = await fetchModules();
-                if (modules && modules.length > 0) {
-                    await renderModules(modules);
-                } else {
-                    showEmptyState();
-                }
-            } catch (error) {
-                showErrorState(error);
-            }
-
-            // 搜索输入事件
-            const searchInput = document.getElementById('moduleSearch');
-            searchInput.addEventListener('input', debounce(filterModules, 300));
-
-            // 下拉菜单点击事件
-            document.querySelectorAll('.dropdown-item').forEach((item, index) => {
-                item.style.setProperty('--index', index);
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const value = this.dataset.value;
-                    const dropdownButton = this.closest('.input-group').querySelector('.btn');
-                    const select = this.closest('.input-group').querySelector('select');
-                    
-                    // 更新按钮文本和select值
-                    dropdownButton.childNodes[0].textContent = this.textContent;
-                    select.value = value;
-                    
-                    // 触发过滤
-                    filterModules();
-
-                    // 移动端处理
-                    if (window.innerWidth <= 768) {
-                        const dropdown = this.closest('.dropdown-menu');
-                        if (dropdown) {
-                            dropdown.addEventListener('transitionend', function handler(e) {
-                                if (e.propertyName === 'transform') {
-                                    document.body.classList.remove('modal-open');
-                                    const scrollY = parseInt(document.body.style.top || '0');
-                                    document.body.style.top = '';
-                                    window.scrollTo(0, -scrollY);
-                                    dropdown.removeEventListener('transitionend', handler);
-                                }
-                            });
-                            dropdown.classList.remove('show');
-                        }
-                    }
-                });
-            });
-
-            // 移动端下拉菜单打开时处理
-            document.querySelectorAll('.btn[data-bs-toggle="dropdown"]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        requestAnimationFrame(() => {
-                            document.body.classList.toggle('modal-open');
-                            const scrollY = window.scrollY;
-                            document.body.style.top = `-${scrollY}px`;
-                        });
-                    }
-                });
-            });
-
-            // 点击遮罩层关闭下拉菜单
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    const dropdowns = document.querySelectorAll('.dropdown-menu.show');
-                    dropdowns.forEach(menu => {
-                        const rect = menu.getBoundingClientRect();
-                        if (e.clientY < rect.top) {
-                            menu.addEventListener('transitionend', function handler(e) {
-                                if (e.propertyName === 'transform') {
-                                    document.body.classList.remove('modal-open');
-                                    const scrollY = parseInt(document.body.style.top || '0');
-                                    document.body.style.top = '';
-                                    window.scrollTo(0, -scrollY);
-                                    menu.removeEventListener('transitionend', handler);
-                                }
-                            });
-                            menu.classList.remove('show');
-                        }
-                    });
-                }
-            });
-
-            // Select 变化事件
-            document.querySelectorAll('select').forEach(select => {
-                select.addEventListener('change', filterModules);
-            });
-        });
-
-        function isOutdated(timestamp) {
-            if (!timestamp) return false;
-            const sixMonthsInSeconds = 180 * 24 * 60 * 60; // 180天
-            const now = Math.floor(Date.now() / 1000);
-            return (now - timestamp) > sixMonthsInSeconds;
-        }
-
-        // 添加错误和空状态显示函数
-        function showEmptyState() {
-            const moduleList = document.getElementById('moduleList');
-            moduleList.innerHTML = `
-                <div class="alert alert-info fade show" role="alert">
-                    <div class="d-flex align-items-center gap-3">
-                        <i class="ri-inbox-line fs-4"></i>
-                        <div>
-                            <h4 class="alert-heading mb-1">暂无模块数据</h4>
-                            <p class="mb-0">目前还没有任何模块，请稍后再来查看。</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function showErrorState(error) {
-            const moduleList = document.getElementById('moduleList');
-            moduleList.innerHTML = `
-                <div class="alert alert-danger fade show" role="alert">
-                    <div class="d-flex align-items-center gap-3">
-                        <i class="ri-error-warning-line fs-4"></i>
-                        <div>
-                            <h4 class="alert-heading mb-1">加载失败</h4>
-                            <p class="mb-0">加载模块数据时出现错误：${error.message}</p>
-                            <button class="btn btn-outline-danger btn-sm mt-2" onclick="retryLoading()">
-                                <i class="ri-refresh-line me-1"></i>重试
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // 添加重试加载功能
-        async function retryLoading() {
-            try {
-                const modules = await fetchModules();
-                if (modules?.length > 0) {
-                    await renderModules(modules);
-                } else {
-                    showEmptyState();
-                }
-            } catch (error) {
-                showErrorState(error);
-            }
-        }
-
-        // 添加加载动画优化
-        function showLoading() {
-            const loading = document.querySelector('.loading');
-            loading.classList.add('active');
-            
-            // 添加加载提示
-            const moduleList = document.getElementById('moduleList');
-            moduleList.innerHTML = `
-                <div class="text-center py-5">
-                    <div class="spinner-border text-primary mb-3" role="status">
-                        <span class="visually-hidden">加载中...</span>
-                    </div>
-                    <p class="text-muted mb-0">正在加载模块数据...</p>
-                </div>
-            `;
-        }
-
-        // 优化主题切换
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-            
-            document.documentElement.setAttribute('data-bs-theme', theme);
-            document.querySelector('#themeSwitch i').className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-bs-theme') === 'dark';
-            const newTheme = isDark ? 'light' : 'dark';
-            
-            html.setAttribute('data-bs-theme', newTheme);
-            document.querySelector('#themeSwitch i').className = isDark ? 'ri-moon-line' : 'ri-sun-line';
-            localStorage.setItem('theme', newTheme);
-            
-            // 添加主题切换动画
-            document.body.style.transition = 'background-color 0.3s ease';
-            requestAnimationFrame(() => {
-                document.body.style.transition = '';
-            });
-        }
-
-        // 优化搜索体验
-        function initializeSearch() {
-            const searchInput = document.getElementById('moduleSearch');
-            const clearButton = document.createElement('button');
-            clearButton.className = 'btn btn-link position-absolute end-0 top-50 translate-middle-y text-muted d-none';
-            clearButton.innerHTML = '<i class="ri-close-circle-line"></i>';
-            clearButton.style.zIndex = '5';
-            
-            searchInput.parentElement.style.position = 'relative';
-            searchInput.parentElement.appendChild(clearButton);
-            
-            searchInput.addEventListener('input', () => {
-                clearButton.classList.toggle('d-none', !searchInput.value);
-            });
-            
-            clearButton.addEventListener('click', () => {
-                searchInput.value = '';
-                searchInput.dispatchEvent(new Event('input'));
-                clearButton.classList.add('d-none');
-                searchInput.focus();
-            });
-        }
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', function() {
-            initTheme();
-            initializeSearch();
-            initImageLoading();
-            initFilterPerformance();
-            
-            // 使用 requestIdleCallback 延迟加载非关键功能
-            requestIdleCallback(() => {
-                // 添加页面滚动进度指示器
-                const progressBar = document.createElement('div');
-                progressBar.className = 'scroll-progress';
-                document.body.appendChild(progressBar);
-                
-                window.addEventListener('scroll', () => {
-                    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                    progressBar.style.width = `${scrolled}%`;
-                }, { passive: true });
-            });
-        });
-
-        // 优化图片加载
-        function initImageLoading() {
-            const logo = document.querySelector('.logo');
-            if (logo) {
-                logo.onerror = function() {
-                    this.classList.add('error');
-                    this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'36\' height=\'36\'%3E%3Cpath fill=\'%23ef4444\' d=\'M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-3a5 5 0 1 1 0-10 5 5 0 0 1 0 10z\'/%3E%3C/svg%3E';
-                };
-            }
-        }
-
-        // 优化分类和排序性能
-        function initFilterPerformance() {
-            const dropdownButtons = document.querySelectorAll('.btn-outline-secondary[data-bs-toggle="dropdown"]');
-            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-            
-            // 预先缓存下拉菜单选项
-            const dropdownCache = new Map();
-            
-            dropdownMenus.forEach(menu => {
-                const items = Array.from(menu.querySelectorAll('.dropdown-item'));
-                dropdownCache.set(menu, items);
-            });
-
-            // 优化下拉菜单点击事件
-            dropdownMenus.forEach(menu => {
-                menu.addEventListener('click', (e) => {
-                    if (e.target.matches('.dropdown-item')) {
-                        e.preventDefault();
-                        const button = menu.previousElementSibling;
-                        const select = menu.nextElementSibling;
-                        
-                        // 使用 requestAnimationFrame 优化视觉更新
-                        requestAnimationFrame(() => {
-                            button.childNodes[0].textContent = e.target.textContent;
-                            select.value = e.target.dataset.value;
-                            select.dispatchEvent(new Event('change'));
-                        });
-                    }
-                });
-            });
-
-            // 优化筛选逻辑
-            function filterModules() {
-                if (!window.currentModules || !Array.isArray(window.currentModules)) {
-                    return;
-                }
-
-                const searchInput = document.getElementById('moduleSearch');
-                const categoryFilter = document.getElementById('categoryFilter');
-                const sortOrder = document.getElementById('sortOrder');
-                const featureFilter = document.getElementById('featureFilter');
-
-                const searchTerm = searchInput.value.toLowerCase();
-                const category = categoryFilter.value;
-                const sort = sortOrder.value;
-                const feature = featureFilter.value;
-
-                let filtered = window.currentModules.filter(module => {
-                    // 搜索条件匹配
-                    const searchMatch = !searchTerm || 
-                        module.name.toLowerCase().includes(searchTerm) ||
-                        module.description.toLowerCase().includes(searchTerm) ||
-                        module.author.toLowerCase().includes(searchTerm);
-
-                    // 分类匹配 - 检查categories数组
-                    const categoryMatch = !category || 
-                        (module.categories && module.categories.some(cat => 
-                            cat.toLowerCase() === category.toLowerCase()
-                        ));
-
-                    // 功能特性匹配
-                    const featureMatch = !feature || 
-                        (module.features && module.features[feature] === true);
-
-                    return searchMatch && categoryMatch && featureMatch;
-                });
-
-                // 排序逻辑
-                filtered.sort((a, b) => {
-                    switch(sort) {
-                        case 'update':
-                            return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
-                        case 'name':
-                            return a.name.localeCompare(b.name, 'zh-CN');
-                        case 'author':
-                            return a.author.localeCompare(b.author, 'zh-CN');
-                        default:
-                            return 0;
-                    }
-                });
-
-                renderModules(filtered);
-            }
-
-            window.filterModules = filterModules;
-        }
-
-        // 优化主题切换函数
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-bs-theme') === 'dark';
-            const newTheme = isDark ? 'light' : 'dark';
-            
-            // 添加过渡类
-            document.body.classList.add('theme-transitioning');
-            
-            // 使用 requestAnimationFrame 延迟主题切换
-            requestAnimationFrame(() => {
-                html.setAttribute('data-bs-theme', newTheme);
-                icon.className = isDark ? 'ri-moon-line' : 'ri-sun-line';
-                localStorage.setItem('theme', newTheme);
-
-                // 300ms 后移除过渡类
-                setTimeout(() => {
-                    document.body.classList.remove('theme-transitioning');
-                }, 300);
-            });
-        }
-
-        // 优化主题初始化
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-            
-            document.documentElement.setAttribute('data-bs-theme', theme);
-            const icon = document.querySelector('#themeSwitch i');
-            if (icon) {
-                icon.className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
-            }
-
-            // 监听系统主题变化
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            mediaQuery.addListener((e) => {
-                if (!localStorage.getItem('theme')) {
-                    const newTheme = e.matches ? 'dark' : 'light';
-                    document.documentElement.setAttribute('data-bs-theme', newTheme);
-                }
-            });
-        }
-
-        // 在 VirtualList 类中添加主题更新方法
-        class VirtualList {
-            // ... existing VirtualList code ...
-
-            updateTheme() {
-                if (!this.visibleItems.size) return;
-
-                const cards = Array.from(this.visibleItems.values());
-                
-                // 批量更新可见卡片
-                requestAnimationFrame(() => {
-                    cards.forEach(card => {
-                        card.style.willChange = 'transform, background-color, border-color';
-                    });
-
-                    // 主题切换完成后恢复
-                    setTimeout(() => {
-                        cards.forEach(card => {
-                            card.style.willChange = 'transform';
-                        });
-                    }, 300);
-                });
-            }
-        }
-
-        // 初始化主题切换
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeSwitch = document.getElementById('themeSwitch');
-            if (themeSwitch) {
-                themeSwitch.addEventListener('click', toggleTheme);
-            }
-            
-            // 初始化主题
-            initTheme();
-        });
-
-        // 修改功能标签点击筛选逻辑
-        function handleFeatureTagClick(feature) {
-            const featureMap = {
-                '服务': 'service',
-                '文件系统': 'post_fs_data',
-                '操作': 'action',
-                'Web界面': 'webroot',
-                'SEPolicy': 'sepolicy',
-                'APK支持': 'apks',
-                'Zygisk': 'zygisk',
-                'Resetprop': 'resetprop'
-            };
-
-            // 获取功能的实际值
-            const featureValue = featureMap[feature] || feature.toLowerCase();
-            
-            // 检查是否是主要功能之一
-            const mainFeatures = ['action', 'webroot', 'apks'];
-            
-            // 如果是主要功能，更新下拉菜单
-            if (mainFeatures.includes(featureValue)) {
-                const featureFilter = document.getElementById('featureFilter');
-                const dropdownButton = featureFilter.previousElementSibling.previousElementSibling;
-                const featureOption = Array.from(featureFilter.options).find(option => 
-                    option.value === featureValue
-                );
-                
-                if (featureOption) {
-                    dropdownButton.childNodes[0].textContent = featureOption.textContent;
-                    featureFilter.value = featureValue;
-                }
-            }
-
-            // 直接根据功能值筛选
-            filterModulesByFeature(featureValue);
-            
-            // 平滑滚动到顶部
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // 添加新的功能筛选函数
-        function filterModulesByFeature(feature) {
-            if (!window.currentModules || !Array.isArray(window.currentModules)) {
-                return;
-            }
-
-            let filtered = window.currentModules.filter(module => 
-                module.features && module.features[feature] === true
-            );
-
-            renderModules(filtered);
-        }
-
-        // 修改主筛选函数
-        function filterModules() {
-            if (!window.currentModules || !Array.isArray(window.currentModules)) {
-                return;
-            }
-
-            const searchInput = document.getElementById('moduleSearch');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const sortOrder = document.getElementById('sortOrder');
-            const featureFilter = document.getElementById('featureFilter');
-
-            const searchTerm = searchInput.value.toLowerCase();
-            const category = categoryFilter.value;
-            const sort = sortOrder.value;
-            const feature = featureFilter.value;
-
-            let filtered = window.currentModules.filter(module => {
-                // 搜索条件匹配
-                const searchMatch = !searchTerm || 
-                    module.name.toLowerCase().includes(searchTerm) ||
-                    module.description.toLowerCase().includes(searchTerm) ||
-                    module.author.toLowerCase().includes(searchTerm);
-
-                // 分类匹配
-                const categoryMatch = !category || 
-                    (module.categories && module.categories.some(cat => 
-                        cat.toLowerCase() === category.toLowerCase()
-                    ));
-
-                // 功能特性匹配
-                const featureMatch = !feature || 
-                    (module.features && module.features[feature] === true);
-
-                return searchMatch && categoryMatch && featureMatch;
-            });
-
-            // 排序逻辑
-            filtered.sort((a, b) => {
-                switch(sort) {
-                    case 'update':
-                        return (b.versions[0]?.timestamp || 0) - (a.versions[0]?.timestamp || 0);
-                    case 'name':
-                        return a.name.localeCompare(b.name, 'zh-CN');
-                    case 'author':
-                        return a.author.localeCompare(b.author, 'zh-CN');
-                    default:
-                        return 0;
-                }
-            });
-
-            renderModules(filtered);
-        }
-
-        // 添加主题切换过渡样式
-        const style = document.createElement('style');
-        style.textContent = `
-            .theme-transition * {
-                transition: background-color 0.3s ease, 
-                            border-color 0.3s ease, 
-                            color 0.3s ease, 
-                            box-shadow 0.3s ease !important;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // 移动端下拉菜单处理
-        document.querySelectorAll('.btn[data-bs-toggle="dropdown"]').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    // 阻止默认的下拉菜单行为
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // 移除bootstrap的dropdown事件
-                    this.removeAttribute('data-bs-toggle');
-                    
-                    // 获取选项数据
-                    const dropdown = this.nextElementSibling;
-                    const options = Array.from(dropdown.querySelectorAll('.dropdown-item'));
-                    const modalTitle = this.textContent.trim();
-                    
-                    // 创建并显示Modal
-                    showMobileModal(modalTitle, options, (selectedOption) => {
-                        // 更新按钮文本
-                        this.childNodes[0].textContent = selectedOption.textContent;
-                        
-                        // 更新select值
-                        const select = this.parentElement.querySelector('select');
-                        if (select) {
-                            select.value = selectedOption.dataset.value;
-                            select.dispatchEvent(new Event('change'));
-                        }
-                    });
-                }
-            });
-        });
-
-        // 创建并显示移动端Modal
-        function showMobileModal(title, options, onSelect) {
-            // 移除可能存在的其他Modal
-            document.querySelectorAll('.mobile-modal').forEach(modal => modal.remove());
-            
-            // 创建Modal元素
-            const modal = document.createElement('div');
-            modal.className = 'mobile-modal';
-            modal.innerHTML = `
-                <div class="mobile-modal-content">
-                    <div class="mobile-modal-header">
-                        <div class="mobile-modal-title">${title}</div>
-                        <button class="mobile-modal-close" type="button" tabindex="-1">
-                            <i class="ri-close-line"></i>
-                        </button>
-                    </div>
-                    <div class="mobile-modal-options">
-                        ${options.map((option, index) => `
-                            <button class="mobile-modal-option" type="button" tabindex="-1"
-                                    data-value="${option.dataset.value}">
-                                ${option.textContent}
-                            </button>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-
-            // 添加到body
-            document.body.appendChild(modal);
-            
-            // 添加滚动锁定
-            document.body.classList.add('modal-open');
-            const scrollY = window.scrollY;
-            document.body.style.top = `-${scrollY}px`;
-            
-            // 显示动画
-            requestAnimationFrame(() => {
-                modal.classList.add('show');
-            });
-
-            // 移除所有焦点的函数
-            const removeAllFocus = () => {
-                // 移除所有可聚焦元素的焦点
-                document.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').forEach(el => {
-                    el.blur();
-                    el.style.outline = 'none';
-                    el.style.boxShadow = 'none';
-                    el.style.borderColor = 'var(--input-border)';
-                });
-
-                // 特别处理搜索框
-                const searchInput = document.getElementById('moduleSearch');
-                if (searchInput) {
-                    searchInput.blur();
-                    searchInput.style.outline = 'none';
-                    searchInput.style.boxShadow = 'none';
-                    searchInput.style.borderColor = 'var(--input-border)';
-                }
-
-                // 特别处理下拉按钮
-                document.querySelectorAll('.btn-outline-secondary').forEach(btn => {
-                    btn.blur();
-                    btn.style.outline = 'none';
-                    btn.style.boxShadow = 'none';
-                    btn.style.borderColor = 'var(--input-border)';
-                });
-
-                // 移除任何可能的hover状态
-                document.querySelectorAll(':hover').forEach(el => {
-                    el.blur();
-                });
-            };
-
-            // 绑定关闭事件
-            const close = () => {
-                modal.classList.add('closing');
-                modal.classList.remove('show');
-                
-                // 立即移除所有焦点
-                removeAllFocus();
-                
-                // 重置下拉菜单状态
-                const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-                dropdownMenus.forEach(menu => {
-                    menu.classList.remove('show');
-                    const button = menu.previousElementSibling;
-                    if (button) {
-                        button.setAttribute('aria-expanded', 'false');
-                        button.classList.remove('show');
-                    }
-                });
-                
-                // 监听过渡结束
-                const handleTransitionEnd = (e) => {
-                    if (e.propertyName === 'opacity') {
-                        modal.remove();
-                        // 恢复滚动
-                        document.body.classList.remove('modal-open');
-                        const scrollY = parseInt(document.body.style.top || '0');
-                        document.body.style.top = '';
-                        window.scrollTo(0, -scrollY);
-                        modal.removeEventListener('transitionend', handleTransitionEnd);
-                        
-                        // 再次确保移除所有焦点和重置下拉菜单状态
-                        setTimeout(() => {
-                            removeAllFocus();
-                            // 重新初始化下拉菜单的Bootstrap行为
-                            const buttons = document.querySelectorAll('.btn-outline-secondary');
-                            buttons.forEach(btn => {
-                                if (window.innerWidth > 768) {
-                                    btn.setAttribute('data-bs-toggle', 'dropdown');
-                                }
-                            });
-                        }, 100);
-                    }
-                };
-                
-                modal.addEventListener('transitionend', handleTransitionEnd);
-            };
-
-            // 点击遮罩层关闭
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    close();
-                }
-            });
-
-            // 点击关闭按钮
-            modal.querySelector('.mobile-modal-close').addEventListener('click', close);
-
-            // 选项点击事件
-            modal.querySelectorAll('.mobile-modal-option').forEach(option => {
-                let isProcessing = false;
-                
-                const handleClick = () => {
-                    if (isProcessing) return;
-                    isProcessing = true;
-                    
-                    // 移除其他选项的选中状态
-                    modal.querySelectorAll('.mobile-modal-option').forEach(opt => {
-                        opt.classList.remove('selected');
-                    });
-                    
-                    // 添加选中状态
-                    option.classList.add('selected');
-                    
-                    // 延迟关闭以显示选中效果
-                    setTimeout(() => {
-                        onSelect({
-                            textContent: option.textContent,
-                            dataset: { value: option.dataset.value }
-                        });
-                        close();
-                        
-                        // 重置处理状态
-                        setTimeout(() => {
-                            isProcessing = false;
-                        }, 300);
-                    }, 100);
-                };
-                
-                option.addEventListener('click', handleClick);
-                option.addEventListener('touchstart', () => {}, {passive: true});
-            });
-        }
-
-        // 在窗口大小改变时重新初始化下拉菜单行为
-        window.addEventListener('resize', () => {
-            const buttons = document.querySelectorAll('.btn[data-bs-toggle="dropdown"]');
-            buttons.forEach(btn => {
-                if (window.innerWidth <= 768) {
-                    btn.removeAttribute('data-bs-toggle');
-                    btn.blur(); // 确保按钮失去焦点
-                    btn.style.outline = 'none';
-                    btn.style.boxShadow = 'none';
-                } else {
-                    btn.setAttribute('data-bs-toggle', 'dropdown');
-                }
-            });
-        });
-    </script>
 </body>
 </html> 
