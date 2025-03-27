@@ -9,13 +9,13 @@
     "support": "https://github.com/shadow3aaa/fas-rs/issues",
     "donate": "",
     "categories": [
+        "Script",
+        "Gaming",
+        "Performance",
+        "Theme",
         "System",
         "Utility",
-        "Performance",
-        "Script",
-        "Framework",
-        "Theme",
-        "Gaming"
+        "Framework"
     ],
     "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
     "version": "v4.8.0"
