@@ -1,18 +1,17 @@
 {
-    "id": "re-malwack",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/ZG089/Re-Malwack/refs/heads/main/update.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/ZG089/Re-Malwack",
-    "support": "https://github.com/ZG089/Re-Malwack/issues",
-    "donate": "",
-    "categories": [
-        "Theme",
-        "Script",
-        "Performance"
-    ],
-    "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/README.md",
-    "version": "v6.0"
+  "id": "re-malwack",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/ZG089/Re-Malwack/refs/heads/main/update.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/ZG089/Re-Malwack",
+  "support": "https://github.com/ZG089/Re-Malwack/issues",
+  "categories": [
+    "Theme",
+    "Script",
+    "Performance"
+  ],
+  "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/README.md",
+  "last_update": 1743478933.0,
+  "versions": 2
 }
