@@ -174,12 +174,36 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: logs
-          path: .
+          path: ./downloaded_logs
           
       - name: List downloaded files
         run: |
           echo "下载的文件列表:"
-          find . -type f | sort
+          find ./downloaded_logs -type f | sort
+          mkdir -p log
+          mkdir -p json
+          cp -r ./downloaded_logs/log/* ./log/ || echo "没有日志文件可复制"
+          cp -r ./downloaded_logs/json/* ./json/ || echo "没有JSON文件可复制"
+          echo "复制后的文件结构："
+          find . -type f -path "./log/*" -o -path "./json/*" | sort
+      
+      - name: Copy modules.json from downloaded files
+        run: |
+          if [ -f "./downloaded_logs/json/modules.json" ]; then
+            echo "使用下载的modules.json文件"
+            cp ./downloaded_logs/json/modules.json ./modules.json
+          else
+            echo "下载的文件中没有modules.json，尝试从仓库下载"
+            curl -s -o modules.json https://raw.githubusercontent.com/${{ github.repository }}/main/modules.json || echo "无法下载modules.json文件"
+          fi
+          
+          if [ -f "modules.json" ] && [ -s "modules.json" ]; then
+            echo "成功获取modules.json文件"
+            cat modules.json | head -n 20
+          else
+            echo "警告: modules.json文件不存在或为空，创建临时文件"
+            echo '{"modules":[]}' > modules.json
+          fi
       
       - name: Check previous commit version content
         run: |
@@ -188,23 +212,17 @@ jobs:
           
           mkdir -p temp_previous_modules
           
-          MODULES=$(echo '${{ needs.sync.outputs.updated_modules }}' | jq -r '.[]?' 2>/dev/null || echo "")
+          MODULES_JSON='${{ needs.sync.outputs.updated_modules }}'
+          echo "原始模块JSON: $MODULES_JSON"
+          
+          MODULES=$(echo "$MODULES_JSON" | jq -r '.[]?' 2>/dev/null || echo "")
           
           if [ -n "$MODULES" ]; then
             echo "发现更新的模块: $MODULES"
             
-            # 确保modules.json文件存在
             if [ ! -f "modules.json" ]; then
-              echo "警告: modules.json文件不存在，尝试下载..."
+              echo "警告: modules.json文件不存在，尝试再次下载..."
               curl -s -o modules.json https://raw.githubusercontent.com/${{ github.repository }}/main/modules.json || echo "无法下载modules.json文件"
-            fi
-            
-            # 检查modules.json文件是否存在且有效
-            if [ -f "modules.json" ] && [ -s "modules.json" ]; then
-              echo "成功找到modules.json文件"
-            else
-              echo "警告: modules.json文件不存在或为空，创建临时文件"
-              echo '{"modules":[]}' > modules.json
             fi
             
             for MODULE_ID in $MODULES; do
@@ -213,7 +231,6 @@ jobs:
               MODULE_DIR="modules/$MODULE_ID"
               
               if [ -d "$MODULE_DIR" ]; then
-                # 使用-e参数检查文件是否存在
                 CURRENT_VERSION=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .version' modules.json 2>/dev/null || echo "unknown")
                 CURRENT_VERSION_CODE=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | .versionCode' modules.json 2>/dev/null || echo "0")
                 
@@ -235,17 +252,28 @@ jobs:
                   echo "未找到最新版本的更新日志，尝试获取历史记录..."
                   
                   LATEST_COMMIT=$(git rev-parse HEAD)
-                  
                   PREVIOUS_COMMIT=$(git rev-parse HEAD~1)
+                  
+                  echo "最新提交: $LATEST_COMMIT"
+                  echo "上一次提交: $PREVIOUS_COMMIT"
                   
                   if git diff --name-only $PREVIOUS_COMMIT $LATEST_COMMIT | grep -q "^$MODULE_DIR"; then
                     echo "模块 $MODULE_ID 在最近提交中有变化"
                     
                     mkdir -p "temp_previous_modules/$MODULE_ID"
-                    git show "$PREVIOUS_COMMIT:$MODULE_DIR" 2>/dev/null | grep -E '\.md$' | while read -r MD_FILE; do
-                      echo "提取文件: $MD_FILE"
-                      git show "$PREVIOUS_COMMIT:$MODULE_DIR/$MD_FILE" > "temp_previous_modules/$MODULE_ID/$MD_FILE" 2>/dev/null || echo "无法提取文件 $MD_FILE"
-                    done
+                    
+                    MD_FILES=$(git ls-tree -r --name-only $PREVIOUS_COMMIT "$MODULE_DIR" | grep -E '\.md$' || echo "")
+                    if [ -n "$MD_FILES" ]; then
+                      echo "找到上一次提交中的MD文件:"
+                      echo "$MD_FILES"
+                      
+                      for MD_FILE in $MD_FILES; do
+                        echo "提取文件: $MD_FILE"
+                        git show "$PREVIOUS_COMMIT:$MD_FILE" > "temp_previous_modules/$MODULE_ID/$(basename $MD_FILE)" 2>/dev/null || echo "无法提取文件 $MD_FILE"
+                      done
+                    else
+                      echo "上一次提交中没有找到MD文件"
+                    fi
                     
                     if [ ! "$(ls -A "temp_previous_modules/$MODULE_ID")" ]; then
                       echo "# 版本 $CURRENT_VERSION ($CURRENT_VERSION_CODE) 更新" > "temp_previous_modules/$MODULE_ID/update.md"
@@ -255,10 +283,15 @@ jobs:
                     echo "模块 $MODULE_ID 在最近提交中没有变化，尝试查找最新的更新日志..."
                     if [ -d "$MODULE_DIR" ]; then
                       mkdir -p "temp_previous_modules/$MODULE_ID"
-                      LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -printf "%T@ %p\n" | sort -nr | head -1 | cut -d' ' -f2-)
-                      if [ -n "$LATEST_MD" ]; then
+                      
+                      if ! LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -printf "%T@ %p\n" 2>/dev/null | sort -nr | head -1 | cut -d' ' -f2-); then
+                        echo "find命令失败，尝试使用ls命令"
+                        LATEST_MD=$(ls -t "$MODULE_DIR"/*.md 2>/dev/null | head -1)
+                      fi
+                      
+                      if [ -n "$LATEST_MD" ] && [ -f "$LATEST_MD" ]; then
                         echo "找到最新的MD文件: $LATEST_MD"
-                        cp "$LATEST_MD" "temp_previous_modules/$MODULE_ID/"
+                        cp "$LATEST_MD" "temp_previous_modules/$MODULE_ID/$(basename "$LATEST_MD")"
                       else
                         echo "未找到任何MD文件，创建默认更新日志"
                         echo "# 版本 $CURRENT_VERSION ($CURRENT_VERSION_CODE) 更新" > "temp_previous_modules/$MODULE_ID/update.md"
@@ -268,11 +301,14 @@ jobs:
                   fi
                 fi
               else
-                echo "警告: 模块目录不存在 $MODULE_DIR"
+                echo "警告: 模块目录不存在 $MODULE_DIR，尝试创建基本信息"
+                mkdir -p "temp_previous_modules/$MODULE_ID"
+                echo "# 模块 $MODULE_ID 更新" > "temp_previous_modules/$MODULE_ID/update.md"
+                echo "模块已更新，但没有详细的更新日志。" >> "temp_previous_modules/$MODULE_ID/update.md"
               fi
             done
           else
-            echo "警告: 未能解析到更新的模块列表"
+            echo "警告: 未能解析到更新的模块列表，原始JSON: $MODULES_JSON"
           fi
           
           echo "临时目录中的文件:"
@@ -281,9 +317,8 @@ jobs:
       - name: Set updated modules environment variable
         run: |
           echo "设置更新模块环境变量: '${{ needs.sync.outputs.updated_modules }}'"
-          # 确保值被正确引用，避免shell解析问题
           MODULES_JSON='${{ needs.sync.outputs.updated_modules }}'
-          echo "UPDATED_MODULES='$MODULES_JSON'" >> $GITHUB_ENV
+          echo "UPDATED_MODULES=$MODULES_JSON" >> $GITHUB_ENV
           echo "TEMP_MODULES_DIR=temp_previous_modules" >> $GITHUB_ENV
           
       - name: Set up Python
@@ -296,17 +331,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
           
-      - name: Copy modules.json if exists
+      - name: Copy modules.json to json directory
         run: |
+          mkdir -p json
           if [ -f "modules.json" ]; then
-            echo "复制现有的modules.json到json目录"
-            mkdir -p json
+            echo "复制modules.json到json目录"
             cp modules.json json/
-          else
-            echo "尝试从仓库下载modules.json"
-            mkdir -p json
-            curl -s -o json/modules.json https://raw.githubusercontent.com/${{ github.repository }}/main/modules.json || echo "无法下载modules.json文件"
           fi
+          
+      - name: List all files before running script
+        run: |
+          echo "当前工作目录中的所有文件:"
+          find . -type f -not -path "*/\.*" | sort
           
       - name: Run Telegram notification script
         env:
