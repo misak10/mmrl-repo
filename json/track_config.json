@@ -162,9 +162,19 @@
         },
         {
             "url": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
-            "module_id": "VoyagerKernel",
+            "module_id": "VoyagerKernel-beta",
             "update_to": "https://onedrive.zjw.js.cn/TheVoyager/Beta/update.json",
             "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
+            "support": "",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://onedrive.zjw.js.cn/TheVoyager",
+            "module_id": "VoyagerKernel",
+            "update_to": "https://onedrive.zjw.js.cn/TheVoyager/update.json",
+            "source": "https://onedrive.zjw.js.cn/TheVoyager",
             "support": "",
             "donate": "",
             "enable": true,
