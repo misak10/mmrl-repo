@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1743567721.457542
+    "timestamp": 1743582343.630039
   },
   "modules": [
     {
@@ -294,8 +294,8 @@
     {
       "id": "VoyagerKernel",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.6.1-2c3031ec",
-      "versionCode": 361,
+      "version": "3.6.1-7d56a803",
+      "versionCode": 362,
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
@@ -308,7 +308,8 @@
       ],
       "verified": false,
       "added": 0,
-      "size": 5970427,
+      "timestamp": 1743582342.423913,
+      "size": 6204586,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -331,14 +332,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1739996138.841521,
-          "version": "3.5.0-8746439e",
-          "versionCode": 351,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.0-8746439e_351.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.5.0-8746439e_351.md",
-          "size": 4640021
-        },
         {
           "timestamp": 1740039513.562795,
           "version": "3.5.2-07921f08",
@@ -378,6 +371,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.6.1-2c3031ec_361.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.6.1-2c3031ec_361.md",
           "size": 5970427
+        },
+        {
+          "timestamp": 1743582342.423913,
+          "version": "3.6.1-2c3031ec",
+          "versionCode": 362,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.6.1-2c3031ec_362.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel/3.6.1-2c3031ec_362.md",
+          "size": 6204586
         }
       ]
     },
