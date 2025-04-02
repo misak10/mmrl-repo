@@ -9,9 +9,9 @@
     "support": "https://github.com/HChenX/MemoryOpt/issues",
     "donate": "",
     "categories": [
+        "Performance",
         "System",
-        "Script",
-        "Performance"
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/HChenX/MemoryOpt/main/README.md",
     "version": "2025.02.28"
