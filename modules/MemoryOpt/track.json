@@ -10,8 +10,8 @@
     "donate": "",
     "categories": [
         "Performance",
-        "System",
-        "Script"
+        "Script",
+        "System"
     ],
     "readme": "https://raw.githubusercontent.com/HChenX/MemoryOpt/main/README.md",
     "version": "2025.02.28"

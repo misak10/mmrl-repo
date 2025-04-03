@@ -9,8 +9,8 @@
     "support": "https://github.com/snake-4/Zygisk-Assistant/issues",
     "donate": "",
     "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/snake-4/Zygisk-Assistant/main/README.md",
     "version": "v2.1.4"
