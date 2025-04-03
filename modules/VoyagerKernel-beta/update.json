@@ -1,0 +1,14 @@
+{
+  "id": "VoyagerKernel-beta",
+  "timestamp": 1743654170.592919,
+  "versions": [
+    {
+      "timestamp": 1743654170.592919,
+      "version": "3.6.1-7d56a803",
+      "versionCode": 362,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-7d56a803_362.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-7d56a803_362.md",
+      "size": 6204586
+    }
+  ]
+}
