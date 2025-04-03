@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.41_based_on_uperf_904_250117.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.41_based_on_uperf_904_250117.md",
       "size": 1883634
+    },
+    {
+      "timestamp": 1743662687.0,
+      "version": "1.41 based on uperf 904",
+      "versionCode": 250223,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.41_based_on_uperf_904_250223.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.41_based_on_uperf_904_250223.md",
+      "size": 1892061
     }
   ]
 }
