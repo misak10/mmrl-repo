@@ -9,9 +9,9 @@
     "support": "https://github.com/RikkaApps/Sui/issues",
     "donate": "",
     "categories": [
+        "Utility",
         "Debug",
         "Theme",
-        "Utility",
         "Script",
         "Network"
     ],
