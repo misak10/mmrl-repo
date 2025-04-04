@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1743770203.203319
+    "timestamp": 1743783633.931312
   },
   "modules": [
     {
@@ -54,8 +54,8 @@
       "description": "\u5185\u5b58\u53c2\u6570\u8c03\u6574\uff0c\u4ee5\u5b9e\u73b0\u66f4\u4f73\u7684\u5185\u5b58\u4f7f\u7528\u6548\u7387\u3002",
       "categories": [
         "Script",
-        "Performance",
-        "System"
+        "System",
+        "Performance"
       ],
       "support": "https://github.com/HChenX/MemoryOpt/issues",
       "license": "GPL-3.0",
@@ -99,10 +99,10 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
-        "Script",
         "Theme",
-        "Network",
-        "Font"
+        "Script",
+        "Font",
+        "Network"
       ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
@@ -243,10 +243,10 @@
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "categories": [
-        "Theme",
-        "Utility",
-        "Script",
         "System",
+        "Utility",
+        "Theme",
+        "Script",
         "Network"
       ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
@@ -307,11 +307,11 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Utility",
-        "Script",
-        "Security",
         "System",
+        "Utility",
+        "Security",
         "Performance",
+        "Script",
         "Network"
       ],
       "verified": false,
@@ -397,11 +397,11 @@
       "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "categories": [
-        "Utility",
-        "Script",
-        "Security",
         "System",
+        "Utility",
+        "Security",
         "Performance",
+        "Script",
         "Network"
       ],
       "verified": false,
@@ -561,8 +561,8 @@
       "author": "twoone3",
       "description": "[state] Filter ads at the DNS level",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
@@ -754,8 +754,8 @@
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
-        "Utility",
-        "Script"
+        "Script",
+        "Utility"
       ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
@@ -797,13 +797,13 @@
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
-        "Theme",
-        "Utility",
-        "Script",
         "System",
+        "Utility",
         "Performance",
-        "Gaming",
-        "Framework"
+        "Theme",
+        "Script",
+        "Framework",
+        "Gaming"
       ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
@@ -879,14 +879,14 @@
       "author": "@coolapk 10007",
       "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 21026 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "categories": [
-        "Debug",
-        "Theme",
-        "Utility",
-        "Script",
-        "Security",
         "System",
-        "Audio",
+        "Utility",
+        "Debug",
+        "Security",
         "Performance",
+        "Theme",
+        "Script",
+        "Audio",
         "Network"
       ],
       "support": "https://github.com/lingeringsound/10007/issues",
@@ -974,15 +974,15 @@
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "categories": [
-        "Debug",
-        "Theme",
-        "AdBlock",
-        "Utility",
-        "Script",
-        "Security",
         "Font",
-        "Input",
+        "Utility",
+        "Debug",
+        "Security",
         "Performance",
+        "Theme",
+        "Script",
+        "AdBlock",
+        "Input",
         "Network"
       ],
       "support": "https://github.com/MoGuangYu/Surfing/issues",
@@ -1065,9 +1065,9 @@
       "author": "gloeyisk",
       "description": "An efficient ad blocker, with no user interface",
       "categories": [
-        "Debug",
         "Script",
-        "Network"
+        "Network",
+        "Debug"
       ],
       "support": "https://github.com/gloeyisk/systemless-hosts/issues",
       "readme": "https://raw.githubusercontent.com/gloeyisk/systemless-hosts/main/README.md",
@@ -1154,9 +1154,9 @@
       "author": "gloeyisk",
       "description": "Patches Google Play services app and certain processes/services to be able to use battery optimizations",
       "categories": [
-        "Debug",
         "Script",
-        "Network"
+        "Network",
+        "Debug"
       ],
       "support": "https://github.com/gloeyisk/universal-gms-doze/issues",
       "license": "GPL-2.0",
@@ -1238,21 +1238,22 @@
     {
       "id": "zygisknext",
       "name": "Zygisk Next",
-      "version": "v1.2.8",
-      "versionCode": 497,
+      "version": "1.2.8 (512-4b5d6ad-release)",
+      "versionCode": 512,
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "categories": [
-        "Utility",
         "Script",
         "Network",
+        "Utility",
         "Zygisk"
       ],
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 3455869,
+      "timestamp": 1743093744.0,
+      "size": 3519779,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1280,6 +1281,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.7_497-b7796a7-release.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.7_497-b7796a7-release.md",
           "size": 3455869
+        },
+        {
+          "timestamp": 1743093744.0,
+          "version": "v1.2.8",
+          "versionCode": 512,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.8_512.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.8_512.md",
+          "size": 3519779
         }
       ]
     },
@@ -1291,9 +1300,9 @@
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
       "categories": [
+        "Utility",
         "Debug",
         "Theme",
-        "Utility",
         "Script",
         "Network"
       ],
