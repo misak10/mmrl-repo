@@ -9,8 +9,8 @@
     "support": "https://github.com/gloeyisk/systemless-hosts/issues",
     "donate": "",
     "categories": [
-        "Script",
         "Debug",
+        "Script",
         "Network"
     ],
     "readme": "https://raw.githubusercontent.com/gloeyisk/systemless-hosts/main/README.md",
