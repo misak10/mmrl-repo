@@ -9,8 +9,8 @@
     "support": "https://github.com/HChenX/MemoryOpt/issues",
     "donate": "",
     "categories": [
-        "Script",
         "System",
+        "Script",
         "Performance"
     ],
     "readme": "https://raw.githubusercontent.com/HChenX/MemoryOpt/main/README.md",
