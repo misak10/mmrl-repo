@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1743956434.53205
+    "timestamp": 1743970727.941273
   },
   "modules": [
     {
@@ -94,8 +94,8 @@
     {
       "id": "PlayIntegrityFix",
       "name": "Play Integrity Fix",
-      "version": "v18.8",
-      "versionCode": 18800,
+      "version": "v18.9",
+      "versionCode": 18900,
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "categories": [
@@ -109,7 +109,8 @@
       "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 179896,
+      "timestamp": 1743961006.0,
+      "size": 177752,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -171,6 +172,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.8_18800.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.8_18800.md",
           "size": 179896
+        },
+        {
+          "timestamp": 1743961006.0,
+          "version": "v18.8",
+          "versionCode": 18900,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.8_18900.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v18.8_18900.md",
+          "size": 177752
         }
       ]
     },
