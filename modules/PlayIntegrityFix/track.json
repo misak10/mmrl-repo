@@ -1,18 +1,19 @@
 {
-  "id": "PlayIntegrityFix",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
-  "license": "GPL-3.0",
-  "source": "https://github.com/chiteroman/PlayIntegrityFix",
-  "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
-  "categories": [
-    "Network",
-    "Script",
-    "Font",
-    "Theme"
-  ],
-  "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
-  "last_update": 1743961006.0,
-  "versions": 6
+    "id": "PlayIntegrityFix",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/chiteroman/PlayIntegrityFix",
+    "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
+    "donate": "",
+    "categories": [
+        "Theme",
+        "Network",
+        "Font",
+        "Script"
+    ],
+    "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
+    "version": "v18.9"
 }

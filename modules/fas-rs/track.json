@@ -11,11 +11,11 @@
     "categories": [
         "Gaming",
         "System",
-        "Framework",
-        "Performance",
-        "Theme",
+        "Script",
         "Utility",
-        "Script"
+        "Performance",
+        "Framework",
+        "Theme"
     ],
     "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
     "version": "v4.8.0"

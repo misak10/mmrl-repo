@@ -10,8 +10,8 @@
     "donate": "",
     "categories": [
         "Network",
-        "Script",
-        "Debug"
+        "Debug",
+        "Script"
     ],
     "readme": "https://raw.githubusercontent.com/gloeyisk/systemless-hosts/main/README.md",
     "version": "17.2"
