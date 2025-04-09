@@ -9,12 +9,12 @@
     "support": "",
     "donate": "",
     "categories": [
-        "Security",
-        "Performance",
-        "Script",
         "Network",
         "Utility",
-        "System"
+        "Script",
+        "Performance",
+        "System",
+        "Security"
     ],
     "readme": "",
     "version": "3.6.0-53814540"
