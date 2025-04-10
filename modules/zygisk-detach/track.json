@@ -9,8 +9,8 @@
     "support": "https://github.com/j-hc/zygisk-detach/issues",
     "donate": "",
     "categories": [
-        "Network",
-        "Script"
+        "Script",
+        "Network"
     ],
     "readme": "https://raw.githubusercontent.com/j-hc/zygisk-detach/main/README.md",
     "version": "v1.19.3"

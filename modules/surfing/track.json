@@ -9,16 +9,16 @@
     "support": "https://github.com/MoGuangYu/Surfing/issues",
     "donate": "",
     "categories": [
-        "Network",
-        "Utility",
-        "Font",
-        "Input",
-        "AdBlock",
-        "Script",
         "Debug",
+        "Script",
+        "Utility",
+        "Security",
+        "Input",
+        "Network",
         "Performance",
+        "AdBlock",
         "Theme",
-        "Security"
+        "Font"
     ],
     "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
     "version": "v7.4.3"
