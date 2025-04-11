@@ -219,7 +219,36 @@ jobs:
           MODULES_JSON='${{ needs.sync.outputs.updated_modules }}'
           echo "原始更新模块信息: $MODULES_JSON"
           
-          MODULES=$(echo "$MODULES_JSON" | jq -r '.[]?' 2>/dev/null || echo "")
+          # 添加验证和调试步骤
+          echo "检查JSON格式..."
+          if [ -z "$MODULES_JSON" ]; then
+            echo "警告: 模块信息为空"
+            echo "UPDATED_MODULE_IDS=" >> $GITHUB_ENV
+            exit 0
+          fi
+          
+          # 打印JSON以便调试
+          echo "JSON数据: $MODULES_JSON"
+          
+          # 验证JSON格式
+          echo "$MODULES_JSON" | jq '.' > /dev/null 2>&1
+          if [ $? -ne 0 ]; then
+            echo "警告: 更新模块信息不是有效的JSON格式，尝试使用替代方法解析"
+            
+            # 简单情况：直接作为字符串处理
+            if [[ "$MODULES_JSON" == *"["* && "$MODULES_JSON" == *"]"* ]]; then
+              # 尝试提取方括号中的内容并按逗号分割
+              MODULES=$(echo "$MODULES_JSON" | sed -E 's/.*\[(.*)\].*/\1/g' | tr -d '"' | tr ',' '\n' | sed '/^$/d')
+            else
+              # 非JSON数组，假设是单个模块ID
+              MODULES=$(echo "$MODULES_JSON" | tr -d '"' | tr -d '[]' | tr ',' '\n' | sed '/^$/d')
+            fi
+          else
+            # 如果是有效JSON，使用jq解析
+            MODULES=$(echo "$MODULES_JSON" | jq -r '.[]?' 2>/dev/null || echo "")
+          fi
+          
+          echo "解析后的模块列表: $MODULES"
           
           if [ -n "$MODULES" ]; then
             echo "更新的模块列表: $MODULES"
@@ -227,7 +256,7 @@ jobs:
             
             for MODULE_ID in $MODULES; do
               echo "同步模块 $MODULE_ID 的最新信息..."
-              mmrl-util track pull --id "$MODULE_ID" || echo "同步模块 $MODULE_ID 失败"
+              mmrl-util sync -i "$MODULE_ID" || echo "同步模块 $MODULE_ID 失败"
             done
             
             mmrl-util index
@@ -250,13 +279,24 @@ jobs:
               mkdir -p "temp_module_data/$MODULE_ID"
               
               if [ -f "modules.json" ]; then
-                MODULE_INFO=$(jq --arg id "$MODULE_ID" '.modules[] | select(.id == $id)' modules.json)
+                # 改进的JSON提取方法
+                echo "从modules.json中提取模块 $MODULE_ID 的信息..."
+                MODULE_INFO=$(jq -r --arg id "$MODULE_ID" '.modules[] | select(.id == $id) | tojson' modules.json 2>/dev/null || echo "")
                 
+                # 验证提取的JSON数据
                 if [ -n "$MODULE_INFO" ]; then
-                  echo "$MODULE_INFO" > "temp_module_data/$MODULE_ID/info.json"
-                  
-                  MODULE_VERSION=$(echo "$MODULE_INFO" | jq -r '.version')
-                  MODULE_VERSION_CODE=$(echo "$MODULE_INFO" | jq -r '.versionCode')
+                  echo "$MODULE_INFO" | jq '.' > /dev/null 2>&1
+                  if [ $? -ne 0 ]; then
+                    echo "警告: 提取的模块信息格式无效，创建默认信息..."
+                    echo "{\"id\": \"$MODULE_ID\", \"version\": \"unknown\", \"versionCode\": -1}" > "temp_module_data/$MODULE_ID/info.json"
+                    MODULE_VERSION="unknown"
+                    MODULE_VERSION_CODE="-1"
+                  else
+                    echo "$MODULE_INFO" > "temp_module_data/$MODULE_ID/info.json"
+                    # 使用jq -r确保输出不包含引号
+                    MODULE_VERSION=$(echo "$MODULE_INFO" | jq -r '.version // "unknown"')
+                    MODULE_VERSION_CODE=$(echo "$MODULE_INFO" | jq -r '.versionCode // "-1"')
+                  fi
                   
                   echo "模块 $MODULE_ID 版本: $MODULE_VERSION ($MODULE_VERSION_CODE)"
                   
@@ -266,8 +306,8 @@ jobs:
                       echo "找到对应版本的更新日志: $MODULE_DIR/${MODULE_VERSION}_${MODULE_VERSION_CODE}.md"
                       cp "$MODULE_DIR/${MODULE_VERSION}_${MODULE_VERSION_CODE}.md" "temp_module_data/$MODULE_ID/changelog.md"
                     else
-                      LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -exec ls -t {} \; | head -1)
-                      if [ -n "$LATEST_MD" ]; then
+                      LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -exec ls -t {} \; 2>/dev/null | head -1 || echo "")
+                      if [ -n "$LATEST_MD" ] && [ -f "$LATEST_MD" ]; then
                         echo "未找到精确匹配的更新日志，使用最新的: $LATEST_MD"
                         cp "$LATEST_MD" "temp_module_data/$MODULE_ID/changelog.md"
                       else
@@ -278,11 +318,11 @@ jobs:
                     fi
                   else
                     echo "警告: 模块目录 $MODULE_DIR 不存在，尝试同步..."
-                    mmrl-util track pull --id "$MODULE_ID"
+                    mmrl-util sync -i "$MODULE_ID" || echo "同步模块失败，创建默认更新日志"
                     
                     if [ -d "$MODULE_DIR" ]; then
-                      LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -exec ls -t {} \; | head -1)
-                      if [ -n "$LATEST_MD" ]; then
+                      LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -exec ls -t {} \; 2>/dev/null | head -1 || echo "")
+                      if [ -n "$LATEST_MD" ] && [ -f "$LATEST_MD" ]; then
                         cp "$LATEST_MD" "temp_module_data/$MODULE_ID/changelog.md"
                       else
                         echo "# 版本 $MODULE_VERSION ($MODULE_VERSION_CODE) 更新" > "temp_module_data/$MODULE_ID/changelog.md"
@@ -295,11 +335,13 @@ jobs:
                   fi
                 else
                   echo "警告: 在modules.json中找不到模块 $MODULE_ID 的信息"
+                  echo "{\"id\": \"$MODULE_ID\", \"version\": \"unknown\", \"versionCode\": -1}" > "temp_module_data/$MODULE_ID/info.json"
                   echo "# 模块 $MODULE_ID 更新" > "temp_module_data/$MODULE_ID/changelog.md"
                   echo "模块已更新，但没有详细的更新信息。" >> "temp_module_data/$MODULE_ID/changelog.md"
                 fi
               else
                 echo "警告: modules.json不存在，无法获取模块详细信息"
+                echo "{\"id\": \"$MODULE_ID\", \"version\": \"unknown\", \"versionCode\": -1}" > "temp_module_data/$MODULE_ID/info.json"
                 echo "# 模块 $MODULE_ID 更新" > "temp_module_data/$MODULE_ID/changelog.md"
                 echo "模块已更新，但没有详细的更新信息。" >> "temp_module_data/$MODULE_ID/changelog.md"
               fi
@@ -318,7 +360,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
-          UPDATED_MODULES: ${{ needs.sync.outputs.updated_modules }}
+          UPDATED_MODULE_IDS: ${{ env.UPDATED_MODULE_IDS }}
           MODULE_DATA_DIR: temp_module_data
         run: |
           echo "运行Telegram通知脚本..."
@@ -330,4 +372,4 @@ jobs:
           echo "模块数据目录内容:"
           find $MODULE_DATA_DIR -type f | sort
           
-          python scripts/telegram_updates.py
+          python scripts/simple_notify.py
