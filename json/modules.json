@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1744512753.940433
+    "timestamp": 1744519684.592187
   },
   "modules": [
     {
@@ -358,7 +358,6 @@
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "verified": false,
       "added": 0,
-      "timestamp": 1744489105.560832,
       "size": 5968890,
       "permissions": [
         "magisk.permission.SERVICE",
