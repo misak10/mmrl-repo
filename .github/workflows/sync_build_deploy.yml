@@ -296,6 +296,24 @@ jobs:
                     # 使用jq -r确保输出不包含引号
                     MODULE_VERSION=$(echo "$MODULE_INFO" | jq -r '.version // "unknown"')
                     MODULE_VERSION_CODE=$(echo "$MODULE_INFO" | jq -r '.versionCode // "-1"')
+                    
+                    # 确保关键字段包含在info.json中
+                    if ! echo "$MODULE_INFO" | jq -e '.name' > /dev/null 2>&1; then
+                      # 如果name字段不存在，尝试使用title字段，否则使用ID
+                      TITLE=$(echo "$MODULE_INFO" | jq -r '.title // "'$MODULE_ID'"')
+                      MODULE_INFO=$(echo "$MODULE_INFO" | jq '. + {name: "'$TITLE'"}')
+                      echo "$MODULE_INFO" > "temp_module_data/$MODULE_ID/info.json"
+                    fi
+                    
+                    if ! echo "$MODULE_INFO" | jq -e '.author' > /dev/null 2>&1; then
+                      # 如果author字段不存在，检查是否有其他相关字段
+                      AUTHOR=$(grep -o "author:.*" "modules/$MODULE_ID"/*.md 2>/dev/null | head -1 | sed 's/author:\s*//i' || echo "未知")
+                      if [ "$AUTHOR" = "未知" ]; then
+                        AUTHOR=$(grep -o "作者:.*" "modules/$MODULE_ID"/*.md 2>/dev/null | head -1 | sed 's/作者:\s*//' || echo "未知")
+                      fi
+                      MODULE_INFO=$(echo "$MODULE_INFO" | jq '. + {author: "'$AUTHOR'"}')
+                      echo "$MODULE_INFO" > "temp_module_data/$MODULE_ID/info.json"
+                    fi
                   fi
                   
                   echo "模块 $MODULE_ID 版本: $MODULE_VERSION ($MODULE_VERSION_CODE)"
@@ -323,6 +341,25 @@ jobs:
                     if [ -d "$MODULE_DIR" ]; then
                       LATEST_MD=$(find "$MODULE_DIR" -name "*.md" -type f -exec ls -t {} \; 2>/dev/null | head -1 || echo "")
                       if [ -n "$LATEST_MD" ] && [ -f "$LATEST_MD" ]; then
+                        # 提取更新日志中的版本信息和作者信息来更新模块信息
+                        echo "从最新更新日志中提取信息..."
+                        
+                        # 检查版本信息
+                        EXTRACTED_VERSION=$(grep -o "[Vv]ersion:.*" "$LATEST_MD" 2>/dev/null | head -1 | sed 's/[Vv]ersion:\s*//' || echo "")
+                        if [ -n "$EXTRACTED_VERSION" ] && [ "$MODULE_VERSION" = "unknown" ]; then
+                          echo "从更新日志中提取到版本信息: $EXTRACTED_VERSION"
+                          MODULE_INFO=$(echo "$MODULE_INFO" | jq '. + {version: "'$EXTRACTED_VERSION'"}')
+                          echo "$MODULE_INFO" > "temp_module_data/$MODULE_ID/info.json"
+                        fi
+                        
+                        # 检查作者信息
+                        EXTRACTED_AUTHOR=$(grep -o "[Aa]uthor:.*" "$LATEST_MD" 2>/dev/null | head -1 | sed 's/[Aa]uthor:\s*//' || echo "")
+                        if [ -n "$EXTRACTED_AUTHOR" ]; then
+                          echo "从更新日志中提取到作者信息: $EXTRACTED_AUTHOR"
+                          MODULE_INFO=$(echo "$MODULE_INFO" | jq '. + {author: "'$EXTRACTED_AUTHOR'"}')
+                          echo "$MODULE_INFO" > "temp_module_data/$MODULE_ID/info.json"
+                        fi
+                        
                         cp "$LATEST_MD" "temp_module_data/$MODULE_ID/changelog.md"
                       else
                         echo "# 版本 $MODULE_VERSION ($MODULE_VERSION_CODE) 更新" > "temp_module_data/$MODULE_ID/changelog.md"
