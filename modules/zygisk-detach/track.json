@@ -1,16 +1,13 @@
 {
-  "id": "zygisk-detach",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/j-hc/zygisk-detach/refs/heads/master/update.json",
-  "license": "Apache-2.0",
-  "source": "https://github.com/j-hc/zygisk-detach",
-  "support": "https://github.com/j-hc/zygisk-detach/issues",
-  "categories": [
-    "Network",
-    "Script"
-  ],
-  "readme": "https://raw.githubusercontent.com/j-hc/zygisk-detach/main/README.md",
-  "last_update": 1744751428.0,
-  "versions": 2
+    "id": "zygisk-detach",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/j-hc/zygisk-detach/refs/heads/master/update.json",
+    "license": "Apache-2.0",
+    "homepage": "",
+    "source": "https://github.com/j-hc/zygisk-detach",
+    "support": "https://github.com/j-hc/zygisk-detach/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/j-hc/zygisk-detach/main/README.md",
+    "version": "v1.20.0"
 }
