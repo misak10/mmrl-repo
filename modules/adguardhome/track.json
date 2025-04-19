@@ -1,13 +1,11 @@
 {
-    "id": "adguardhome",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/version.json",
-    "license": "",
-    "homepage": "",
-    "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
-    "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
-    "version": "20250417"
+  "id": "adguardhome",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/version.json",
+  "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+  "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
+  "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
+  "last_update": 1745066599.0,
+  "versions": 4
 }

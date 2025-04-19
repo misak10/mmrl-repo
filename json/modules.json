@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1745066009.296602
+    "timestamp": 1745079734.737335
   },
   "modules": [
     {
@@ -523,25 +523,24 @@
     },
     {
       "id": "adguardhome",
-      "name": "AdGuardHome for Magisk",
-      "version": "20250417",
-      "versionCode": 33,
+      "name": "AdGuardHome for Root",
+      "version": "20250419",
+      "versionCode": 34,
       "author": "twoone3",
-      "description": "[state] Filter ads at the DNS level",
+      "description": "[unkown] filter ads at the DNS level",
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 9895877,
+      "timestamp": 1745066599.0,
+      "size": 9895636,
       "permissions": [
         "magisk.permission.SERVICE",
-        "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
+        "magisk.permission.ACTION"
       ],
       "features": {
         "service": true,
-        "action": true,
-        "webroot": true
+        "action": true
       },
       "track": {
         "type": "ONLINE_JSON",
@@ -574,6 +573,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250320_33.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250320_33.md",
           "size": 9895877
+        },
+        {
+          "timestamp": 1745066599.0,
+          "version": "20250417",
+          "versionCode": 34,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250417_34.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250417_34.md",
+          "size": 9895636
         }
       ]
     },
