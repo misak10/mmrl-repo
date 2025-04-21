@@ -1,9 +1,13 @@
 {
-  "id": "VoyagerKernel-beta",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://onedrive.zjw.js.cn/TheVoyager/Beta/update.json",
-  "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
-  "last_update": 1745166037.197671,
-  "versions": 4
+    "id": "VoyagerKernel-beta",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://onedrive.zjw.js.cn/TheVoyager/Beta/update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://onedrive.zjw.js.cn/TheVoyager/Beta",
+    "support": "",
+    "donate": "",
+    "readme": "",
+    "version": "3.6.1-a8ac5cfc"
 }
