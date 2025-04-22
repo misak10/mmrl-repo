@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1745285188.912646
+    "timestamp": 1745295739.464405
   },
   "modules": [
     {
@@ -875,7 +875,6 @@
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1745205686.0,
       "size": 441936,
       "permissions": [
         "magisk.permission.SERVICE",
