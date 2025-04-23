@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1745382173.189934
+    "timestamp": 1745396750.683309
   },
   "modules": [
     {
@@ -866,16 +866,17 @@
     {
       "id": "lingeringsound_ads",
       "name": "\u53bb\u5e7f\u544a",
-      "version": "\u6a74\u70abv266",
-      "versionCode": 267,
+      "version": "\u6a74\u70abv267",
+      "versionCode": 268,
       "author": "@coolapk 10007",
-      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 20655 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
+      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 20711 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 441936,
+      "timestamp": 1745384222.0,
+      "size": 442515,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION",
@@ -897,14 +898,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1742521676.0,
-          "version": "\u6a74\u70abv260",
-          "versionCode": 261,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v260_261.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v260_261.md",
-          "size": 454219
-        },
         {
           "timestamp": 1742798627.0,
           "version": "\u6a74\u70abv260",
@@ -944,6 +937,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v265_267.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v265_267.md",
           "size": 441936
+        },
+        {
+          "timestamp": 1745384222.0,
+          "version": "\u6a74\u70abv266",
+          "versionCode": 268,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v266_268.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v266_268.md",
+          "size": 442515
         }
       ]
     },
