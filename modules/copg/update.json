@@ -1,0 +1,14 @@
+{
+  "id": "copg",
+  "timestamp": 1744322299.0,
+  "versions": [
+    {
+      "timestamp": 1744322299.0,
+      "version": "v3.3.4",
+      "versionCode": 334,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v3.3.4_334.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v3.3.4_334.md",
+      "size": 2380617
+    }
+  ]
+}
