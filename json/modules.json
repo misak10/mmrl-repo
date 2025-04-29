@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1745930059.502298
+    "timestamp": 1745932531.201577
   },
   "modules": [
     {
@@ -1021,6 +1021,46 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v266_268.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v266_268.md",
           "size": 442515
+        }
+      ]
+    },
+    {
+      "id": "surfing",
+      "name": "Surfing",
+      "version": "v7.4.7",
+      "versionCode": 1620,
+      "author": "M",
+      "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
+      "support": "https://github.com/MoGuangYu/Surfing/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1745672099.0,
+      "size": 33520687,
+      "permissions": [
+        "kernelsu.permission.WEBUI",
+        "mmrl.permission.APKS"
+      ],
+      "features": {
+        "webroot": true,
+        "apks": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/MoGuangYu/Surfing",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/surfing/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1745672099.0,
+          "version": "v7.4.7",
+          "versionCode": 1620,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.4.7_1620.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.4.7_1620.md",
+          "size": 33520687
         }
       ]
     },

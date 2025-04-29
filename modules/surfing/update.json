@@ -1,0 +1,14 @@
+{
+  "id": "surfing",
+  "timestamp": 1745672099.0,
+  "versions": [
+    {
+      "timestamp": 1745672099.0,
+      "version": "v7.4.7",
+      "versionCode": 1620,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.4.7_1620.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.4.7_1620.md",
+      "size": 33520687
+    }
+  ]
+}
