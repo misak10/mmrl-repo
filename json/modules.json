@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1746339689.880802
+    "timestamp": 1746361776.895783
   },
   "modules": [
     {
@@ -861,8 +861,8 @@
     {
       "id": "fas-rs",
       "name": "fas-rs",
-      "version": "v4.8.0",
-      "versionCode": 480,
+      "version": "v4.9.0",
+      "versionCode": 490,
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "categories": [
@@ -879,7 +879,8 @@
       "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 1667972,
+      "timestamp": 1746340040.0,
+      "size": 1931178,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.RESETPROP",
@@ -937,6 +938,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_480.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_480.md",
           "size": 1667972
+        },
+        {
+          "timestamp": 1746340040.0,
+          "version": "v4.8.0",
+          "versionCode": 490,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.md",
+          "size": 1931178
         }
       ]
     },
