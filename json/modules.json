@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1746685449.572335
+    "timestamp": 1746707562.543709
   },
   "modules": [
     {
@@ -352,13 +352,14 @@
     {
       "id": "VoyagerKernel-beta",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.6.1-979de310",
-      "versionCode": 367,
-      "author": "\u67da\u7a1a\u7684\u5b69\u7eb8 & The Voyager, \u611f\u8c22 Pandora Kernel Project \u7684\u8d21\u732e ",
+      "version": "3.6.1-ea67d70f",
+      "versionCode": 368,
+      "author": "\u67da\u7a1a & The Voyager, \u611f\u8c22 Pandora Kernel Project \u7684\u8d21\u732e ",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "verified": false,
       "added": 0,
-      "size": 6207721,
+      "timestamp": 1746707561.500057,
+      "size": 6207851,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -381,14 +382,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1744349755.964967,
-          "version": "3.6.1-7d56a803",
-          "versionCode": 362,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-7d56a803_362.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-7d56a803_362.md",
-          "size": 6204586
-        },
         {
           "timestamp": 1744474842.991039,
           "version": "3.6.1-7d56a803",
@@ -428,6 +421,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-4750b726_367.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-4750b726_367.md",
           "size": 6207721
+        },
+        {
+          "timestamp": 1746707561.500057,
+          "version": "3.6.1-979de310",
+          "versionCode": 368,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-979de310_368.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-979de310_368.md",
+          "size": 6207851
         }
       ]
     },
