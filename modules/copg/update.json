@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v3.3.4_402.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v3.3.4_402.md",
       "size": 2591930
+    },
+    {
+      "timestamp": 1747121683.0,
+      "version": "v4.0.2",
+      "versionCode": 431,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v4.0.2_431.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v4.0.2_431.md",
+      "size": 2587638
     }
   ]
 }
