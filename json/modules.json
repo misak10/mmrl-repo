@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1747185423.90225
+    "timestamp": 1747203814.903916
   },
   "modules": [
     {
@@ -549,8 +549,8 @@
     {
       "id": "adguardhome",
       "name": "AdGuardHome for Root",
-      "version": "20250511",
-      "versionCode": 36,
+      "version": "20250514",
+      "versionCode": 37,
       "author": "twoone3",
       "description": "none",
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
@@ -558,8 +558,8 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1746950985.0,
-      "size": 9899054,
+      "timestamp": 1747199045.0,
+      "size": 9899103,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION"
@@ -576,14 +576,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/adguardhome/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1734174046.0,
-          "version": "20241214",
-          "versionCode": 29,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20241214_29.md",
-          "size": 9649308
-        },
         {
           "timestamp": 1742446574.0,
           "version": "20250320",
@@ -623,6 +615,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250427_36.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250427_36.md",
           "size": 9899054
+        },
+        {
+          "timestamp": 1747199045.0,
+          "version": "20250514",
+          "versionCode": 37,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250514_37.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250514_37.md",
+          "size": 9899103
         }
       ]
     },
