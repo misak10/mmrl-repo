@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1747225992.433559
+    "timestamp": 1747246827.63936
   },
   "modules": [
     {
@@ -1056,8 +1056,8 @@
     {
       "id": "surfing",
       "name": "Surfing",
-      "version": "v7.5.1",
-      "versionCode": 1624,
+      "version": "v7.5.2",
+      "versionCode": 1626,
       "author": "M",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "support": "https://github.com/MoGuangYu/Surfing/issues",
@@ -1065,8 +1065,8 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747225595.0,
-      "size": 40265073,
+      "timestamp": 1747243481.0,
+      "size": 40621090,
       "permissions": [
         "kernelsu.permission.WEBUI",
         "mmrl.permission.APKS"
@@ -1122,6 +1122,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.1_1624.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.1_1624.md",
           "size": 40265073
+        },
+        {
+          "timestamp": 1747243481.0,
+          "version": "v7.5.2",
+          "versionCode": 1626,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.2_1626.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.2_1626.md",
+          "size": 40621090
         }
       ]
     },

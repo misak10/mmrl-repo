@@ -41,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.1_1624.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.1_1624.md",
       "size": 40265073
+    },
+    {
+      "timestamp": 1747243481.0,
+      "version": "v7.5.2",
+      "versionCode": 1626,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.2_1626.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.2_1626.md",
+      "size": 40621090
     }
   ]
 }
