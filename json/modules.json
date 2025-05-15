@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1747271716.659328
+    "timestamp": 1747290266.113824
   },
   "modules": [
     {
@@ -549,17 +549,16 @@
     {
       "id": "adguardhome",
       "name": "AdGuardHome for Root",
-      "version": "20250514",
-      "versionCode": 37,
+      "version": "20250515",
+      "versionCode": 38,
       "author": "twoone3",
-      "description": "none",
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "license": "MIT",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747199045.0,
-      "size": 9899103,
+      "timestamp": 1747273785.0,
+      "size": 9900868,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION"
@@ -576,14 +575,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/adguardhome/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1742446574.0,
-          "version": "20250320",
-          "versionCode": 32,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250320_32.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250320_32.md",
-          "size": 9876343
-        },
         {
           "timestamp": 1744889843.0,
           "version": "20250320",
@@ -623,6 +614,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250514_37.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250514_37.md",
           "size": 9899103
+        },
+        {
+          "timestamp": 1747273785.0,
+          "version": "20250515",
+          "versionCode": 38,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_38.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_38.md",
+          "size": 9900868
         }
       ]
     },

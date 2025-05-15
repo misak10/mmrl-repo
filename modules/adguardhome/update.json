@@ -3,14 +3,6 @@
   "timestamp": 1734174046.0,
   "versions": [
     {
-      "timestamp": 1742446574.0,
-      "version": "20250320",
-      "versionCode": 32,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250320_32.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250320_32.md",
-      "size": 9876343
-    },
-    {
       "timestamp": 1744889843.0,
       "version": "20250320",
       "versionCode": 33,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250514_37.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250514_37.md",
       "size": 9899103
+    },
+    {
+      "timestamp": 1747273785.0,
+      "version": "20250515",
+      "versionCode": 38,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_38.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_38.md",
+      "size": 9900868
     }
   ]
 }
