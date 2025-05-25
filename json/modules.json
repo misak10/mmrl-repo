@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1748136284.755944
+    "timestamp": 1748137472.043584
   },
   "modules": [
     {
@@ -98,18 +98,11 @@
       "versionCode": 19100,
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
-      "categories": [
-        "Theme",
-        "Script",
-        "Network",
-        "Font"
-      ],
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747493975.0,
       "size": 127130,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -247,23 +240,15 @@
     {
       "id": "Uperf-Game-Turbo",
       "name": "Uperf Game Turbo",
-      "version": "\ufe0f1.43 based on uperf 904",
+      "version": "1.43 based on uperf 904",
       "versionCode": 250410,
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
-      "categories": [
-        "Utility",
-        "Network",
-        "Script",
-        "Theme",
-        "System"
-      ],
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
       "license": "Apache-2.0",
       "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747495521.0,
       "size": 1912987,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -362,13 +347,12 @@
     {
       "id": "VoyagerKernel-beta",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.6.1-ea67d70f",
+      "version": "3.6.1-49ba4aba",
       "versionCode": 368,
       "author": "\u67da\u7a1a & The Voyager, \u611f\u8c22 Pandora Kernel Project \u7684\u8d21\u732e ",
       "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
       "verified": false,
       "added": 0,
-      "timestamp": 1746707561.500057,
       "size": 6207851,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -567,7 +551,6 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747273785.0,
       "size": 9900868,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -646,7 +629,6 @@
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747729427.0,
       "size": 14722,
       "permissions": [
         "magisk.permission.SERVICE"
@@ -836,7 +818,7 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.3.1",
+      "version": "v4.3.1",
       "versionCode": 431,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games to unlock max fps.",
@@ -845,7 +827,6 @@
       "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747121683.0,
       "size": 2587638,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -902,21 +883,11 @@
       "versionCode": 490,
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
-      "categories": [
-        "Utility",
-        "Gaming",
-        "Performance",
-        "Script",
-        "Framework",
-        "Theme",
-        "System"
-      ],
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1746340040.0,
       "size": 1931178,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -998,7 +969,6 @@
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747548786.0,
       "size": 444632,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1083,7 +1053,6 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747840610.0,
       "size": 33602010,
       "permissions": [
         "kernelsu.permission.WEBUI",
