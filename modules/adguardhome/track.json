@@ -1,0 +1,13 @@
+{
+    "id": "adguardhome",
+    "enable": true,
+    "verified": true,
+    "update_to": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/version.json",
+    "license": "MIT",
+    "homepage": "",
+    "source": "https://github.com/twoone-3/AdGuardHomeForMagisk",
+    "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
+    "version": "20250515"
+}
