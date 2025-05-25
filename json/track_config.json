@@ -8,7 +8,7 @@
             "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/Dr-TSNG/ZygiskNext",
@@ -18,7 +18,7 @@
             "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/RikkaApps/Sui",
@@ -28,7 +28,7 @@
             "support": "https://github.com/RikkaApps/Sui/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/LSPosed/LSPosed.github.io",
@@ -38,7 +38,7 @@
             "support": "https://github.com/LSPosed/LSPosed.github.io/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/twoone-3/AdGuardHomeForMagisk",
@@ -48,7 +48,7 @@
             "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/nakixii/Magisk_AsoulOpt",
@@ -108,7 +108,7 @@
             "support": "https://github.com/shadow3aaa/fas-rs/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/lingeringsound/10007",
@@ -128,7 +128,7 @@
             "support": "https://github.com/MoGuangYu/Surfing/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/5ec1cff/TrickyStore",
@@ -138,7 +138,7 @@
             "support": "https://github.com/5ec1cff/TrickyStore/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/gloeyisk/universal-gms-doze",
