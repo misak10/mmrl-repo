@@ -546,6 +546,7 @@
       "version": "20250515",
       "versionCode": 38,
       "author": "twoone3",
+      "description": "Adguardhome Module"
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
       "license": "MIT",
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
