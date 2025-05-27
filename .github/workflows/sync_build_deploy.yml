@@ -14,7 +14,7 @@ on:
          - 'Yes'
          - 'No'
 
-permissions:
+permissions:write
   contents: write
   issues: write
   pull-requests: write
