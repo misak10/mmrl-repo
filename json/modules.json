@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1748672517.138276
+    "timestamp": 1748694637.815166
   },
   "modules": [
     {
@@ -642,8 +642,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v2.0.3",
-      "versionCode": 203,
+      "version": "v2.0.4",
+      "versionCode": 204,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "support": "https://github.com/bindhosts/bindhosts/issues",
@@ -662,8 +662,8 @@
         "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
-      "timestamp": 1748664943.0,
-      "size": 116668,
+      "timestamp": 1748680302.0,
+      "size": 116655,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -684,14 +684,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/bindhosts/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1740718680.0,
-          "version": "v1.9.8",
-          "versionCode": 198,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.8_198.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.8_198.md",
-          "size": 52466
-        },
         {
           "timestamp": 1741954274.0,
           "version": "v1.9.9",
@@ -731,6 +723,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.3_203.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.3_203.md",
           "size": 116668
+        },
+        {
+          "timestamp": 1748680302.0,
+          "version": "v2.0.4",
+          "versionCode": 204,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.4_204.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.4_204.md",
+          "size": 116655
         }
       ]
     },
