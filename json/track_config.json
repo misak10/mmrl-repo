@@ -249,6 +249,176 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/AlirezaParsi/COPG",
+            "module_id": "copg",
+            "update_to": "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/update.json",
+            "source": "https://github.com/AlirezaParsi/COPG",
+            "support": "https://github.com/AlirezaParsi/COPG/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/eritpchy/FingerprintPay",
+            "module_id": "fingerprintpay",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/FingerprintPay/update.json",
+            "source": "https://github.com/eritpchy/FingerprintPay",
+            "support": "https://github.com/eritpchy/FingerprintPay/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/PerformanC/ReZygisk",
+            "module_id": "rezygisk",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ReZygisk/update.json",
+            "source": "https://github.com/PerformanC/ReZygisk",
+            "support": "https://github.com/PerformanC/ReZygisk/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/WSTxda/ViPERFX_RE",
+            "module_id": "viperfx_re",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ViPERFX_RE/update.json",
+            "source": "https://github.com/WSTxda/ViPERFX_RE",
+            "support": "https://github.com/WSTxda/ViPERFX_RE/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/firerpa/lamda",
+            "module_id": "lamda",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/lamda/update.json",
+            "source": "https://github.com/firerpa/lamda",
+            "support": "https://github.com/firerpa/lamda/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Vaz15k/Cubic-AdBlock",
+            "module_id": "cubic-adblock",
+            "update_to": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/refs/heads/cubic/module/update.json",
+            "source": "https://github.com/Vaz15k/Cubic-AdBlock",
+            "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/siavash79/PixelXpert",
+            "module_id": "pixelxpert",
+            "update_to": "https://raw.githubusercontent.com/siavash79/PixelXpert/refs/heads/canary/MagiskModuleUpdate_Full.json",
+            "source": "https://github.com/siavash79/PixelXpert",
+            "support": "https://github.com/siavash79/PixelXpert/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Magisk-Modules-Alt-Repo/YetAnotherBootloopProtector",
+            "module_id": "bootloopprotector",
+            "update_to": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/YetAnotherBootloopProtector/refs/heads/main/update.Json",
+            "source": "hhttps://github.com/Magisk-Modules-Alt-Repo/YetAnotherProtector",
+            "support": "https://github.com/Magisk-Modules-Alt-Repo/YetAnotherProtector/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/daboynb/playcurlNEXT",
+            "module_id": "playcurllnext",
+            "update_to": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/refs/heads/main/update.json",
+            "source": "https://github.com/daboynb/playcurlNEXT",
+            "support": "https://github.com/daboynb/playcurlNEXT/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Magisk-Modules-Alt-Repo/open_webview",
+            "module_id": "open_webview",
+            "update_to": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/open_webview/refs/heads/master/update.json",
+            "source": "https://github.com/Magisk-Modules-Alt-Repo/open_webview",
+            "support": "https://github.com/Magisk-Modules-Alt-Repo/open_webview/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Infamousmick/Infamick-script",
+            "module_id": "infamick-script",
+            "update_to": "https://raw.githubusercontent.com/Infamousmick/Infamick-script/refs/heads/main/update.json",
+            "source": "https://github.com/Infamousmick/Infamick-script",
+            "support": "https://github.com/Infamousmick/Infamick-script/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/j-hc/FlagSecurePatcher",
+            "module_id": "flagsecurepatcher",
+            "update_to": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/refs/heads/master/update.json",
+            "source": "https://github.com/j-hc/FlagSecurePatcher",
+            "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/AestasBritannia/Hydro-Br-leur",
+            "module_id": "hydro-br-leur",
+            "update_to": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/refs/heads/main/update_op.json",
+            "source": "https://github.com/AestasBritannia/Hydro-Br-leur",
+            "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/Rem01Gaming/encore",
+            "module_id": "encore",
+            "update_to": "https://raw.githubusercontent.com/Rem01Gaming/encore/refs/heads/main/update.json",
+            "source": "https://github.com/Rem01Gaming/encore",
+            "support": "https://github.com/Rem01Gaming/encore/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module",
+            "module_id": "DynamicSystemTweaks_arm64",
+            "update_to": "https://raw.githubusercontent.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/refs/heads/main/update.json",
+            "source": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module",
+            "support": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module",
+            "module_id": "DynamicSystemTweaks_armv7a",
+            "update_to": "https://raw.githubusercontent.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/refs/heads/main/update.json",
+            "source": "https://github.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module",
+            "support": "https://github.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
+            "module_id": "tricky-target-list",
+            "update_to": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/refs/heads/main/update.json",
+            "source": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
+            "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
