@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1748760768.316919
+    "timestamp": 1748781071.137391
   },
   "modules": [
     {
@@ -1388,8 +1388,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-447",
-      "versionCode": 447,
+      "version": "canary-448",
+      "versionCode": 448,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1397,8 +1397,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1748440300.0,
-      "size": 4226430,
+      "timestamp": 1748779577.0,
+      "size": 4235139,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1422,6 +1422,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-447_447.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-447_447.md",
           "size": 4226430
+        },
+        {
+          "timestamp": 1748779577.0,
+          "version": "canary-448",
+          "versionCode": 448,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-448_448.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-448_448.md",
+          "size": 4235139
         }
       ]
     },
@@ -1761,8 +1769,8 @@
     {
       "id": "zygisk-detach",
       "name": "zygisk-detach",
-      "version": "v1.20.0",
-      "versionCode": 27,
+      "version": "v1.20.1",
+      "versionCode": 28,
       "author": "j-hc",
       "description": "Detaches installed apps from Play Store",
       "support": "https://github.com/j-hc/zygisk-detach/issues",
@@ -1770,7 +1778,8 @@
       "readme": "https://raw.githubusercontent.com/j-hc/zygisk-detach/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 176813,
+      "timestamp": 1748779842.0,
+      "size": 178007,
       "permissions": [
         "magisk.permission.POST_FS_DATA",
         "magisk.permission.ZYGISK",
@@ -1804,6 +1813,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.19.3_27.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.19.3_27.md",
           "size": 176813
+        },
+        {
+          "timestamp": 1748779842.0,
+          "version": "v1.20.0",
+          "versionCode": 28,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.0_28.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.0_28.md",
+          "size": 178007
         }
       ]
     },
