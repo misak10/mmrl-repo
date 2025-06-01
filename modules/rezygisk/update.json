@@ -1,0 +1,14 @@
+{
+  "id": "rezygisk",
+  "timestamp": 1745731850.0,
+  "versions": [
+    {
+      "timestamp": 1745731850.0,
+      "version": "v1.0.0-rc.2",
+      "versionCode": 342,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.md",
+      "size": 254591
+    }
+  ]
+}

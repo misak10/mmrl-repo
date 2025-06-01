@@ -1,0 +1,14 @@
+{
+  "id": "cubic-adblock",
+  "timestamp": 1748760760.480348,
+  "versions": [
+    {
+      "timestamp": 1748760760.480348,
+      "version": "v2.51",
+      "versionCode": 2051,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.51_2051.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.51_2051.md",
+      "size": 7918234
+    }
+  ]
+}

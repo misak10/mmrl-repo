@@ -1,0 +1,14 @@
+{
+  "id": "infamick-script",
+  "timestamp": 1745851980.0,
+  "versions": [
+    {
+      "timestamp": 1745851980.0,
+      "version": "v3.2",
+      "versionCode": 202504281,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.md",
+      "size": 23330
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "pixelxpert",
+  "timestamp": 1748440300.0,
+  "versions": [
+    {
+      "timestamp": 1748440300.0,
+      "version": "canary-447",
+      "versionCode": 447,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-447_447.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-447_447.md",
+      "size": 4226430
+    }
+  ]
+}

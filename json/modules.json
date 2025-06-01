@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1748751320.06499
+    "timestamp": 1748760761.666779
   },
   "modules": [
     {
@@ -42,6 +42,123 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20250101.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20250101.md",
           "size": 31355148
+        }
+      ]
+    },
+    {
+      "id": "DynamicSystemTweaks_arm64",
+      "name": "DynamicSystemTweaks-arm64",
+      "version": "v1.4",
+      "versionCode": 5,
+      "author": "Cyberdev",
+      "description": "Improves system performance without battery loss or overheating for arm64-v8a with 8 cpu core devices only, does not work on devices using APatch (Android 10+)",
+      "support": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/issues",
+      "license": "MIT",
+      "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1745008292.0,
+      "size": 8424,
+      "permissions": [
+        "magisk.permission.RESETPROP"
+      ],
+      "features": {
+        "resetprop": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_arm64/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1745008292.0,
+          "version": "v1.4",
+          "versionCode": 5,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_arm64/v1.4_5.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_arm64/v1.4_5.md",
+          "size": 8424
+        }
+      ]
+    },
+    {
+      "id": "DynamicSystemTweaks_armv7a",
+      "name": "DynamicSystemTweaks",
+      "version": "v4.4",
+      "versionCode": 24,
+      "author": "Cyberdev",
+      "description": "Improves system performance without battery loss or overheating, module does not support APatch (Android 10+)",
+      "support": "https://github.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/issues",
+      "license": "MIT",
+      "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1745007366.0,
+      "size": 8250,
+      "permissions": [
+        "magisk.permission.RESETPROP"
+      ],
+      "features": {
+        "resetprop": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1745007366.0,
+          "version": "v4.4",
+          "versionCode": 24,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.4_24.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.4_24.md",
+          "size": 8250
+        }
+      ]
+    },
+    {
+      "id": "Infamick_script",
+      "name": "Infamick Script",
+      "version": "v3.2",
+      "versionCode": 202504281,
+      "author": "@Infamousmick",
+      "description": "A powerful system utility script for rooted Android devices",
+      "support": "https://github.com/Infamousmick/",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/Infamousmick/Infamick-script/main/README.md",
+      "homepage": "https://github.com/Infamousmick/Infamick-script",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1745851980.0,
+      "size": 23330,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/Infamousmick/Infamick-script",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/infamick-script/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1745851980.0,
+          "version": "v3.2",
+          "versionCode": 202504281,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.md",
+          "size": 23330
         }
       ]
     },
@@ -234,6 +351,54 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.md",
           "size": 1759912
+        }
+      ]
+    },
+    {
+      "id": "TA_utl",
+      "name": "Tricky Addon - Update Target List",
+      "version": "v3.9",
+      "versionCode": 390,
+      "author": "KOWX712",
+      "description": "A WebUI to conifgure tricky store target.txt ",
+      "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
+      "license": " GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/refs/heads/main/README.md",
+      "categories": [
+        "WebUI"
+      ],
+      "note": {
+        "message": "This module is not a part of the Tricky Store module. DO NOT report any issues to Tricky Store if encountered"
+      },
+      "verified": false,
+      "added": 0,
+      "timestamp": 1746893051.0,
+      "size": 1283556,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.ACTION"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "action": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1746893051.0,
+          "version": "v3.9",
+          "versionCode": 390,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v3.9_390.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v3.9_390.md",
+          "size": 1283556
         }
       ]
     },
@@ -837,6 +1002,86 @@
       ]
     },
     {
+      "id": "cubic-adblock",
+      "name": "Cubic-AdBlock",
+      "version": "v2.51",
+      "versionCode": 2051,
+      "author": "Vaz15k",
+      "description": "A simple AdBlock based on the hosts file.",
+      "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
+      "license": "MIT",
+      "readme": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/README.md",
+      "categories": [
+        "Adblocking and Hosts Files"
+      ],
+      "icon": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/cubic_logo.png",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1748760760.480348,
+      "size": 7918234,
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/Vaz15k/Cubic-AdBlock",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1748760760.480348,
+          "version": "v2.51",
+          "versionCode": 2051,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.51_2051.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.51_2051.md",
+          "size": 7918234
+        }
+      ]
+    },
+    {
+      "id": "encore",
+      "name": "Encore Tweaks",
+      "version": "4.2 (899-84bbcb5-release)",
+      "versionCode": 899,
+      "author": "Rem01Gaming",
+      "description": "Special performance module for your Device.",
+      "support": "https://github.com/Rem01Gaming/encore/issues",
+      "license": "Apache-2.0",
+      "readme": "https://raw.githubusercontent.com/Rem01Gaming/encore/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1748070454.0,
+      "size": 855270,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.ACTION",
+        "kernelsu.permission.WEBUI"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/Rem01Gaming/encore",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/encore/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1748070454.0,
+          "version": "4.2 (899-84bbcb5-release)",
+          "versionCode": 899,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/encore/4.2_899-84bbcb5-release.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/encore/4.2_899-84bbcb5-release.md",
+          "size": 855270
+        }
+      ]
+    },
+    {
       "id": "fas-rs",
       "name": "fas-rs",
       "version": "v4.9.0",
@@ -914,6 +1159,106 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.md",
           "size": 1931178
+        }
+      ]
+    },
+    {
+      "id": "fingerprintpay",
+      "name": "\u6307\u7eb9\u652f\u4ed8 - \u6279\u91cf\u5b89\u88c5\u5668",
+      "version": "v1.0.0",
+      "versionCode": 1,
+      "author": "Jason Eric",
+      "description": "\u6307\u7eb9\u652f\u4ed8\u6279\u91cf\u5b89\u88c5\u5668 Fingerprint pay batch installer.",
+      "support": "https://github.com/eritpchy/FingerprintPay/issues",
+      "license": "GPL-2.0",
+      "readme": "https://raw.githubusercontent.com/eritpchy/FingerprintPay/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1743243227.0,
+      "size": 8638887,
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/eritpchy/FingerprintPay",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/fingerprintpay/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1743243227.0,
+          "version": "6.0.2-ci",
+          "versionCode": 1,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fingerprintpay/6.0.2-ci_1.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/fingerprintpay/6.0.2-ci_1.md",
+          "size": 8638887
+        }
+      ]
+    },
+    {
+      "id": "flagsecurepatcher",
+      "name": "FlagSecurePatcher",
+      "version": "r15",
+      "versionCode": 15,
+      "author": "j-hc",
+      "description": "Prevent apps from blocking and listening to your screenshots",
+      "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
+      "license": "Apache-2.0",
+      "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1743681710.0,
+      "size": 4535597,
+      "permissions": [
+        "magisk.permission.POST_FS_DATA"
+      ],
+      "features": {
+        "post_fs_data": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/j-hc/FlagSecurePatcher",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1743681710.0,
+          "version": "r15",
+          "versionCode": 15,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_15.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_15.md",
+          "size": 4535597
+        }
+      ]
+    },
+    {
+      "id": "hydro-br-leur",
+      "name": "Hydrostellaire \u6ca8\u83b9",
+      "version": "\u272eEssonne\u272e",
+      "versionCode": 1000,
+      "author": "AB & Ray",
+      "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
+      "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1746373998.0,
+      "size": 5667600,
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/AestasBritannia/Hydro-Br-leur",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1746373998.0,
+          "version": "Essonne",
+          "versionCode": 1000,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.md",
+          "size": 5667600
         }
       ]
     },
@@ -998,6 +1343,167 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v269_270.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v269_270.md",
           "size": 444632
+        }
+      ]
+    },
+    {
+      "id": "open_webview",
+      "name": "Open Webview",
+      "version": "2.5.2",
+      "versionCode": 252,
+      "author": "F3FFO",
+      "description": "Open Webview change your system webview",
+      "donate": "https://www.paypal.me/f3ff0",
+      "support": "https://github.com/Magisk-Modules-Alt-Repo/open_webview/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/open_webview/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1734388190.0,
+      "size": 22201610,
+      "permissions": [
+        "magisk.permission.POST_FS_DATA"
+      ],
+      "features": {
+        "post_fs_data": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/Magisk-Modules-Alt-Repo/open_webview",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/open_webview/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1734388190.0,
+          "version": "v2.5.2",
+          "versionCode": 252,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/open_webview/v2.5.2_252.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/open_webview/v2.5.2_252.md",
+          "size": 22201610
+        }
+      ]
+    },
+    {
+      "id": "pixelxpert",
+      "name": "Pixel Xpert",
+      "version": "canary-447",
+      "versionCode": 447,
+      "author": "Pixel Xpert Team",
+      "description": "Xposed based module for customizations on Pixel roms. Android 13+",
+      "support": "https://github.com/siavash79/PixelXpert/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1748440300.0,
+      "size": 4226430,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "mmrl.permission.APKS"
+      ],
+      "features": {
+        "service": true,
+        "apks": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/siavash79/PixelXpert",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1748440300.0,
+          "version": "canary-447",
+          "versionCode": 447,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-447_447.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-447_447.md",
+          "size": 4226430
+        }
+      ]
+    },
+    {
+      "id": "playcurllnext",
+      "name": "playcurlNEXT",
+      "version": "v1.15",
+      "versionCode": 115,
+      "author": "daboynb",
+      "description": "Automatic fingerprint downloader for play integrity fix.",
+      "support": "https://github.com/daboynb/playcurlNEXT/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1744211989.0,
+      "size": 17306,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "kernelsu.permission.WEBUI"
+      ],
+      "features": {
+        "service": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/daboynb/playcurlNEXT",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1744211989.0,
+          "version": "v1.5",
+          "versionCode": 115,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.5_115.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.5_115.md",
+          "size": 17306
+        }
+      ]
+    },
+    {
+      "id": "rezygisk",
+      "name": "ReZygisk",
+      "version": "v1.0.0-rc.2",
+      "versionCode": 342,
+      "author": "The PerformanC Organization",
+      "description": "Standalone implementation of Zygisk.",
+      "support": "https://github.com/PerformanC/ReZygisk/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/PerformanC/ReZygisk/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1745731850.0,
+      "size": 254591,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.SEPOLICY"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "sepolicy": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/PerformanC/ReZygisk",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/rezygisk/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1745731850.0,
+          "version": "v1.0.0-rc.2",
+          "versionCode": 342,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.md",
+          "size": 254591
         }
       ]
     },
@@ -1214,6 +1720,45 @@
       ]
     },
     {
+      "id": "viperfx_re",
+      "name": "ViPER4Android RE Fork",
+      "version": "0.6.3",
+      "versionCode": 20250107,
+      "author": "pittvandewitt, MrWhite214, Zackptg5, Martmists, Iscle, WSTxda",
+      "description": "ViPER4Android Reverse Engineered Fork is an audio enhancing software to provide everyone with a better audio experience",
+      "support": "https://github.com/WSTxda/ViPERFX_RE/issues",
+      "readme": "https://raw.githubusercontent.com/WSTxda/ViPERFX_RE/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1736286935.0,
+      "size": 1843875,
+      "permissions": [
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.ACTION"
+      ],
+      "features": {
+        "post_fs_data": true,
+        "action": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/WSTxda/ViPERFX_RE",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/viperfx_re/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1736286935.0,
+          "version": "v0.6.3",
+          "versionCode": 20250107,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/viperfx_re/v0.6.3_20250107.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/viperfx_re/v0.6.3_20250107.md",
+          "size": 1843875
+        }
+      ]
+    },
+    {
       "id": "zygisk-detach",
       "name": "zygisk-detach",
       "version": "v1.20.0",
@@ -1265,7 +1810,7 @@
     {
       "id": "zygisknext",
       "name": "Zygisk Next",
-      "version": "1.2.9 (521-e73dbfc-release)",
+      "version": "v1.2.9",
       "versionCode": 521,
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
@@ -1273,7 +1818,6 @@
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1748603687.0,
       "size": 3561924,
       "permissions": [
         "magisk.permission.SERVICE",

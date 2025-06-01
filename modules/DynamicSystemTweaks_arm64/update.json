@@ -1,0 +1,14 @@
+{
+  "id": "DynamicSystemTweaks_arm64",
+  "timestamp": 1745008292.0,
+  "versions": [
+    {
+      "timestamp": 1745008292.0,
+      "version": "v1.4",
+      "versionCode": 5,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_arm64/v1.4_5.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_arm64/v1.4_5.md",
+      "size": 8424
+    }
+  ]
+}

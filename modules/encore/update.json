@@ -1,0 +1,14 @@
+{
+  "id": "encore",
+  "timestamp": 1748070454.0,
+  "versions": [
+    {
+      "timestamp": 1748070454.0,
+      "version": "4.2 (899-84bbcb5-release)",
+      "versionCode": 899,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/encore/4.2_899-84bbcb5-release.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/encore/4.2_899-84bbcb5-release.md",
+      "size": 855270
+    }
+  ]
+}

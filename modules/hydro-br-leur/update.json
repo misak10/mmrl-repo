@@ -1,0 +1,14 @@
+{
+  "id": "hydro-br-leur",
+  "timestamp": 1746373998.0,
+  "versions": [
+    {
+      "timestamp": 1746373998.0,
+      "version": "Essonne",
+      "versionCode": 1000,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.md",
+      "size": 5667600
+    }
+  ]
+}

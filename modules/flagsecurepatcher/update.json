@@ -1,0 +1,14 @@
+{
+  "id": "flagsecurepatcher",
+  "timestamp": 1743681710.0,
+  "versions": [
+    {
+      "timestamp": 1743681710.0,
+      "version": "r15",
+      "versionCode": 15,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_15.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_15.md",
+      "size": 4535597
+    }
+  ]
+}

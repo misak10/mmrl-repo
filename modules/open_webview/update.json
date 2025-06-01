@@ -1,0 +1,14 @@
+{
+  "id": "open_webview",
+  "timestamp": 1734388190.0,
+  "versions": [
+    {
+      "timestamp": 1734388190.0,
+      "version": "v2.5.2",
+      "versionCode": 252,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/open_webview/v2.5.2_252.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/open_webview/v2.5.2_252.md",
+      "size": 22201610
+    }
+  ]
+}
