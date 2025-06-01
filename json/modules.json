@@ -1265,7 +1265,7 @@
     {
       "id": "zygisknext",
       "name": "Zygisk Next",
-      "version": "v1.2.9",
+      "version": "v1.2.8",
       "versionCode": 512,
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
