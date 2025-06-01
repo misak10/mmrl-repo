@@ -1,0 +1,13 @@
+{
+    "id": "encore",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/Rem01Gaming/encore/refs/heads/main/update.json",
+    "license": "Apache-2.0",
+    "homepage": "",
+    "source": "https://github.com/Rem01Gaming/encore",
+    "support": "https://github.com/Rem01Gaming/encore/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/Rem01Gaming/encore/main/README.md",
+    "version": "4.2 (899-84bbcb5-release)"
+}

@@ -1,0 +1,13 @@
+{
+    "id": "bootloopprotector",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/YetAnotherBootloopProtector/refs/heads/main/update.Json",
+    "license": "",
+    "homepage": "",
+    "source": "hhttps://github.com/Magisk-Modules-Alt-Repo/YetAnotherProtector",
+    "support": "https://github.com/Magisk-Modules-Alt-Repo/YetAnotherProtector/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/YetAnotherBootloopProtector/main/README.md",
+    "version": "9.3 (21-5ba7362-release)"
+}

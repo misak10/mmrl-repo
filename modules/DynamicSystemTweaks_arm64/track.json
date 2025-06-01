@@ -1,0 +1,13 @@
+{
+    "id": "DynamicSystemTweaks_arm64",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/refs/heads/main/update.json",
+    "license": "MIT",
+    "homepage": "",
+    "source": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module",
+    "support": "https://github.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/main/README.md",
+    "version": "v1.4"
+}

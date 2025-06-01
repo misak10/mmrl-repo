@@ -1,0 +1,13 @@
+{
+    "id": "rezygisk",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ReZygisk/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/PerformanC/ReZygisk",
+    "support": "https://github.com/PerformanC/ReZygisk/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/PerformanC/ReZygisk/main/README.md",
+    "version": "v1.0.0-rc.2"
+}

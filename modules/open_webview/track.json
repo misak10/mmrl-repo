@@ -1,0 +1,13 @@
+{
+    "id": "open_webview",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/open_webview/refs/heads/master/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/Magisk-Modules-Alt-Repo/open_webview",
+    "support": "https://github.com/Magisk-Modules-Alt-Repo/open_webview/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/open_webview/main/README.md",
+    "version": "v2.5.2"
+}

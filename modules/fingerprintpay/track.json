@@ -1,0 +1,13 @@
+{
+    "id": "fingerprintpay",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/FingerprintPay/update.json",
+    "license": "GPL-2.0",
+    "homepage": "",
+    "source": "https://github.com/eritpchy/FingerprintPay",
+    "support": "https://github.com/eritpchy/FingerprintPay/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/eritpchy/FingerprintPay/main/README.md",
+    "version": "6.0.2-ci"
+}

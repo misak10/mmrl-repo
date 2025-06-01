@@ -1,0 +1,13 @@
+{
+    "id": "flagsecurepatcher",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/refs/heads/master/update.json",
+    "license": "Apache-2.0",
+    "homepage": "",
+    "source": "https://github.com/j-hc/FlagSecurePatcher",
+    "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
+    "version": "r15"
+}

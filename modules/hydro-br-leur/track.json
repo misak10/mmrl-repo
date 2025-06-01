@@ -1,0 +1,13 @@
+{
+    "id": "hydro-br-leur",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/refs/heads/main/update_op.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/AestasBritannia/Hydro-Br-leur",
+    "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
+    "version": "Essonne"
+}

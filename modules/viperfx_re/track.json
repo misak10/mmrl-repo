@@ -1,0 +1,13 @@
+{
+    "id": "viperfx_re",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ViPERFX_RE/update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/WSTxda/ViPERFX_RE",
+    "support": "https://github.com/WSTxda/ViPERFX_RE/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/WSTxda/ViPERFX_RE/main/README.md",
+    "version": "v0.6.3"
+}

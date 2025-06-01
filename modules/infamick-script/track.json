@@ -1,0 +1,13 @@
+{
+    "id": "infamick-script",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/Infamousmick/Infamick-script/refs/heads/main/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/Infamousmick/Infamick-script",
+    "support": "https://github.com/Infamousmick/Infamick-script/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/Infamousmick/Infamick-script/main/README.md",
+    "version": "v3.2"
+}
