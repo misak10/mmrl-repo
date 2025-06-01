@@ -64,7 +64,7 @@ jobs:
         id: check_updates
         if: ${{ env.IS_SYNC == 'true' }}
         run: |
-          mmrl-util sync --diff versions_diff.md 2>&1 | tee log/sync_$(date +"%Y-%m-%d").log
+          mmrl-util sync --diff versions_diff.md --push 2>&1 | tee log/sync_$(date +"%Y-%m-%d").log
           
           if [ -f "versions_diff.md" ] && [ -s "versions_diff.md" ]; then
             echo "has_updates=true" >> $GITHUB_OUTPUT
