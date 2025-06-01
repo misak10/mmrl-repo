@@ -291,16 +291,6 @@
             "verified": false
         },
         {
-            "url": "https://github.com/firerpa/lamda",
-            "module_id": "lamda",
-            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/lamda/update.json",
-            "source": "https://github.com/firerpa/lamda",
-            "support": "https://github.com/firerpa/lamda/issues",
-            "donate": "",
-            "enable": true,
-            "verified": false
-        },
-        {
             "url": "https://github.com/Vaz15k/Cubic-AdBlock",
             "module_id": "cubic-adblock",
             "update_to": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/refs/heads/cubic/module/update.json",
