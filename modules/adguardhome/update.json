@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_38.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_38.md",
       "size": 9900868
+    },
+    {
+      "timestamp": 1748787379.0,
+      "version": "20250515",
+      "versionCode": 39,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_39.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_39.md",
+      "size": 9921407
     }
   ]
 }
