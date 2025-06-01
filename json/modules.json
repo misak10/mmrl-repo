@@ -1263,56 +1263,6 @@
       ]
     },
     {
-      "id": "zygisknext",
-      "name": "Zygisk Next",
-      "version": "v1.2.8",
-      "versionCode": 512,
-      "author": "5ec1cff, Nullptr",
-      "description": "Standalone implementation of Zygisk.",
-      "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
-      "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
-      "verified": true,
-      "added": 0,
-      "size": 3519779,
-      "permissions": [
-        "magisk.permission.SERVICE",
-        "magisk.permission.POST_FS_DATA",
-        "magisk.permission.SEPOLICY",
-        "kernelsu.permission.WEBUI"
-      ],
-      "features": {
-        "service": true,
-        "post_fs_data": true,
-        "sepolicy": true,
-        "webroot": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/Dr-TSNG/ZygiskNext",
-        "antifeatures": null,
-        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/zygisknext/track.json"
-      },
-      "versions": [
-        {
-          "timestamp": 1737269205.0,
-          "version": "1.2.7 (497-b7796a7-release)",
-          "versionCode": 497,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.7_497-b7796a7-release.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.2.7_497-b7796a7-release.md",
-          "size": 3455869
-        },
-        {
-          "timestamp": 1743093744.0,
-          "version": "v1.2.8",
-          "versionCode": 512,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.8_512.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.8_512.md",
-          "size": 3519779
-        }
-      ]
-    },
-    {
       "id": "zygisksui",
       "name": "Zygisk - Sui",
       "version": "v13.5.1",
