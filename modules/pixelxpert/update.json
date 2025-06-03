@@ -33,6 +33,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-450_450.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-450_450.md",
       "size": 4235235
+    },
+    {
+      "timestamp": 1748944071.0,
+      "version": "canary-451",
+      "versionCode": 451,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-451_451.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-451_451.md",
+      "size": 4235172
     }
   ]
 }
