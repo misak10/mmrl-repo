@@ -1,7 +1,7 @@
 {
     "id": "copg",
     "enable": true,
-    "verified": false,
+    "verified": true,
     "update_to": "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/update.json",
     "license": "NOASSERTION",
     "homepage": "",
