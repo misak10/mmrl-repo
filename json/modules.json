@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1749018262.774017
+    "timestamp": 1749033278.829354
   },
   "modules": [
     {
@@ -57,7 +57,6 @@
       "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1745008292.0,
       "size": 8424,
       "permissions": [
         "magisk.permission.RESETPROP"
@@ -95,7 +94,6 @@
       "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1745007366.0,
       "size": 8250,
       "permissions": [
         "magisk.permission.RESETPROP"
@@ -134,7 +132,6 @@
       "homepage": "https://github.com/Infamousmick/Infamick-script",
       "verified": false,
       "added": 0,
-      "timestamp": 1745851980.0,
       "size": 23330,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -372,7 +369,6 @@
       },
       "verified": false,
       "added": 0,
-      "timestamp": 1746893051.0,
       "size": 1283556,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -717,7 +713,6 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1748787379.0,
       "size": 9921407,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1029,7 +1024,6 @@
       "icon": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/cubic_logo.png",
       "verified": false,
       "added": 0,
-      "timestamp": 1748867678.735685,
       "size": 7722335,
       "track": {
         "type": "ONLINE_JSON",
@@ -1185,7 +1179,7 @@
     {
       "id": "fingerprintpay",
       "name": "\u6307\u7eb9\u652f\u4ed8 - \u6279\u91cf\u5b89\u88c5\u5668",
-      "version": "v1.0.0",
+      "version": "6.0.2-ci",
       "versionCode": 1,
       "author": "Jason Eric",
       "description": "\u6307\u7eb9\u652f\u4ed8\u6279\u91cf\u5b89\u88c5\u5668 Fingerprint pay batch installer.",
@@ -1194,7 +1188,6 @@
       "readme": "https://raw.githubusercontent.com/eritpchy/FingerprintPay/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1743243227.0,
       "size": 8638887,
       "track": {
         "type": "ONLINE_JSON",
@@ -1226,7 +1219,6 @@
       "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1743681710.0,
       "size": 4535597,
       "permissions": [
         "magisk.permission.POST_FS_DATA"
@@ -1255,14 +1247,13 @@
     {
       "id": "hydro-br-leur",
       "name": "Hydrostellaire \u6ca8\u83b9",
-      "version": "\u272eEssonne\u272e",
+      "version": "Essonne",
       "versionCode": 1000,
       "author": "AB & Ray",
       "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
       "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1746373998.0,
       "size": 5667600,
       "track": {
         "type": "ONLINE_JSON",
@@ -1369,7 +1360,7 @@
     {
       "id": "open_webview",
       "name": "Open Webview",
-      "version": "2.5.2",
+      "version": "v2.5.2",
       "versionCode": 252,
       "author": "F3FFO",
       "description": "Open Webview change your system webview",
@@ -1379,7 +1370,6 @@
       "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/open_webview/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1734388190.0,
       "size": 22201610,
       "permissions": [
         "magisk.permission.POST_FS_DATA"
@@ -1417,7 +1407,6 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1748944071.0,
       "size": 4235172,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1480,7 +1469,7 @@
     {
       "id": "playcurllnext",
       "name": "playcurlNEXT",
-      "version": "v1.15",
+      "version": "v1.5",
       "versionCode": 115,
       "author": "daboynb",
       "description": "Automatic fingerprint downloader for play integrity fix.",
@@ -1489,7 +1478,6 @@
       "readme": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1744211989.0,
       "size": 17306,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1529,7 +1517,6 @@
       "readme": "https://raw.githubusercontent.com/PerformanC/ReZygisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1745731850.0,
       "size": 254591,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1774,7 +1761,7 @@
     {
       "id": "viperfx_re",
       "name": "ViPER4Android RE Fork",
-      "version": "0.6.3",
+      "version": "v0.6.3",
       "versionCode": 20250107,
       "author": "pittvandewitt, MrWhite214, Zackptg5, Martmists, Iscle, WSTxda",
       "description": "ViPER4Android Reverse Engineered Fork is an audio enhancing software to provide everyone with a better audio experience",
@@ -1782,7 +1769,6 @@
       "readme": "https://raw.githubusercontent.com/WSTxda/ViPERFX_RE/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1736286935.0,
       "size": 1843875,
       "permissions": [
         "magisk.permission.POST_FS_DATA",
@@ -1822,7 +1808,6 @@
       "readme": "https://raw.githubusercontent.com/j-hc/zygisk-detach/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1748779842.0,
       "size": 178007,
       "permissions": [
         "magisk.permission.POST_FS_DATA",
