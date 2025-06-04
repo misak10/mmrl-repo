@@ -1,12 +1,13 @@
 {
-  "id": "cubic-adblock",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/refs/heads/cubic/module/update.json",
-  "license": "MIT",
-  "source": "https://github.com/Vaz15k/Cubic-AdBlock",
-  "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
-  "readme": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/main/README.md",
-  "last_update": 1748867678.735685,
-  "versions": 2
+    "id": "cubic-adblock",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/refs/heads/cubic/module/update.json",
+    "license": "MIT",
+    "homepage": "",
+    "source": "https://github.com/Vaz15k/Cubic-AdBlock",
+    "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/main/README.md",
+    "version": "v2.52"
 }
