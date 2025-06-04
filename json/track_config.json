@@ -248,7 +248,7 @@
             "support": "https://github.com/AlirezaParsi/COPG/issues",
             "donate": "",
             "enable": true,
-            "verified": false
+            "verified": true
         },
         {
             "url": "https://github.com/AlirezaParsi/COPG",
