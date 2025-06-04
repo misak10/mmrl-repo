@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1749033673.035385
+    "timestamp": 1749034127.576474
   },
   "modules": [
     {
@@ -957,7 +957,7 @@
       "support": "https://github.com/AlirezaParsi/COPG/issues",
       "license": "NOASSERTION",
       "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
-      "verified": false,
+      "verified": true,
       "added": 0,
       "size": 2587638,
       "permissions": [
