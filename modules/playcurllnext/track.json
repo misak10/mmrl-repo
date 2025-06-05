@@ -1,13 +1,12 @@
 {
-    "id": "playcurllnext",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/refs/heads/main/update.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/daboynb/playcurlNEXT",
-    "support": "https://github.com/daboynb/playcurlNEXT/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/main/README.md",
-    "version": "v1.5"
+  "id": "playcurllnext",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/refs/heads/main/update.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/daboynb/playcurlNEXT",
+  "support": "https://github.com/daboynb/playcurlNEXT/issues",
+  "readme": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/main/README.md",
+  "last_update": 1749066569.0,
+  "versions": 2
 }
