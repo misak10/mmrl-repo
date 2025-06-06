@@ -1,7 +1,7 @@
 {
     "id": "PlayIntegrityFix",
     "enable": true,
-    "verified": false,
+    "verified": true,
     "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
     "license": "GPL-3.0",
     "homepage": "",
@@ -9,5 +9,8 @@
     "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
     "donate": "",
     "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
-    "version": "v19.1"
+    "version": "v19.1",
+    "antifeatures": [
+        "nosourcesince"
+    ]
 }
