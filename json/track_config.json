@@ -409,6 +409,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/osm0sis/PlayIntegrityFork",
+            "module_id": "playintegrityfork",
+            "update_to": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/refs/heads/main/update.json",
+            "source": "https://github.com/osm0sis/PlayIntegrityFork",
+            "support": "https://github.com/osm0sis/PlayIntegrityFork/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
