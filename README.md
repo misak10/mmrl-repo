@@ -1,7 +1,7 @@
 # Misaki-Modules Repo
 
 <div align="center">
-    <img src="src/logo-red.png" alt="Misaki-Module Repo" width="50%">
+    <img src="src/logo-red.png" alt="Misaki-Module Repo" width="100%">
 </div>
 
 <div align="center">
