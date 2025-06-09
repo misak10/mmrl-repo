@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.52_2052.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.52_2052.md",
       "size": 7722335
+    },
+    {
+      "timestamp": 1749472473.581115,
+      "version": "v2.53",
+      "versionCode": 2053,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.53_2053.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.53_2053.md",
+      "size": 7453690
     }
   ]
 }

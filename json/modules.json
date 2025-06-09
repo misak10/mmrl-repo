@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1749450369.274787
+    "timestamp": 1749472480.055752
   },
   "modules": [
     {
@@ -1013,8 +1013,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v2.52",
-      "versionCode": 2052,
+      "version": "v2.53",
+      "versionCode": 2053,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1026,7 +1026,8 @@
       "icon": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/cubic_logo.png",
       "verified": false,
       "added": 0,
-      "size": 7722335,
+      "timestamp": 1749472473.581115,
+      "size": 7453690,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1050,6 +1051,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.52_2052.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.52_2052.md",
           "size": 7722335
+        },
+        {
+          "timestamp": 1749472473.581115,
+          "version": "v2.53",
+          "versionCode": 2053,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.53_2053.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.53_2053.md",
+          "size": 7453690
         }
       ]
     },
@@ -1401,8 +1410,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-453",
-      "versionCode": 453,
+      "version": "canary-454",
+      "versionCode": 454,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1410,8 +1419,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1749384511.0,
-      "size": 4179249,
+      "timestamp": 1749465288.0,
+      "size": 4179343,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1428,14 +1437,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1748779577.0,
-          "version": "canary-448",
-          "versionCode": 448,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-448_448.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-448_448.md",
-          "size": 4235139
-        },
         {
           "timestamp": 1748849017.0,
           "version": "canary-449",
@@ -1475,6 +1476,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-453_453.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-453_453.md",
           "size": 4179249
+        },
+        {
+          "timestamp": 1749465288.0,
+          "version": "canary-454",
+          "versionCode": 454,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-454_454.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-454_454.md",
+          "size": 4179343
         }
       ]
     },
