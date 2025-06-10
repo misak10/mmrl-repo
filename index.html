@@ -3313,9 +3313,9 @@
                 let filtered = window.currentModules.filter(module => {
                     // 搜索条件匹配
                     const searchMatch = !searchTerm || 
-                        module.name.toLowerCase().includes(searchTerm) ||
-                        module.description.toLowerCase().includes(searchTerm) ||
-                        module.author.toLowerCase().includes(searchTerm);
+                        (module.name || '').toLowerCase().includes(searchTerm) ||
+                        (module.description || '').toLowerCase().includes(searchTerm) ||
+                        (module.author || '').toLowerCase().includes(searchTerm);
 
                     // 分类匹配 - 检查categories数组
                     const categoryMatch = !category || 
@@ -3505,9 +3505,9 @@
             let filtered = window.currentModules.filter(module => {
                 // 搜索条件匹配
                 const searchMatch = !searchTerm || 
-                    module.name.toLowerCase().includes(searchTerm) ||
-                    module.description.toLowerCase().includes(searchTerm) ||
-                    module.author.toLowerCase().includes(searchTerm);
+                    (module.name || '').toLowerCase().includes(searchTerm) ||
+                    (module.description || '').toLowerCase().includes(searchTerm) ||
+                    (module.author || '').toLowerCase().includes(searchTerm);
 
                 // 分类匹配
                 const categoryMatch = !category || 
