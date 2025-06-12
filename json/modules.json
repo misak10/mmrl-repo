@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1749731648.388564
+    "timestamp": 1749752567.761347
   },
   "modules": [
     {
@@ -122,8 +122,8 @@
     {
       "id": "Infamick_script",
       "name": "Infamick Script",
-      "version": "v3.2",
-      "versionCode": 202504281,
+      "version": "v3.3",
+      "versionCode": 202506121,
       "author": "@Infamousmick",
       "description": "A powerful system utility script for rooted Android devices",
       "support": "https://github.com/Infamousmick/",
@@ -132,7 +132,8 @@
       "homepage": "https://github.com/Infamousmick/Infamick-script",
       "verified": false,
       "added": 0,
-      "size": 23330,
+      "timestamp": 1749748742.0,
+      "size": 23487,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA"
@@ -156,6 +157,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.md",
           "size": 23330
+        },
+        {
+          "timestamp": 1749748742.0,
+          "version": "v3.3",
+          "versionCode": 202506121,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.md",
+          "size": 23487
         }
       ]
     },
@@ -510,26 +519,21 @@
     {
       "id": "VoyagerKernel-beta",
       "name": "Voyager Kernel \u9644\u52a0\u6a21\u5757 Beta",
-      "version": "3.6.1-49ba4aba",
-      "versionCode": 368,
-      "author": "\u67da\u7a1a & The Voyager, \u611f\u8c22 Pandora Kernel Project \u7684\u8d21\u732e ",
-      "description": "\u4e3aVoyager Kernel\u9644\u52a0\u989d\u5916\u529f\u80fd\uff0c\u5df2\u5b89\u88c5\uff1a",
+      "version": "4.0.0-f5cd4cff",
+      "versionCode": 400,
+      "author": "\u67da\u7a1a & The Voyager",
+      "description": "\u4e3aVoyager Kernel\u9644\u52a0VK Slim WALT(5.15\u53ca\u4ee5\u4e0a)\u548cVK_EXT_GOV",
       "verified": false,
       "added": 0,
-      "size": 6207851,
+      "timestamp": 1749752565.20434,
+      "size": 856060,
       "permissions": [
         "magisk.permission.SERVICE",
-        "magisk.permission.POST_FS_DATA",
-        "magisk.permission.RESETPROP",
-        "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
+        "magisk.permission.ACTION"
       ],
       "features": {
         "service": true,
-        "post_fs_data": true,
-        "resetprop": true,
-        "action": true,
-        "webroot": true
+        "action": true
       },
       "track": {
         "type": "ONLINE_JSON",
@@ -539,14 +543,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1744474842.991039,
-          "version": "3.6.1-7d56a803",
-          "versionCode": 363,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-7d56a803_363.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-7d56a803_363.md",
-          "size": 5968835
-        },
         {
           "timestamp": 1744489105.560832,
           "version": "3.6.1-5f382150",
@@ -586,6 +582,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-979de310_368.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-979de310_368.md",
           "size": 6207851
+        },
+        {
+          "timestamp": 1749752565.20434,
+          "version": "3.6.1-49ba4aba",
+          "versionCode": 400,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-49ba4aba_400.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/VoyagerKernel-beta/3.6.1-49ba4aba_400.md",
+          "size": 856060
         }
       ]
     },

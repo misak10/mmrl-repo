@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.md",
       "size": 23330
+    },
+    {
+      "timestamp": 1749748742.0,
+      "version": "v3.3",
+      "versionCode": 202506121,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.md",
+      "size": 23487
     }
   ]
 }
