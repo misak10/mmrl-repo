@@ -25,6 +25,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.6_117.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.6_117.md",
       "size": 17846
+    },
+    {
+      "timestamp": 1749983406.0,
+      "version": "v1.18",
+      "versionCode": 118,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.18_118.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.18_118.md",
+      "size": 17900
     }
   ]
 }
