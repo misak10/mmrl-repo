@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1750098227.716377
+    "timestamp": 1750100373.190716
   },
   "modules": [
     {
@@ -132,7 +132,6 @@
       "homepage": "https://github.com/Infamousmick/Infamick-script",
       "verified": false,
       "added": 0,
-      "timestamp": 1749748742.0,
       "size": 23487,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -222,7 +221,6 @@
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
       "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
-      "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
       "verified": true,
       "added": 0,
@@ -245,9 +243,7 @@
         "type": "ONLINE_JSON",
         "added": null,
         "source": "https://github.com/chiteroman/PlayIntegrityFix",
-        "antifeatures": [
-          "nosourcesince"
-        ],
+        "antifeatures": null,
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/track.json"
       },
       "versions": [
@@ -525,7 +521,6 @@
       "description": "\u4e3aVoyager Kernel\u9644\u52a0VK Slim WALT(5.15\u53ca\u4ee5\u4e0a)\u548cVK_EXT_GOV",
       "verified": false,
       "added": 0,
-      "timestamp": 1750011664.905803,
       "size": 856110,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -956,7 +951,7 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.3.2",
+      "version": "v4.3.2",
       "versionCode": 432,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games to unlock max fps.",
@@ -965,7 +960,6 @@
       "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1749832114.0,
       "size": 2616807,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1039,7 +1033,6 @@
       "icon": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/cubic_logo.png",
       "verified": false,
       "added": 0,
-      "timestamp": 1750077327.578967,
       "size": 7532587,
       "track": {
         "type": "ONLINE_JSON",
@@ -1317,7 +1310,6 @@
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1749352699.0,
       "size": 445909,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1440,7 +1432,6 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1750061598.0,
       "size": 4247193,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1511,7 +1502,7 @@
     {
       "id": "playcurllnext",
       "name": "playcurlNEXT",
-      "version": "v1.18",
+      "version": "v1.8",
       "versionCode": 118,
       "author": "daboynb",
       "description": "Automatic fingerprint downloader for play integrity fix.",
@@ -1520,7 +1511,6 @@
       "readme": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1749983406.0,
       "size": 17900,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1584,7 +1574,6 @@
       "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1747424290.0,
       "size": 268323,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1766,6 +1755,49 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/systemless-hosts/17.2_172.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/systemless-hosts/17.2_172.md",
           "size": 1730042
+        }
+      ]
+    },
+    {
+      "id": "tcp_optimiser",
+      "name": "TCP Optimiser ",
+      "version": "2.1",
+      "versionCode": 13,
+      "author": "fatalcoder524",
+      "description": "TCP Optimisations & update tcp_cong_algo based on interface",
+      "support": "https://github.com/fatalcoder524/TCP_Optimiser_Module/issues",
+      "readme": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1749037449.0,
+      "size": 71673,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.RESETPROP",
+        "kernelsu.permission.WEBUI"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "resetprop": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/fatalcoder524/TCP_Optimiser_Module",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1749037449.0,
+          "version": "2.1",
+          "versionCode": 13,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.1_13.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.1_13.md",
+          "size": 71673
         }
       ]
     },
