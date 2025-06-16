@@ -419,6 +419,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/fatalcoder524/TCP_Optimiser_Module",
+            "module_id": "tcp_optimiser",
+            "update_to": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/refs/heads/main/update.json",
+            "source": "https://github.com/fatalcoder524/TCP_Optimiser_Module",
+            "support": "https://github.com/fatalcoder524/TCP_Optimiser_Module/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
