@@ -1,0 +1,13 @@
+{
+    "id": "tcp_optimiser",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/refs/heads/main/update.json",
+    "license": "",
+    "homepage": "",
+    "source": "https://github.com/fatalcoder524/TCP_Optimiser_Module",
+    "support": "https://github.com/fatalcoder524/TCP_Optimiser_Module/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/main/README.md",
+    "version": "2.1"
+}
