@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1750209589.542102
+    "timestamp": 1750227887.138768
   },
   "modules": [
     {
@@ -1423,8 +1423,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-457",
-      "versionCode": 457,
+      "version": "canary-458",
+      "versionCode": 458,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1432,7 +1432,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 4247193,
+      "timestamp": 1750222267.0,
+      "size": 4245278,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1449,14 +1450,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1749264818.0,
-          "version": "canary-451",
-          "versionCode": 452,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-451_452.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-451_452.md",
-          "size": 4208676
-        },
         {
           "timestamp": 1749384511.0,
           "version": "canary-453",
@@ -1496,6 +1489,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-457_457.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-457_457.md",
           "size": 4247193
+        },
+        {
+          "timestamp": 1750222267.0,
+          "version": "canary-457",
+          "versionCode": 458,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-457_458.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-457_458.md",
+          "size": 4245278
         }
       ]
     },
