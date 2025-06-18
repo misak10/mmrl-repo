@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1750227887.138768
+    "timestamp": 1750250110.230224
   },
   "modules": [
     {
@@ -1805,8 +1805,8 @@
     {
       "id": "trickystore",
       "name": "Tricky Store",
-      "version": "v1.2.1",
-      "versionCode": 158,
+      "version": "v1.3.0 (180-8acfa57-release)",
+      "versionCode": 180,
       "author": "5ec1cff",
       "description": "A trick of keystore",
       "categories": [
@@ -1817,7 +1817,8 @@
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 2350601,
+      "timestamp": 1750249151.0,
+      "size": 2694118,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1853,6 +1854,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_158-51390a7-release.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_158-51390a7-release.md",
           "size": 2350601
+        },
+        {
+          "timestamp": 1750249151.0,
+          "version": "v1.2.1",
+          "versionCode": 180,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_180.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_180.md",
+          "size": 2694118
         }
       ]
     },

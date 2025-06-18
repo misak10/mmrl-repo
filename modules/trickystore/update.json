@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_158-51390a7-release.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_158-51390a7-release.md",
       "size": 2350601
+    },
+    {
+      "timestamp": 1750249151.0,
+      "version": "v1.2.1",
+      "versionCode": 180,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_180.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_180.md",
+      "size": 2694118
     }
   ]
 }
