@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1750336481.571337
+    "timestamp": 1750357348.760086
   },
   "modules": [
     {
@@ -1432,8 +1432,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-458",
-      "versionCode": 458,
+      "version": "canary-459",
+      "versionCode": 459,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1441,8 +1441,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1750222267.0,
-      "size": 4245278,
+      "timestamp": 1750347093.0,
+      "size": 4245065,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1459,14 +1459,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1749384511.0,
-          "version": "canary-453",
-          "versionCode": 453,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-453_453.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-453_453.md",
-          "size": 4179249
-        },
         {
           "timestamp": 1749465288.0,
           "version": "canary-454",
@@ -1506,6 +1498,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-457_458.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-457_458.md",
           "size": 4245278
+        },
+        {
+          "timestamp": 1750347093.0,
+          "version": "canary-459",
+          "versionCode": 459,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-459_459.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-459_459.md",
+          "size": 4245065
         }
       ]
     },
