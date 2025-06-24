@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1750703042.097855
+    "timestamp": 1750728050.883643
   },
   "modules": [
     {
@@ -823,8 +823,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v2.0.4",
-      "versionCode": 204,
+      "version": "v2.0.5",
+      "versionCode": 205,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "support": "https://github.com/bindhosts/bindhosts/issues",
@@ -843,7 +843,8 @@
         "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
-      "size": 116655,
+      "timestamp": 1750727025.0,
+      "size": 116707,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -864,14 +865,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/bindhosts/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1741954274.0,
-          "version": "v1.9.9",
-          "versionCode": 199,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.9_199.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v1.9.9_199.md",
-          "size": 53454
-        },
         {
           "timestamp": 1742639470.0,
           "version": "v2.0.0",
@@ -911,6 +904,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.4_204.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.4_204.md",
           "size": 116655
+        },
+        {
+          "timestamp": 1750727025.0,
+          "version": "v2.0.5",
+          "versionCode": 205,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.5_205.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.5_205.md",
+          "size": 116707
         }
       ]
     },
