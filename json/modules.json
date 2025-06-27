@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1750987268.470637
+    "timestamp": 1751005533.67
   },
   "modules": [
     {
@@ -417,8 +417,8 @@
     {
       "id": "Uperf-Game-Turbo",
       "name": "Uperf Game Turbo",
-      "version": "1.43 based on uperf 904",
-      "versionCode": 250410,
+      "version": "\ufe0f1.44 based on uperf 904",
+      "versionCode": 250510,
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
@@ -426,7 +426,8 @@
       "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 1912987,
+      "timestamp": 1750991173.0,
+      "size": 1921401,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -476,6 +477,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.42_based_on_uperf_904_250410.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.42_based_on_uperf_904_250410.md",
           "size": 1912987
+        },
+        {
+          "timestamp": 1750991173.0,
+          "version": "1.43 based on uperf 904",
+          "versionCode": 250510,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.43_based_on_uperf_904_250510.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.43_based_on_uperf_904_250510.md",
+          "size": 1921401
         }
       ]
     },
