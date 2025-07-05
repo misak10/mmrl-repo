@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1751719084.671242
+    "timestamp": 1751740054.754806
   },
   "modules": [
     {
@@ -116,54 +116,6 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.4_24.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.4_24.md",
           "size": 8250
-        }
-      ]
-    },
-    {
-      "id": "Infamick_script",
-      "name": "Infamick Script",
-      "version": "v3.3",
-      "versionCode": 202506121,
-      "author": "@Infamousmick",
-      "description": "A powerful system utility script for rooted Android devices",
-      "support": "https://github.com/Infamousmick/",
-      "license": "GPL-3.0",
-      "readme": "https://raw.githubusercontent.com/Infamousmick/Infamick-script/main/README.md",
-      "homepage": "https://github.com/Infamousmick/Infamick-script",
-      "verified": false,
-      "added": 0,
-      "size": 23487,
-      "permissions": [
-        "magisk.permission.SERVICE",
-        "magisk.permission.POST_FS_DATA"
-      ],
-      "features": {
-        "service": true,
-        "post_fs_data": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/Infamousmick/Infamick-script",
-        "antifeatures": null,
-        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/infamick-script/track.json"
-      },
-      "versions": [
-        {
-          "timestamp": 1745851980.0,
-          "version": "v3.2",
-          "versionCode": 202504281,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.md",
-          "size": 23330
-        },
-        {
-          "timestamp": 1749748742.0,
-          "version": "v3.3",
-          "versionCode": 202506121,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.md",
-          "size": 23487
         }
       ]
     },
@@ -294,123 +246,6 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v19.0_19100.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/v19.0_19100.md",
           "size": 127130
-        }
-      ]
-    },
-    {
-      "id": "Re-Malwack",
-      "name": "Re-Malwack | Not just a normal ad-blocker module \u2728",
-      "version": "v6.0",
-      "versionCode": 600,
-      "author": "ZG089",
-      "description": "A fully-fledged ad-block module. Contains all your needs \u2728",
-      "categories": [
-        "Adblocking and Hosts Files",
-        "APatch",
-        "KernelSU",
-        "Magisk",
-        "Built Different",
-        "Protection",
-        "WebUI"
-      ],
-      "donate": "http://buymeacoffee.com/ZG089",
-      "support": "https://t.me/Re_Malwack",
-      "license": "GPL-3.0",
-      "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/refs/heads/main/README.md",
-      "icon": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/assets/logo.png",
-      "cover": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/assets/banner.png",
-      "verified": false,
-      "added": 0,
-      "size": 1759912,
-      "permissions": [
-        "magisk.permission.SERVICE",
-        "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
-      ],
-      "features": {
-        "service": true,
-        "action": true,
-        "webroot": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/ZG089/Re-Malwack",
-        "antifeatures": null,
-        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/re-malwack/track.json"
-      },
-      "versions": [
-        {
-          "timestamp": 1734878287.0,
-          "version": "v5.3.0",
-          "versionCode": 530,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v5.3.0_530.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v5.3.0_530.md",
-          "size": 47546
-        },
-        {
-          "timestamp": 1743478933.0,
-          "version": "v6.0",
-          "versionCode": 600,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.md",
-          "size": 1759912
-        }
-      ]
-    },
-    {
-      "id": "TA_utl",
-      "name": "Tricky Addon - Update Target List",
-      "version": "v4.0",
-      "versionCode": 538,
-      "author": "KOWX712",
-      "description": "A WebUI to conifgure tricky store target.txt ",
-      "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
-      "license": " GPL-3.0",
-      "readme": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/refs/heads/main/README.md",
-      "categories": [
-        "WebUI"
-      ],
-      "note": {
-        "message": "This module is not a part of the Tricky Store module. DO NOT report any issues to Tricky Store if encountered"
-      },
-      "verified": false,
-      "added": 0,
-      "timestamp": 1750335605.0,
-      "size": 4286527,
-      "permissions": [
-        "magisk.permission.SERVICE",
-        "magisk.permission.POST_FS_DATA",
-        "magisk.permission.ACTION"
-      ],
-      "features": {
-        "service": true,
-        "post_fs_data": true,
-        "action": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
-        "antifeatures": null,
-        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/track.json"
-      },
-      "versions": [
-        {
-          "timestamp": 1746893051.0,
-          "version": "v3.9",
-          "versionCode": 390,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v3.9_390.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v3.9_390.md",
-          "size": 1283556
-        },
-        {
-          "timestamp": 1750335605.0,
-          "version": "v4.0",
-          "versionCode": 538,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.0_538.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.0_538.md",
-          "size": 4286527
         }
       ]
     },
@@ -849,16 +684,16 @@
       "license": "WTFPL",
       "readme": "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/README.md",
       "verified": true,
+      "screenshots": [
+        "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/mmrl_manager.png",
+        "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/mmrl_webui.png",
+        "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
+      ],
       "categories": [
         "Adblocking and Hosts Files",
         "APatch",
         "KernelSU",
         "Magisk"
-      ],
-      "screenshots": [
-        "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/mmrl_manager.png",
-        "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/mmrl_webui.png",
-        "https://raw.githubusercontent.com/bindhosts/bindhosts/refs/heads/master/Documentation/screenshots/manager_action.png"
       ],
       "added": 0,
       "timestamp": 1750727025.0,
@@ -1072,10 +907,10 @@
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
       "license": "MIT",
       "readme": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/README.md",
+      "icon": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/cubic_logo.png",
       "categories": [
         "Adblocking and Hosts Files"
       ],
-      "icon": "https://raw.githubusercontent.com/Vaz15k/Cubic-AdBlock/cubic/docs/cubic_logo.png",
       "verified": false,
       "added": 0,
       "timestamp": 1751286890.07835,
@@ -1357,6 +1192,54 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.md",
           "size": 5667600
+        }
+      ]
+    },
+    {
+      "id": "infamick-script",
+      "name": "Infamick Script",
+      "version": "v3.3",
+      "versionCode": 202506121,
+      "author": "@Infamousmick",
+      "description": "A powerful system utility script for rooted Android devices",
+      "support": "https://github.com/Infamousmick/",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/Infamousmick/Infamick-script/main/README.md",
+      "homepage": "https://github.com/Infamousmick/Infamick-script",
+      "verified": false,
+      "added": 0,
+      "size": 23487,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/Infamousmick/Infamick-script",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/infamick-script/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1745851980.0,
+          "version": "v3.2",
+          "versionCode": 202504281,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.2_202504281.md",
+          "size": 23330
+        },
+        {
+          "timestamp": 1749748742.0,
+          "version": "v3.3",
+          "versionCode": 202506121,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/infamick-script/v3.3_202506121.md",
+          "size": 23487
         }
       ]
     },
@@ -1667,6 +1550,67 @@
       ]
     },
     {
+      "id": "re-malwack",
+      "name": "Re-Malwack | Not just a normal ad-blocker module \u2728",
+      "version": "v6.0",
+      "versionCode": 600,
+      "author": "ZG089",
+      "description": "A fully-fledged ad-block module. Contains all your needs \u2728",
+      "categories": [
+        "Adblocking and Hosts Files",
+        "APatch",
+        "KernelSU",
+        "Magisk",
+        "Built Different",
+        "Protection",
+        "WebUI"
+      ],
+      "donate": "http://buymeacoffee.com/ZG089",
+      "support": "https://t.me/Re_Malwack",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/refs/heads/main/README.md",
+      "cover": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/assets/banner.png",
+      "icon": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/assets/logo.png",
+      "verified": false,
+      "added": 0,
+      "size": 1759912,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.ACTION",
+        "kernelsu.permission.WEBUI"
+      ],
+      "features": {
+        "service": true,
+        "action": true,
+        "webroot": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/ZG089/Re-Malwack",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/re-malwack/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1734878287.0,
+          "version": "v5.3.0",
+          "versionCode": 530,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v5.3.0_530.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v5.3.0_530.md",
+          "size": 47546
+        },
+        {
+          "timestamp": 1743478933.0,
+          "version": "v6.0",
+          "versionCode": 600,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.md",
+          "size": 1759912
+        }
+      ]
+    },
+    {
       "id": "rezygisk",
       "name": "ReZygisk",
       "version": "v1.0.0-rc.2",
@@ -1909,6 +1853,62 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.1_13.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.1_13.md",
           "size": 71673
+        }
+      ]
+    },
+    {
+      "id": "tricky-target-list",
+      "name": "Tricky Addon - Update Target List",
+      "version": "v4.0",
+      "versionCode": 538,
+      "author": "KOWX712",
+      "description": "A WebUI to conifgure tricky store target.txt ",
+      "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
+      "license": " GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/refs/heads/main/README.md",
+      "categories": [
+        "WebUI"
+      ],
+      "note": {
+        "message": "This module is not a part of the Tricky Store module. DO NOT report any issues to Tricky Store if encountered"
+      },
+      "verified": false,
+      "added": 0,
+      "timestamp": 1750335605.0,
+      "size": 4286527,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.ACTION"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "action": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1746893051.0,
+          "version": "v3.9",
+          "versionCode": 390,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v3.9_390.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v3.9_390.md",
+          "size": 1283556
+        },
+        {
+          "timestamp": 1750335605.0,
+          "version": "v4.0",
+          "versionCode": 538,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.0_538.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.0_538.md",
+          "size": 4286527
         }
       ]
     },
