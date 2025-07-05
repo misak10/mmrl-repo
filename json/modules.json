@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1751696964.934031
+    "timestamp": 1751719084.671242
   },
   "modules": [
     {
@@ -979,17 +979,17 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.3.3",
-      "versionCode": 433,
+      "version": "4.3.4",
+      "versionCode": 434,
       "author": "AlirezaParsi",
-      "description": "Spoof your device for games to unlock max fps.",
+      "description": "Spoof your device for games/apps to unlock new features.",
       "support": "https://github.com/AlirezaParsi/COPG/issues",
       "license": "NOASSERTION",
       "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1750477396.0,
-      "size": 2611552,
+      "timestamp": 1751712073.0,
+      "size": 2610122,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.RESETPROP",
@@ -1051,6 +1051,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v4.3.2_433.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v4.3.2_433.md",
           "size": 2611552
+        },
+        {
+          "timestamp": 1751712073.0,
+          "version": "4.3.4",
+          "versionCode": 434,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.3.4_434.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.3.4_434.md",
+          "size": 2610122
         }
       ]
     },
