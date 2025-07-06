@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1751805503.583748
+    "timestamp": 1751826509.947092
   },
   "modules": [
     {
@@ -1733,8 +1733,8 @@
     {
       "id": "susfs4ksu",
       "name": "SUSFS-FOR-KERNELSU",
-      "version": "v1.5.2-R19",
-      "versionCode": 105002019,
+      "version": "v1.5.2-R20",
+      "versionCode": 105002020,
       "author": "sidex15 & simonpunk",
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
@@ -1742,8 +1742,8 @@
       "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1749780721.0,
-      "size": 1276688,
+      "timestamp": 1751808417.0,
+      "size": 1354745,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1775,6 +1775,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R19_105002019.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R19_105002019.md",
           "size": 1276688
+        },
+        {
+          "timestamp": 1751808417.0,
+          "version": "v1.5.2-R20",
+          "versionCode": 105002020,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R20_105002020.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R20_105002020.md",
+          "size": 1354745
         }
       ]
     },
