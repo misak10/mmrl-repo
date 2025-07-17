@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.9_521.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.9_521.md",
       "size": 3561924
+    },
+    {
+      "timestamp": 1752661306.0,
+      "version": "v1.2.9",
+      "versionCode": 534,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.9_534.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.9_534.md",
+      "size": 5072373
     }
   ]
 }
