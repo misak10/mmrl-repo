@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1752949776.053947
+    "timestamp": 1752976048.484437
   },
   "modules": [
     {
@@ -771,8 +771,8 @@
     {
       "id": "box_for_magisk",
       "name": "Box for Magisk/KernelSU",
-      "version": "v1.8",
-      "versionCode": 20241222,
+      "version": "v1.9.0",
+      "versionCode": 20250719,
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
       "categories": [
@@ -784,7 +784,8 @@
       "readme": "https://raw.githubusercontent.com/taamarin/box_for_magisk/main/README.md",
       "verified": true,
       "added": 0,
-      "size": 60144,
+      "timestamp": 1752967509.0,
+      "size": 74703,
       "permissions": [
         "magisk.permission.ACTION",
         "kernelsu.permission.WEBUI"
@@ -808,6 +809,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20241222.md",
           "size": 60144
+        },
+        {
+          "timestamp": 1752967509.0,
+          "version": "v1.8",
+          "versionCode": 20250719,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20250719.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20250719.md",
+          "size": 74703
         }
       ]
     },
