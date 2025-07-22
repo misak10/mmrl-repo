@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1753188233.500283
+    "timestamp": 1753209178.074115
   },
   "modules": [
     {
@@ -616,15 +616,16 @@
     {
       "id": "asoulopt",
       "name": "A-SOUL Games Optimization",
-      "version": "Enanan",
-      "versionCode": 275,
+      "version": "Mafuyu",
+      "versionCode": 276,
       "author": "nakixii",
       "description": "Game threads tweaker for Android.",
       "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 14722,
+      "timestamp": 1753203209.0,
+      "size": 15064,
       "permissions": [
         "magisk.permission.SERVICE"
       ],
@@ -670,6 +671,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Mizuki_275.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Mizuki_275.md",
           "size": 14722
+        },
+        {
+          "timestamp": 1753203209.0,
+          "version": "Enanan",
+          "versionCode": 276,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Enanan_276.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Enanan_276.md",
+          "size": 15064
         }
       ]
     },
