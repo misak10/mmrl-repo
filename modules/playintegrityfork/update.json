@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_130000.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_130000.md",
       "size": 268323
+    },
+    {
+      "timestamp": 1753754975.0,
+      "version": "v13",
+      "versionCode": 140000,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_140000.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_140000.md",
+      "size": 258159
     }
   ]
 }
