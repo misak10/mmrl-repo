@@ -1,0 +1,14 @@
+{
+  "id": "shamiko",
+  "timestamp": 1750246628.0,
+  "versions": [
+    {
+      "timestamp": 1750246628.0,
+      "version": "1.2.9.1 (534-b8e7e21-release)",
+      "versionCode": 534,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/shamiko/1.2.9.1_534-b8e7e21-release.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/shamiko/1.2.9.1_534-b8e7e21-release.md",
+      "size": 6523936
+    }
+  ]
+}
