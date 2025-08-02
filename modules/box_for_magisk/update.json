@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20250719.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.8_20250719.md",
       "size": 74703
+    },
+    {
+      "timestamp": 1754119622.0,
+      "version": "v1.9.1",
+      "versionCode": 20250802,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.9.1_20250802.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/box_for_magisk/v1.9.1_20250802.md",
+      "size": 74655
     }
   ]
 }
