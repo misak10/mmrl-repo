@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1754159444.825872
+    "timestamp": 1754185787.738966
   },
   "modules": [
     {
@@ -566,8 +566,8 @@
     {
       "id": "adguardhome",
       "name": "AdGuardHome for Root",
-      "version": "20250725",
-      "versionCode": 41,
+      "version": "20250803",
+      "versionCode": 42,
       "author": "twoone3",
       "description": "none",
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
@@ -575,8 +575,8 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1753406586.0,
-      "size": 10029775,
+      "timestamp": 1754183897.0,
+      "size": 10019264,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION",
@@ -626,6 +626,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250725_41.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250725_41.md",
           "size": 10029775
+        },
+        {
+          "timestamp": 1754183897.0,
+          "version": "20250803",
+          "versionCode": 42,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250803_42.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250803_42.md",
+          "size": 10019264
         }
       ]
     },
