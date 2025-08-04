@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1754311149.4312
+    "timestamp": 1754332056.794361
   },
   "modules": [
     {
@@ -1219,14 +1219,15 @@
     {
       "id": "hydro-br-leur",
       "name": "Hydrostellaire \u6ca8\u83b9",
-      "version": "Essonne",
-      "versionCode": 1000,
+      "version": "\u272eAuvergne\u272e",
+      "versionCode": 1016,
       "author": "AB & Ray",
       "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
       "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 5667600,
+      "timestamp": 1754316607.0,
+      "size": 5787982,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1242,6 +1243,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1000.md",
           "size": 5667600
+        },
+        {
+          "timestamp": 1754316607.0,
+          "version": "Essonne",
+          "versionCode": 1016,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.md",
+          "size": 5787982
         }
       ]
     },
