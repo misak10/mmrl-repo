@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1754893693.76978
+    "timestamp": 1754915859.74784
   },
   "modules": [
     {
@@ -950,8 +950,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v2.61",
-      "versionCode": 2061,
+      "version": "v2.62",
+      "versionCode": 2062,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -963,8 +963,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1754311148.840915,
-      "size": 7971788,
+      "timestamp": 1754915859.04468,
+      "size": 8104375,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -973,14 +973,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1751286890.07835,
-          "version": "v2.56",
-          "versionCode": 2056,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.56_2056.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.56_2056.md",
-          "size": 7571973
-        },
         {
           "timestamp": 1751891705.635695,
           "version": "v2.57",
@@ -1020,6 +1012,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.61_2061.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.61_2061.md",
           "size": 7971788
+        },
+        {
+          "timestamp": 1754915859.04468,
+          "version": "v2.62",
+          "versionCode": 2062,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.62_2062.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.62_2062.md",
+          "size": 8104375
         }
       ]
     },
