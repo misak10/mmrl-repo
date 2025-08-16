@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1755282270.574077
+    "timestamp": 1755307066.177968
   },
   "modules": [
     {
@@ -864,8 +864,8 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.3.5",
-      "versionCode": 435,
+      "version": "4.3.6",
+      "versionCode": 436,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games/apps to unlock new features.",
       "support": "https://github.com/AlirezaParsi/COPG/issues",
@@ -873,8 +873,8 @@
       "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1753469846.0,
-      "size": 2611220,
+      "timestamp": 1755282360.0,
+      "size": 2609632,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.RESETPROP",
@@ -897,14 +897,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/copg/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1745871940.0,
-          "version": "v3.3.4",
-          "versionCode": 402,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v3.3.4_402.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v3.3.4_402.md",
-          "size": 2591930
-        },
         {
           "timestamp": 1747121683.0,
           "version": "v4.0.2",
@@ -944,6 +936,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.3.5_435.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.3.5_435.md",
           "size": 2611220
+        },
+        {
+          "timestamp": 1755282360.0,
+          "version": "4.3.6",
+          "versionCode": 436,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.3.6_436.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.3.6_436.md",
+          "size": 2609632
         }
       ]
     },
