@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1755368471.54741
+    "timestamp": 1755394005.639736
   },
   "modules": [
     {
@@ -1728,6 +1728,49 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_390.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_390.md",
           "size": 436048
+        }
+      ]
+    },
+    {
+      "id": "shamiko",
+      "name": "Shamiko",
+      "version": "v1.2.5 (414)",
+      "versionCode": 414,
+      "author": "LSPosed Developers",
+      "description": "\u3053\u308c\u3067\u52dd\u3063\u305f\u3068\u601d\u3046\u306a\u3088\u2015\u2015\u2015!!",
+      "support": "https://github.com/LSPosed/LSPosed.github.io/issues",
+      "readme": "https://raw.githubusercontent.com/LSPosed/LSPosed.github.io/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1750246628.0,
+      "size": 6523936,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.SEPOLICY",
+        "magisk.permission.ZYGISK"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "sepolicy": true,
+        "zygisk": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/LSPosed/LSPosed.github.io",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/shamiko/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1750246628.0,
+          "version": "1.2.9.1 (534-b8e7e21-release)",
+          "versionCode": 534,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/shamiko/1.2.9.1_534-b8e7e21-release.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/shamiko/1.2.9.1_534-b8e7e21-release.md",
+          "size": 6523936
         }
       ]
     },
