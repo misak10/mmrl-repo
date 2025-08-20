@@ -41,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Enanan_276.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Enanan_276.md",
       "size": 15064
+    },
+    {
+      "timestamp": 1755660787.0,
+      "version": "Arona",
+      "versionCode": 277,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_277.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_277.md",
+      "size": 17363
     }
   ]
 }

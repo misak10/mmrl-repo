@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1755652551.834477
+    "timestamp": 1755671133.27201
   },
   "modules": [
     {
@@ -640,16 +640,16 @@
     {
       "id": "asoulopt",
       "name": "A-SOUL Games Optimization",
-      "version": "Mafuyu",
-      "versionCode": 276,
+      "version": "Arona",
+      "versionCode": 277,
       "author": "nakixii",
       "description": "Game threads tweaker for Android.",
       "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1753203209.0,
-      "size": 15064,
+      "timestamp": 1755660787.0,
+      "size": 17363,
       "permissions": [
         "magisk.permission.SERVICE"
       ],
@@ -703,6 +703,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Enanan_276.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Enanan_276.md",
           "size": 15064
+        },
+        {
+          "timestamp": 1755660787.0,
+          "version": "Arona",
+          "versionCode": 277,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_277.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_277.md",
+          "size": 17363
         }
       ]
     },
