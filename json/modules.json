@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1755825354.800354
+    "timestamp": 1755843890.906567
   },
   "modules": [
     {
@@ -1321,17 +1321,17 @@
     {
       "id": "lingeringsound_ads",
       "name": "\u53bb\u5e7f\u544a",
-      "version": "\u6a74\u70abv272",
-      "versionCode": 273,
+      "version": "\u6a74\u70abv273",
+      "versionCode": 274,
       "author": "@coolapk 10007",
-      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 21580 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
+      "description": "host+chattr+pm+iptables\u53bb\u5e7f\u544a\uff0chost\u89c4\u5219\u6765\u81ea\u7f51\u7edc+\u672c\u4eba\u624b\u52a8\u6293\u53d6\u3002\u5f53\u524d\u5df2\u7ecf\u7d2f\u79ef [ 21784 ] \u6761host\u89c4\u5219\uff0c\u5f53\u524d\u72b6\u6001[ \u7f51\u7edc\u57fa\u672c\u65e0\u5f71\u54cd ](\u8d85\u8fc75\u4e07\u6761\u4f1a\u8f7b\u5fae\u5f71\u54cd\u7f51\u7edc\uff0c\u8d85\u8fc750\u4e07\u6761\u7f51\u901f\u5219\u4f1a\u6709\u4e00\u5b9a\u5ef6\u8fdf\u3002)",
       "support": "https://github.com/lingeringsound/10007/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1753711689.0,
-      "size": 444867,
+      "timestamp": 1755837826.0,
+      "size": 446880,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION",
@@ -1353,14 +1353,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1745384222.0,
-          "version": "\u6a74\u70abv266",
-          "versionCode": 268,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v266_268.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v266_268.md",
-          "size": 442515
-        },
         {
           "timestamp": 1746772487.0,
           "version": "\u6a74\u70abv267",
@@ -1400,6 +1392,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v271_273.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v271_273.md",
           "size": 444867
+        },
+        {
+          "timestamp": 1755837826.0,
+          "version": "\u6a74\u70abv273",
+          "versionCode": 274,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v273_274.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/lingeringsound_ads/v273_274.md",
+          "size": 446880
         }
       ]
     },
@@ -1444,8 +1444,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-464",
-      "versionCode": 464,
+      "version": "canary-465",
+      "versionCode": 465,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1453,8 +1453,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1752847851.0,
-      "size": 4336472,
+      "timestamp": 1755841513.0,
+      "size": 4344494,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1471,14 +1471,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1750347093.0,
-          "version": "canary-459",
-          "versionCode": 459,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-459_459.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-459_459.md",
-          "size": 4245065
-        },
         {
           "timestamp": 1751202941.0,
           "version": "canary-460",
@@ -1518,6 +1510,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-464_464.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-464_464.md",
           "size": 4336472
+        },
+        {
+          "timestamp": 1755841513.0,
+          "version": "canary-465",
+          "versionCode": 465,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-465_465.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-465_465.md",
+          "size": 4344494
         }
       ]
     },
