@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1757830862.615429
+    "timestamp": 1757852897.41505
   },
   "modules": [
     {
@@ -905,8 +905,8 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.5.1",
-      "versionCode": 451,
+      "version": "4.5.2",
+      "versionCode": 452,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games/apps to unlock new features.",
       "support": "https://t.me/TheAOSP",
@@ -926,7 +926,13 @@
         "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/screenshots/Screenshot_20250913-211418_WebUI%20X.png",
         "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/screenshots/Screenshot_20250913-211454_WebUI%20X.png",
         "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/screenshots/Screenshot_20250913-211502_WebUI%20X.png",
-        "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/screenshots/Screenshot_20250913-213048_WebUI%20X.png"
+        "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/screenshots/Screenshot_20250913-213048_WebUI%20X.png",
+        "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/screenshots/Screenshot_20250913-211818_WebUI%20X.png",
+        "https://private-user-images.githubusercontent.com/29276037/437982309-735aa872-fbf0-4cd1-8299-1989c08b9b80.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc4NDQwMjIsIm5iZiI6MTc1Nzg0MzcyMiwicGF0aCI6Ii8yOTI3NjAzNy80Mzc5ODIzMDktNzM1YWE4NzItZmJmMC00Y2QxLTgyOTktMTk4OWMwOGI5YjgwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE0VDA5NTUyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM3OGU5ZjdjODRkNTEwODlkYmIxMmI5NDgyZTBhOTNlNGJkODc3NTgyNzg0N2E0ZGViM2EwYWE3YjBjZDZlMjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ZiiQNQJGPtXdmZBvP6iaIejBySBNLsN9nREdZ0xoZKE",
+        "https://private-user-images.githubusercontent.com/29276037/437982409-9a9fd8b2-7449-404f-888a-dedeefbe670d.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc4NDQxMjYsIm5iZiI6MTc1Nzg0MzgyNiwicGF0aCI6Ii8yOTI3NjAzNy80Mzc5ODI0MDktOWE5ZmQ4YjItNzQ0OS00MDRmLTg4OGEtZGVkZWVmYmU2NzBkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE0VDA5NTcwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE2ZmViOTY1NTQ0OTRlNzEyYmUxY2IzNmE0MTAzOGNjNzU1ZGEwNGQ2MThhNGY1ZGRlZTYyYTM5YTNjMzU1MmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.c6DyNjJ35E1I-4zFFnYqZYaRHOvUHv5Ni0OitwR9vZ0",
+        "https://private-user-images.githubusercontent.com/29276037/437982692-d9d3398f-5944-44e6-8df6-312e099c9738.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc4NDQxMjYsIm5iZiI6MTc1Nzg0MzgyNiwicGF0aCI6Ii8yOTI3NjAzNy80Mzc5ODI2OTItZDlkMzM5OGYtNTk0NC00NGU2LThkZjYtMzEyZTA5OWM5NzM4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE0VDA5NTcwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZmYjFlMTBjMjExNDU1MGYzNzdkYmJlNGVkOTU5MWZjMGIwYmFkMzhlMjE3NDlkMjMxYTgwZGE5MTdjNzMyNzEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.g89qJlEvXL0uplVaSUvTV3ZGHNGG3SXsubR37qBvRRc",
+        "https://github.com/AlirezaParsi/COPG/raw/JSON/screenshots/Screenshot_20250914-131838_Free%20Fire%20MAX.png?raw=true",
+        "https://github.com/AlirezaParsi/COPG/raw/JSON/screenshots/Screenshot_20250913-211947_Mobile%20Legends_%20Bang%20Bang.US.png?raw=true"
       ],
       "donate": "https://t.me/COPG_module/72",
       "note": {
@@ -934,8 +940,8 @@
         "message": "Spoof your device for games/apps to unlock new features."
       },
       "added": 0,
-      "timestamp": 1757787451.0,
-      "size": 2860241,
+      "timestamp": 1757846965.0,
+      "size": 2860633,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.RESETPROP",
@@ -958,14 +964,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/copg/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1750477396.0,
-          "version": "v4.3.2",
-          "versionCode": 433,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v4.3.2_433.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v4.3.2_433.md",
-          "size": 2611552
-        },
         {
           "timestamp": 1751712073.0,
           "version": "4.3.4",
@@ -1005,6 +1003,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.5.1_451.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.5.1_451.md",
           "size": 2860241
+        },
+        {
+          "timestamp": 1757846965.0,
+          "version": "4.5.2",
+          "versionCode": 452,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.5.2_452.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.5.2_452.md",
+          "size": 2860633
         }
       ]
     },
