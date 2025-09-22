@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1758478824.750442
+    "timestamp": 1758503883.241666
   },
   "modules": [
     {
@@ -1647,7 +1647,7 @@
       "id": "playintegrityfork",
       "name": "Play Integrity Fork",
       "version": "v14",
-      "versionCode": 140000,
+      "versionCode": 141000,
       "author": "osm0sis & chiteroman @ xda-developers",
       "description": "Fix <A13 Play Integrity DEVICE verdict",
       "support": "https://github.com/osm0sis/PlayIntegrityFork/issues",
@@ -1655,16 +1655,18 @@
       "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1753754975.0,
-      "size": 258159,
+      "timestamp": 1758474574.0,
+      "size": 250684,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
+        "magisk.permission.ZYGISK",
         "magisk.permission.ACTION"
       ],
       "features": {
         "service": true,
         "post_fs_data": true,
+        "zygisk": true,
         "action": true
       },
       "track": {
@@ -1690,6 +1692,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_140000.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_140000.md",
           "size": 258159
+        },
+        {
+          "timestamp": 1758474574.0,
+          "version": "v14",
+          "versionCode": 141000,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v14_141000.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v14_141000.md",
+          "size": 250684
         }
       ]
     },
