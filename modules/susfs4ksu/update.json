@@ -25,6 +25,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R21_105002021.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R21_105002021.md",
       "size": 1358238
+    },
+    {
+      "timestamp": 1758867240.0,
+      "version": "v1.5.2-R22",
+      "versionCode": 105002022,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R22_105002022.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R22_105002022.md",
+      "size": 1161002
     }
   ]
 }
