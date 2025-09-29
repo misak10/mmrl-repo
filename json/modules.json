@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1759127170.070271
+    "timestamp": 1759149274.268113
   },
   "modules": [
     {
@@ -1025,8 +1025,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v2.67",
-      "versionCode": 2067,
+      "version": "v2.68",
+      "versionCode": 2068,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1038,8 +1038,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1758544436.007904,
-      "size": 6982336,
+      "timestamp": 1759149273.10697,
+      "size": 6017240,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1048,14 +1048,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1754915859.04468,
-          "version": "v2.62",
-          "versionCode": 2062,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.62_2062.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.62_2062.md",
-          "size": 8104375
-        },
         {
           "timestamp": 1756125274.798179,
           "version": "v2.63",
@@ -1095,6 +1087,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.67_2067.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.67_2067.md",
           "size": 6982336
+        },
+        {
+          "timestamp": 1759149273.10697,
+          "version": "v2.68",
+          "versionCode": 2068,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.68_2068.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.68_2068.md",
+          "size": 6017240
         }
       ]
     },
@@ -2426,6 +2426,7 @@
       "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md",
       "verified": false,
       "added": 0,
+      "timestamp": 1695131134.0,
       "size": 1070639,
       "permissions": [
         "magisk.permission.POST_FS_DATA",
@@ -2451,6 +2452,14 @@
           "versionCode": 319,
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_319.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_319.md",
+          "size": 1070639
+        },
+        {
+          "timestamp": 1695131134.0,
+          "version": "v13.5.1",
+          "versionCode": 534,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_534.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisksui/v13.5.1_534.md",
           "size": 1070639
         }
       ]
