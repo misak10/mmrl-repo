@@ -41,7 +41,7 @@ jobs:
     - name: Run update script
       id: update
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         python scripts/track_updates.py > update_log.txt
         if grep -q "No modules were updated" update_log.txt; then
