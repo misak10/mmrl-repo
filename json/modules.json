@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1759213494.146548
+    "timestamp": 1759926869.269374
   },
   "modules": [
     {
@@ -1025,8 +1025,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v2.68",
-      "versionCode": 2068,
+      "version": "v2.69",
+      "versionCode": 2069,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1038,8 +1038,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1759149273.10697,
-      "size": 6017240,
+      "timestamp": 1759754049.99537,
+      "size": 5759329,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1048,14 +1048,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1756125274.798179,
-          "version": "v2.63",
-          "versionCode": 2063,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.63_2063.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.63_2063.md",
-          "size": 8337350
-        },
         {
           "timestamp": 1756730054.691161,
           "version": "v2.64",
@@ -1095,6 +1087,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.68_2068.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.68_2068.md",
           "size": 6017240
+        },
+        {
+          "timestamp": 1759754049.99537,
+          "version": "v2.69",
+          "versionCode": 2069,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.69_2069.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.69_2069.md",
+          "size": 5759329
         }
       ]
     },
@@ -1257,8 +1257,8 @@
     {
       "id": "flagsecurepatcher",
       "name": "FlagSecurePatcher",
-      "version": "r15",
-      "versionCode": 15,
+      "version": "r16",
+      "versionCode": 16,
       "author": "j-hc",
       "description": "Prevent apps from blocking and listening to your screenshots",
       "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
@@ -1266,7 +1266,8 @@
       "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 4535597,
+      "timestamp": 1759670022.0,
+      "size": 4650325,
       "permissions": [
         "magisk.permission.POST_FS_DATA"
       ],
@@ -1288,6 +1289,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_15.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_15.md",
           "size": 4535597
+        },
+        {
+          "timestamp": 1759670022.0,
+          "version": "r15",
+          "versionCode": 16,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_16.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_16.md",
+          "size": 4650325
         }
       ]
     },
@@ -1862,8 +1871,8 @@
     {
       "id": "surfing",
       "name": "Surfing",
-      "version": "v7.5.5",
-      "versionCode": 1630,
+      "version": "v7.5.6",
+      "versionCode": 1632,
       "author": "GitMetaio",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "support": "https://github.com/MoGuangYu/Surfing/issues",
@@ -1871,7 +1880,8 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 33602010,
+      "timestamp": 1759672136.0,
+      "size": 35800560,
       "permissions": [
         "kernelsu.permission.WEBUI",
         "mmrl.permission.APKS"
@@ -1888,14 +1898,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/surfing/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1746998761.0,
-          "version": "v7.5.0",
-          "versionCode": 1623,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.0_1623.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.0_1623.md",
-          "size": 40305588
-        },
         {
           "timestamp": 1747225595.0,
           "version": "v7.5.1",
@@ -1935,6 +1937,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.5_1630.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.5_1630.md",
           "size": 33602010
+        },
+        {
+          "timestamp": 1759672136.0,
+          "version": "v7.5.5",
+          "versionCode": 1632,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.5_1632.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.5_1632.md",
+          "size": 35800560
         }
       ]
     },
