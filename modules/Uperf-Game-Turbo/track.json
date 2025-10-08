@@ -1,12 +1,13 @@
 {
-  "id": "Uperf-Game-Turbo",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://github.com/yinwanxi/Uperf-Game-Turbo/raw/refs/heads/master/version.json",
-  "license": "Apache-2.0",
-  "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
-  "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
-  "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
-  "last_update": 1757697604.0,
-  "versions": 6
+    "id": "Uperf-Game-Turbo",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://github.com/yinwanxi/Uperf-Game-Turbo/raw/refs/heads/master/version.json",
+    "license": "Apache-2.0",
+    "homepage": "",
+    "source": "https://github.com/yinwanxi/Uperf-Game-Turbo",
+    "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
+    "version": "1.46 based on uperf 904"
 }

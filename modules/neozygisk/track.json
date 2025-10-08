@@ -1,0 +1,13 @@
+{
+    "id": "neozygisk",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/NeoZygisk/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/JingMatrix/NeoZygisk",
+    "support": "https://github.com/JingMatrix/NeoZygisk/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/JingMatrix/NeoZygisk/main/README.md",
+    "version": "v2.2"
+}
