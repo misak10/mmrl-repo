@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1759932239.448937
+    "timestamp": 1759932591.701628
   },
   "modules": [
     {
@@ -94,7 +94,6 @@
       "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1757170951.0,
       "size": 7939,
       "permissions": [
         "magisk.permission.RESETPROP"
@@ -261,7 +260,7 @@
     {
       "id": "Uperf-Game-Turbo",
       "name": "Uperf Game Turbo",
-      "version": "\ufe0f1.46 based on uperf 904",
+      "version": "1.46 based on uperf 904",
       "versionCode": 250805,
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
@@ -270,7 +269,6 @@
       "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1757697604.0,
       "size": 1938688,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -584,7 +582,6 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1758467949.0,
       "size": 10031359,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -665,7 +662,6 @@
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1755660787.0,
       "size": 17363,
       "permissions": [
         "magisk.permission.SERVICE"
@@ -754,7 +750,6 @@
         "Magisk"
       ],
       "added": 0,
-      "timestamp": 1756032424.0,
       "size": 123025,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -833,16 +828,11 @@
       "versionCode": 20250905,
       "author": "taamarin.t.me",
       "description": "use sing-box, clash, v2ray, hysteria and xray for tunnel proxy on android device",
-      "categories": [
-        "Script",
-        "Utility"
-      ],
       "support": "https://github.com/taamarin/box_for_magisk/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/taamarin/box_for_magisk/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1757076322.0,
       "size": 76249,
       "permissions": [
         "magisk.permission.ACTION",
@@ -913,7 +903,7 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.5.5",
+      "version": "v4.5.5",
       "versionCode": 455,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games/apps to unlock new features.",
@@ -948,7 +938,6 @@
         "message": "Spoof your device for games/apps to unlock new features."
       },
       "added": 0,
-      "timestamp": 1758388376.0,
       "size": 1537893,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1038,7 +1027,6 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1759754049.99537,
       "size": 5759329,
       "track": {
         "type": "ONLINE_JSON",
@@ -1266,7 +1254,6 @@
       "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1759670022.0,
       "size": 4650325,
       "permissions": [
         "magisk.permission.POST_FS_DATA"
@@ -1303,14 +1290,13 @@
     {
       "id": "hydro-br-leur",
       "name": "Hydrostellaire \u6ca8\u83b9",
-      "version": "\u272eAuvergne\u272e",
+      "version": "Auvergne",
       "versionCode": 1016,
       "author": "AB & Ray",
       "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
       "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1754316607.0,
       "size": 5787982,
       "track": {
         "type": "ONLINE_JSON",
@@ -1398,7 +1384,6 @@
       "readme": "https://raw.githubusercontent.com/lingeringsound/10007/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1755837826.0,
       "size": 446880,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1472,6 +1457,50 @@
       ]
     },
     {
+      "id": "neozygisk",
+      "name": "NeoZygisk",
+      "version": "v2.2 (266-559fc1d-debug)",
+      "versionCode": 266,
+      "author": "JingMatrix",
+      "description": "Zygote injection with ptrace.",
+      "support": "https://github.com/JingMatrix/NeoZygisk/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/JingMatrix/NeoZygisk/main/README.md",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1757862998.0,
+      "size": 4664481,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.POST_FS_DATA",
+        "magisk.permission.SEPOLICY",
+        "magisk.permission.ACTION"
+      ],
+      "features": {
+        "service": true,
+        "post_fs_data": true,
+        "sepolicy": true,
+        "action": true
+      },
+      "track": {
+        "type": "ONLINE_JSON",
+        "added": null,
+        "source": "https://github.com/JingMatrix/NeoZygisk",
+        "antifeatures": null,
+        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/neozygisk/track.json"
+      },
+      "versions": [
+        {
+          "timestamp": 1757862998.0,
+          "version": "v2.2",
+          "versionCode": 266,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/neozygisk/v2.2_266.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/neozygisk/v2.2_266.md",
+          "size": 4664481
+        }
+      ]
+    },
+    {
       "id": "open_webview",
       "name": "Open Webview",
       "version": "v2.5.2",
@@ -1521,7 +1550,6 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1758549439.0,
       "size": 4359058,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1664,7 +1692,6 @@
       "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1758474574.0,
       "size": 250684,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1785,7 +1812,6 @@
       "readme": "https://raw.githubusercontent.com/PerformanC/ReZygisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1752459593.0,
       "size": 436048,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1834,9 +1860,8 @@
       "description": "\u3053\u308c\u3067\u52dd\u3063\u305f\u3068\u601d\u3046\u306a\u3088\u2015\u2015\u2015!!",
       "support": "https://github.com/LSPosed/LSPosed.github.io/issues",
       "readme": "https://raw.githubusercontent.com/LSPosed/LSPosed.github.io/main/README.md",
-      "verified": false,
+      "verified": true,
       "added": 0,
-      "timestamp": 1750246628.0,
       "size": 6523936,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1878,9 +1903,8 @@
       "support": "https://github.com/MoGuangYu/Surfing/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
-      "verified": false,
+      "verified": true,
       "added": 0,
-      "timestamp": 1759672136.0,
       "size": 35800560,
       "permissions": [
         "kernelsu.permission.WEBUI",
@@ -1960,7 +1984,6 @@
       "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1758867240.0,
       "size": 1161002,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2068,7 +2091,6 @@
       "readme": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1749037449.0,
       "size": 71673,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2118,7 +2140,6 @@
       },
       "verified": false,
       "added": 0,
-      "timestamp": 1753440707.0,
       "size": 4300641,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2167,19 +2188,14 @@
     {
       "id": "trickystore",
       "name": "Tricky Store",
-      "version": "v1.3.0 (180-8acfa57-release)",
+      "version": "v1.3.0",
       "versionCode": 180,
       "author": "5ec1cff",
       "description": "A trick of keystore",
-      "categories": [
-        "Network",
-        "Script"
-      ],
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
-      "verified": false,
+      "verified": true,
       "added": 0,
-      "timestamp": 1750249151.0,
       "size": 2694118,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2369,16 +2385,16 @@
     {
       "id": "zygisknext",
       "name": "Zygisk Next",
-      "version": "1.2.9.1 (534-b8e7e21-release)",
-      "versionCode": 534,
+      "version": "1.3.0-RC2 (606-b6f3a4a-release)",
+      "versionCode": 606,
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1752661306.0,
-      "size": 5072373,
+      "timestamp": 1759842129.0,
+      "size": 6254071,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2414,6 +2430,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.9_534.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.2.9_534.md",
           "size": 5072373
+        },
+        {
+          "timestamp": 1759842129.0,
+          "version": "v1.3.0-RC2",
+          "versionCode": 606,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.3.0-RC2_606.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.3.0-RC2_606.md",
+          "size": 6254071
         }
       ]
     },
@@ -2424,19 +2448,11 @@
       "versionCode": 319,
       "author": "Rikka",
       "description": "Modern superuser interface implementation. This module requires Magisk 24.0+ and Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
-      "categories": [
-        "Utility",
-        "Network",
-        "Debug",
-        "Script",
-        "Theme"
-      ],
       "support": "https://github.com/RikkaApps/Sui/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/RikkaApps/Sui/main/README.md",
-      "verified": false,
+      "verified": true,
       "added": 0,
-      "timestamp": 1695131134.0,
       "size": 1070639,
       "permissions": [
         "magisk.permission.POST_FS_DATA",

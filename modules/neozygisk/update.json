@@ -1,0 +1,14 @@
+{
+  "id": "neozygisk",
+  "timestamp": 1757862998.0,
+  "versions": [
+    {
+      "timestamp": 1757862998.0,
+      "version": "v2.2",
+      "versionCode": 266,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/neozygisk/v2.2_266.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/neozygisk/v2.2_266.md",
+      "size": 4664481
+    }
+  ]
+}
