@@ -13,7 +13,7 @@
         {
             "url": "https://github.com/Dr-TSNG/ZygiskNext",
             "module_id": "zygisknext",
-            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ZygiskNext/update.json",
+            "update_to": "https://api.nullptr.icu/android/zygisk-next/static/update.json",
             "source": "https://github.com/Dr-TSNG/ZygiskNext",
             "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
             "donate": "",
@@ -276,6 +276,16 @@
             "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/ReZygisk/update.json",
             "source": "https://github.com/PerformanC/ReZygisk",
             "support": "https://github.com/PerformanC/ReZygisk/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
+        },
+        {
+            "url": "https://github.com/JingMatrix/NeoZygisk",
+            "module_id": "neozygisk",
+            "update_to": "https://raw.githubusercontent.com/misak10/mmrl-update/refs/heads/main/src/NeoZygisk/update.json",
+            "source": "https://github.com/JingMatrix/NeoZygisk",
+            "support": "https://github.com/JingMatrix/NeoZygisk/issues",
             "donate": "",
             "enable": true,
             "verified": false
