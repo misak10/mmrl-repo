@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_16.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_16.md",
       "size": 4650325
+    },
+    {
+      "timestamp": 1759957318.0,
+      "version": "r16",
+      "versionCode": 17,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r16_17.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r16_17.md",
+      "size": 4653307
     }
   ]
 }

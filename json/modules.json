@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1759947866.308782
+    "timestamp": 1759972368.277273
   },
   "modules": [
     {
@@ -1245,8 +1245,8 @@
     {
       "id": "flagsecurepatcher",
       "name": "FlagSecurePatcher",
-      "version": "r16",
-      "versionCode": 16,
+      "version": "r17",
+      "versionCode": 17,
       "author": "j-hc",
       "description": "Prevent apps from blocking and listening to your screenshots",
       "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
@@ -1254,7 +1254,8 @@
       "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 4650325,
+      "timestamp": 1759957318.0,
+      "size": 4653307,
       "permissions": [
         "magisk.permission.POST_FS_DATA"
       ],
@@ -1284,6 +1285,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_16.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r15_16.md",
           "size": 4650325
+        },
+        {
+          "timestamp": 1759957318.0,
+          "version": "r16",
+          "versionCode": 17,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r16_17.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/flagsecurepatcher/r16_17.md",
+          "size": 4653307
         }
       ]
     },

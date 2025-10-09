@@ -1,13 +1,12 @@
 {
-    "id": "flagsecurepatcher",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/refs/heads/master/update.json",
-    "license": "Apache-2.0",
-    "homepage": "",
-    "source": "https://github.com/j-hc/FlagSecurePatcher",
-    "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
-    "version": "r16"
+  "id": "flagsecurepatcher",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/refs/heads/master/update.json",
+  "license": "Apache-2.0",
+  "source": "https://github.com/j-hc/FlagSecurePatcher",
+  "support": "https://github.com/j-hc/FlagSecurePatcher/issues",
+  "readme": "https://raw.githubusercontent.com/j-hc/FlagSecurePatcher/main/README.md",
+  "last_update": 1759957318.0,
+  "versions": 3
 }
