@@ -3,14 +3,6 @@
   "timestamp": 1737731988.0,
   "versions": [
     {
-      "timestamp": 1737731988.0,
-      "version": "v4.4.0",
-      "versionCode": 440,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.4.0_440.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.4.0_440.md",
-      "size": 1295125
-    },
-    {
       "timestamp": 1737878739.0,
       "version": "v4.5.0",
       "versionCode": 450,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.md",
       "size": 1931178
+    },
+    {
+      "timestamp": 1760093529.0,
+      "version": "v4.9.0",
+      "versionCode": 409001,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.9.0_409001.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.9.0_409001.md",
+      "size": 1968964
     }
   ]
 }

@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1760077484.186932
+    "timestamp": 1760099632.357674
   },
   "modules": [
     {
@@ -1133,8 +1133,8 @@
     {
       "id": "fas-rs",
       "name": "fas-rs",
-      "version": "v4.9.0",
-      "versionCode": 490,
+      "version": "v4.9.1",
+      "versionCode": 409001,
       "author": "shadow3",
       "description": "Frame aware scheduling for android. Requires kernel ebpf support.",
       "support": "https://github.com/shadow3aaa/fas-rs/issues",
@@ -1142,7 +1142,8 @@
       "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 1931178,
+      "timestamp": 1760093529.0,
+      "size": 1968964,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.RESETPROP",
@@ -1161,14 +1162,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/fas-rs/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1737731988.0,
-          "version": "v4.4.0",
-          "versionCode": 440,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.4.0_440.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.4.0_440.md",
-          "size": 1295125
-        },
         {
           "timestamp": 1737878739.0,
           "version": "v4.5.0",
@@ -1208,6 +1201,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.8.0_490.md",
           "size": 1931178
+        },
+        {
+          "timestamp": 1760093529.0,
+          "version": "v4.9.0",
+          "versionCode": 409001,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.9.0_409001.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/fas-rs/v4.9.0_409001.md",
+          "size": 1968964
         }
       ]
     },

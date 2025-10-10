@@ -1,13 +1,12 @@
 {
-    "id": "fas-rs",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://github.com/shadow3aaa/fas-rs/raw/refs/heads/master/update/update.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/shadow3aaa/fas-rs",
-    "support": "https://github.com/shadow3aaa/fas-rs/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
-    "version": "v4.9.0"
+  "id": "fas-rs",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://github.com/shadow3aaa/fas-rs/raw/refs/heads/master/update/update.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/shadow3aaa/fas-rs",
+  "support": "https://github.com/shadow3aaa/fas-rs/issues",
+  "readme": "https://raw.githubusercontent.com/shadow3aaa/fas-rs/main/README.md",
+  "last_update": 1760093529.0,
+  "versions": 6
 }
