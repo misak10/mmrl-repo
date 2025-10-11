@@ -1,0 +1,14 @@
+{
+  "id": "sortify",
+  "timestamp": 1760179824.0,
+  "versions": [
+    {
+      "timestamp": 1760179824.0,
+      "version": "v1.3",
+      "versionCode": 4,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/sortify/v1.3_4.zip",
+      "changelog": "",
+      "size": 5093
+    }
+  ]
+}

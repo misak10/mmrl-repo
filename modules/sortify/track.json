@@ -1,13 +1,12 @@
 {
-    "id": "sortify",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/xCaptaiN09/Sortify/refs/heads/main/update.json",
-    "license": "MIT",
-    "homepage": "",
-    "source": "https://github.com/xCaptaiN09/Sortify",
-    "support": "https://github.com/xCaptaiN09/Sortify/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/xCaptaiN09/Sortify/main/README.md",
-    "version": "v1.3"
+  "id": "sortify",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/xCaptaiN09/Sortify/refs/heads/main/update.json",
+  "license": "MIT",
+  "source": "https://github.com/xCaptaiN09/Sortify",
+  "support": "https://github.com/xCaptaiN09/Sortify/issues",
+  "readme": "https://raw.githubusercontent.com/xCaptaiN09/Sortify/main/README.md",
+  "last_update": 1760179824.0,
+  "versions": 1
 }
