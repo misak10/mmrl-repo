@@ -439,6 +439,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/xCaptaiN09/Sortify",
+            "module_id": "sortify",
+            "update_to": "https://raw.githubusercontent.com/xCaptaiN09/Sortify/refs/heads/main/update.json",
+            "source": "https://github.com/xCaptaiN09/Sortify",
+            "support": "https://github.com/xCaptaiN09/Sortify/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
