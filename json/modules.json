@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1760768518.052215
+    "timestamp": 1760790604.297394
   },
   "modules": [
     {
@@ -1549,8 +1549,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-470",
-      "versionCode": 470,
+      "version": "canary-472",
+      "versionCode": 472,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1558,7 +1558,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 4359058,
+      "timestamp": 1760782745.0,
+      "size": 4367929,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1575,14 +1576,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1755841513.0,
-          "version": "canary-465",
-          "versionCode": 465,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-465_465.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-465_465.md",
-          "size": 4344494
-        },
         {
           "timestamp": 1756626498.0,
           "version": "canary-466",
@@ -1622,6 +1615,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-470_470.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-470_470.md",
           "size": 4359058
+        },
+        {
+          "timestamp": 1760782745.0,
+          "version": "canary-470",
+          "versionCode": 472,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-470_472.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-470_472.md",
+          "size": 4367929
         }
       ]
     },
@@ -1945,7 +1946,7 @@
       "id": "surfing",
       "name": "Surfing",
       "version": "v7.6.0",
-      "versionCode": 1636,
+      "versionCode": 1637,
       "author": "GitMetaio",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "support": "https://github.com/MoGuangYu/Surfing/issues",
@@ -1953,8 +1954,8 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1760740443.0,
-      "size": 33951993,
+      "timestamp": 1760772073.0,
+      "size": 33952005,
       "permissions": [
         "kernelsu.permission.WEBUI",
         "mmrl.permission.APKS"
@@ -1971,14 +1972,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/surfing/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1747840610.0,
-          "version": "v7.5.5",
-          "versionCode": 1630,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.5_1630.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.5_1630.md",
-          "size": 33602010
-        },
         {
           "timestamp": 1759672136.0,
           "version": "v7.5.5",
@@ -2018,6 +2011,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.9_1636.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.9_1636.md",
           "size": 33951993
+        },
+        {
+          "timestamp": 1760772073.0,
+          "version": "v7.6.0",
+          "versionCode": 1637,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.6.0_1637.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.6.0_1637.md",
+          "size": 33952005
         }
       ]
     },
