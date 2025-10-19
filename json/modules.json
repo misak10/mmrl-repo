@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1760811621.654863
+    "timestamp": 1760836947.205733
   },
   "modules": [
     {
@@ -259,9 +259,9 @@
     },
     {
       "id": "Uperf-Game-Turbo",
-      "name": "Uperf Game Turbo",
-      "version": "1.46 based on uperf 904",
-      "versionCode": 250805,
+      "name": "Uperf Game Turbo B",
+      "version": "\ufe0f1.47 beta",
+      "versionCode": 250912,
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
       "support": "https://github.com/yinwanxi/Uperf-Game-Turbo/issues",
@@ -269,7 +269,8 @@
       "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 1938688,
+      "timestamp": 1760832300.0,
+      "size": 1949558,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -288,14 +289,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1739987452.0,
-          "version": "\ufe0f1.41 based on uperf 904",
-          "versionCode": 250117,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.41_based_on_uperf_904_250117.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.41_based_on_uperf_904_250117.md",
-          "size": 1883634
-        },
         {
           "timestamp": 1743662687.0,
           "version": "1.41 based on uperf 904",
@@ -335,6 +328,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.46_based_on_uperf_904_250805.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.46_based_on_uperf_904_250805.md",
           "size": 1938688
+        },
+        {
+          "timestamp": 1760832300.0,
+          "version": "1.46 based on uperf 904",
+          "versionCode": 250912,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.46_based_on_uperf_904_250912.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/Uperf-Game-Turbo/1.46_based_on_uperf_904_250912.md",
+          "size": 1949558
         }
       ]
     },
@@ -730,8 +731,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v2.0.7",
-      "versionCode": 207,
+      "version": "v2.0.8",
+      "versionCode": 208,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "support": "https://github.com/bindhosts/bindhosts/issues",
@@ -750,7 +751,8 @@
         "Magisk"
       ],
       "added": 0,
-      "size": 123025,
+      "timestamp": 1760831840.0,
+      "size": 126681,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -771,14 +773,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/bindhosts/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1745837964.0,
-          "version": "v2.0.2",
-          "versionCode": 202,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.2_202.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.2_202.md",
-          "size": 101192
-        },
         {
           "timestamp": 1748664943.0,
           "version": "v2.0.3",
@@ -818,6 +812,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.7_207.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.7_207.md",
           "size": 123025
+        },
+        {
+          "timestamp": 1760831840.0,
+          "version": "v2.0.7",
+          "versionCode": 208,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.7_208.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.7_208.md",
+          "size": 126681
         }
       ]
     },
