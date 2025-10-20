@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.4_25.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.4_25.md",
       "size": 7939
+    },
+    {
+      "timestamp": 1760938555.0,
+      "version": "v4.5",
+      "versionCode": 26,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.5_26.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/DynamicSystemTweaks_armv7a/v4.5_26.md",
+      "size": 7528
     }
   ]
 }
