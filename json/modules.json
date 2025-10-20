@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1760963718.87563
+    "timestamp": 1760984680.63827
   },
   "modules": [
     {
@@ -2284,15 +2284,16 @@
     {
       "id": "trickystore",
       "name": "Tricky Store",
-      "version": "v1.3.0",
-      "versionCode": 180,
-      "author": "5ec1cff",
+      "version": "v1.4.0 (235-e15da3d-release)",
+      "versionCode": 235,
+      "author": "5ec1cff, aviraxp and Cyberenchanter",
       "description": "A trick of keystore",
       "support": "https://github.com/5ec1cff/TrickyStore/issues",
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
       "verified": true,
       "added": 0,
-      "size": 2694118,
+      "timestamp": 1760970440.0,
+      "size": 2720036,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2336,6 +2337,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_180.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.2.1_180.md",
           "size": 2694118
+        },
+        {
+          "timestamp": 1760970440.0,
+          "version": "v1.3.0",
+          "versionCode": 235,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.3.0_235.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/trickystore/v1.3.0_235.md",
+          "size": 2720036
         }
       ]
     },

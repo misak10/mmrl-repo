@@ -1,13 +1,11 @@
 {
-    "id": "trickystore",
-    "enable": true,
-    "verified": true,
-    "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
-    "license": "",
-    "homepage": "",
-    "source": "https://github.com/5ec1cff/TrickyStore",
-    "support": "https://github.com/5ec1cff/TrickyStore/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
-    "version": "v1.3.0"
+  "id": "trickystore",
+  "enable": true,
+  "verified": true,
+  "update_to": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/refs/heads/release/update.json",
+  "source": "https://github.com/5ec1cff/TrickyStore",
+  "support": "https://github.com/5ec1cff/TrickyStore/issues",
+  "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
+  "last_update": 1760970440.0,
+  "versions": 4
 }
