@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1760941553.690148
+    "timestamp": 1760963718.87563
   },
   "modules": [
     {
@@ -1034,8 +1034,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v2.70",
-      "versionCode": 2070,
+      "version": "v2.71",
+      "versionCode": 2071,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1047,8 +1047,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1760358851.527653,
-      "size": 5992239,
+      "timestamp": 1760963717.727,
+      "size": 5612445,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1057,14 +1057,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1757334873.509353,
-          "version": "v2.65",
-          "versionCode": 2065,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.65_2065.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.65_2065.md",
-          "size": 8677536
-        },
         {
           "timestamp": 1757939580.681766,
           "version": "v2.66",
@@ -1104,6 +1096,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.69_2070.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.69_2070.md",
           "size": 5992239
+        },
+        {
+          "timestamp": 1760963717.727,
+          "version": "v2.71",
+          "versionCode": 2071,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.71_2071.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.71_2071.md",
+          "size": 5612445
         }
       ]
     },
