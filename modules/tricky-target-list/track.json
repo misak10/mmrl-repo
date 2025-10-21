@@ -1,13 +1,12 @@
 {
-    "id": "tricky-target-list",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/refs/heads/main/update.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
-    "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/main/README.md",
-    "version": "v4.1"
+  "id": "tricky-target-list",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/refs/heads/main/update.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List",
+  "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
+  "readme": "https://raw.githubusercontent.com/KOWX712/Tricky-Addon-Update-Target-List/main/README.md",
+  "last_update": 1761057007.0,
+  "versions": 4
 }
