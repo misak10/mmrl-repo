@@ -1,11 +1,11 @@
 {
     "repositories": [
         {
-            "url": "https://github.com/chiteroman/PlayIntegrityFix",
+            "url": "https://github.com/KOWX712/PlayIntegrityFix",
             "module_id": "PlayIntegrityFix",
-            "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
-            "source": "https://github.com/chiteroman/PlayIntegrityFix",
-            "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
+            "update_to": "https://raw.githubusercontent.com/KOWX712/PlayIntegrityFix/refs/heads/main/update.json",
+            "source": "https://github.com/KOWX712/PlayIntegrityFix",
+            "support": "https://github.com/KOWX712/PlayIntegrityFix/issues",
             "donate": "",
             "enable": true,
             "verified": true
