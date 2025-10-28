@@ -2,11 +2,11 @@
     "id": "PlayIntegrityFix",
     "enable": true,
     "verified": true,
-    "update_to": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/refs/heads/main/update.json",
-    "license": "",
+    "update_to": "https://raw.githubusercontent.com/KOWX712/PlayIntegrityFix/refs/heads/main/update.json",
+    "license": "GPL-3.0",
     "homepage": "",
-    "source": "https://github.com/chiteroman/PlayIntegrityFix",
-    "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
+    "source": "https://github.com/KOWX712/PlayIntegrityFix",
+    "support": "https://github.com/KOWX712/PlayIntegrityFix/issues",
     "donate": "",
-    "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md"
+    "readme": "https://raw.githubusercontent.com/KOWX712/PlayIntegrityFix/main/README.md"
 }
