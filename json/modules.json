@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1761632844.398747
+    "timestamp": 1761643051.294689
   },
   "modules": [
     {
@@ -48,7 +48,7 @@
     {
       "id": "DynamicSystemTweaks_arm64",
       "name": "DynamicSystemTweaks-arm64",
-      "version": "v1.5",
+      "version": "v1.4",
       "versionCode": 6,
       "author": "Cyberdev",
       "description": "Improves system performance without battery loss or overheating for arm64-v8a with 6 cpu core devices only, does not work on devices using APatch (Android 10+)",
@@ -57,7 +57,6 @@
       "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/DynamicSystemTweaks-arm64-Magisk-Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1760940621.0,
       "size": 7749,
       "permissions": [
         "magisk.permission.RESETPROP"
@@ -103,7 +102,6 @@
       "readme": "https://raw.githubusercontent.com/PS2ClassicsVault/Dynamic-System-Tweaks-Magisk-Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1760938555.0,
       "size": 7528,
       "permissions": [
         "magisk.permission.RESETPROP"
@@ -198,8 +196,9 @@
       "versionCode": 19100,
       "author": "chiteroman",
       "description": "Universal modular fix for Play Integrity (and SafetyNet) on devices running Android 8-15",
-      "support": "https://github.com/chiteroman/PlayIntegrityFix/issues",
-      "readme": "https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/README.md",
+      "support": "https://github.com/KOWX712/PlayIntegrityFix/issues",
+      "license": "GPL-3.0",
+      "readme": "https://raw.githubusercontent.com/KOWX712/PlayIntegrityFix/main/README.md",
       "verified": true,
       "added": 0,
       "size": 127130,
@@ -220,7 +219,7 @@
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
-        "source": "https://github.com/chiteroman/PlayIntegrityFix",
+        "source": "https://github.com/KOWX712/PlayIntegrityFix",
         "antifeatures": null,
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/PlayIntegrityFix/track.json"
       },
@@ -278,7 +277,7 @@
     {
       "id": "Uperf-Game-Turbo",
       "name": "Uperf Game Turbo B",
-      "version": "\ufe0f1.47 beta",
+      "version": "1.47 based on uperf 904",
       "versionCode": 250912,
       "author": "Matt Yang\uff08\u541f\u60cb\u516e\u6539\uff09",
       "description": "\u2764\ufe0f\u6b22\u8fce\u4f7f\u7528Uperf Game Turbo\uff01\u4f7f\u7528\u65f6\u6709\u95ee\u9898\u53ef\u53cd\u9988\u81f3yinwanxi0107@gmail.com\u2764\ufe0f///\u2764\ufe0fStep into Enhanced Gaming with Uperf Game Turbo\uff01If you have any questions, please send feedback to yinwanxi0107@gmail.com\u2764\ufe0f",
@@ -287,7 +286,6 @@
       "readme": "https://raw.githubusercontent.com/yinwanxi/Uperf-Game-Turbo/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1760832300.0,
       "size": 1949558,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -769,7 +767,6 @@
         "Magisk"
       ],
       "added": 0,
-      "timestamp": 1760831840.0,
       "size": 126681,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1047,7 +1044,6 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1761568578.046591,
       "size": 5802002,
       "track": {
         "type": "ONLINE_JSON",
@@ -1569,8 +1565,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-477",
-      "versionCode": 477,
+      "version": "canary-478",
+      "versionCode": 478,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1578,8 +1574,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1761212278.0,
-      "size": 4368675,
+      "timestamp": 1761639248.0,
+      "size": 4368822,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1596,14 +1592,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1758296452.0,
-          "version": "canary-469",
-          "versionCode": 469,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-469_469.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-469_469.md",
-          "size": 4356300
-        },
         {
           "timestamp": 1758549439.0,
           "version": "canary-470",
@@ -1643,6 +1631,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-477_477.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-477_477.md",
           "size": 4368675
+        },
+        {
+          "timestamp": 1761639248.0,
+          "version": "canary-478",
+          "versionCode": 478,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-478_478.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-478_478.md",
+          "size": 4368822
         }
       ]
     },
@@ -1841,7 +1837,6 @@
       "readme": "https://raw.githubusercontent.com/PerformanC/ReZygisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1761085673.0,
       "size": 443582,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -1983,7 +1978,6 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1760772073.0,
       "size": 33952005,
       "permissions": [
         "kernelsu.permission.WEBUI",
@@ -2063,7 +2057,6 @@
       "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1760862849.0,
       "size": 1156068,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2179,7 +2172,6 @@
       "readme": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1760711791.0,
       "size": 23114,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2245,7 +2237,6 @@
       },
       "verified": false,
       "added": 0,
-      "timestamp": 1761057007.0,
       "size": 3117854,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2302,7 +2293,7 @@
     {
       "id": "trickystore",
       "name": "Tricky Store",
-      "version": "v1.4.0 (235-e15da3d-release)",
+      "version": "v1.4.0",
       "versionCode": 235,
       "author": "5ec1cff, aviraxp and Cyberenchanter",
       "description": "A trick of keystore",
@@ -2310,7 +2301,6 @@
       "readme": "https://raw.githubusercontent.com/5ec1cff/TrickyStore/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1760970440.0,
       "size": 2720036,
       "permissions": [
         "magisk.permission.SERVICE",
@@ -2413,7 +2403,7 @@
     {
       "id": "viperfx_re",
       "name": "ViPER4Android RE Fork",
-      "version": "v0.6.3",
+      "version": "v8.0",
       "versionCode": 20250107,
       "author": "pittvandewitt, MrWhite214, Zackptg5, Martmists, Iscle, WSTxda",
       "description": "ViPER4Android Reverse Engineered Fork is an audio enhancing software to provide everyone with a better audio experience",
