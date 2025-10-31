@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1761914101.71001
+    "timestamp": 1761935074.396272
   },
   "modules": [
     {
@@ -2498,15 +2498,16 @@
     {
       "id": "zygisknext",
       "name": "Zygisk Next",
-      "version": "v1.3.0-RC3",
-      "versionCode": 620,
+      "version": "1.3.0-RC4 (638-45eea2d-release)",
+      "versionCode": 638,
       "author": "5ec1cff, Nullptr",
       "description": "Standalone implementation of Zygisk.",
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
       "verified": true,
       "added": 0,
-      "size": 6298158,
+      "timestamp": 1761488962.0,
+      "size": 6346123,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2558,6 +2559,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.3.0-RC3_620-316eada-release.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.3.0-RC3_620-316eada-release.md",
           "size": 6298158
+        },
+        {
+          "timestamp": 1761488962.0,
+          "version": "v1.3.0-RC3",
+          "versionCode": 638,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.3.0-RC3_638.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.3.0-RC3_638.md",
+          "size": 6346123
         }
       ]
     },
