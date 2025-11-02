@@ -33,6 +33,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.1_618.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.1_618.md",
       "size": 3117854
+    },
+    {
+      "timestamp": 1762093319.0,
+      "version": "v4.2",
+      "versionCode": 635,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.2_635.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.2_635.md",
+      "size": 3120144
     }
   ]
 }

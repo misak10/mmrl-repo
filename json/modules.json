@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1762086594.509756
+    "timestamp": 1762107611.501112
   },
   "modules": [
     {
@@ -1316,14 +1316,15 @@
     {
       "id": "hydro-br-leur",
       "name": "Hydrostellaire \u6ca8\u83b9",
-      "version": "Auvergne",
-      "versionCode": 1016,
+      "version": "\u272eLeipzig\u272e",
+      "versionCode": 1020,
       "author": "AB & Ray",
       "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
       "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 5787982,
+      "timestamp": 1762101003.0,
+      "size": 2662280,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1347,6 +1348,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.md",
           "size": 5787982
+        },
+        {
+          "timestamp": 1762101003.0,
+          "version": "Auvergne",
+          "versionCode": 1020,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Auvergne_1020.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Auvergne_1020.md",
+          "size": 2662280
         }
       ]
     },
@@ -2223,8 +2232,8 @@
     {
       "id": "tricky-target-list",
       "name": "Tricky Addon - Update Target List",
-      "version": "v4.2",
-      "versionCode": 618,
+      "version": "v4.3",
+      "versionCode": 635,
       "author": "KOWX712",
       "description": "A WebUI to conifgure tricky store target.txt ",
       "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
@@ -2238,7 +2247,8 @@
       },
       "verified": false,
       "added": 0,
-      "size": 3117854,
+      "timestamp": 1762093319.0,
+      "size": 3120144,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2288,6 +2298,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.1_618.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.1_618.md",
           "size": 3117854
+        },
+        {
+          "timestamp": 1762093319.0,
+          "version": "v4.2",
+          "versionCode": 635,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.2_635.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.2_635.md",
+          "size": 3120144
         }
       ]
     },
