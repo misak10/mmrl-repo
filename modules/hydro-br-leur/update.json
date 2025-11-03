@@ -25,6 +25,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Auvergne_1020.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Auvergne_1020.md",
       "size": 2662280
+    },
+    {
+      "timestamp": 1762183989.0,
+      "version": "\u272eLeipzig\u272e",
+      "versionCode": 1021,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1021.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1021.md",
+      "size": 2660232
     }
   ]
 }
