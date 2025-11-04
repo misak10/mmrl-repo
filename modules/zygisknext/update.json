@@ -41,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.3.0-RC3_638.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/v1.3.0-RC3_638.md",
       "size": 6346123
+    },
+    {
+      "timestamp": 1762251825.0,
+      "version": "1.3.0 (648-4d40f10-release)",
+      "versionCode": 648,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.3.0_648-4d40f10-release.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.3.0_648-4d40f10-release.md",
+      "size": 6347253
     }
   ]
 }
