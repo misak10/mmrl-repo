@@ -41,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1025.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1025.md",
       "size": 2645957
+    },
+    {
+      "timestamp": 1763040613.0,
+      "version": "\u272eMain\u272e",
+      "versionCode": 1030,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1030.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1030.md",
+      "size": 3199895
     }
   ]
 }
