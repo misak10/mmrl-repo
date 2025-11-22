@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.5_175.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.5_175.md",
       "size": 540495
+    },
+    {
+      "timestamp": 1763816136.0,
+      "version": "v1.7.6",
+      "versionCode": 176,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.6_176.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.6_176.md",
+      "size": 544014
     }
   ]
 }
