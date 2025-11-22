@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1763792602.383609
+    "timestamp": 1763814617.68501
   },
   "modules": [
     {
@@ -1517,8 +1517,8 @@
     {
       "id": "mountify",
       "name": "mountify",
-      "version": "v1.7.4",
-      "versionCode": 174,
+      "version": "v1.7.5",
+      "versionCode": 175,
       "author": "xx, KOWX712",
       "description": "Globally mounted modules via OverlayFS.",
       "support": "https://github.com/backslashxx/mountify/issues",
@@ -1526,8 +1526,8 @@
       "readme": "https://raw.githubusercontent.com/backslashxx/mountify/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1763701411.0,
-      "size": 540292,
+      "timestamp": 1763799828.0,
+      "size": 540495,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1557,6 +1557,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.4_174.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.4_174.md",
           "size": 540292
+        },
+        {
+          "timestamp": 1763799828.0,
+          "version": "v1.7.5",
+          "versionCode": 175,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.5_175.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.5_175.md",
+          "size": 540495
         }
       ]
     },
