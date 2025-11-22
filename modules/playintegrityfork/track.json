@@ -1,13 +1,12 @@
 {
-    "id": "playintegrityfork",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/refs/heads/main/update.json",
-    "license": "GPL-3.0",
-    "homepage": "",
-    "source": "https://github.com/osm0sis/PlayIntegrityFork",
-    "support": "https://github.com/osm0sis/PlayIntegrityFork/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
-    "version": "v14"
+  "id": "playintegrityfork",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/refs/heads/main/update.json",
+  "license": "GPL-3.0",
+  "source": "https://github.com/osm0sis/PlayIntegrityFork",
+  "support": "https://github.com/osm0sis/PlayIntegrityFork/issues",
+  "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
+  "last_update": 1763782541.0,
+  "versions": 4
 }
