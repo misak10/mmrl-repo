@@ -1,13 +1,11 @@
 {
-    "id": "asoulopt",
-    "enable": true,
-    "verified": false,
-    "update_to": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/refs/heads/main/AsoulOpt.json",
-    "license": "",
-    "homepage": "",
-    "source": "https://github.com/nakixii/Magisk_AsoulOpt",
-    "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
-    "version": "Arona"
+  "id": "asoulopt",
+  "enable": true,
+  "verified": false,
+  "update_to": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/refs/heads/main/AsoulOpt.json",
+  "source": "https://github.com/nakixii/Magisk_AsoulOpt",
+  "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
+  "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
+  "last_update": 1764148245.0,
+  "versions": 6
 }
