@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1764379008.123542
+    "timestamp": 1764397465.797331
   },
   "modules": [
     {
@@ -748,8 +748,8 @@
     {
       "id": "bindhosts",
       "name": "bindhosts",
-      "version": "v2.0.9",
-      "versionCode": 209,
+      "version": "v2.1.0",
+      "versionCode": 210,
       "author": "xx, KOWX712",
       "description": "Systemless hosts for APatch, KernelSU and Magisk ",
       "support": "https://github.com/bindhosts/bindhosts/issues",
@@ -768,8 +768,8 @@
         "Magisk"
       ],
       "added": 0,
-      "timestamp": 1763868080.0,
-      "size": 128045,
+      "timestamp": 1764389880.0,
+      "size": 131597,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -790,14 +790,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/bindhosts/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1748680302.0,
-          "version": "v2.0.4",
-          "versionCode": 204,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.4_204.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.4_204.md",
-          "size": 116655
-        },
         {
           "timestamp": 1750727025.0,
           "version": "v2.0.5",
@@ -837,6 +829,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.8_209.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.0.8_209.md",
           "size": 128045
+        },
+        {
+          "timestamp": 1764389880.0,
+          "version": "v2.1.0",
+          "versionCode": 210,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.1.0_210.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/bindhosts/v2.1.0_210.md",
+          "size": 131597
         }
       ]
     },
