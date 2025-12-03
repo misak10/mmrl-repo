@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1764724804.555406
+    "timestamp": 1764743393.60565
   },
   "modules": [
     {
@@ -1520,8 +1520,8 @@
     {
       "id": "mountify",
       "name": "mountify",
-      "version": "v1.8.4",
-      "versionCode": 184,
+      "version": "v1.8.5",
+      "versionCode": 185,
       "author": "xx, KOWX712",
       "description": "Globally mounted modules via OverlayFS.",
       "support": "https://github.com/backslashxx/mountify/issues",
@@ -1529,8 +1529,8 @@
       "readme": "https://raw.githubusercontent.com/backslashxx/mountify/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1764723636.0,
-      "size": 546971,
+      "timestamp": 1764727611.0,
+      "size": 547022,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1553,14 +1553,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/mountify/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1763987317.0,
-          "version": "v1.7.8",
-          "versionCode": 178,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.8_178.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.8_178.md",
-          "size": 544241
-        },
         {
           "timestamp": 1764037673.0,
           "version": "v1.8.0",
@@ -1600,6 +1592,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.4_184.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.4_184.md",
           "size": 546971
+        },
+        {
+          "timestamp": 1764727611.0,
+          "version": "v1.8.5",
+          "versionCode": 185,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.5_185.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.5_185.md",
+          "size": 547022
         }
       ]
     },
