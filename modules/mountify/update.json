@@ -3,14 +3,6 @@
   "timestamp": 1763701411.0,
   "versions": [
     {
-      "timestamp": 1763881838.0,
-      "version": "v1.7.7",
-      "versionCode": 177,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.7_177.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.7.7_177.md",
-      "size": 544246
-    },
-    {
       "timestamp": 1763987317.0,
       "version": "v1.7.8",
       "versionCode": 178,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.3_183.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.3_183.md",
       "size": 547010
+    },
+    {
+      "timestamp": 1764723636.0,
+      "version": "v1.8.4",
+      "versionCode": 184,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.4_184.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.4_184.md",
+      "size": 546971
     }
   ]
 }
