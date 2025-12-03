@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/v0.2.8-r12-g0ee443c_42.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/v0.2.8-r12-g0ee443c_42.md",
       "size": 803773
+    },
+    {
+      "timestamp": 1764780737.0,
+      "version": "v0.2.8-r13",
+      "versionCode": 4533,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/v0.2.8-r13_4533.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/v0.2.8-r13_4533.md",
+      "size": 2291965
     }
   ]
 }
