@@ -459,6 +459,16 @@
             "donate": "",
             "enable": true,
             "verified": false
+        },
+        {
+            "url": "https://github.com/YuzakiKokuban/meta-hybrid_mount",
+            "module_id": "meta-hybrid_mount",
+            "update_to": "https://raw.githubusercontent.com/YuzakiKokuban/meta-hybrid_mount/refs/heads/master/update.json",
+            "source": "https://github.com/YuzakiKokuban/meta-hybrid_mount",
+            "support": "https://github.com/YuzakiKokuban/meta-hybrid_mount/issues",
+            "donate": "",
+            "enable": true,
+            "verified": false
         }
     ]
 }
