@@ -3,7 +3,7 @@
     "enable": true,
     "verified": true,
     "update_to": "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/update.json",
-    "license": "AGPL-3.0",
+    "license": "Apache-2.0",
     "homepage": "",
     "source": "https://github.com/AlirezaParsi/COPG",
     "support": "https://github.com/AlirezaParsi/COPG/issues",

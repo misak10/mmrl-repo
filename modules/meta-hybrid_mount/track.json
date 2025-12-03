@@ -1,0 +1,13 @@
+{
+    "id": "meta-hybrid_mount",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/YuzakiKokuban/meta-hybrid_mount/refs/heads/master/update.json",
+    "license": "GPL-3.0",
+    "homepage": "",
+    "source": "https://github.com/YuzakiKokuban/meta-hybrid_mount",
+    "support": "https://github.com/YuzakiKokuban/meta-hybrid_mount/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/YuzakiKokuban/meta-hybrid_mount/main/README.md",
+    "version": "v0.2.8-r12-g0ee443c"
+}

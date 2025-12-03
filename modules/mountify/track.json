@@ -1,12 +1,13 @@
 {
-  "id": "mountify",
-  "enable": true,
-  "verified": false,
-  "update_to": "https://raw.githubusercontent.com/backslashxx/mountify/refs/heads/master/update.json",
-  "license": "Unlicense",
-  "source": "https://github.com/backslashxx/mountify",
-  "support": "https://github.com/backslashxx/mountify/issues",
-  "readme": "https://raw.githubusercontent.com/backslashxx/mountify/main/README.md",
-  "last_update": 1764727611.0,
-  "versions": 6
+    "id": "mountify",
+    "enable": true,
+    "verified": false,
+    "update_to": "https://raw.githubusercontent.com/backslashxx/mountify/refs/heads/master/update.json",
+    "license": "Unlicense",
+    "homepage": "",
+    "source": "https://github.com/backslashxx/mountify",
+    "support": "https://github.com/backslashxx/mountify/issues",
+    "donate": "",
+    "readme": "https://raw.githubusercontent.com/backslashxx/mountify/main/README.md",
+    "version": "v1.8.5"
 }
