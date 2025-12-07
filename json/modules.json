@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1765110720.522726
+    "timestamp": 1765131757.665266
   },
   "modules": [
     {
@@ -207,7 +207,8 @@
         "magisk.permission.POST_FS_DATA",
         "magisk.permission.ZYGISK",
         "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
+        "kernelsu.permission.WEBUI",
+        "mmrl.permission.DEXS"
       ],
       "features": {
         "service": true,
@@ -772,7 +773,8 @@
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
         "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
+        "kernelsu.permission.WEBUI",
+        "mmrl.permission.WEBUI_CONFIG"
       ],
       "features": {
         "service": true,
@@ -962,7 +964,8 @@
         "magisk.permission.RESETPROP",
         "magisk.permission.ZYGISK",
         "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
+        "kernelsu.permission.WEBUI",
+        "mmrl.permission.WEBUI_CONFIG"
       ],
       "features": {
         "service": true,
@@ -1522,6 +1525,7 @@
       "versionCode": 4533,
       "author": "YuzakiKokuban & Tools-cx-app",
       "description": "Waiting for daemon...",
+      "metamodule": "1",
       "support": "https://github.com/YuzakiKokuban/meta-hybrid_mount/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/YuzakiKokuban/meta-hybrid_mount/main/README.md",
@@ -1568,6 +1572,7 @@
       "versionCode": 186,
       "author": "xx, KOWX712",
       "description": "Globally mounted modules via OverlayFS.",
+      "metamodule": "true",
       "support": "https://github.com/backslashxx/mountify/issues",
       "license": "Unlicense",
       "readme": "https://raw.githubusercontent.com/backslashxx/mountify/main/README.md",
@@ -1580,7 +1585,9 @@
         "magisk.permission.POST_FS_DATA",
         "magisk.permission.ACTION",
         "kernelsu.permission.WEBUI",
-        "kernelsu.permission.BOOT_COMPLETED"
+        "mmrl.permission.WEBUI_CONFIG",
+        "kernelsu.permission.BOOT_COMPLETED",
+        "kernelsu.permission.METAMODULE"
       ],
       "features": {
         "service": true,
@@ -1886,7 +1893,8 @@
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
-        "magisk.permission.ACTION"
+        "magisk.permission.ACTION",
+        "mmrl.permission.DEXS"
       ],
       "features": {
         "service": true,
@@ -2235,6 +2243,7 @@
         "magisk.permission.SEPOLICY",
         "magisk.permission.ACTION",
         "kernelsu.permission.WEBUI",
+        "mmrl.permission.WEBUI_CONFIG",
         "kernelsu.permission.POST_MOUNT",
         "kernelsu.permission.BOOT_COMPLETED"
       ],
@@ -2780,7 +2789,8 @@
       "permissions": [
         "magisk.permission.POST_FS_DATA",
         "magisk.permission.SEPOLICY",
-        "mmrl.permission.APKS"
+        "mmrl.permission.APKS",
+        "mmrl.permission.DEXS"
       ],
       "features": {
         "post_fs_data": true,
