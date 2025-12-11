@@ -3,14 +3,6 @@
   "timestamp": 1746373998.0,
   "versions": [
     {
-      "timestamp": 1754316607.0,
-      "version": "Essonne",
-      "versionCode": 1016,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.md",
-      "size": 5787982
-    },
-    {
       "timestamp": 1762101003.0,
       "version": "Auvergne",
       "versionCode": 1020,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1031.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1031.md",
       "size": 3155705
+    },
+    {
+      "timestamp": 1765471192.0,
+      "version": "Main",
+      "versionCode": 1036,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1036.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1036.md",
+      "size": 3174334
     }
   ]
 }

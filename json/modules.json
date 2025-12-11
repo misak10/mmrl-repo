@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1765456762.166113
+    "timestamp": 1765477561.772992
   },
   "modules": [
     {
@@ -922,8 +922,8 @@
     {
       "id": "copg",
       "name": "\u2728 COPG spoof \u2728",
-      "version": "4.7.0",
-      "versionCode": 470,
+      "version": "4.7.1",
+      "versionCode": 471,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games/apps to unlock new features.",
       "support": "https://t.me/TheAOSP",
@@ -958,8 +958,8 @@
         "message": "Spoof your device for games/apps to unlock new features."
       },
       "added": 0,
-      "timestamp": 1765434235.0,
-      "size": 1553606,
+      "timestamp": 1765465738.0,
+      "size": 1553640,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.RESETPROP",
@@ -983,14 +983,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/copg/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1757787451.0,
-          "version": "4.5.1",
-          "versionCode": 451,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.5.1_451.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.5.1_451.md",
-          "size": 2860241
-        },
         {
           "timestamp": 1757846965.0,
           "version": "4.5.2",
@@ -1030,6 +1022,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/v4.6.0_470.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/v4.6.0_470.md",
           "size": 1553606
+        },
+        {
+          "timestamp": 1765465738.0,
+          "version": "4.7.1",
+          "versionCode": 471,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/4.7.1_471.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/4.7.1_471.md",
+          "size": 1553640
         }
       ]
     },
@@ -1321,14 +1321,15 @@
     {
       "id": "hydro-br-leur",
       "name": "Hydrostellaire \u6ca8\u83b9",
-      "version": "Main",
-      "versionCode": 1031,
+      "version": "\u272eMain\u272e",
+      "versionCode": 1036,
       "author": "AB & Ray",
       "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
       "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 3155705,
+      "timestamp": 1765471192.0,
+      "size": 3174334,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1337,14 +1338,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1754316607.0,
-          "version": "Essonne",
-          "versionCode": 1016,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Essonne_1016.md",
-          "size": 5787982
-        },
         {
           "timestamp": 1762101003.0,
           "version": "Auvergne",
@@ -1384,6 +1377,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1031.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1031.md",
           "size": 3155705
+        },
+        {
+          "timestamp": 1765471192.0,
+          "version": "Main",
+          "versionCode": 1036,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1036.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1036.md",
+          "size": 3174334
         }
       ]
     },
