@@ -1,13 +1,12 @@
 {
-    "id": "copg",
-    "enable": true,
-    "verified": true,
-    "update_to": "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/update.json",
-    "license": "Apache-2.0",
-    "homepage": "",
-    "source": "https://github.com/AlirezaParsi/COPG",
-    "support": "https://github.com/AlirezaParsi/COPG/issues",
-    "donate": "",
-    "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
-    "version": "v4.6.0"
+  "id": "copg",
+  "enable": true,
+  "verified": true,
+  "update_to": "https://raw.githubusercontent.com/AlirezaParsi/COPG/refs/heads/JSON/update.json",
+  "license": "Apache-2.0",
+  "source": "https://github.com/AlirezaParsi/COPG",
+  "support": "https://github.com/AlirezaParsi/COPG/issues",
+  "readme": "https://raw.githubusercontent.com/AlirezaParsi/COPG/main/README.md",
+  "last_update": 1765434235.0,
+  "versions": 6
 }
