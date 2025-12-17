@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1765952902.586484
+    "timestamp": 1765975139.280057
   },
   "modules": [
     {
@@ -591,8 +591,8 @@
     {
       "id": "adguardhome",
       "name": "AdGuardHome for Root",
-      "version": "20251101",
-      "versionCode": 44,
+      "version": "20251217",
+      "versionCode": 45,
       "author": "twoone3",
       "description": "none",
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
@@ -600,7 +600,8 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": true,
       "added": 0,
-      "size": 10221809,
+      "timestamp": 1765960389.0,
+      "size": 10324554,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION",
@@ -619,14 +620,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/adguardhome/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1748787379.0,
-          "version": "20250515",
-          "versionCode": 39,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_39.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250515_39.md",
-          "size": 9921407
-        },
         {
           "timestamp": 1751283365.0,
           "version": "20250601",
@@ -666,6 +659,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250921_44.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20250921_44.md",
           "size": 10221809
+        },
+        {
+          "timestamp": 1765960389.0,
+          "version": "20251101",
+          "versionCode": 45,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20251101_45.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20251101_45.md",
+          "size": 10324554
         }
       ]
     },
