@@ -3,14 +3,6 @@
   "timestamp": 1746373998.0,
   "versions": [
     {
-      "timestamp": 1762183989.0,
-      "version": "\u272eLeipzig\u272e",
-      "versionCode": 1021,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1021.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1021.md",
-      "size": 2660232
-    },
-    {
       "timestamp": 1762860667.0,
       "version": "\u272eLeipzig\u272e",
       "versionCode": 1025,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1038.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1038.md",
       "size": 3165527
+    },
+    {
+      "timestamp": 1766071704.0,
+      "version": "\u272eMain\u272e",
+      "versionCode": 1039,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1039.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1039.md",
+      "size": 3180366
     }
   ]
 }
