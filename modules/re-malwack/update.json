@@ -17,6 +17,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.md",
       "size": 1759912
+    },
+    {
+      "timestamp": 1766897046.0,
+      "version": "v6.0",
+      "versionCode": 700,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_700.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_700.md",
+      "size": 2446697
     }
   ]
 }
