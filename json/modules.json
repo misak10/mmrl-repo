@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1766971734.456363
+    "timestamp": 1766986386.726849
   },
   "modules": [
     {
@@ -1962,73 +1962,6 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v16_161000.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v16_161000.md",
           "size": 283080
-        }
-      ]
-    },
-    {
-      "id": "re-malwack",
-      "name": "Re-Malwack | Not just a normal ad-blocker module \u2728",
-      "version": "v7.0",
-      "versionCode": 700,
-      "author": "ZG089",
-      "description": "A fully-fledged ad-block module. Contains all your needs \u2728",
-      "categories": [
-        "Theme",
-        "Script",
-        "Performance"
-      ],
-      "donate": "https://buymeacoffee.com/zg089",
-      "support": "https://github.com/ZG089/Re-Malwack/issues",
-      "license": "GPL-3.0",
-      "readme": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/README.md",
-      "verified": false,
-      "added": 0,
-      "timestamp": 1766897046.0,
-      "size": 2446697,
-      "permissions": [
-        "magisk.permission.SERVICE",
-        "magisk.permission.POST_FS_DATA",
-        "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI",
-        "mmrl.permission.WEBUI_CONFIG"
-      ],
-      "features": {
-        "service": true,
-        "post_fs_data": true,
-        "action": true,
-        "webroot": true
-      },
-      "track": {
-        "type": "ONLINE_JSON",
-        "added": null,
-        "source": "https://github.com/ZG089/Re-Malwack",
-        "antifeatures": null,
-        "build_metadata": "https://misak10.github.io/mmrl-repo/modules/re-malwack/track.json"
-      },
-      "versions": [
-        {
-          "timestamp": 1734878287.0,
-          "version": "v5.3.0",
-          "versionCode": 530,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v5.3.0_530.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v5.3.0_530.md",
-          "size": 47546
-        },
-        {
-          "timestamp": 1743478933.0,
-          "version": "v6.0",
-          "versionCode": 600,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_600.md",
-          "size": 1759912
-        },
-        {
-          "timestamp": 1766897046.0,
-          "version": "v6.0",
-          "versionCode": 700,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_700.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/re-malwack/v6.0_700.md",
-          "size": 2446697
         }
       ]
     },
