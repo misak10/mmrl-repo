@@ -7,7 +7,7 @@
   "source": "https://github.com/ZG089/Re-Malwack",
   "support": "https://github.com/ZG089/Re-Malwack/issues",
   "cover": "https://raw.githubusercontent.com/ZG089/Re-Malwack/refs/heads/main/module/banner.png",
-  "icon: https://raw.githubusercontent.com/ZG089/Re-Malwack/main/assets/logo.png"
+  "icon": "https://raw.githubusercontent.com/ZG089/Re-Malwack/main/assets/logo.png"
   "categories": [
     "Theme",
     "Script",
