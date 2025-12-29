@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1767011953.390479
+    "timestamp": 1767032808.929199
   },
   "modules": [
     {
@@ -1886,7 +1886,7 @@
       "id": "playintegrityfork",
       "name": "Play Integrity Fork",
       "version": "v16",
-      "versionCode": 161000,
+      "versionCode": 162000,
       "author": "osm0sis & chiteroman @ xda-developers",
       "description": "Fix <A13 Play Integrity DEVICE verdict",
       "support": "https://github.com/osm0sis/PlayIntegrityFork/issues",
@@ -1894,8 +1894,8 @@
       "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1766942967.0,
-      "size": 283080,
+      "timestamp": 1767026700.0,
+      "size": 283241,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1915,14 +1915,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1747424290.0,
-          "version": "v13",
-          "versionCode": 130000,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_130000.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v13_130000.md",
-          "size": 268323
-        },
         {
           "timestamp": 1753754975.0,
           "version": "v13",
@@ -1962,6 +1954,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v16_161000.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v16_161000.md",
           "size": 283080
+        },
+        {
+          "timestamp": 1767026700.0,
+          "version": "v16",
+          "versionCode": 162000,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v16_162000.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v16_162000.md",
+          "size": 283241
         }
       ]
     },
