@@ -9,14 +9,14 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1767205536.289737
+    "timestamp": 1767231709.641903
   },
   "modules": [
     {
       "id": "CustomPinyinDictionary",
       "name": "CustomPinyinDictionary for Gboard",
-      "version": "v20250101",
-      "versionCode": 20250101,
+      "version": "v20260101",
+      "versionCode": 20260101,
       "author": "wuhgit@github",
       "description": "Gboard\u81ea\u5efa\u62fc\u97f3\u8f93\u5165\u6cd5\u8bcd\u5e93\uff0c\u767e\u4e07\u5e38\u7528\u8bcd\u6c47\u91cf\u3002",
       "categories": [
@@ -26,7 +26,8 @@
       "readme": "https://raw.githubusercontent.com/wuhgit/CustomPinyinDictionary/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 31355148,
+      "timestamp": 1767223192.0,
+      "size": 30270378,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -42,6 +43,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20250101.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20250101.md",
           "size": 31355148
+        },
+        {
+          "timestamp": 1767223192.0,
+          "version": "v20250101",
+          "versionCode": 20260101,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20260101.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/CustomPinyinDictionary/v20250101_20260101.md",
+          "size": 30270378
         }
       ]
     },
