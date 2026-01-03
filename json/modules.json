@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1767421635.631885
+    "timestamp": 1767443677.911372
   },
   "modules": [
     {
@@ -1753,8 +1753,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-483",
-      "versionCode": 483,
+      "version": "canary-484",
+      "versionCode": 484,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1762,8 +1762,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1767165429.0,
-      "size": 4402867,
+      "timestamp": 1767441353.0,
+      "size": 4402484,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1780,14 +1780,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1761639248.0,
-          "version": "canary-478",
-          "versionCode": 478,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-478_478.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-478_478.md",
-          "size": 4368822
-        },
         {
           "timestamp": 1765875443.0,
           "version": "canary-478",
@@ -1827,6 +1819,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-483_483.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-483_483.md",
           "size": 4402867
+        },
+        {
+          "timestamp": 1767441353.0,
+          "version": "canary-484",
+          "versionCode": 484,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-484_484.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-484_484.md",
+          "size": 4402484
         }
       ]
     },
@@ -2200,8 +2200,8 @@
     {
       "id": "susfs4ksu",
       "name": "SUSFS-FOR-KERNELSU",
-      "version": "v1.5.2-R23",
-      "versionCode": 105002023,
+      "version": "v1.5.2-R24",
+      "versionCode": 105002024,
       "author": "sidex15 & simonpunk",
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
@@ -2209,7 +2209,8 @@
       "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 1156068,
+      "timestamp": 1767436835.0,
+      "size": 1187127,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2276,6 +2277,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R22_105002023.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R22_105002023.md",
           "size": 1156068
+        },
+        {
+          "timestamp": 1767436835.0,
+          "version": "v1.5.2-R23",
+          "versionCode": 105002024,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R23_105002024.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R23_105002024.md",
+          "size": 1187127
         }
       ]
     },
