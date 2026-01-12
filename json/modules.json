@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1768199528.129826
+    "timestamp": 1768221688.860316
   },
   "modules": [
     {
@@ -1046,8 +1046,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v2.82",
-      "versionCode": 2082,
+      "version": "v2.83",
+      "versionCode": 2083,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1059,8 +1059,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1767616817.808988,
-      "size": 4741471,
+      "timestamp": 1768221687.465553,
+      "size": 4829786,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1069,14 +1069,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1764592636.206302,
-          "version": "v2.77",
-          "versionCode": 2077,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.77_2077.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.77_2077.md",
-          "size": 5792768
-        },
         {
           "timestamp": 1765197429.236051,
           "version": "v2.77",
@@ -1116,6 +1108,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.82_2082.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.82_2082.md",
           "size": 4741471
+        },
+        {
+          "timestamp": 1768221687.465553,
+          "version": "v2.83",
+          "versionCode": 2083,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.83_2083.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v2.83_2083.md",
+          "size": 4829786
         }
       ]
     },
