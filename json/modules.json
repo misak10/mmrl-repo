@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1768354084.130037
+    "timestamp": 1768372192.646211
   },
   "modules": [
     {
@@ -1583,8 +1583,8 @@
     {
       "id": "mountify",
       "name": "mountify",
-      "version": "v1.8.9",
-      "versionCode": 189,
+      "version": "v1.9.0",
+      "versionCode": 190,
       "author": "xx, KOWX712",
       "description": "Globally mounted modules via OverlayFS.",
       "metamodule": "true",
@@ -1593,8 +1593,8 @@
       "readme": "https://raw.githubusercontent.com/backslashxx/mountify/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1768147805.0,
-      "size": 548946,
+      "timestamp": 1768366121.0,
+      "size": 548953,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1619,14 +1619,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/mountify/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1764723636.0,
-          "version": "v1.8.4",
-          "versionCode": 184,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.4_184.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.4_184.md",
-          "size": 546971
-        },
         {
           "timestamp": 1764727611.0,
           "version": "v1.8.5",
@@ -1666,6 +1658,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.9_189.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.8.9_189.md",
           "size": 548946
+        },
+        {
+          "timestamp": 1768366121.0,
+          "version": "v1.9.0",
+          "versionCode": 190,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.9.0_190.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/mountify/v1.9.0_190.md",
+          "size": 548953
         }
       ]
     },
