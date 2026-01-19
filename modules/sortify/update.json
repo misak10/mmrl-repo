@@ -9,6 +9,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/sortify/v1.3_4.zip",
       "changelog": "",
       "size": 5093
+    },
+    {
+      "timestamp": 1768799211.0,
+      "version": "3.0",
+      "versionCode": 9,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/sortify/3.0_9.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/sortify/3.0_9.md",
+      "size": 126060
     }
   ]
 }
