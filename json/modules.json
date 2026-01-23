@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1769172064.046706
+    "timestamp": 1769192952.482847
   },
   "modules": [
     {
@@ -1833,8 +1833,8 @@
     {
       "id": "playcurllnext",
       "name": "playcurlNEXT",
-      "version": "v1.8",
-      "versionCode": 118,
+      "version": "v1.19",
+      "versionCode": 119,
       "author": "daboynb",
       "description": "Automatic fingerprint downloader for play integrity fix.",
       "support": "https://github.com/daboynb/playcurlNEXT/issues",
@@ -1842,7 +1842,8 @@
       "readme": "https://raw.githubusercontent.com/daboynb/playcurlNEXT/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 17900,
+      "timestamp": 1769173060.0,
+      "size": 18441,
       "permissions": [
         "magisk.permission.SERVICE",
         "kernelsu.permission.WEBUI"
@@ -1890,6 +1891,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.18_118.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.18_118.md",
           "size": 17900
+        },
+        {
+          "timestamp": 1769173060.0,
+          "version": "v1.8",
+          "versionCode": 119,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.8_119.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/playcurllnext/v1.8_119.md",
+          "size": 18441
         }
       ]
     },
