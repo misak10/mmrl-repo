@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1769217800.884408
+    "timestamp": 1769236212.426848
   },
   "modules": [
     {
@@ -682,15 +682,16 @@
     {
       "id": "asoulopt",
       "name": "A-SOUL Games Optimization",
-      "version": "Plana",
-      "versionCode": 278,
+      "version": "Neuro",
+      "versionCode": 279,
       "author": "nakixii",
       "description": "Game threads tweaker for Android.",
       "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "size": 17775,
+      "timestamp": 1769220799.0,
+      "size": 17497,
       "permissions": [
         "magisk.permission.SERVICE"
       ],
@@ -705,14 +706,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/asoulopt/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1739148198.0,
-          "version": "Kanade",
-          "versionCode": 273,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanade_273.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanade_273.md",
-          "size": 14217
-        },
         {
           "timestamp": 1744795995.0,
           "version": "Kanade",
@@ -752,6 +745,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_278.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_278.md",
           "size": 17775
+        },
+        {
+          "timestamp": 1769220799.0,
+          "version": "Plana",
+          "versionCode": 279,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Plana_279.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Plana_279.md",
+          "size": 17497
         }
       ]
     },
