@@ -25,6 +25,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.0_28.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.0_28.md",
       "size": 178007
+    },
+    {
+      "timestamp": 1770302987.0,
+      "version": "v1.20.1",
+      "versionCode": 29,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.1_29.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.1_29.md",
+      "size": 358502
     }
   ]
 }
