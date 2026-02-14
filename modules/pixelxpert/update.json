@@ -3,14 +3,6 @@
   "timestamp": 1748440300.0,
   "versions": [
     {
-      "timestamp": 1766832733.0,
-      "version": "canary-481",
-      "versionCode": 481,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-481_481.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-481_481.md",
-      "size": 4402583
-    },
-    {
       "timestamp": 1766927378.0,
       "version": "canary-482",
       "versionCode": 482,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-486_486.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-486_486.md",
       "size": 4405721
+    },
+    {
+      "timestamp": 1771070087.0,
+      "version": "canary-487",
+      "versionCode": 487,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-487_487.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-487_487.md",
+      "size": 4405835
     }
   ]
 }
