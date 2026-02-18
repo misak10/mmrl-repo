@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1771379818.790643
+    "timestamp": 1771397898.931108
   },
   "modules": [
     {
@@ -1538,10 +1538,10 @@
     },
     {
       "id": "meta-hybrid_mount",
-      "name": "Meta-Hybrid Mount",
-      "version": "v0.2.8-r13",
-      "versionCode": 4533,
-      "author": "YuzakiKokuban & Tools-cx-app",
+      "name": "Hybrid Mount",
+      "version": "3.1.0-1222",
+      "versionCode": 30100,
+      "author": "Hybrid Mount Developers",
       "description": "Waiting for daemon...",
       "metamodule": "1",
       "support": "https://github.com/YuzakiKokuban/meta-hybrid_mount/issues",
@@ -1549,8 +1549,8 @@
       "readme": "https://raw.githubusercontent.com/YuzakiKokuban/meta-hybrid_mount/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1764780737.0,
-      "size": 2291965,
+      "timestamp": 1771394642.0,
+      "size": 3913878,
       "permissions": [
         "kernelsu.permission.WEBUI"
       ],
@@ -1580,6 +1580,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/v0.2.8-r13_4533.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/v0.2.8-r13_4533.md",
           "size": 2291965
+        },
+        {
+          "timestamp": 1771394642.0,
+          "version": "3.1.0-1222",
+          "versionCode": 30100,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.1.0-1222_30100.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.1.0-1222_30100.md",
+          "size": 3913878
         }
       ]
     },
