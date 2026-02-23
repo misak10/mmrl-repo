@@ -25,6 +25,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.1.0-1222_30100.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.1.0-1222_30100.md",
       "size": 3913878
+    },
+    {
+      "timestamp": 1771847162.0,
+      "version": "3.1.2-1243",
+      "versionCode": 30102,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.1.2-1243_30102.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.1.2-1243_30102.md",
+      "size": 4018438
     }
   ]
 }
