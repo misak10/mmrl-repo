@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1773540304.09732
+    "timestamp": 1773557598.073854
   },
   "modules": [
     {
@@ -683,16 +683,16 @@
     {
       "id": "asoulopt",
       "name": "A-SOUL Games Optimization",
-      "version": "Neuro",
-      "versionCode": 279,
+      "version": "Evil",
+      "versionCode": 280,
       "author": "nakixii",
       "description": "Game threads tweaker for Android.",
       "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1769220799.0,
-      "size": 17497,
+      "timestamp": 1773550104.0,
+      "size": 17910,
       "permissions": [
         "magisk.permission.SERVICE"
       ],
@@ -707,14 +707,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/asoulopt/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1744795995.0,
-          "version": "Kanade",
-          "versionCode": 274,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanade_274.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanade_274.md",
-          "size": 14421
-        },
         {
           "timestamp": 1747729427.0,
           "version": "Mizuki",
@@ -754,6 +746,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Plana_279.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Plana_279.md",
           "size": 17497
+        },
+        {
+          "timestamp": 1773550104.0,
+          "version": "Evil",
+          "versionCode": 280,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Evil_280.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Evil_280.md",
+          "size": 17910
         }
       ]
     },
