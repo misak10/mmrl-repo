@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1775393524.532986
+    "timestamp": 1775414374.820572
   },
   "modules": [
     {
@@ -2209,8 +2209,8 @@
     {
       "id": "surfing",
       "name": "Surfing",
-      "version": "v7.6.2 (release-6be5af5)",
-      "versionCode": 1640,
+      "version": "v7.6.3 (release-c855d6d)",
+      "versionCode": 1641,
       "author": "GitMetaio",
       "description": "This project is a Magisk \u3001 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).\u5b9e\u73b0\u5b89\u5353\u8f6f\u8def\u7531",
       "support": "https://github.com/MoGuangYu/Surfing/issues",
@@ -2218,15 +2218,13 @@
       "readme": "https://raw.githubusercontent.com/MoGuangYu/Surfing/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1770902311.0,
-      "size": 35495207,
+      "timestamp": 1775406236.0,
+      "size": 29998992,
       "permissions": [
-        "kernelsu.permission.WEBUI",
-        "mmrl.permission.APKS"
+        "kernelsu.permission.WEBUI"
       ],
       "features": {
-        "webroot": true,
-        "apks": true
+        "webroot": true
       },
       "track": {
         "type": "ONLINE_JSON",
@@ -2236,14 +2234,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/surfing/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1760117320.0,
-          "version": "v7.5.8",
-          "versionCode": 1634,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.8_1634.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.5.8_1634.md",
-          "size": 35934893
-        },
         {
           "timestamp": 1760165284.0,
           "version": "v7.5.9",
@@ -2283,6 +2273,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.6.2_release-6be5af5_1640.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.6.2_release-6be5af5_1640.md",
           "size": 35495207
+        },
+        {
+          "timestamp": 1775406236.0,
+          "version": "v7.6.3 (release-c855d6d)",
+          "versionCode": 1641,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.6.3_release-c855d6d_1641.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/surfing/v7.6.3_release-c855d6d_1641.md",
+          "size": 29998992
         }
       ]
     },
