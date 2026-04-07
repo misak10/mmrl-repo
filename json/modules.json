@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1775545913.261619
+    "timestamp": 1775567588.103088
   },
   "modules": [
     {
@@ -2706,8 +2706,8 @@
     {
       "id": "zygisk-detach",
       "name": "zygisk-detach",
-      "version": "v1.23.0",
-      "versionCode": 32,
+      "version": "v1.23.1",
+      "versionCode": 33,
       "author": "j-hc",
       "description": "Detaches installed apps from Play Store",
       "support": "https://github.com/j-hc/zygisk-detach/issues",
@@ -2715,8 +2715,8 @@
       "readme": "https://raw.githubusercontent.com/j-hc/zygisk-detach/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1775245184.0,
-      "size": 370326,
+      "timestamp": 1775565126.0,
+      "size": 370346,
       "permissions": [
         "magisk.permission.POST_FS_DATA",
         "magisk.permission.ZYGISK",
@@ -2735,14 +2735,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1744751428.0,
-          "version": "v1.19.3",
-          "versionCode": 27,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.19.3_27.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.19.3_27.md",
-          "size": 176813
-        },
         {
           "timestamp": 1748779842.0,
           "version": "v1.20.0",
@@ -2782,6 +2774,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.0_32.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.0_32.md",
           "size": 370326
+        },
+        {
+          "timestamp": 1775565126.0,
+          "version": "v1.23.1",
+          "versionCode": 33,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.1_33.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.1_33.md",
+          "size": 370346
         }
       ]
     },
