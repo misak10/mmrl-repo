@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1776431578.884125
+    "timestamp": 1776452176.199992
   },
   "modules": [
     {
@@ -1334,15 +1334,15 @@
     {
       "id": "hydro-br-leur",
       "name": "Hydrostellaire \u6ca8\u83b9",
-      "version": "\u272eMain\u272e",
-      "versionCode": 1039,
+      "version": "\u272eChocolate\u272e",
+      "versionCode": 1050,
       "author": "AB & Ray",
       "support": "https://github.com/AestasBritannia/Hydro-Br-leur/issues",
       "readme": "https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1766071704.0,
-      "size": 3180366,
+      "timestamp": 1776446058.0,
+      "size": 3418126,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1351,14 +1351,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1762860667.0,
-          "version": "\u272eLeipzig\u272e",
-          "versionCode": 1025,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1025.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Leipzig_1025.md",
-          "size": 2645957
-        },
         {
           "timestamp": 1763040613.0,
           "version": "\u272eMain\u272e",
@@ -1398,6 +1390,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1039.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1039.md",
           "size": 3180366
+        },
+        {
+          "timestamp": 1776446058.0,
+          "version": "\u272eChocolate\u272e",
+          "versionCode": 1050,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Chocolate_1050.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Chocolate_1050.md",
+          "size": 3418126
         }
       ]
     },
@@ -1790,8 +1790,8 @@
     {
       "id": "pixelxpert",
       "name": "Pixel Xpert",
-      "version": "canary-492",
-      "versionCode": 492,
+      "version": "canary-493",
+      "versionCode": 493,
       "author": "Pixel Xpert Team",
       "description": "Xposed based module for customizations on Pixel roms. Android 13+",
       "support": "https://github.com/siavash79/PixelXpert/issues",
@@ -1799,8 +1799,8 @@
       "readme": "https://raw.githubusercontent.com/siavash79/PixelXpert/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1776412466.0,
-      "size": 4219880,
+      "timestamp": 1776446310.0,
+      "size": 4219843,
       "permissions": [
         "magisk.permission.SERVICE",
         "mmrl.permission.APKS"
@@ -1817,14 +1817,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1771070087.0,
-          "version": "canary-487",
-          "versionCode": 487,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-487_487.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-487_487.md",
-          "size": 4405835
-        },
         {
           "timestamp": 1774700582.0,
           "version": "canary-488",
@@ -1864,6 +1856,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-492_492.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-492_492.md",
           "size": 4219880
+        },
+        {
+          "timestamp": 1776446310.0,
+          "version": "canary-493",
+          "versionCode": 493,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-493_493.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/pixelxpert/canary-493_493.md",
+          "size": 4219843
         }
       ]
     },
