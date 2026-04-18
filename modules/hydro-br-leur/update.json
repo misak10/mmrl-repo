@@ -3,14 +3,6 @@
   "timestamp": 1746373998.0,
   "versions": [
     {
-      "timestamp": 1763040613.0,
-      "version": "\u272eMain\u272e",
-      "versionCode": 1030,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1030.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Main_1030.md",
-      "size": 3199895
-    },
-    {
       "timestamp": 1763308218.0,
       "version": "\u272eMain\u272e",
       "versionCode": 1031,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Chocolate_1050.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Chocolate_1050.md",
       "size": 3418126
+    },
+    {
+      "timestamp": 1776531974.0,
+      "version": "\u272eChocolate\u272e",
+      "versionCode": 1051,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Chocolate_1051.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/hydro-br-leur/Chocolate_1051.md",
+      "size": 3476112
     }
   ]
 }
