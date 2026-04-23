@@ -3,14 +3,6 @@
   "timestamp": 1735942841.0,
   "versions": [
     {
-      "timestamp": 1747729427.0,
-      "version": "Mizuki",
-      "versionCode": 275,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Mizuki_275.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Mizuki_275.md",
-      "size": 14722
-    },
-    {
       "timestamp": 1753203209.0,
       "version": "Enanan",
       "versionCode": 276,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Evil_280.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Evil_280.md",
       "size": 17910
+    },
+    {
+      "timestamp": 1776922107.0,
+      "version": "Kanata",
+      "versionCode": 281,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanata_281.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Kanata_281.md",
+      "size": 17300
     }
   ]
 }
