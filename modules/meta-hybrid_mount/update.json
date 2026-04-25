@@ -3,14 +3,6 @@
   "timestamp": 1764694678.0,
   "versions": [
     {
-      "timestamp": 1775147258.0,
-      "version": "3.4.1-1418",
-      "versionCode": 30401,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.4.1-1418_30401.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.4.1-1418_30401.md",
-      "size": 2795347
-    },
-    {
       "timestamp": 1775207856.0,
       "version": "3.4.2-1425",
       "versionCode": 30402,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.5.1-1530_30501.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.5.1-1530_30501.md",
       "size": 3986776
+    },
+    {
+      "timestamp": 1777130879.0,
+      "version": "3.5.5-1605",
+      "versionCode": 305005,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.5.5-1605_305005.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/meta-hybrid_mount/3.5.5-1605_305005.md",
+      "size": 1894591
     }
   ]
 }
