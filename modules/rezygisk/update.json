@@ -3,14 +3,6 @@
   "timestamp": 1745731850.0,
   "versions": [
     {
-      "timestamp": 1745731850.0,
-      "version": "v1.0.0-rc.2",
-      "versionCode": 342,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.md",
-      "size": 254591
-    },
-    {
       "timestamp": 1752459593.0,
       "version": "v1.0.0-rc.2",
       "versionCode": 390,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.7-release_476.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.7-release_476.md",
       "size": 489640
+    },
+    {
+      "timestamp": 1777180351.0,
+      "version": "v1.0.0 (505-7e3db00-release)",
+      "versionCode": 505,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0_505-7e3db00-release.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0_505-7e3db00-release.md",
+      "size": 518064
     }
   ]
 }

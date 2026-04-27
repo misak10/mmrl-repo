@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1777229335.772589
+    "timestamp": 1777257072.455037
   },
   "modules": [
     {
@@ -2025,8 +2025,8 @@
     {
       "id": "rezygisk",
       "name": "ReZygisk",
-      "version": "v1.0.0-rc.7-release",
-      "versionCode": 476,
+      "version": "v1.0.0 (505-7e3db00-release)",
+      "versionCode": 505,
       "author": "The PerformanC Organization",
       "description": "Standalone implementation of Zygisk.",
       "support": "https://github.com/PerformanC/ReZygisk/issues",
@@ -2034,8 +2034,8 @@
       "readme": "https://raw.githubusercontent.com/PerformanC/ReZygisk/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1775014043.0,
-      "size": 489640,
+      "timestamp": 1777180351.0,
+      "size": 518064,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2056,14 +2056,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/rezygisk/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1745731850.0,
-          "version": "v1.0.0-rc.2",
-          "versionCode": 342,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.2_342.md",
-          "size": 254591
-        },
         {
           "timestamp": 1752459593.0,
           "version": "v1.0.0-rc.2",
@@ -2103,6 +2095,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.7-release_476.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0-rc.7-release_476.md",
           "size": 489640
+        },
+        {
+          "timestamp": 1777180351.0,
+          "version": "v1.0.0 (505-7e3db00-release)",
+          "versionCode": 505,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0_505-7e3db00-release.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/rezygisk/v1.0.0_505-7e3db00-release.md",
+          "size": 518064
         }
       ]
     },
