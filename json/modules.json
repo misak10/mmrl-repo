@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1782013877.526436
+    "timestamp": 1782035071.196978
   },
   "modules": [
     {
@@ -2482,8 +2482,8 @@
     {
       "id": "tricky-target-list",
       "name": "Tricky Addon - Update Target List",
-      "version": "v4.3",
-      "versionCode": 635,
+      "version": "v4.4",
+      "versionCode": 679,
       "author": "KOWX712",
       "description": "A WebUI to conifgure tricky store target.txt ",
       "support": "https://github.com/KOWX712/Tricky-Addon-Update-Target-List/issues",
@@ -2497,7 +2497,8 @@
       },
       "verified": false,
       "added": 0,
-      "size": 3120144,
+      "timestamp": 1782029771.0,
+      "size": 3203800,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2555,6 +2556,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.2_635.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.2_635.md",
           "size": 3120144
+        },
+        {
+          "timestamp": 1782029771.0,
+          "version": "v4.3",
+          "versionCode": 679,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.3_679.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tricky-target-list/v4.3_679.md",
+          "size": 3203800
         }
       ]
     },
