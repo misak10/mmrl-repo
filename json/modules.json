@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1782876606.428235
+    "timestamp": 1782898774.644985
   },
   "modules": [
     {
@@ -2415,16 +2415,16 @@
     {
       "id": "tcp_optimiser",
       "name": "TCP Optimiser ",
-      "version": "2.4",
-      "versionCode": 16,
+      "version": "2.5",
+      "versionCode": 17,
       "author": "fatalcoder524",
       "description": "TCP Optimisations & update tcp_cong_algo based on interface",
       "support": "https://github.com/fatalcoder524/TCP_Optimiser_Module/issues",
       "readme": "https://raw.githubusercontent.com/fatalcoder524/TCP_Optimiser_Module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1781348527.0,
-      "size": 25446,
+      "timestamp": 1782883536.0,
+      "size": 396040,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2476,6 +2476,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.3_16.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.3_16.md",
           "size": 25446
+        },
+        {
+          "timestamp": 1782883536.0,
+          "version": "2.5",
+          "versionCode": 17,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.5_17.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.5_17.md",
+          "size": 396040
         }
       ]
     },

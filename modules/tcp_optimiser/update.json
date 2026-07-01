@@ -33,6 +33,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.3_16.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.3_16.md",
       "size": 25446
+    },
+    {
+      "timestamp": 1782883536.0,
+      "version": "2.5",
+      "versionCode": 17,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.5_17.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/tcp_optimiser/2.5_17.md",
+      "size": 396040
     }
   ]
 }
