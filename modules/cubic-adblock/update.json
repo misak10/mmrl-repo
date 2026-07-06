@@ -3,14 +3,6 @@
   "timestamp": 1748760760.480348,
   "versions": [
     {
-      "timestamp": 1779720474.238242,
-      "version": "v3.2",
-      "versionCode": 3002,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.2_3002.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.2_3002.md",
-      "size": 8258430
-    },
-    {
       "timestamp": 1780335146.296093,
       "version": "v3.3",
       "versionCode": 3003,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.7_3007.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.7_3007.md",
       "size": 11052876
+    },
+    {
+      "timestamp": 1783351431.610893,
+      "version": "v3.8",
+      "versionCode": 3008,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.8_3008.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.8_3008.md",
+      "size": 7736130
     }
   ]
 }
