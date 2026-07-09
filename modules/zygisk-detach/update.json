@@ -3,14 +3,6 @@
   "timestamp": 1739046326.0,
   "versions": [
     {
-      "timestamp": 1748779842.0,
-      "version": "v1.20.0",
-      "versionCode": 28,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.0_28.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.20.0_28.md",
-      "size": 178007
-    },
-    {
       "timestamp": 1770302987.0,
       "version": "v1.20.1",
       "versionCode": 29,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.1_33.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.1_33.md",
       "size": 370346
+    },
+    {
+      "timestamp": 1783594311.0,
+      "version": "v1.23.2",
+      "versionCode": 34,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.2_34.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisk-detach/v1.23.2_34.md",
+      "size": 370347
     }
   ]
 }
