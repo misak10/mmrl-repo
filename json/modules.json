@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1783675733.143305
+    "timestamp": 1783692935.048631
   },
   "modules": [
     {
@@ -612,8 +612,8 @@
     {
       "id": "adguardhome",
       "name": "AdGuardHome for Root",
-      "version": "20260526",
-      "versionCode": 50,
+      "version": "20260710",
+      "versionCode": 51,
       "author": "twoone3",
       "description": "none",
       "support": "https://github.com/twoone-3/AdGuardHomeForMagisk/issues",
@@ -621,8 +621,8 @@
       "readme": "https://raw.githubusercontent.com/twoone-3/AdGuardHomeForMagisk/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1779803984.0,
-      "size": 10877112,
+      "timestamp": 1783680437.0,
+      "size": 10889947,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ACTION",
@@ -641,14 +641,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/adguardhome/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1765960389.0,
-          "version": "20251101",
-          "versionCode": 45,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20251101_45.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20251101_45.md",
-          "size": 10324554
-        },
         {
           "timestamp": 1771136808.0,
           "version": "20260215",
@@ -688,6 +680,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20260526_50.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20260526_50.md",
           "size": 10877112
+        },
+        {
+          "timestamp": 1783680437.0,
+          "version": "20260710",
+          "versionCode": 51,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20260710_51.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/adguardhome/20260710_51.md",
+          "size": 10889947
         }
       ]
     },
