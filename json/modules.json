@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1784576407.91182
+    "timestamp": 1784600573.895676
   },
   "modules": [
     {
@@ -948,8 +948,8 @@
     {
       "id": "copg",
       "name": "\u2728 COPG SPOOF \u2728",
-      "version": "5.8.0",
-      "versionCode": 580,
+      "version": "5.9.0",
+      "versionCode": 590,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games/apps to unlock new features.",
       "support": "https://t.me/TheAOSP",
@@ -977,8 +977,8 @@
         "message": "Spoof your device for games/apps to unlock new features."
       },
       "added": 0,
-      "timestamp": 1784010181.0,
-      "size": 1631907,
+      "timestamp": 1784581880.0,
+      "size": 2431691,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ZYGISK",
@@ -999,14 +999,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/copg/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1783087125.0,
-          "version": "5.5.1",
-          "versionCode": 551,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/5.5.1_551.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/5.5.1_551.md",
-          "size": 1787902
-        },
         {
           "timestamp": 1783256382.0,
           "version": "5.6.0",
@@ -1046,6 +1038,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/5.8.0_580.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/5.8.0_580.md",
           "size": 1631907
+        },
+        {
+          "timestamp": 1784581880.0,
+          "version": "5.9.0",
+          "versionCode": 590,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/5.9.0_590.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/5.9.0_590.md",
+          "size": 2431691
         }
       ]
     },
