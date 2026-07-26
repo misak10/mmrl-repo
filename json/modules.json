@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1785054104.489481
+    "timestamp": 1785071578.445774
   },
   "modules": [
     {
@@ -2290,8 +2290,8 @@
     {
       "id": "susfs4ksu",
       "name": "SUSFS-FOR-KERNELSU",
-      "version": "v1.5.2-R27",
-      "versionCode": 105002027,
+      "version": "v1.5.2-R28",
+      "versionCode": 105002028,
       "author": "sidex15 & simonpunk",
       "description": "An addon root hiding service for KernelSU compiled with patched kernel source.",
       "support": "https://github.com/sidex15/susfs4ksu-module/issues",
@@ -2299,8 +2299,8 @@
       "readme": "https://raw.githubusercontent.com/sidex15/susfs4ksu-module/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1774621397.0,
-      "size": 903621,
+      "timestamp": 1785057026.0,
+      "size": 911798,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2328,14 +2328,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1758867240.0,
-          "version": "v1.5.2-R22",
-          "versionCode": 105002022,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R22_105002022.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R22_105002022.md",
-          "size": 1161002
-        },
         {
           "timestamp": 1760862849.0,
           "version": "v1.5.2-R22",
@@ -2375,6 +2367,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R27_105002027.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R27_105002027.md",
           "size": 903621
+        },
+        {
+          "timestamp": 1785057026.0,
+          "version": "v1.5.2-R28",
+          "versionCode": 105002028,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R28_105002028.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/susfs4ksu/v1.5.2-R28_105002028.md",
+          "size": 911798
         }
       ]
     },
