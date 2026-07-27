@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1785145402.3413
+    "timestamp": 1785162321.24105
   },
   "modules": [
     {
@@ -1052,8 +1052,8 @@
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v3.10",
-      "versionCode": 3010,
+      "version": "v3.11",
+      "versionCode": 3011,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1065,8 +1065,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1784555884.514364,
-      "size": 8303921,
+      "timestamp": 1785162320.453294,
+      "size": 8185913,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1075,14 +1075,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1781543717.631732,
-          "version": "v3.5",
-          "versionCode": 3005,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.5_3005.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.5_3005.md",
-          "size": 6937584
-        },
         {
           "timestamp": 1782146953.29375,
           "version": "v3.6",
@@ -1122,6 +1114,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.10_3010.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.10_3010.md",
           "size": 8303921
+        },
+        {
+          "timestamp": 1785162320.453294,
+          "version": "v3.11",
+          "versionCode": 3011,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.11_3011.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.11_3011.md",
+          "size": 8185913
         }
       ]
     },
