@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1786238556.663228
+    "timestamp": 1786258228.718984
   },
   "modules": [
     {
@@ -694,16 +694,16 @@
     {
       "id": "asoulopt",
       "name": "A-SOUL Games Optimization",
-      "version": "Shiroko",
-      "versionCode": 282,
+      "version": "Ibuki",
+      "versionCode": 283,
       "author": "nakixii",
       "description": "Game threads tweaker for Android.",
       "support": "https://github.com/nakixii/Magisk_AsoulOpt/issues",
       "readme": "https://raw.githubusercontent.com/nakixii/Magisk_AsoulOpt/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1781432121.0,
-      "size": 17443,
+      "timestamp": 1786250657.0,
+      "size": 17545,
       "permissions": [
         "magisk.permission.SERVICE"
       ],
@@ -718,14 +718,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/asoulopt/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1755660787.0,
-          "version": "Arona",
-          "versionCode": 277,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_277.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Arona_277.md",
-          "size": 17363
-        },
         {
           "timestamp": 1764148245.0,
           "version": "Arona",
@@ -765,6 +757,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Shiroko_282.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Shiroko_282.md",
           "size": 17443
+        },
+        {
+          "timestamp": 1786250657.0,
+          "version": "Ibuki",
+          "versionCode": 283,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Ibuki_283.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/asoulopt/Ibuki_283.md",
+          "size": 17545
         }
       ]
     },
