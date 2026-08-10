@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1786346691.228777
+    "timestamp": 1786366746.419096
   },
   "modules": [
     {
@@ -948,8 +948,8 @@
     {
       "id": "copg",
       "name": "\u2728 COPG SPOOF \u2728",
-      "version": "6.3.0",
-      "versionCode": 630,
+      "version": "6.3.1",
+      "versionCode": 631,
       "author": "AlirezaParsi",
       "description": "Spoof your device for games/apps to unlock new features.",
       "support": "https://t.me/TheAOSP",
@@ -977,8 +977,8 @@
         "message": "Spoof your device for games/apps to unlock new features."
       },
       "added": 0,
-      "timestamp": 1786097576.0,
-      "size": 8027601,
+      "timestamp": 1786354567.0,
+      "size": 8027287,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.ZYGISK",
@@ -999,14 +999,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/copg/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1784010181.0,
-          "version": "5.8.0",
-          "versionCode": 580,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/5.8.0_580.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/5.8.0_580.md",
-          "size": 1631907
-        },
         {
           "timestamp": 1784581880.0,
           "version": "5.9.0",
@@ -1046,14 +1038,22 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/6.3.0_630.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/6.3.0_630.md",
           "size": 8027601
+        },
+        {
+          "timestamp": 1786354567.0,
+          "version": "6.3.1",
+          "versionCode": 631,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/copg/6.3.1_631.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/copg/6.3.1_631.md",
+          "size": 8027287
         }
       ]
     },
     {
       "id": "cubic-adblock",
       "name": "Cubic-AdBlock",
-      "version": "v3.12",
-      "versionCode": 3012,
+      "version": "v3.13",
+      "versionCode": 3013,
       "author": "Vaz15k",
       "description": "A simple AdBlock based on the hosts file.",
       "support": "https://github.com/Vaz15k/Cubic-AdBlock/issues",
@@ -1065,8 +1065,8 @@
       ],
       "verified": false,
       "added": 0,
-      "timestamp": 1785767456.591355,
-      "size": 4020841,
+      "timestamp": 1786366744.936595,
+      "size": 3958200,
       "track": {
         "type": "ONLINE_JSON",
         "added": null,
@@ -1075,14 +1075,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1782747619.106513,
-          "version": "v3.7",
-          "versionCode": 3007,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.7_3007.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.7_3007.md",
-          "size": 11052876
-        },
         {
           "timestamp": 1783351431.610893,
           "version": "v3.8",
@@ -1122,6 +1114,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.12_3012.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.12_3012.md",
           "size": 4020841
+        },
+        {
+          "timestamp": 1786366744.936595,
+          "version": "v3.13",
+          "versionCode": 3013,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.13_3013.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/cubic-adblock/v3.13_3013.md",
+          "size": 3958200
         }
       ]
     },
