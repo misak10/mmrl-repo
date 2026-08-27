@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1787773390.779558
+    "timestamp": 1787814368.055127
   },
   "modules": [
     {
@@ -2817,16 +2817,16 @@
     {
       "id": "zygisknext",
       "name": "Zygisk Next",
-      "version": "1.4.5 (836-b13d58a-release)",
-      "versionCode": 836,
+      "version": "1.5.0 (843-5217106-release)",
+      "versionCode": 843,
       "author": "5ec1cff, Nullptr, aviraxp",
       "description": "Standalone implementation of Zygisk.",
       "support": "https://github.com/Dr-TSNG/ZygiskNext/issues",
       "readme": "https://raw.githubusercontent.com/Dr-TSNG/ZygiskNext/main/README.md",
       "verified": true,
       "added": 0,
-      "timestamp": 1785905638.0,
-      "size": 7365185,
+      "timestamp": 1787705664.0,
+      "size": 7529581,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -2849,14 +2849,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/zygisknext/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1781787014.0,
-          "version": "1.4.0 (768-37ee2d5-release)",
-          "versionCode": 768,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.4.0_768-37ee2d5-release.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.4.0_768-37ee2d5-release.md",
-          "size": 5844399
-        },
         {
           "timestamp": 1782053119.0,
           "version": "1.4.1 (780-9d7024c-release)",
@@ -2896,6 +2888,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.4.5_836-b13d58a-release.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.4.5_836-b13d58a-release.md",
           "size": 7365185
+        },
+        {
+          "timestamp": 1787705664.0,
+          "version": "1.5.0 (843-5217106-release)",
+          "versionCode": 843,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.5.0_843-5217106-release.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/zygisknext/1.5.0_843-5217106-release.md",
+          "size": 7529581
         }
       ]
     },
