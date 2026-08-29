@@ -3,14 +3,6 @@
   "timestamp": 1747424290.0,
   "versions": [
     {
-      "timestamp": 1766802333.0,
-      "version": "v15",
-      "versionCode": 160000,
-      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v15_160000.zip",
-      "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v15_160000.md",
-      "size": 282993
-    },
-    {
       "timestamp": 1766942967.0,
       "version": "v16",
       "versionCode": 161000,
@@ -49,6 +41,14 @@
       "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v17_170000.zip",
       "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v17_170000.md",
       "size": 285020
+    },
+    {
+      "timestamp": 1788024801.0,
+      "version": "v18",
+      "versionCode": 180000,
+      "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v18_180000.zip",
+      "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v18_180000.md",
+      "size": 227895
     }
   ]
 }

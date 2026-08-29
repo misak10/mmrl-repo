@@ -9,7 +9,7 @@
   "description": "\u2728 Misaki - Repo \u2728",
   "metadata": {
     "version": 1,
-    "timestamp": 1788005611.96725
+    "timestamp": 1788034884.443139
   },
   "modules": [
     {
@@ -1945,17 +1945,17 @@
     {
       "id": "playintegrityfork",
       "name": "Play Integrity Fork",
-      "version": "v17",
-      "versionCode": 170000,
+      "version": "v18",
+      "versionCode": 180000,
       "author": "osm0sis & chiteroman @ xda-developers",
-      "description": "Fix <A13 Play Integrity DEVICE verdict",
+      "description": "Fix Play Integrity <A13 verdicts and Google Wallet/RCS on Android 7+",
       "support": "https://github.com/osm0sis/PlayIntegrityFork/issues",
       "license": "GPL-3.0",
       "readme": "https://raw.githubusercontent.com/osm0sis/PlayIntegrityFork/main/README.md",
       "verified": false,
       "added": 0,
-      "timestamp": 1781984199.0,
-      "size": 285020,
+      "timestamp": 1788024801.0,
+      "size": 227895,
       "permissions": [
         "magisk.permission.SERVICE",
         "magisk.permission.POST_FS_DATA",
@@ -1975,14 +1975,6 @@
         "build_metadata": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/track.json"
       },
       "versions": [
-        {
-          "timestamp": 1766802333.0,
-          "version": "v15",
-          "versionCode": 160000,
-          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v15_160000.zip",
-          "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v15_160000.md",
-          "size": 282993
-        },
         {
           "timestamp": 1766942967.0,
           "version": "v16",
@@ -2022,6 +2014,14 @@
           "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v17_170000.zip",
           "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v17_170000.md",
           "size": 285020
+        },
+        {
+          "timestamp": 1788024801.0,
+          "version": "v18",
+          "versionCode": 180000,
+          "zipUrl": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v18_180000.zip",
+          "changelog": "https://misak10.github.io/mmrl-repo/modules/playintegrityfork/v18_180000.md",
+          "size": 227895
         }
       ]
     },
